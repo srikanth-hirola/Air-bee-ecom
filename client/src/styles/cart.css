@@ -1,0 +1,541 @@
+/* haeder component */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/* header component */
+/* .Drones-Header-search-icon-mobile{
+    display: none;
+}
+.DronesHeader-parent .navbar{
+    width: 90%;
+    margin: auto;
+    padding: 0;
+}
+.Drones-header-input-parent{
+    width: 50%;
+    display: flex;
+}
+.Drones-header-input-parent input{
+    padding: 7px 7px 7px 15px;
+    width: 100%;
+ border-radius: 8px;
+ border: none;
+ box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.DronesHeader-search-icon {
+    height: 30px;
+    width: 30px;
+    position: relative;
+    top: 5px;
+    left: -33px;
+}
+.DronesHeader-search-icon img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+.DronesHeader-parent .navbar-expand-lg .navbar-collapse {
+    justify-content: space-around;
+}
+.Drones-header-logo{
+    height: 80px;
+    width: 140px;
+}
+.Drones-header-logo img{
+    height:100%;
+    width: 100%;
+    object-fit: contain;
+}
+.Drones-header-poarent .navbar-brand{
+    padding: 0;
+}
+.navbar-expand-lg .navbar-collapse {
+    display: flex;
+    /* flex-basis: auto; 
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.navbar-expand-lg .navbar-collapse .row{
+    display: flex;
+    justify-content: space-between;
+}
+.Drones-header-poarent .search-button{
+    background-color: rgb(52, 52, 252);
+    color: white;
+    padding: 0px 25px;
+}
+.Drones-header-poarent .col-md-10{
+    width: 94%;
+}
+.Drones-header-poarent .navbar{
+    width: 90%;
+    margin: auto;
+}
+.Drones-header-icons{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    font-size: 14px;
+    justify-content: end;
+}
+.Drones-icon-image{
+    text-align: center;
+}
+.searchbutton {
+	position: absolute;
+	font-size: 22px;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+.Drones-Header-search-icon {
+    height: 25px;
+    width: 25px;
+    position: relative;
+    right: 40px;
+    top: 5px;
+}
+.Drones-Header-search-icon img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+} */
+
+/* cart page */
+.DronesCart-parent-home-text {
+  display: flex;
+  gap: 10px;
+  font-weight: 500;
+  padding: 25px 0px 15px 0px;
+}
+.Drones-Product-image {
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+}
+.Drones-Product-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.Dronescrat-product-sub {
+  display: flex;
+  gap: 15px;
+}
+.col-8.images-section {
+  padding-right: 0;
+}
+.Drones-Product-subtotal-sub2 {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.Drones-Product-subtotal-sub2-image1,
+.Drones-Product-subtotal-sub2-image2 {
+  width: 25px;
+  height: 25px;
+  margin-top: -5px;
+  padding: 2px;
+  margin-bottom: 9px;
+}
+.Drones-Product-subtotal-sub2-image1 img,
+.Drones-Product-subtotal-sub2-image2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.Drones-Product-subtotal-sub2-image2 img {
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  align-items: center;
+  border: 2px solid rgb(224, 223, 223);
+}
+.Drones-Product-subtotal {
+  display: flex;
+  justify-content: space-between;
+}
+.Drones-Product-subtotal-content {
+  padding: 0;
+}
+.images-section {
+  justify-content: flex-end;
+  display: flex;
+  padding-right: 0px;
+}
+.col-md-4.UpdateShoppingCart-button {
+  width: 29%;
+}
+.continueshopping-button a {
+  display: inline-flex;
+  padding: 8px 0px 8px 0px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  color: black;
+  margin-top: 25px;
+  border-radius: 50px;
+  /* background: var(--Color---7, #000); */
+}
+.UpdateShoppingCart-button button {
+  display: inline-flex;
+  margin-top: 25px;
+  padding: 8px 0px 8px 0px;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  color: white;
+  border-radius: 50px;
+  background: var(--Color---7, #000);
+}
+.ClearShoppingCart-button button,
+.UpdateShoppingCart-button button {
+  display: inline-flex;
+  margin-top: 25px;
+  padding: 8px 0px 8px 0px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  color: white;
+  border-radius: 50px;
+  background: var(--Color---7, #000);
+}
+.col-2.Drones-cart-Headings-qty {
+  padding: 0;
+}
+.Drones-cart-Headings p {
+  font-weight: 600;
+}
+/* summery - cart */
+.Drones-product-summery {
+  background: var(--Color---1, #f5f7ff);
+  padding: 20px;
+  border-radius: 10px;
+}
+.Drones-product-summery-sub1 {
+  padding-bottom: 15px;
+}
+.Drones-Product-shipping-sub span {
+  font-size: 15px;
+  padding: 5px 0px;
+}
+.Drones-product-summery p {
+  font-size: 14px;
+  font-weight: 600;
+}
+.Drones-product-summery-sub1 h3 {
+  padding-bottom: 10px;
+}
+.Drones-product-summery p {
+  font-weight: 600;
+}
+.Drones-Product-gst,
+.Drones-Product-subtotal,
+.Drones-Product-shipping,
+.Drones-Product-tax,
+.Drones-Product-order-total {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: auto;
+}
+.DronesCart-addtocart-button button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: auto;
+  padding: 10px 0px;
+  border-radius: 50px;
+  border: none;
+  color: white;
+  background-color: rgb(6, 6, 235);
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.DronesCart-checkout-button button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: auto;
+  padding: 10px 0px;
+  border: none;
+  color: white;
+  border-radius: 50px;
+  background: #ffb800;
+}
+.Drones-product-summery-end {
+  display: flex;
+  gap: 10px;
+}
+.col-md-12.Drones-product-summery-end {
+  margin-top: 14px;
+}
+.Drones-Product-desc {
+  font-size: 15px;
+}
+.Drones-product-summery-end-image {
+  width: 59px;
+  height: 26px;
+  flex-shrink: 0;
+  padding-right: 3px;
+  border-right: 2px solid skyblue;
+}
+.Drones-product-summery-end-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.row.Drones-Product-subtotal {
+  padding-left: 3px;
+}
+
+.Drones-addtocart-buttons {
+  display: flex;
+  position: relative;
+  top: -11px;
+  /* gap: 5px; */
+  right: 14px;
+}
+.increment-button {
+  height: 25px;
+  width: 30px;
+  text-align: center;
+  display: flex;
+  border: none;
+  font-weight: 700;
+  justify-content: center;
+  align-items: center;
+}
+.DronesCart-subparent {
+  padding-bottom: 25px;
+}
+
+/* new */
+.Drones-Product-desc {
+  height: 100%;
+  margin-block: auto;
+}
+.Drones-product-desc-wishlist {
+  display: flex;
+  align-items: center;
+}
+.DronesCart-subparent a {
+  color: #000;
+}
+/* new */
+
+/* footer component */
+/* .Drones-footer-parent{
+    width: 90%;
+    margin: auto;
+    padding: 50px 0px 30px 0px;
+}
+.Drones-footer-logo-image{
+    height: 80px;
+    width: 170px;
+}
+.Drones-footer-logo-image img{
+    height:100%;
+    width:100%;
+    object-fit: contain;
+}
+.Drones-footr-logo-parent ul{
+    list-style: none;
+    padding: 0;
+}
+
+.DronesFooter-links li{
+    padding-top: 7px;
+}
+.Drones-social-icons-image{
+    width: 32px;
+height: 32px;
+flex-shrink: 0;
+}
+.Drones-social-icons-image img{
+    height: 100%;
+    width: 100%;  
+    object-fit: contain;
+}
+
+.DronesFooter-apps-image{
+    margin-top: 5px;
+    display: flex;
+width: 124px;
+height: 42px;
+justify-content: center;
+align-items: center;
+flex-shrink: 0;
+}
+.DronesFooter-apps-image img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+.Drones-footer-apps-parent h6{
+    padding-bottom: 10px;
+}
+li{
+    list-style: none;
+} */
+/* media queries */
+@media only screen and (min-width: 320px) and (max-width: 766px) {
+  form.d-flex {
+    width: 100%;
+    justify-content: center;
+    padding: 20px 0px 10px 0px;
+  }
+  .Drones-header-input-parent {
+    width: 100%;
+    display: flex;
+  }
+}
+@media only screen and (min-width: 645px) and (max-width: 767) {
+  /* header component */
+  .Drones-header-input-parent {
+    width: 70%;
+    display: flex;
+  }
+}
+@media only screen and (min-width: 767px) and (max-width: 768px) {
+  .Drones-header-input-parent {
+    width: 75%;
+    display: flex;
+  }
+  .navbar > .container,
+  .navbar > .container-fluid,
+  .navbar > .container-sm,
+  .navbar > .container-md,
+  .navbar > .container-lg,
+  .navbar > .container-xl,
+  .navbar > .container-xxl {
+    display: flex;
+    flex-wrap: inherit;
+    padding-bottom: 25px;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+@media only screen and (max-width: 767px) {
+  /* header component */
+  .col-md-4.UpdateShoppingCart-button {
+    width: 100%;
+  }
+  .navbar-toggler {
+    float: inline-end;
+  }
+  /* cart component */
+  .row.Drones-cart-Headings {
+    display: none;
+  }
+  .Dronescrat-product-sub .row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .Drones-Product-desc {
+    font-size: 15px;
+    padding-bottom: 25px;
+  }
+  /* footer component */
+  .Drones-header-poarent .col-md-11 {
+    width: 100%;
+  }
+  .Drones-footer-logo-content {
+    padding-bottom: 30px;
+  }
+  .DronesFooter-links {
+    padding-bottom: 20px;
+  }
+
+  .Drones-Header-search-icon-mobile {
+    display: block;
+  }
+  .Drones-Header-search-icon {
+    display: none;
+  }
+  .search {
+    width: 150px !important;
+  }
+  .Drones-header-icons {
+    gap: 10px;
+    justify-content: center !important;
+  }
+  .navbar-expand-lg .navbar-collapse .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .Drones-header-poarent .form-control {
+    display: none;
+  }
+
+  .navbar-expand-lg .navbar-collapse {
+    justify-content: start !important;
+  }
+  /* cart component */
+  .Drones-addtocart-buttons {
+    width: 100%;
+  }
+  .increment-button {
+    height: 27px;
+  }
+  /* summery */
+  .Drones-product-summery {
+    margin-top: 25px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* header component */
+  .Drones-header-input-parent {
+    width: 70%;
+    display: flex;
+  }
+  .DronesHeader-parent .navbar-expand-lg .navbar-collapse {
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 15px;
+  }
+  /* footer component */
+  .Drones-footer-logo-content {
+    padding-bottom: 30px;
+  }
+  .DronesFooter-links {
+    padding-top: 15px;
+  }
+  .Drones-footer-apps-parent h6 {
+    padding: 10px 0px 15px 0px;
+  }
+  /* cart component */
+  .row.Drones-cart-Headings {
+    padding-top: 25px;
+  }
+  .Drones-product-summery {
+    margin-top: 30px;
+  }
+  .Drones-Product-shipping-sub {
+    width: 75%;
+    padding-bottom: 15px;
+  }
+  .row.Drones-Product-subtotal {
+    padding-left: 0px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  /* cart component */
+  .col-md-4.UpdateShoppingCart-button {
+    width: 33%;
+  }
+  .col-6.col-sm-6.col-md-6.Drones-Product-subtotal-parent {
+    padding: 0;
+  }
+  .row.Drones-Product-subtotal {
+    padding-left: 15px;
+  }
+  .col-md-5.ClearShoppingCart-button,
+  .col-md-5.continueshopping-button {
+    width: 50%;
+  }
+}

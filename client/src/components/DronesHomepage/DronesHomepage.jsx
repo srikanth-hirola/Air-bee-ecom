@@ -1,0 +1,47 @@
+import React from 'react'
+// import './Drones.css'
+
+import DronesBanner from './DronesBanner';
+// import DronesProductsRow1 from './DronesProductsRow1';
+// import DronesProductsRow2 from './DronesProductsRow2';
+// import DronesProductsRow3 from './DronesProductsRow3';
+// import DronesCategories from './DronesCategories';
+import DronesRecommendedItems from './DronesRecommendedItems';
+import DronesBrandlogos from './DronesBrandlogos';
+import DronesFooter from './DronesFooter';
+import DronesServices from './DronesServices';
+import DronesNewsletter from './DronesNewsletter';
+import DronesFlags from './DronesFlags';
+import DronesQuotes from './DronesQuotes';
+import { DronesTestimonialSwiper } from './DronesTestimonialSwiper';
+// import DronesDealsOftheDay from './DronesDealsOftheDay';
+import CategoriesHome from '../../Pages/CategoriesHome';
+import Products from '../Products/Products';
+import EventsHomeTop from '../../Pages/EventsHomeTop';
+import EventsHomeBottom from '../../Pages/EventsHomeBottom';
+import DronesHeader2 from '../Headers/DronesHeader2';
+const DronesHomepage = () => {
+  return (
+    <>
+      <DronesHeader2 />
+      <DronesBanner />
+      <EventsHomeTop />
+      {/* <DronesProductsRow2 /> */}
+      <CategoriesHome />
+      {/* <DronesProductsRow3 /> */}
+      <Products />
+      <DronesQuotes />
+      <DronesRecommendedItems />
+      <DronesBrandlogos />
+      <DronesTestimonialSwiper />
+      <DronesServices />
+      <DronesFlags />
+      <EventsHomeBottom />
+      <DronesNewsletter />
+      <DronesFooter />
+    </>
+
+  )
+}
+
+export default DronesHomepage;

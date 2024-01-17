@@ -1,0 +1,664 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  font-family: "Inter", sans-serif;
+}
+
+.breadcrump-product1 {
+  background: var(--Gray-50, #f2f4f5);
+}
+
+.contactpage-breadcramp1 {
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+
+.mobile-image1-one {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: var(--Primary-100, #ede9fe);
+  width: 90%;
+
+  padding: 56px 70px 0px 70px;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobile-image1-one img {
+  height: 100%;
+}
+
+.mobile-text1-two {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.mobile-text1-two h1 {
+  color: var(--Neutral-900, #111827);
+  font-feature-settings: "liga" off;
+  font-family: Inter;
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.mobile-text1-two p {
+  color: var(--Neutral-700, #374151);
+  font-feature-settings: "liga" off;
+  font-family: Inter;
+  font-size: 15px;
+  font-weight: 400;
+  align-self: stretch;
+  width: 90%;
+}
+
+.mobile-text1-two .mobile-get {
+  display: flex;
+  align-items: center;
+}
+
+.mobilespage-row1 {
+  padding: 20px 0px;
+}
+.mobilespage-row2 {
+  padding: 20px 0px;
+}
+.ratedproduct-subparent .ratedproduct-cards {
+  border-radius: 3px;
+  /* border: 1px solid var(--Gray-100, #E4E7E9); */
+  background: var(--Gray-00, #fff);
+  width: 100%;
+  margin: 15px 0px 10px 0px;
+  padding: 5px 0px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  /* box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset; */
+}
+
+.ratedproduct-subparent {
+  padding: 50px 0px;
+}
+
+.ratedproduct-subparent .ratedproduct-images {
+  padding: 0;
+}
+
+.ratedproduct-subparent .ratedproduct-images img {
+  padding: 0;
+}
+
+.ratedproduct-subparent .ratedproduct-titles h5 {
+  color: var(--Gray-900, #191c1f);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  padding: 10px 0px;
+}
+
+.ratedproduct-subparent .ratedproduct-textData h6 {
+  color: var(--Gray-900, #191c1f);
+  font-size: 11px;
+  margin-bottom: 3px;
+  font-family: "Public Sans", sans-serif;
+  font-weight: 400;
+  padding: 7px 5px;
+  margin: 0;
+}
+
+.ratedproduct-subparent .ratedproduct-textData {
+  padding: 0;
+}
+
+.ratedproduct-subparent .ratedproduct-textData p {
+  color: var(--Secondary-500, #2da5f3);
+  margin: 0;
+  /* Body/Small/600 */
+  font-family: Public Sans;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  /* 142.857% */
+}
+
+.ProductTapContent1-subparent .ProductTapContent1-desription1 {
+  display: flex;
+  align-items: center;
+  margin: 16px 0px;
+}
+/* .swiper-slide{
+    height: 100px;
+} */
+.ProductTapContent1-subparent .ProductTapContent1-desription1 p {
+  margin: 0;
+}
+
+.ProductTapContent1-subparent .ProductTapContent1-shipping {
+  display: flex;
+  align-items: center;
+  margin: 15px 0px;
+}
+
+.ProductTapContent1-subparent h4 {
+  color: var(--Gray-900, #191c1f);
+  font-family: Public Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  /* 150% */
+}
+
+.ProductTapContent1-subparent .ProductTapContent1-desription1 p {
+  color: var(--Gray-900, #191c1f);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0;
+}
+
+.ProductTapContent1-subparent .ProductTapContent1-desription1 img {
+  margin: 0px 3px 0px 0px;
+}
+
+.ProductTapContent1-subparent .ProductTapContent1-shipping p {
+  color: var(--Gray-600, #5f6c72);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0;
+}
+
+.ProductTapContent1-subparent .ProductTapContent1-shipping h6 {
+  color: var(--Gray-900, #191c1f);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  margin: 0;
+}
+
+.ProductTapContent1-subparent .ProductTapContent1-free {
+  width: 90%;
+}
+
+.ProductTapContent1-subparent .ProductTapContent1-free p {
+  color: var(--Gray-600, #5f6c72);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: justify;
+}
+
+.ProductTapContent1-subparent .col-md-6 {
+  padding: 0;
+}
+
+.ProductTapContent1-subparent .nav-tabs .nav-link {
+  color: var(--Gray-600, #5f6c72);
+  font-family: Public Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+.laptop-productdetails {
+  padding: 50px 0px 70px 0px;
+}
+
+.laptop-productdetails .laptop-productdetails-rating {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.laptop-productdetails .laptop-productdetails-rating h6 {
+  margin: 0;
+  padding: 0px 5px;
+  color: var(--Gray-900, #191c1f);
+  font-family: Public Sans;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.laptop-productdetails .laptop-productdetails-rating p {
+  margin: 0;
+  padding: 0px 5px;
+  color: var(--Gray-600, #5f6c72);
+  font-family: Public Sans;
+  font-size: 14px;
+  font-weight: 400;
+}
+.laptop-productdetails-rating .product-star {
+  width: 100px;
+}
+.laptop-productdetails-name h5 {
+  color: var(--Gray-900, #191c1f);
+  font-family: Public Sans;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 5px 0px;
+}
+
+.laptop-productdetails .laptop-productdetails-sku {
+  display: flex;
+  align-items: center;
+  padding: 5px 0px;
+}
+
+.laptop-productdetails .laptop-productdetails-sku p {
+  margin: 0;
+}
+
+.laptop-productdetails .laptop-productdetails-sku h6 {
+  margin: 0;
+  padding: 0px 3px;
+  font-family: Public Sans;
+}
+
+.laptop-productdetails .laptop-productdetails-available {
+  display: flex;
+  align-items: center;
+  padding: 5px 0px;
+}
+
+.laptop-productdetails .laptop-productdetails-available h6 {
+  margin: 0;
+  font-family: Public Sans;
+}
+.laptop-productdetails .laptop-productdetails-available p {
+  margin: 0;
+  padding: 3px 5px 0px 5px;
+  color: var(--Success-500, #2db224);
+  font-family: Public Sans;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.laptop-productdetails .laptop-productdetails-brand {
+  padding: 5px 0px;
+}
+
+.laptop-productdetails .laptop-productdetails-price {
+  display: flex;
+  align-items: center;
+  padding: 5px 0px;
+}
+
+.laptop-productdetails .laptop-productdetails-price h5 {
+  color: var(--Secondary-500, #2da5f3);
+  font-family: Public Sans;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.laptop-productdetails .laptop-productdetails-price del {
+  color: var(--Gray-500, #77878f);
+  font-family: Public Sans;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0px 5px;
+}
+
+.laptop-productdetails .laptop-productdetails-price h6 {
+  margin: 0;
+  border-radius: 2px;
+  background: var(--Warning-400, #efd33d);
+  color: var(--Gray-900, #191c1f);
+  font-family: Public Sans;
+  font-size: 14px;
+  padding: 5px 10px;
+  font-weight: 600;
+}
+
+.laptop-productdetails .laptop-productdetails-count {
+  display: flex;
+
+  padding: 10px 16px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 3px;
+  border: 2px solid var(--Gray-100, #e4e7e9);
+  background: var(--Dominant, #fff);
+}
+
+.laptop-productdetails .laptop-productdetails-count p {
+  margin: 0;
+  color: var(--Gray-700, #475156);
+  text-align: center;
+  font-family: Public Sans;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.laptop-productdetails .laptop-productdetails-cart {
+  display: flex;
+  width: 100%;
+  padding: 9px 0px;
+  justify-content: center;
+  align-items: center;
+  /* gap: 12px; */
+  border-radius: 3px;
+  background: var(--Primary-500, #fa8232);
+}
+
+.laptop-productdetails .laptop-productdetails-cart h6 {
+  color: var(--Gray-00, var(--Dominant, #fff));
+  font-family: Public Sans;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.laptop-productdetails .laptop-productdetails-cart .icon {
+  color: var(--Gray-00, var(--Dominant, #fff));
+  width: 30px;
+  height: 30px;
+}
+
+.laptop-productdetails .laptop-productdetails-buy {
+  border-radius: 3px;
+  border: 2px solid var(--Primary-500, #fa8232);
+  display: flex;
+  padding: 10px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  color: var(--Primary-500, #fa8232);
+  font-family: Public Sans;
+  font-size: 16px;
+  font-weight: 700;
+}
+.laptop-productdetails-wish {
+  padding: 25px 0px;
+}
+.laptop-productdetails .laptop-productdetails-wishlist {
+  display: flex;
+  align-items: center;
+}
+.laptop-productdetails-wishlist h6 {
+  color: var(--Gray-700, #475156);
+  font-family: Public Sans;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+}
+.laptop-productdetails-wishlist .icon {
+  width: 26px;
+  height: 26px;
+  margin: 0px 5px;
+}
+.laptop-productdetails-wish .col-md-3 {
+  margin: 0;
+  padding-right: 0;
+}
+.laptop-productdetails-wish .col-md-5 {
+  padding: 0;
+}
+.laptop-productdetails-wish .col-md-4 {
+  padding: 0;
+}
+.laptop-productdetails-checkout {
+  border-radius: 3px;
+  border: 1px solid var(--Gray-100, #e4e7e9);
+  background: var(--Gray-00, #fff);
+  padding: 18px 10px;
+}
+.laptop-productdetails-checkout h6 {
+  color: var(--Gray-900, #191c1f);
+  font-family: Public Sans;
+  font-size: 14px;
+}
+.laptop-slider-product-page .swiper-button-prev:after,
+.swiper-button-next:after {
+  position: relative;
+  left: 0;
+  font-size: 15px;
+  padding: 15px 18px;
+  border-radius: 100%;
+
+  color: white;
+  border-radius: 100px;
+  border: none;
+  background: var(--Primary-500, #fa8232);
+}
+.laptop-productdetails-colours {
+  padding: 10px 0px 30px 0px;
+}
+.laptop-productdetails-colours .dropdown-toggle {
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+  padding: 8px 0px;
+  border-radius: 2px;
+  border: 1px solid var(--Gray-100, #e4e7e9);
+  background: var(--Gray-00, #fff);
+}
+.laptop-productdetails-colours .dropdown-toggle option {
+  color: var(--Gray-700, #475156);
+  font-family: Public Sans;
+  font-size: 14px;
+  font-weight: 400;
+}
+.laptop-slider-product-page .mainImg {
+  width: 85%;
+  height: 400px;
+  padding: 0px 0px 40px 0px;
+}
+.laptop-slider-product-page .mainImg img {
+  width: 85%;
+  width: 100%;
+  object-fit: contain;
+}
+.ProductTapContent1-subparent .tab-content {
+  padding-top: 20px;
+}
+
+/* new */
+
+button.attribute-btn {
+  padding-inline: 6px;
+  padding-block: 3px;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+/* new */
+
+@media only screen and (max-width: 767px) {
+  .laptop-productdetails .swiper-free-mode > .swiper-wrapper {
+    height: 120px;
+    padding: 10px 0px;
+  }
+  .laptop-slider-product-page .mainImg {
+    width: 100%;
+    height: 100%;
+    padding: 0px 0px 10px 0px;
+  }
+  .laptop-productdetails {
+    padding: 30px 0px 50px 0px;
+  }
+  .laptop-productdetails .laptop-productdetails-rating {
+    padding: 20px 0px 10px 0px;
+  }
+  .laptop-productdetails .laptop-productdetails-count {
+    width: 150px;
+  }
+  .laptop-productdetails-name h5 {
+    font-size: 15px;
+  }
+  .laptop-productdetails .laptop-productdetails-sku h6 {
+    font-size: 14px;
+  }
+  .laptop-productdetails .laptop-productdetails-sku p {
+    font-size: 14px;
+  }
+  .laptop-productdetails .laptop-productdetails-available p {
+    font-size: 14px;
+  }
+  .laptop-productdetails .laptop-productdetails-available h6 {
+    font-size: 14px;
+  }
+  .laptop-productdetails .laptop-productdetails-price h5 {
+    font-size: 18px;
+  }
+  .laptop-productdetails .laptop-productdetails-price del {
+    font-size: 18px;
+  }
+  .laptop-productdetails .laptop-productdetails-price h6 {
+    font-size: 16px;
+  }
+  .laptop-productdetails-colours .col-md-6 {
+    padding: 5px 15px;
+  }
+  .laptop-productdetails-count {
+    margin: 20px 0px;
+  }
+  .laptop-productdetails .laptop-productdetails-cart h6 {
+    font-size: 12px;
+  }
+  .laptop-productdetails .laptop-productdetails-buy {
+    font-size: 15px;
+  }
+  .laptop-productdetails-wishlist {
+    padding: 10px 0px;
+    justify-content: center;
+  }
+  .ProductTapContent1-subparent .nav-tabs .nav-link {
+    font-size: 10px;
+    padding: 4px;
+  }
+  .ProductTapContent1-subparent h4 {
+    font-size: 16px;
+    padding: 0px 8px;
+  }
+  .ProductTapContent1-subparent .ProductTapContent1-free p {
+    padding: 0px 10px;
+  }
+  .ProductTapContent1-subparent .ProductTapContent1-free {
+    width: 100%;
+  }
+  .ProductTapContent1-subparent .ProductTapContent1-feature {
+    padding: 0px 0px 0px 20px;
+    width: 100%;
+  }
+  .mobile-image1-one {
+    width: 100%;
+    padding: 30px 50px 0px 50px;
+  }
+  .mobile-text1-two h1 {
+    font-size: 20px;
+    padding: 0px 0px 0px 0px;
+  }
+  .mobile-text1-two p {
+    font-size: 12px;
+    width: 100%;
+    margin: 0px 0px 5px 0px;
+  }
+  .mobile-text1-two .mobile-get h6 {
+    font-size: 14px;
+  }
+  .mobilespage-row2 {
+    display: flex;
+    flex-direction: row;
+  }
+  .mobilespage-row1 {
+    display: flex;
+    /* flex-direction: row; */
+  }
+  .laptop-productdetails-sub .swiper-wrapper {
+    height: 370px;
+  }
+  .laptop-productdetails-wish {
+    padding: 15px 0px;
+  }
+  .laptop-productdetails .laptop-productdetails-countdetails {
+    display: flex;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .laptop-productdetails .laptop-productdetails-rating h6 {
+    font-size: 13px;
+  }
+  .mobilespage-row2 {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .mobile-image1-one {
+    width: 100%;
+    padding: 10px 70px 0px 70px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .ProductTapContent1-subparent .ProductTapContent1-ratingicons {
+    width: 95%;
+    margin: auto;
+  }
+  .laptop-productdetails-name h5 {
+    font-size: 15px;
+  }
+  .laptop-productdetails .laptop-productdetails-sku h6 {
+    font-size: 12px;
+  }
+  .laptop-productdetails .laptop-productdetails-sku p {
+    font-size: 12px;
+  }
+  .laptop-productdetails .laptop-productdetails-available p {
+    font-size: 14px;
+  }
+  .laptop-productdetails .laptop-productdetails-available h6 {
+    font-size: 14px;
+  }
+  .laptop-productdetails .laptop-productdetails-price h5 {
+    font-size: 18px;
+  }
+  .laptop-productdetails .laptop-productdetails-price del {
+    font-size: 18px;
+  }
+  .laptop-productdetails .laptop-productdetails-price h6 {
+    font-size: 16px;
+  }
+  .laptop-productdetails .laptop-productdetails-wishlist {
+    justify-content: center;
+    padding: 8px 0px;
+  }
+  .laptop-productdetails .laptop-productdetails-cart h6 {
+    font-size: 12px;
+  }
+  .laptop-productdetails .laptop-productdetails-buy {
+    font-size: 13px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .laptop-productdetails .laptop-productdetails-buy {
+    font-size: 14px;
+  }
+  .laptop-productdetails-wish .col-6 {
+    padding-right: 0;
+  }
+  .laptop-productdetails-wish .col-12 {
+    padding-right: 0;
+  }
+  .laptop-productdetails-wishlist h6 {
+    font-size: 13px;
+  }
+  .laptop-productdetails-wishlist .icon {
+    padding: 0px 0px;
+    width: 17px;
+    height: 22px;
+  }
+  .laptop-productdetails .laptop-productdetails-countdetails {
+    display: flex;
+    align-items: center;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+}
+@media only screen and (min-width: 1400px) {
+}

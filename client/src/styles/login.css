@@ -1,0 +1,114 @@
+/* singnup page styles starts here */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap");
+
+.SignUpPage-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 620px;
+}
+
+.SignUpPage-parent .row {
+  width: 80%;
+  padding: 20px 10px 20px 10px;
+  margin: auto;
+  height: fit-content;
+}
+
+.SignUppage-image {
+  width: 100%;
+  height: 450px;
+}
+
+.SignUppage-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.SignUpPage-content {
+  font-family: Inter;
+}
+
+.SignUpPage-content .form-label {
+  margin-bottom: 0.5rem;
+  padding: 10px 0px 2px 0px;
+}
+
+.SignUpPage-content h4 {
+  color: #000;
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  padding-bottom: 20px;
+  line-height: 35px;
+}
+
+.SignUpPage-content button {
+  width: 100%;
+  border: none;
+  padding: 10px 0px;
+  color: white;
+  margin-top: 20px;
+  border-radius: 6px;
+  background: var(--Accent, #457eff);
+}
+
+.SignUpPage-content {
+  padding-left: 20px;
+}
+
+/* new */
+.SignUpPage-content input {
+  margin-top: 5px !important ;
+}
+
+.forgetOtp input {
+  height: 4rem;
+  width: 3rem !important;
+  margin-inline: 13px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.forgetOtp {
+  display: flex;
+  justify-content: center;
+}
+/* new */
+
+@media only screen and (max-width: 767px) {
+  .SignUppage-image {
+    width: 100%;
+    height: 350px;
+  }
+
+  .SignUpPage-content {
+    padding-left: 0px;
+  }
+
+  .SignUpPage-parent .row {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .SignUpPage-parent .row {
+    width: 100%;
+  }
+
+  .SignUppage-image {
+    width: 100%;
+    height: 400px;
+  }
+
+  .SignUpPage-content {
+    padding-left: 0px;
+  }
+}
