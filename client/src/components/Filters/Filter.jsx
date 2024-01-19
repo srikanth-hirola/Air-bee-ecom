@@ -622,7 +622,7 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                         </Accordion.Body>
                     </Accordion.Item>
                     <hr />
-                    <Accordion.Item eventKey="4" className="filter-acc-item">
+                    <Accordion.Item eventKey="4" >
                         <Accordion.Header>Attributes</Accordion.Header>
                         <Accordion.Body>
                             <div className="cat-filter-div">
