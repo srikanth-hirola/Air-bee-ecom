@@ -601,10 +601,6 @@ h4 {
   line-height: 1.2;
 }
 
-.product-brand-span {
-  color: blue;
-  border-right: 1px solid black;
-}
 
 .product-brand {
   position: relative;
@@ -913,17 +909,6 @@ button.search-sug:hover {
   height: 100vh;
   overflow-y: scroll;
 }
-
-.filter-acc-item {
-  width: 90% !important;
-  margin-inline: auto;
-  margin-top: 10px;
-}
-
-.filter-acc-item button {
-  width: 100% !important;
-}
-
 .cat-filter-div {
   width: 100% !important;
   /* margin-inline: auto; */
@@ -1797,7 +1782,7 @@ p.sku-p {
 }
 
 .accordion-button:not(.collapsed) {
-  background-color: #fcb800 !important;
+  background-color: white !important;
 }
 
 .order-tracking-p {
@@ -2599,4 +2584,13 @@ input.searchTest {
   .hero-layout7-mq {
     margin-top: 50px;
   }
+}
+
+
+/* New */
+.side-div .accordion-collapse.collapse.show{
+ background-color: #0156FF;
+}
+.side-div .accordion-collapse.collapse.show .accordian-child h5{
+  color: white;
 }

@@ -24,7 +24,7 @@ const DashboardHeader = () => {
           ? styles?.headerColors?.bg?.bgPicker
           : styles?.headerColors?.bg?.bgcolor,
       }}
-      className="w-full h-[80px] shadow sticky top-0 left-0 z-30 flex items-center justify-between px-4"
+      className="w-full h-[80px] shadow sticky top-0 left-0 z-30 flex items-center justify-between px-4 "
     >
       <div>
         <Link to="/dashboard">
@@ -53,7 +53,7 @@ const DashboardHeader = () => {
                   : styles?.fontColor?.fontColor
               }
               size={30}
-              className="mx-5 cursor-pointer"
+              className="mx-4 cursor-pointer"
             />
           </Link>
           <Link
@@ -68,7 +68,7 @@ const DashboardHeader = () => {
                   : styles?.fontColor?.fontColor
               }
               size={30}
-              className="mx-5 cursor-pointer"
+              className="mx-4 cursor-pointer"
             />
           </Link>
           <Link
@@ -83,7 +83,7 @@ const DashboardHeader = () => {
                   : styles?.fontColor?.fontColor
               }
               size={30}
-              className="mx-5 cursor-pointer"
+              className="mx-4 cursor-pointer"
             />
           </Link>
           <Link
@@ -94,7 +94,7 @@ const DashboardHeader = () => {
             <FiPackage
               color={styles?.fontColor}
               size={30}
-              className="mx-5 cursor-pointer"
+              className="mx-4 cursor-pointer"
             />
           </Link>
           <Link
@@ -109,7 +109,7 @@ const DashboardHeader = () => {
                   : styles?.fontColor?.fontColor
               }
               size={30}
-              className="mx-5 cursor-pointer"
+              className="mx-4 cursor-pointer"
             />
           </Link>
           <Link to={`/shop/${seller?._id}`}>
