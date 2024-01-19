@@ -45,7 +45,7 @@ export default function SliderProduct({ mainImg }) {
       >
         {mainImg?.map((item, i) => (
           <SwiperSlide key={i}>
-            <div className='mainImg'>
+            <div className='mainImg1'>
               <img src={item?.url} alt='product' />
             </div>
           </SwiperSlide>

@@ -4,10 +4,10 @@ const AllProductsTotalProductsBar = ({ length }) => {
 
     return (
         <div className='row shoppage-row1'>
-            <div className='col-md-6 col-sm-6 col-6'>
+            <div className='col-md-6 col-sm-10 col-10'>
                 {length} items in Mobile accessory
             </div>
-            <div className="col-md-6 col-sm-6 col-6 icons1-shoppage1">
+            <div className="col-md-6 col-sm-2 col-2 icons1-shoppage1">
                 <div className=''>
                     {/* <DropdownButton id="dropdown-basic-button" title="Features">
                         <Dropdown.Item href="/action-1">Action</Dropdown.Item>

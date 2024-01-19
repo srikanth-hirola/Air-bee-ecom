@@ -1,11 +1,12 @@
 import React from 'react'
 import useFilterHandler from '../../hooks/useFilterHandler'
-
-const FilteredContext = ({ checkedItems, setCheckedItems, data, setFilteredData, selectedBrands, setSelectedBrands, setSelectedPriceRange, setFilteredAttr }) => {
+const FilteredContext = ({ checkedItems, setCheckedItems, data, setFilteredData, selectedBrands, setSelectedBrands, setSelectedPriceRange, setFilteredAttr, toggleDataVisible,isVisibleData }) => {
 
     const { handleClearFilter, removeTag } = useFilterHandler()
+  
 
     return (
+        <div className='d-flex align-items-center'>
         <div className="shoppage1-row2">
             {checkedItems?.map((item, index) => (
                 <div key={index} className="tag">
@@ -18,8 +19,19 @@ const FilteredContext = ({ checkedItems, setCheckedItems, data, setFilteredData,
                     </span>
                 </div>
             ))}
-            <button onClick={(e) => handleClearFilter({ e, data, setFilteredData, setSelectedBrands, setSelectedPriceRange, setFilteredAttr, setCheckedItems })}>clear all icons</button>
+            <button onClick={(e) => handleClearFilter({ e, data, setFilteredData, setSelectedBrands, setSelectedPriceRange, setFilteredAttr, setCheckedItems })}>clear all icons</button>   
+           
+                  
         </div>
+        <div className="mobile-filters">
+        {!isVisibleData && <button onClick={toggleDataVisible} className='mobile-close-flter'>
+                      Open Filter
+                  </button>}
+        </div>
+
+        </div>
+     
+
     )
 }
 
