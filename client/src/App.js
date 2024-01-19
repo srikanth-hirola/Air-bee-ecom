@@ -62,6 +62,25 @@ import ShopOrderDetails from './Pages/Shop/Orders/ShopOrderDetails.jsx';
 import ShopOrderRefundPage from './Pages/Shop/Refunds/ShopOrderRefundPage.jsx';
 import ShopAllProducts from './Pages/Shop/Products/ShopAllProducts.jsx';
 import ShopAllProducts2 from './Pages/Shop/Products/ShopAllProducts2.jsx';
+import ShopAllDraftProducts from './Pages/Shop/Products/ShopAllDraftProducts.jsx';
+import ShopApprovedProducts from './Pages/Shop/Products/ShopApprovedProducts.jsx';
+import ShopRejectedProducts from './Pages/Shop/Products/ShopRejectedProducts.jsx';
+import { ProductsGalleryPage } from './Pages/Shop/Gallery/ProductsGalleryPage.jsx';
+import ShopPendingProducts from './Pages/Shop/Products/ShopPendingProducts.jsx';
+import ShopProductEdit from './Pages/Shop/Products/ShopProductEdit.jsx'
+import ShopDraftProductEdit from './Pages/Shop/Products/ShopProductEdit.jsx';
+import ShopCategories from './Pages/Shop/Categories/ShopCategories.jsx';
+import ShopCreateEvents from './Pages/Shop/Events/ShopCreateEvents.jsx'
+import ShopAllEvents from './Pages/Shop/Events/ShopAllEvents.jsx';
+import { AllDraftEvents } from './Pages/Shop/Events/AllDraftEvents.jsx';
+import { EventEditPage } from './Pages/Shop/Events/EventEditPage.jsx'
+import AddSpecifications from './components/ShopComponents/CreateProduct/Components/AddSpecifications.jsx';
+import ShopAllCoupouns from './Pages/Shop/Coupouns/ShopAllCoupouns.jsx';
+import ShopWithDrawMoneyPage from './Pages/Shop/WithDraw/ShopWithDrawMoneyPage.jsx'
+import { WithDrawHistoryPage } from './Pages/Shop/WithDraw/WithDrawHistoryPage.jsx'
+import { WithDrawRequestsPage } from './Pages/Shop/WithDraw/WithDrawRequestPage.jsx';
+import ShopInboxPage from './Pages/Shop/Inbox/ShopInboxPage.jsx'
+import ShopRequestedProducts from './Pages/Shop/Products/ShopRequestedProducts.jsx';
 
 // register Swiper custom elements
 register();
@@ -311,7 +330,7 @@ const App = () => {
           }
         />
 
-        {/* <Route
+        <Route
           path="/shop/draft-products"
           element={
             <SellerProtectedRoute>
@@ -470,7 +489,7 @@ const App = () => {
               <ShopRequestedProducts />
             </SellerProtectedRoute>
           }
-        /> */}
+        />
         {/* seller */}
       </Routes>
 

@@ -52,11 +52,7 @@ const AllOrders = ({ active }) => {
             headerName: 'Status',
             minWidth: 130,
             flex: 0.7,
-            cellClassName: (params) => {
-                return params.getValue(params.id, 'status') === 'Delivered'
-                    ? 'greenColor'
-                    : 'redColor';
-            },
+
         },
         {
             field: 'itemsQty',
@@ -105,13 +101,13 @@ const AllOrders = ({ active }) => {
                 id: item._id,
                 itemsQty: item.cart.length,
                 total: `${styles?.currency?.Symbol}` + item.totalPrice,
-                status: item.status,
+                status: item?.status,
             });
         });
 
     orders &&
         orders.forEach((item) => {
-            if (item.status === 'Processing') {
+            if (item?.status === 'Processing') {
                 // eslint-disable-next-line array-callback-return
                 const found = item?.sellerCart.filter((val) => { if (val?.sellerID === seller._id) { return val } });
                 row2.push({
@@ -119,7 +115,7 @@ const AllOrders = ({ active }) => {
                     image: found[0]?.products[0]?.selectedColor?.mainImage?.url,
                     itemsQty: item.cart.length,
                     total: `${styles?.currency?.Symbol}` + item.totalPrice,
-                    status: item.status,
+                    status: item?.status,
                 });
             }
         });
@@ -127,28 +123,28 @@ const AllOrders = ({ active }) => {
     orders &&
         orders.forEach((item) => {
             if (
-                item.status === 'Transferred to delivery partner' ||
-                item.status === 'Shipping' ||
-                item.status === 'Received' ||
-                item.status === 'On the way'
+                item?.status === 'Transferred to delivery partner' ||
+                item?.status === 'Shipping' ||
+                item?.status === 'Received' ||
+                item?.status === 'On the way'
             ) {
                 row3.push({
                     id: item._id,
                     itemsQty: item.cart.length,
                     total: `${styles?.currency?.Symbol}` + item.totalPrice,
-                    status: item.status,
+                    status: item?.status,
                 });
             }
         });
 
     orders &&
         orders.forEach((item) => {
-            if (item.status === 'Delivered') {
+            if (item?.status === 'Delivered') {
                 row4.push({
                     id: item._id,
                     itemsQty: item.cart.length,
                     total: `${styles?.currency?.Symbol}` + item.totalPrice,
-                    status: item.status,
+                    status: item?.status,
                 });
             }
         });
@@ -162,7 +158,7 @@ const AllOrders = ({ active }) => {
                         id: item._id,
                         itemsQty: item.cart.length,
                         total: `${styles?.currency?.Symbol}` + item.totalPrice,
-                        status: item.status,
+                        status: item?.status,
                     });
                 }
             })

@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-concat */
 import React, { useEffect } from 'react';
 import { AiOutlineDelete, AiOutlineEye } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
@@ -297,7 +298,7 @@ const RequestedProductsShop = ({ active }) => {
                 row1.push({
                     id: item._id,
                     name: item.name,
-                    price: `${styles?.currency?.Symbol}` `${item.showInputs ? item.colorInputs[0].discountPrice : item.discountPrice}`,
+                    price: `${styles?.currency?.Symbol}` + `${item.showInputs ? item.colorInputs[0].discountPrice : item.discountPrice}`,
                     Stock: item.stock,
                     sold: item?.sold_out,
                     Status: item.approved
@@ -316,7 +317,7 @@ const RequestedProductsShop = ({ active }) => {
                 row2.push({
                     id: item._id,
                     name: item.name,
-                    price: `${styles?.currency?.Symbol} ` `${item.showInputs ? item.colorInputs[0].discountPrice : item.discountPrice}`,
+                    price: `${styles?.currency?.Symbol} ` + `${item.showInputs ? item.colorInputs[0].discountPrice : item.discountPrice}`,
                     Stock: item.stock,
                     sold: item?.sold_out,
                     Status: 'Approved',
@@ -330,7 +331,7 @@ const RequestedProductsShop = ({ active }) => {
                 row3.push({
                     id: item._id,
                     name: item.name,
-                    price: `${styles?.currency?.Symbol} `  `${item.showInputs ? item.colorInputs[0].discountPrice : item.discountPrice}`,
+                    price: `${styles?.currency?.Symbol} ` + `${item.showInputs ? item.colorInputs[0].discountPrice : item.discountPrice}`,
                     Stock: item.stock,
                     // sold: item?.sold_out,
                     Status: 'Rejected',
@@ -348,7 +349,7 @@ const RequestedProductsShop = ({ active }) => {
                 row4.push({
                     id: item._id,
                     name: item.name,
-                    price: `${styles?.currency?.Symbol} `  `${item.showInputs ? item.colorInputs[0].discountPrice : item.discountPrice}`,
+                    price: `${styles?.currency?.Symbol} ` + `${item.showInputs ? item.colorInputs[0].discountPrice : item.discountPrice}`,
                     Stock: item.stock,
                     sold: item?.sold_out,
                     Status: 'Pending',
