@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import CartProductCards from '../components/ProductCards/CartProductCards'
-import CartBill from '../components/cart/CartBill'
 import CartButtons from '../components/cart/CartButtons'
 import CartHeadings from '../components/cart/CartHeadings'
 import CartBredCumbs from '../components/cart/CartBredCumbs'
 import { useDispatch, useSelector } from 'react-redux'
 import { StyleConfig } from '../utils/StyleConfig'
 import { addTocart, removeAllFromCart, removeFromCart } from '../redux/actions/cart'
+import { Link } from 'react-router-dom'
 
 const CartPage = () => {
     const { cart } = useSelector((state) => state.cart);
@@ -22,13 +22,13 @@ const CartPage = () => {
         setCartData(newData)
     };
 
-    // const totalPrice = cart?.reduce((acc, item) => {
-    //     if (item.active) {
-    //         return acc + item.qty * item.selectedColor.eventPrice;
-    //     } else {
-    //         return acc + item.qty * item.selectedColor.discountPrice;
-    //     }
-    // }, 0);
+    const totalPrice = cart?.reduce((acc, item) => {
+        if (item.active) {
+            return acc + item.qty * item.selectedColor.eventPrice;
+        } else {
+            return acc + item.qty * item.selectedColor.discountPrice;
+        }
+    }, 0);
 
     const quantityChangeHandler = (data) => {
 
@@ -51,13 +51,13 @@ const CartPage = () => {
                 <div className="container">
                     <CartBredCumbs />
                     <h2>Shopping Cart</h2>
-                    <div className="col-md-12 col-lg-8">
+                    <div className="col-md-12 col-lg-12">
                         <CartHeadings />
                     </div>
                     {cartData?.length > 0 ?
                         <div className='DronesCart-subparent'>
                             <div className="row">
-                                <div className="col-lg-8">
+                                <div className="col-lg-12">
                                     {cartData?.map((cartItem, i) => (
                                         <React.Fragment key={i}>
                                             <CartProductCards data1={cartItem}
@@ -67,9 +67,21 @@ const CartPage = () => {
                                             <hr />
                                         </React.Fragment>
                                     ))}
+                                    <div className="px-5 mb-3 bg-[#fa8232] rounded">
+                                        {/* checkout buttons */}
+                                        <Link to="/checkout">
+                                            <div
+                                                className={`h-[45px] flex items-center justify-center w-[100%] rounded-[5px]`} style={{ backgroundColor: styles?.mainColor }}
+                                            >
+                                                <h1 className=" text-[18px] mb-0 font-[600] text-white" style={{ color: styles?.fontColor }} >
+                                                    Checkout Now ({styles?.currency?.Symbol} {totalPrice})
+                                                </h1>
+                                            </div>
+                                        </Link>
+                                    </div>
                                     <CartButtons removeFun={removeAllFromCart()} title={"Clear Shopping Cart"} />
                                 </div>
-                                <CartBill />
+                                {/* <CartBill /> */}
                             </div>
 
                         </div>

@@ -35,7 +35,7 @@
 }
 .Checkoutpage-sub1-text-sub1 {
   display: flex;
-  gap: 21px;
+  /* gap: 21px; */
   font-weight: 600;
 }
 .Checkoutpage-sub1-text-sub2 {
@@ -105,7 +105,7 @@ label {
   background: blue;
 }
 .Checkoutpage-content-sub1 {
-  width: 75%;
+  width: 100%;
 }
 
 /* accordion - checkout page */
@@ -131,6 +131,12 @@ label {
   flex-direction: column;
   gap: 15px;
 }
+
+/* new */
+.payment-btn {
+  background-color: red;
+}
+/* new */
 
 /* media queries */
 

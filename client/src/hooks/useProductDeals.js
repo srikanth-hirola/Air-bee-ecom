@@ -1,5 +1,6 @@
 const useProductDeals = () => {
 
+
     const getBestDeals = ({ allProducts, setData }) => {
         const allProductsData = allProducts ? [...allProducts] : [];
 
@@ -42,6 +43,7 @@ const useProductDeals = () => {
         const firstTwenty = sortedProducts && sortedProducts.slice(0, 20);
         setData(firstTwenty);
     }
+
 
     return { getBestDeals, getTopRated }
 }

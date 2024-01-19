@@ -315,7 +315,7 @@ button.search-sug {
 }
 .home-twelve-header-sub .header .menu > ul > li {
   display: inline-block;
-  line-height: 50px;
+  line-height: 30px;
   margin-left: 25px;
 }
 .home-twelve-header-sub .header .menu > ul > li > a {
@@ -1921,6 +1921,9 @@ li {
     .title {
     margin-bottom: 0px;
   }
+  .cat-menu {
+    width: 100%;
+  }
   .home-twelve-header-sub
     .header
     .menu
@@ -1930,6 +1933,7 @@ li {
     > .list-item {
     flex: 0 0 100%;
     padding: 0px;
+    width: 100%;
   }
   .home-twelve-header-sub .header .menu > ul > li .sub-menu > ul > li > a,
   .home-twelve-header-sub

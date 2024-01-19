@@ -8,7 +8,7 @@ export const ContactProduct1 = () => {
                     <div className='row'>
                         <div className='col-md-4 text-center'>
                             <div className='ContactProduct1-image-1'>
-                                <img src="DronesHomepage/checkout3.png" alt="" />
+                                <img src="/DronesHomepage/checkout3.png" alt="pic" />
                             </div>
                             <div className='text1-contact'>
                                 <h6>Product Support</h6>
@@ -17,7 +17,7 @@ export const ContactProduct1 = () => {
                         </div>
                         <div className='col-md-4 text-center'>
                             <div className='ContactProduct1-image-1'>
-                                <img src="DronesHomepage/checkout1.png" alt="" />
+                                <img src="DronesHomepage/checkout1.png" alt="pic" />
                             </div>
                             <div className='text1-contact'>
                                 <h6>Amazing Savings</h6>
@@ -26,7 +26,7 @@ export const ContactProduct1 = () => {
                         </div>
                         <div className='col-md-4 text-center'>
                             <div className='ContactProduct1-image-1'>
-                                <img src="DronesHomepage/checkout2.png" alt="" />
+                                <img src="/DronesHomepage/checkout2.png" alt="pic" />
                             </div>
                             <div className='text1-contact'>
                                 <h6>Personal Account</h6>

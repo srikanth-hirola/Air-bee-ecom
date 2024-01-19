@@ -1,8 +1,21 @@
 import React from 'react'
 
-const CartBill = () => {
+const CartBill = ({
+    handleSubmit,
+    totalPrice,
+    couponRefTotal,
+    shipping,
+    subTotalPrice,
+    couponCode,
+    setCouponCode,
+    discountPercentenge,
+    showCoupan,
+    styles
+}) => {
+
+
     return (
-        <div className="col-lg-4">
+        <div className="col-lg-12">
             <div className='Drones-product-summery'>
                 <div className='col-md-12'>
                     <div className='Drones-product-summery-sub1'>
@@ -18,7 +31,7 @@ const CartBill = () => {
                         <div className="col-md-12">
                             <div className='Drones-Product-subtotal'>
                                 <strong>Subtotal</strong>
-                                <p>$13,644.00</p>
+                                <p>{styles?.currency?.Symbol}&nbsp;{subTotalPrice}</p>
                             </div>
                         </div>
                         <div className="col-md-12">
@@ -27,34 +40,51 @@ const CartBill = () => {
                                     <strong>Shipping</strong><br />
                                     <span>(Standard Rate - Price may vary depending on the item/destination. TECS Staff will contact you.)</span>
                                 </div>
-                                <p>$13.00</p>
+                                <p>{styles?.currency?.Symbol}&nbsp;{shipping?.toFixed(2)}</p>
 
                             </div>
                         </div>
                         <div className="col-md-12">
                             <div className='Drones-Product-tax'>
-                                <strong>Tax</strong>
-                                <p>$1.91</p>
+                                <strong>Discount</strong>
+                                <p>- {discountPercentenge ? `${styles?.currency?.Symbol}` + discountPercentenge.toString() : null}</p>
                             </div>
                         </div>
-                        <div className="col-md-12">
+                        {/* <div className="col-md-12">
                             <div className='Drones-Product-gst'>
                                 <strong>GST (10%) </strong>
                                 <p>$1.91</p>
                             </div>
-                        </div>
+                        </div> */}
                         <div className="col-md-12">
                             <div className='Drones-Product-order-total'>
                                 <strong>Order Total</strong>
-                                <p>$13,644.00</p>
+                                <p>{styles?.currency?.Symbol}&nbsp;{totalPrice}</p>
                             </div>
                         </div>
-                        <div className='col-md-12 DronesCart-addtocart-button'>
-                            <button>Add To Cart</button>
-                        </div>
-                        <div className='col-md-12 DronesCart-checkout-button'>
-                            <button>Check out </button>
-                        </div>
+                        <br />
+                        {showCoupan &&
+                            <form onSubmit={(e) => handleSubmit(e, couponRefTotal)}>
+                                <input
+                                    type="text"
+                                    className={`${styles.input} h-[40px] pl-2`}
+                                    placeholder="Coupoun code"
+                                    value={couponCode}
+                                    onChange={(e) => setCouponCode(e.target.value)}
+                                    required
+                                />
+                                <div className='col-md-12 DronesCart-checkout-button mt-3'>
+                                    <button
+                                        className={`w-full h-[40px] border border-[#f63b60] text-center text-[#f63b60] rounded-[3px] mt-8 cursor-pointer`}
+                                        style={{ color: styles?.mainColor }}
+                                        required
+                                        value=""
+                                        type="submit"
+                                    >Apply code</button>
+                                </div>
+                            </form>}
+
+
                         <div className='col-md-12 Drones-product-summery-end'>
                             <div className='Drones-product-summery-end-image'>
                                 <img src="/DronesHomepage/primary 1.png" alt="" />

@@ -16,9 +16,9 @@ const DronesHeader = () => {
       <div className='DronesHeader-parent bg-light'>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <div className="container-fluid">
-            <Link className="navbar-brand" to="#">
+            <Link className="navbar-brand" to="/">
               <div className='Drones-header-logo'>
-                <img src="/images/logo.svg" alt="" />
+                <img src="/images/logo.svg" alt="logo" />
               </div>
             </Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
