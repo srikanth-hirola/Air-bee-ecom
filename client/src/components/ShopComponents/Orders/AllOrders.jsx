@@ -42,7 +42,7 @@ const AllOrders = ({ active }) => {
                 console.log(params)
                 return (
                     <div>
-                        <img src={params?.row?.image} alt='product' />
+                        <img src={params?.row?.image} alt='product' width={'100px'} height={'100px'}/>
                     </div>
                 );
             },

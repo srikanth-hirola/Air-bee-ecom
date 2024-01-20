@@ -15,7 +15,7 @@ const Images = ({
     return (
         <>
             <div>
-                <label className="pb-2">
+                <label className="pb-2 font-[500]">
                     Main Image <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -70,7 +70,7 @@ const Images = ({
                 <br />
             </div>
             <div>
-                <label className="pb-2">
+                <label className="pb-2 font-[500]">
                     Upload Multiple Images <span className="text-red-500">*</span>
                 </label>
                 <input

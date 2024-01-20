@@ -17,7 +17,7 @@ const Description = ({
     return (
         <>
             <div>
-                <label className="pb-2">
+                <label className="pb-2 font-[500]">
                     Description <span className="text-red-500">*</span>
                 </label>
                 <textarea
@@ -34,7 +34,7 @@ const Description = ({
             </div>
             <br />
             <div>
-                <label className="pb-2">
+                <label className="pb-2 font-[500]">
                     Bullet points<span className="text-red-500">*</span> <span className='text-gray-500 text-[13px]'>(heading is optional)</span>
                 </label>
                 <AddSpecifications
@@ -44,7 +44,7 @@ const Description = ({
             </div>
             <br />
             <div>
-                <label className="pb-2">
+                <label className="pb-2 font-[500]">
                     Specifications<span className="text-red-500">*</span> <span className='text-gray-500 text-[13px]'>(heading is optional)</span>
                 </label>
                 <AddSpecification2
@@ -54,7 +54,7 @@ const Description = ({
             </div>
             <br />
             <div>
-                <label className="pb-2">
+                <label className="pb-2 font-[500]">
                     Product Description
                 </label>
                 <ProductDescription productDetails={productDetails}

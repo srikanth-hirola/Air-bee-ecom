@@ -60,12 +60,12 @@ const CategoryPage = () => {
                                     <CustomizeCategory categoriesData={categoriesData} />
                                 )}
                             </div>
-                            <div className='flex justify-between py-4'>
-                                {!addNewCat && <button onClick={handleAddCategory} className="rounded px-4 py-2" style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor }}>
+                            <div className='flex justify-between py-4 hover-catagoriesbuttons'>
+                                {!addNewCat && <button onClick={handleAddCategory} className="rounded px-4 py-2 bg-blue-600 text-light" style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor }}>
                                     Request New Category
                                 </button>}
                                 {!customizeCat &&
-                                    <button className="rounded px-4 py-2" style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor }} onClick={handleCustomizeState}>
+                                    <button className="rounded px-4 py-2 bg-blue-600 text-light" style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor }} onClick={handleCustomizeState}>
                                         Customize Existing Category
                                     </button>}
                             </div>

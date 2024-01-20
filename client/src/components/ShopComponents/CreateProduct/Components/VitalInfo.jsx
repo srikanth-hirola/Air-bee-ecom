@@ -4,7 +4,7 @@ const VitalInfo = ({ formData, handleFormDataChange, setFormData }) => {
     return (
         <>
             <div>
-                <label className="pb-2">
+                <label className="pb-2 font-[500]">
                     model <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -18,7 +18,7 @@ const VitalInfo = ({ formData, handleFormDataChange, setFormData }) => {
             </div>
             <br />
             <div>
-                <label className="pb-2">No of items in the box <span className="text-red-500">*</span> </label>
+                <label className="pb-2 font-[500]">No of items in the box <span className="text-red-500">*</span> </label>
                 <input
                     type="number"
                     name="noItem"
@@ -30,7 +30,7 @@ const VitalInfo = ({ formData, handleFormDataChange, setFormData }) => {
             </div>
             <br />
             <div>
-                <label className="pb-2">What is in the box? <span className="text-red-500">*</span> </label>
+                <label className="pb-2 font-[500]">What is in the box? <span className="text-red-500">*</span> </label>
                 <input
                     type="text"
                     name="itemname"
@@ -43,7 +43,7 @@ const VitalInfo = ({ formData, handleFormDataChange, setFormData }) => {
             <br />
             {(!formData.showInputs && !formData.attributeStock) && (
                 <div>
-                    <label className="pb-2">
+                    <label className="pb-2 font-[500]">
                         Stock <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -58,7 +58,7 @@ const VitalInfo = ({ formData, handleFormDataChange, setFormData }) => {
             )}
             <br />
             <div>
-                <label className="pb-2">
+                <label className="pb-2 font-[500]">
                     COD Available ? <span className="text-red-500">*</span>
                 </label>
                 <div className="d-flex ">
@@ -72,7 +72,7 @@ const VitalInfo = ({ formData, handleFormDataChange, setFormData }) => {
                             }}
                             checked={formData.codAvailable && true}
                         />
-                        <label className="pb-2">Yes</label>
+                        <label className="pb-2 font-[500]">Yes</label>
                     </div>
                     <div>
                         <input
@@ -84,13 +84,13 @@ const VitalInfo = ({ formData, handleFormDataChange, setFormData }) => {
                             }}
                             checked={!formData.codAvailable && true}
                         />
-                        <label className="pb-2">No</label>
+                        <label className="pb-2 font-[500]">No</label>
                     </div>
                 </div>
             </div>
             <br />
             <div>
-                <label className="pb-2">
+                <label className="pb-2 font-[500]">
                     Refund Available ? <span className="text-red-500">*</span>
                 </label>
                 <div className="d-flex ">
@@ -104,7 +104,7 @@ const VitalInfo = ({ formData, handleFormDataChange, setFormData }) => {
                             }}
                             checked={formData.refundAvailable && true}
                         />
-                        <label className="pb-2">Yes</label>
+                        <label className="pb-2 font-[500]">Yes</label>
                     </div>
                     <div>
                         <input
@@ -116,18 +116,18 @@ const VitalInfo = ({ formData, handleFormDataChange, setFormData }) => {
                             }}
                             checked={!formData.refundAvailable && true}
                         />
-                        <label className="pb-2">No</label>
+                        <label className="pb-2 font-[500]">No</label>
                     </div>
                 </div>
             </div>
             <br />
             <div>
-                <label className="pb-2">
-                    <b>Item Dimensions L X W X H</b>
+                <label className="pb-2 font-[500]">
+                    <b className='font-[500]'>Item Dimensions L X W X H</b>
                     <span>
                         {formData.showInputs && (
                             <div>
-                                <label className="pb-2">Applies for all Varients</label>
+                                <label className="pb-2 font-[500]">Applies for all Varients</label>
                                 <input
                                     className='mx-2'
                                     type="checkbox"
@@ -143,7 +143,7 @@ const VitalInfo = ({ formData, handleFormDataChange, setFormData }) => {
                     </span>
                 </label>
                 <div>
-                    <label className="mt-2">Item length head to toe <span className="text-gray-500 text-[13px]">(in cm)</span> </label>
+                    <label className="mt-2 font-[500]">Item length head to toe <span className="text-gray-500 text-[13px]">(in cm)</span> </label>
                     <br />
                     <input
                         type="number"
@@ -164,7 +164,7 @@ const VitalInfo = ({ formData, handleFormDataChange, setFormData }) => {
           </select> */}
                 </div>
                 <div>
-                    <label className="mt-2">Item width side to side <span className="text-gray-500 text-[13px]">(in cm)</span> </label>
+                    <label className="mt-2 font-[500]">Item width side to side <span className="text-gray-500 text-[13px]">(in cm)</span> </label>
                     <br />
                     <input
                         type="number"
@@ -185,7 +185,7 @@ const VitalInfo = ({ formData, handleFormDataChange, setFormData }) => {
           </select> */}
                 </div>
                 <div>
-                    <label className="mt-2">Item Height floor to top <span className="text-gray-500 text-[13px]">(in cm)</span> </label>
+                    <label className="mt-2 font-[500]">Item Height floor to top <span className="text-gray-500 text-[13px]">(in cm)</span> </label>
                     <br />
                     <input
                         type="number"
@@ -207,11 +207,11 @@ const VitalInfo = ({ formData, handleFormDataChange, setFormData }) => {
                 </div>
             </div>
             <div>
-                <label className="mt-2">
+                <label className="mt-2 font-[500]">
                     Item Weight <span className="text-red-500">*</span><span className="text-gray-500 text-[13px]">(in kg)</span>
                     {formData.showInputs && (
                         <div>
-                            <label className="pb-2">Applies for all Varients </label>
+                            <label className="pb-2 font-[500]">Applies for all Varients </label>
                             <input
                                 className='mx-2'
                                 type="checkbox"
@@ -232,7 +232,7 @@ const VitalInfo = ({ formData, handleFormDataChange, setFormData }) => {
                     type="number"
                     name="itemWeight"
                     value={formData.itemWeight}
-                    className="w-half mt-2 mr-2 border pl-2 h-[35px] rounded-[5px]"
+                    className="w-half   mr-2 border pl-2 h-[35px] rounded-[5px]"
                     onChange={handleFormDataChange}
                 />
                 {/* <select
@@ -248,7 +248,7 @@ const VitalInfo = ({ formData, handleFormDataChange, setFormData }) => {
             </div>
             <br />
             <div>
-                <label className="pb-2">
+                <label className="pb-2 font-[500]">
                     Is Assembly required ?
                 </label>
                 <input
@@ -267,7 +267,7 @@ const VitalInfo = ({ formData, handleFormDataChange, setFormData }) => {
             {formData.assemblyReq && (
                 <>
                     <div>
-                        <label className="pb-2">
+                        <label className="pb-2 font-[500]">
                             Number Of Pieces <span className="text-red-500">*</span>
                         </label>
                         <input
@@ -280,7 +280,7 @@ const VitalInfo = ({ formData, handleFormDataChange, setFormData }) => {
                     </div>
                     <br />
                     <div>
-                        <label className="pb-2">
+                        <label className="pb-2 font-[500]">
                             Included Components<span className="text-red-500">*</span>
                         </label>
                         <input
@@ -293,7 +293,7 @@ const VitalInfo = ({ formData, handleFormDataChange, setFormData }) => {
                     </div>
                     <br />
                     <div>
-                        <label className="pb-2">
+                        <label className="pb-2 font-[500]">
                             Assembly Instructions<span className="text-red-500">*</span>
                         </label>
                         <input
@@ -310,7 +310,7 @@ const VitalInfo = ({ formData, handleFormDataChange, setFormData }) => {
             {!formData.showInputs && (
                 <>
                     <div>
-                        <label className="pb-2">
+                        <label className="pb-2 font-[500]">
                             Size<span className="text-red-500">*</span>
                         </label>
                         <input
@@ -324,7 +324,7 @@ const VitalInfo = ({ formData, handleFormDataChange, setFormData }) => {
                     </div>
                     <br />
                     <div>
-                        <label className="pb-2">
+                        <label className="pb-2 font-[500]">
                             Color<span className="text-red-500">*</span>
                         </label>
                         <input
@@ -339,11 +339,11 @@ const VitalInfo = ({ formData, handleFormDataChange, setFormData }) => {
                 </>
             )}
             <div>
-                <label className="pb-2">
+                <label className="pb-2 font-[500]">
                     Material Type<span className="text-red-500">*</span>
                     {formData.showInputs && (
                         <div>
-                            <label className="pb-2">Applies for all Varients</label>
+                            <label className="pb-2 font-[500]">Applies for all Varients</label>
                             <input
                                 className='mx-2'
                                 type="checkbox"
@@ -368,7 +368,7 @@ const VitalInfo = ({ formData, handleFormDataChange, setFormData }) => {
             </div>
             <br />
             <div>
-                <label className="pb-2">
+                <label className="pb-2 font-[500]">
                     Manufacturer<span className="text-red-500">*</span>
                 </label>
                 <input

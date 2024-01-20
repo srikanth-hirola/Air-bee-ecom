@@ -246,7 +246,7 @@ const DraftKeywords = ({ searchTerms, setSearchTerms, formData, colorInputs }) =
     return (
         <>
             <div>
-                <label className="pb-2">
+                <label className="pb-2 font-[500]">
                     Search Terms <span className="text-red-500">*</span>
                 </label>
                 <div className="d-flex">
