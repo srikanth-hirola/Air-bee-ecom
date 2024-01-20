@@ -1,3 +1,5 @@
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
 
@@ -43,7 +45,7 @@ const Images = ({
                                 }}
                                 className="images-delete-btn"
                             >
-                                <i class="fa-solid fa-trash"></i>
+                                <FontAwesomeIcon icon={faTrash} style={{ color: 'red' }} />
                             </button>
                         </div>
                     )}
@@ -101,7 +103,7 @@ const Images = ({
                                     }}
                                     className="images-delete-btn"
                                 >
-                                    <i class="fa-solid fa-trash"></i>
+                                    <FontAwesomeIcon icon={faTrash} style={{ color: 'red' }} />
                                 </button>
                             </div>
                         ))}

@@ -105,10 +105,10 @@ const CustomizeCategory = ({ categoriesData }) => {
                 .then((result) => {
                     setBtnLoading(false)
                     if (result.data.Status === 'Success') {
-                        toast.success('Category Customize Successfully');
-                        setTimeout(() => {
-                            window.location.reload();
-                        }, 3000);
+                        toast.success('Category Customized Successfully');
+                        // setTimeout(() => {
+                        //     window.location.reload();
+                        // }, 3000);
                     }
                 })
                 .catch((error) => {

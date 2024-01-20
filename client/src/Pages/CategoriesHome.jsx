@@ -22,14 +22,17 @@ const CategoriesHome = () => {
             {styles && styles[name]?.displayAllCategories ?
                 <>
                     {category?.map((data, i) => (
-                        <CategoriesWithProducts CatName={data?.name} key={i} />
+                        <React.Fragment key={i}>
+                            <CategoriesWithProducts CatName={data?.name} key={i} />
+                        </React.Fragment>
                     ))}
                 </>
                 :
                 <>
-                    {category?.map((data, i) => (<>
-                        {selectedCategories?.includes(data?.name) && <CategoriesWithProducts CatName={data?.name} key={i} />}
-                    </>
+                    {category?.map((data, i) => (
+                        <React.Fragment key={i}>
+                            {selectedCategories?.includes(data?.name) && <CategoriesWithProducts CatName={data?.name} key={i} />}
+                        </React.Fragment>
                     ))}
                 </>
             }

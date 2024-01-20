@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { StyleConfig } from '../utils/StyleConfig'
 import { addTocart, removeAllFromCart, removeFromCart } from '../redux/actions/cart'
 import { Link } from 'react-router-dom'
+import DronesHeader from '../components/Headers/DronesHeader'
 
 const CartPage = () => {
     const { cart } = useSelector((state) => state.cart);
@@ -47,6 +48,7 @@ const CartPage = () => {
 
     return (
         <>
+            <DronesHeader />
             <div className='DronesCart-parent'>
                 <div className="container">
                     <CartBredCumbs />

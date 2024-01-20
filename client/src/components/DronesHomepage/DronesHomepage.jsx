@@ -20,9 +20,11 @@ import Products from '../Products/Products';
 import EventsHomeTop from '../../Pages/EventsHomeTop';
 import EventsHomeBottom from '../../Pages/EventsHomeBottom';
 import DronesHeader2 from '../Headers/DronesHeader2';
+import DronesHeader from '../Headers/DronesHeader';
 const DronesHomepage = () => {
   return (
     <>
+      <DronesHeader />
       <DronesHeader2 />
       <DronesBanner />
       <EventsHomeTop />

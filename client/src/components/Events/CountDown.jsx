@@ -37,7 +37,7 @@ const CountDown = ({ data }) => {
         return timeLeft;
     }
 
-    const timerComponents = Object.keys(timeLeft).map((interval) => {
+    const timerComponents = Object.keys(timeLeft).map((interval, i) => {
         if (!timeLeft[interval]) {
             return null;
         }
@@ -46,7 +46,7 @@ const CountDown = ({ data }) => {
             // <span className="text-[25px] text-[#475ad2]">
             //     {timeLeft[interval]} {interval}{" "}
             // </span>
-            <div className="col-3">
+            <div className="col-3" key={i}>
                 <div className='DronesProductsRow1-sub1-timer-sub'>
                     <h5>{timeLeft[interval]}</h5>
                     <p>{interval}</p>

@@ -1,0 +1,649 @@
+/* profile page stylings starts here */
+a {
+  color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+  text-decoration: none;
+}
+.ContactDetails-parent {
+  width: 90%;
+  margin: auto;
+  padding: 20px 0px;
+}
+.ContactDetails-sub1 {
+  display: flex;
+  gap: 20px;
+}
+.ContactDetails-sub2-list-content {
+  display: flex;
+  gap: 20px;
+  padding: 10px 10px 0px 5px;
+}
+.ContactDetails-main-content {
+  padding-top: 20px;
+}
+.ContactDetails-sub3-headings h3 {
+  padding-bottom: 5px;
+}
+.ContactDetails-sub3-headings h5 {
+  padding-bottom: 10px;
+}
+.ContactDetails-sub2-list-content-image {
+  height: 22px;
+  width: 22px;
+}
+.ContactDetails-sub2-list-content-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.ContactDetails-sub2-list-content p {
+  font-weight: 600;
+  color: #807d7e;
+}
+.ContactDetails-sub2-list-content:hover {
+  background: #f6f6f6;
+  cursor: pointer;
+}
+.ContactDetails-sub1-text {
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+}
+.ContactDetails-sub1 hr {
+  margin-top: 5px;
+}
+.ContactDetails-sub1-text .form-control {
+  border: none;
+  outline: none;
+  padding-left: 0;
+}
+.ContactDetails-sub1-text button {
+  border: none;
+  padding: 7px 16px;
+  border-radius: 7px;
+  font-weight: 500;
+  background: #f6f6f6;
+}
+.ContactDetails-Address-details-sub {
+  border-radius: 12px;
+  background: #f6f6f6;
+  padding: 20px 25px;
+  margin-top: 20px;
+}
+.ContactDetails-Address-details-sub p {
+  padding: 12px 0px 5px 0px;
+}
+.ContactDetails-Address-details-sub-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.ContactDetails-Address-details-sub-buttons1,
+.ContactDetails-Address-details-sub-buttons2 {
+  padding: 5px 15px;
+  border-radius: 8px;
+  border: 1px solid #807d7e;
+}
+.ContactDetails-Address-details-sub-footer {
+  display: flex;
+  gap: 5px;
+  padding-top: 10px;
+}
+.ContactDetails-Address-details-sub-footer button {
+  border: none;
+  background: transparent;
+}
+.ContactDetails-Address-details-sub-footer-button1 {
+  border-right: 1px solid #807d7e;
+}
+.Profile-Address-details-sub-footer button {
+  font-weight: 500;
+}
+.Profile-Address-details-sub span {
+  color: #807d7e;
+}
+/* media queries for profile page */
+@media only screen and (max-width: 767px) {
+  .ContactDetails-sub1 {
+    justify-content: center;
+  }
+  .ContactDetails-sub3 {
+    padding: 20px 0px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .ContactDetails-sub3 {
+    padding: 20px 0px;
+  }
+}
+
+/* Orders page stylings starts here */
+a {
+  color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+  text-decoration: none !important;
+}
+.Orderspage-parent {
+  width: 90%;
+  margin: auto;
+  padding: 20px 0px;
+}
+
+.Orderspage-sub1 {
+  display: flex;
+  gap: 20px;
+}
+
+.Orderspage-sub2-list-content {
+  display: flex;
+  gap: 20px;
+  padding: 10px 10px 0px 5px;
+}
+
+.Orderspage-main-content {
+  padding-top: 20px;
+}
+
+.Orderspage-sub3-headings h3 {
+  padding-bottom: 5px;
+}
+
+.Orderspage-sub3-headings h5 {
+  padding-bottom: 10px;
+}
+
+.Orderspage-sub2-list-content-image {
+  height: 22px;
+  width: 22px;
+}
+
+.Orderspage-sub2-list-content-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.Orderspage-sub2-list-content p {
+  font-weight: 600;
+  color: #807d7e;
+}
+
+.Orderspage-sub2-list-content:hover {
+  background: #f6f6f6;
+  cursor: pointer;
+}
+
+.Orderspage-parent span {
+  color: #9c9b9c;
+}
+
+/* orders page -tabs stylings starts here */
+
+.Orderspage-tabs-active-parent {
+  display: flex;
+  justify-content: space-between;
+}
+.Orderspage-product-image {
+  height: 100px;
+  width: 100px;
+}
+.Orderspage-product-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.Orderspage-product-image-parent {
+  display: flex;
+  gap: 20px;
+}
+.Orderspage-ordered-item-parent {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 25px;
+}
+.Orderspage-product-text p {
+  margin: 0;
+}
+.Orderspage-tabs-active-parent {
+  border-radius: 8px;
+  background: #f6f6f6;
+  padding: 20px 15px;
+  margin-bottom: 25px;
+}
+.Orderspage-product-button button {
+  border-radius: 6px;
+  background: var(--primary, #0d6efd);
+  border: none;
+  color: white;
+  padding: 8px 16px;
+}
+.OrderspageTabs-parent ul.mb-3.nav.nav-tabs {
+  display: flex;
+  justify-content: space-between;
+}
+.OrderspageTabs-parent button#controlled-tab-example-tab-Active,
+.OrderspageTabs-parent button#controlled-tab-example-tab-Cancelled,
+.OrderspageTabs-parent button#controlled-tab-example-tab-Completed {
+  width: 100%;
+}
+.OrderspageTabs-parent li.nav-item {
+  width: 20%;
+}
+.OrderspageTabs-parent > h3 {
+  padding-bottom: 15px;
+}
+.Orderspage-parent span {
+  color: #9c9b9c;
+}
+.OrderDetails-paymentStatus p {
+  font-weight: 700;
+}
+.OrderDetails-paymentStatus span {
+  font-weight: 400;
+}
+
+/* Media queries for Orders page -Tabs */
+
+@media only screen and (max-width: 767px) {
+  .OrderspageTabs-parent ul.mb-3.nav.nav-tabs {
+    display: flex;
+    gap: 5px;
+  }
+  .Orderspage-tabs-active-parent {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    gap: 20px;
+  }
+  .Orderspage-ordered-item-parent {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-bottom: 20px;
+  }
+  .OrderspageTabs-parent li.nav-item {
+    width: 100%;
+  }
+  .OrderspageTabs-parent {
+    padding-top: 25px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .Profilepage-sub2 {
+    padding-bottom: 25px;
+  }
+}
+
+/* order-details component single Product details */
+
+.OrderDetails-parent {
+  width: 90%;
+  margin: auto;
+  padding: 30px 0px;
+}
+.OrderDetails-Shipping-details {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  align-items: center;
+  padding: 15px 0px;
+}
+.OrderDetails-Shipping-details p {
+  margin: 0;
+}
+.OrderDetails-additional-info .row {
+  align-items: center;
+  padding: 30px 0px;
+}
+.OrderDetails-delivery-address h6 {
+  padding-bottom: 20px;
+}
+.OrderDetails-delivery-address-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+.OrderDetails-delivery-address-buttons button {
+  border: none;
+  background: black;
+  color: white;
+  padding: 7px 18px;
+  border-radius: 8px;
+}
+
+/* media queries for Order-details page */
+
+@media only screen and (max-width: 767px) {
+  .OrderDetails-Shipping-details {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .OrderDetails-delivery-address {
+    padding-bottom: 25px;
+  }
+  .Orderspage-product-button {
+    padding: 10px 0px 20px 0px;
+  }
+}
+
+/* profile page stylings starts here */
+a {
+  color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+  text-decoration: none !important;
+}
+.Profilepage-parent {
+  width: 90%;
+  margin: auto;
+  padding: 20px 0px;
+}
+.Profilepage-sub1 {
+  display: flex;
+  gap: 20px;
+}
+.Profilepage-sub2-list-content {
+  display: flex;
+  gap: 20px;
+  padding: 10px 10px 0px 5px;
+}
+.Profilepage-main-content {
+  padding-top: 20px;
+}
+.Profilepage-sub3-headings h3 {
+  padding-bottom: 5px;
+}
+.Profilepage-sub3-headings h5 {
+  padding-bottom: 10px;
+}
+.Profilepage-sub2-list-content-image {
+  height: 22px;
+  width: 22px;
+}
+.Profilepage-sub2-list-content-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.Profilepage-sub2-list-content p {
+  font-weight: 600;
+  color: #807d7e;
+}
+.Profilepage-sub2-list-content:hover {
+  background: #f6f6f6;
+  cursor: pointer;
+}
+.Profile-details-sub1-text {
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+}
+.Profile-details-sub1 hr {
+  margin-top: 5px;
+}
+.Profile-details-sub1-text .form-control {
+  border: none;
+  outline: none;
+  padding-left: 0;
+}
+
+.Profile-Address-details-sub {
+  border-radius: 12px;
+  background: #f6f6f6;
+  padding: 20px 25px;
+  margin-top: 20px;
+}
+.Profile-Address-details-sub p {
+  padding: 12px 0px 5px 0px;
+}
+.Profile-Address-details-sub-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.Profile-Address-details-sub-buttons1,
+.Profile-Address-details-sub-buttons2 {
+  padding: 5px 15px;
+  border-radius: 8px;
+  border: 1px solid #807d7e;
+}
+.Profile-Address-details-sub-footer {
+  display: flex;
+  gap: 5px;
+  padding-top: 10px;
+}
+.Profile-Address-details-sub-footer button {
+  border: none;
+  background: transparent;
+}
+.Profile-Address-details-sub-footer-button1 {
+  border-right: 1px solid #807d7e;
+}
+.ContactDetails-Address-details-sub-footer button {
+  font-weight: 500;
+}
+.ContactDetails-parent span {
+  color: #9c9b9c;
+}
+/* media queries for profile page */
+@media only screen and (max-width: 767px) {
+  .Profilepage-sub1 {
+    justify-content: center;
+  }
+  .Profilepage-sub3 {
+    padding: 20px 0px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .Profilepage-sub3 {
+    padding: 20px 0px;
+  }
+}
+
+/* RefundPage stylings starts here */
+a {
+  color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+  text-decoration: none !important;
+}
+.RefundPage-parent {
+  width: 90%;
+  margin: auto;
+  padding: 20px 0px;
+}
+
+.RefundPage-sub1 {
+  display: flex;
+  gap: 20px;
+}
+
+.RefundPage-sub2-list-content {
+  display: flex;
+  gap: 20px;
+  padding: 10px 10px 0px 5px;
+}
+
+.RefundPage-main-content {
+  padding-top: 20px;
+}
+
+.RefundPage-sub3-headings h3 {
+  padding-bottom: 5px;
+}
+
+.RefundPage-sub3-headings h5 {
+  padding-bottom: 10px;
+}
+
+.RefundPage-sub2-list-content-image {
+  height: 22px;
+  width: 22px;
+}
+
+.RefundPage-sub2-list-content-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.RefundPage-sub2-list-content p {
+  font-weight: 600;
+  color: #807d7e;
+}
+
+.RefundPage-sub2-list-content:hover {
+  background: #f6f6f6;
+  cursor: pointer;
+}
+
+.RefundPage-parent span {
+  color: #9c9b9c;
+}
+
+/* RefundTabs  stylings starts here */
+
+.RefundTabs-active-parent {
+  display: flex;
+  justify-content: space-between;
+}
+.RefundTabs-product-image {
+  height: 100px;
+  width: 100px;
+}
+.RefundTabs-product-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.RefundTabs-product-image-parent {
+  display: flex;
+  gap: 20px;
+}
+.RefundTabs-ordered-item-parent {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 25px;
+}
+.RefundTabs-product-text p {
+  margin: 0;
+}
+.RefundTabs-active-parent {
+  border-radius: 8px;
+  background: #f6f6f6;
+  padding: 20px 15px;
+  margin-bottom: 25px;
+}
+.RefundTabs-product-button button {
+  border-radius: 6px;
+  background: var(--primary, #0d6efd);
+  border: none;
+  color: white;
+  padding: 8px 16px;
+}
+.RefundTabs-parent ul.mb-3.nav.nav-tabs {
+  display: flex;
+  justify-content: space-between;
+}
+.RefundTabs-parent button#controlled-tab-example-tab-Active,
+.OrderspageTabs-parent button#controlled-tab-example-tab-Cancelled,
+.OrderspageTabs-parent button#controlled-tab-example-tab-Completed {
+  width: 100%;
+}
+.RefundTabs-parent li.nav-item {
+  width: 20%;
+}
+.RefundTabs-parent > h3 {
+  padding-bottom: 15px;
+}
+.RefundTabs-parent span {
+  color: #9c9b9c;
+}
+.RefundTabs-paymentStatus p {
+  font-weight: 700;
+}
+.RefundTabs-paymentStatus span {
+  font-weight: 400;
+}
+
+/* Media queries for Orders page -Tabs */
+
+@media only screen and (max-width: 767px) {
+  .RefundTabs-parent ul.mb-3.nav.nav-tabs {
+    display: flex;
+    gap: 5px;
+  }
+  .RefundTabs-active-parent {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    gap: 20px;
+  }
+  .RefundTabs-ordered-item-parent {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-bottom: 20px;
+  }
+  .RefundTabs-parent li.nav-item {
+    width: 100%;
+  }
+  .RefundTabs-parent {
+    padding-top: 25px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .RefundTabs-sub2 {
+    padding-bottom: 25px;
+  }
+}
+
+/* order-details component single Product details */
+
+.RefundStatus-parent {
+  width: 90%;
+  margin: auto;
+  padding: 30px 0px;
+}
+.RefundStatus-Shipping-details {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  align-items: center;
+  padding: 15px 0px;
+}
+.RefundStatus-Shipping-details p {
+  margin: 0;
+}
+.RefundStatus-additional-info .row {
+  align-items: center;
+  padding: 30px 0px;
+}
+.RefundStatus-delivery-address h6 {
+  padding-bottom: 20px;
+}
+.RefundStatus-delivery-address-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+.RefundStatus-delivery-address-buttons button {
+  border: none;
+  background: black;
+  color: white;
+  padding: 7px 18px;
+  border-radius: 8px;
+}
+
+/* media queries for Order-details page */
+
+@media only screen and (max-width: 767px) {
+  .RefundStatus-Shipping-details {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .RefundStatus-delivery-address {
+    padding-bottom: 25px;
+  }
+  .RefundStatus-product-button {
+    padding: 10px 0px 20px 0px;
+  }
+}

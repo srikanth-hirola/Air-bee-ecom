@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import CheckoutBredCrumbs from '../components/Checkout/CheckoutBredCrumbs';
 import CheckoutSteps from '../components/Checkout/CheckoutSteps';
 import CheckoutAddress from '../components/Checkout/CheckoutAddress';
+import DronesHeader from '../components/Headers/DronesHeader';
 
 
 const CheckoutPage = () => {
@@ -10,6 +11,7 @@ const CheckoutPage = () => {
 
     return (
         <>
+            <DronesHeader />
             <div className='Checkoutpage-parent'>
                 <div CheckoutStepsclassName="Checkoutpage-sub1">
                     <div className="container">

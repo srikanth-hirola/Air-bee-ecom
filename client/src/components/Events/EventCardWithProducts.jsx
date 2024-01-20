@@ -48,7 +48,7 @@ const EventCardWithProducts = ({ data1 }) => {
                             <div className="row">
                                 {data?.length > 0 ?
                                     data?.slice(0, 4)?.map((item, i) => (
-                                        <div className=" col-sm-6 col-md-3">
+                                        <div className=" col-sm-6 col-md-3" key={i}>
                                             <EventCardHome data1={item} />
                                         </div>
                                     ))

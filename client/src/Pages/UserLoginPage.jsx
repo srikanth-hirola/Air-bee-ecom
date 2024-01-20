@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import Login from '../components/User/Login'
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import DronesHeader from '../components/Headers/DronesHeader';
 
 const UserLoginPage = () => {
 
@@ -16,21 +17,24 @@ const UserLoginPage = () => {
 
 
     return (
-        <div className='SignUpPage-parent'>
-            <div className="container">
-                <div className="row shadow-lg">
-                    <div className="col-md-6">
-                        <div className="SignUppage-image">
-                            <img src="DronesHomePage/signup.jpg" alt="pic" />
+        <>
+            <DronesHeader />
+            <div className='SignUpPage-parent'>
+                <div className="container">
+                    <div className="row shadow-lg">
+                        <div className="col-md-6">
+                            <div className="SignUppage-image">
+                                <img src="DronesHomePage/signup.jpg" alt="pic" />
+                            </div>
+                        </div>
+                        <div className='col-md-6'>
+                            <Login />
                         </div>
                     </div>
-                    <div className='col-md-6'>
-                        <Login />
-                    </div>
                 </div>
-            </div>
 
-        </div>
+            </div>
+        </>
 
     )
 }

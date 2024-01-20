@@ -1,0 +1,309 @@
+/* models2 pop up images */
+.Model2Popups {
+  width: 750px !important;
+}
+.Model2popup1-parent p,
+.Model2popup2-parent p,
+.Model2popup3-parent p,
+.Model2popup4-parent p,
+.Model2popup5-parent p,
+.Model2popup6-parent p {
+  font-size: 16px;
+}
+/* stylings for subscribe button */
+.Model2popup1-input-parent button,
+.Model2popup2-input-parent button,
+.Model2popup3-input-parent button,
+.Model2popup4-input-parent button,
+.Model2popup5-input-parent button,
+.Model2popup6-input-parent button {
+  background: var(--Primary-500, #fa8232);
+}
+.ant-btn-default > span ::after {
+  content: "Close";
+}
+/* model2 popup1 styling */
+.Model2popup1-image {
+  height: 250px;
+  width: 100%;
+}
+.Model2popup1-image img {
+  height: 100%;
+  width: 100%;
+  /* object-fit: contain; */
+}
+.Model2popup1-input-parent {
+  width: 100%;
+}
+.Model2popup1-input-parent input {
+  width: 70%;
+  border: none;
+  padding: 6px 0px 6px 7px;
+}
+.Model2popup1-input-parent button {
+  width: 30%;
+  border: none;
+  padding: 6px 0px;
+  border-radius: 0px 6px 6px 0px;
+}
+
+/* model2 popup2 styling */
+
+.Model2popup2-image {
+  height: 250px;
+  width: 100%;
+}
+.Model2popup2-image img {
+  height: 100%;
+  width: 100%;
+  /* object-fit: contain; */
+}
+.Model2popup2-input-parent {
+  width: 100%;
+}
+.Model2popup2-input-parent input {
+  width: 70%;
+  border: none;
+  padding: 6px 0px 6px 7px;
+}
+.Model2popup2-input-parent button {
+  width: 30%;
+  border: none;
+  padding: 6px 0px;
+  border-radius: 0px 6px 6px 0px;
+}
+
+/* model2 popup3 styling */
+
+.Model2popup3-image {
+  height: 250px;
+  width: 100%;
+}
+.Model2popup3-image img {
+  height: 100%;
+  width: 100%;
+  /* object-fit: contain; */
+}
+.Model2popup3-input-parent {
+  width: 100%;
+}
+.Model2popup3-input-parent input {
+  width: 70%;
+  border: none;
+  padding: 6px 0px 6px 7px;
+}
+.Model2popup3-input-parent button {
+  width: 30%;
+  border: none;
+  padding: 6px 0px;
+  border-radius: 0px 6px 6px 0px;
+}
+
+/* model2 popup4 styling */
+
+.Model2popup4-image {
+  height: 250px;
+  width: 100%;
+}
+.Model2popup4-image img {
+  height: 100%;
+  width: 100%;
+  /* object-fit: contain; */
+}
+.Model2popup4-input-parent {
+  width: 100%;
+}
+.Model2popup4-input-parent input {
+  width: 70%;
+  border: none;
+  padding: 6px 0px 6px 7px;
+}
+.Model2popup4-input-parent button {
+  width: 30%;
+  border: none;
+  padding: 6px 0px;
+  border-radius: 0px 6px 6px 0px;
+}
+.Model2popup4-text p {
+  padding: 12px 0px;
+}
+
+/* model2 popup5 styling */
+
+.Model2popup5-image {
+  height: 250px;
+  width: 100%;
+}
+.Model2popup5-image img {
+  height: 100%;
+  width: 100%;
+  /* object-fit: contain; */
+}
+.Model2popup5-input-parent {
+  width: 100%;
+}
+.Model2popup5-input-parent input {
+  width: 70%;
+  border: none;
+  padding: 6px 0px 6px 7px;
+}
+.Model2popup5-input-parent button {
+  width: 30%;
+  border: none;
+  padding: 6px 0px;
+  border-radius: 0px 6px 6px 0px;
+}
+.Model2popup5-text p {
+  padding: 15px 0px;
+}
+
+/* model2 popup6 styling */
+
+.Model2popup6-image {
+  height: 250px;
+  width: 100%;
+}
+.Model2popup6-image img {
+  height: 100%;
+  width: 100%;
+  /* object-fit: contain; */
+}
+.Model2popup6-input-parent {
+  width: 100%;
+}
+.Model2popup6-input-parent input {
+  width: 70%;
+  border: none;
+  padding: 6px 0px 6px 7px;
+}
+.Model2popup6-input-parent button {
+  width: 30%;
+  border: none;
+  padding: 6px 0px;
+  border-radius: 0px 6px 6px 0px;
+}
+.Model2popup6-text p {
+  padding: 20px 0px;
+}
+
+/* media query for all popups-model2 */
+
+@media only screen and (max-width: 767px) {
+  .Model2popup1-text,
+  .Model2popup2-text,
+  .Model2popup3-text,
+  .Model2popup4-text,
+  .Model2popup5-text,
+  .Model2popup6-text {
+    padding: 15px;
+  }
+}
+
+/* news letter component styles starts here */
+
+.Newsletter-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 630px;
+  width: 100%;
+}
+.Newsletter-parent .container {
+  position: relative;
+}
+.Newsletter-bg {
+  background-position: center;
+  height: 600px;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 8px;
+}
+
+.Newsletter-bg img {
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.newsletter-component-content {
+  top: 0;
+  margin-inline: auto;
+  margin-block: auto;
+  inset: 0;
+  /* height: 550px; */
+  width: 65%;
+  position: absolute;
+  /* margin: auto; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+.newsletter-component-content h2 {
+  font-size: 45px;
+  padding-bottom: 15px;
+}
+.newsletter-component-email-parent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  width: 100%;
+  margin: auto;
+  padding-top: 15px;
+}
+.newsletter-component-email-parent input {
+  width: 70%;
+  padding: 5px 0px 5px 10px;
+  border-radius: 8px;
+  border: none;
+}
+.newsletter-component-email-parent button {
+  width: 28%;
+  padding: 5px 0px;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  background: #e50914;
+}
+.newsletter-component-sub2 {
+  padding-top: 20px;
+}
+
+/* media queries for newletter component */
+
+@media only screen and (max-width: 767px) {
+  .Newsletter-parent .container {
+    padding: 0;
+  }
+  .newsletter-component-content {
+    width: 95%;
+  }
+  .newsletter-component-email-parent {
+    gap: 3px;
+    padding-left: 5px;
+  }
+  .newsletter-component-email-parent input {
+    width: 67%;
+  }
+  .newsletter-component-email-parent button {
+    width: 30%;
+    padding: 5px 5px;
+  }
+  .newsletter-component-content h2 {
+    font-size: 30px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .newsletter-component-content {
+    width: 90%;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .newsletter-component-content {
+    width: 80%;
+  }
+}

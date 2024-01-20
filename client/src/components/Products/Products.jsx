@@ -55,7 +55,7 @@ const Products = () => {
                         <br /><br />
                         {
                             allProducts?.map((item, index) => (
-                                <SwiperSlide>
+                                <SwiperSlide key={index}>
                                     <FeaturedProductCard data1={item} key={index} />
                                 </SwiperSlide>
                             ))

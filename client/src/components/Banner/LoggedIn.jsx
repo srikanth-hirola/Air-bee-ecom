@@ -1,14 +1,10 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom'
 
 const LoggedIn = () => {
 
     const { user } = useSelector((state) => state.user);
-
-    useEffect(() => {
-        console.log(user)
-    }, [user])
 
     return (
         <div className='Drone-banner-sub-user'>

@@ -41,7 +41,7 @@ const DashboardHeader = () => {
       <div className="flex items-center">
         <div className="flex items-center mr-4">
           <Link
-            to="/dashboard/cupouns"
+            to="/dashboard-coupouns"
             className="800px:block hidden"
             title="Cupouns"
           >
@@ -72,7 +72,7 @@ const DashboardHeader = () => {
             />
           </Link>
           <Link
-            to="/dashboard-products"
+            to="/shop/all-products"
             className="800px:block hidden"
             title="Products"
           >
@@ -87,7 +87,7 @@ const DashboardHeader = () => {
             />
           </Link>
           <Link
-            to="/dashboard-orders"
+            to="/shop/dashboard-orders"
             className="800px:block hidden"
             title="Orders"
           >

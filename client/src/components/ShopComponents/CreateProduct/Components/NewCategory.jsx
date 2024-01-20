@@ -28,7 +28,7 @@ const NewCategory = ({ categories }) => {
         <div>
             <div>
                 <button className="cat-btn" onClick={handleAddCategory} style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor }}>
-                    Request New Category
+                    Create New Category
                 </button>
                 <button className="cat-btn4" onClick={handleCustomizeState} style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor }}>
                     Customize Existing Category

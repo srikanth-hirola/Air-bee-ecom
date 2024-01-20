@@ -1,0 +1,863 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.About-Us-one-sub .About-Us-one-heading h4 {
+  color: #000;
+  font-family: Poppins;
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.About-Us-one-sub .About-Us-one-data {
+  background: var(--Color---7, #000);
+  height: 400px;
+}
+
+.About-Us-one-image img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.About-Us-one-sub .About-Us-one-data .About-Us-one-image {
+  width: 80%;
+  height: 300px;
+}
+
+.About-Us-one-sub .About-Us-one-data .About-Us-one-content {
+  height: 400px;
+  align-items: center;
+  display: flex;
+}
+
+.About-Us-one-sub .About-Us-one-data .About-Us-one-text {
+  width: 90%;
+  margin: auto;
+}
+
+.About-Us-one-sub .About-Us-one-data .About-Us-one-text h5 {
+  color: var(--Dominant, #fff);
+  font-family: Poppins;
+  font-size: 36px;
+  font-weight: 400;
+}
+
+.About-Us-one-sub .About-Us-one-data .About-Us-one-text p {
+  color: var(--Dominant, #fff);
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.About-Us-two-sub .About-Us-two-data {
+  background: var(--Dominant, #fff);
+  height: 380px;
+}
+
+.About-Us-two-image img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.About-Us-two-sub .About-Us-two-data .About-Us-two-image {
+  width: 80%;
+  height: 300px;
+}
+
+.About-Us-two-sub .About-Us-two-data .About-Us-two-content {
+  height: 380px;
+  align-items: center;
+  display: flex;
+}
+
+.About-Us-two-sub .About-Us-two-data .About-Us-two-text {
+  width: 100%;
+}
+
+.About-Us-two-text .logo-rel {
+  background-color: blue;
+  border-radius: 50px 50px 0px 50px;
+  width: 50px;
+  height: 45px;
+  margin: 5px;
+}
+
+.About-Us-three-text .logo-rel {
+  width: 55px;
+  height: 45px;
+  margin: 8px;
+}
+
+.About-Us-two-sub .About-Us-two-data .About-Us-two-text h5 {
+  color: var(--Color---7, #000);
+  font-family: Poppins;
+  font-size: 35px;
+  font-weight: 500;
+}
+
+.About-Us-two-sub .About-Us-two-data .About-Us-two-text p {
+  color: var(--Color---7, #000);
+  font-family: Poppins;
+  font-size: 15px;
+  font-weight: 300;
+  padding: 5px 0px;
+}
+
+.About-Us-three-sub .About-Us-three-heading h4 {
+  color: #000;
+  font-family: Poppins;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.About-Us-three-sub .About-Us-three-data {
+  background: var(--Color---7, #000);
+  height: 400px;
+}
+
+.About-Us-three-image img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.About-Us-three-sub .About-Us-three-data .About-Us-three-image {
+  width: 80%;
+  height: 300px;
+}
+
+.About-Us-three-sub .About-Us-three-data .About-Us-three-content {
+  height: 400px;
+  align-items: center;
+  display: flex;
+}
+
+.About-Us-three-sub .About-Us-three-data .About-Us-three-text {
+  width: 90%;
+  margin: auto;
+}
+
+.About-Us-three-sub .About-Us-three-data .About-Us-three-text h5 {
+  color: var(--Dominant, #fff);
+  font-family: Poppins;
+  font-size: 36px;
+  font-weight: 400;
+}
+
+.About-Us-three-sub .About-Us-three-data .About-Us-three-text p {
+  color: var(--Dominant, #fff);
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.About-Us-five-sub .About-Us-five-heading h4 {
+  color: #000;
+  font-family: Poppins;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.About-Us-five-sub .About-Us-five-data {
+  background: var(--Color---7, #000);
+  height: 400px;
+}
+
+.About-Us-five-image img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.About-Us-five-sub .About-Us-five-data .About-Us-five-image {
+  width: 80%;
+  height: 300px;
+}
+
+.About-Us-five-sub .About-Us-five-data .About-Us-five-content {
+  height: 400px;
+  align-items: center;
+  display: flex;
+}
+
+.About-Us-five-sub .About-Us-five-data .About-Us-five-text {
+  width: 90%;
+  margin: auto;
+}
+
+.About-Us-five-sub .About-Us-five-data .About-Us-five-text h5 {
+  color: var(--Dominant, #fff);
+  font-family: Poppins;
+  font-size: 36px;
+  font-weight: 400;
+}
+
+.About-Us-five-sub .About-Us-five-data .About-Us-five-text p {
+  color: var(--Dominant, #fff);
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.About-Us-four-sub .About-Us-four-data {
+  background: var(--Dominant, #fff);
+  height: 380px;
+}
+
+.About-Us-four-image img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.About-Us-four-sub .About-Us-four-data .About-Us-four-image {
+  width: 80%;
+  height: 300px;
+}
+
+.About-Us-four-sub .About-Us-four-data .About-Us-four-content {
+  height: 380px;
+  align-items: center;
+  display: flex;
+}
+
+.About-Us-four-sub .About-Us-four-data .About-Us-four-text {
+  width: 100%;
+}
+
+.About-Us-four-text .logo-rel {
+  width: 50px;
+  height: 45px;
+  margin: 5px;
+}
+
+.About-Us-three-text .logo-rel {
+  width: 55px;
+  height: 45px;
+  margin: 8px;
+}
+
+.About-Us-four-sub .About-Us-four-data .About-Us-four-text h5 {
+  color: var(--Color---7, #000);
+  font-family: Poppins;
+  font-size: 35px;
+  font-weight: 500;
+}
+
+.About-Us-four-sub .About-Us-four-data .About-Us-four-text p {
+  color: var(--Color---7, #000);
+  font-family: Poppins;
+  font-size: 15px;
+  font-weight: 300;
+  padding: 5px 0px;
+}
+
+.about-couting-instant {
+  padding: 30px 0px;
+}
+
+.about-couting-instant-heading {
+  text-align: center;
+  width: 70%;
+  margin: auto;
+}
+
+.about-couting-instant-heading h6 {
+  color: var(--Primary-500, #22c55e);
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 36px;
+  background: var(--Primary-100, #dcfce7);
+  box-shadow: 0px 1px 2px 0px rgba(105, 81, 255, 0.05);
+  padding: 5px 5px;
+  width: 100px;
+  margin: 10px auto;
+}
+
+.about-couting-instant-heading h2 {
+  color: var(--Gray-900, #2a3342);
+  font-family: Poppins;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.about-couting-instant-heading p {
+  color: var(--Gray-500, #556987);
+  font-family: Poppins;
+  font-size: 16px;
+}
+
+.about-couting-instant-subject {
+  padding: 30px 0px;
+}
+
+.about-couting-instant-text {
+  text-align: center;
+}
+
+.about-couting-instant-text h2 {
+  color: var(--Gray-900, #2a3342);
+  font-family: Poppins;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.about-couting-instant-text p {
+  color: var(--Gray-500, #556987);
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.about-top-comapany-instant-heading {
+  text-align: center;
+  width: 90%;
+  margin: 20px auto;
+}
+.about-couting-instant-subject {
+  margin-bottom: 30px;
+}
+.about-top-comapany-instant-heading h6 {
+  color: var(--Primary-500, #22c55e);
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 36px;
+  background: var(--Primary-100, #dcfce7);
+  box-shadow: 0px 1px 2px 0px rgba(105, 81, 255, 0.05);
+  padding: 5px 5px;
+  width: 100px;
+  margin: 10px auto;
+}
+
+.about-top-comapany-instant-heading h2 {
+  color: var(--Gray-900, #2a3342);
+  font-family: Poppins;
+  font-size: 35px;
+  font-weight: 600;
+  padding: 8px 0px;
+}
+
+.about-top-comapany-instant-heading p {
+  color: var(--Gray-500, #556987);
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 0px;
+}
+.about-top-comapany-instant-text {
+  border-radius: 6px;
+  background: var(--Dominant, #fff);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 35px 50px;
+  display: flex;
+  width: 200px;
+  height: 100px;
+  align-items: center;
+}
+
+.about-couting-instant-text img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.about-faq-instant-question.accordion-item {
+  border: none !important;
+}
+
+.about-faq-instant-text {
+  width: 82%;
+}
+
+.about-faq-instant-text h6 {
+  color: var(--Primary-500, #22c55e);
+  font-family: Poppins;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 36px;
+  background: var(--Primary-100, #dcfce7);
+  box-shadow: 0px 1px 2px 0px rgba(105, 81, 255, 0.05);
+  padding: 5px 5px;
+  width: 70px;
+  margin: 5px 0px;
+}
+
+.about-faq-instant-text h2 {
+  color: var(--Gray-900, #2a3342);
+  font-family: Poppins;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.about-faq-instant-text p {
+  color: var(--Gray-500, #556987);
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.about-faq-instant-question .accordion-button {
+  color: var(--Gray-900, #2a3342);
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 15px 5px;
+  background-color: white;
+}
+.about-faq-instant-question .accordion-button:not(.collapsed) {
+  background-color: white;
+}
+.about-faq-instant-question .accordion-button:focus {
+  border-color: white !important;
+}
+.about-faq-instant {
+  padding: 60px 0px;
+}
+.About-Us-two-text .d-flex {
+  align-items: center;
+}
+@media only screen and (max-width: 767px) {
+  .About-Us-one-sub .About-Us-one-heading h4 {
+    font-size: 25px;
+  }
+  .About-Us-four-text .d-flex {
+    align-items: center;
+  }
+  .About-Us-three-text .d-flex {
+    align-items: center;
+  }
+  .about-faq-instant-text {
+    text-align: center;
+  }
+  .about-faq-instant-text h6 {
+    margin: 10px auto;
+  }
+  .about-top-comapany-instant-heading {
+    width: 100%;
+  }
+  .about-top-comapany-instant-text {
+    margin: 10px auto;
+  }
+  .about-faq-instant-question .accordion-button {
+    font-size: 14px;
+  }
+  .about-faq-instant-text h2 {
+    font-size: 25px;
+  }
+  .about-faq-instant-text p {
+    font-size: 14px;
+  }
+  .about-faq-instant-text {
+    width: 95%;
+  }
+  .about-couting-instant-heading {
+    width: 95%;
+  }
+  .about-couting-instant-text {
+    padding: 15px 0px;
+  }
+
+  .about-couting-instant-text p,
+  .about-couting-instant-heading p {
+    font-size: 14px;
+  }
+
+  .about-couting-instant-text h2,
+  .about-couting-instant-heading h2 {
+    font-size: 28px;
+  }
+  .About-Us-one-sub .About-Us-one-data {
+    height: fit-content;
+  }
+
+  .About-Us-one-sub .About-Us-one-data .About-Us-one-content {
+    height: fit-content;
+  }
+
+  .About-Us-one-sub .About-Us-one-data .About-Us-one-image {
+    height: 250px;
+    width: 90%;
+    padding: 15px 0px;
+    margin: auto;
+  }
+
+  .About-Us-one-sub .About-Us-one-data .About-Us-one-image img {
+    object-fit: cover;
+  }
+
+  .About-Us-one-sub .About-Us-one-data .About-Us-one-text h5 {
+    font-size: 20px;
+  }
+
+  .About-Us-one-sub .About-Us-one-data .About-Us-one-text p {
+    font-size: 12px;
+  }
+
+  .About-Us-one-sub .About-Us-one-data .About-Us-one-text {
+    width: 90%;
+    padding: 10px 0px;
+  }
+
+  .About-Us-two-sub .About-Us-two-data {
+    height: fit-content;
+  }
+
+  .About-Us-two-sub .About-Us-two-data .About-Us-two-content {
+    height: fit-content;
+    flex-direction: column-reverse;
+  }
+
+  .About-Us-two-sub .About-Us-two-data .About-Us-two-image {
+    height: 250px;
+    width: 90%;
+    padding: 15px 0px;
+    margin: auto;
+  }
+
+  .About-Us-two-sub .About-Us-two-data .About-Us-two-image img {
+    object-fit: cover;
+  }
+
+  .About-Us-two-sub .About-Us-two-data .About-Us-two-text h5 {
+    font-size: 20px;
+  }
+
+  .About-Us-two-sub .About-Us-two-data .About-Us-two-text p {
+    font-size: 12px;
+  }
+
+  .About-Us-two-sub .About-Us-two-data .About-Us-two-text {
+    width: 90%;
+    padding: 10px 0px;
+  }
+
+  .About-Us-three-sub .About-Us-three-data {
+    height: fit-content;
+  }
+
+  .About-Us-three-sub .About-Us-three-data .About-Us-three-content {
+    height: fit-content;
+  }
+
+  .About-Us-three-sub .About-Us-three-data .About-Us-three-image {
+    height: 250px;
+    width: 90%;
+    padding: 15px 0px;
+    margin: auto;
+  }
+
+  .About-Us-three-sub .About-Us-three-data .About-Us-three-image img {
+    object-fit: cover;
+  }
+
+  .About-Us-three-sub .About-Us-three-data .About-Us-three-text h5 {
+    font-size: 20px;
+  }
+
+  .About-Us-three-sub .About-Us-three-data .About-Us-three-text p {
+    font-size: 12px;
+  }
+
+  .About-Us-three-sub .About-Us-three-data .About-Us-three-text {
+    width: 90%;
+    padding: 10px 0px;
+  }
+
+  .About-Us-four-sub .About-Us-four-data {
+    height: fit-content;
+  }
+
+  .About-Us-four-sub .About-Us-four-data .About-Us-four-content {
+    height: fit-content;
+    flex-direction: column-reverse;
+  }
+
+  .About-Us-four-sub .About-Us-four-data .About-Us-four-image {
+    height: 250px;
+    width: 90%;
+    padding: 15px 0px;
+    margin: auto;
+  }
+
+  .About-Us-four-sub .About-Us-four-data .About-Us-four-image img {
+    object-fit: cover;
+  }
+
+  .About-Us-four-sub .About-Us-four-data .About-Us-four-text h5 {
+    font-size: 20px;
+  }
+
+  .About-Us-four-sub .About-Us-four-data .About-Us-four-text p {
+    font-size: 12px;
+  }
+
+  .About-Us-four-sub .About-Us-four-data .About-Us-four-text {
+    width: 90%;
+    padding: 10px 0px;
+  }
+
+  .About-Us-five-sub .About-Us-five-data {
+    height: fit-content;
+  }
+
+  .About-Us-five-sub .About-Us-five-data .About-Us-five-content {
+    height: fit-content;
+  }
+
+  .About-Us-five-sub .About-Us-five-data .About-Us-five-image {
+    height: 250px;
+    width: 90%;
+    padding: 15px 0px;
+    margin: auto;
+  }
+
+  .About-Us-five-sub .About-Us-five-data .About-Us-five-image img {
+    object-fit: cover;
+  }
+
+  .About-Us-five-sub .About-Us-five-data .About-Us-five-text h5 {
+    font-size: 20px;
+  }
+
+  .About-Us-five-sub .About-Us-five-data .About-Us-five-text p {
+    font-size: 12px;
+  }
+
+  .About-Us-five-sub .About-Us-five-data .About-Us-five-text {
+    width: 90%;
+    padding: 10px 0px;
+  }
+  .about-top-comapany-instant-heading h2 {
+    font-size: 25px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .about-top-comapany-instant-heading h2 {
+    font-size: 22px;
+  }
+  .about-faq-instant-text h2 {
+    font-size: 22px;
+  }
+  .about-couting-instant-text {
+    padding: 5px 0px;
+  }
+  .about-top-comapany-instant-text {
+    margin: 10px auto;
+    width: 80%;
+  }
+
+  .About-Us-one-sub .About-Us-one-data .About-Us-one-text h5 {
+    font-size: 20px;
+  }
+
+  .About-Us-one-sub .About-Us-one-data .About-Us-one-text p {
+    font-size: 12px;
+  }
+
+  .About-Us-one-sub .About-Us-one-data .About-Us-one-text {
+    width: 100%;
+    padding: 10px 0px;
+  }
+
+  .About-Us-two-sub .About-Us-two-data .About-Us-two-text h5 {
+    font-size: 20px;
+  }
+
+  .About-Us-two-sub .About-Us-two-data .About-Us-two-text p {
+    font-size: 12px;
+  }
+
+  .About-Us-two-sub .About-Us-two-data .About-Us-two-text {
+    width: 100%;
+    padding: 10px 0px;
+  }
+
+  .About-Us-three-sub .About-Us-three-data .About-Us-three-text h5 {
+    font-size: 20px;
+  }
+
+  .About-Us-three-sub .About-Us-three-data .About-Us-three-text p {
+    font-size: 12px;
+  }
+
+  .About-Us-three-sub .About-Us-three-data .About-Us-three-text {
+    width: 100%;
+    padding: 10px 0px;
+  }
+
+  .About-Us-four-sub .About-Us-four-data .About-Us-four-text h5 {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .About-Us-four-sub .About-Us-four-data .About-Us-four-text p {
+    font-size: 12px;
+  }
+
+  .About-Us-four-sub .About-Us-four-data .About-Us-four-text {
+    width: 100%;
+    padding: 10px 0px;
+  }
+
+  .About-Us-five-sub .About-Us-five-data .About-Us-five-text h5 {
+    font-size: 20px;
+  }
+
+  .About-Us-five-sub .About-Us-five-data .About-Us-five-text p {
+    font-size: 12px;
+  }
+
+  .About-Us-five-sub .About-Us-five-data .About-Us-five-text {
+    width: 100%;
+    padding: 10px 0px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .about-couting-instant-text p {
+    font-size: 14px;
+  }
+  .about-couting-instant-text h2,
+  .about-couting-instant-heading h2 {
+    font-size: 29px;
+  }
+  .about-top-comapany-instant-heading h2 {
+    font-size: 28px;
+  }
+  .About-Us-two-text .d-flex {
+    align-items: center;
+  }
+  .About-Us-three-text .d-flex {
+    align-items: center;
+  }
+  .about-top-comapany-instant-text {
+    width: 165px;
+    padding: 35px 15px;
+  }
+  .about-faq-instant-question .accordion-button {
+    font-size: 15px;
+  }
+  .about-faq-instant-text h2 {
+    font-size: 28px;
+  }
+  .about-faq-instant-text p {
+    font-size: 15px;
+  }
+  .about-faq-instant-text {
+    width: 95%;
+  }
+  .About-Us-one-sub .About-Us-one-data .About-Us-one-text h5 {
+    font-size: 24px;
+  }
+
+  .About-Us-one-sub .About-Us-one-data .About-Us-one-text p {
+    font-size: 13px;
+  }
+
+  .About-Us-two-sub .About-Us-two-data .About-Us-two-text h5 {
+    font-size: 24px;
+  }
+
+  .About-Us-two-sub .About-Us-two-data .About-Us-two-text p {
+    font-size: 13px;
+  }
+
+  .About-Us-three-sub .About-Us-three-data .About-Us-three-text h5 {
+    font-size: 24px;
+  }
+
+  .About-Us-three-sub .About-Us-three-data .About-Us-three-text p {
+    font-size: 13px;
+  }
+
+  .About-Us-four-sub .About-Us-four-data .About-Us-four-text h5 {
+    font-size: 24px;
+  }
+
+  .About-Us-four-sub .About-Us-four-data .About-Us-four-text p {
+    font-size: 13px;
+  }
+
+  .About-Us-five-sub .About-Us-five-data .About-Us-five-text h5 {
+    font-size: 24px;
+  }
+
+  .About-Us-five-sub .About-Us-five-data .About-Us-five-text p {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .about-couting-instant-text h2,
+  .about-couting-instant-heading h2 {
+    font-size: 32px;
+  }
+  .About-Us-three-text .d-flex {
+    align-items: center;
+  }
+  .About-Us-three-text .d-flex {
+    align-items: center;
+  }
+  .About-Us-one-sub .About-Us-one-data .About-Us-one-text h5 {
+    font-size: 26px;
+  }
+
+  .About-Us-one-sub .About-Us-one-data .About-Us-one-text p {
+    font-size: 14px;
+  }
+
+  .About-Us-two-sub .About-Us-two-data .About-Us-two-text h5 {
+    font-size: 26px;
+  }
+
+  .About-Us-two-sub .About-Us-two-data .About-Us-two-text p {
+    font-size: 14px;
+  }
+
+  .About-Us-three-sub .About-Us-three-data .About-Us-three-text h5 {
+    font-size: 26px;
+  }
+
+  .About-Us-three-sub .About-Us-three-data .About-Us-three-text p {
+    font-size: 14px;
+  }
+
+  .About-Us-four-sub .About-Us-four-data .About-Us-four-text h5 {
+    font-size: 26px;
+  }
+
+  .About-Us-four-sub .About-Us-four-data .About-Us-four-text p {
+    font-size: 14px;
+  }
+
+  .About-Us-five-sub .About-Us-five-data .About-Us-five-text h5 {
+    font-size: 26px;
+  }
+
+  .About-Us-five-sub .About-Us-five-data .About-Us-five-text p {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+}
+
+@media only screen and (min-width: 1400px) {
+  .About-Us-three-text .d-flex {
+    align-items: center;
+  }
+  .About-Us-four-text .d-flex {
+    align-items: center;
+  }
+  .About-Us-three-text .d-flex {
+    align-items: center;
+  }
+}

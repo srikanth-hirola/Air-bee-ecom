@@ -55,9 +55,6 @@ const ProductEdit = ({
     const [wantNewCategory, setWantNewCategory] = useState(false);
 
 
-
-
-
     const [colorInputsIndexUpdateImage, setColorInputsIndexUpdateImage] =
         useState([]);
     const [activeError, setActiveError] = useState([]);

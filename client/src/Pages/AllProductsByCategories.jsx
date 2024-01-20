@@ -8,6 +8,7 @@ import { getAllProducts } from '../redux/actions/product'
 import { StyleConfig } from '../utils/StyleConfig'
 import { useDispatch, useSelector } from 'react-redux'
 import toast from 'react-hot-toast'
+import DronesHeader from '../components/Headers/DronesHeader'
 
 const AllProductsByCategories = () => {
 
@@ -73,6 +74,7 @@ const AllProductsByCategories = () => {
 
     return (
         <>
+            <DronesHeader />
             {isLoading ? <Loader /> :
                 <>
                     <div className='allproducts-parent'>

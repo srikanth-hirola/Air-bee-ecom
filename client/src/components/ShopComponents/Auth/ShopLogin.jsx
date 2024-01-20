@@ -1,17 +1,15 @@
 import { React, useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { server } from "../../../server";
 import toast from "react-hot-toast";
-import { StyleConfig } from "../../../utils/StyleConfig";
 
 const ShopLogin = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [visible, setVisible] = useState(false);
-    const styles = StyleConfig();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -96,7 +94,7 @@ const ShopLogin = () => {
                                 )}
                             </div>
                         </div>
-                        <div className={`${styles.noramlFlex} justify-between`}>
+                        {/* <div className={`${styles.noramlFlex} justify-between`}>
                             <div className={`${styles.noramlFlex}`}>
                                 <input
                                     type="checkbox"
@@ -119,7 +117,7 @@ const ShopLogin = () => {
                                     Forgot your password?
                                 </a>
                             </div>
-                        </div>
+                        </div> */}
                         <div>
                             <button
                                 type="submit"
@@ -128,12 +126,12 @@ const ShopLogin = () => {
                                 Submit
                             </button>
                         </div>
-                        <div className={`${styles.noramlFlex} w-full`}>
+                        {/* <div className={`${styles.noramlFlex} w-full`}>
                             <h4>Not have any account?</h4>
                             <Link to="/shop-create" className="text-blue-600 pl-2">
                                 Sign Up
                             </Link>
-                        </div>
+                        </div> */}
                     </form>
                 </div>
             </div>

@@ -8,7 +8,7 @@ const ShopNewCategory = ({ id }) => {
 
     const styles = StyleConfig();
     const [categories, setCategories] = useState([
-        { approved: false, shopID: id, name: '', subcategories: [], CatImg: '' },
+        { approved: true, shopID: id, name: '', subcategories: [], CatImg: '' },
     ]);
 
     // setCategories([...categories, { name: '', subcategories: [] }]);
@@ -69,7 +69,7 @@ const ShopNewCategory = ({ id }) => {
             .post(`${server}/category/request-category`, { categories })
             .then((result) => {
                 if (result.data.Status === 'Success') {
-                    toast.success('Requested Category added successfully');
+                    toast.success('Category added successfully');
                 }
             })
             .catch((error) => {

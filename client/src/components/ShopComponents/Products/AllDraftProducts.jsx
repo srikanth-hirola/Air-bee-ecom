@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { AiOutlineDelete } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -10,6 +10,8 @@ import { DataGrid } from '@mui/x-data-grid';
 const AllDraftProducts = () => {
     const { products, isLoading } = useSelector((state) => state.products);
     const { seller } = useSelector((state) => state.seller);
+
+    const [finalProducts, setFinalProducts] = useState([]);
 
     const dispatch = useDispatch();
 
@@ -107,8 +109,12 @@ const AllDraftProducts = () => {
 
     const row = [];
 
-    products &&
-        products.forEach((item) => {
+    useEffect(() => {
+        setFinalProducts(products)
+    }, [products])
+
+    finalProducts &&
+        finalProducts.forEach((item) => {
             if (item.draft) {
                 row.push({
                     id: item._id,
@@ -119,6 +125,8 @@ const AllDraftProducts = () => {
                 });
             }
         });
+
+
     return (
         <>
             {isLoading ? (
