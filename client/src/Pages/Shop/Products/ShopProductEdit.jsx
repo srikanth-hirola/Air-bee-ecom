@@ -4,7 +4,7 @@ import axios from 'axios';
 import { server } from '../../../server';
 import DashboardHeader from '../../../components/Headers/DashboardHeader';
 import DashboardSideBar from '../../../components/ShopComponents/Layout/DashboardSideBar';
-import ProductEdit from '../../../components/ShopComponents/Products/ProductEdit';
+import ProductDraftEdit from '../../../components/ShopComponents/CreateProduct/Drafts/ProductDraftEdit';
 
 
 const ShopDraftProductEdit = () => {
@@ -146,7 +146,7 @@ const ShopDraftProductEdit = () => {
                 <div className="w-[80px] 800px:w-[330px]">
                     <DashboardSideBar active={1} />
                 </div>
-                <ProductEdit
+                <ProductDraftEdit
                     formData={formData}
                     setFormData={setFormData}
                     categories={categories}

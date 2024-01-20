@@ -229,12 +229,12 @@ const CreateEvent = () => {
                 <Loader />
             ) : (
                 <div className="w-[90%] 800px:w-[50%] bg-white  shadow h-[100vh] rounded-[4px] p-3 overflow-y-scroll create-width pb-4">
-                    <h5 className="text-[30px] font-Poppins text-center">Create Event</h5>
+                    <h5 className="text-[30px] font-Poppins text-center font-[400]">Create Event</h5>
                     {/* create event form */}
                     <form onSubmit={handleSubmit}>
                         <br />
                         <div>
-                            <label className="pb-2">
+                            <label className="pb-2 font-[500]">
                                 Event Name <span className="text-red-500">*</span>
                             </label>
                             <input
@@ -248,7 +248,7 @@ const CreateEvent = () => {
                         </div>
                         <br />
                         <div>
-                            <label className="pb-2">
+                            <label className="pb-2 font-[500]">
                                 Description <span className="text-red-500">*</span>
                             </label>
                             <textarea
@@ -265,7 +265,7 @@ const CreateEvent = () => {
                         </div>
                         <br />
                         <div>
-                            <label className="pb-2">
+                            <label className="pb-2 font-[500]">
                                 Product <span className="text-red-500">*</span>
                             </label>
                             <br />
@@ -294,7 +294,7 @@ const CreateEvent = () => {
                         </div>
                         <br />
                         <div>
-                            <label className="pb-2">
+                            <label className="pb-2 font-[500]">
                                 Event Start Date <span className="text-red-500">*</span>
                             </label>
                             <input
@@ -310,7 +310,7 @@ const CreateEvent = () => {
                         </div>
                         <br />
                         <div>
-                            <label className="pb-2">
+                            <label className="pb-2 font-[500]">
                                 Event End Date <span className="text-red-500">*</span>
                             </label>
                             <input
@@ -326,7 +326,7 @@ const CreateEvent = () => {
                         </div>
                         <br />
                         <div>
-                            <label className="pb-2">
+                            <label className="pb-2 font-[500]">
                                 Upload Image <span className="text-red-500">*</span>
                             </label>
                             <input

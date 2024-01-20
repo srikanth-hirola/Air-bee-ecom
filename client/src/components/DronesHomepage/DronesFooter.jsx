@@ -29,23 +29,23 @@ const DronesFooter = () => {
                                     </div>}
                             </div>
                         </div>
-                     <div className='col-md-7'>
-                        <div className="row">
-                     {data?.FooterItems?.navigate?.content?.items?.items?.length > 0 && 
-                     data?.FooterItems?.navigate?.content?.items?.items?.map((item,index)=>(
+                        <div className='col-md-7'>
+                            <div className="row">
+                                {data?.FooterItems?.navigate?.content?.items?.items?.length > 0 &&
+                                    data?.FooterItems?.navigate?.content?.items?.items?.map((item, index) => (
 
-                        <div className="col-sm-6 col-md-3">
-                        <div className="DronesFooter-links">
-                        <h6 key={index}>{item?.Title}</h6>
-                       {item?.drop?.length > 0 && item?.drop?.map((dropitem,index)=>(
-                        <li key={index}>{dropitem?.SubTitle}</li>
-                       ) ) }
+                                        <div className="col-sm-6 col-md-3" key={index}>
+                                            <div className="DronesFooter-links">
+                                                <h6 key={index}>{item?.Title}</h6>
+                                                {item?.drop?.length > 0 && item?.drop?.map((dropitem, index1) => (
+                                                    <li key={index1}>{dropitem?.SubTitle}</li>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    ))
+                                }
+                            </div>
                         </div>
-                    </div>
-                     ) )
-                        }
-</div>
-                     </div>
                         <div className="col-sm-6 col-md-2">
                             <div className="Drones-footer-apps-parent">
                                 <h6>Get app</h6>

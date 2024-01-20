@@ -1,5 +1,6 @@
 import axios from "axios";
 import { server } from "../../server";
+import toast from "react-hot-toast";
 
 // load user
 export const loadUser = () => async (dispatch) => {
@@ -31,7 +32,6 @@ export const loadSeller = () => async (dispatch) => {
     const { data } = await axios.get(`${server}/shop/getSeller`, {
       withCredentials: true,
     });
-    console.log(data, "seller")
     dispatch({
       type: "LoadSellerSuccess",
       payload: data.seller,
@@ -72,11 +72,13 @@ export const updateUserInformation =
         type: "updateUserInfoSuccess",
         payload: data.user,
       });
+      toast.success("User Info Updated Successfully")
     } catch (error) {
       dispatch({
         type: "updateUserInfoFailed",
         payload: error.response.data.message,
       });
+      toast.error(error.response.data.message)
     }
   };
 

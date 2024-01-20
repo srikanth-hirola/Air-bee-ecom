@@ -221,7 +221,7 @@ const useProductDetails = ({ data, selectedColor, selectedAttr, count, click, ac
         }
     };
 
-    const handleSelectCourierPartner = async ({ e, postCode, setBtnLoading, setDeliveryDate, setShippingCHarge }) => {
+    const handleSelectCourierPartner = async ({ e, postCode, setBtnLoading, setDeliveryDate }) => {
         e.preventDefault();
         if (postCode === null) {
             toast.error("Post Code is required");
@@ -235,7 +235,7 @@ const useProductDetails = ({ data, selectedColor, selectedAttr, count, click, ac
                         if (response.data.status === 200 || response.data.status === 201) {
                             console.log(response.data.orders);
                             setDeliveryDate(response.data.orders.etd)
-                            setShippingCHarge(response.data.orders.rate)
+                            // setShippingCHarge(response.data.orders.rate)
                         } else {
                             setDeliveryDate()
                             toast.error("Delivery is not available for that Post Code")

@@ -36,22 +36,6 @@ const AllProductsMapper = ({ data }) => {
                         <MainProductCard data1={item} key={index} />
                     ))
                 }
-
-                {/* Pagination buttons */}
-                {/* <div className="pagination">
-                <button onClick={prevPage} disabled={currentPage === 1} className='pagination-btn'>
-                    Previous
-                </button>
-                {Array.from({ length: Math.ceil(filteredProducts.length / ITEMS_PER_PAGE) }).map((_, index) => (
-                    <button key={index} onClick={() => paginate(index + 1)} className='pagination-num-btn'>
-                        {index + 1}
-                    </button>
-                ))}
-                <button onClick={nextPage} disabled={currentPage === Math.ceil(filteredProducts.length / ITEMS_PER_PAGE)} className='pagination-btn'>
-                    Next
-                </button>
-            </div> */}
-
             </div>
             <Pagination className='pagination-div'>
                 <Pagination.Prev onClick={prevPage} disabled={currentPage === 1} />

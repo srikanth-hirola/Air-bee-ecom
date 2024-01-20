@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 // import { IoCartOutline } from "react-icons/io5";
 // import { FaRegHeart } from "react-icons/fa6";
 // import { FaArrowsRotate } from "react-icons/fa6";
@@ -16,6 +16,7 @@ import GetCategory from '../ProductDetails/GetCategory';
 import GetPopularity from '../ProductDetails/GetPopularity';
 import useProductDetails from '../../hooks/useProductDetails';
 import VarientSelect from '../ProductDetails/VarientSelect';
+import ShippingDetails from './ShippingDetails';
 
 export const LapProductdet = ({ data, active, seller, styles }) => {
 
@@ -34,11 +35,9 @@ export const LapProductdet = ({ data, active, seller, styles }) => {
   // const [select, setSelect] = useState(0);
 
 
-  const { handleHighlight, handleAttrSelect, incrementCount, decrementCount, addToCartHandler, getOriginalPrice, getDiscountPrice } = useProductDetails({ data, active, click, count, selectedAttr, selectedColor, setClick, setCount, setLimited, setMainImg, setSelectedAttr, setSoldOut, setWarning })
+  const { handleSelectCourierPartner, handleHighlight, handleAttrSelect, incrementCount, decrementCount, addToCartHandler, getOriginalPrice, getDiscountPrice } = useProductDetails({ data, active, click, count, selectedAttr, selectedColor, setClick, setCount, setLimited, setMainImg, setSelectedAttr, setSoldOut, setWarning })
 
-  useEffect(() => {
-    console.log(data)
-  }, [data])
+
 
   return (
     <div className='laptop-productdetails'>
@@ -70,6 +69,7 @@ export const LapProductdet = ({ data, active, seller, styles }) => {
               </div>
               <Price originalPrice={getOriginalPrice({ data })} discountPrice={getDiscountPrice({ data, active })} />
               <hr />
+              <ShippingDetails handleSelectCourierPartner={handleSelectCourierPartner} key={5} />
               <Attributes selectedColor={selectedColor} handleAttrSelect={handleAttrSelect} handleHighlight={handleHighlight} selectedAttr={selectedAttr} key={2} selectedAttributeIndices={selectedAttributeIndices} setSelectedAttributeIndices={setSelectedAttributeIndices} active={active} />
               <VarientSelect data={data} selectedColorIndex={selectedColorIndex} setCount={setCount} setLimited={setLimited} setMainImage={setMainImg} setSelectedColor={setSelectedColor} setSelectedColorIndex={setSelectedColorIndex} setWarning={setWarning} key={3} />
               <div className='row laptop-productdetails-countdetails'>

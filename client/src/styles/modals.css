@@ -1,0 +1,515 @@
+/* singnup page styles starts here */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap");
+
+.SignUpPage-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 620px;
+}
+
+.SignUpPage-parent .row {
+  width: 80%;
+  padding: 20px 10px 20px 10px;
+  margin: auto;
+  height: fit-content;
+}
+
+.SignUppage-image {
+  width: 100%;
+  height: 450px;
+}
+
+.SignUppage-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.SignUpPage-content {
+  font-family: Inter;
+}
+
+.SignUpPage-content .form-label {
+  margin-bottom: 0.5rem;
+  padding: 10px 0px 2px 0px;
+}
+
+.SignUpPage-content h4 {
+  color: #000;
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  padding-bottom: 20px;
+  line-height: 35px;
+}
+
+.SignUpPage-content button {
+  width: 100%;
+  border: none;
+  padding: 10px 0px;
+  color: white;
+  margin-top: 20px;
+  border-radius: 6px;
+  background: var(--Accent, #457eff);
+}
+
+.SignUpPage-content {
+  padding-left: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+  .SignUppage-image {
+    width: 100%;
+    height: 350px;
+  }
+
+  .SignUpPage-content {
+    padding-left: 0px;
+  }
+  .SignUpPage-parent {
+    height: fit-content;
+    margin: 30px 0px;
+  }
+  .SignUpPage-parent .row {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .SignUpPage-parent .row {
+    width: 100%;
+  }
+
+  .SignUppage-image {
+    width: 100%;
+    height: 400px;
+  }
+
+  .SignUpPage-content {
+    padding-left: 0px;
+  }
+}
+
+/* popup1 coomponent - congratulations*/
+/* styles for ok and cancel buttons */
+:where(.css-dev-only-do-not-override-dkbvqv).ant-modal
+  .ant-modal-footer
+  > .ant-btn
+  + .ant-btn {
+  background: green;
+}
+button.ant-btn.css-dev-only-do-not-override-dkbvqv.ant-btn-default {
+  color: white;
+  background: rgb(245, 39, 39);
+  border: none;
+}
+
+.popup1-parent h3 {
+  color: #000;
+  text-align: center;
+  font-family: Inter;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.popup1-parent p {
+  color: var(--Gray, #676f82);
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  width: 85%;
+}
+
+.popup1-parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.popup1-image {
+  height: 130px;
+  width: 110px;
+  margin-bottom: 15px;
+}
+
+.popup1-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.popup1-buttons-parent {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+.popup1-parent .cancel-button {
+  border: none;
+  display: flex;
+  padding: 14px 28px;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 6px;
+  background: rgb(241, 55, 55);
+  color: white;
+}
+
+.popup1-parent .done-button {
+  border: none;
+  display: flex;
+  padding: 14px 28px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  background: green;
+  color: white;
+}
+
+/* popup 2 component - save */
+
+.popup2-parent h3 {
+  color: #000;
+  text-align: center;
+  font-family: Inter;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.popup2-parent p {
+  color: var(--Gray, #676f82);
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  width: 85%;
+}
+
+.popup2-parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.popup2-image {
+  height: 130px;
+  width: 110px;
+  margin-bottom: 15px;
+}
+
+.popup2-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.popup2-buttons-parent {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.popup2-parent .cancel-button {
+  border: none;
+  display: flex;
+  padding: 14px 28px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(204, 203, 203);
+  border-radius: 6px;
+  background: rgb(241, 55, 55);
+  color: white;
+}
+
+.popup2-parent .done-button {
+  border: none;
+  display: flex;
+  padding: 14px 28px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  background: green;
+  color: white;
+}
+
+/* pop up 3 component  shopping -cart */
+
+.popup-three .ant-modal-content {
+  background: var(--Accent, #457eff);
+}
+
+.Popup3-parent h3 {
+  color: white;
+  text-align: center;
+  font-family: Inter;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.Popup3-parent p {
+  color: var(--Gray, #676f82);
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  color: white;
+  width: 85%;
+}
+
+.Popup3-parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.Popup3-image {
+  height: 100px;
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.popup3-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.Popup3-parent .start-button {
+  border: none;
+  display: flex;
+  padding: 14px 28px;
+  font-family: Inter;
+  font-size: 16px;
+  margin-top: 15px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  background: white;
+  color: #457eff;
+}
+
+.Popup3-parent .skip-button {
+  border: none;
+  display: flex;
+  font-family: Inter;
+  font-size: 16px;
+  padding: 14px 28px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: transparent;
+}
+
+/* popup4 component delete account */
+
+.popup4-sub {
+  display: flex;
+  gap: 10px;
+}
+.popup4-parent h3 {
+  color: #000;
+  text-align: center;
+  font-family: Inter;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.popup4-parent p {
+  color: var(--Gray, #676f82);
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  /* width: 85%; */
+}
+
+.popup4-parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.popup4-image {
+  height: 50px;
+  width: 80px;
+}
+.popup4-image-bg {
+  border-radius: 50%;
+  background: rgba(244, 72, 93, 0.2);
+  height: 70px;
+  padding: 12px;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.popup4-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.popup4-buttons-parent {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.popup4-parent .cancel-button {
+  border: none;
+  display: flex;
+  padding: 14px 28px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(204, 203, 203);
+  border-radius: 6px;
+  background: none;
+  color: grey;
+}
+
+.popup4-parent .delete-button {
+  border: none;
+  display: flex;
+  padding: 14px 28px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  background: var(--Error, #f4485d);
+  color: white;
+}
+/* media query for popup4 component */
+@media only screen and (max-width: 767px) {
+  .popup4-parent .delete-button {
+    padding: 0px 16px;
+  }
+}
+
+/* Error page component */
+
+.error-page-image {
+  height: 420px;
+  width: 100%;
+  margin: auto;
+}
+.error-page-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.Error-page-text {
+  text-align: center;
+  padding-top: 25px;
+}
+.Error-page-text h3 {
+  color: var(--Dark-Gray, #334158);
+  font-family: Inter;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 68.4px */
+}
+.Error-page-text p {
+  color: var(--Darker-Gray, #3b4a65);
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  padding-bottom: 15px;
+}
+.Error-page-text button {
+  display: flex;
+  padding: 9.978px 24.944px;
+  justify-content: center;
+  align-items: center;
+  gap: 9.978px;
+  color: white;
+  margin: auto;
+  border: none;
+  border-radius: 7.483px;
+  background: var(--Accent, #457eff);
+}
+
+/* Media Queries ness for Error page */
+
+@media only screen and (max-width: 767px) {
+  .error-page-image {
+    height: 300px;
+  }
+  .Error-page-text h3 {
+    font-size: 32px;
+  }
+  .Error-page-text p {
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .Error-page-text h3 {
+    font-size: 45px;
+    padding-bottom: 10px;
+  }
+  .error-page-image {
+    height: 380px;
+  }
+}
+
+/* stylings for Add new Address component */
+.AddNewAddress-popup-Modal {
+  width: 650px !important;
+}
+.AddNewAddress-parent h2 {
+  text-align: center;
+}
+.AddNewAddress-parent select {
+  word-wrap: normal;
+  width: 100%;
+  padding: 8px 0px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+}
+.AddNewAddress-parent .form-label {
+  margin: 0;
+  padding: 10px 0px;
+  font-size: 15px;
+}
+.AddNewAddress-parent button {
+  padding: 8px 20px;
+  width: 100%;
+  margin-top: 25px;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  background: rgb(83, 83, 252);
+  color: white;
+}

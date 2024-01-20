@@ -321,8 +321,8 @@ router.post(
       }
 
       const sellerSide = {
-        subject: 'New Product Request Send Successfully',
-        message: 'sent Product Request'
+        subject: 'New Product Added',
+        message: 'New Product Created Successfully'
       }
 
       await TwoSideMails(shop?.email, adminSide, sellerSide)

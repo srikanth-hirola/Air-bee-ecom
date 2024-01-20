@@ -197,8 +197,8 @@ router.post(
           }
 
           const sellerSide = {
-            subject: 'New Category Request',
-            message: `Request for ${category?.name} Category is sent successfully`
+            subject: 'New Category Added',
+            message: `${category?.name} Category is added successfully`
           }
 
           const shopDetails = await Shop.findById(category?.shopID)
@@ -273,21 +273,17 @@ router.put(
             Status: 'Success',
           });
 
-          const foundAdmin = await User.findOne({ role: 'Admin' })
-
-          if (foundAdmin) {
-            const adminSide = {
-              email: foundAdmin?.email,
-              subject: 'Category Customized',
-              message: `${existingName} Catgory is Customized!`
-            }
-
-            await sendMail(adminSide)
+          const adminSide = {
+            email: process.env.SMPT_MAIL,
+            subject: 'Category Customized',
+            message: `${existingName} Catgory is Customized!`
           }
+
+          await sendMail(adminSide)
 
         })
         .catch((e) => {
-          console.log(e)
+          console.log(e, "hello")
           return next(new ErrorHandler(error, 400));
         });
     } catch (error) {
@@ -395,7 +391,6 @@ router.delete(
         Status: "Success"
       });
     } catch (error) {
-      console.log(error);
       return next(new ErrorHandler(error, 400));
     }
   })

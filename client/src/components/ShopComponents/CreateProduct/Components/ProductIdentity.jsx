@@ -18,7 +18,7 @@ const ProductIdentity = ({
     return (
         <>
             <div>
-                <label className="pb-2">
+                <label className="pb-2  font-[500]">
                     Item Name <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -32,7 +32,7 @@ const ProductIdentity = ({
             </div>
             <br />
             <div>
-                <label className="pb-2">
+                <label className="pb-2 font-[500]">
                     Does Product have variations ? <span className="text-red-500">*</span>
                 </label>
                 {/* <input
@@ -51,7 +51,7 @@ const ProductIdentity = ({
                             }}
                             checked={formData.showInputs && true}
                         />
-                        <label className="pb-2">Yes</label>
+                        <label className="pb-2 font-[500]">Yes</label>
                     </div>
                     <div>
                         <input
@@ -63,13 +63,13 @@ const ProductIdentity = ({
                             }}
                             checked={!formData.showInputs && true}
                         />
-                        <label className="pb-2">No</label>
+                        <label className="pb-2 font-[500]">No</label>
                     </div>
                 </div>
             </div>
             <br />
             <div>
-                <label className="pb-2">
+                <label className="pb-2 font-[500]">
                     Brand Name <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -84,7 +84,7 @@ const ProductIdentity = ({
             </div>
             <br />
             <div>
-                <label className="pb-2">Have Product ID ?</label>
+                <label className="pb-2 font-[500]">Have Product ID ?</label>
                 <input
                     className="mx-2"
                     type="checkbox"
@@ -104,7 +104,7 @@ const ProductIdentity = ({
             {formData.productIdState && (
                 <>
                     <div>
-                        <label className="pb-2">
+                        <label className="pb-2 font-[500]">
                             Product ID<span className="text-red-500">*</span>
                         </label>
                         <input
@@ -120,7 +120,7 @@ const ProductIdentity = ({
                 </>
             )}
             <div>
-                <label className="pb-2">
+                <label className="pb-2 font-[500]">
                     Category <span className="text-red-500">*</span>
                 </label>
                 <select
@@ -128,10 +128,10 @@ const ProductIdentity = ({
                     value={formData.category}
                     onChange={(e) => handleCategoryChange(e)}
                 >
-                    <option value="Choose a category">Choose a category</option>
+                    <option value="Choose a category"  className='font-[300] text-[16px]'>Choose a category</option>
                     {categories &&
                         categories.map((i) => (
-                            <option value={i.name} key={i.name}>
+                            <option value={i.name} key={i.name} className='font-[300] text-[16px]'>
                                 {i.name}
                             </option>
                         ))}
@@ -139,7 +139,7 @@ const ProductIdentity = ({
             </div>
             <br />
             <div>
-                <label className="pb-2">
+                <label className="pb-2 font-[500]">
                     Sub Category <span className="text-red-500">*</span>
                 </label>
                 <select
@@ -160,7 +160,7 @@ const ProductIdentity = ({
             </div>
             <br />
             <div>
-                <label className="pb-2">
+                <label className="pb-2 font-[500]">
                     Sub Sub-Category <span className="text-red-500">*</span>
                 </label>
                 <select
@@ -182,7 +182,7 @@ const ProductIdentity = ({
             </div>
             <br />
             <div>
-                <label className="pb-2">Want New Category?</label>
+                <label className="pb-2 font-[500]">Want New Category?</label>
                 <input
                     className='mx-2'
                     type="checkbox"

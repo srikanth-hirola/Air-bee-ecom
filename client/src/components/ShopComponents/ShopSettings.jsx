@@ -177,7 +177,7 @@ const ShopSettings = () => {
                         <input
                             type="submit"
                             value="Update Shop" style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor }}
-                            className={`${styles.input} !w-[95%] mb-4 h-[40px] 800px:mb-0`}
+                            className={`${styles.input} !w-[95%] mb-4 h-[40px] 800px:mb-0 bg-[#0D6EFD] text-light`}
                             required
                             readOnly
                         />

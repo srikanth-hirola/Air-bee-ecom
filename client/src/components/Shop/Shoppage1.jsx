@@ -1,5 +1,5 @@
 import React from 'react'
-import { Shoppage1Breadcrump } from './Shoppage1Breadcrump'
+import { Shoppage1Breadcrump } from '/DronesHomepageBreadcrump'
 import { Cards } from './Cards'
 
 export const Shoppage1 = () => {

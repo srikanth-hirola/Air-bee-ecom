@@ -33,7 +33,7 @@ const DraftProductIdentity = ({
     return (
         <>
             <div>
-                <label className="pb-2">
+                <label className="pb-2 font-[500]">
                     Item Name <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -47,7 +47,7 @@ const DraftProductIdentity = ({
             </div>
             <br />
             <div>
-                <label className="pb-2">
+                <label className="pb-2 font-[500]">
                     Does Product have variations ? <span className="text-red-500">*</span>
                 </label>
                 {/* <input
@@ -66,7 +66,7 @@ const DraftProductIdentity = ({
                             }}
                             checked={formData.showInputs && true}
                         />
-                        <label className="pb-2">Yes</label>
+                        <label className="pb-2 font-[500]">Yes</label>
                     </div>
                     <div>
                         <input
@@ -78,13 +78,13 @@ const DraftProductIdentity = ({
                             }}
                             checked={!formData.showInputs && true}
                         />
-                        <label className="pb-2">No</label>
+                        <label className="pb-2 font-[500]">No</label>
                     </div>
                 </div>
             </div>
             <br />
             <div>
-                <label className="pb-2">
+                <label className="pb-2 font-[500]">
                     Brand Name <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -101,7 +101,7 @@ const DraftProductIdentity = ({
             {!productID && (
                 <>
                     <div>
-                        <label className="pb-2">Have Product ID ?</label>
+                        <label className="pb-2 font-[500]">Have Product ID ?</label>
                         <input
                             className='mx-2'
                             type="checkbox"
@@ -117,7 +117,7 @@ const DraftProductIdentity = ({
                     {formData.productIdState && (
                         <>
                             <div>
-                                <label className="pb-2">
+                                <label className="pb-2 font-[500]">
                                     Product ID<span className="text-red-500">*</span>
                                 </label>
                                 <input
@@ -135,7 +135,7 @@ const DraftProductIdentity = ({
                 </>
             )}
             <div>
-                <label className="pb-2">
+                <label className="pb-2 font-[500]">
                     Category <span className="text-red-500">*</span>
                 </label>
                 <select
@@ -154,7 +154,7 @@ const DraftProductIdentity = ({
             </div>
             <br />
             <div>
-                <label className="pb-2">
+                <label className="pb-2 font-[500]">
                     Sub Category <span className="text-red-500">*</span>
                 </label>
                 <select
@@ -175,7 +175,7 @@ const DraftProductIdentity = ({
             </div>
             <br />
             <div>
-                <label className="pb-2">
+                <label className="pb-2 font-[500]">
                     Sub Sub-Category <span className="text-red-500">*</span>
                 </label>
                 <select
@@ -197,7 +197,7 @@ const DraftProductIdentity = ({
             </div>
             <br />
             <div>
-                <label className="pb-2">Want New Category?</label>
+                <label className="pb-2 font-[500]">Want New Category?</label>
                 <input
                     className='mx-2'
                     type="checkbox"

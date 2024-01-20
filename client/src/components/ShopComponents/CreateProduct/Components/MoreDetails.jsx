@@ -4,7 +4,7 @@ const MoreDetails = ({ formData, handleFormDataChange, setFormData }) => {
     return (
         <>
             <div>
-                <label className="pb-2">
+                <label className="pb-2 font-[500]">
                     Safety Warning <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -18,11 +18,11 @@ const MoreDetails = ({ formData, handleFormDataChange, setFormData }) => {
             </div>
             <br />
             <div>
-                <label className="pb-2">
+                <label className="pb-2 font-[500]">
                     Package Dimensions <span className="text-red-500">*</span>
                 </label>
                 <div>
-                    <label className="mt-2">Package Height <span className="text-gray-500 text-[13px]">(in cm)</span> </label>
+                    <label className="mt-2 font-[500]">Package Height <span className="text-gray-500 text-[13px]">(in cm)</span> </label>
                     <br />
                     <input
                         type="number"
@@ -43,7 +43,7 @@ const MoreDetails = ({ formData, handleFormDataChange, setFormData }) => {
           </select> */}
                 </div>
                 <div>
-                    <label className="mt-2">Package Length <span className="text-gray-500 text-[13px]">(in cm)</span> </label>
+                    <label className="mt-2 font-[500]">Package Length <span className="text-gray-500 text-[13px]">(in cm)</span> </label>
                     <br />
                     <input
                         type="number"
@@ -64,7 +64,7 @@ const MoreDetails = ({ formData, handleFormDataChange, setFormData }) => {
           </select> */}
                 </div>
                 <div>
-                    <label className="mt-2">Package Width <span className="text-gray-500 text-[13px]">(in cm)</span> </label>
+                    <label className="mt-2 font-[500]">Package Width <span className="text-gray-500 text-[13px]">(in cm)</span> </label>
                     <br />
                     <input
                         type="number"
@@ -87,11 +87,11 @@ const MoreDetails = ({ formData, handleFormDataChange, setFormData }) => {
             </div>
             <br />
             <div>
-                <label className="mt-2">
+                <label className="mt-2 font-[500]">
                     Package Weight <span className="text-gray-500 text-[13px]">(in kg)</span>  <span className="text-red-500">*</span>
                     {/* {formData.showInputs && (
             <div>
-              <label className="pb-2">Applies for all Varients</label>
+              <label className="pb-2 font-[500]">Applies for all Varients</label>
               <input
                 type="checkbox"
                 name="ataWeight"
@@ -127,7 +127,7 @@ const MoreDetails = ({ formData, handleFormDataChange, setFormData }) => {
             </div>
             <br />
             <div>
-                <label className="pb-2">
+                <label className="pb-2 font-[500]">
                     Product Care Instructions <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -141,7 +141,7 @@ const MoreDetails = ({ formData, handleFormDataChange, setFormData }) => {
             </div>
             <br />
             <div>
-                <label className="pb-2">
+                <label className="pb-2 font-[500]">
                     Package shape <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -155,7 +155,7 @@ const MoreDetails = ({ formData, handleFormDataChange, setFormData }) => {
             </div>
             <br />
             <div>
-                <label className="pb-2">
+                <label className="pb-2 font-[500]">
                     Warrenty Description
                 </label>
                 <input
@@ -169,7 +169,7 @@ const MoreDetails = ({ formData, handleFormDataChange, setFormData }) => {
             </div>
             <br />
             <div>
-                <label className="pb-2">
+                <label className="pb-2 font-[500]">
                     Construction / Build type <span className="text-red-500">*</span>
                 </label>
                 <input

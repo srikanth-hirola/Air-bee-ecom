@@ -90,12 +90,12 @@ const OrderRefundDetails = () => {
         <div className={`py-4 min-h-screen ${styles.section}`}>
             <div className="w-full flex items-center justify-between">
                 <div className="flex items-center">
-                    <BsFillBagFill size={30} color="crimson" />
-                    <h1 className="pl-2 text-[25px]">Order Details</h1>
+                    <BsFillBagFill size={30} color="#0156FF" />
+                    <h1 className="pl-2 text-[20px] mt-4">Order Details</h1>
                 </div>
                 <Link to="/dashboard-orders">
                     <div
-                        className={`${styles.button} !bg-[#fce1e6] !rounded-[4px] text-[#e94560] font-[600] !h-[45px] text-[18px]`}
+                        className={`${styles.button} !bg-[#fce1e6] !rounded-[4px] text-[#fff] font-[600] !h-[45px] text-[18px]`}
                     >
                         Order List
                     </div>
@@ -126,14 +126,14 @@ const OrderRefundDetails = () => {
                             className="w-[80x] h-[80px]"
                         />
                         <div className="w-full">
-                            <h5 className="pl-3 text-[20px]">{item.name}</h5>
-                            <h5 className="pl-3 text-[18px]">
+                            <h5 className="pl-3 text-[20px] fw-medium">{item.name}</h5>
+                            <h5 className="pl-3 text-[18px] fw-light">
                                 SKU : {item.selectedColor.SKU}
                             </h5>
-                            <h5 className="pl-3 text-[18px] text-[#00000091]">
+                            <h5 className="pl-3 text-[18px] text-[#00000091] fw-light">
                                 US${item.finalPrice} x {item.qty}
                             </h5>
-                            <p className="pl-3 text-[18px] text-[#00000091]">
+                            <p className="pl-3 text-[18px] text-[#00000091] fw-light">
                                 {item.colorAttribute?.name} :{' '}
                                 {item.colorAttribute?.value.valName}
                             </p>
@@ -163,7 +163,7 @@ const OrderRefundDetails = () => {
                                     {/* <button className='bg-[#fcb800] py-2 px-3 rounded text-white mt-3 w-fit'>Select For Return</button> */}
                                     {item.status === 'Processing refund' && (
                                         <div
-                                            className={`${styles.button} mt-5 !bg-[#FCE1E6] !rounded-[4px] text-[#E94560] font-[600] !h-[45px] text-[18px]`}
+                                            className={`${styles.button} mt-5 !bg-[#FCE1E6] !rounded-[4px] text-[#fff] font-[600] !h-[45px] text-[18px]`}
                                             onClick={(e) => {
                                                 refundOrderUpdateHandler(e, item._id);
                                             }}
@@ -355,7 +355,7 @@ const OrderRefundDetails = () => {
 
 
             <div
-                className={`${styles.button} mt-5 !bg-[#FCE1E6] !rounded-[4px] text-[#E94560] font-[600] !h-[45px] text-[18px]`}
+                className={`${styles.button} mt-5 !bg-[#FCE1E6] !rounded-[4px] text-[#fff] font-[600] !h-[45px] text-[18px]`}
                 onClick={
                     data?.status !== 'Processing refund'
                         ? orderUpdateHandler

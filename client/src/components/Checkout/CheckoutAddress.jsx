@@ -538,7 +538,7 @@ const ShippingInfo = ({
                 <div>
                     {user &&
                         user?.addresses.map((item, index) => (
-                            <>
+                            <React.Fragment key={index}>
                                 <div className='Checkoutpage-Pickup-store'>
                                     <div className='Checkoutpage-Pickup-store-text1'>
                                         <h5>Pickup From Store</h5>
@@ -549,7 +549,7 @@ const ShippingInfo = ({
                                         </div>
                                     </div>
                                 </div>
-                            </>
+                            </React.Fragment>
                         ))}
                 </div>
             )}

@@ -3,7 +3,7 @@ import { StyleConfig } from '../../utils/StyleConfig';
 import useProductCardHandler from '../../hooks/useProductCardHandler';
 import { Link } from 'react-router-dom';
 
-const CategoryProductCard = ({ data1 }) => {
+const CategoryProductCard = ({ data1, key }) => {
     const styles = StyleConfig();
     // eslint-disable-next-line no-unused-vars
     const [click, setClick] = useState(false);
@@ -17,7 +17,7 @@ const CategoryProductCard = ({ data1 }) => {
 
 
     return (
-        <div className="col-sm-6 col-md-3 p-0">
+        <div className="col-sm-6 col-md-3 p-0" key={key}>
             {data &&
                 <Link to={`${`/product/${data?._id}`}`}>
                     <div className='DronesProductsRow2-subimage-content'>

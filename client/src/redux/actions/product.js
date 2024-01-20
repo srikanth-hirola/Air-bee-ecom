@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { server } from '../../server';
+import toast from 'react-hot-toast';
 
 // create product
 export const createProduct = (formData, images) => async (dispatch) => {
@@ -16,6 +17,7 @@ export const createProduct = (formData, images) => async (dispatch) => {
       type: 'productCreateSuccess',
       payload: data.product,
     });
+    toast.success("Created Product Successfully")
     dispatch({ type: 'resetSuccessDraft' });
   } catch (error) {
     dispatch({
@@ -28,117 +30,121 @@ export const createProduct = (formData, images) => async (dispatch) => {
 // Publish Draft product
 export const publishDraftProduct =
   (formData, proId, images, mainImage, colorInputsIndexUpdateImage) =>
-  async (dispatch) => {
-    try {
-      dispatch({
-        type: 'productPublishDraftCreateRequest',
-      });
+    async (dispatch) => {
+      try {
+        dispatch({
+          type: 'productPublishDraftCreateRequest',
+        });
 
-      const { data } = await axios.post(
-        `${server}/product/draft-publish-product`,
-        { formData, proId, images, mainImage, colorInputsIndexUpdateImage }
-      );
-      dispatch({
-        type: 'productPublishDraftCreateSuccess',
-        payload: data.product,
-      });
-      dispatch({ type: 'resetSuccessDraft' });
-    } catch (error) {
-      dispatch({
-        type: 'productPublishDraftCreateFail',
-        payload: error.response.data.message,
-      });
-    }
-  };
+        const { data } = await axios.post(
+          `${server}/product/draft-publish-product`,
+          { formData, proId, images, mainImage, colorInputsIndexUpdateImage }
+        );
+        dispatch({
+          type: 'productPublishDraftCreateSuccess',
+          payload: data.product,
+        });
+        toast.success("Created Product Successfully")
+        dispatch({ type: 'resetSuccessDraft' });
+      } catch (error) {
+        dispatch({
+          type: 'productPublishDraftCreateFail',
+          payload: error.response.data.message,
+        });
+      }
+    };
 
 // Update product
 export const updateProduct =
   (formData, proId, images, mainImage, colorInputsIndexUpdateImage) =>
-  async (dispatch) => {
-    try {
-      dispatch({
-        type: 'productUpdateCreateRequest',
-      });
+    async (dispatch) => {
+      try {
+        dispatch({
+          type: 'productUpdateCreateRequest',
+        });
 
-      const { data } = await axios.put(`${server}/product/update-product`, {
-        formData,
-        proId,
-        images,
-        mainImage,
-        colorInputsIndexUpdateImage,
-      });
-
-      dispatch({
-        type: 'productUpdateCreateSuccess',
-        payload: data.product,
-      });
-      dispatch({ type: 'resetSuccessDraft' });
-    } catch (error) {
-      dispatch({
-        type: 'productUpdateCreateFail',
-        payload: error.response.data.message,
-      });
-    }
-  };
-
-// create Draft Product
-export const createDraftProduct =
-  (formData, images, shopId) =>
-  async (dispatch) => {
-    try {
-      dispatch({
-        type: 'productCreateDraftRequest',
-      });
-
-      const { data } = await axios.post(
-        `${server}/product/create-draft-product`,
-        { formData, images, shopId }
-      );
-      dispatch({
-        type: 'productCreateDraftSuccess',
-        payload: data.product,
-      });
-      dispatch({ type: 'resetSuccessDraft' });
-    } catch (error) {
-      dispatch({
-        type: 'productCreateDraftFail',
-        payload: error.response.data.message,
-      });
-    }
-  };
-
-// save Draft Product
-export const saveDraftProduct =
-  (formData, proId, images, mainImage, colorInputsIndexUpdateImage) =>
-  async (dispatch) => {
-    try {
-      dispatch({
-        type: 'productSaveDraftRequest',
-      });
-
-      const { data } = await axios.post(
-        `${server}/product/save-draft-product`,
-        {
+        const { data } = await axios.put(`${server}/product/update-product`, {
           formData,
           proId,
           images,
           mainImage,
           colorInputsIndexUpdateImage,
-        }
-      );
+        });
 
-      dispatch({
-        type: 'productSaveDraftSuccess',
-        payload: data.product,
-      });
-      dispatch({ type: 'resetSuccessDraft' });
-    } catch (error) {
-      dispatch({
-        type: 'productSaveDraftFail',
-        payload: error.response.data.message,
-      });
-    }
-  };
+        dispatch({
+          type: 'productUpdateCreateSuccess',
+          payload: data.product,
+        });
+        toast.success("Updated Product Successfully")
+        dispatch({ type: 'resetSuccessDraft' });
+      } catch (error) {
+        dispatch({
+          type: 'productUpdateCreateFail',
+          payload: error.response.data.message,
+        });
+      }
+    };
+
+// create Draft Product
+export const createDraftProduct =
+  (formData, images, shopId) =>
+    async (dispatch) => {
+      try {
+        dispatch({
+          type: 'productCreateDraftRequest',
+        });
+
+        const { data } = await axios.post(
+          `${server}/product/create-draft-product`,
+          { formData, images, shopId }
+        );
+        dispatch({
+          type: 'productCreateDraftSuccess',
+          payload: data.product,
+        });
+        toast.success("Created Draft Product Successfully")
+        dispatch({ type: 'resetSuccessDraft' });
+      } catch (error) {
+        dispatch({
+          type: 'productCreateDraftFail',
+          payload: error.response.data.message,
+        });
+      }
+    };
+
+// save Draft Product
+export const saveDraftProduct =
+  (formData, proId, images, mainImage, colorInputsIndexUpdateImage) =>
+    async (dispatch) => {
+      try {
+        dispatch({
+          type: 'productSaveDraftRequest',
+        });
+
+        const { data } = await axios.post(
+          `${server}/product/save-draft-product`,
+          {
+            formData,
+            proId,
+            images,
+            mainImage,
+            colorInputsIndexUpdateImage,
+          }
+        );
+
+        dispatch({
+          type: 'productSaveDraftSuccess',
+          payload: data.product,
+        });
+        toast.success("Saved Draft Product Successfully")
+        dispatch({ type: 'resetSuccessDraft' });
+      } catch (error) {
+        dispatch({
+          type: 'productSaveDraftFail',
+          payload: error.response.data.message,
+        });
+      }
+    };
 
 // requested product
 export const requestedProduct =
@@ -163,48 +169,49 @@ export const requestedProduct =
     showInputs,
     colorInputs
   ) =>
-  async (dispatch) => {
-    try {
-      dispatch({
-        type: 'productCreateRequest',
-      });
+    async (dispatch) => {
+      try {
+        dispatch({
+          type: 'productCreateRequest',
+        });
 
-      const { data } = await axios.post(
-        `${server}/product/requested-product`,
-        rejected,
-        approved,
-        eventPrice,
-        name,
-        description,
-        category,
-        subCatgory,
-        subSubCategory,
-        tags,
-        originalPrice,
-        discountPrice,
-        stock,
-        shopId,
-        images,
-        specs,
-        specs2,
-        attributes,
-        showInputs,
-        colorInputs
-      );
-      console.log(data, 'data');
-      dispatch({
-        type: 'productCreateSuccess',
-        payload: data.product,
-      });
-      dispatch({ type: 'resetSuccessDraft' });
-    } catch (error) {
-      console.log(error, 'error');
-      dispatch({
-        type: 'productCreateFail',
-        payload: error.response.data.message,
-      });
-    }
-  };
+        const { data } = await axios.post(
+          `${server}/product/requested-product`,
+          rejected,
+          approved,
+          eventPrice,
+          name,
+          description,
+          category,
+          subCatgory,
+          subSubCategory,
+          tags,
+          originalPrice,
+          discountPrice,
+          stock,
+          shopId,
+          images,
+          specs,
+          specs2,
+          attributes,
+          showInputs,
+          colorInputs
+        );
+        console.log(data, 'data');
+        dispatch({
+          type: 'productCreateSuccess',
+          payload: data.product,
+        });
+        toast.success("Created Product Successfully")
+        dispatch({ type: 'resetSuccessDraft' });
+      } catch (error) {
+        console.log(error, 'error');
+        dispatch({
+          type: 'productCreateFail',
+          payload: error.response.data.message,
+        });
+      }
+    };
 
 // Update product
 // export const updateProduct =

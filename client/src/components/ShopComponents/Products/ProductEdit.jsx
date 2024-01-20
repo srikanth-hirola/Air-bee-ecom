@@ -55,9 +55,6 @@ const ProductEdit = ({
     const [wantNewCategory, setWantNewCategory] = useState(false);
 
 
-
-
-
     const [colorInputsIndexUpdateImage, setColorInputsIndexUpdateImage] =
         useState([]);
     const [activeError, setActiveError] = useState([]);
@@ -228,7 +225,7 @@ const ProductEdit = ({
 
     return (
         <div className="w-[90%] 800px:w-[50%] bg-white  shadow h-[80vh] rounded-[4px] p-3 overflow-y-scroll create-width">
-            <h5 className="text-[30px] font-Poppins text-center">Edit Product</h5>
+            <h5 className="text-[30px] font-Poppins text-center font-[400]">Edit Product</h5>
             {formData && (
                 <form onSubmit={handleSubmit}>
                     <br />

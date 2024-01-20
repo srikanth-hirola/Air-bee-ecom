@@ -5,6 +5,7 @@ import CartBredCumbs from '../components/cart/CartBredCumbs';
 import CartButtons from '../components/cart/CartButtons';
 import WishListCards from '../components/ProductCards/WishListCards';
 import WishListHeading from '../components/wishlist/WishListHeading';
+import DronesHeader from '../components/Headers/DronesHeader';
 
 
 const WishListPage = () => {
@@ -25,6 +26,7 @@ const WishListPage = () => {
 
     return (
         <>
+            <DronesHeader />
             <div className='DronesCart-parent'>
                 <div className="container">
                     <CartBredCumbs />

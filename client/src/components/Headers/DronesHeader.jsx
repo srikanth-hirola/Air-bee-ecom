@@ -13,7 +13,7 @@ const DronesHeader = () => {
 
   return (
     <>
-      <div className='DronesHeader-parent bg-light'>
+      <div className='DronesHeader-parent bg-light '>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <div className="container-fluid">
             <Link className="navbar-brand" to="/">
@@ -30,28 +30,33 @@ const DronesHeader = () => {
               </div>
               <form className="d-flex">
                 <div className='Drones-header-icons'>
-                  <div className='Drones-header-icon drones-header-cart'>
-                    <Link to="/cart">
+                  <Link to="/cart">
+                    <div className='Drones-header-icon drones-header-cart'>
                       <FontAwesomeIcon icon={faCartShopping} style={{ color: '#8b96a5', fontSize: '20px' }} />
-                    </Link>
-                    <span className="absolute right-0 top-0 rounded-full bg-[#fa8232] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
-                      {cart && cart.length}
-                    </span>
-                  </div>
-                  <div className='Drones-header-icon drones-header-cart drones-header-wishlist'>
-                    <Link to="/wishlist">
+
+                      <span className="absolute right-0 top-0 rounded-full bg-[#fa8232] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
+                        {cart && cart.length}
+                      </span>
+                    </div>
+                  </Link>
+                  <Link to="/wishlist">
+                    <div className='Drones-header-icon drones-header-cart drones-header-wishlist'>
                       <FontAwesomeIcon icon={faHeart} style={{ color: '#8b96a5', fontSize: '20px' }} />
-                    </Link>
-                    <span className="absolute right-0 top-0 rounded-full bg-[#fa8232] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
-                      {wishlist && wishlist.length}
-                    </span>
-                  </div>
-                  <div className='Drones-header-icon'>
-                    <FontAwesomeIcon icon={faMessage} style={{ color: '#8b96a5', fontSize: '20px' }} />
-                  </div>
-                  <div className='Drones-header-icon'>
-                    <FontAwesomeIcon icon={faUser} style={{ color: '#8b96a5', fontSize: '20px' }} />
-                  </div>
+                      <span className="absolute right-0 top-0 rounded-full bg-[#fa8232] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
+                        {wishlist && wishlist.length}
+                      </span>
+                    </div>
+                  </Link>
+                  <Link to="/inbox">
+                    <div className='Drones-header-icon'>
+                      <FontAwesomeIcon icon={faMessage} style={{ color: '#8b96a5', fontSize: '20px' }} />
+                    </div>
+                  </Link>
+                  <Link to="/profilepage">
+                    <div className='Drones-header-icon'>
+                      <FontAwesomeIcon icon={faUser} style={{ color: '#8b96a5', fontSize: '20px' }} />
+                    </div>
+                  </Link>
                 </div>
               </form>
             </div>

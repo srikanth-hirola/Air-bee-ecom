@@ -136,12 +136,12 @@ const OrderDetails = () => {
         <div className={`py-4 min-h-screen ${styles.section}`}>
             <div className="w-full flex items-center justify-between">
                 <div className="flex items-center">
-                    <BsFillBagFill size={30} color="crimson" />
-                    <h1 className="pl-2 text-[25px]">Order Details</h1>
+                    <BsFillBagFill size={30} color="#0156FF" />
+                    <h1 className="pl-2 text-[24px] mt-3">Order Details</h1>
                 </div>
                 <Link to="/dashboard-orders">
                     <div
-                        className={`${styles.button} !bg-[#fce1e6] !rounded-[4px] text-[#e94560] font-[600] !h-[45px] text-[18px]`}
+                        className={`${styles.button} !bg-[#fce1e6] !rounded-[4px] text-[#fff] font-[600] !h-[45px] text-[18px]`}
                     >
                         Order List
                     </div>
@@ -149,10 +149,10 @@ const OrderDetails = () => {
             </div>
 
             <div className="w-full flex items-center justify-between pt-6">
-                <h5 className="text-[#00000084]">
+                <h5 className="text-[#00000084] m-0 text-[15px]">
                     Order ID: <span>#{data?._id?.slice(0, 8)}</span>
                 </h5>
-                <h5 className="text-[#00000084]">
+                <h5 className="text-[#00000084] m-0 text-[15px]">
                     Placed on: <span>{data?.createdAt?.slice(0, 10)}</span>
                 </h5>
             </div>
@@ -172,11 +172,11 @@ const OrderDetails = () => {
                             className="w-[80x] h-[80px]"
                         />
                         <div className="w-full">
-                            <h5 className="pl-3 text-[20px]">{item.name}</h5>
-                            <h5 className="pl-3 text-[18px]">
+                            <h5 className="pl-3 text-[20px] fw-medium">{item.name}</h5>
+                            <h5 className="pl-3 text-[18px] fw-light">
                                 SKU : {item.selectedColor.SKU}
                             </h5>
-                            <h5 className="pl-3 text-[18px] text-[#00000091]">
+                            <h5 className="pl-3 text-[18px] text-[#00000091] fw-normal">
                                 US${item.finalPrice} x {item.qty}
                             </h5>
                             <p className="pl-3 text-[18px] text-[#00000091]">
@@ -208,7 +208,7 @@ const OrderDetails = () => {
                                     </select>
                                     {item.status === 'Processing refund' && (
                                         <div
-                                            className={`${styles.button} mt-5 !bg-[#FCE1E6] !rounded-[4px] text-[#E94560] font-[600] !h-[45px] text-[18px]`}
+                                            className={`${styles.button} mt-5 !bg-[#FCE1E6] !rounded-[4px] text-[#fff] font-[600] !h-[45px] text-[18px]`}
                                             onClick={(e) => {
                                                 refundOrderUpdateHandler(e, item._id);
                                             }}
@@ -224,39 +224,39 @@ const OrderDetails = () => {
 
             <div className="border-t w-full text-right flex justify-between">
                 <h5 className="pt-3 text-[18px]">
-                    Shipping: <strong>₹{shippingDataSeller?.response?.orders?.rate}</strong>
+                <strong className='fw-medium'>Shipping: </strong><span className='fw-light'>₹{shippingDataSeller?.response?.orders?.rate}</span>
                 </h5>
                 <h5 className="pt-3 text-[18px]">
-                    Total Price: <strong>₹{shippingDataSeller?.subTotalPrice + shippingDataSeller?.response?.orders?.rate}</strong>
+                <strong className='fw-medium'>Total Price: </strong><span className='fw-light'>₹{shippingDataSeller?.subTotalPrice + shippingDataSeller?.response?.orders?.rate}</span>
                 </h5>
                 <h5 className="pt-3 text-[18px]">
-                    <strong>{data?.paymentInfo?.type}</strong>
+                    <strong className='fw-medium'>{data?.paymentInfo?.type}</strong>
                 </h5>
             </div>
             <div className="border-t w-full">
-                <h5 className="pt-3 text-[18px]">
+                <h5 className="pt-3 text-[17px] fw-medium mb-1">
                     Delivery Info:
                 </h5>
-                <div className="pt-3 text-[18px]">
-                    <p>Courier Name: <strong>{shippingDataSeller?.response?.orders?.courier_name}</strong></p>
-                    <p>Estimated Delivery: <strong>{shippingDataSeller?.response?.orders?.etd}</strong></p>
+                <div className="pt-1 text-[17px] fw-light">
+                    <p className='mb-1'><strong className='fw-medium '>Courier Name:</strong> {shippingDataSeller?.response?.orders?.courier_name}</p>
+                    <p className='mb-1'><strong className='fw-medium'>Estimated Delivery: </strong>{shippingDataSeller?.response?.orders?.etd}</p>
                 </div>
             </div>
             <br />
             <br />
             <div className="w-full 800px:flex items-center">
                 {data?.shipping_is_billing ? <div className="w-full 800px:w-[60%]">
-                    <h4 className="pt-3 text-[20px] font-[600]">Shipping Address:</h4>
-                    <h4 className="pt-3 text-[20px]">
+                    <h4 className="pt-3 text-[18px] font-[600] mb-2">Shipping Address:</h4>
+                    <p className="pt-3 text-[18px] font-[300] mb-2">
                         {data?.BillingAddress.billingaddress1}
-                    </h4>
-                    <h4 className=" text-[20px]">{data?.BillingAddress.billingaddress2}
-                    </h4>
-                    <h4 className=" text-[20px]">{data?.BillingAddress.newCountry}</h4>
-                    <h4 className=" text-[20px]">{data?.BillingAddress.newState}</h4>
-                    <h4 className=" text-[20px]">{data?.BillingAddress.newCity} - {data?.BillingAddress.billingzipCode}</h4>
-                    <h4 className=" text-[20px]">{data?.BillingAddress?.billinguserphonenumber}</h4>
-                    <h4 className=" text-[20px]">{data?.BillingAddress?.billinguserEmail}</h4>
+                    </p>
+                    <p className=" text-[18px] font-[300] mb-2">{data?.BillingAddress.billingaddress2}
+                    </p>
+                    <p className=" text-[18px] font-[300] mb-2">{data?.BillingAddress.newCountry}</p>
+                    <p className=" text-[18px] font-[300] mb-2">{data?.BillingAddress.newState}</p>
+                    <p className=" text-[18px] font-[300] mb-2">{data?.BillingAddress.newCity} - {data?.BillingAddress.billingzipCode}</p>
+                    <p className=" text-[18px] font-[300] mb-2">{data?.BillingAddress?.billinguserphonenumber}</p>
+                    <p className=" text-[18px] font-[300] mb-2">{data?.BillingAddress?.billinguserEmail}</p>
                 </div> :
                     <div className="w-full 800px:w-[60%]">
                         <h4 className="pt-3 text-[20px] font-[600]">Shipping Address:</h4>
@@ -273,11 +273,11 @@ const OrderDetails = () => {
                     </div>}
 
                 <div className="w-full 800px:w-[40%]">
-                    <h4 className="pt-3 text-[20px]">Payment Info:</h4>
-                    <h4>
+                    <h4 className="pt-3 text-[18px] font-[600]">Payment Info:</h4>
+                    <p className='text-[18px] font-[300] mb-2'>
                         Status:{' '}
                         {data?.paymentInfo?.status ? data?.paymentInfo?.status : 'Not Paid'}
-                    </h4>
+                    </p>
                 </div>
             </div>
             <br />
@@ -286,7 +286,7 @@ const OrderDetails = () => {
                 <>
                     <div className="my-4 flex space-x-3">
                         <div>
-                            <label className="pb-1">
+                            <label className="pb-1 font-[500]">
                                 Package Length In Centemeter
                                 <span className="text-red-500">*</span>
                             </label>
@@ -300,7 +300,7 @@ const OrderDetails = () => {
                             />
                         </div>
                         <div>
-                            <label className="pb-1">
+                            <label className="pb-1 font-[500]">
                                 Package Breadth In Centemeter
                                 <span className="text-red-500">*</span>
                             </label>
@@ -314,7 +314,7 @@ const OrderDetails = () => {
                             />
                         </div>
                         <div>
-                            <label className="pb-1">
+                            <label className="pb-1 font-[500]">
                                 Package Height In Centemeter
                                 <span className="text-red-500">*</span>
                             </label>
@@ -328,7 +328,7 @@ const OrderDetails = () => {
                             />
                         </div>
                         <div>
-                            <label className="pb-1">
+                            <label className="pb-1 font-[500]">
                                 Package Weight In Kilograms
                                 <span className="text-red-500">*</span>
                             </label>
@@ -370,7 +370,7 @@ const OrderDetails = () => {
                     <select
                         value={status}
                         onChange={(e) => setStatus(e.target.value)}
-                        className="w-[200px] mt-2 border h-[35px] rounded-[5px]"
+                        className="w-[200px]  border h-[35px] rounded-[5px]"
                     >
                         {[
                             'Processing',
@@ -400,7 +400,7 @@ const OrderDetails = () => {
 
 
             <div
-                className={`${styles.button} mt-5 !bg-[#FCE1E6] !rounded-[4px] text-[#E94560] font-[600] !h-[45px] text-[18px]`}
+                className={`${styles.button} mt-5 !bg-[#FCE1E6] !rounded-[4px] text-[#fff] font-[600] !h-[45px] text-[16px] font-[500]`}
                 onClick={
                     data?.status !== 'Processing refund'
                         ? orderUpdateHandler

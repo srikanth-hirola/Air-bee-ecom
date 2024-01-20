@@ -13,9 +13,6 @@ const DronesRecommendedItems = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [allProducts])
 
-    useEffect(() => {
-        console.log(products)
-    }, [products])
 
     return (
         <>

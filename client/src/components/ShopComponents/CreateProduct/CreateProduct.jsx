@@ -106,7 +106,7 @@ const CreateProduct = () => {
 
         colorInputs: null,
         shopId: seller._id,
-        approved: false,
+        approved: true,
         rejected: false,
         eventPrice: 0,
         eventStock: 0,
@@ -172,6 +172,7 @@ const CreateProduct = () => {
             toast.error(error);
         }
         if (success) {
+            console.log("first")
             toast.success('Product created successfully!');
             navigate('/dashboard'); // Navigate to another page using navigate
         }
@@ -215,55 +216,6 @@ const CreateProduct = () => {
         }
     };
 
-    // const handleSubmit = (e) => {
-    //   e.preventDefault();
-
-    //   const newForm = new FormData();
-
-    //   images.forEach((image) => {
-    //     newForm.set('images', image);
-    //   });
-
-    //   //product Identity
-    //   newForm.append('name', name);
-    //   newForm.append('brandName', name);
-    //   newForm.append('description', description);
-    //   newForm.append('category', category);
-    //   newForm.append('subCategory', subCatgory);
-    //   newForm.append('subSubcategory', subSubCategory);
-    //   newForm.append('tags', tags);
-    //   newForm.append('originalPrice', originalPrice);
-    //   newForm.append('discountPrice', discountPrice);
-    //   newForm.append('stock', stock);
-    //   newForm.append('shopId', seller._id);
-    //   newForm.append('specs', specification);
-    //   newForm.append('specs2', specification2);
-    //   newForm.append('attributes', attributes);
-    //   newForm.append('colorInputs', colorInputs);
-    //   dispatch(
-    //     requestedProduct({
-    //       approved: false,
-    //       rejected: false,
-    //       eventPrice: '',
-    //       name,
-    //       description,
-    //       category,
-    //       subCatgory,
-    //       subSubCategory,
-    //       tags,
-    //       originalPrice,
-    //       discountPrice,
-    //       stock,
-    //       shopId: seller._id,
-    //       images,
-    //       specs: specification,
-    //       specs2: specification2,
-    //       attributes,
-    //       showInputs,
-    //       colorInputs: colorInputs,
-    //     })
-    //   );
-    // };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -282,77 +234,6 @@ const CreateProduct = () => {
         }
     };
 
-    // const Validation = () => {
-    //   if (formData.showInputs) {
-    //     if (formData.name === '' || formData.brandName === '') {
-    //       toast.error('All mandatory fields must be filled');
-    //       return false;
-    //     }
-
-    //     if (!formData.productIdState || formData.productId === '') {
-    //       toast.error('ProductID is Required');
-    //       return false;
-    //     }
-
-    //     if (formData.mainImage.url === '') {
-    //       toast.error('Main Image is Required');
-    //       return false;
-    //     }
-
-    //     if (formData.showInputs) {
-    //       const colorInputsValid = formData.colorInputs.every((val) => {
-    //         if (val.image.url === '') {
-    //           toast.error('Variations Image is Required');
-    //           return false;
-    //         }
-    //         return true;
-    //       });
-
-    //       if (!colorInputsValid) {
-    //         return false;
-    //       }
-    //     }
-
-    //     return true;
-    //   } else {
-    //     if (
-    //       formData.name === '' ||
-    //       formData.brandName === '' ||
-    //       formData.originalPrice === '' ||
-    //       formData.discountPrice === '' ||
-    //       formData.stock === ''
-    //     ) {
-    //       toast.error('All mandatory fields must be filled');
-    //       return false;
-    //     }
-
-    //     if (!formData.productIdState || formData.productId === '') {
-    //       toast.error('ProductID is Required');
-    //       return false;
-    //     }
-
-    //     if (formData.mainImage.url === '') {
-    //       toast.error('Main Image is Required');
-    //       return false;
-    //     }
-
-    //     if (formData.showInputs) {
-    //       const colorInputsValid = formData.colorInputs.every((val) => {
-    //         if (val.image.url === '') {
-    //           toast.error('Variations Image is Required');
-    //           return false;
-    //         }
-    //         return true;
-    //       });
-
-    //       if (!colorInputsValid) {
-    //         return false;
-    //       }
-    //     }
-
-    //     return true;
-    //   }
-    // };
 
     const handleDraftSubmit = (e) => {
         e.preventDefault();
@@ -485,7 +366,7 @@ const CreateProduct = () => {
 
     return (
         <div className="w-[90%] 800px:w-[50%] bg-white  shadow h-[90vh] rounded-[4px] p-3 overflow-y-scroll create-width">
-            <h5 className="text-[30px] font-Poppins text-center">Create Product</h5>
+            <h5 className="text-[30px] font-Poppins text-center font-[400]">Create Product</h5>
             {/* create product form */}
             <form onSubmit={handleSubmit}>
                 <br />

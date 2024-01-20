@@ -3,14 +3,14 @@ import { Services } from './DroneHomepageData'
 
 const DronesServices = () => {
     const data = Services
-    console.log(data)
+
     return (
         <>
             <div className='DronesServices-parent'>
-            <h4>Our Extra Services</h4>
+                <h4>Our Extra Services</h4>
                 {data?.ServicesContent?.servicesimages?.content?.items?.items?.length > 0 &&
                     <div className="row">
-                        
+
                         {data?.ServicesContent?.servicesimages?.content?.items?.items?.map((item, index) => (
                             <div className="col-sm-6 col-md-3" key={index}>
                                 <div className='Drone-services-sub'>
