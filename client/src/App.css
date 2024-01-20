@@ -1830,7 +1830,7 @@ button.attribute-btn {
 }
 
 .track-status p {
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
 }
 
@@ -2588,9 +2588,42 @@ input.searchTest {
 
 
 /* New */
-.side-div .accordion-collapse.collapse.show{
- background-color: #0156FF;
+.side-div .accordian-child:hover{
+ 
+
 }
 .side-div .accordion-collapse.collapse.show .accordian-child h5{
+  padding: 10px 0px 10px 35px;
+  width: 100%;
+}
+.side-div .accordion-collapse.collapse.show .accordian-child h5:hover{
+  background-color: #06c;
+ color: white;
+}
+.side-div .accordion-body{
+ padding: 0;
+ gap: 0;
+}
+.css-pdct74-MuiTablePagination-selectLabel{
+  margin: 0;
+}
+.css-levciy-MuiTablePagination-displayedRows{
+  margin: 0;
+}
+.outer1-div .hover-catagoriesbuttons button:hover{
+ background-color: darkblue;
+}
+.categoryInput button{
+  background-color: #06c;
   color: white;
+}
+.side-div .accordion-item{
+ border: none;
+}
+.login-shipment-page{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.dashboard-coupons-overflow{
+  height: 95%;
+  overflow-y: auto;
 }

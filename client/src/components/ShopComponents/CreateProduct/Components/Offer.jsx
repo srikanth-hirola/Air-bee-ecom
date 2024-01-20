@@ -19,7 +19,7 @@ const Offer = ({
     return (
         <>
             <div>
-                <label className="pb-2">
+                <label className="pb-2 font-[500]">
                     Product Tax Code <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -33,7 +33,7 @@ const Offer = ({
             </div>
             <br />
             <div>
-                <label className="pb-2">
+                <label className="pb-2 font-[500]">
                     Total Tax in %
                 </label>
                 <input
@@ -49,7 +49,7 @@ const Offer = ({
             {!formData.showInputs && (
                 <>
                     <div>
-                        <label className="pb-2">
+                        <label className="pb-2 font-[500]">
                             SKU <span className="text-red-500">*</span>
                         </label>
                         <input
@@ -63,7 +63,7 @@ const Offer = ({
                     </div>
                     <br />
                     <div>
-                        <label className="pb-2">
+                        <label className="pb-2 font-[500]">
                             Original Price <span className="text-red-500">*</span>
                         </label>
                         <input
@@ -77,7 +77,7 @@ const Offer = ({
                     </div>
                     <br />
                     <div>
-                        <label className="pb-2">
+                        <label className="pb-2 font-[500]">
                             Price (With Discount) <span className="text-red-500">*</span>
                         </label>
                         <input
@@ -91,7 +91,7 @@ const Offer = ({
                     </div>
                     <br />
                     <div className="mt-4">
-                        <label className="pb-2">
+                        <label className="pb-2 font-[500]">
                             Have attributes ?<span className="text-red-500">*</span>
                         </label>
                         <br />
@@ -106,7 +106,7 @@ const Offer = ({
                                     }}
                                     checked={formData.haveAttributes && true}
                                 />
-                                <label className="pb-2">Yes</label>
+                                <label className="pb-2 font-[500]">Yes</label>
                             </div>
                             <div>
                                 <input
@@ -118,7 +118,7 @@ const Offer = ({
                                     }}
                                     checked={!formData.haveAttributes && true}
                                 />
-                                <label className="pb-2">No</label>
+                                <label className="pb-2 font-[500]">No</label>
                             </div>
                         </div>
                     </div>
@@ -126,7 +126,7 @@ const Offer = ({
                     {formData.haveAttributes && (
                         <>
                             <div className="mt-4">
-                                <label className="pb-2">
+                                <label className="pb-2 font-[500]">
                                     Have Seperate Stock Limit for each selectable attribute value ?
                                     <span className="text-red-500">*</span>
                                 </label>
@@ -141,7 +141,7 @@ const Offer = ({
                                 />
                             </div>
                             <div>
-                                <label className="pb-2">
+                                <label className="pb-2 font-[500]">
                                     Attributes <span className="text-red-500">*</span>
                                 </label>
                                 <AddAttribute
@@ -157,7 +157,7 @@ const Offer = ({
             )}
 
             <div>
-                <label className="pb-2">
+                <label className="pb-2 font-[500]">
                     Item Condition <span className="text-red-500">*</span>
                 </label>
                 <select
@@ -172,7 +172,7 @@ const Offer = ({
             </div>
             <br />
             <div>
-                <label className="pb-2">Condition Note</label>
+                <label className="pb-2 font-[500]">Condition Note</label>
                 <textarea
                     cols="30"
                     rows="8"
@@ -186,7 +186,7 @@ const Offer = ({
             </div>
             <br />
             <div>
-                <label className="pb-2">Max Order Quantity</label>
+                <label className="pb-2 font-[500]">Max Order Quantity</label>
                 <input
                     type="number"
                     name="maxOrderQuantity"
@@ -197,7 +197,7 @@ const Offer = ({
             </div>
             <br />
             <div>
-                <label className="pb-2">Can be gift messaged ?</label>
+                <label className="pb-2 font-[500]">Can be gift messaged ?</label>
                 <select
                     className="w-full mt-2 border h-[35px] rounded-[5px]"
                     name="giftMessaged"
@@ -211,7 +211,7 @@ const Offer = ({
             </div>
             <br />
             <div>
-                <label className="pb-2">Is Gift Wrap Available ?</label>
+                <label className="pb-2 font-[500]">Is Gift Wrap Available ?</label>
                 <select
                     className="w-full mt-2 border h-[35px] rounded-[5px]"
                     name="giftWrapAvailable"
@@ -225,7 +225,7 @@ const Offer = ({
             </div>
             <br />
             <div>
-                <label className="pb-2">
+                <label className="pb-2 font-[500]">
                     HSN Code <span className="text-red-500">*</span>
                 </label>
                 <input

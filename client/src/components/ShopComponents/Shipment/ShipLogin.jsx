@@ -46,7 +46,7 @@ const ShipLogin = () => {
     };
 
     return (
-        <div className='border-2 rounded-lg p-6'>
+        <div className='rounded-lg p-10 login-shipment-page'>
             <h1 className='text-2xl pb-2'>Login to ShipRocket API</h1>
             <label className='mb-1'>Email ID</label>
             <br />
@@ -67,8 +67,9 @@ const ShipLogin = () => {
             />
             <br />
             <button
-                onClick={handleShipRocketLogin} style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor }}
-                className=" rounded w-full  text-white py-2"
+                onClick={handleShipRocketLogin} 
+                style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor }}
+                className=" rounded w-full h-[30px] bg-[#0D6EFD] text-light"
             >
                 Submit
             </button>

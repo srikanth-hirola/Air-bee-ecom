@@ -10,7 +10,7 @@ import { Button } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import Loader from "../../../utils/Loader";
 import { StyleConfig } from "../../../utils/StyleConfig";
-
+// import { Modal } from 'antd';
 
 const AllCoupons = () => {
     const [open, setOpen] = useState(false);
@@ -126,13 +126,15 @@ const AllCoupons = () => {
                 <Loader />
             ) : (
                 <div className="w-full mx-8 pt-1 mt-10 bg-white outer1-div">
+                    
                     <div className="w-full flex justify-end">
-                        <div
-                            className={`${styles.button} !w-max !h-[45px] px-3 !rounded-[5px] mr-3 mb-3`}
-                            onClick={() => setOpen(true)}
-                        >
-                            <span className="text-white">Create Coupon Code</span>
-                        </div>
+                        
+                            <div
+                                className={`${styles.button} !w-max !h-[45px] px-3 !rounded-[5px] mr-3 mb-3`}
+                                onClick={() => setOpen(true)}
+                            >
+                                <span className="text-white">Create Coupon Code</span>
+                            </div>
                     </div>
                     <DataGrid
                         rows={row}
@@ -143,7 +145,8 @@ const AllCoupons = () => {
                     />
                     {open && (
                         <div className="fixed top-0 left-0 w-full h-screen bg-[#00000062] z-[20000] flex items-center justify-center">
-                            <div className="w-[90%] 800px:w-[40%] h-[80vh] bg-white rounded-md shadow p-4">
+                          
+                            <div className="w-[90%] 800px:w-[40%] h-[100vh] bg-white rounded-md shadow p-4 dashboard-coupons-overflow">
                                 <div className="w-full flex justify-end">
                                     <RxCross1
                                         size={30}
@@ -235,13 +238,15 @@ const AllCoupons = () => {
                                         <input
                                             type="submit"
                                             value="Create"
-                                            className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                                            className="mt-2 appearance-none block w-[30%] px-4 h-[35px]   rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 lg:text-lg bg-[#0D6EFD] text-light "
                                         />
                                     </div>
                                 </form>
                             </div>
+                          
                         </div>
                     )}
+                
                 </div>
             )}
         </>
