@@ -598,6 +598,19 @@ const DashboardSideBar = ({ active }) => {
                         <Accordion.Body>
                             <div className="w-full flex items-center accordian-child">
                                 <Link
+                                    to="/site-config/categories-config"
+                                    className="w-full flex items-center"
+                                >
+                                    <h5
+                                        className={`hidden 800px:block pl-2 text-[18px] font-[400] ${active === 3 ? 'text-[crimson]' : 'text-[#555]'
+                                            }`}
+                                    >
+                                        Categories Config
+                                    </h5>
+                                </Link>
+                            </div>
+                            <div className="w-full flex items-center accordian-child">
+                                <Link
                                     to="/site-config/events-config"
                                     className="w-full flex items-center"
                                 >
@@ -606,6 +619,19 @@ const DashboardSideBar = ({ active }) => {
                                             }`}
                                     >
                                         Events Config
+                                    </h5>
+                                </Link>
+                            </div>
+                            <div className="w-full flex items-center accordian-child">
+                                <Link
+                                    to="/site-config/miscellaneous-config"
+                                    className="w-full flex items-center"
+                                >
+                                    <h5
+                                        className={`hidden 800px:block pl-2 text-[18px] font-[400] ${active === 3 ? 'text-[crimson]' : 'text-[#555]'
+                                            }`}
+                                    >
+                                        Miscellaneous Config
                                     </h5>
                                 </Link>
                             </div>

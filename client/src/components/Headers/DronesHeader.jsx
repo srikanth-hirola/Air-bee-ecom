@@ -4,11 +4,13 @@ import SearchBar from '../Search/SearchBar'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping, faHeart, faMessage, faUser } from '@fortawesome/free-solid-svg-icons'
 import { useSelector } from 'react-redux'
+import { StyleConfig } from '../../utils/StyleConfig'
 
 const DronesHeader = () => {
 
   const { wishlist } = useSelector((state) => state.wishlist);
   const { cart } = useSelector((state) => state.cart);
+  const styles = StyleConfig();
 
 
   return (
@@ -18,7 +20,7 @@ const DronesHeader = () => {
           <div className="container-fluid">
             <Link className="navbar-brand" to="/">
               <div className='Drones-header-logo'>
-                <img src="/images/logo.svg" alt="logo" />
+                <img src={styles?.logo?.url} alt="logo" />
               </div>
             </Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

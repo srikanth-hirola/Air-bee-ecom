@@ -302,6 +302,27 @@ export const getRequestedProductsShop = (id) => async (dispatch) => {
   }
 };
 
+export const getPublishedProducts = () => async (dispatch) => {
+  try {
+    dispatch({
+      type: 'getPublishedProductsShopRequest',
+    });
+
+    const { data } = await axios.get(
+      `${server}/product/get-published-products`
+    );
+    dispatch({
+      type: 'getPubllishedProductsShopSuccess',
+      payload: data.products,
+    });
+  } catch (error) {
+    dispatch({
+      type: 'getPublishedProductsShopFailed',
+      payload: error.response.data.message,
+    });
+  }
+};
+
 // get a Producta of a shop
 export const getAProductsShop = (id) => async (dispatch) => {
   try {

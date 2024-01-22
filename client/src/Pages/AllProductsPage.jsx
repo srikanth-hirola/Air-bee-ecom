@@ -57,7 +57,9 @@ const AllProductsPage = () => {
     }, [allProducts, searchParam]);
 
     const apiCall = async (searchTerm) => {
-        const { data } = await axios.get(`${server}/product/search/${searchTerm}`);
+
+        var encodedSearchTerm = encodeURIComponent(searchTerm);
+        const { data } = await axios.get(`${server}/product/search/${encodedSearchTerm}`);
         let arrayData = [];
         // eslint-disable-next-line array-callback-return
         await data.products.map((val) => {

@@ -1,10 +1,29 @@
+import axios from 'axios';
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom'
+import { server } from '../../server';
+import toast from 'react-hot-toast';
 
 const SideBar = () => {
+    const { user } = useSelector((state) => state.user);
+    const navigate = useNavigate();
+    const logoutHandler = () => {
+        axios
+            .get(`${server}/user/logout`, { withCredentials: true })
+            .then((res) => {
+                toast.success(res.data.message);
+                window.location.reload(true);
+                navigate("/login");
+            })
+            .catch((error) => {
+                console.log(error.response.data.message);
+            });
+    };
+
     return (
         <div className='ContactDetails-sub2'>
-            <h3>Hello Jhanvi</h3>
+            <h3>Hello {user?.name}</h3>
             <p>Welcome to your Account</p>
             <div className='ContactDetails-sub2-list'>
                 <div className="row">
@@ -53,7 +72,7 @@ const SideBar = () => {
                             <div className='ContactDetails-sub2-list-content-image'>
                                 <img src="DronesHomepage/sign out.png" alt="" />
                             </div>
-                            <p>Sign Out</p>
+                            <p onClick={logoutHandler}>Sign Out</p>
                         </div>
                     </div>
                 </div>

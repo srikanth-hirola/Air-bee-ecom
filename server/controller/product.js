@@ -1640,6 +1640,7 @@ router.get(
         draft: false,
       });
 
+
       res.status(201).json({
         success: true,
         products,
@@ -1649,6 +1650,28 @@ router.get(
     }
   })
 );
+
+// get published products of a shop
+router.get(
+  '/get-published-products',
+  catchAsyncErrors(async (req, res, next) => {
+    try {
+      const products = await Product.find({
+        // shopId: req.params.id,
+        approved: true,
+        draft: false,
+      });
+
+      res.status(201).json({
+        success: true,
+        products,
+      });
+    } catch (error) {
+      return next(new ErrorHandler(error, 400));
+    }
+  })
+);
+
 
 // get a product of a shop
 router.get(
@@ -2087,6 +2110,7 @@ router.get(
         products: sorted,
       });
     } catch (error) {
+      console.log(error)
       return next(new ErrorHandler(error, 400));
     }
   })

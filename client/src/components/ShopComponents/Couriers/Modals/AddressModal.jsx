@@ -2,14 +2,12 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { useSelector } from 'react-redux';
-import { StyleConfig } from '../../../../utils/StyleConfig';
 import toast from 'react-hot-toast';
 import { server } from '../../../../server';
 
 const AddressModal = (props) => {
     const { seller } = useSelector((state) => state.seller);
 
-    const styles = StyleConfig();
 
 
     const [formData, setFormData] = useState({
@@ -122,7 +120,7 @@ const AddressModal = (props) => {
                             <input name='country' className='border-1 rounded px-2 py-1' placeholder='Enter Country Name' type='text' onChange={handleChange} />
                         </div>
                     </div>
-                    <button type='submit' style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor }} className=' rounded text-white py-2 px-4 font-semibold'>Save Address</button>
+                    <button type='submit' className=' rounded text-white py-2 px-4 font-semibold bg-green-500'>Save Address</button>
                 </form>
             </Modal.Body>
             {/* <Modal.Footer>

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { server } from "../../server";
+import toast from "react-hot-toast";
 
 // create event
 export const createevent = (data) => async (dispatch) => {
@@ -13,8 +14,10 @@ export const createevent = (data) => async (dispatch) => {
       type: "eventCreateSuccess",
       payload: result.data.event,
     });
+    toast.success('Event created successfully!');
     dispatch({ type: 'resetSuccessEvent' });
   } catch (error) {
+    toast.error(error.response.data.message);
     dispatch({
       type: "eventCreateFail",
       payload: error.response.data.message,

@@ -139,6 +139,18 @@ export const productReducer = createReducer(initialState, {
     state.error = action.payload;
   },
 
+  getPublishedProductsShopRequest: (state) => {
+    state.isLoading = true;
+  },
+  getPubllishedProductsShopSuccess: (state, action) => {
+    state.isLoading = false;
+    state.allPublishedProducts = action.payload;
+  },
+  getPublishedProductsShopFailed: (state, action) => {
+    state.isLoading = false;
+    state.error = action.payload;
+  },
+
   clearErrors: (state) => {
     state.error = null;
   },

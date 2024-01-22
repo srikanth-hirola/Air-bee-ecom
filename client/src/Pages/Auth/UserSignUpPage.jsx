@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
-import Login from '../components/User/Login'
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import DronesHeader from '../components/Headers/DronesHeader';
+import DronesHeader from '../../components/Headers/DronesHeader';
+import SignUp from '../../components/User/SignUp';
 
-const UserLoginPage = () => {
+const UserSignUpPage = () => {
 
     const navigate = useNavigate();
     const { isAuthenticated } = useSelector((state) => state.user);
@@ -19,7 +19,7 @@ const UserLoginPage = () => {
     return (
         <>
             <DronesHeader />
-            <div className='SignUpPage-parent'>
+            <div className='SignUpPage-parent !h-[88vh]'>
                 <div className="container">
                     <div className="row shadow-lg">
                         <div className="col-md-6">
@@ -28,7 +28,7 @@ const UserLoginPage = () => {
                             </div>
                         </div>
                         <div className='col-md-6'>
-                            <Login />
+                            <SignUp />
                         </div>
                     </div>
                 </div>
@@ -39,5 +39,5 @@ const UserLoginPage = () => {
     )
 }
 
-export default UserLoginPage
+export default UserSignUpPage
 
