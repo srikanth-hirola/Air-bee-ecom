@@ -26,9 +26,6 @@ const DronesRecommendedItems = () => {
                             {products?.slice(0, 18)?.map((item, index) => (
                                 <RecommendedProductCard data1={item} key={index} />
                             ))}
-
-
-
                         </div>}
                 </div>
 

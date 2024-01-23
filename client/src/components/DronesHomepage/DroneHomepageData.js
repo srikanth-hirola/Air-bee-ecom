@@ -674,7 +674,7 @@ export const Footer = {
             content:{
                 img:{
                     public_id:"",
-                    url:"./images/logo.svg"
+                    url:"./images/logo.png"
                 }
             }
         }

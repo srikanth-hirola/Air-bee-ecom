@@ -29,12 +29,11 @@ const DronesDealsOftheDay = () => {
     const addLeadingZero = (value) => {
         return value < 10 ? `0${value}` : value;
     };
-
     return (
         <>
             <div className="DronesDealsoftheDay-parent">
                 <div className='DronesDealsoftheDay-sub-parent' style={{ backgroundImage: `url('DronesHomepage/HomeBanner1.png')` }}>                    <div className="row">
-                    <div className="col-md-5">
+                    <div className="col-md-12 col-lg-5">
                         <div className='DronesDealsoftheDay-sub1'>
                             <div className='DronesDeals-image'>
                                 <img src="/DronesHomepage/image 128.png" alt="" />
@@ -42,7 +41,7 @@ const DronesDealsOftheDay = () => {
                             <h3>Deals of the Day</h3>
                         </div>
                     </div>
-                    <div className="col-md-7">
+                    <div className="col-md-12 col-lg-7">
                         <div className='DronesDealsoftheDay-sub2'>
                             <div className="row">
                                 <div className="col-md-9 col-lg-9">

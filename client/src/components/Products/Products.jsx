@@ -8,6 +8,7 @@ import FeaturedProductCard from '../ProductCards/FeaturedProductCard';
 
 const Products = () => {
     const { allProducts } = useSelector((state) => state.products);
+    
 
     return (
         <>

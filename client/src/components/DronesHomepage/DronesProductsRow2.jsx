@@ -12,7 +12,9 @@ const DronesProductsRow2 = () => {
                             <div className='DronesProductsRow2-image1-title'>
                                 <h5>Home and Outdoor</h5>
                             </div>
+                            <div className='DronesProductsRow2-image1-parent'>
                             <img src="./DronesHomepage/row-2-1.png" alt="" />
+                            </div>
                         </div>
                     </div>
                     {data?.productimages?.images?.content?.items?.items.length > 0 &&
