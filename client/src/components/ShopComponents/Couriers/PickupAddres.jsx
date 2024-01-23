@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 
-import { StyleConfig } from '../../../utils/StyleConfig';
 import { server } from '../../../server';
 import toast from 'react-hot-toast';
 import Loader from '../../../utils/Loader';
@@ -17,7 +16,6 @@ const PickupAddres = () => {
     const [modalShow, setModalShow] = useState(false);
     const [selectedLocation, setSelcetedLocation] = useState({})
 
-    const styles = StyleConfig();
 
     useEffect(() => {
         setSelcetedLocation(seller?.pickupLocation);
@@ -62,7 +60,7 @@ const PickupAddres = () => {
                         <div className="w-full mx-6 my-6">
                             <div className="w-full">
                                 <div className='flex justify-end'>
-                                    <button style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor }} className=' rounded text-white py-2 px-4 font-semibold' onClick={() => setModalShow(true)}>Add New Pickup Location</button>
+                                    <button className=' rounded text-white py-2 px-4 font-semibold bg-blue-500' onClick={() => setModalShow(true)}>Add New Pickup Location</button>
                                     <AddressModal
                                         show={modalShow}
                                         onHide={() => setModalShow(false)}
@@ -118,8 +116,8 @@ const PickupAddres = () => {
                                         </div>
                                     ))}
                                 </div>
-                                {!btnLoading ? <button style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor }} className=' py-2 px-4 font-semibold text-white rounded' onClick={handleSubmitLocation}>Submit</button>
-                                    : <button style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor }} className=' py-2 px-4 font-semibold text-white rounded'>Loading...</button>
+                                {!btnLoading ? <button className=' py-2 px-4 font-semibold text-white rounded bg-blue-500' onClick={handleSubmitLocation}>Submit</button>
+                                    : <button className=' py-2 px-4 font-semibold text-white rounded bg-blue-500'>Loading...</button>
                                 }
                             </div>
                         </div>

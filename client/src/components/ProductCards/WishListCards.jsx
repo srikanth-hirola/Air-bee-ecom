@@ -12,10 +12,11 @@ const WishListCards = ({
     return (
         <>
             {data1 && (
-                <Link to={`${`/product/${data1._id}`}`}>
-                    <div className="row">
-                        <hr />
-                        <div className="col-md-10">
+
+                <div className="row">
+                    <hr />
+                    <div className="col-md-10">
+                        <Link to={`${`/product/${data1._id}`}`}>
                             <div className="Dronescrat-product">
                                 <div className='Dronescrat-product-sub'>
                                     <div className="row">
@@ -32,16 +33,16 @@ const WishListCards = ({
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-md-2">
-                            <div className='Drones-Product-subtotal-sub2'>
-                                <div className='Drones-Product-subtotal-sub2-image1'>
-                                    <FontAwesomeIcon icon={faCircleXmark} style={{ color: "#d5d7e0", fontSize: '20px' }} onClick={() => removeFromCartHandler(data1)} />
-                                </div>
+                        </Link>
+                    </div>
+                    <div className="col-md-2">
+                        <div className='Drones-Product-subtotal-sub2'>
+                            <div className='Drones-Product-subtotal-sub2-image1'>
+                                <FontAwesomeIcon icon={faCircleXmark} style={{ color: "#d5d7e0", fontSize: '20px' }} onClick={() => removeFromCartHandler(data1)} className='cursor-pointer' />
                             </div>
                         </div>
                     </div>
-                </Link>
+                </div>
             )}
         </>
     )

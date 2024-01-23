@@ -29,12 +29,11 @@ const Login = () => {
             )
             .then((res) => {
                 toast.success("Login Success!");
-                console.log(res)
-                if (res?.data?.user?.role === "Admin") {
-                    navigate("/admin/dashboard");
-                } else {
-                    navigate("/");
-                }
+                // if (res?.data?.user?.role === "Admin") {
+                //     navigate("/admin/dashboard");
+                // } else {
+                navigate("/");
+                // }
                 window.location.reload(true);
             })
             .catch((err) => {

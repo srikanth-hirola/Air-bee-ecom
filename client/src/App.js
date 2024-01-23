@@ -37,6 +37,9 @@ import { WithDrawRequestsPage } from './Pages/Shop/WithDraw/WithDrawRequestPage.
 import { EventsConfigPage } from './Pages/Site-Config/EventsConfigPage.jsx';
 import { About } from './Pages/AboutUs/About.jsx';
 import Loader from './utils/Loader.jsx';
+import { CategoriesConfigPage } from './Pages/Site-Config/CategoriesConfigPage.jsx';
+import { MiscellaneousConfigPage } from './Pages/Site-Config/MiscellaneousConfigPage.jsx';
+
 
 
 
@@ -45,7 +48,7 @@ const AllProductsPage = lazy(() => import('./Pages/AllProductsPage.jsx'));
 const ProductDetailsPage = lazy(() => import('./Pages/ProductDetailsPage.jsx'));
 const CartPage = lazy(() => import('./Pages/CartPage.jsx'));
 const WishListPage = lazy(() => import('./Pages/WishListPage.jsx'));
-const UserLoginPage = lazy(() => import('./Pages/UserLoginPage.jsx'));
+const UserLoginPage = lazy(() => import('./Pages/Auth/UserLoginPage.jsx'));
 const CheckoutPage = lazy(() => import('./Pages/CheckoutPage.jsx'));
 
 const ProtectedRoute = lazy(() => import('./Routes/ProtectedRoute.js'));
@@ -101,6 +104,8 @@ const OrdersPageProfile = lazy(() => import('./Pages/Profile/OrdersPageProfile.j
 const Profilepage = lazy(() => import('./Pages/Profile/Profilepage.jsx'));
 const ContactDetailsPage = lazy(() => import('./Pages/Profile/ContactDetailsPage.jsx'));
 const RefundPage = lazy(() => import('./Pages/Profile/RefundPage.jsx'));
+const UserSignUpPage = lazy(() => import('./Pages/Auth/UserSignUpPage.jsx'));
+const ActivationPage = lazy(() => import('./Pages/ActivationPage.jsx'));
 
 
 // register Swiper custom elements
@@ -153,11 +158,16 @@ const App = () => {
           <Route path="/cart" exact element={<CartPage />} />
           <Route path="/wishlist" exact element={<WishListPage />} />
           <Route path="/login" exact element={<UserLoginPage />} />
+          <Route path="/sign-up" exact element={<UserSignUpPage />} />
           <Route path="/forget-password" element={<ForgetPassword />} />
           <Route path="/order/success" element={<OrderSuccess />} />
           <Route path="/contact-us" element={<ContactUsPage />} />
           <Route path="/event/:id" element={<EventProductsPage />} />
           <Route path="/about-us" element={<About />} />
+          <Route
+            path="/activation/:activation_token"
+            element={<ActivationPage />}
+          />
           <Route path="/checkout" element={
             <ProtectedRoute>
               <CheckoutPage />
@@ -172,11 +182,31 @@ const App = () => {
             }
           />
 
-          <Route path='/orderspage' element={<OrdersPageProfile />} />
-          <Route path='/orderDetails' element={<OrderDetails />} />
-          <Route path='/profilepage' element={<Profilepage />} />
-          <Route path='/contactDetailsPage' element={<ContactDetailsPage />} />
-          <Route path='/refundpage' element={<RefundPage />} />
+          <Route path='/orderspage' element={
+            <ProtectedRoute>
+              <OrdersPageProfile />
+            </ProtectedRoute>
+          } />
+          <Route path='/user/order/:id' element={
+            <ProtectedRoute>
+              <OrderDetails />
+            </ProtectedRoute>
+          } />
+          <Route path='/profilepage' element={
+            <ProtectedRoute>
+              <Profilepage />
+            </ProtectedRoute>
+          } />
+          <Route path='/contactDetailsPage' element={
+            <ProtectedRoute>
+              <ContactDetailsPage />
+            </ProtectedRoute>
+          } />
+          <Route path='/refundpage' element={
+            <ProtectedRoute>
+              <RefundPage />
+            </ProtectedRoute>
+          } />
           {/* <Route path='/refundpage' element={<RefundPage />} />
           <Route path='/refundStatus' element={<RefundStatus />} /> */}
 
@@ -541,6 +571,22 @@ const App = () => {
             element={
               <SellerProtectedRoute>
                 <EventsConfigPage />
+              </SellerProtectedRoute>
+            }
+          />
+          <Route
+            path="/site-config/categories-config"
+            element={
+              <SellerProtectedRoute>
+                <CategoriesConfigPage />
+              </SellerProtectedRoute>
+            }
+          />
+          <Route
+            path="/site-config/miscellaneous-config"
+            element={
+              <SellerProtectedRoute>
+                <MiscellaneousConfigPage />
               </SellerProtectedRoute>
             }
           />

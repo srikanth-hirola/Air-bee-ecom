@@ -4,7 +4,7 @@ import axios from 'axios';
 import { server } from '../../../server';
 import DashboardHeader from '../../../components/Headers/DashboardHeader';
 import DashboardSideBar from '../../../components/ShopComponents/Layout/DashboardSideBar';
-import ProductDraftEdit from '../../../components/ShopComponents/CreateProduct/Drafts/ProductDraftEdit';
+import ProductEdit from '../../../components/ShopComponents/CreateProduct/ProductEdit';
 
 
 const ShopDraftProductEdit = () => {
@@ -146,7 +146,7 @@ const ShopDraftProductEdit = () => {
                 <div className="w-[80px] 800px:w-[330px]">
                     <DashboardSideBar active={1} />
                 </div>
-                <ProductDraftEdit
+                <ProductEdit
                     formData={formData}
                     setFormData={setFormData}
                     categories={categories}
@@ -176,6 +176,36 @@ const ShopDraftProductEdit = () => {
                     productDetails={productDetails}
                     setProductDetails={setProductDetails}
                 />
+                {/* <ProductDraftEdit
+                    formData={formData}
+                    setFormData={setFormData}
+                    categories={categories}
+                    category={category}
+                    subCatgory={subCatgory}
+                    subSubCategory={subSubCategory}
+                    subCat={subCat}
+                    subSubCat={subSubCat}
+                    handleCategoryChange={handleCategoryChange}
+                    handleSubCategoryChange={handleSubCategoryChange}
+                    setSubSubCategory={setSubSubCategory}
+                    handleChange={handleChange}
+                    searchTerms={searchTerms}
+                    setSearchTerms={setSearchTerms}
+                    attributes={attributes}
+                    setAttributes={setAttributes}
+                    colorInputs={colorInputs}
+                    setColorInputs={setColorInputs}
+                    selectedFiles={selectedFiles}
+                    setSelectedFiles={setSelectedFiles}
+                    specification2={specification2}
+                    setSpecification2={setSpecification2}
+                    specification={specification}
+                    setSpecification={setSpecification}
+                    mainImage={mainImage}
+                    setMainImage={setMainImage}
+                    productDetails={productDetails}
+                    setProductDetails={setProductDetails}
+                /> */}
             </div>
         </div>
     );
