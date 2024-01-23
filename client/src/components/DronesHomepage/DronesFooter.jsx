@@ -1,8 +1,10 @@
 import React from 'react'
 import { Footer } from './DroneHomepageData'
+import { StyleConfig } from '../../utils/StyleConfig'
 
 const DronesFooter = () => {
     const data = Footer
+    const styles = StyleConfig();
     return (
         <>
             <div className="Drones-footer-parent">
@@ -11,7 +13,7 @@ const DronesFooter = () => {
                         <div className="col-md-3">
                             <div className="Drones-footer-logo-content">
                                 <div className='Drones-footer-logo-image'>
-                                    <img src="./images/logo.svg" alt="" />
+                                    <img src={styles?.logo?.url} alt="logo" className='mix-blend-multiply object-cover' />
                                 </div>
                                 <p>Best information about the company gies here but now lorem ipsum is</p>
                                 {data?.SocialMedia?.Links?.content?.img?.length > 0 &&

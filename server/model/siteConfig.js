@@ -346,6 +346,8 @@ const siteConfigSchema = new mongoose.Schema({
 
     eventCardLayoutOne: Boolean,
     eventLayountOneSelectedEvents: Array,
+    eventCardLayoutTwo: Boolean,
+    eventLayountTwoSelectedEvents: Array,
 
     OtherFooterContent: Array,
     footerMapUrl: String,

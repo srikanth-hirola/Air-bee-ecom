@@ -42,7 +42,9 @@ const EventCardWithProducts = ({ data1 }) => {
                                         <CountDown data={data1} />
                                     </div>
                                 </div>
+
                             </div>
+                            {/* <Link className='bg-[#fa8232] text-white px-3 py-2'>View All</Link> */}
                         </div>
                         <div className="col-md-9">
                             <div className="row">

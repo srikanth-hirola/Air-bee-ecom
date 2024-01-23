@@ -9,6 +9,7 @@ const useSaveLayoutContent = () => {
     const dispatch = useDispatch();
 
     const saveLayoutContent = async (layoutContent, layoutName, setLogoLoading) => {
+        console.log(layoutContent, layoutName)
         try {
             setLogoLoading(true);
             await axios.put(`${server}/site/site-config-layout-content`, { layoutContent, layoutName });

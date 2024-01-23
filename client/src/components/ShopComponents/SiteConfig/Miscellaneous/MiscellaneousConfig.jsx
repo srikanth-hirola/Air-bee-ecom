@@ -2,11 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import toast from 'react-hot-toast';
 import axios from 'axios';
-import { StyleConfig } from '../../../../utils/StyleConfig';
 import { getAllSiteConfig } from '../../../../redux/actions/siteConfig';
 import { getAllCategories } from '../../../../redux/actions/category';
 import { server } from '../../../../server';
-import { ToggleSwitch } from '../ToggleSwitch/ToggleSwitch';
 
 
 export const MiscellaneousConfig = () => {
@@ -22,12 +20,12 @@ export const MiscellaneousConfig = () => {
     });
 
 
-    const [displayEventProducts, setDisplayEventProducts] = useState(true);
+    // const [displayEventProducts, setDisplayEventProducts] = useState(true);
 
 
     const dispatch = useDispatch();
 
-    const styles = StyleConfig();
+    // const styles = StyleConfig();
 
     useEffect(() => {
         if (success) {
@@ -45,7 +43,7 @@ export const MiscellaneousConfig = () => {
 
         setCurrency(siteConfigData?.currency)
         setPaymentMethods(siteConfigData?.paymentMethods)
-        setDisplayEventProducts(siteConfigData?.displayEventProducts)
+        // setDisplayEventProducts(siteConfigData?.displayEventProducts)
 
     }, [siteConfigData])
 

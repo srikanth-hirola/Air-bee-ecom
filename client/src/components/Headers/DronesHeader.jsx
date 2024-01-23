@@ -1,16 +1,66 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import SearchBar from '../Search/SearchBar'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping, faHeart, faMessage, faUser } from '@fortawesome/free-solid-svg-icons'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { StyleConfig } from '../../utils/StyleConfig'
+import { socketId } from './socket'
+import { createNewReceivedMessage, updateReceivedMessage } from '../../redux/actions/socket'
+
+
 
 const DronesHeader = () => {
 
   const { wishlist } = useSelector((state) => state.wishlist);
   const { cart } = useSelector((state) => state.cart);
+  const { user } = useSelector((state) => state.user);
+  const { newMessageDate } = useSelector((state) => state.messages);
+  const dispatch = useDispatch();
+  const [msgLength, setMsgLength] = useState(0)
+
+
   const styles = StyleConfig();
+
+  const [arrivalMessage, setArrivalMessage] = useState(null);
+
+  useEffect(() => {
+    let found = newMessageDate.find((item) => item?.userId === user?._id)
+    if (found) {
+      setMsgLength(found?.messageLength)
+    }
+  }, [newMessageDate, user?._id])
+
+  useEffect(() => {
+    socketId.on("getMessage", (data) => {
+      setArrivalMessage({
+        sender: data.senderId,
+        text: data.text,
+        createdAt: Date.now(),
+      });
+    });
+  }, []);
+
+  useEffect(() => {
+    let data = {
+      userId: user?._id,
+      messageLength: 1
+    }
+    if (arrivalMessage) {
+      let found = newMessageDate?.find((item) => item?.userId === data?.userId)
+      if (found) {
+        dispatch(updateReceivedMessage(data))
+      } else {
+        dispatch(createNewReceivedMessage(data))
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [arrivalMessage]);
+
+
+  useEffect(() => {
+    console.log("hello")
+  }, [])
 
 
   return (
@@ -20,7 +70,7 @@ const DronesHeader = () => {
           <div className="container-fluid">
             <Link className="navbar-brand" to="/">
               <div className='Drones-header-logo'>
-                <img src={styles?.logo?.url} alt="logo" />
+                <img src={styles?.logo?.url} alt="logo" className='!object-cover mix-blend-multiply' />
               </div>
             </Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,8 +100,11 @@ const DronesHeader = () => {
                     </div>
                   </Link>
                   <Link to="/inbox">
-                    <div className='Drones-header-icon'>
+                    <div className='Drones-header-icon drones-header-wishlist drones-header-cart'>
                       <FontAwesomeIcon icon={faMessage} style={{ color: '#8b96a5', fontSize: '20px' }} />
+                      <span className="absolute right-0 top-0 rounded-full bg-[#fa8232] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
+                        {msgLength}
+                      </span>
                     </div>
                   </Link>
                   <Link to="/profilepage">

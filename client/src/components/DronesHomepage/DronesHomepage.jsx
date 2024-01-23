@@ -17,10 +17,11 @@ import { DronesTestimonialSwiper } from './DronesTestimonialSwiper';
 // import DronesDealsOftheDay from './DronesDealsOftheDay';
 import CategoriesHome from '../../Pages/CategoriesHome';
 import Products from '../Products/Products';
-import EventsHomeTop from '../../Pages/EventsHomeTop';
-import EventsHomeBottom from '../../Pages/EventsHomeBottom';
+import EventsHomeTop from '../../Pages/Events/EventsHomeTop';
+import EventsHomeBottom from '../../Pages/Events/EventsHomeBottom';
 import DronesHeader2 from '../Headers/DronesHeader2';
 import DronesHeader from '../Headers/DronesHeader';
+import EventsHomeMiddle from '../../Pages/Events/EventsHomeMiddle';
 const DronesHomepage = () => {
   return (
     <>
@@ -32,6 +33,7 @@ const DronesHomepage = () => {
       <CategoriesHome />
       {/* <DronesProductsRow3 /> */}
       <Products />
+      <EventsHomeMiddle />
       <DronesQuotes />
       <DronesRecommendedItems />
       <DronesBrandlogos />

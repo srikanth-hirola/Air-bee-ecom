@@ -65,7 +65,6 @@ io.on("connection", (socket) => {
     } else {
       messages[receiverId].push(message);
     }
-
     // send the message to the recevier
     io.to(user?.socketId).emit("getMessage", message);
 

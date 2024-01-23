@@ -17,6 +17,9 @@ const DashboardHeader = () => {
 
   let styles = StyleConfig();
 
+
+
+
   return (
     <div
       style={{
@@ -28,12 +31,12 @@ const DashboardHeader = () => {
     >
       <div>
         <Link to="/dashboard">
-          <div className="logo">
+          <div className="logo h-[46px]">
             <img
               // src="https://shopo.quomodothemes.website/assets/images/logo.svg"
               // src="/images/logo.svg"
-              src={styles?.logo?.url}
-              alt="logo"
+              src="/DronesHomepage/AirBee-Gold.jpg"
+              alt="logo" className="w-full h-full object-cover mix-blend-screen"
             />
           </div>
         </Link>

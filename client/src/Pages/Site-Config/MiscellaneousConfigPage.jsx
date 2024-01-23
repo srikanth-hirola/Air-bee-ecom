@@ -3,7 +3,7 @@ import DashboardHeader from '../../components/Headers/DashboardHeader';
 import DashboardSideBar from '../../components/ShopComponents/Layout/DashboardSideBar';
 import { MiscellaneousConfig } from '../../components/ShopComponents/SiteConfig/Miscellaneous/MiscellaneousConfig';
 
-export const MiscellaneousConfigPage = () => {
+const MiscellaneousConfigPage = () => {
     return (
         <div>
             <DashboardHeader />
@@ -16,3 +16,5 @@ export const MiscellaneousConfigPage = () => {
         </div>
     );
 }
+
+export default MiscellaneousConfigPage

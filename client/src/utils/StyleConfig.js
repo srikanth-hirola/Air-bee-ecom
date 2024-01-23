@@ -127,7 +127,9 @@ export const StyleConfig = () => {
         CategoriesThree: siteConfigData?.CategoriesThree,
 
         eventCardLayoutOne: siteConfigData?.eventCardLayoutOne,
+        eventCardLayoutTwo: siteConfigData?.eventCardLayoutTwo,
         eventLayountOneSelectedEvents: siteConfigData?.eventLayountOneSelectedEvents,
+        eventLayountTwoSelectedEvents: siteConfigData?.eventLayountTwoSelectedEvents,
 
         OtherFooterContent: siteConfigData?.OtherFooterContent,
         footerMapUrl: siteConfigData?.footerMapUrl,
