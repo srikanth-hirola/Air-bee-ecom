@@ -5,9 +5,8 @@ import LoggedIn from '../Banner/LoggedIn'
 
 const DronesBanner = () => {
     return (
-        <>
+        <> 
             <div className="DronesBanner-parent">
-                <div className="container">
                     <div className="row">
                         <Categories />
                         <div className='col-md-6'>
@@ -39,7 +38,6 @@ const DronesBanner = () => {
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
         </>
     )

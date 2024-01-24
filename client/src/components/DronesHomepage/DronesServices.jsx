@@ -12,7 +12,7 @@ const DronesServices = () => {
                     <div className="row">
 
                         {data?.ServicesContent?.servicesimages?.content?.items?.items?.map((item, index) => (
-                            <div className="col-sm-6 col-md-3" key={index}>
+                            <div className="col-sm-6 col-md-6 col-lg-3" key={index}>
                                 <div className='Drone-services-sub'>
                                     <div className='Drone-services-sub-image'>
                                         <img src={item?.img?.url} alt="" />

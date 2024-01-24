@@ -43,8 +43,8 @@ console.log(active)
         <Link to="/dashboard">
           <div className="logo">
             <img
-              // src="https://shopo.quomodothemes.website/assets/images/logo.svg"
-              // src="/images/logo.svg"
+              // src="https://shopo.quomodothemes.website/assets/images/logo.png"
+              // src="/images/logo.png"
               src={styles?.logo?.url}
               alt="logo"
             />

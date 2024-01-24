@@ -13,8 +13,8 @@ const CountDownBottom = ({ data }) => {
         if (
             typeof timeLeft.days === 'undefined' &&
             typeof timeLeft.hours === 'undefined' &&
-            typeof timeLeft.minutes === 'undefined' &&
-            typeof timeLeft.seconds === 'undefined'
+            typeof timeLeft.min === 'undefined' &&
+            typeof timeLeft.sec === 'undefined'
         ) {
             axios.delete(`${server}/event/delete-shop-event/${data?._id}`);
         }
@@ -29,8 +29,8 @@ const CountDownBottom = ({ data }) => {
             timeLeft = {
                 days: Math.floor(difference / (1000 * 60 * 60 * 24)),
                 hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-                minutes: Math.floor((difference / 1000 / 60) % 60),
-                seconds: Math.floor((difference / 1000) % 60),
+                min: Math.floor((difference / 1000 / 60) % 60),
+                sec: Math.floor((difference / 1000) % 60),
             };
         }
 
