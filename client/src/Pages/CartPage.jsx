@@ -87,7 +87,16 @@ const CartPage = () => {
                             </div>
 
                         </div>
-                        : <p>No Products Added to Cart</p>
+                        : <div>
+                            <p>No Products Added to Cart</p>
+                            <div className=" continueshopping-buttons ">
+                        <Link to={"/products?search=all%20products"}>Continue Shopping</Link>
+                    </div>
+                        </div>
+                        
+                        
+                   
+                        
                     }
 
                 </div>

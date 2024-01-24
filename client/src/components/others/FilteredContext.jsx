@@ -12,18 +12,18 @@ const FilteredContext = ({ checkedItems, setCheckedItems, data, setFilteredData,
                 <div key={index} className="tag">
                     {item}
                     <span
-                        className="close-icon"
+                        className="close-icon "
                         onClick={() => removeTag({ valueToRemove: item, checkedItems, setCheckedItems, selectedBrands, setSelectedBrands, setFilteredAttr })}
                     >
                         &#x2715;
                     </span>
                 </div>
             ))}
-            <button onClick={(e) => handleClearFilter({ e, data, setFilteredData, setSelectedBrands, setSelectedPriceRange, setFilteredAttr, setCheckedItems })}>clear all icons</button>   
+            <button onClick={(e) => handleClearFilter({ e, data, setFilteredData, setSelectedBrands, setSelectedPriceRange, setFilteredAttr, setCheckedItems })} class=" bg-blue-500 text-light p-2 rounded-lg">clear all icons</button>   
            
                   
         </div>
-        <div className="mobile-filters">
+        <div className="mobile-filters" >
         {!isVisibleData && <button onClick={toggleDataVisible} className='mobile-close-flter'>
                       Open Filter
                   </button>}

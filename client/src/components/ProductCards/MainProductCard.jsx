@@ -31,7 +31,7 @@ const MainProductCard = ({ data1 }) => {
                             <img src={data?.mainImage?.url} alt="productImage" />
                         </div>
                     </Link>
-                    <hr />
+                    {/* <hr /> */}
                     <div className='card-body'>
                         <div className="row">
 
@@ -47,15 +47,21 @@ const MainProductCard = ({ data1 }) => {
                                         <h6>{data?.ratings}</h6>
                                     </div>
 
-                                    <p>{data?.name?.length > 25
-                                        ? data?.name?.slice(0, 25) + '...'
-                                        : data?.name}</p>
+
                                 </Link>
                             </div>
 
                             <div className='col-md-3 col-3 shoppage1-likeicon'>
                                 {/* <img src={i?.icon?.url} alt="" /> */}
                                 <FillHeart data={data} click={click} setClick={setClick} />
+                            </div>
+                            <div className='col-12 col-sm-12 col-md-12 pt-2'>
+                                <Link to={`${`/product/${data1?._id}`}`}>
+                                    <p>{data?.name?.length > 38
+                                        ? data?.name?.slice(0, 38) + '...'
+                                        : data?.name}
+                                    </p>
+                                </Link>
                             </div>
                         </div>
                     </div>

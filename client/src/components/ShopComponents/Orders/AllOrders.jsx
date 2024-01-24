@@ -34,7 +34,7 @@ const AllOrders = ({ active }) => {
         {
             field: 'image',
             flex: 1,
-            minWidth: 150,
+            minWidth: 130,
             headerName: 'Image',
             type: 'number',
             sortable: false,
@@ -174,7 +174,7 @@ const AllOrders = ({ active }) => {
             ) : (
                 <div className="w-full mx-8 pt-1 mt-10 bg-white outer1-div">
                     {active === 1 && (
-                        <DataGrid
+                        <DataGrid rowHeight={"66px"}
                             rows={row1}
                             columns={columns}
                             pageSize={10}
@@ -190,6 +190,8 @@ const AllOrders = ({ active }) => {
                             pageSize={10}
                             disableSelectionOnClick
                             autoHeight
+                            // width={30}
+                            // height={30}
                         />
                     )}
 

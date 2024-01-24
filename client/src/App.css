@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 .App {
   text-align: center;
 }
@@ -924,6 +927,7 @@ button.att-btn {
 .cat-link {
   cursor: pointer;
   margin-bottom: 10px;
+  list-style-type: disc;
 }
 
 .cat-link:hover {
@@ -1154,7 +1158,7 @@ button.filter-btn {
 .table1 tbody tr td span {
   margin: 10px;
   display: block;
-  /* margin-left: 66px; */
+
 }
 
 /* .table1-div {
@@ -1832,6 +1836,7 @@ button.attribute-btn {
 .track-status p {
   font-weight: 500;
   cursor: pointer;
+  padding: 10px 30px;
 }
 
 button.varient-btn {
@@ -2593,15 +2598,29 @@ input.searchTest {
 
 }
 .side-div .accordion-collapse.collapse.show .accordian-child h5{
-  padding: 10px 0px 10px 35px;
+  /* padding: 10px 0px 10px 35px; */
   width: 100%;
+  height: 45px;
+  /* display: flex;
+  align-items: center; */
 }
-.side-div .accordion-collapse.collapse.show .accordian-child h5:hover{
+.accordian-child {
+  height: 45px;
+  /* background-color: #06c; */
+  color: white;
+  /* padding: 5px 25px; */
+}
+.side-div .accordion-collapse.collapse.show .accordian-child a{
+  color: #282c34;
+}
+.side-div .accordion-collapse.collapse.show .accordian-child a:hover{
   background-color: #06c;
  color: white;
+/* line-height: 45px; */
+ /* align-items: center; */
 }
 .side-div .accordion-body{
- padding: 0;
+ padding: 0 25px;
  gap: 0;
 }
 .css-pdct74-MuiTablePagination-selectLabel{
@@ -2627,3 +2646,40 @@ input.searchTest {
   height: 95%;
   overflow-y: auto;
 }
+.addCat .justify-between button{
+  background-color: #06c;
+  color: white;
+}
+.track-status p:hover{
+  background-color: #06c;
+  padding: 10px 30px;
+  color: white !important;
+}
+.css-ptkaw2-MuiDataGrid-root .MuiDataGrid-columnHeader--moving{
+  background-color: white !important;
+}
+.css-ptkaw2-MuiDataGrid-root .MuiDataGrid-withBorderColo{
+  background-color: white !important;
+}
+
+/* .MuiDataGrid-cell.MuiDataGrid-cell--textLeft.MuiDataGrid-withBorderColor{
+  min-height: 80px !important;
+  max-height: 80px !important;
+}
+.MuiDataGrid-cell--withRenderer.MuiDataGrid-cell.MuiDataGrid-cell--textRight.MuiDataGrid-withBorderColor{
+  min-height: 80px !important;
+  max-height: 80px !important;
+}
+.MuiDataGrid-cell--withRenderer.MuiDataGrid-cell.MuiDataGrid-cell--textRight.MuiDataGrid-withBorderColor div{
+  width: 100%;
+  height: 100%;
+}
+.MuiDataGrid-cell--withRenderer.MuiDataGrid-cell.MuiDataGrid-cell--textRight.MuiDataGrid-withBorderColor div img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.MuiDataGrid-cell.MuiDataGrid-cell--textRight.MuiDataGrid-withBorderColor{
+  min-height: 80px !important;
+  max-height: 80px !important;
+} */

@@ -304,7 +304,7 @@ const CategoryPage = () => {
                                                                         </Form.Select>
                                                                     </span>
                                                                 </td>
-                                                                <td><button className='bg-red-200 rounded p-1 px-2' onClick={(e) => { handleDeleteModel(e, val._id) }}><i class="fa-solid fa-trash"></i></button></td>
+                                                                <td><button className='bg-red-200 rounded p-1 px-2' onClick={(e) => { handleDeleteModel(e, val._id) }}><i class="fa-solid fa-trash-can"></i></button></td>
                                                             </tr>
                                                         );
                                                     })}

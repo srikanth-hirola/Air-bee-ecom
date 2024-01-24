@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { AiOutlineGift } from "react-icons/ai";
 import { MdOutlineLocalOffer } from "react-icons/md";
 import { FiPackage, FiShoppingBag } from "react-icons/fi";
@@ -12,19 +12,32 @@ import { StyleConfig } from "../../utils/StyleConfig";
 // const ENDPOINT = "http://localhost:4000/";
 // const socketId = socketIO(ENDPOINT, { transports: ["websocket"] });
 
-const DashboardHeader = () => {
+const DashboardHeader = ({active}) => {
   const { seller } = useSelector((state) => state.seller);
+  // const [active, setActive] = useState(null)
+
+  const toggleActive = (color) => {
+    // setActive(color);
+  };
+
+  useEffect(()=>{
+console.log(active)
+  },[active])
+  // const buttonStyle = {
+  //   color: active ? 'black' : 'red',
+  //   cursor: 'pointer',
+  // };
 
   let styles = StyleConfig();
 
   return (
     <div
-      style={{
-        background: styles?.headerColors?.bg?.toggleColorBtnHeader
-          ? styles?.headerColors?.bg?.bgPicker
-          : styles?.headerColors?.bg?.bgcolor,
-      }}
-      className="w-full h-[80px] shadow sticky top-0 left-0 z-30 flex items-center justify-between px-4 "
+      // style={{
+      //   background: styles?.headerColors?.bg?.toggleColorBtnHeader
+      //     ? styles?.headerColors?.bg?.bgPicker
+      //     : styles?.headerColors?.bg?.bgcolor,
+      // }}
+      className="w-full h-[80px] shadow sticky top-0 left-0 z-30 flex items-center justify-between px-4 bg-white"
     >
       <div>
         <Link to="/dashboard">
@@ -39,6 +52,7 @@ const DashboardHeader = () => {
         </Link>
       </div>
       <div className="flex items-center">
+      {/* {active.map((label, index) => ( */}
         <div className="flex items-center mr-4">
           <Link
             to="/dashboard-coupouns"
@@ -46,14 +60,19 @@ const DashboardHeader = () => {
             title="Cupouns"
           >
             <AiOutlineGift
+            style={{ color: active === 0 ? 'blue' : 'black' }}
+            className="mx-4 cursor-pointer"
+              
+              // style={buttonStyle}
               // color="#555"
-              color={
-                styles?.fontColor?.toggleBtnFont
-                  ? styles?.fontColor?.fontColorPicker
-                  : styles?.fontColor?.fontColor
-              }
+              // color={
+              //   styles?.fontColor?.toggleBtnFont
+              //     ? styles?.fontColor?.fontColorPicker
+              //     : styles?.fontColor?.fontColor
+              // }
               size={30}
-              className="mx-4 cursor-pointer"
+              // color="black"
+              
             />
           </Link>
           <Link
@@ -62,11 +81,15 @@ const DashboardHeader = () => {
             title="Events"
           >
             <MdOutlineLocalOffer
-              color={
-                styles?.fontColor?.toggleBtnFont
-                  ? styles?.fontColor?.fontColorPicker
-                  : styles?.fontColor?.fontColor
-              }
+           style={{ color: active === 1 ? 'blue' : 'black' }}
+           onClick={() => toggleActive(1)}
+            // style={buttonStyle}
+              // color="black"
+              // color={
+              //   styles?.fontColor?.toggleBtnFont
+              //     ? styles?.fontColor?.fontColorPicker
+              //     : styles?.fontColor?.fontColor
+              // }
               size={30}
               className="mx-4 cursor-pointer"
             />
@@ -77,11 +100,16 @@ const DashboardHeader = () => {
             title="Products"
           >
             <FiShoppingBag
-              color={
-                styles?.fontColor?.toggleBtnFont
-                  ? styles?.fontColor?.fontColorPicker
-                  : styles?.fontColor?.fontColor
-              }
+            style={{ color: active === 2 ? 'blue' : 'black' }}
+            onClick={() => toggleActive(2)}
+            // style={buttonStyle}
+          
+              // color="black"
+              // color={
+              //   styles?.fontColor?.toggleBtnFont
+              //     ? styles?.fontColor?.fontColorPicker
+              //     : styles?.fontColor?.fontColor
+              // }
               size={30}
               className="mx-4 cursor-pointer"
             />
@@ -92,7 +120,12 @@ const DashboardHeader = () => {
             title="Orders"
           >
             <FiPackage
-              color={styles?.fontColor}
+           style={{ color: active === 3 ? 'blue' : 'black' }}
+           onClick={() => toggleActive(3)}
+            // style={buttonStyle}
+           
+              // color="black"
+              // color={styles?.fontColor}
               size={30}
               className="mx-4 cursor-pointer"
             />
@@ -103,12 +136,18 @@ const DashboardHeader = () => {
             title="Messages"
           >
             <BiMessageSquareDetail
-              color={
-                styles?.fontColor?.toggleBtnFont
-                  ? styles?.fontColor?.fontColorPicker
-                  : styles?.fontColor?.fontColor
-              }
-              size={30}
+            style={{ color: active === 4 ? 'blue' : 'black' }}
+            onClick={() => toggleActive(4)}
+            // style={buttonStyle}
+          
+              // color="black"
+              // color={
+              //   styles?.fontColor?.toggleBtnFont
+              //     ? styles?.fontColor?.fontColorPicker
+              //     : styles?.fontColor?.fontColor
+              // }
+              
+              size={30}             
               className="mx-4 cursor-pointer"
             />
           </Link>
@@ -120,6 +159,7 @@ const DashboardHeader = () => {
             />
           </Link>
         </div>
+        {/* ))} */}
       </div>
     </div>
   );

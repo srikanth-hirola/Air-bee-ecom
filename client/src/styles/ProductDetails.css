@@ -69,6 +69,7 @@
 }
 .ratedproduct-subparent .ratedproduct-cards {
   border-radius: 3px;
+  align-items: center;
   /* border: 1px solid var(--Gray-100, #E4E7E9); */
   background: var(--Gray-00, #fff);
   width: 100%;
@@ -100,11 +101,11 @@
 
 .ratedproduct-subparent .ratedproduct-textData h6 {
   color: var(--Gray-900, #191c1f);
-  font-size: 11px;
+  font-size: 14px;
   margin-bottom: 3px;
   font-family: "Public Sans", sans-serif;
   font-weight: 400;
-  padding: 7px 5px;
+  padding: 2px 5px;
   margin: 0;
 }
 
@@ -113,11 +114,12 @@
 }
 
 .ratedproduct-subparent .ratedproduct-textData p {
+  padding: 2px 5px;
   color: var(--Secondary-500, #2da5f3);
   margin: 0;
   /* Body/Small/600 */
   font-family: Public Sans;
-  font-size: 12px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 600;
   line-height: 20px;
@@ -240,8 +242,8 @@
 .laptop-productdetails-name h5 {
   color: var(--Gray-900, #191c1f);
   font-family: Public Sans;
-  font-size: 18px;
-  font-weight: 400;
+  font-size: 20px;
+  font-weight: 600;
   padding: 5px 0px;
 }
 
@@ -257,6 +259,8 @@
 
 .laptop-productdetails .laptop-productdetails-sku h6 {
   margin: 0;
+  font-size: 16px;
+  font-weight: 600;
   padding: 0px 3px;
   font-family: Public Sans;
 }
@@ -269,6 +273,8 @@
 
 .laptop-productdetails .laptop-productdetails-available h6 {
   margin: 0;
+  font-size: 16px;
+  font-weight: 600;
   font-family: Public Sans;
 }
 .laptop-productdetails .laptop-productdetails-available p {
@@ -320,12 +326,13 @@
 .laptop-productdetails .laptop-productdetails-count {
   display: flex;
 
-  padding: 0px 16px;
+  /* padding: 0px 16px; */
   justify-content: space-between;
   align-items: center;
   border-radius: 3px;
   border: 2px solid var(--Gray-100, #e4e7e9);
   background: var(--Dominant, #fff);
+  height: 100%;
 }
 
 .laptop-productdetails .laptop-productdetails-count p {
@@ -342,12 +349,13 @@
 .laptop-productdetails .laptop-productdetails-cart {
   display: flex;
   width: 100%;
-  padding: 9px 0px;
+  /* padding: 9px 0px; */
   justify-content: center;
   align-items: center;
   /* gap: 12px; */
   border-radius: 3px;
   background: var(--Primary-500, #fa8232);
+  height: 100%;
 }
 
 .laptop-productdetails .laptop-productdetails-cart h6 {
@@ -368,7 +376,7 @@
   border-radius: 3px;
   border: 2px solid var(--Primary-500, #fa8232);
   display: flex;
-  padding: 10px 16px;
+  padding: 0px 16px;
   justify-content: center;
   align-items: center;
   gap: 12px;
@@ -376,6 +384,7 @@
   font-family: Public Sans;
   font-size: 16px;
   font-weight: 700;
+  height: 100%;
 }
 .laptop-productdetails-wish {
   padding: 25px 0px;
@@ -384,11 +393,14 @@
   display: flex;
   align-items: center;
 }
+.laptop-productdetails .laptop-productdetails-wishlist a{
+ padding: 0px 3px;
+}
 .laptop-productdetails-wishlist h6 {
   color: var(--Gray-700, #475156);
   font-family: Public Sans;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 600;
   margin: 0;
 }
 .laptop-productdetails-wishlist .icon {
@@ -449,13 +461,13 @@
   font-weight: 400;
 }
 .laptop-slider-product-page .mainImg {
-  width: 85%;
+  width: 100%;
   height: 400px;
   padding: 0px 0px 40px 0px;
 }
 .laptop-slider-product-page .mainImg img {
-  width: 85%;
   width: 100%;
+  height: 100%;
   object-fit: contain;
 }
 .ProductTapContent1-subparent .tab-content {
@@ -703,4 +715,26 @@ button.attribute-btn.attribute-strike-btn {
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
 }
 @media only screen and (min-width: 1400px) {
+}
+.ProductTapContent1-feature .table th{
+  border: 0;
+}
+.ProductTapContent1-feature .table td{
+  border: 0;
+
+}
+.ProductTapContent1-feature .table .bg-white{
+  text-align: left;
+
+}
+/* .ProductTapContent1-feature .table{
+  width: 75%;
+} */
+/* .table>:not(caption)>*>*{
+  background-color: grey;
+} */
+.ProductTapContent1-feature .table .bg-secondary-subtle{
+  width: 250px !important;
+  text-align: left;
+  font-weight: 600;
 }

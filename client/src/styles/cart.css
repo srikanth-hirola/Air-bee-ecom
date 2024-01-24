@@ -112,10 +112,15 @@
   height: 100%;
   flex-shrink: 0;
 }
+.Drones-Product-desc p{
+ display: flex;
+ align-items: center;
+}
 .Drones-Product-image img {
   height: 100%;
   width: 100%;
   object-fit: contain;
+  padding: 20px;
 }
 .Dronescrat-product-sub {
   display: flex;
@@ -262,7 +267,7 @@
   border: none;
   color: white;
   border-radius: 50px;
-  background: #ffb800;
+  background: rgb(249 115 22);
 }
 .Drones-product-summery-end {
   display: flex;
@@ -292,14 +297,18 @@
 
 .Drones-addtocart-buttons {
   display: flex;
+  align-items: center;
   position: relative;
-  top: -11px;
-  /* gap: 5px; */
   right: 14px;
+  justify-content: space-between;
+}
+.Drones-Product-subtotal-content p{
+  display: flex;
+  justify-content: flex-end;
 }
 .increment-button {
   height: 25px;
-  width: 30px;
+  width: 45px;
   text-align: center;
   display: flex;
   border: none;
@@ -539,3 +548,26 @@ li{
     width: 50%;
   }
 }
+.continueshopping-buttons{
+  margin: 30px 0px;
+}
+.continueshopping-buttons a{
+ background-color: blue;
+ color: white;
+ padding: 10px 20px;
+ border-radius: 10px;
+ 
+}
+.continueshopping-button a{
+  background-color: blue;
+  color: white;
+  padding: 8px 10px;
+  border-radius: 50px;
+  display: inline-flex;
+  margin-top: 25px;
+  padding: 8px 0px 8px 0px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  border: none;
+ }
