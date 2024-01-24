@@ -8,7 +8,7 @@ export const Product1Header = () => {
       <div className='container'>
         <Navbar expand="lg" >
           <Container fluid className='container-xxl'>
-            <Navbar.Brand href="#" ><img src="logo.svg" alt="logo" className=' w-[120px] mx-auto' /></Navbar.Brand>
+            <Navbar.Brand href="#" ><img src="logo.png" alt="logo" className=' w-[120px] mx-auto' /></Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" className='text-center' />
             <Navbar.Collapse id="navbarScroll">
               <Nav

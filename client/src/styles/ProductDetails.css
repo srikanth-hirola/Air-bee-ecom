@@ -454,8 +454,8 @@
   padding: 0px 0px 40px 0px;
 }
 .laptop-slider-product-page .mainImg img {
-  width: 85%;
   width: 100%;
+  height: 100%;
   object-fit: contain;
 }
 .ProductTapContent1-subparent .tab-content {

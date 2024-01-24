@@ -2,7 +2,7 @@
 import { Autoplay} from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import { Link } from 'react-router-dom';
 // Import Swiper styles
 import 'swiper/css';
 // import 'swiper/css/navigation';
@@ -24,11 +24,6 @@ export const DronesBannerSwiper = () => {
         disableOnInteraction: false,
     }}
     loop={true}
-    //   navigation
-    //   pagination={{ clickable: true }}
-    //   scrollbar={{ draggable: true }}
-    //   onSwiper={(swiper) => console.log(swiper)}
-    //   onSlideChange={() => console.log('slide change')}
     >
       <SwiperSlide>
         <div className='DronesBannerSwiper-image'>
@@ -56,11 +51,12 @@ export const DronesBannerSwiper = () => {
     <div className='Drone-bannerswiper-content'>
         <div className='Drone-bannerswiper-content-sub'>
         <div className='Drone-bannerswiper-content-sub1'>
-            <h3>Electronoc items</h3>
+            <h3>Electronic items</h3>
             <p>Latest Trending</p>
         </div>
         <div className='Drone-bannerswiper-content-sub2'>
-            <button>Learn more</button>
+        <Link to="/products?search=all products"><button>Shop Now</button></Link>
+            
         </div>
         </div>
     </div>

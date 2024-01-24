@@ -17,9 +17,6 @@ const DashboardHeader = () => {
 
   let styles = StyleConfig();
 
-
-
-
   return (
     <div
       style={{

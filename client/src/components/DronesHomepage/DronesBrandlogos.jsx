@@ -6,6 +6,7 @@ const DronesBrandlogos = () => {
     return (
         <>
             <div className="DronesBrandlogos-parent">
+                <h2>Brands We Deal With </h2>
                 {data?.brandlogos?.logos?.content?.items?.length > 0 &&
                     <div className="row">
                         {data?.brandlogos?.logos?.content?.items?.map((item, index) => (

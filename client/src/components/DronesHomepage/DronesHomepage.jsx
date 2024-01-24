@@ -22,6 +22,8 @@ import EventsHomeBottom from '../../Pages/Events/EventsHomeBottom';
 import DronesHeader2 from '../Headers/DronesHeader2';
 import DronesHeader from '../Headers/DronesHeader';
 import EventsHomeMiddle from '../../Pages/Events/EventsHomeMiddle';
+import DronesDirectionSensing from './DronesDirectionSensing';
+
 const DronesHomepage = () => {
   return (
     <>
@@ -29,6 +31,8 @@ const DronesHomepage = () => {
       <DronesHeader2 />
       <DronesBanner />
       <EventsHomeTop />
+      <DronesDirectionSensing />
+      {/* <DronesEyePlayground/> */}
       {/* <DronesProductsRow2 /> */}
       <CategoriesHome />
       {/* <DronesProductsRow3 /> */}

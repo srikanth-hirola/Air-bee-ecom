@@ -36,7 +36,7 @@ const DronesProductsRow1 = () => {
       <div className='DronesProductsRow1-parent'>
         <div className="">
           <div className="row">
-            <div className="col-md-3">
+            <div className="col-md-6 col-lg-3">
               <div className='DronesProductsRow1-sub1-text-parent'>
                 <div className='DronesProductsRow1-sub1-text'>
                   <h4>Deals and offers</h4>
@@ -74,7 +74,7 @@ const DronesProductsRow1 = () => {
                 </div>
               </div>
             </div>
-            <div className="col-md-9">
+            <div className="col-md-12 col-lg-9">
               <div className="row">
                 <div className=" col-sm-6 col-md-3">
                   <div className='DronesProductsRow1-card-parent'>
