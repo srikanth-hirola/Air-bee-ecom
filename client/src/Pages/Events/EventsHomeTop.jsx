@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
-import { StyleConfig } from '../utils/StyleConfig';
-import EventCardWithProducts from '../components/Events/EventCardWithProducts';
+import { StyleConfig } from '../../utils/StyleConfig';
+import EventCardWithProducts from '../../components/Events/EventCardWithProducts';
 
 const EventsHomeTop = () => {
     const { allEvents } = useSelector((state) => state.events);

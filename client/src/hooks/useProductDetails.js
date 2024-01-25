@@ -7,7 +7,6 @@ import { server } from "../server";
 import { addToWishlist, removeFromWishlist } from "../redux/actions/wishlist";
 
 const useProductDetails = ({ data, selectedColor, selectedAttr, count, click, active, setMainImg, setSelectedAttr, setLimited, setSoldOut, setCount, setWarning, setClick }) => {
-
     const { products } = useSelector((state) => state.products);
     const { cart } = useSelector((state) => state.cart);
     const dispatch = useDispatch();
@@ -139,7 +138,6 @@ const useProductDetails = ({ data, selectedColor, selectedAttr, count, click, ac
 
     const averageRating = avg.toFixed(2);
 
-    console.log(averageRating)
 
     const loopCheck = async (data) => {
         const result = await data.filter((val) => {
@@ -253,37 +251,42 @@ const useProductDetails = ({ data, selectedColor, selectedAttr, count, click, ac
     }
 
     const getDiscountPrice = ({ data, active }) => {
+        let price;
         if (data?.showInputs) {
             if (active) {
-                return data?.colorInputs[0]?.originalPrice === 0
+                price = data?.colorInputs[0]?.originalPrice === 0
                     ? data?.colorInputs[0]?.originalPrice
                     : data?.colorInputs[0].eventPrice;
             } else {
-                return data?.colorInputs[0]?.originalPrice === 0
+                price = data?.colorInputs[0]?.originalPrice === 0
                     ? data?.colorInputs[0]?.originalPrice
                     : data?.colorInputs[0].discountPrice;
             }
-
         } else {
             if (active) {
-                return data?.originalPrice === 0
+                price = data?.originalPrice === 0
                     ? data?.originalPrice
                     : data?.eventPrice
             } else {
-                return data?.originalPrice === 0
+                price = data?.originalPrice === 0
                     ? data?.originalPrice
                     : data?.discountPrice
             }
         }
+        let convertedPrice = price
+        return convertedPrice
     }
 
     const getOriginalPrice = ({ data }) => {
+        let price;
         if (data?.showInputs) {
-            return data?.colorInputs[0]?.originalPrice
+            price = data?.colorInputs[0]?.originalPrice
                 ? data?.colorInputs[0]?.originalPrice : null
         } else {
-            return data?.originalPrice ? data?.originalPrice : null
+            price = data?.originalPrice ? data?.originalPrice : null
         }
+        let convertedPrice = price
+        return convertedPrice
     }
 
     return { handleSelectCourierPartner, getDiscountPrice, getOriginalPrice, handleHighlight, handleAttrSelect, incrementCount, decrementCount, removeFromWishlistHandler, addToWishlistHandler, averageRating, addToCartHandler }

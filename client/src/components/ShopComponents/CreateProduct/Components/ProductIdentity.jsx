@@ -128,10 +128,10 @@ const ProductIdentity = ({
                     value={formData.category}
                     onChange={(e) => handleCategoryChange(e)}
                 >
-                    <option value="Choose a category"  className='font-[300] text-[16px]'>Choose a category</option>
+                    <option value="Choose a category" className='font-[300] text-[16px]'>Choose a category</option>
                     {categories &&
                         categories.map((i) => (
-                            <option value={i.name} key={i.name} className='font-[300] text-[16px]'>
+                            <option value={i._id} key={i.name} className='font-[300] text-[16px]'>
                                 {i.name}
                             </option>
                         ))}
@@ -144,14 +144,14 @@ const ProductIdentity = ({
                 </label>
                 <select
                     className="w-full mt-2 border h-[35px] rounded-[5px]"
-                    value={formData.subCatgory}
+                    // value={formData.subCatgory}
                     onChange={(e) => handleSubCategoryChange(e)}
                 >
                     <option value="Choose a category">Choose Sub category</option>
                     {categories &&
                         subCat.map((i) => {
                             return (
-                                <option value={i.name} key={i.name}>
+                                <option value={i._id} key={i.name}>
                                     {i.name}
                                 </option>
                             );
@@ -173,8 +173,8 @@ const ProductIdentity = ({
                     {categories &&
                         subSubCat.map((i) => {
                             return (
-                                <option value={i} key={i}>
-                                    {i}
+                                <option value={i._id} key={i._id}>
+                                    {i?.name}
                                 </option>
                             );
                         })}

@@ -4,7 +4,7 @@ const Sku = ({ sku }) => {
 
     return (
         <div className='laptop-productdetails-sku'>
-            <h6>Sku:</h6>
+            <h6>SKU:</h6>
             <p>{sku}</p>
         </div>
     )

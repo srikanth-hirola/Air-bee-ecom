@@ -9,9 +9,11 @@ import { addTocart, removeAllFromCart, removeFromCart } from '../redux/actions/c
 import { Link } from 'react-router-dom'
 import DronesHeader from '../components/Headers/DronesHeader'
 import DronesFooter from '../components/DronesHomepage/DronesFooter'
+import useGetCurrencyConversion from '../hooks/Site-config/useGetCurrencyConversion'
 
 const CartPage = () => {
     const { cart } = useSelector((state) => state.cart);
+    const { ConvertCurrency } = useGetCurrencyConversion()
     const styles = StyleConfig();
 
     const [cartData, setCartData] = useState(cart);
@@ -77,7 +79,7 @@ const CartPage = () => {
                                                 className={`h-[45px] flex items-center justify-center w-[100%] rounded-[5px]`} style={{ backgroundColor: styles?.mainColor }}
                                             >
                                                 <h1 className=" text-[18px] mb-0 font-[600] text-white" style={{ color: styles?.fontColor }} >
-                                                    Checkout Now ({styles?.currency?.Symbol} {totalPrice})
+                                                    Checkout Now ({styles?.currency?.Symbol} {ConvertCurrency(totalPrice)})
                                                 </h1>
                                             </div>
                                         </Link>
@@ -88,7 +90,16 @@ const CartPage = () => {
                             </div>
 
                         </div>
-                        : <p>No Products Added to Cart</p>
+                        : <div>
+                            <p>No Products Added to Cart</p>
+                            <div className=" continueshopping-buttons ">
+                                <Link to={"/products?search=all%20products"}>Continue Shopping</Link>
+                            </div>
+                        </div>
+
+
+
+
                     }
 
                 </div>

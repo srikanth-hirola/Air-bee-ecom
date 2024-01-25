@@ -146,7 +146,7 @@ const DraftProductIdentity = ({
                     <option value="Choose a category">Choose a category</option>
                     {categories &&
                         categories.map((i) => (
-                            <option value={i.name} key={i.name}>
+                            <option value={i._id} key={i.name}>
                                 {i.name}
                             </option>
                         ))}
@@ -166,7 +166,7 @@ const DraftProductIdentity = ({
                     {categories &&
                         subCat.map((i) => {
                             return (
-                                <option value={i.name} key={i.name}>
+                                <option value={i._id} key={i.name}>
                                     {i.name}
                                 </option>
                             );
@@ -188,8 +188,8 @@ const DraftProductIdentity = ({
                     {categories &&
                         subSubCat.map((i) => {
                             return (
-                                <option value={i} key={i}>
-                                    {i}
+                                <option value={i?._id} key={i._id}>
+                                    {i?.name}
                                 </option>
                             );
                         })}

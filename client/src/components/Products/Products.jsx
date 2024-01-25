@@ -98,17 +98,13 @@ const Products = () => {
 
     const { allPublishedProducts } = useSelector((state) => state.products);
 
-    if (!allPublishedProducts) {
-        // You might want to show a loading indicator here
-        return null;
-    }
 
     return (
         <div className="DronesCategories-parent">
             <div>
                 <h2>Explore Our Featured Products</h2>
             </div>
-            {allPublishedProducts.length > 0 ? (
+            {allPublishedProducts?.length > 0 ? (
                 <Swiper
                     className='paginationDisabledClass'
                     autoplay={{

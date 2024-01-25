@@ -48,6 +48,7 @@ export const StyleConfig = () => {
 
         currency: siteConfigData?.currency,
         paymentMethods: siteConfigData?.paymentMethods,
+        CurrencyArr: siteConfigData?.CurrencyArr,
         mainBanner: siteConfigData?.mainBanner,
         sideBanner1: siteConfigData?.sideBanner1,
         sideBanner2: siteConfigData?.sideBanner2,
@@ -127,7 +128,9 @@ export const StyleConfig = () => {
         CategoriesThree: siteConfigData?.CategoriesThree,
 
         eventCardLayoutOne: siteConfigData?.eventCardLayoutOne,
+        eventCardLayoutTwo: siteConfigData?.eventCardLayoutTwo,
         eventLayountOneSelectedEvents: siteConfigData?.eventLayountOneSelectedEvents,
+        eventLayountTwoSelectedEvents: siteConfigData?.eventLayountTwoSelectedEvents,
 
         OtherFooterContent: siteConfigData?.OtherFooterContent,
         footerMapUrl: siteConfigData?.footerMapUrl,

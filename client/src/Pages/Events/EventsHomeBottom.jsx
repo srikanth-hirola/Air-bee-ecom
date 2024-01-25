@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
-import { StyleConfig } from '../utils/StyleConfig';
-import EventCardBottom from '../components/Events/EventCardBottom';
+import { StyleConfig } from '../../utils/StyleConfig';
+import EventCardBottom from '../../components/Events/EventCardBottom';
 
 const EventsHomeBottom = () => {
     const { allEvents } = useSelector((state) => state.events);

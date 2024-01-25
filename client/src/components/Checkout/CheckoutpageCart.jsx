@@ -1,9 +1,11 @@
 import React from 'react'
 import { StyleConfig } from '../../utils/StyleConfig'
+import useGetCurrencyConversion from '../../hooks/Site-config/useGetCurrencyConversion';
 
 const CheckoutpageCart = ({ sellerProducts, handleDelete, index }) => {
 
     const styles = StyleConfig();
+    const { ConvertCurrency } = useGetCurrencyConversion();
 
     return (
         <>
@@ -32,7 +34,7 @@ const CheckoutpageCart = ({ sellerProducts, handleDelete, index }) => {
                                             </div>
                                             <div className='Order-summery-text-sub'>
                                                 <p>Qty {product.qty}</p>
-                                                <strong>{styles?.currency?.Symbol}&nbsp;{product.finalPrice}</strong>
+                                                <strong>{styles?.currency?.Symbol}&nbsp;{ConvertCurrency(product.finalPrice)}</strong>
                                             </div>
                                         </div>
                                         {'error' in sellerProducts ? (

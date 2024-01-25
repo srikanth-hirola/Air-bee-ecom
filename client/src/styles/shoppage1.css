@@ -106,17 +106,17 @@
 .shoppage1-productCard-sub .shoppage1-likeicon {
   padding: 0;
 }
-
 .shoppage1-productCard-sub .shoppage1-likeicon img {
   border-radius: 6px;
   border: 1px solid var(--gray-300, #dee2e7);
   background: var(--white, #fff);
-
-  /* shadow-sm */
   box-shadow: 0px 1px 2px 0px rgba(56, 56, 56, 0.08);
   padding: 8px;
 }
-
+.card-body .shoppage1-likeicon svg{
+ width: 100%;
+ height: 28px;
+}
 .shoppage1-price {
   display: flex;
   /* justify-content: center; */
@@ -249,8 +249,8 @@
 .card-body p {
   /* color: var(--base-color-gray-800, #606060); */
   font-family: Inter;
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 18px;
+  font-weight: 500;
 }
 .allproducts-parent {
   width: 98%;
@@ -401,16 +401,36 @@ font-weight: 600;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 .infomation-reviews{
-  padding: 10px;
+width: 60px;
+height: 60px;
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 0px 10px 0px 0px;
+}
+.infomation-reviews img{
+  height: 100%;
+  width: 100%;
+  border: 1px solid transparent;
   border-radius: 50%;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  margin: 0px 5px;
 }
 .product-specifications th,td{
   padding: 5px 5px !important;
 }
 .product-specifications tr{
   border-color: none;
+}
+.review-product-page1{
+  margin: 0;
+  
+}
+.pagination-previous-button .page-link {
+  background-color: #0d6efd !important;
+  color: white !important;
+}
+.pagination-count-button .page-link:hover{
+  background-color: rgb(249 115 22) !important;
+  color: white !important;
 }
 /* new */
 @media only screen and (max-width: 767px) {

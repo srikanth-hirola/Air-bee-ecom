@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { StyleConfig } from '../../../../utils/StyleConfig';
 import toast from 'react-hot-toast';
+import useFetchCategoryHandler from '../../../../hooks/categories/useFetchCategoryHandler';
 
 
 const Keywords = ({ searchTerms, setSearchTerms, formData, colorInputs }) => {
 
     const styles = StyleConfig();
     const [term, setTerm] = useState('');
+    const { fetchCategory, fetchSubCategory, fetchSubSubCategory } = useFetchCategoryHandler();
 
     const handleChange = (e) => {
         e.preventDefault();
@@ -35,6 +37,7 @@ const Keywords = ({ searchTerms, setSearchTerms, formData, colorInputs }) => {
         updatedItems.splice(index, 1);
         setSearchTerms(updatedItems);
     };
+
 
     const generateSearchTerms = () => {
         const {
@@ -72,13 +75,16 @@ const Keywords = ({ searchTerms, setSearchTerms, formData, colorInputs }) => {
 
         // Search by category and subcategories
         if (category) {
-            searchingTerms.push(category);
+            let cat = fetchCategory(category)
+            searchingTerms.push(cat?.name);
         }
         if (subCatgory) {
-            searchingTerms.push(subCatgory);
+            let sub = fetchSubCategory(category, subCatgory)
+            searchingTerms.push(sub?.name);
         }
         if (subSubCategory) {
-            searchingTerms.push(subSubCategory);
+            let subSub = fetchSubSubCategory(category, subCatgory, subSubCategory)
+            searchingTerms.push(subSub?.name);
         }
 
         // Search by sellerSKU
@@ -126,7 +132,7 @@ const Keywords = ({ searchTerms, setSearchTerms, formData, colorInputs }) => {
             name,
             productId,
             category,
-            subCategory,
+            subCatgory,
             subSubCategory,
             itemCondition,
             model,
@@ -174,13 +180,17 @@ const Keywords = ({ searchTerms, setSearchTerms, formData, colorInputs }) => {
 
         // Search by category and subcategories
         if (category) {
-            searchingTerms.push(category);
+            let cat = fetchCategory(category)
+
+            searchingTerms.push(cat?.name);
         }
-        if (subCategory) {
-            searchingTerms.push(subCategory);
+        if (subCatgory) {
+            let sub = fetchSubCategory(category, subCatgory)
+            searchingTerms.push(sub?.name);
         }
         if (subSubCategory) {
-            searchingTerms.push(subSubCategory);
+            let subSub = fetchSubSubCategory(category, subCatgory, subSubCategory)
+            searchingTerms.push(subSub?.name);
         }
 
         // Search by item condition
@@ -220,7 +230,6 @@ const Keywords = ({ searchTerms, setSearchTerms, formData, colorInputs }) => {
                 typeof term === 'string' ? term.toLowerCase() : term
             )
         );
-
         for (const term of searchingTerms) {
             if (typeof term === 'string') {
                 existingSearchTermsSet.add(term.toLowerCase());
@@ -261,7 +270,7 @@ const Keywords = ({ searchTerms, setSearchTerms, formData, colorInputs }) => {
             <div className="keyword-array-div gnrt">
                 {searchTerms.map((val, index) => {
                     return (
-                        <>
+                        <React.Fragment key={index}>
                             <p className='gnrt-p1'>
                                 {val}&nbsp;&nbsp;
                                 <button
@@ -273,7 +282,7 @@ const Keywords = ({ searchTerms, setSearchTerms, formData, colorInputs }) => {
                                     x
                                 </button>
                             </p>
-                        </>
+                        </React.Fragment>
                     );
                 })}
             </div>

@@ -12,12 +12,14 @@ import Loader from '../../../utils/Loader';
 import UpdateModel from '../../../components/ShopComponents/Shipment/Modals/UpdateModel';
 import ReturnOrderModal from '../../../components/ShopComponents/Shipment/Modals/ReturnOrderModal';
 import TrackingModal from '../../../components/ShopComponents/Shipment/Modals/TrackingModal';
+import useGetCurrencyConversion from '../../../hooks/Site-config/useGetCurrencyConversion';
 
 const ShipOrders = () => {
     const { seller } = useSelector((state) => state.seller);
     const { shippingOrders } = useSelector((state) => state.shipping);
     const { isLoadingShipping } = useSelector((state) => state.shipping);
     const { orders, isLoading } = useSelector((state) => state.order);
+    const { ConvertCurrency } = useGetCurrencyConversion();
 
     const dispatch = useDispatch();
 
@@ -302,7 +304,7 @@ const ShipOrders = () => {
                                         </div>
 
                                         <div className="payment width">
-                                            <p className="text-xs">{styles?.currency?.Symbol} {order?.shipDetails?.total}</p>
+                                            <p className="text-xs">{styles?.currency?.Symbol} {ConvertCurrency(order?.shipDetails?.total)}</p>
                                             <p
                                                 className={`text-xs font-semibold rounded-sm ${order?.shipDetails?.payment_method === 'cod'
                                                     ? 'text-red-600 bg-red-200'
@@ -344,7 +346,7 @@ const ShipOrders = () => {
                                             </p>
                                             <p className="text-xs mb-1">
                                                 <strong>Shipping : </strong>
-                                                {order?.orderDetails?.response?.orders?.rate}
+                                                {styles?.currency?.Symbol} {ConvertCurrency(order?.orderDetails?.response?.orders?.rate)}
                                             </p>
                                         </div>
                                         <div className="courier flex flex-col gap-2">

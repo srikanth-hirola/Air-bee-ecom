@@ -26,6 +26,8 @@ const EventCardWithProducts = ({ data1 }) => {
         }
     }, [data1]);
 
+
+
     return (
         <>
             <div className='DronesProductsRow1-parent'>
@@ -45,7 +47,9 @@ const EventCardWithProducts = ({ data1 }) => {
                                         <Link to="/products?search=all products">Show More</Link>
                                     </div>
                                 </div>
+
                             </div>
+                            {/* <Link className='bg-[#fa8232] text-white px-3 py-2'>View All</Link> */}
                         </div>
                         <div className="col-md-12 col-lg-9">
                             <div className="row">

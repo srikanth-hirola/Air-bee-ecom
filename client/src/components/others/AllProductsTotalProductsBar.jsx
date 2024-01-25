@@ -5,7 +5,7 @@ const AllProductsTotalProductsBar = ({ length }) => {
     return (
         <div className='row shoppage-row1'>
             <div className='col-md-6 col-sm-10 col-10'>
-                {length} items in Mobile accessory
+                <b class="fw-semibold">{length} items</b> in Mobile accessory
             </div>
             <div className="col-md-6 col-sm-2 col-2 icons1-shoppage1">
                 <div className=''>

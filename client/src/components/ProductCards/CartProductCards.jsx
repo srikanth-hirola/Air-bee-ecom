@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getAllProducts } from '../../redux/actions/product';
 import { getAllEvents } from '../../redux/actions/event';
 import { Link } from 'react-router-dom';
+import useGetCurrencyConversion from '../../hooks/Site-config/useGetCurrencyConversion';
 
 const CartProductCards = ({
     data1,
@@ -13,6 +14,7 @@ const CartProductCards = ({
     removeFromCartHandler, styles
 }) => {
     const dispatch = useDispatch();
+    const { ConvertCurrency } = useGetCurrencyConversion()
 
     const { allProducts } = useSelector((state) => state.products);
     const { allEvents } = useSelector((state) => state.events);
@@ -111,7 +113,6 @@ const CartProductCards = ({
         const foundVarient = foundProduct?.colorInputs.find((val) => val._id === selectedColor._id)
         if (foundVarient) {
             const currentDisPrice = event ? foundVarient?.eventPrice : foundVarient?.discountPrice;
-            console.log(currentDisPrice * passedProduct?.qty)
 
             if (foundVarient?.haveAttributes) {
                 const foundAttr = foundVarient?.attributes[0]?.values.find((val) => val._id === attrId)
@@ -142,7 +143,6 @@ const CartProductCards = ({
                     maxOrderQuantity: foundProduct?.maxOrderQuantity,
                     active: event,
                 };
-                console.log(temp)
                 setDataFound(temp)
                 quantityChangeHandler(temp);
             }
@@ -201,19 +201,19 @@ const CartProductCards = ({
         <>
             {dataFound && (
 
-                <div className="row">
+                <div className="row align-items-center">
                     <hr />
-                    <div className="col-md-8">
+                    <div className="col-md-7">
                         <Link to={`${`/product/${data1._id}`}`}>
                             <div className="Dronescrat-product">
                                 <div className='Dronescrat-product-sub'>
-                                    <div className="row">
+                                    <div className="row align-items-center">
                                         <div className="col-md-3">
                                             <div className='Drones-Product-image'>
                                                 <img src={`${dataFound?.selectedColor?.mainImage?.url ? dataFound?.selectedColor?.mainImage?.url : dataFound?.selectedColor?.image?.url}`} alt="product" />
                                             </div>
                                         </div>
-                                        <div className="col-md-9">
+                                        <div className="col-md-8">
                                             <div className='Drones-Product-desc'>
                                                 <p>{dataFound?.name}</p>
                                                 <p>{dataFound?.selectedColor?.SKU}</p>
@@ -229,22 +229,23 @@ const CartProductCards = ({
                             </div>
                         </Link>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-5">
                         <div className="Drones-product-details-sub">
                             <div className="row">
-                                <div className="col-4 col-sm-4 col-md-4">
+                                <div className="col-3 col-sm-3 col-md-3">
                                     <div className='Drones-Product-price'>
                                         <p>{styles?.currency?.Symbol}&nbsp;{dataFound.active
-                                            ? dataFound.selectedColor.eventPrice
-                                            : dataFound.selectedColor.discountPrice}{' '}
+                                            ? ConvertCurrency(dataFound.selectedColor.eventPrice)
+                                            : ConvertCurrency(dataFound.selectedColor.discountPrice)}{' '}
                                             * {value}</p>
                                     </div>
                                 </div>
-                                <div className="col-2 col-sm-2 col-md-2">
+                                <div className="col-3 col-sm-3 col-md-3">
                                     <div className='Drones-Product-quantity'>
-                                        <p>{dataFound.qty}</p>
+
                                         <div className='Drones-addtocart-buttons'>
                                             <button className='increment-button' onClick={(e) => increment(e, dataFound)}>+</button>
+                                            <p className='m-0'>{dataFound.qty}</p>
                                             <button className='increment-button' onClick={(e) => decrement(e, dataFound)}>-</button>
                                         </div>
                                     </div>
@@ -255,14 +256,14 @@ const CartProductCards = ({
                                             data={dataFound}
                                             value={value}
                                             totalPrice={totalPrice}
-                                            styles={styles} removeFromCartHandler={removeFromCartHandler}
+                                            styles={styles} removeFromCartHandler={removeFromCartHandler} ConvertCurrency={ConvertCurrency}
                                         />
                                     ) : (
                                         <SingleAttr
                                             data={dataFound}
                                             value={value}
                                             totalPrice={totalPrice}
-                                            styles={styles} removeFromCartHandler={removeFromCartHandler}
+                                            styles={styles} removeFromCartHandler={removeFromCartHandler} ConvertCurrency={ConvertCurrency}
                                         />
                                     )}
                                 </div>
@@ -277,13 +278,13 @@ const CartProductCards = ({
 
 export default CartProductCards
 
-const VarientAttr = ({ data, value, totalPrice, styles, removeFromCartHandler }) => {
+const VarientAttr = ({ data, value, totalPrice, styles, removeFromCartHandler, ConvertCurrency }) => {
     return (
         <div className="row Drones-Product-subtotal">
-            <div className="col-4 Drones-Product-subtotal-content">
-                <p>{styles?.currency?.Symbol} {totalPrice}</p>
+            <div className="col-6 Drones-Product-subtotal-content ">
+                <p>{styles?.currency?.Symbol} {ConvertCurrency(totalPrice)}</p>
             </div>
-            <div className="col-8 images-section">
+            <div className="col-6 images-section">
                 <div className='Drones-Product-subtotal-sub2'>
                     <div className='Drones-Product-subtotal-sub2-image1'>
                         <FontAwesomeIcon icon={faCircleXmark} style={{ color: "#d5d7e0", fontSize: '20px' }} onClick={() => removeFromCartHandler(data)} />
@@ -295,14 +296,14 @@ const VarientAttr = ({ data, value, totalPrice, styles, removeFromCartHandler })
     )
 }
 
-const SingleAttr = ({ data, value, totalPrice, styles, removeFromCartHandler }) => {
+const SingleAttr = ({ data, value, totalPrice, styles, removeFromCartHandler, ConvertCurrency }) => {
 
     return (
         <div className="row Drones-Product-subtotal">
-            <div className="col-4 Drones-Product-subtotal-content">
-                <p>{styles?.currency?.Symbol} {totalPrice}</p>
+            <div className="col-6 Drones-Product-subtotal-content ">
+                <p>{styles?.currency?.Symbol} {ConvertCurrency(totalPrice)}</p>
             </div>
-            <div className="col-8 images-section">
+            <div className="col-6 images-section">
                 <div className='Drones-Product-subtotal-sub2'>
                     <div className='Drones-Product-subtotal-sub2-image1'>
                         <FontAwesomeIcon icon={faCircleXmark} style={{ color: "#d5d7e0", fontSize: '20px' }} onClick={() => removeFromCartHandler(data)} />

@@ -25,7 +25,7 @@ const EventCard = ({ active, data }) => {
     return (
         <div
             className={`block bg-white rounded-lg ${active ? "unset" : "mb-12"
-                } lg:flex p-2 mb-3 evtb`}
+                } lg:flex p-2 mb-3 evtb !w-full`}
         >
             <div className="lg:-w[20%] evti evti-mq">
                 <img src={`${data.images[0]?.url}`} alt="" />
@@ -46,7 +46,9 @@ const EventCard = ({ active, data }) => {
             {data.sold_out} sold
           </span>
         </div> */}
-                <CountDown data={data} />
+                <div className="w-fit">
+                    <CountDown data={data} />
+                </div>
                 {/* <br /> */}
                 <div className="flex items-center">
                     <Link to={`/event/${data._id}`}>

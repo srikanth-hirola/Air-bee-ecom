@@ -3,11 +3,13 @@ import Accordion from 'react-bootstrap/Accordion';
 import { Link } from 'react-router-dom';
 import Ratings from '../Shop/Ratings';
 import useFilterHandler from '../../hooks/useFilterHandler';
+import useFetchCategoryHandler from '../../hooks/categories/useFetchCategoryHandler';
 
 
 const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, selectedBrands, selectedPriceRange, setSelectedBrands, setSelectedPriceRange, filteredAttr, setFilteredAttr, isVisibleData, toggleDataVisible }) => {
 
     const { handleCheckboxChange, handleBrandCheckBox, handleFilterCheckswithValues } = useFilterHandler()
+    const { fetchCategory, fetchSubCategory } = useFetchCategoryHandler();
 
     const [filterBrand, setFilterBrand] = useState([]);
     const [category, setCategory] = useState([
@@ -246,7 +248,7 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
         <div className="col-md-3 column3 col-12 col-sm-12">
             <div className="desktop-filter">
 
-                <Accordion>
+                <Accordion defaultActiveKey="0">
                     <Accordion.Item eventKey="0">
                         <Accordion.Header>Category</Accordion.Header>
                         <Accordion.Body>
@@ -255,10 +257,10 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                                     (cat, i) =>
                                         cat.name && (
                                             <React.Fragment key={i}>
-                                                <Link to={`/products-by-category/search?category=${cat.name}`}
-                                                    className="cat-link text-black"
+                                                <Link to={`/products-by-category/search?category=${fetchCategory(cat.name)}`}
+                                                    className="cat-link text-black font-semibold"
                                                 >
-                                                    {cat.name}
+                                                    {fetchCategory(cat.name)?.name}
                                                 </Link>
                                                 <ul>
                                                     {cat.subCategory.length > 0 &&
@@ -266,9 +268,9 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                                                             <li key={index}
                                                                 className="cat-link"
                                                             >
-                                                                <Link to={`/products-by-category/search?category=${cat.name}&subcategory=${sub}`}
+                                                                <Link to={`/products-by-category/search?category=${fetchCategory(cat.name)?.name}&subcategory=${fetchSubCategory(cat.name, sub)?.name}`}
                                                                     className="cat-link text-black"
-                                                                >{sub}</Link>
+                                                                >{fetchSubCategory(cat.name, sub)?.name}</Link>
                                                             </li>
                                                         ))}
                                                 </ul>
@@ -357,10 +359,10 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                             </ul> */}
                             <div className='filrer-price-data'>
                                 <p className="d-flex mb-0 align-items-center pb-1 full-star-mq ratings-mobile">
-                                    <div className='star-mq star1-mq'>
+                                    <div className='star-mq star1-mq pr-2'>
                                         <Ratings rating={4} />
                                     </div>
-                                    <span className='and-up-mq and-up1-mq'> & up</span>
+                                    <span className='and-up-mq and-up1-mq'> & down</span>
                                     <input
                                         className="star-i"
                                         type="radio"
@@ -372,10 +374,10 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                                     />
                                 </p>
                                 <p className="d-flex mb-0 align-items-center pb-1 full-star-mq ratings-mobile">
-                                    <div className='star-mq star1-mq'>
+                                    <div className='star-mq star1-mq pr-2'>
                                         <Ratings rating={3} />
                                     </div>
-                                    <span className='and-up-mq and-up1-mq'> & up</span>
+                                    <span className='and-up-mq and-up1-mq'> & down</span>
                                     <input
                                         className="star-i"
                                         type="radio"
@@ -387,10 +389,10 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                                     />
                                 </p>
                                 <p className="d-flex mb-0 align-items-center pb-1 full-star-mq ratings-mobile">
-                                    <div className='star-mq star1-mq'>
+                                    <div className='star-mq star1-mq pr-2'>
                                         <Ratings rating={2} />
                                     </div>
-                                    <span className='and-up-mq and-up1-mq'> & up</span>
+                                    <span className='and-up-mq and-up1-mq'> & down</span>
                                     <input
                                         className="star-i"
                                         type="radio"
@@ -402,10 +404,10 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                                     />
                                 </p>
                                 <p className="d-flex mb-0 align-items-center pb-1 full-star-mq ratings-mobile">
-                                    <div className='star-mq star1-mq'>
+                                    <div className='star-mq star1-mq pr-2'>
                                         <Ratings rating={1} />
                                     </div>
-                                    <span className='and-up-mq and-up1-mq'> & up</span>
+                                    <span className='and-up-mq and-up1-mq'> & down</span>
                                     <input
                                         className="star-i"
                                         type="radio"
@@ -560,7 +562,7 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                             </ul> */}
                                         <div className=''>
                                             <p className="d-flex mb-0 align-items-center pb-1 full-star-mq ratings-mobile">
-                                                <div className='star-mq star1-mq'>
+                                                <div className='star-mq star1-mq pr-2'>
                                                     <Ratings rating={4} />
                                                 </div>
                                                 <span className='and-up-mq and-up1-mq'> & up</span>

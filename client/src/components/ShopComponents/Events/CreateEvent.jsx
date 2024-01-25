@@ -6,7 +6,7 @@ import axios from 'axios';
 import { StyleConfig } from '../../../utils/StyleConfig';
 import toast from 'react-hot-toast';
 import { server } from '../../../server';
-import { createevent } from '../../../redux/actions/event';
+import { createevent, getAllEvents } from '../../../redux/actions/event';
 import Loader from '../../../utils/Loader';
 import CreateEventTable from './CreateEventTable';
 
@@ -14,9 +14,13 @@ import CreateEventTable from './CreateEventTable';
 const CreateEvent = () => {
     const { seller } = useSelector((state) => state.seller);
     const { success, error } = useSelector((state) => state.events);
+    const { allEvents } = useSelector((state) => state.events);
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
+    useEffect(() => {
+        dispatch(getAllEvents())
+    }, [dispatch])
     const styles = StyleConfig();
 
     const [images, setImages] = useState([]);
@@ -72,16 +76,51 @@ const CreateEvent = () => {
 
             // window.location.reload();
         }
-        axios
-            .get(`${server}/event/get-all-cat-product/${seller._id}`)
-            .then((result) => {
-                setProductData(result.data.product);
+        // axios
+        //     .get(`${server}/event/get-all-cat-product/${seller._id}`)
+        //     .then((result) => {
+        //         let products = result.data.product;
+        //         let produArr = [];
+        //         products?.map((item) => {
+        //             allEvents?.map((even) => {
+        //                 let found = even?.productArray?.find((pro) => pro?._id === item?._id)
+        //                 if (!found) {
+        //                     produArr.push(item)
+        //                 }
+        //             })
+
+        //         })
+        //         setProductData(produArr);
+        //         setIsLoading(false);
+        //     })
+        //     .catch((e) => {
+        //         console.log(e);
+        //     });
+        const fetchProducts = axios.get(`${server}/event/get-all-cat-product/${seller._id}`);
+
+        Promise.all([fetchProducts])
+            .then(([productsResult, allEventsResult]) => {
+                const products = productsResult.data.product;
+                // const allEvents = allEventsResult.data; // Adjust accordingly based on the structure of your data
+
+                const allEventsProductIds = new Set();
+
+                allEvents.forEach((event) => {
+                    event.productArray.forEach((product) => {
+                        allEventsProductIds.add(product._id);
+                    });
+                });
+
+                const filteredProducts = products.filter((product) => !allEventsProductIds.has(product._id));
+
+                setProductData(filteredProducts);
                 setIsLoading(false);
             })
-            .catch((e) => {
-                console.log(e);
+            .catch((error) => {
+                console.error(error);
             });
-    }, [dispatch, error, navigate, seller._id, success]);
+
+    }, [allEvents, dispatch, error, navigate, seller._id, success]);
 
     const handleImageChange = (e) => {
         const files = Array.from(e.target.files);

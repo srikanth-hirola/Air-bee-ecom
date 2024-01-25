@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import { StyleConfig } from '../../../../utils/StyleConfig';
 import { server } from '../../../../server';
 import toast from 'react-hot-toast';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 const DraftColorInput = ({
     colorInputs,
@@ -229,7 +231,7 @@ const DraftColorInput = ({
                                 }}
                                 className="images-delete-btn"
                             >
-                                <i class="fa-solid fa-trash"></i>
+                                <FontAwesomeIcon icon={faTrash} style={{ color: 'red' }} />
                             </button>
                         </div>
                     ) : (

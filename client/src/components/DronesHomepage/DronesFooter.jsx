@@ -1,8 +1,11 @@
 import React from 'react'
 import { Footer } from './DroneHomepageData'
+import { StyleConfig } from '../../utils/StyleConfig'
 import { Link } from 'react-router-dom'
+
 const DronesFooter = () => {
     const data = Footer
+    const styles = StyleConfig();
     return (
         <>
             <div className="Drones-footer-parent">
@@ -11,7 +14,7 @@ const DronesFooter = () => {
                         <div className="col-md-6 col-lg-3">
                             <div className="Drones-footer-logo-content">
                                 <div className='Drones-footer-logo-image'>
-                                    <img src="/images/logo.png" alt="" />
+                                    <img src={styles?.logo?.url} alt="logo" className='mix-blend-multiply object-cover' />
                                 </div>
                                 <p>Best information about the company gies here but now lorem ipsum is</p>
                                 {data?.SocialMedia?.Links?.content?.img?.length > 0 &&
@@ -40,7 +43,7 @@ const DronesFooter = () => {
                                             <div className="DronesFooter-links">
                                                 <h6 key={index}>{item?.Title}</h6>
                                                 {item?.drop?.length > 0 && item?.drop?.map((dropitem, index1) => (
-                                                   <a href=""> <li key={index1}>{dropitem?.SubTitle}</li></a>
+                                                    <Link to=""> <li key={index1}>{dropitem?.SubTitle}</li></Link>
                                                 ))}
                                             </div>
                                         </div>

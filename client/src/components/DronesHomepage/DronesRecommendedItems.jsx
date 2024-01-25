@@ -1,18 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import useProductDeals from '../../hooks/useProductDeals'
-import { useSelector } from 'react-redux'
-import RecommendedProductCard from '../ProductCards/RecommendedProductCard'
+import { useDispatch, useSelector } from 'react-redux'
+import ProductCardMiddleware from '../ProductCards/ProductCardMiddleware'
+import { getPublishedProducts } from '../../redux/actions/product'
 
 const DronesRecommendedItems = () => {
     const { getBestDeals } = useProductDeals();
-    const { allProducts } = useSelector((state) => state.products);
+    const { allPublishedProducts } = useSelector((state) => state.products);
+
     const [products, setProducts] = useState([]);
 
-    useEffect(() => {
-        getBestDeals({ allProducts, setData: setProducts })
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [allProducts])
+    const dispatch = useDispatch();
 
+    useEffect(() => {
+        dispatch(getPublishedProducts())
+    }, [dispatch])
+
+    useEffect(() => {
+        getBestDeals({ allProducts: allPublishedProducts, setData: setProducts })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [allPublishedProducts])
 
     return (
         <>
@@ -23,8 +30,8 @@ const DronesRecommendedItems = () => {
                     </div>
                     {products?.length > 0 &&
                         <div className="row">
-                            {products?.slice(0, 18)?.map((item, index) => (
-                                <RecommendedProductCard data1={item} key={index} />
+                            {products?.slice(0, 16)?.map((item, index) => (
+                                <ProductCardMiddleware data1={item} key={index} />
                             ))}
                         </div>}
                 </div>

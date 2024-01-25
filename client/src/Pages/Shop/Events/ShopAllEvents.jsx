@@ -8,7 +8,7 @@ import DronesFooter from '../../../components/DronesHomepage/DronesFooter';
 const ShopAllEvents = () => {
     return (
         <div>
-            <DashboardHeader />
+            <DashboardHeader active={1}/>
             <div className="flex justify-between w-full">
                 <div className="w-[80px] 800px:w-[330px]">
                     <DashboardSideBar active={5} />
