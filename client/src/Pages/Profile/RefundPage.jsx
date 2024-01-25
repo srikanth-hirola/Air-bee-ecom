@@ -2,6 +2,7 @@ import React from 'react'
 import RefundTabs from '../../components/Profile/RefundTabs'
 import SideBar from '../../components/Profile/SideBar'
 import DronesHeader from '../../components/Headers/DronesHeader'
+import DronesFooter from '../../components/DronesHomepage/DronesFooter'
 
 const RefundPage = () => {
     return (
@@ -20,6 +21,7 @@ const RefundPage = () => {
                     </div>
                 </div>
             </div>
+            <DronesFooter/>
 
         </>
     )

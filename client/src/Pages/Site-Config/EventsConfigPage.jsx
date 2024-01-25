@@ -2,6 +2,7 @@ import React from 'react'
 import DashboardHeader from '../../components/Headers/DashboardHeader';
 import DashboardSideBar from '../../components/ShopComponents/Layout/DashboardSideBar';
 import { EventsConfig } from '../../components/ShopComponents/SiteConfig/Events/EventsConfig';
+import DronesFooter from '../../components/DronesHomepage/DronesFooter';
 
 
 export const EventsConfigPage = () => {
@@ -14,6 +15,7 @@ export const EventsConfigPage = () => {
                 </div>
                 <EventsConfig />
             </div>
+            <DronesFooter/>
         </div>
     );
 }

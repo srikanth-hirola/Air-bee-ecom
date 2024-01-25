@@ -9,6 +9,7 @@ import { server } from '../server'
 import { getAllProducts } from '../redux/actions/product'
 import { StyleConfig } from '../utils/StyleConfig'
 import DronesHeader from '../components/Headers/DronesHeader'
+import DronesFooter from '../components/DronesHomepage/DronesFooter'
 
 const AllProductsPage = () => {
     const location = useLocation();
@@ -84,6 +85,7 @@ const AllProductsPage = () => {
                     </div>
                 </>
             }
+            <DronesFooter/>
         </>
     )
 }

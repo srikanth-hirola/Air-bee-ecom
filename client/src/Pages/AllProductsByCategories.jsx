@@ -9,6 +9,7 @@ import { StyleConfig } from '../utils/StyleConfig'
 import { useDispatch, useSelector } from 'react-redux'
 import toast from 'react-hot-toast'
 import DronesHeader from '../components/Headers/DronesHeader'
+import DronesFooter from '../components/DronesHomepage/DronesFooter'
 
 const AllProductsByCategories = () => {
 
@@ -83,6 +84,7 @@ const AllProductsByCategories = () => {
                     </div>
                 </>
             }
+        <DronesFooter/>
         </>
     )
 }

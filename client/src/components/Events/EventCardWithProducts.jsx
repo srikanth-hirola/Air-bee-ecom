@@ -31,7 +31,7 @@ const EventCardWithProducts = ({ data1 }) => {
             <div className='DronesProductsRow1-parent'>
                 <div className="">
                     <div className="row align-items-center">
-                        <div className="col-md-6 col-lg-3">
+                        <div className="col-md-6 col-lg-3 p-0">
                             <div className='DronesProductsRow1-sub1-text-parent'>
                                 <div className='DronesProductsRow1-sub1-text'>
                                     <h4>Deals and offers</h4>
@@ -51,7 +51,7 @@ const EventCardWithProducts = ({ data1 }) => {
                             <div className="row">
                                 {data?.length > 0 ?
                                     data?.slice(0, 4)?.map((item, i) => (
-                                        <div className=" col-sm-6 col-md-3 col-lg-3" key={i}>
+                                        <div className=" col-sm-6 col-md-3 col-lg-3 " key={i}>
                                             <EventCardHome data1={item} />
                                         </div>
                                     ))

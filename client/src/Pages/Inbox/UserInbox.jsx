@@ -10,6 +10,7 @@ import en from 'javascript-time-ago/locale/en'
 import { server } from "../../server";
 import DronesHeader from "../../components/Headers/DronesHeader";
 import { StyleConfig } from "../../utils/StyleConfig";
+import DronesFooter from "../../components/DronesHomepage/DronesFooter";
 
 TimeAgo.addLocale(en)
 
@@ -258,6 +259,7 @@ const UserInbox = () => {
                     />
                 )}
             </div>
+            <DronesFooter/>
         </>
     );
 };

@@ -33,7 +33,9 @@ const CategoriesWithProducts = ({ CatName, key }) => {
                                 <h5>{CatName}</h5>
                             </div>
                             {/* <img src="./DronesHomepage/row-2-1.png" alt="" /> */}
+                            <div className='DronesProductsRow2-image1-image'>
                             <img src={getCategoryImg()} alt="category" />
+                            </div>
                         </div>
                     </div>
                     {products?.length > 0 ?

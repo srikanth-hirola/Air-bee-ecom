@@ -2,6 +2,7 @@ import React from 'react';
 import DashboardHeader from '../../../components/Headers/DashboardHeader';
 import DashboardSideBar from '../../../components/ShopComponents/Layout/DashboardSideBar';
 import AllRefundOrders from '../../../components/ShopComponents/Refunds/AllRefundOrders';
+import DronesFooter from '../../../components/DronesHomepage/DronesFooter';
 
 
 const ShopPendingRefunds = () => {
@@ -16,6 +17,7 @@ const ShopPendingRefunds = () => {
                     <AllRefundOrders active={3} />
                 </div>
             </div>
+            <DronesFooter/>
         </div>
     );
 };

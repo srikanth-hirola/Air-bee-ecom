@@ -2,6 +2,7 @@ import React from 'react'
 import DashboardHeader from '../../components/Headers/DashboardHeader';
 import DashboardSideBar from '../../components/ShopComponents/Layout/DashboardSideBar';
 import CreateProduct from '../../components/ShopComponents/CreateProduct/CreateProduct';
+import DronesFooter from '../../components/DronesHomepage/DronesFooter';
 
 const ShopCreateProduct = () => {
     return (
@@ -15,6 +16,7 @@ const ShopCreateProduct = () => {
                     <CreateProduct />
                 </div>
             </div>
+            <DronesFooter/>
         </div>
     )
 }

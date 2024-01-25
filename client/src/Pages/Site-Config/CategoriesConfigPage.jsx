@@ -2,6 +2,7 @@ import React from 'react'
 import DashboardHeader from '../../components/Headers/DashboardHeader';
 import DashboardSideBar from '../../components/ShopComponents/Layout/DashboardSideBar';
 import { CategoriesConfig } from '../../components/ShopComponents/SiteConfig/Categories/CategoriesConfig';
+import DronesFooter from '../../components/DronesHomepage/DronesFooter';
 
 export const CategoriesConfigPage = () => {
     return (
@@ -13,6 +14,7 @@ export const CategoriesConfigPage = () => {
                 </div>
                 <CategoriesConfig />
             </div>
+            <DronesFooter/>
         </div>
     );
 }

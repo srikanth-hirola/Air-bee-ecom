@@ -2,6 +2,7 @@ import React from 'react'
 import DashboardHeader from '../../../components/Headers/DashboardHeader'
 import DashboardSideBar from '../../../components/ShopComponents/Layout/DashboardSideBar'
 import DashboardMessages from '../../../components/ShopComponents/Inbox/DashboardMessages'
+import DronesFooter from '../../../components/DronesHomepage/DronesFooter'
 
 
 const ShopInboxPage = () => {
@@ -14,6 +15,7 @@ const ShopInboxPage = () => {
                 </div>
                 <DashboardMessages />
             </div>
+            <DronesFooter/>
         </div>
     )
 }

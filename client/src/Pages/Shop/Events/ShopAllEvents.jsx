@@ -2,6 +2,7 @@ import React from 'react'
 import DashboardHeader from '../../../components/Headers/DashboardHeader'
 import DashboardSideBar from '../../../components/ShopComponents/Layout/DashboardSideBar';
 import AllEvents from '../../../components/ShopComponents/Events/AllEvents'
+import DronesFooter from '../../../components/DronesHomepage/DronesFooter';
 
 
 const ShopAllEvents = () => {
@@ -16,6 +17,7 @@ const ShopAllEvents = () => {
                     <AllEvents />
                 </div>
             </div>
+            <DronesFooter/>
         </div>
     )
 }

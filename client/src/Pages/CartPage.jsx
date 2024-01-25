@@ -8,6 +8,7 @@ import { StyleConfig } from '../utils/StyleConfig'
 import { addTocart, removeAllFromCart, removeFromCart } from '../redux/actions/cart'
 import { Link } from 'react-router-dom'
 import DronesHeader from '../components/Headers/DronesHeader'
+import DronesFooter from '../components/DronesHomepage/DronesFooter'
 
 const CartPage = () => {
     const { cart } = useSelector((state) => state.cart);
@@ -92,6 +93,7 @@ const CartPage = () => {
 
                 </div>
             </div>
+            <DronesFooter/>
         </>
     )
 }

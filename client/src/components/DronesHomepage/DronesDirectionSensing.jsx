@@ -23,19 +23,19 @@ const DronesDirectionSensing = () => {
                             </div>
                        <div className="DronesDirectionSEnsingsub2-parent">
                             <div className='DronesDirectionSEnsingsub2-sub1'>
-                                <div>
+                                <div className='DronesDirectionSEnsingsub2-sub1-image'>
                                     <img src="./DronesHomepage/Avatar.png" alt="" />
                                 </div>
                                 <p>Directions Sensing</p>
                             </div>
                             <div className='DronesDirectionSEnsingsub2-sub1'>
-                                <div>
+                                <div className='DronesDirectionSEnsingsub2-sub1-image'>
                                     <img src="./DronesHomepage/Avatar.png" alt="" />
                                 </div>
                                 <p>Directions Sensing</p>
                             </div>
                             <div className='DronesDirectionSEnsingsub2-sub1'>
-                                <div>
+                                <div className='DronesDirectionSEnsingsub2-sub1-image'>
                                     <img src="./DronesHomepage/Avatar.png" alt="" />
                                 </div>
                                 <p>Directions Sensing</p>

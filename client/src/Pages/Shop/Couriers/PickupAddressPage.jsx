@@ -2,6 +2,7 @@ import React from 'react'
 import DashboardHeader from '../../../components/Headers/DashboardHeader';
 import DashboardSideBar from '../../../components/ShopComponents/Layout/DashboardSideBar';
 import PickupAddres from '../../../components/ShopComponents/Couriers/PickupAddres'
+import DronesFooter from '../../../components/DronesHomepage/DronesFooter';
 
 const PickupAddressPage = () => {
     return (
@@ -15,6 +16,7 @@ const PickupAddressPage = () => {
                     <PickupAddres />
                 </div>
             </div>
+            <DronesFooter/>
         </div>
     );
 }

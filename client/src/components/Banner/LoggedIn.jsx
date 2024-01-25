@@ -9,7 +9,7 @@ const LoggedIn = () => {
     return (
         <div className='Drone-banner-sub-user'>
             <div className='Drone-banner-sub-user-image-parent'>
-                <div className='Drone-banner-sub-user-image h-[35px] w-[50px] rounded-full overflow-hidden mx-auto'>
+                <div className='Drone-banner-sub-user-image rounded-full overflow-hidden mx-auto'>
                     <img src={user ? user?.avatar?.url : "./DronesHomepage/Avatar.png"} alt="avatar" className='w-full h-full object-cover' />
                 </div>
                 <p>Hi, {user ? user?.name : "user"} let's get started</p>

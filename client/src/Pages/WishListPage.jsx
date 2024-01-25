@@ -6,6 +6,7 @@ import CartButtons from '../components/cart/CartButtons';
 import WishListCards from '../components/ProductCards/WishListCards';
 import WishListHeading from '../components/wishlist/WishListHeading';
 import DronesHeader from '../components/Headers/DronesHeader';
+import DronesFooter from '../components/DronesHomepage/DronesFooter';
 
 
 const WishListPage = () => {
@@ -57,6 +58,7 @@ const WishListPage = () => {
 
                 </div>
             </div>
+            <DronesFooter/>
         </>
     )
 }

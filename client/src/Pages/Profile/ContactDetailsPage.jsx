@@ -4,6 +4,7 @@ import SideBar from '../../components/Profile/SideBar';
 import DronesHeader from '../../components/Headers/DronesHeader';
 import { useSelector } from 'react-redux';
 import AddressCards from '../../components/Profile/Cards/AddressCards';
+import DronesFooter from '../../components/DronesHomepage/DronesFooter';
 
 const ContactDetailsPage = () => {
     const { user } = useSelector((state) => state.user);
@@ -83,6 +84,7 @@ const ContactDetailsPage = () => {
                     </div>
                 </div>
             </div>
+            <DronesFooter/>
         </>
 
     )

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import DronesHeader from '../../components/Headers/DronesHeader';
 import SignUp from '../../components/User/SignUp';
+import DronesFooter from '../../components/DronesHomepage/DronesFooter';
 
 const UserSignUpPage = () => {
 
@@ -34,6 +35,7 @@ const UserSignUpPage = () => {
                 </div>
 
             </div>
+            <DronesFooter/>
         </>
 
     )

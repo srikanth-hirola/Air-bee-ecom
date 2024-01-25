@@ -2,6 +2,7 @@ import React from 'react'
 import DashboardHeader from '../../../components/Headers/DashboardHeader';
 import DashboardSideBar from '../../../components/ShopComponents/Layout/DashboardSideBar';
 import { WithDrawHistory } from '../../../components/ShopComponents/WithDraw/WithDrawHistory';
+import DronesFooter from '../../../components/DronesHomepage/DronesFooter';
 
 export const WithDrawHistoryPage = () => {
     return (
@@ -15,6 +16,7 @@ export const WithDrawHistoryPage = () => {
                     <WithDrawHistory active={1} />
                 </div>
             </div>
+            <DronesFooter/>
         </div>
     );
 }

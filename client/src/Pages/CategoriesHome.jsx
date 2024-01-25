@@ -36,7 +36,6 @@ const CategoriesHome = () => {
                     ))}
                 </>
             }
-
         </div>
     )
 }

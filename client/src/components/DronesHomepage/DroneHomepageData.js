@@ -26,7 +26,7 @@ export const Row2Products = {
                      {
                          img: {
                              public_id: "",
-                             url: "./DronesHomepage/row-2-2.png"
+                             url: "/DronesHomepage/row-2-2.png"
                          },
                          Title:{
                              text:"Drone Parts"
@@ -39,7 +39,7 @@ export const Row2Products = {
                      {
                         img: {
                             public_id: "",
-                            url: "./DronesHomepage/row-2-3.png"
+                            url: "/DronesHomepage/row-2-3.png"
                         },
                         Title:{
                             text:"Drone Parts"
@@ -52,7 +52,7 @@ export const Row2Products = {
                     {
                         img: {
                             public_id: "",
-                            url: "./DronesHomepage/row-2-4.png"
+                            url: "/DronesHomepage/row-2-4.png"
                         },
                         Title:{
                             text:"Drone Parts"
@@ -65,7 +65,7 @@ export const Row2Products = {
                     {
                         img: {
                             public_id: "",
-                            url: "./DronesHomepage/row-2-5.png"
+                            url: "/DronesHomepage/row-2-5.png"
                         },
                         Title:{
                             text:"Drone Parts"
@@ -78,7 +78,7 @@ export const Row2Products = {
                     {
                         img: {
                             public_id: "",
-                            url: "./DronesHomepage/row-2-6.png"
+                            url: "/DronesHomepage/row-2-6.png"
                         },
                         Title:{
                             text:"Drone Parts"
@@ -91,7 +91,7 @@ export const Row2Products = {
                     {
                         img: {
                             public_id: "",
-                            url: "./DronesHomepage/row-2-7.png"
+                            url: "/DronesHomepage/row-2-7.png"
                         },
                         Title:{
                             text:"Drone Parts"
@@ -104,7 +104,7 @@ export const Row2Products = {
                     {
                         img: {
                             public_id: "",
-                            url: "./DronesHomepage/row-2-8.png"
+                            url: "/DronesHomepage/row-2-8.png"
                         },
                         Title:{
                             text:"Drone Parts"
@@ -117,7 +117,7 @@ export const Row2Products = {
                     {
                         img: {
                             public_id: "",
-                            url: "./DronesHomepage/row-2-9.png"
+                            url: "/DronesHomepage/row-2-9.png"
                         },
                         Title:{
                             text:"Drone Parts"
@@ -162,7 +162,7 @@ export const Row3Products = {
                      {
                          img: {
                              public_id: "",
-                             url: "./DronesHomepage/row3-1.png"
+                             url: "/DronesHomepage/row3-1.png"
                          },
                          Title:{
                              text:"Drone Parts"
@@ -175,7 +175,7 @@ export const Row3Products = {
                      {
                         img: {
                             public_id: "",
-                            url: "./DronesHomepage/row3-2.png"
+                            url: "/DronesHomepage/row3-2.png"
                         },
                         Title:{
                             text:"Drone Parts"
@@ -188,7 +188,7 @@ export const Row3Products = {
                     {
                         img: {
                             public_id: "",
-                            url: "./DronesHomepage/row3-3.png"
+                            url: "/DronesHomepage/row3-3.png"
                         },
                         Title:{
                             text:"Drone Parts"
@@ -201,7 +201,7 @@ export const Row3Products = {
                     {
                         img: {
                             public_id: "",
-                            url: "./DronesHomepage/row3-4.png"
+                            url: "/DronesHomepage/row3-4.png"
                         },
                         Title:{
                             text:"Drone Parts"
@@ -214,7 +214,7 @@ export const Row3Products = {
                     {
                         img: {
                             public_id: "",
-                            url: "./DronesHomepage/row3-5.png"
+                            url: "/DronesHomepage/row3-5.png"
                         },
                         Title:{
                             text:"Drone Parts"
@@ -227,7 +227,7 @@ export const Row3Products = {
                     {
                         img: {
                             public_id: "",
-                            url: "./DronesHomepage/row3-6.png"
+                            url: "/DronesHomepage/row3-6.png"
                         },
                         Title:{
                             text:"Drone Parts"
@@ -240,7 +240,7 @@ export const Row3Products = {
                     {
                         img: {
                             public_id: "",
-                            url: "./DronesHomepage/row3-7.png"
+                            url: "/DronesHomepage/row3-7.png"
                         },
                         Title:{
                             text:"Drone Parts"
@@ -253,7 +253,7 @@ export const Row3Products = {
                     {
                         img: {
                             public_id: "",
-                            url: "./DronesHomepage/row3-8.png"
+                            url: "/DronesHomepage/row3-8.png"
                         },
                         Title:{
                             text:"Drone Parts"
@@ -299,7 +299,7 @@ export const categoriescomponent = {
                      {
                          img: {
                              public_id: "",
-                             url: "./DronesHomepage/categories1.png"
+                             url: "/DronesHomepage/categories1.png"
                          },
                          Title:{
                              text:"Development Brands"
@@ -312,7 +312,7 @@ export const categoriescomponent = {
                      {
                         img: {
                             public_id: "",
-                            url: "./DronesHomepage/categories2.png"
+                            url: "/DronesHomepage/categories2.png"
                         },
                         Title:{
                             text:"Development Brands"
@@ -325,7 +325,7 @@ export const categoriescomponent = {
                     {
                         img: {
                             public_id: "",
-                            url: "./DronesHomepage/categories3.png"
+                            url: "/DronesHomepage/categories3.png"
                         },
                         Title:{
                             text:"Development Brands"
@@ -338,7 +338,7 @@ export const categoriescomponent = {
                     {
                         img: {
                             public_id: "",
-                            url: "./DronesHomepage/categories4.png"
+                            url: "/DronesHomepage/categories4.png"
                         },
                         Title:{
                             text:"Development Brands"
@@ -351,7 +351,7 @@ export const categoriescomponent = {
                     {
                         img: {
                             public_id: "",
-                            url: "./DronesHomepage/categories5.png"
+                            url: "/DronesHomepage/categories5.png"
                         },
                         Title:{
                             text:"Development Brands"
@@ -364,7 +364,7 @@ export const categoriescomponent = {
                     {
                         img: {
                             public_id: "",
-                            url: "./DronesHomepage/categories6.png"
+                            url: "/DronesHomepage/categories6.png"
                         },
                         Title:{
                             text:"Development Brands"
@@ -409,7 +409,7 @@ export const RecommendedItems = {
                      {
                          img: {
                              public_id: "",
-                             url: "./DronesHomepage/categories1.png"
+                             url: "/DronesHomepage/categories1.png"
                          },
                          Title:{
                              text:"Development Brands"
@@ -422,7 +422,7 @@ export const RecommendedItems = {
                      {
                         img: {
                             public_id: "",
-                            url: "./DronesHomepage/categories2.png"
+                            url: "/DronesHomepage/categories2.png"
                         },
                         Title:{
                             text:"Development Brands"
@@ -435,7 +435,7 @@ export const RecommendedItems = {
                     {
                         img: {
                             public_id: "",
-                            url: "./DronesHomepage/categories3.png"
+                            url: "/DronesHomepage/categories3.png"
                         },
                         Title:{
                             text:"Development Brands"
@@ -448,7 +448,7 @@ export const RecommendedItems = {
                     {
                         img: {
                             public_id: "",
-                            url: "./DronesHomepage/categories1.png"
+                            url: "/DronesHomepage/categories1.png"
                         },
                         Title:{
                             text:"Development Brands"
@@ -461,7 +461,7 @@ export const RecommendedItems = {
                     {
                        img: {
                            public_id: "",
-                           url: "./DronesHomepage/categories2.png"
+                           url: "/DronesHomepage/categories2.png"
                        },
                        Title:{
                            text:"Development Brands"
@@ -474,7 +474,7 @@ export const RecommendedItems = {
                    {
                        img: {
                            public_id: "",
-                           url: "./DronesHomepage/categories3.png"
+                           url: "/DronesHomepage/categories3.png"
                        },
                        Title:{
                            text:"Development Brands"
@@ -487,7 +487,7 @@ export const RecommendedItems = {
                    {
                        img: {
                            public_id: "",
-                           url: "./DronesHomepage/categories4.png"
+                           url: "/DronesHomepage/categories4.png"
                        },
                        Title:{
                            text:"Development Brands"
@@ -500,7 +500,7 @@ export const RecommendedItems = {
                    {
                        img: {
                            public_id: "",
-                           url: "./DronesHomepage/categories5.png"
+                           url: "/DronesHomepage/categories5.png"
                        },
                        Title:{
                            text:"Development Brands"
@@ -513,7 +513,7 @@ export const RecommendedItems = {
                    {
                        img: {
                            public_id: "",
-                           url: "./DronesHomepage/categories6.png"
+                           url: "/DronesHomepage/categories6.png"
                        },
                        Title:{
                            text:"Development Brands"
@@ -526,7 +526,7 @@ export const RecommendedItems = {
                     {
                         img: {
                             public_id: "",
-                            url: "./DronesHomepage/categories4.png"
+                            url: "/DronesHomepage/categories4.png"
                         },
                         Title:{
                             text:"Development Brands"
@@ -539,7 +539,7 @@ export const RecommendedItems = {
                     {
                         img: {
                             public_id: "",
-                            url: "./DronesHomepage/categories5.png"
+                            url: "/DronesHomepage/categories5.png"
                         },
                         Title:{
                             text:"Development Brands"
@@ -552,7 +552,7 @@ export const RecommendedItems = {
                     {
                         img: {
                             public_id: "",
-                            url: "./DronesHomepage/categories6.png"
+                            url: "/DronesHomepage/categories6.png"
                         },
                         Title:{
                             text:"Development Brands"
@@ -585,72 +585,72 @@ export const brands={
                     {
                         img:{
                             public_id:"",
-                            url:"./DronesHomepage/brands1.png"
+                            url:"/DronesHomepage/brands1.png"
                         }
                     },
                     {
                         img:{
                             public_id:"",
-                            url:"./DronesHomepage/brands2.png"
+                            url:"/DronesHomepage/brands2.png"
                         }
                     },
                     {
                         img:{
                             public_id:"",
-                            url:"./DronesHomepage/brands3.png"
+                            url:"/DronesHomepage/brands3.png"
                         }
                     },
                     {
                         img:{
                             public_id:"",
-                            url:"./DronesHomepage/brands4.png"
+                            url:"/DronesHomepage/brands4.png"
                         }
                     },
                     {
                         img:{
                             public_id:"",
-                            url:"./DronesHomepage/brands5.png"
+                            url:"/DronesHomepage/brands5.png"
                         }
                     },
                     {
                         img:{
                             public_id:"",
-                            url:"./DronesHomepage/brands6.png"
+                            url:"/DronesHomepage/brands6.png"
                         }
                     },
                     {
                         img:{
                             public_id:"",
-                            url:"./DronesHomepage/brands7.png"
+                            url:"/DronesHomepage/brands7.png"
                         }
                     },
                     {
                         img:{
                             public_id:"",
-                            url:"./DronesHomepage/brands8.png"
+                            url:"/DronesHomepage/brands8.png"
                         }
                     },
                     {
                         img:{
                             public_id:"",
-                            url:"./DronesHomepage/brands9.png"
+                            url:"/DronesHomepage/brands9.png"
                         }
                     },
                     {
                         img:{
                             public_id:"",
-                            url:"./DronesHomepage/brands10.png"
+                            url:"/DronesHomepage/brands10.png"
                         }
                     }, {
                         img:{
                             public_id:"",
-                            url:"./DronesHomepage/brands11.png"
+                            url:"/DronesHomepage/brands11.png"
                         }
                     },
                     {
                         img:{
                             public_id:"",
-                            url:"./DronesHomepage/brands12.png"
+                            url:"/DronesHomepage/brands12.png"
                         }
                     },
                 ]
@@ -674,7 +674,7 @@ export const Footer = {
             content:{
                 img:{
                     public_id:"",
-                    url:"./images/logo.png"
+                    url:"/images/logo.png"
                 }
             }
         }
@@ -817,7 +817,7 @@ export const Footer = {
             content:{
                 img:{
                     public_id:"",
-                    url:"./images/SVG-4.png"
+                    url:"/images/SVG-4.png"
                 },
                 Title:{
                     text:"Newsletter signup"
@@ -841,23 +841,28 @@ export const Footer = {
                 img:[
                     {
                         public_id:"",
-                        url:"./DronesHomepage/facebook3.png"
+                        url:"/DronesHomepage/fb.png",
+                        link:"https://www.facebook.com/"
                     },
                     {
                         public_id:"",
-                        url:"./DronesHomepage/linkedin3.png"
+                        url:"/DronesHomepage/linkedin3.png",
+                        link:"https://www.linkedin.com/"
                     },
                     {
                         public_id:"",
-                        url:"./DronesHomepage/instagram3.png"
+                        url:"/DronesHomepage/instagram3.png",
+                        link:"https://www.instagram.com/"
                     },
                     {
                         public_id:"",
-                        url:"./DronesHomepage/twitter3.png"
+                        url:"/DronesHomepage/twitter3.png",
+                        link:"https://twitter.com/"
                     },
                     {
                         public_id:"",
-                        url:"./DronesHomepage/youtube3.png"
+                        url:"/DronesHomepage/youtube3.png",
+                        link:"https://www.youtube.com/"
                     },
                 ]
             }
@@ -877,23 +882,23 @@ export const Footer = {
                 img:[
                     {
                         public_id:"",
-                        url:"./images/symbol.png"
+                        url:"/images/symbol.png"
                     },
                     {
                         public_id:"",
-                        url:"./images/symbol-1.png"
+                        url:"/images/symbol-1.png"
                     },
                     {
                         public_id:"",
-                        url:"./images/symbol-2.png"
+                        url:"/images/symbol-2.png"
                     },
                     {
                         public_id:"",
-                        url:"./images/symbol-3.png"
+                        url:"/images/symbol-3.png"
                     },
                     {
                         public_id:"",
-                        url:"./images/symbol-4.png"
+                        url:"/images/symbol-4.png"
                     },
                 ]
             }
@@ -917,25 +922,25 @@ export const Services = {
                     {
                         img:{
                             public_id:"",
-                            url:"./DronesHomepage/icon1.png"
+                            url:"/DronesHomepage/icon1.png"
                         }
                     },
                     {
                         img:{
                             public_id:"",
-                            url:"./DronesHomepage/icon2.png"
+                            url:"/DronesHomepage/icon2.png"
                         }
                     },
                     {
                         img:{
                             public_id:"",
-                            url:"./DronesHomepage/icon3.png"
+                            url:"/DronesHomepage/icon3.png"
                         }
                     },
                     {
                         img:{
                             public_id:"",
-                            url:"./DronesHomepage/icon4.png"
+                            url:"/DronesHomepage/icon4.png"
                         }
                     },
                     
@@ -964,7 +969,7 @@ export const Services = {
                         {
                             img:{
                                 public_id:"",
-                                url:"./DronesHomepage/services1.png"
+                                url:"/DronesHomepage/services1.png"
                             },
                             SubText:{
                                 text:"Source from Industry Hubs"
@@ -974,7 +979,7 @@ export const Services = {
                         {
                             img:{
                                 public_id:"",
-                                url:"./DronesHomepage/services2.png"
+                                url:"/DronesHomepage/services2.png"
                             },
                             SubText:{
                                 text:"Source from Industry Hubs"
@@ -984,7 +989,7 @@ export const Services = {
                         {
                             img:{
                                 public_id:"",
-                                url:"./DronesHomepage/services3.png"
+                                url:"/DronesHomepage/services3.png"
                             },
                             SubText:{
                                 text:"Source from Industry Hubs"
@@ -994,7 +999,7 @@ export const Services = {
                         {
                             img:{
                                 public_id:"",
-                                url:"./DronesHomepage/services4.png"
+                                url:"/DronesHomepage/services4.png"
                             },
                             SubText:{
                                 text:"Source from Industry Hubs"
@@ -1036,7 +1041,7 @@ export const flags = {
                     {
                         img:{
                             public_id:"",
-                            url:"./DronesHomepage/flag1.png"
+                            url:"/DronesHomepage/flag1.png"
                         },
                         title:{
                             text:"Arabic Emirates"
@@ -1048,7 +1053,7 @@ export const flags = {
                     {
                         img:{
                             public_id:"",
-                            url:"./DronesHomepage/flag2.png"
+                            url:"/DronesHomepage/flag2.png"
                         },
                         title:{
                             text:"Australia"
@@ -1060,7 +1065,7 @@ export const flags = {
                     {
                         img:{
                             public_id:"",
-                            url:"./DronesHomepage/flag3.png"
+                            url:"/DronesHomepage/flag3.png"
                         },
                         title:{
                             text:"United States"
@@ -1072,7 +1077,7 @@ export const flags = {
                     {
                         img:{
                             public_id:"",
-                            url:"./DronesHomepage/flag4.png"
+                            url:"/DronesHomepage/flag4.png"
                         },
                         title:{
                             text:"Russia"
@@ -1084,7 +1089,7 @@ export const flags = {
                     {
                         img:{
                             public_id:"",
-                            url:"./DronesHomepage/flag7.png"
+                            url:"/DronesHomepage/flag7.png"
                         },
                         title:{
                             text:"France"
@@ -1096,7 +1101,7 @@ export const flags = {
                     {
                         img:{
                             public_id:"",
-                            url:"./DronesHomepage/flag8.png"
+                            url:"/DronesHomepage/flag8.png"
                         },
                         title:{
                             text:"Arabic Emirates"
@@ -1108,7 +1113,7 @@ export const flags = {
                     {
                         img:{
                             public_id:"",
-                            url:"./DronesHomepage/flag7.png"
+                            url:"/DronesHomepage/flag7.png"
                         },
                         title:{
                             text:"China"
@@ -1120,7 +1125,7 @@ export const flags = {
                     {
                         img:{
                             public_id:"",
-                            url:"./DronesHomepage/flag10.png"
+                            url:"/DronesHomepage/flag10.png"
                         },
                         title:{
                             text:"Great Britain"
@@ -1132,7 +1137,7 @@ export const flags = {
                     {
                         img:{
                             public_id:"",
-                            url:"./DronesHomepage/flag8.png"
+                            url:"/DronesHomepage/flag8.png"
                         },
                         title:{
                             text:"Arabic Emirates"
@@ -1144,7 +1149,7 @@ export const flags = {
                     {
                         img:{
                             public_id:"",
-                            url:"./DronesHomepage/flag7.png"
+                            url:"/DronesHomepage/flag7.png"
                         },
                         title:{
                             text:"China"

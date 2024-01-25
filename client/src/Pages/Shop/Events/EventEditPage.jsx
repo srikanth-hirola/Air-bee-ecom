@@ -2,6 +2,7 @@ import React from 'react'
 import DashboardHeader from '../../../components/Headers/DashboardHeader'
 import DashboardSideBar from '../../../components/ShopComponents/Layout/DashboardSideBar'
 import { EditEvent } from '../../../components/ShopComponents/Events/EditEvent'
+import DronesFooter from '../../../components/DronesHomepage/DronesFooter'
 
 
 export const EventEditPage = () => {
@@ -16,6 +17,7 @@ export const EventEditPage = () => {
                     <EditEvent />
                 </div>
             </div>
+            <DronesFooter/>
         </div>
     )
 }

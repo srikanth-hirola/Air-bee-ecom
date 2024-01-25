@@ -7,6 +7,7 @@ import Loader from '../../../utils/Loader';
 import DashboardHeader from '../../../components/Headers/DashboardHeader';
 import DashboardSideBar from '../../../components/ShopComponents/Layout/DashboardSideBar';
 import { DraftEvents } from '../../../components/ShopComponents/Events/DraftEvents';
+import DronesFooter from '../../../components/DronesHomepage/DronesFooter';
 
 
 export const AllDraftEvents = () => {
@@ -43,6 +44,7 @@ export const AllDraftEvents = () => {
                             <DraftEvents allEvents={allEvents} />
                         </div>
                     </div>
+                    <DronesFooter/>
                 </div>
             )}
         </>

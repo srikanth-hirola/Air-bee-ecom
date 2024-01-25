@@ -5,6 +5,7 @@ import { server } from '../../../server';
 import DashboardHeader from '../../../components/Headers/DashboardHeader';
 import DashboardSideBar from '../../../components/ShopComponents/Layout/DashboardSideBar';
 import ProductEdit from '../../../components/ShopComponents/CreateProduct/ProductEdit';
+import DronesFooter from '../../../components/DronesHomepage/DronesFooter';
 
 
 const ShopDraftProductEdit = () => {
@@ -207,6 +208,7 @@ const ShopDraftProductEdit = () => {
                     setProductDetails={setProductDetails}
                 /> */}
             </div>
+            <DronesFooter/>
         </div>
     );
 };

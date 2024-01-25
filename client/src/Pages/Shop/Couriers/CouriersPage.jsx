@@ -2,6 +2,7 @@ import React from 'react';
 import DashboardHeader from '../../../components/Headers/DashboardHeader';
 import DashboardSideBar from '../../../components/ShopComponents/Layout/DashboardSideBar';
 import Couriers from '../../../components/ShopComponents/Couriers/Couriers';
+import DronesFooter from '../../../components/DronesHomepage/DronesFooter';
 
 const CouriersPage = () => {
     return (
@@ -15,6 +16,7 @@ const CouriersPage = () => {
                     <Couriers />
                 </div>
             </div>
+            <DronesFooter/>
         </div>
     );
 };

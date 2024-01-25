@@ -28,7 +28,7 @@
 }
 /* checkoutpage */
 .Checkoutpage-content {
-  padding: 20px 0px 40px 0px;
+  padding: 20px 0px 0px 0px;
 }
 .Checkoutpage-parent {
   padding-top: 35px;
@@ -91,7 +91,7 @@ select {
 .Chcekout-Page-NextButton {
   width: 25%;
 }
-label {
+.Checkoutpage-parent label {
   margin-top: 6px;
   font-weight: 600;
 }
@@ -169,6 +169,9 @@ label {
   .Chcekout-Page-NextButton {
     width: 60%;
     margin: auto;
+  }
+  .Chcekout-Page-NextButton button{
+    margin-top: 20px;
   }
   .Checkoutpage-standardRate-text2 {
     width: 15%;
