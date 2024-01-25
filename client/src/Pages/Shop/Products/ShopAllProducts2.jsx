@@ -9,10 +9,13 @@ const ShopAllProducts2 = () => {
         <div>
             <DashboardHeader active={2}/>
             <div className="flex items-start justify-between w-full">
-                <div className="w-[80px] 800px:w-[330px]">
-                    <DashboardSideBar active={11} />
+                <div className="w-[80px] 800px:w-[330px] dashboard-side-bar-res">
+                    <DashboardSideBar active={8} />
                 </div>
-                <RequestedProductsShop active={1} />
+                <div className='dashboard-side-bar-data-view w-full justify-center flex'>
+                <RequestedProductsShop active={8} />
+                </div>
+                
             </div>
         </div>
     )

@@ -261,7 +261,7 @@ const DraftKeywords = ({ searchTerms, setSearchTerms, formData, colorInputs }) =
                         Add
                     </button>
                 </div>
-                <button className='rounded px-4 py-2' style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor }} onClick={generatingSearchTerms}>
+                <button className='rounded px-4 py-2 ' style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor }} onClick={generatingSearchTerms}>
                     Generate Search Terms
                 </button>
             </div>

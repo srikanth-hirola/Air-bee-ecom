@@ -6,22 +6,16 @@ import { StyleConfig } from '../../../../utils/StyleConfig';
 import { getAllSiteConfig } from '../../../../redux/actions/siteConfig';
 import { getAllCategories } from '../../../../redux/actions/category';
 import { server } from '../../../../server';
-import { ToggleSwitch } from '../ToggleSwitch/ToggleSwitch';
-
 
 export const MiscellaneousConfig = () => {
     const [logoLoading, setLogoLoading] = useState(false);
     const { success, error, siteConfigData } = useSelector((state) => state.siteConfig)
-
-
     const [logo, setLogo] = useState();
     const [currency, setCurrency] = useState({});
     const [paymentMethods, setPaymentMethods] = useState({
         INR: [],
         USD: []
     });
-
-
     const [displayEventProducts, setDisplayEventProducts] = useState(true);
 
 

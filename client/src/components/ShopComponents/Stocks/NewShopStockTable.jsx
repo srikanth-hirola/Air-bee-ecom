@@ -27,7 +27,7 @@ const NewShopStockTable = () => {
             {isLoading ? (
                 <Loader />
             ) : (
-                <div className="w-full mx-8 pt-1 mt-10 bg-white outer1-div">
+                <div className="w-full mx-8 pt-1 mt-10 bg-white outer1-div shop-stock-page-details">
                     <h2 className='mb-4'>Stocks</h2>
                     {productData?.length > 0 &&
                         productData?.map((value, index) => (

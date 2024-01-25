@@ -246,11 +246,11 @@ const Keywords = ({ searchTerms, setSearchTerms, formData, colorInputs }) => {
                         className="appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                         onChange={handleChange}
                     />
-                    <button className='rounded px-2 py-2 mx-2' style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor }} onClick={handleAdd}>
+                    <button className='rounded px-2 py-1 mx-2 bg-green-500 text-light' style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor }} onClick={handleAdd}>
                         Add
                     </button>
                 </div>
-                <button className='rounded px-4 py-2' style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor }} onClick={generatingSearchTerms}>
+                <button className='rounded px-4 py-2 mt-3 bg-blue-500 text-light' style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor }} onClick={generatingSearchTerms}>
                     Generate Search Terms
                 </button>
                 <span className="attribute-eg">

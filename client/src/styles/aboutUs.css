@@ -48,8 +48,8 @@
 .About-Us-one-sub .About-Us-one-data .About-Us-one-text p {
   color: var(--Dominant, #fff);
   font-family: Poppins;
-  font-size: 14px;
-  font-weight: 200;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .About-Us-two-sub .About-Us-two-data {
@@ -102,8 +102,8 @@
 .About-Us-two-sub .About-Us-two-data .About-Us-two-text p {
   color: var(--Color---7, #000);
   font-family: Poppins;
-  font-size: 15px;
-  font-weight: 300;
+  font-size: 16px;
+  font-weight: 400;
   padding: 5px 0px;
 }
 
@@ -151,8 +151,8 @@
 .About-Us-three-sub .About-Us-three-data .About-Us-three-text p {
   color: var(--Dominant, #fff);
   font-family: Poppins;
-  font-size: 14px;
-  font-weight: 200;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .About-Us-five-sub .About-Us-five-heading h4 {
@@ -251,8 +251,8 @@
 .About-Us-four-sub .About-Us-four-data .About-Us-four-text p {
   color: var(--Color---7, #000);
   font-family: Poppins;
-  font-size: 15px;
-  font-weight: 300;
+  font-size: 16px;
+  font-weight: 400;
   padding: 5px 0px;
 }
 

@@ -133,7 +133,7 @@ const AllCoupons = () => {
                                 className={`${styles.button} !w-max !h-[45px] px-3 !rounded-[5px] mr-3 mb-3`}
                                 onClick={() => setOpen(true)}
                             >
-                                <span className="text-white">Create Coupon Code</span>
+                                <span className="text-white create-coupon-code-button">Create Coupon Code</span>
                             </div>
                     </div>
                     <DataGrid
@@ -154,7 +154,7 @@ const AllCoupons = () => {
                                         onClick={() => setOpen(false)}
                                     />
                                 </div>
-                                <h5 className="text-[30px] font-Poppins text-center">
+                                <h5 className="text-[30px] font-Poppins text-center create-coupon-code-button">
                                     Create Coupon code
                                 </h5>
                                 {/* create coupoun code */}

@@ -10,10 +10,10 @@ const ShopCreateEvents = () => {
             <DashboardHeader />
             <div className="flex items-center justify-between w-full">
                 <div className="w-[330px]">
-                    <DashboardSideBar active={6} />
+                    <DashboardSideBar active={11} />
                 </div>
-                <div className="w-full justify-center flex">
-                    <CreateEvent />
+                <div className="w-full justify-center flex dashboard-side-bar-data-view">
+                    <CreateEvent active={11}/>
                 </div>
             </div>
         </div>

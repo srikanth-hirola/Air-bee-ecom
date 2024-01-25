@@ -356,7 +356,7 @@ const CreateEvent = () => {
                                     ))}
                             </div>
                             <br />
-                            <div className='flex justify-between'>
+                            <div className='flex justify-between draft-create-btn'>
                                 <input
                                     type="submit"
                                     value="Create"

@@ -67,7 +67,7 @@ const AddSpecification2 = ({ specification2, setSpecification2 }) => {
                     <button className="varient-btn cat-btn1 cat-btn5" onClick={() => removeField(index)}>Remove</button>
                 </div>
             ))}
-            <button className='rounded px-4 py-2' style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor }} onClick={addField}>Add Field</button>
+            <button className='rounded px-4 py-2 bg-green-400 text-white' style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor }} onClick={addField}>Add Field</button>
         </div>
     );
 };

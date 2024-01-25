@@ -137,7 +137,7 @@ export const ProductTapContent = ({ data }) => {
                                                         <td className='bg-white py-2 px-2 h-full w-full'>{data?.itemCondition}</td>
                                                     </tr>
                                                 }
-                                                {data?.itemWeight &&
+                                                {data?.itemWeight>=0 &&
                                                      <tr className="flex h-fit border-1 border-gray-300 mb-0">
                                                         <td className='px-2 py-2 w-[400px] bg-secondary-subtle'>Item Weight</td>
                                                         
@@ -320,16 +320,16 @@ export const ProductTapContent = ({ data }) => {
 
                             </Tab>
                             <Tab eventKey="Review" title="Review">
-                                <div className="row">
+                                <div className="row ">
                                     {data &&
                                         data.reviews.map((item, index) => (
-                                            <div className="col-lg-3 col-md-3 col-sm-6 col-12 d-flex align-items-center mb-4">
+                                            <div className="col-lg-10 col-md-10 col-sm-12 col-12 d-flex align-items-start mb-4 product-review-from-customer p-3">
                                                 <div className='infomation-reviews'>
                                                     <img src={`${item.user.avatar?.url}`} alt="" />
                                                 </div>
-                                                <div >
+                                                <div className='infomation-reviews-data w-full'>
                                                     <h5>{item.user.name}</h5>
-                                                    <div className='review-star'><Ratings rating={data?.ratings} /></div>
+                                                    <div className='review-star py-2'><Ratings rating={data?.ratings} /></div>
                                                     <p className='review-product-page1'>{item.comment}</p>
                                                 </div>
                                             </div>
