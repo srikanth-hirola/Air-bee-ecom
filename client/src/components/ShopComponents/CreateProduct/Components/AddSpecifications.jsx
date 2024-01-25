@@ -71,7 +71,7 @@ const AddSpecifications = ({ specification, setSpecification }) => {
                     </div>
                 );
             })}
-            <button className='rounded px-4 py-2' style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor }} onClick={addField}>
+            <button className='rounded px-4 py-2 bg-green-400 text-light' style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor }} onClick={addField}>
                 Add Field
             </button>
         </div>

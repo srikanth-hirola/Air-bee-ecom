@@ -86,7 +86,7 @@ const DashboardHero = () => {
     });
 
     return (
-        <div className="w-full p-8 outer1-div">
+        <div className="w-full p-8 outer1-div dashborad-main-page-responsive">
             <h3 className="text-[22px] font-Poppins pb-2">Overview</h3>
             <div className="w-full block 800px:flex items-center justify-between">
                 <div className="w-full mb-4 800px:w-[30%] min-h-[20vh] h-[200px] bg-white shadow rounded px-2 py-5">

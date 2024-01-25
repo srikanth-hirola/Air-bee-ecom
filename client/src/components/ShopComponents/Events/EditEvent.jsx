@@ -382,13 +382,13 @@ export const EditEvent = () => {
                                     ))}
                             </div>
                             <br />
-                            <div className='flex justify-between'>
+                            <div className='flex justify-between draft-create-btn'>
                                 <input
                                     type="submit"
                                     value="Publish"
                                     className="rounded px-4 bg-green-500 py-2 text-white"
                                 />
-                                <button onClick={handleDraftSubmit} className='rounded px-4 py-2' style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor }}>Save As Draft</button>
+                                <button onClick={handleDraftSubmit} className='rounded px-4 py-2' >Save As Draft</button>
                             </div>
                         </div>
                     </form>

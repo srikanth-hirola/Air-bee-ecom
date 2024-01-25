@@ -364,7 +364,7 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                                     <div className='star-mq star1-mq pr-2'>
                                         <Ratings rating={4} />
                                     </div>
-                                    <span className='and-up-mq and-up1-mq'> & down</span>
+                                    <span className='and-up-mq and-up1-mq'> & up</span>
                                     <input
                                         className="star-i"
                                         type="radio"
@@ -379,7 +379,7 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                                     <div className='star-mq star1-mq pr-2'>
                                         <Ratings rating={3} />
                                     </div>
-                                    <span className='and-up-mq and-up1-mq'> & down</span>
+                                    <span className='and-up-mq and-up1-mq'> & up</span>
                                     <input
                                         className="star-i"
                                         type="radio"
@@ -394,7 +394,7 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                                     <div className='star-mq star1-mq pr-2'>
                                         <Ratings rating={2} />
                                     </div>
-                                    <span className='and-up-mq and-up1-mq'> & down</span>
+                                    <span className='and-up-mq and-up1-mq'> & up</span>
                                     <input
                                         className="star-i"
                                         type="radio"
@@ -409,7 +409,7 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                                     <div className='star-mq star1-mq pr-2'>
                                         <Ratings rating={1} />
                                     </div>
-                                    <span className='and-up-mq and-up1-mq'> & down</span>
+                                    <span className='and-up-mq and-up1-mq'> & up</span>
                                     <input
                                         className="star-i"
                                         type="radio"

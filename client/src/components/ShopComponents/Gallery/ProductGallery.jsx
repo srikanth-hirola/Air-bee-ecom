@@ -75,9 +75,9 @@ export const ProductGallery = () => {
     }
 
     return (
-        <div className="w-full min-h-[45vh] pt-5 rounded flex justify-center outer1-div" >
+        <div className="w-full min-h-[45vh] pt-5 rounded flex justify-center outer1-div photo-galary-section-user" >
             <div className="w-[97%] flex justify-center border-1 rounded h-fit" >
-                <div className='w-full px-8 py-4 '>
+                <div className='w-full  photos-page'>
 
                     <div>
                         <input type='file' multiple onChange={(e) => handleLogoChange(e)} />

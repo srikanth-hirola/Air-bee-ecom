@@ -80,6 +80,7 @@ const ShopRejectedRefunds = lazy(() => import('./Pages/Shop/Refunds/ShopRejected
 const ShopOrderDetails = lazy(() => import('./Pages/Shop/Orders/ShopOrderDetails.jsx'));
 const ShopOrderRefundPage = lazy(() => import('./Pages/Shop/Refunds/ShopOrderRefundPage.jsx'));
 const ShopAllProducts = lazy(() => import('./Pages/Shop/Products/ShopAllProducts.jsx'));
+// const ShopAllProducts2 = lazy(() => import('./Pages/Shop/Products/ShopAllProducts2.jsx'));
 const ShopAllProducts2 = lazy(() => import('./Pages/Shop/Products/ShopAllProducts2.jsx'));
 const ShopAllDraftProducts = lazy(() => import('./Pages/Shop/Products/ShopAllDraftProducts.jsx'));
 const ShopApprovedProducts = lazy(() => import('./Pages/Shop/Products/ShopApprovedProducts.jsx'));

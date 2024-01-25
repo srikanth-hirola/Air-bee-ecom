@@ -9,10 +9,13 @@ const MiscellaneousConfigPage = () => {
         <div>
             <DashboardHeader />
             <div className="flex items-start justify-between w-full">
-                <div className="w-[80px] 800px:w-[330px]">
-                    <DashboardSideBar active={13} />
+                <div className="w-[80px] 800px:w-[330px] dashboard-side-bar-res">
+                    <DashboardSideBar active={27} />
                 </div>
-                <MiscellaneousConfig />
+                <div className='w-full justify-center flex dashboard-side-bar-data-view'>
+                <MiscellaneousConfig active={27}/>
+                </div>
+                
             </div>
             <DronesFooter/>
         </div>

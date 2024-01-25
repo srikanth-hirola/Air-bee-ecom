@@ -9,11 +9,11 @@ export const WithDrawHistoryPage = () => {
         <div>
             <DashboardHeader />
             <div className="flex justify-between w-full">
-                <div className="w-[80px] 800px:w-[330px]">
-                    <DashboardSideBar active={10} />
+                <div className="w-[80px] 800px:w-[330px] dashboard-side-bar-res">
+                    <DashboardSideBar active={18} />
                 </div>
                 <div className="w-full justify-center flex">
-                    <WithDrawHistory active={1} />
+                    <WithDrawHistory active={18} />
                 </div>
             </div>
             <DronesFooter/>
