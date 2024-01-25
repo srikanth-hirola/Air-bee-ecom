@@ -22,7 +22,7 @@ const DronesBanner = () => {
                                     <div className="col-sm-4 col-md-12">
                                         <div className='DronesBanner-sub2'>
                                             <div className='DronesBanner-sub2-content'>
-                                                <p>Get US $ 10 off with a new supplier</p>
+                                                <p>Discover exclusive discounts for unbeatable value on electronic products.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -30,7 +30,7 @@ const DronesBanner = () => {
                                     <div className="col-sm-4 col-md-12">
                                         <div className='DronesBanner-sub3'>
                                             <div className='DronesBanner-sub3-content'>
-                                                <p>Send quotes with supplier preferences</p>
+                                                <p>Trust Air Bee for prompt and reliable delivery of your ordered products.</p>
                                             </div>
                                         </div>
                                     </div>

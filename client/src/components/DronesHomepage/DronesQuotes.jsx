@@ -8,14 +8,14 @@ const DronesQuotes = () => {
                 <div className='row' >
                     <div className="col-md-6">
                         <div className='DronesQuotes-sub-left'>
-                            <h5>An easy way to send requests to all suppliers</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                            <h5>Can't Find the Embedded Product You Need? Inquire Now for Tailored Solutions!</h5>
+                            <p>kindly provide detailed information of required product, including specifications, pricing, and any available customization options.</p>
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className='DronesQuotes-sub-right'>
                             <form action="">
-                                <h6>Send quote to suppliers</h6>
+                                <h6>Get Quote for a Desired Products</h6>
                                 <input className='Drones-Quotes-input1' type="text" placeholder='What item You need ?' /><br />
                                 <textarea name="" id="" cols="25" rows="3"></textarea><br />
                                 

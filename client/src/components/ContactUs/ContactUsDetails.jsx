@@ -53,7 +53,7 @@ export const ContactUsDetails = () => {
                                     </div>
                                     <div className='col-md-10 col-lg-10 col-sm-10 col-10'>
                                         <h6>Address:</h6>
-                                        <p>1234 Street Adress City Address</p>
+                                        <p>NO 7, 4th floor, 1st Cross Rd, Balaji Layout, AMCO Colony, Koti Hosahalli, Bengaluru, Karnataka 560092</p>
                                     </div>
                                 </div>
                                 <div className='contact1-address row'>
@@ -71,9 +71,8 @@ export const ContactUsDetails = () => {
                                     </div>
                                     <div className='col-md-10 col-lg-10 col-sm-10 col-10'>
                                         <h6>We Are Open:</h6>
-                                        <p>Monday - Thursday: 9:00 AM - 5:30 PM
-                                            Friday 9:00 AM - 6:00 PM
-                                            Saturday: 11:00 AM - 5:00 PM</p>
+                                        <p>Monday - Saturday: 9:00 AM - 7:00 PM
+                                            Sunday: 10:00 AM - 2:00 PM</p>
                                     </div>
                                 </div>
                                 <div className='contact1-address row'>
@@ -82,7 +81,7 @@ export const ContactUsDetails = () => {
                                     </div>
                                     <div className='col-md-10 col-lg-10 col-sm-10 col-10'>
                                         <h6>Email:</h6>
-                                        <Link to="">indu27@gmail.com</Link>
+                                        <Link to="">support@airbee.co.in</Link>
                                     </div>
                                 </div>
                             </div>

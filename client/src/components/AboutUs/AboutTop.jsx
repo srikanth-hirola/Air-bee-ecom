@@ -9,7 +9,7 @@ export const AboutTop = () => {
                         <div className="about-top-comapany-instant-heading">
                             <h6>OUR CLIENTS</h6>
                             <h2>Trusted by the top companies in this industry</h2>
-                            <p>The only SaaS business platform that combines CRM, marketing automation & commerce.</p>
+                            <p>Air Bee stands as the trusted choice for top companies in the industry, recognized for our unwavering commitment to delivering cutting-edge embedded electronics with unmatched quality and reliability. Join the league of industry leaders who rely on Air Bee for excellence in every component, module, and project.</p>
                         </div>
                         <div className="row about-top-comapany-instant-subject">
                             <div className="col-md-3 col-sm-6 col-12">

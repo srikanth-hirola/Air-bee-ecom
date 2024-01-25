@@ -17,28 +17,28 @@ const DronesDirectionSensing = () => {
                     <div className='DRonesDirectionSnsing-right'>
                     <div className='DronesDirectionSEnsingsub1-text'>
                                 <div className='DronesDirectionSEnsingsub1-text-heading'>
-                                    <h1>Direction sensing</h1>
+                                    <h1>Explore the World of Electronics with Air Bee</h1>
                                 </div>
-                                <p>The limitations and different types of object avoidance in this article I’ll go through the best drones with obstacle avoidance.</p>
+                                <p>Our user-friendly e-commerce platform is designed for your convenience. Browse, select, and purchase with ease, 24x7.</p>
                             </div>
                        <div className="DronesDirectionSEnsingsub2-parent">
                             <div className='DronesDirectionSEnsingsub2-sub1'>
                                 <div className='DronesDirectionSEnsingsub2-sub1-image'>
                                     <img src="./DronesHomepage/Avatar.png" alt="" />
                                 </div>
-                                <p>Directions Sensing</p>
+                                <p>Quality Assurance</p>
                             </div>
                             <div className='DronesDirectionSEnsingsub2-sub1'>
                                 <div className='DronesDirectionSEnsingsub2-sub1-image'>
                                     <img src="./DronesHomepage/Avatar.png" alt="" />
                                 </div>
-                                <p>Directions Sensing</p>
+                                <p>Innovation Hub</p>
                             </div>
                             <div className='DronesDirectionSEnsingsub2-sub1'>
                                 <div className='DronesDirectionSEnsingsub2-sub1-image'>
                                     <img src="./DronesHomepage/Avatar.png" alt="" />
                                 </div>
-                                <p>Directions Sensing</p>
+                                <p>Customer-Centric</p>
                             </div>
                         </div>
 

@@ -18,8 +18,9 @@ export const AboutPageOne = () => {
                                 <div className="col-md-6 ">
                                     <div className="About-Us-one-text">
                                         <h5>A Family That Keeps On Growing</h5>
-                                        <p>We always aim to please the home market, supplying great computers and hardware at great prices to non-corporate customers, through our large Melbourne CBD showroom and our online store.<br />
-                                            Shop management approach fosters a strong customer service focus in our staff. We prefer to cultivate long-term client relationships rather than achieve quick sales, demonstrated in the measure of our long-term success.</p>
+                                        <p>At Air Bee, our journey in the dynamic realm of embedded electronics began in 2024. Despite our official launch in that year, our roots extend back to 2015, reflecting a foundation built on years of experience and deep industry knowledge. As a dynamic player in this field, we are committed to simplifying the intricate world of electronics for a diverse audience, including enthusiasts, hobbyists, and seasoned professionals. <br /><br />
+
+Our mission goes beyond just providing products; it is a dedication to making the field of electronics accessible and navigable. With a focus on innovation and a wealth of experience, Air Bee aims to be a reliable source for cutting-edge embedded electronic solutions, catering to the needs and aspirations of individuals across various levels of expertise. Join us on this exciting journey as we empower your electronic dreams and simplify the complexities of this ever-evolving industry.</p>
                                     </div>
                                 </div>
                                 <div className="col-md-6 ">
