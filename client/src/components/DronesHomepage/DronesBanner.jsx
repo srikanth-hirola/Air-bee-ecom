@@ -15,11 +15,11 @@ const DronesBanner = () => {
                         <div className="col-md-3">
                             <div className='Drone-banner-sub-end'>
                                 <div className="row">
-                                    <div className="col-md-12">
+                                    <div className="col-sm-4 col-md-12">
                                         <LoggedIn />
                                     </div>
 
-                                    <div className="col-md-12">
+                                    <div className="col-sm-4 col-md-12">
                                         <div className='DronesBanner-sub2'>
                                             <div className='DronesBanner-sub2-content'>
                                                 <p>Get US $ 10 off with a new supplier</p>
@@ -27,7 +27,7 @@ const DronesBanner = () => {
                                         </div>
                                     </div>
 
-                                    <div className="col-md-12">
+                                    <div className="col-sm-4 col-md-12">
                                         <div className='DronesBanner-sub3'>
                                             <div className='DronesBanner-sub3-content'>
                                                 <p>Send quotes with supplier preferences</p>

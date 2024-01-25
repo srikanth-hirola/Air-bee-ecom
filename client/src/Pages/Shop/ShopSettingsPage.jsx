@@ -2,6 +2,7 @@ import React from "react";
 import DashboardHeader from "../../components/Headers/DashboardHeader";
 import DashboardSideBar from "../../components/ShopComponents/Layout/DashboardSideBar";
 import ShopSettings from "../../components/ShopComponents/ShopSettings";
+import DronesFooter from "../../components/DronesHomepage/DronesFooter";
 
 const ShopSettingsPage = () => {
     return (
@@ -13,6 +14,7 @@ const ShopSettingsPage = () => {
                 </div>
                 <ShopSettings />
             </div>
+            <DronesFooter/>
         </div>
     );
 };

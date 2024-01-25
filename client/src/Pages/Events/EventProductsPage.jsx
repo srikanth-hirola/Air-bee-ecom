@@ -10,6 +10,7 @@ import Filter from '../../components/Filters/Filter';
 import AllProducts from '../../components/Products/AllProducts';
 import { getAllProducts } from '../../redux/actions/product';
 import { useDispatch, useSelector } from 'react-redux';
+import DronesFooter from '../../components/DronesHomepage/DronesFooter';
 
 
 const EventProductsPage = () => {
@@ -87,6 +88,7 @@ const EventProductsPage = () => {
                     </div>
                 </>
             }
+            <DronesFooter/>
         </>
     );
 };

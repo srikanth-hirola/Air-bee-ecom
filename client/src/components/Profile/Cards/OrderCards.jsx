@@ -5,6 +5,7 @@ import { StyleConfig } from '../../../utils/StyleConfig'
 const OrderCards = ({ order }) => {
     const styles = StyleConfig();
 
+
     return (
         <div className=" col-md-12">
             <div className='Orderspage-tabs-active-parent'>

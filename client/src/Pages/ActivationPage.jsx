@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { server } from "../server";
+import DronesFooter from "../components/DronesHomepage/DronesFooter";
 
 const ActivationPage = () => {
     const { activation_token } = useParams();
@@ -41,6 +42,7 @@ const ActivationPage = () => {
             ) : (
                 <p>Your account has been created suceessfully!</p>
             )}
+            <DronesFooter/>
         </div>
     );
 };

@@ -255,7 +255,6 @@ const CheckoutAddress = ({ showNext, setShowNext }) => {
                     //   (acc, item) => acc + item.qty * item.discountPrice,
                     //   0
                     // );
-                    console.log(totalPrice)
                     const eligiblePrice = totalPrice;
 
                     if (eligiblePrice <= res.data.couponCode?.maxAmount && eligiblePrice >= res.data.couponCode?.minAmount) {

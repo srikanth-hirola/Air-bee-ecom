@@ -1,6 +1,7 @@
 import React from 'react'
 import DashboardHeader from '../../../components/Headers/DashboardHeader';
 import OrderRefundDetails from '../../../components/ShopComponents/Refunds/OrderRefundDetails';
+import DronesFooter from '../../../components/DronesHomepage/DronesFooter';
 
 const ShopOrderRefundPage = () => {
     return (
@@ -8,6 +9,7 @@ const ShopOrderRefundPage = () => {
             <DashboardHeader />
             <OrderRefundDetails />
             {/* <Footer /> */}
+            <DronesFooter/>
         </div>
     )
 }

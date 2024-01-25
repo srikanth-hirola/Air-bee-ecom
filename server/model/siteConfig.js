@@ -36,7 +36,9 @@ const siteConfigSchema = new mongoose.Schema({
     paymentMethods: {
         INR: Array,
         USD: Array,
+        EUR: Array,
     },
+    CurrencyArr: Array,
     fontFamily: Object,
     selectedBannerLayout: Number,
     selectedHeaderLayout: Number,
@@ -346,6 +348,8 @@ const siteConfigSchema = new mongoose.Schema({
 
     eventCardLayoutOne: Boolean,
     eventLayountOneSelectedEvents: Array,
+    eventCardLayoutTwo: Boolean,
+    eventLayountTwoSelectedEvents: Array,
 
     OtherFooterContent: Array,
     footerMapUrl: String,

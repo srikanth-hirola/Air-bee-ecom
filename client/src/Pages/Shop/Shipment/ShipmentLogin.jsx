@@ -2,6 +2,7 @@ import React from 'react'
 import DashboardHeader from '../../../components/Headers/DashboardHeader';
 import DashboardSideBar from '../../../components/ShopComponents/Layout/DashboardSideBar';
 import ShipLogin from '../../../components/ShopComponents/Shipment/ShipLogin';
+import DronesFooter from '../../../components/DronesHomepage/DronesFooter';
 
 
 const ShipmentLogin = () => {
@@ -16,6 +17,7 @@ const ShipmentLogin = () => {
                     <ShipLogin active={20}/>
                 </div>
             </div>
+            <DronesFooter/>
         </div>
     );
 }

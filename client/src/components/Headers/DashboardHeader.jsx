@@ -1,34 +1,31 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { AiOutlineGift } from "react-icons/ai";
 import { MdOutlineLocalOffer } from "react-icons/md";
 import { FiPackage, FiShoppingBag } from "react-icons/fi";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { BiMessageSquareDetail } from "react-icons/bi";
+import { StyleConfig } from "../../utils/StyleConfig";
 
 // import socketIO from "socket.io-client";
-import { StyleConfig } from "../../utils/StyleConfig";
 // const ENDPOINT = 'https://socket-ecommerce-tu68.onrender.com/';
 // const ENDPOINT = "http://localhost:4000/";
 // const socketId = socketIO(ENDPOINT, { transports: ["websocket"] });
 
-const DashboardHeader = ({active}) => {
+const DashboardHeader = ({ active }) => {
   const { seller } = useSelector((state) => state.seller);
+  const styles = StyleConfig();
   // const [active, setActive] = useState(null)
 
   const toggleActive = (color) => {
     // setActive(color);
   };
 
-  useEffect(()=>{
-console.log(active)
-  },[active])
   // const buttonStyle = {
   //   color: active ? 'black' : 'red',
   //   cursor: 'pointer',
   // };
 
-  let styles = StyleConfig();
 
   return (
     <div
@@ -43,16 +40,16 @@ console.log(active)
         <Link to="/dashboard">
           <div className="logo ">
             <img
-              // src="https://shopo.quomodothemes.website/assets/images/logo.png"
-              // src="/images/logo.png"
+              // src="https://shopo.quomodothemes.website/assets/images/logo.svg"
+              // src="/images/logo.svg"
               src={styles?.logo?.url}
-              alt="logo"
+              alt="logo" className="w-full h-full object-cover"
             />
           </div>
         </Link>
       </div>
       <div className="flex items-center">
-      {/* {active.map((label, index) => ( */}
+        {/* {active.map((label, index) => ( */}
         <div className="flex items-center mr-4">
           <Link
             to="/dashboard-coupouns"
@@ -60,9 +57,9 @@ console.log(active)
             title="Cupouns"
           >
             <AiOutlineGift
-            style={{ color: active === 0 ? 'blue' : 'black' }}
-            className="mx-4 cursor-pointer"
-              
+              style={{ color: active === 0 ? 'blue' : 'black' }}
+              className="mx-4 cursor-pointer"
+
               // style={buttonStyle}
               // color="#555"
               // color={
@@ -71,8 +68,8 @@ console.log(active)
               //     : styles?.fontColor?.fontColor
               // }
               size={30}
-              // color="black"
-              
+            // color="black"
+
             />
           </Link>
           <Link
@@ -81,9 +78,9 @@ console.log(active)
             title="Events"
           >
             <MdOutlineLocalOffer
-           style={{ color: active === 1 ? 'blue' : 'black' }}
-           onClick={() => toggleActive(1)}
-            // style={buttonStyle}
+              style={{ color: active === 1 ? 'blue' : 'black' }}
+              onClick={() => toggleActive(1)}
+              // style={buttonStyle}
               // color="black"
               // color={
               //   styles?.fontColor?.toggleBtnFont
@@ -100,10 +97,10 @@ console.log(active)
             title="Products"
           >
             <FiShoppingBag
-            style={{ color: active === 2 ? 'blue' : 'black' }}
-            onClick={() => toggleActive(2)}
-            // style={buttonStyle}
-          
+              style={{ color: active === 2 ? 'blue' : 'black' }}
+              onClick={() => toggleActive(2)}
+              // style={buttonStyle}
+
               // color="black"
               // color={
               //   styles?.fontColor?.toggleBtnFont
@@ -120,10 +117,10 @@ console.log(active)
             title="Orders"
           >
             <FiPackage
-           style={{ color: active === 3 ? 'blue' : 'black' }}
-           onClick={() => toggleActive(3)}
-            // style={buttonStyle}
-           
+              style={{ color: active === 3 ? 'blue' : 'black' }}
+              onClick={() => toggleActive(3)}
+              // style={buttonStyle}
+
               // color="black"
               // color={styles?.fontColor}
               size={30}
@@ -136,18 +133,18 @@ console.log(active)
             title="Messages"
           >
             <BiMessageSquareDetail
-            style={{ color: active === 4 ? 'blue' : 'black' }}
-            onClick={() => toggleActive(4)}
-            // style={buttonStyle}
-          
+              style={{ color: active === 4 ? 'blue' : 'black' }}
+              onClick={() => toggleActive(4)}
+              // style={buttonStyle}
+
               // color="black"
               // color={
               //   styles?.fontColor?.toggleBtnFont
               //     ? styles?.fontColor?.fontColorPicker
               //     : styles?.fontColor?.fontColor
               // }
-              
-              size={30}             
+
+              size={30}
               className="mx-4 cursor-pointer"
             />
           </Link>

@@ -18,6 +18,7 @@ import { StyleConfig } from '../../utils/StyleConfig';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import PaymentBill from './PaymentBill';
+import useGetCurrencyConversion from '../../hooks/Site-config/useGetCurrencyConversion';
 
 const Payment = () => {
     const [orderData, setOrderData] = useState([]);
@@ -26,10 +27,12 @@ const Payment = () => {
     const navigate = useNavigate();
     const stripe = useStripe();
     const elements = useElements();
+    const { ConvertCurrency } = useGetCurrencyConversion()
 
     const [select, setSelect] = useState(1);
 
     const [loading, setLoading] = useState(false);
+    const [btnLoading, setBtnLoading] = useState(false);
 
     const styles = StyleConfig();
 
@@ -50,8 +53,9 @@ const Payment = () => {
                         description: 'New Order',
                         amount: {
                             currency_code: `${styles.currency.code}`,
-                            value: orderData?.totalPrice,
+                            value: ConvertCurrency(orderData?.totalPrice),
                         },
+
                     },
                 ],
                 // not needed if a shipping address is actually needed
@@ -130,6 +134,7 @@ const Payment = () => {
             type: 'Paypal',
         };
 
+
         await axios
             .post(`${server}/order/create-order`, order, config)
             .then((res) => {
@@ -143,7 +148,7 @@ const Payment = () => {
     };
 
     const paymentData = {
-        amount: Math.round(orderData?.totalPrice * 100),
+        amount: Math.round(ConvertCurrency(orderData?.totalPrice * 100)),
     };
 
     const paymentHandler = async (e) => {
@@ -154,7 +159,7 @@ const Payment = () => {
                     'Content-Type': 'application/json',
                 },
             };
-
+            setBtnLoading(true)
             const { data } = await axios.post(
                 `${server}/payment/process`,
                 paymentData,
@@ -192,8 +197,10 @@ const Payment = () => {
                         });
                 }
             }
+            setBtnLoading(false)
         } catch (error) {
             toast.error(error);
+            setBtnLoading(false)
         }
     };
 
@@ -205,6 +212,7 @@ const Payment = () => {
                     'Content-Type': 'application/json',
                 },
             };
+            setBtnLoading(true)
 
             const { data } = await axios.post(
                 `${server}/payment/razorpay`,
@@ -274,13 +282,16 @@ const Payment = () => {
             const rzp = new window.Razorpay(options);
 
             rzp.open();
+            setBtnLoading(false)
         } catch (e) {
+            setBtnLoading(false)
             toast.error(e);
         }
     };
 
     const cashOnDeliveryHandler = async (e) => {
         e.preventDefault();
+        setBtnLoading(true)
         const config = {
             headers: {
                 'Content-Type': 'application/json',
@@ -301,7 +312,13 @@ const Payment = () => {
                 localStorage.setItem('cartItems', JSON.stringify([]));
                 localStorage.setItem('latestOrder', JSON.stringify([]));
                 window.location.reload();
-            });
+            })
+            .catch((e) => {
+                toast.error(e);
+            })
+            .finally(() => {
+                setBtnLoading(false)
+            })
     };
 
     return (<>
@@ -321,6 +338,7 @@ const Payment = () => {
                             select={select}
                             handleChange={handleChange}
                             styles={styles}
+                            btnLoading={btnLoading}
                         />
                     </div>
                     <div className="w-[38%] 800px:w-[35%] 800px:mt-0 mt-8">
@@ -345,12 +363,23 @@ const PaymentInfo = ({
     handleRazorPayProcess,
     select,
     handleChange,
-    styles
+    styles, btnLoading
 }) => {
 
     const currObj = styles?.currency?.code;
 
-    const payemntMethodGet = currObj === "INR" ? styles?.paymentMethods?.INR : styles?.paymentMethods?.USD;
+    // const payemntMethodGet = currObj === "INR" ? styles?.paymentMethods?.INR : styles?.paymentMethods?.USD;
+    const payemntMethodGet = CurrencyType(currObj);
+
+    function CurrencyType(currObj) {
+        if (currObj === "INR") {
+            return styles?.paymentMethods?.INR
+        } else if (currObj === "USD") {
+            return styles?.paymentMethods?.USD
+        } else {
+            return styles?.paymentMethods?.EUR
+        }
+    }
 
 
     return (
@@ -456,12 +485,18 @@ const PaymentInfo = ({
                                         />
                                     </div>
                                 </div>
-                                <input
-                                    type="submit"
-                                    value="Submit"
-                                    className={`px-4 flex items-center mb-2 h-[45px] rounded-[5px] cursor-pointer text-[18px] font-[600] bg-[#fa8232]`}
-                                    style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor?.toggleBtnFont ? styles?.fontColor?.fontColorPicker : styles?.fontColor?.fontColor }}
-                                />
+                                {btnLoading
+                                    ?
+                                    <button
+                                        className={`px-4 flex items-center mb-2 h-[45px] rounded-[5px] cursor-pointer text-[18px] font-[600] bg-[#fa8232]`}
+                                        style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor?.toggleBtnFont ? styles?.fontColor?.fontColorPicker : styles?.fontColor?.fontColor }}
+                                    >Loading...</button> :
+                                    <button
+                                        type="submit"
+                                        className={`px-4 flex items-center mb-2 h-[45px] rounded-[5px] cursor-pointer text-[18px] font-[600] bg-[#fa8232]`}
+                                        style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor?.toggleBtnFont ? styles?.fontColor?.fontColorPicker : styles?.fontColor?.fontColor }}
+                                    >Submit</button>
+                                }
                             </form>
                         </div>
                     ) : null}
@@ -490,10 +525,9 @@ const PaymentInfo = ({
                         <div className="w-full flex border-b">
                             <div
                                 className={`px-4 flex payment-btn bg-[#fa8232] items-center mb-2 h-[45px] rounded-[5px] cursor-pointer text-[18px] font-[600]`}
-                                onClick={() => setOpen(true)}
-                            // style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor?.toggleBtnFont ? styles?.fontColor?.fontColorPicker : styles?.fontColor?.fontColor }}
+                                onClick={() => !btnLoading && setOpen(true)}
                             >
-                                Pay Now
+                                {btnLoading ? "Loading..." : "Pay Now"}
                             </div>
                             {open && (
                                 <div className="w-full fixed top-0 left-0 bg-[#00000039] h-screen flex items-center justify-center z-[99999]">
@@ -505,7 +539,7 @@ const PaymentInfo = ({
                                         </div>
                                         <PayPalScriptProvider
                                             options={{
-                                                'client-id': `${payPalClientId}`,
+                                                'client-id': `${payPalClientId}`, currency: styles.currency.code
                                             }}
                                         >
                                             <PayPalButtons
@@ -544,9 +578,9 @@ const PaymentInfo = ({
                         <div className="w-full flex border-b">
                             <div
                                 className={`px-4 flex items-center mb-2 h-[45px] rounded-[5px] cursor-pointer text-[18px] font-[600] bg-[#fa8232]`}
-                                onClick={handleRazorPayProcess} style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor?.toggleBtnFont ? styles?.fontColor?.fontColorPicker : styles?.fontColor?.fontColor }}
+                                onClick={btnLoading && handleRazorPayProcess} style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor?.toggleBtnFont ? styles?.fontColor?.fontColorPicker : styles?.fontColor?.fontColor }}
                             >
-                                Pay Now
+                                {btnLoading ? "Loading..." : "Pay Now"}
                             </div>
                             {open && (
                                 <div className="w-full fixed top-0 left-0 bg-[#00000039] h-screen flex items-center justify-center z-[99999]">
@@ -596,12 +630,18 @@ const PaymentInfo = ({
                     {select === 3 ? (
                         <div className="w-full flex">
                             <form className="w-full" onSubmit={cashOnDeliveryHandler}>
-                                <input
-                                    type="submit"
-                                    value="Confirm"
-                                    className={`px-4 flex items-center mb-2 h-[45px] rounded-[5px] cursor-pointer text-[18px] font-[600] bg-[#fa8232]`}
-                                    style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor?.toggleBtnFont ? styles?.fontColor?.fontColorPicker : styles?.fontColor?.fontColor }}
-                                />
+                                {btnLoading
+                                    ?
+                                    <button
+                                        className={`px-4 flex items-center mb-2 h-[45px] rounded-[5px] cursor-pointer text-[18px] font-[600] bg-[#fa8232]`}
+                                        style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor?.toggleBtnFont ? styles?.fontColor?.fontColorPicker : styles?.fontColor?.fontColor }}
+                                    >Loading...</button> :
+                                    <button
+                                        type="submit"
+                                        className={`px-4 flex items-center mb-2 h-[45px] rounded-[5px] cursor-pointer text-[18px] font-[600] bg-[#fa8232]`}
+                                        style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor?.toggleBtnFont ? styles?.fontColor?.fontColorPicker : styles?.fontColor?.fontColor }}
+                                    >Submit</button>
+                                }
                             </form>
                         </div>
                     ) : null}

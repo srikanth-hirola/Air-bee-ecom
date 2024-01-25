@@ -38,14 +38,22 @@ router.get(
       const { category, subcategory, subsubcategory } = req.query;
       const filter = { approved: true };
 
+
       if (category) {
-        filter.category = new RegExp(category, 'i');
+        var catFound = await Category.findOne({ name: category });
+        filter.category = new RegExp(catFound?._id, 'i');
       }
       if (subcategory) {
-        filter.subCatgory = new RegExp(subcategory, 'i');
+        if (catFound) {
+          var subFound = catFound?.subcategories?.find((sub) => sub?.name === subcategory)
+          filter.subCatgory = new RegExp(subFound?._id, 'i');
+        }
       }
       if (subsubcategory) {
-        filter.subSubCategory = new RegExp(subsubcategory, 'i');
+        if (subFound) {
+          var subSubFound = subFound?.subSubcategories?.find((subSub) => subSub?.name === subsubcategory)
+          filter.subSubCategory = new RegExp(subSubFound?._id, 'i');
+        }
       }
 
       const products = await Product.find(filter);

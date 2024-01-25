@@ -7,6 +7,7 @@ import { StyleConfig } from '../../utils/StyleConfig';
 import { server } from '../../server';
 import toast from 'react-hot-toast';
 import DronesHeader from '../Headers/DronesHeader';
+import DronesFooter from '../DronesHomepage/DronesFooter';
 
 export const ForgetPassword = () => {
     const [searchParams] = useSearchParams();
@@ -255,6 +256,7 @@ export const ForgetPassword = () => {
                         </div>}
                 </div>
             </div>
+            <DronesFooter/>
         </>
     )
 }

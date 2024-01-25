@@ -1,4 +1,5 @@
 import React from 'react'
+import useGetCurrencyConversion from '../../hooks/Site-config/useGetCurrencyConversion'
 
 const CartBill = ({
     handleSubmit,
@@ -12,6 +13,8 @@ const CartBill = ({
     showCoupan,
     styles
 }) => {
+
+    const { ConvertCurrency } = useGetCurrencyConversion();
 
 
     return (
@@ -31,7 +34,7 @@ const CartBill = ({
                         <div className="col-md-12">
                             <div className='Drones-Product-subtotal'>
                                 <strong>Subtotal</strong>
-                                <p>{styles?.currency?.Symbol}&nbsp;{subTotalPrice}</p>
+                                <p>{styles?.currency?.Symbol}&nbsp;{ConvertCurrency(subTotalPrice)}</p>
                             </div>
                         </div>
                         <div className="col-md-12">
@@ -40,7 +43,7 @@ const CartBill = ({
                                     <strong>Shipping</strong><br />
                                     <span>(Standard Rate - Price may vary depending on the item/destination. TECS Staff will contact you.)</span>
                                 </div>
-                                <p>{styles?.currency?.Symbol}&nbsp;{shipping?.toFixed(2)}</p>
+                                <p>{styles?.currency?.Symbol}&nbsp;{ConvertCurrency(shipping?.toFixed(2))}</p>
 
                             </div>
                         </div>
@@ -59,7 +62,7 @@ const CartBill = ({
                         <div className="col-md-12">
                             <div className='Drones-Product-order-total'>
                                 <strong>Order Total</strong>
-                                <p>{styles?.currency?.Symbol}&nbsp;{totalPrice}</p>
+                                <p>{styles?.currency?.Symbol}&nbsp;{ConvertCurrency(totalPrice)}</p>
                             </div>
                         </div>
                         <br />

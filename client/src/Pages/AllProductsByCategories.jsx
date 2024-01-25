@@ -10,7 +10,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import toast from 'react-hot-toast'
 import DronesHeader from '../components/Headers/DronesHeader'
 import DronesFooter from '../components/DronesHomepage/DronesFooter'
-import DronesNewsletter from '../components/DronesHomepage/DronesNewsletter'
 
 const AllProductsByCategories = () => {
 
@@ -85,8 +84,7 @@ const AllProductsByCategories = () => {
                     </div>
                 </>
             }
-            <DronesNewsletter/>
-            <DronesFooter/>
+        <DronesFooter/>
         </>
     )
 }

@@ -8,11 +8,13 @@ import { getAllOrdersOfShop } from '../../../redux/actions/order';
 import { Button } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
 import Loader from '../../../utils/Loader';
+import useGetCurrencyConversion from '../../../hooks/Site-config/useGetCurrencyConversion';
 
 
 const AllRefundOrders = ({ active }) => {
     const { orders, isLoading } = useSelector((state) => state.order);
     const { seller } = useSelector((state) => state.seller);
+    const { ConvertCurrency } = useGetCurrencyConversion();
 
     const dispatch = useDispatch();
 
@@ -40,11 +42,11 @@ const AllRefundOrders = ({ active }) => {
             headerName: 'Status',
             minWidth: 130,
             flex: 0.7,
-            cellClassName: (params) => {
-                return params.getValue(params.id, 'status') === 'Delivered'
-                    ? 'greenColor'
-                    : 'redColor';
-            },
+            // cellClassName: (params) => {
+            //     return params.getValue(params.id, 'status') === 'Delivered'
+            //         ? 'greenColor'
+            //         : 'redColor';
+            // },
         },
         {
             field: 'itemsQty',
@@ -93,7 +95,7 @@ const AllRefundOrders = ({ active }) => {
             row1.push({
                 id: item._id,
                 itemsQty: item.cart.length,
-                total: `${styles?.currency?.Symbol}` + item.totalPrice,
+                total: `${styles?.currency?.Symbol}` + ConvertCurrency(item.totalPrice),
                 status: item.status,
             });
         });
@@ -106,7 +108,7 @@ const AllRefundOrders = ({ active }) => {
                     row2.push({
                         id: item._id,
                         itemsQty: item.cart.length,
-                        total: `${styles?.currency?.Symbol}` + item.totalPrice,
+                        total: `${styles?.currency?.Symbol}` + ConvertCurrency(item.totalPrice),
                         status: val.status,
                     });
                 }
@@ -121,7 +123,7 @@ const AllRefundOrders = ({ active }) => {
                     row3.push({
                         id: item._id,
                         itemsQty: item.cart.length,
-                        total: `${styles?.currency?.Symbol}` + item.totalPrice,
+                        total: `${styles?.currency?.Symbol}` + ConvertCurrency(item.totalPrice),
                         status: val.status,
                     });
                 }
@@ -136,7 +138,7 @@ const AllRefundOrders = ({ active }) => {
                     row4.push({
                         id: item._id,
                         itemsQty: item.cart.length,
-                        total: `${styles?.currency?.Symbol}` + item.totalPrice,
+                        total: `${styles?.currency?.Symbol}` + ConvertCurrency(item.totalPrice),
                         status: val.status,
                     });
                 }

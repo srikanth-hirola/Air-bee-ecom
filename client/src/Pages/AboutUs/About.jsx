@@ -8,6 +8,10 @@ import { AboutData } from '../../components/AboutUs/AboutData'
 import { AboutTop } from '../../components/AboutUs/AboutTop'
 import { AboutFaq } from '../../components/AboutUs/AboutFaq'
 import DronesHeader from '../../components/Headers/DronesHeader'
+import DronesFooter from '../../components/DronesHomepage/DronesFooter'
+import { DronesTestimonialSwiper } from '../../components/DronesHomepage/DronesTestimonialSwiper'
+import { ContactProduct1 } from '../../components/Checkout/ContactProduct1'
+import AboutUsTeam from '../../components/AboutUs/AboutUsTeam'
 
 export const About = () => {
     return (
@@ -19,8 +23,12 @@ export const About = () => {
             <AboutPageFour />
             <AboutPageFive />
             <AboutData />
+            <AboutUsTeam/>
             <AboutTop />
+            <DronesTestimonialSwiper/>
             <AboutFaq />
+            <ContactProduct1/>
+            <DronesFooter/>
         </div>
     )
 }

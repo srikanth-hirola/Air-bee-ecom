@@ -3,6 +3,7 @@ import CheckoutBredCrumbs from '../components/Checkout/CheckoutBredCrumbs';
 import CheckoutSteps from '../components/Checkout/CheckoutSteps';
 import CheckoutAddress from '../components/Checkout/CheckoutAddress';
 import DronesHeader from '../components/Headers/DronesHeader';
+import DronesFooter from '../components/DronesHomepage/DronesFooter';
 
 
 const CheckoutPage = () => {
@@ -36,6 +37,7 @@ const CheckoutPage = () => {
 
                 </div>
             </div>
+            <DronesFooter/>
 
         </>
 

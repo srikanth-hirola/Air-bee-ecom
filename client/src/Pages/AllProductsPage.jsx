@@ -6,11 +6,10 @@ import Loader from '../utils/Loader'
 import { useLocation } from 'react-router-dom'
 import axios from 'axios'
 import { server } from '../server'
-import { getAllProducts } from '../redux/actions/product'
+import { getPublishedProducts } from '../redux/actions/product'
 import { StyleConfig } from '../utils/StyleConfig'
 import DronesHeader from '../components/Headers/DronesHeader'
 import DronesFooter from '../components/DronesHomepage/DronesFooter'
-import DronesNewsletter from '../components/DronesHomepage/DronesNewsletter'
 
 const AllProductsPage = () => {
     const location = useLocation();
@@ -24,11 +23,12 @@ const AllProductsPage = () => {
 
 
     useEffect(() => {
-        dispatch(getAllProducts())
+        dispatch(getPublishedProducts())
     }, [dispatch])
 
+
     // const categoryData = searchParams.get("category");
-    const { allProducts, isLoading } = useSelector((state) => state.products);
+    const { allPublishedProducts, isLoading } = useSelector((state) => state.products);
 
     const [data, setData] = useState([]);
     // const [active, setActive] = useState(false);
@@ -49,14 +49,14 @@ const AllProductsPage = () => {
                 return newBreadcrumbs;
             });
             if (decodedSearchParam.trim() === 'all products') {
-                const d = allProducts;
+                const d = allPublishedProducts;
                 setData(d);
             } else {
                 const searchTerm = decodedSearchParam.toLowerCase();
                 apiCall(searchTerm);
             }
         }
-    }, [allProducts, searchParam]);
+    }, [allPublishedProducts, searchParam]);
 
     const apiCall = async (searchTerm) => {
 
@@ -86,8 +86,7 @@ const AllProductsPage = () => {
                     </div>
                 </>
             }
-            {/* <DronesNewsletter/> */}
-            {/* <DronesFooter/> */}
+            <DronesFooter/>
         </>
     )
 }

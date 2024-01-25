@@ -3,11 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToWishlist, removeFromWishlist } from "../redux/actions/wishlist";
 import { addTocart } from "../redux/actions/cart";
 import { toast } from "react-hot-toast";
+import useGetCurrencyConversion from "./Site-config/useGetCurrencyConversion";
 
 const useProductCardHandler = ({ data1, setClick, data, setData, selectedColor, setSelectedColor, selectedAttr, setSelectedAttr, setSoldOut }) => {
     const { wishlist } = useSelector((state) => state.wishlist);
     const { allEvents } = useSelector((state) => state.events);
     const { cart } = useSelector((state) => state.cart);
+    const { ConvertCurrency } = useGetCurrencyConversion()
 
     const dispatch = useDispatch();
 
@@ -163,24 +165,30 @@ const useProductCardHandler = ({ data1, setClick, data, setData, selectedColor, 
     };
 
     const getDiscountPrice = ({ data }) => {
+        let price;
         if (data?.showInputs) {
-            return data?.colorInputs[0]?.originalPrice === 0
+            price = data?.colorInputs[0]?.originalPrice === 0
                 ? data?.colorInputs[0]?.originalPrice
                 : data?.colorInputs[0].discountPrice;
         } else {
-            return data?.originalPrice === 0
+            price = data?.originalPrice === 0
                 ? data?.originalPrice
                 : data?.discountPrice
         }
+        let convertedPrice = ConvertCurrency(price)
+        return convertedPrice
     }
 
     const getOriginalPrice = ({ data }) => {
+        let price;
         if (data?.showInputs) {
-            return data?.colorInputs[0]?.originalPrice
+            price = data?.colorInputs[0]?.originalPrice
                 ? data?.colorInputs[0]?.originalPrice : null
         } else {
-            return data?.originalPrice ? data?.originalPrice : null
+            price = data?.originalPrice ? data?.originalPrice : null
         }
+        let convertedPrice = ConvertCurrency(price)
+        return convertedPrice
     }
 
     return { loopCheck, removeFromWishlistHandler, addToWishlistHandler, addToCartHandler, getDiscountPrice, getOriginalPrice }

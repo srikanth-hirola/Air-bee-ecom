@@ -9,6 +9,8 @@ import { server } from '../../../server';
 import Loader from '../../../utils/Loader';
 import CustomizeCategory from '../CreateProduct/Components/CustomizeCategory';
 import { CategoryDeleteModel } from './Modals/CategoryDeleteModel';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 
@@ -64,7 +66,7 @@ const CategoryPage = () => {
         const updatedCategories = [...categories];
         updatedCategories[categoryIndex].subcategories[
             subcategoryIndex
-        ].subSubcategories[subSubcategoryIndex] = value;
+        ].subSubcategories[subSubcategoryIndex] = { name: value };
         setCategories(updatedCategories);
     };
 
@@ -84,7 +86,11 @@ const CategoryPage = () => {
         const updatedCategories = [...categories];
         updatedCategories[categoryIndex].subcategories.push({
             name: '',
-            subSubcategories: [],
+            subSubcategories: [
+                {
+                    name: ''
+                }
+            ],
         });
         setCategories(updatedCategories);
     };
@@ -93,7 +99,7 @@ const CategoryPage = () => {
         const updatedCategories = [...categories];
         updatedCategories[categoryIndex].subcategories[
             subcategoryIndex
-        ].subSubcategories.push('');
+        ].subSubcategories.push({ name: '' });
         setCategories(updatedCategories);
     };
 
@@ -216,7 +222,7 @@ const CategoryPage = () => {
                                                                                 className='subp p2'
                                                                                 type="text"
                                                                                 placeholder="Enter sub subcategory name"
-                                                                                value={subSubcategory}
+                                                                                value={subSubcategory?.name}
                                                                                 onChange={(e) =>
                                                                                     handleSubSubcategoryChange(
                                                                                         categoryIndex,
@@ -327,7 +333,7 @@ const CategoryPage = () => {
                                         {/* <h5 style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor }}>Sub SubCategories</h5> */}
                                         {subSubCat.map((val2) => {
                                             return (
-                                                <p className='subp'>{val2}</p>
+                                                <p className='subp'>{val2?.name}</p>
                                             );
                                         })}
                                     </div>

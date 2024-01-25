@@ -21,7 +21,7 @@ export const OrderPlace = () => {
                                         <img src="/DronesHomepage/Stack.png" alt="" />
                                         <h6>Go To Dashboard</h6>
                                     </Link>
-                                    <Link to="" className="order-place-button2">
+                                    <Link to="/orderspage" className="order-place-button2">
                                         <h6>View Order</h6>
                                         <img src="/DronesHomepage/ArrowRight.png" alt="" />
                                     </Link>

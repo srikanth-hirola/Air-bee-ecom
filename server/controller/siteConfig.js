@@ -222,18 +222,25 @@ router.post(
                 folder: 'siteImages',
             });
 
+            // logoToUpload = {
+            //     ...logoToUpload,
+            //     image: {
+            //         public_id: myCloud.public_id,
+            //         url: myCloud.secure_url,
+            //     }
+            // }
+
             logoToUpload = {
-                ...logoToUpload,
-                image: {
-                    public_id: myCloud.public_id,
-                    url: myCloud.secure_url,
-                }
+                public_id: myCloud.public_id,
+                url: myCloud.secure_url,
             }
 
 
-            const updateObject = { [name]: logoToUpload }; // Construct the update object
 
-            await Site.updateMany({}, updateObject); // Pass the update object directly
+
+            const updateObject = { [name]: logoToUpload };
+
+            await Site.updateMany({}, updateObject);
 
             res.status(200).json({ success: true });
         } catch (error) {

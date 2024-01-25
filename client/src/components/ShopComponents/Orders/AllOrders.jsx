@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,10 +9,12 @@ import { getAllOrdersOfShop } from '../../../redux/actions/order';
 import Loader from '../../../utils/Loader';
 import { Button } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
+import useGetCurrencyConversion from '../../../hooks/Site-config/useGetCurrencyConversion';
 
 const AllOrders = ({ active }) => {
     const { orders, isLoading } = useSelector((state) => state.order);
     const { seller } = useSelector((state) => state.seller);
+    const { ConvertCurrency } = useGetCurrencyConversion();
 
     const styles = StyleConfig()
 
@@ -42,7 +45,7 @@ const AllOrders = ({ active }) => {
                 console.log(params)
                 return (
                     <div>
-                        <img src={params?.row?.image} alt='product' width={'100px'} height={'100px'}/>
+                        <img src={params?.row?.image} alt='product' width={'100px'} height={'100px'} />
                     </div>
                 );
             },
@@ -103,7 +106,7 @@ const AllOrders = ({ active }) => {
                 id: item._id,
                 image: found[0]?.products[0]?.selectedColor?.mainImage?.url,
                 itemsQty: item.cart.length,
-                total: `${styles?.currency?.Symbol}` + item.totalPrice,
+                total: `${styles?.currency?.Symbol}` + ConvertCurrency(item.totalPrice),
                 status: item?.status,
             });
         });
@@ -117,7 +120,7 @@ const AllOrders = ({ active }) => {
                     id: item._id,
                     image: found[0]?.products[0]?.selectedColor?.mainImage?.url,
                     itemsQty: item.cart.length,
-                    total: `${styles?.currency?.Symbol}` + item.totalPrice,
+                    total: `${styles?.currency?.Symbol}` + ConvertCurrency(item.totalPrice),
                     status: item?.status,
                 });
             }
@@ -131,10 +134,12 @@ const AllOrders = ({ active }) => {
                 item?.status === 'Received' ||
                 item?.status === 'On the way'
             ) {
+                const found = item?.sellerCart.filter((val) => { if (val?.sellerID === seller._id) { return val } });
                 row3.push({
                     id: item._id,
+                    image: found[0]?.products[0]?.selectedColor?.mainImage?.url,
                     itemsQty: item.cart.length,
-                    total: `${styles?.currency?.Symbol}` + item.totalPrice,
+                    total: `${styles?.currency?.Symbol}` + ConvertCurrency(item.totalPrice),
                     status: item?.status,
                 });
             }
@@ -143,10 +148,12 @@ const AllOrders = ({ active }) => {
     orders &&
         orders.forEach((item) => {
             if (item?.status === 'Delivered') {
+                const found = item?.sellerCart.filter((val) => { if (val?.sellerID === seller._id) { return val } });
                 row4.push({
                     id: item._id,
+                    image: found[0]?.products[0]?.selectedColor?.mainImage?.url,
                     itemsQty: item.cart.length,
-                    total: `${styles?.currency?.Symbol}` + item.totalPrice,
+                    total: `${styles?.currency?.Symbol}` + ConvertCurrency(item.totalPrice),
                     status: item?.status,
                 });
             }
@@ -157,10 +164,13 @@ const AllOrders = ({ active }) => {
             // eslint-disable-next-line array-callback-return
             item?.sellerCart?.map((val) => {
                 if (val.status === 'Canceled') {
+
+                    const found = item?.sellerCart.filter((val) => { if (val?.sellerID === seller._id) { return val } });
                     row5.push({
                         id: item._id,
+                        image: found[0]?.products[0]?.selectedColor?.mainImage?.url,
                         itemsQty: item.cart.length,
-                        total: `${styles?.currency?.Symbol}` + item.totalPrice,
+                        total: `${styles?.currency?.Symbol}` + ConvertCurrency(item.totalPrice),
                         status: item?.status,
                     });
                 }
@@ -174,7 +184,7 @@ const AllOrders = ({ active }) => {
             ) : (
                 <div className="w-full mx-8 pt-1 mt-10 bg-white outer1-div">
                     {active === 1 && (
-                        <DataGrid rowHeight={"66px"}
+                        <DataGrid rowHeight={88}
                             rows={row1}
                             columns={columns}
                             pageSize={10}
@@ -184,19 +194,19 @@ const AllOrders = ({ active }) => {
                     )}
 
                     {active === 2 && (
-                        <DataGrid
+                        <DataGrid rowHeight={88}
                             rows={row2}
                             columns={columns}
                             pageSize={10}
                             disableSelectionOnClick
                             autoHeight
-                            // width={30}
-                            // height={30}
+                        // width={30}
+                        // height={30}
                         />
                     )}
 
                     {active === 3 && (
-                        <DataGrid
+                        <DataGrid rowHeight={88}
                             rows={row3}
                             columns={columns}
                             pageSize={10}
@@ -206,7 +216,7 @@ const AllOrders = ({ active }) => {
                     )}
 
                     {active === 4 && (
-                        <DataGrid
+                        <DataGrid rowHeight={88}
                             rows={row4}
                             columns={columns}
                             pageSize={10}
@@ -216,7 +226,7 @@ const AllOrders = ({ active }) => {
                     )}
 
                     {active === 5 && (
-                        <DataGrid
+                        <DataGrid rowHeight={88}
                             rows={row5}
                             columns={columns}
                             pageSize={10}

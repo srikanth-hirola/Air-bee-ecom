@@ -3,11 +3,13 @@ import Accordion from 'react-bootstrap/Accordion';
 import { Link } from 'react-router-dom';
 import Ratings from '../Shop/Ratings';
 import useFilterHandler from '../../hooks/useFilterHandler';
+import useFetchCategoryHandler from '../../hooks/categories/useFetchCategoryHandler';
 
 
 const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, selectedBrands, selectedPriceRange, setSelectedBrands, setSelectedPriceRange, filteredAttr, setFilteredAttr, isVisibleData, toggleDataVisible }) => {
 
     const { handleCheckboxChange, handleBrandCheckBox, handleFilterCheckswithValues } = useFilterHandler()
+    const { fetchCategory, fetchSubCategory } = useFetchCategoryHandler();
 
     const [filterBrand, setFilterBrand] = useState([]);
     const [category, setCategory] = useState([
@@ -255,10 +257,10 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                                     (cat, i) =>
                                         cat.name && (
                                             <React.Fragment key={i}>
-                                                <Link to={`/products-by-category/search?category=${cat.name}`}
+                                                <Link to={`/products-by-category/search?category=${fetchCategory(cat.name)}`}
                                                     className="cat-link text-black font-semibold"
                                                 >
-                                                    {cat.name}
+                                                    {fetchCategory(cat.name)?.name}
                                                 </Link>
                                                 <ul>
                                                     {cat.subCategory.length > 0 &&
@@ -266,9 +268,9 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                                                             <li key={index}
                                                                 className="cat-link"
                                                             >
-                                                                <Link to={`/products-by-category/search?category=${cat.name}&subcategory=${sub}`}
+                                                                <Link to={`/products-by-category/search?category=${fetchCategory(cat.name)?.name}&subcategory=${fetchSubCategory(cat.name, sub)?.name}`}
                                                                     className="cat-link text-black"
-                                                                >{sub}</Link>
+                                                                >{fetchSubCategory(cat.name, sub)?.name}</Link>
                                                             </li>
                                                         ))}
                                                 </ul>

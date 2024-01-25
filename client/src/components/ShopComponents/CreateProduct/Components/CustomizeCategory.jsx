@@ -4,6 +4,8 @@ import Form from 'react-bootstrap/Form';
 import { StyleConfig } from '../../../../utils/StyleConfig';
 import { server } from '../../../../server';
 import toast from 'react-hot-toast';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 
 const CustomizeCategory = ({ categoriesData }) => {
@@ -32,12 +34,12 @@ const CustomizeCategory = ({ categoriesData }) => {
 
     const handleAddSubcategory = (e) => {
         e.preventDefault();
-        setSubCat([...subCat, { name: '', subSubcategories: [] }]);
+        setSubCat([...subCat, { name: '', subSubcategories: [{ name: '' }] }]);
     };
 
     const handleSubcategoryChange = (subcategoryIndex, value) => {
-        const updatedCategories = [...subCat];
-        subCat[subcategoryIndex].name = value;
+        const updatedCategories = JSON.parse(JSON.stringify(subCat));
+        updatedCategories[subcategoryIndex].name = value;
         setSubCat(updatedCategories);
     };
 
@@ -45,7 +47,7 @@ const CustomizeCategory = ({ categoriesData }) => {
         const updatedCategories = subCat.map((category, index) => {
             if (index === subcategoryIndex) {
                 const subcategoriesCopy = [...category.subSubcategories];
-                subcategoriesCopy[subSubcategoryIndex] = value;
+                subcategoriesCopy[subSubcategoryIndex] = { name: value };
                 return { ...category, subSubcategories: subcategoriesCopy };
             }
             return category;
@@ -58,7 +60,7 @@ const CustomizeCategory = ({ categoriesData }) => {
     const handleAddSubSubcategory = (e, subcategoryIndex) => {
         e.preventDefault();
         const updatedCategories = JSON.parse(JSON.stringify(subCat));
-        updatedCategories[subcategoryIndex].subSubcategories.push('');
+        updatedCategories[subcategoryIndex].subSubcategories.push({ name: '' });
         setSubCat(updatedCategories);
     };
 
@@ -183,7 +185,7 @@ const CustomizeCategory = ({ categoriesData }) => {
                                             handleSubcategoryChange(subcategoryIndex, e.target.value)
                                         }
                                     />
-                                    <button onClick={(e) => handleRemoveSubCategory(e, subcategoryIndex)}><i class="fa-solid fa-trash"></i></button>
+                                    <button className='bg-white' onClick={(e) => handleRemoveSubCategory(e, subcategoryIndex)}><FontAwesomeIcon icon={faTrash} style={{ color: 'red' }} /></button>
                                 </div>
 
                                 <button
@@ -200,7 +202,7 @@ const CustomizeCategory = ({ categoriesData }) => {
                                             type="text"
                                             className='border-0 p2'
                                             placeholder="Enter sub subcategory name"
-                                            value={subSubcategory}
+                                            value={subSubcategory?.name}
                                             onChange={(e) =>
                                                 handleSubSubcategoryChange(
                                                     subcategoryIndex,
@@ -209,7 +211,7 @@ const CustomizeCategory = ({ categoriesData }) => {
                                                 )
                                             }
                                         />
-                                        <button onClick={(e) => handleRemoveSubSubCategory(e, subcategoryIndex, subSubcategoryIndex)}><i class="fa-solid fa-trash"></i></button>
+                                        <button onClick={(e) => handleRemoveSubSubCategory(e, subcategoryIndex, subSubcategoryIndex)}><FontAwesomeIcon icon={faTrash} style={{ color: 'red' }} /></button>
                                     </div>
                                 )
                             )}

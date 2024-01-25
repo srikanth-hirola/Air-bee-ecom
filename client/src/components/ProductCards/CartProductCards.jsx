@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getAllProducts } from '../../redux/actions/product';
 import { getAllEvents } from '../../redux/actions/event';
 import { Link } from 'react-router-dom';
+import useGetCurrencyConversion from '../../hooks/Site-config/useGetCurrencyConversion';
 
 const CartProductCards = ({
     data1,
@@ -13,6 +14,7 @@ const CartProductCards = ({
     removeFromCartHandler, styles
 }) => {
     const dispatch = useDispatch();
+    const { ConvertCurrency } = useGetCurrencyConversion()
 
     const { allProducts } = useSelector((state) => state.products);
     const { allEvents } = useSelector((state) => state.events);
@@ -111,7 +113,6 @@ const CartProductCards = ({
         const foundVarient = foundProduct?.colorInputs.find((val) => val._id === selectedColor._id)
         if (foundVarient) {
             const currentDisPrice = event ? foundVarient?.eventPrice : foundVarient?.discountPrice;
-            console.log(currentDisPrice * passedProduct?.qty)
 
             if (foundVarient?.haveAttributes) {
                 const foundAttr = foundVarient?.attributes[0]?.values.find((val) => val._id === attrId)
@@ -142,7 +143,6 @@ const CartProductCards = ({
                     maxOrderQuantity: foundProduct?.maxOrderQuantity,
                     active: event,
                 };
-                console.log(temp)
                 setDataFound(temp)
                 quantityChangeHandler(temp);
             }
@@ -235,14 +235,14 @@ const CartProductCards = ({
                                 <div className="col-3 col-sm-3 col-md-3">
                                     <div className='Drones-Product-price'>
                                         <p>{styles?.currency?.Symbol}&nbsp;{dataFound.active
-                                            ? dataFound.selectedColor.eventPrice
-                                            : dataFound.selectedColor.discountPrice}{' '}
+                                            ? ConvertCurrency(dataFound.selectedColor.eventPrice)
+                                            : ConvertCurrency(dataFound.selectedColor.discountPrice)}{' '}
                                             * {value}</p>
                                     </div>
                                 </div>
                                 <div className="col-3 col-sm-3 col-md-3">
                                     <div className='Drones-Product-quantity'>
-                                        
+
                                         <div className='Drones-addtocart-buttons'>
                                             <button className='increment-button' onClick={(e) => increment(e, dataFound)}>+</button>
                                             <p className='m-0'>{dataFound.qty}</p>
@@ -256,14 +256,14 @@ const CartProductCards = ({
                                             data={dataFound}
                                             value={value}
                                             totalPrice={totalPrice}
-                                            styles={styles} removeFromCartHandler={removeFromCartHandler}
+                                            styles={styles} removeFromCartHandler={removeFromCartHandler} ConvertCurrency={ConvertCurrency}
                                         />
                                     ) : (
                                         <SingleAttr
                                             data={dataFound}
                                             value={value}
                                             totalPrice={totalPrice}
-                                            styles={styles} removeFromCartHandler={removeFromCartHandler}
+                                            styles={styles} removeFromCartHandler={removeFromCartHandler} ConvertCurrency={ConvertCurrency}
                                         />
                                     )}
                                 </div>
@@ -278,11 +278,11 @@ const CartProductCards = ({
 
 export default CartProductCards
 
-const VarientAttr = ({ data, value, totalPrice, styles, removeFromCartHandler }) => {
+const VarientAttr = ({ data, value, totalPrice, styles, removeFromCartHandler, ConvertCurrency }) => {
     return (
         <div className="row Drones-Product-subtotal">
             <div className="col-6 Drones-Product-subtotal-content ">
-                <p>{styles?.currency?.Symbol} {totalPrice}</p>
+                <p>{styles?.currency?.Symbol} {ConvertCurrency(totalPrice)}</p>
             </div>
             <div className="col-6 images-section">
                 <div className='Drones-Product-subtotal-sub2'>
@@ -296,12 +296,12 @@ const VarientAttr = ({ data, value, totalPrice, styles, removeFromCartHandler })
     )
 }
 
-const SingleAttr = ({ data, value, totalPrice, styles, removeFromCartHandler }) => {
+const SingleAttr = ({ data, value, totalPrice, styles, removeFromCartHandler, ConvertCurrency }) => {
 
     return (
         <div className="row Drones-Product-subtotal">
             <div className="col-6 Drones-Product-subtotal-content ">
-                <p>{styles?.currency?.Symbol} {totalPrice}</p>
+                <p>{styles?.currency?.Symbol} {ConvertCurrency(totalPrice)}</p>
             </div>
             <div className="col-6 images-section">
                 <div className='Drones-Product-subtotal-sub2'>

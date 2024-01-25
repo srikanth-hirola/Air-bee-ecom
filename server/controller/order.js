@@ -352,8 +352,9 @@ router.put(
       if (req.body.status === 'Delivered') {
         order.deliveredAt = Date.now();
         order.paymentInfo.status = 'Succeeded';
-        const serviceCharge = order.totalPrice * 0.1;
-        await updateSellerInfo(order.totalPrice - serviceCharge);
+        // const serviceCharge = order.totalPrice * 0.1;
+        // await updateSellerInfo(order.totalPrice - serviceCharge);
+        await updateSellerInfo(order.totalPrice);
       }
 
       order.markModified('cart');

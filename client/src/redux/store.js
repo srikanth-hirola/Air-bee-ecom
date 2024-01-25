@@ -10,6 +10,7 @@ import { categoryReducer } from './reducers/category';
 import { shippingReducer } from './reducers/shipping';
 import { siteConfigReducer } from './reducers/siteConfig';
 import { templateDataReducer } from './reducers/template';
+import { messageReducer } from './reducers/socket';
 
 const Store = configureStore({
   reducer: {
@@ -25,6 +26,7 @@ const Store = configureStore({
     siteConfig: siteConfigReducer,
     category: categoryReducer,
     templateData: templateDataReducer,
+    messages: messageReducer,
   },
 });
 

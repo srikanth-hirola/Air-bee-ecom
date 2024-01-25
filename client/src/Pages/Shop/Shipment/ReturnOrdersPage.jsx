@@ -3,6 +3,7 @@ import React from 'react'
 import DashboardHeader from '../../../components/Headers/DashboardHeader';
 import DashboardSideBar from '../../../components/ShopComponents/Layout/DashboardSideBar';
 import ReturnOrders from '../../../components/ShopComponents/Shipment/ReturnOrders';
+import DronesFooter from '../../../components/DronesHomepage/DronesFooter';
 
 const ReturnOrdersPage = () => {
     return (
@@ -16,6 +17,7 @@ const ReturnOrdersPage = () => {
                     <ReturnOrders active={22}/>
                 </div>
             </div>
+            <DronesFooter/>
         </div>
     );
 }

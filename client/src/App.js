@@ -38,9 +38,8 @@ import { EventsConfigPage } from './Pages/Site-Config/EventsConfigPage.jsx';
 import { About } from './Pages/AboutUs/About.jsx';
 import Loader from './utils/Loader.jsx';
 import { CategoriesConfigPage } from './Pages/Site-Config/CategoriesConfigPage.jsx';
-import { MiscellaneousConfigPage } from './Pages/Site-Config/MiscellaneousConfigPage.jsx';
-
-
+import { socketId } from './components/Headers/socket.js';
+import { useSelector } from 'react-redux';
 
 
 const DronesHomepage = lazy(() => import('./components/DronesHomepage/DronesHomepage.jsx'));
@@ -107,6 +106,7 @@ const ContactDetailsPage = lazy(() => import('./Pages/Profile/ContactDetailsPage
 const RefundPage = lazy(() => import('./Pages/Profile/RefundPage.jsx'));
 const UserSignUpPage = lazy(() => import('./Pages/Auth/UserSignUpPage.jsx'));
 const ActivationPage = lazy(() => import('./Pages/ActivationPage.jsx'));
+const MiscellaneousConfigPage = lazy(() => import('./Pages/Site-Config/MiscellaneousConfigPage.jsx'));
 
 
 // register Swiper custom elements
@@ -125,9 +125,49 @@ const App = () => {
     Store.dispatch(getAllProducts());
     Store.dispatch(getAllEvents());
     Store.dispatch(getAllSiteConfig());
-    Store.dispatch(getAllCategories())
+    Store.dispatch(getAllCategories());
     getStripeApikey();
   }, []);
+
+  // eslint-disable-next-line no-unused-vars
+  const [arrivalMessage, setArrivalMessage] = useState(null);
+  const { user } = useSelector((state) => state.user);
+  // eslint-disable-next-line no-unused-vars
+  const [onlineUsers, setOnlineUsers] = useState([]);
+
+  useEffect(() => {
+    socketId.on("getMessage", (data) => {
+      setArrivalMessage({
+        sender: data.senderId,
+        text: data.text,
+        createdAt: Date.now(),
+      });
+    });
+  }, []);
+
+  useEffect(() => {
+    socketId.on('messageSeen', (data) => {
+      console.log("first")
+    })
+  }, [])
+
+  useEffect(() => {
+    if (user) {
+      const sellerId = user?._id;
+      socketId.emit("addUser", sellerId);
+      socketId.on("getUsers", (data) => {
+        setOnlineUsers(data);
+      });
+    }
+  }, [user]);
+
+  // useEffect(() => {
+  //   let data = {
+  //     userId: user?._id,
+  //     messageLength: 0
+  //   }
+  //   arrivalMessage && toast.success("got")
+  // }, [arrivalMessage, user]);
 
 
   return (
@@ -151,7 +191,7 @@ const App = () => {
       )}
 
       <Suspense fallback={<Loader />}>
-        <Routes >
+        <Routes>
           <Route path="/" exact element={<DronesHomepage />} />
           <Route path="/products" exact element={<AllProductsPage />} />
           <Route path="/products-by-category/search" element={<AllProductsByCategories />} />

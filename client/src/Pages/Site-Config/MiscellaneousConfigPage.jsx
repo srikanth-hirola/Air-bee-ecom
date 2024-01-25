@@ -2,8 +2,9 @@ import React from 'react'
 import DashboardHeader from '../../components/Headers/DashboardHeader';
 import DashboardSideBar from '../../components/ShopComponents/Layout/DashboardSideBar';
 import { MiscellaneousConfig } from '../../components/ShopComponents/SiteConfig/Miscellaneous/MiscellaneousConfig';
+import DronesFooter from '../../components/DronesHomepage/DronesFooter';
 
-export const MiscellaneousConfigPage = () => {
+const MiscellaneousConfigPage = () => {
     return (
         <div>
             <DashboardHeader />
@@ -16,6 +17,9 @@ export const MiscellaneousConfigPage = () => {
                 </div>
                 
             </div>
+            <DronesFooter/>
         </div>
     );
 }
+
+export default MiscellaneousConfigPage

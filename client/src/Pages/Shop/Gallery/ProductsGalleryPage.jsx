@@ -2,6 +2,7 @@ import React from 'react'
 import DashboardHeader from '../../../components/Headers/DashboardHeader'
 import DashboardSideBar from '../../../components/ShopComponents/Layout/DashboardSideBar';
 import { ProductGallery } from '../../../components/ShopComponents/Gallery/ProductGallery'
+import DronesFooter from '../../../components/DronesHomepage/DronesFooter';
 
 
 export const ProductsGalleryPage = () => {
@@ -16,6 +17,7 @@ export const ProductsGalleryPage = () => {
                     <ProductGallery active={9}/>
                 
             </div>
+            <DronesFooter/>
         </div>
     )
 }

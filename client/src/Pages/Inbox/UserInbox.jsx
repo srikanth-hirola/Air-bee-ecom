@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useSelector } from "react-redux";
-import socketIO from "socket.io-client";
+import { useDispatch, useSelector } from "react-redux";
+
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineArrowRight, AiOutlineSend } from "react-icons/ai";
@@ -10,15 +10,19 @@ import en from 'javascript-time-ago/locale/en'
 import { server } from "../../server";
 import DronesHeader from "../../components/Headers/DronesHeader";
 import { StyleConfig } from "../../utils/StyleConfig";
+import DronesFooter from "../../components/DronesHomepage/DronesFooter";
+import toast from "react-hot-toast";
+import { socketId } from "../../components/Headers/socket";
+import { removeViewedMessage } from "../../redux/actions/socket";
 
 TimeAgo.addLocale(en)
 
 const timeAgo = new TimeAgo('en-US')
 // const ENDPOINT = "https://socket-ecommerce-tu68.onrender.com/";
-const ENDPOINT = 'http://localhost:4000/';
+// const ENDPOINT = 'http://localhost:4000/';
 
 
-const socketId = socketIO(ENDPOINT, { transports: ["websocket"] });
+// const socketId = socketIO(ENDPOINT, { transports: ["websocket"] });
 
 const UserInbox = () => {
     const { user, loading } = useSelector((state) => state.user);
@@ -32,6 +36,16 @@ const UserInbox = () => {
     const [activeStatus, setActiveStatus] = useState(false);
     const [open, setOpen] = useState(false);
     const scrollRef = useRef(null);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        if (user) {
+            let data = {
+                userId: user?._id
+            }
+            dispatch(removeViewedMessage(data))
+        }
+    }, [dispatch, user])
 
     useEffect(() => {
         socketId.on("getMessage", (data) => {
@@ -47,6 +61,7 @@ const UserInbox = () => {
         arrivalMessage &&
             currentChat?.members.includes(arrivalMessage.sender) &&
             setMessages((prev) => [...prev, arrivalMessage]);
+
     }, [arrivalMessage, currentChat]);
 
     useEffect(() => {
@@ -58,7 +73,6 @@ const UserInbox = () => {
                         withCredentials: true,
                     }
                 );
-
                 setConversations(resonse.data.conversations);
             } catch (error) {
                 // console.log(error);
@@ -66,6 +80,8 @@ const UserInbox = () => {
         };
         getConversation();
     }, [user, messages]);
+
+
 
     useEffect(() => {
         if (user) {
@@ -98,6 +114,46 @@ const UserInbox = () => {
         };
         getMessage();
     }, [currentChat]);
+
+    useEffect(() => {
+        let sellerID = "64b0eb972e1cee5cac61bbbe";
+        handleApproval(user?._id, sellerID,)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [user])
+
+    const handleApproval = async (id, sellerID) => {
+
+        // const receiverId = user._id;
+        const groupTitle = sellerID + user._id;
+        const userId = user._id;
+        const sellerId = sellerID;
+
+        axios
+            .post(`${server}/conversation/create-new-conversation`, {
+                groupTitle,
+                userId,
+                sellerId,
+            })
+            .then(async (res) => {
+                try {
+                    const resonse = await axios.get(
+                        `${server}/conversation/get-all-conversation-user/${user?._id}`,
+                        {
+                            withCredentials: true,
+                        }
+                    );
+
+                    console.log(resonse.data.conversations)();
+                } catch (error) {
+                    // console.log(error);
+                }
+
+
+            })
+            .catch((error) => {
+                toast.error(error.response.data.message);
+            });
+    };
 
     // create new message
     const sendMessageHandler = async (e) => {
@@ -258,6 +314,7 @@ const UserInbox = () => {
                     />
                 )}
             </div>
+            <DronesFooter/>
         </>
     );
 };
@@ -324,9 +381,8 @@ const MessageList = ({
                 <h1 className="text-[18px]">{user?.name}</h1>
                 <p className="text-[16px] text-[#000c]">
                     {!loading && data?.lastMessageId !== userData?._id
-                        ? "You:"
-                        : userData?.name.split(" ")[0] + ": "}{" "}
-                    {data?.lastMessage}
+                        ? data?.lastMessage && "You:"
+                        : data?.lastMessage ? userData?.name.split(" ")[0] + ": " : "Hi This is AirBee! feel free to ask your queries"}{" "}{data?.lastMessage}
                 </p>
             </div>
         </div>
@@ -348,7 +404,7 @@ const SellerInbox = ({
     const styles = StyleConfig();
 
     return (
-        <div className="w-[full] min-h-full flex flex-col justify-between p-5">
+        <div className="w-full h-[85vh] flex flex-col justify-between p-5 overflow-scroll">
             {/* message header */}
             <div className="w-full flex p-3 items-center justify-between bg-slate-200">
                 <div className="flex">
@@ -359,7 +415,7 @@ const SellerInbox = ({
                     />
                     <div className="pl-3">
                         <h1 className="text-[18px] font-[600]">{userData?.name}</h1>
-                        <h1>{activeStatus ? "Active Now" : ""}</h1>
+                        <h6>{activeStatus ? "Active Now" : ""}</h6>
                     </div>
                 </div>
                 <AiOutlineArrowRight

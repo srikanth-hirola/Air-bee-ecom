@@ -5,6 +5,7 @@ import { server } from '../../../server';
 import DashboardHeader from '../../../components/Headers/DashboardHeader';
 import DashboardSideBar from '../../../components/ShopComponents/Layout/DashboardSideBar';
 import ProductEdit from '../../../components/ShopComponents/CreateProduct/ProductEdit';
+import DronesFooter from '../../../components/DronesHomepage/DronesFooter';
 
 
 const ShopDraftProductEdit = () => {
@@ -82,11 +83,11 @@ const ShopDraftProductEdit = () => {
 
                     // eslint-disable-next-line array-callback-return
                     result.data.categories.map((val) => {
-                        if (val.name === result.data.products[0].category) {
+                        if (val._id === result.data.products[0].category) {
                             setSubCat(val.subcategories);
                             // eslint-disable-next-line array-callback-return
                             val.subcategories.map((val1) => {
-                                if (val1.name === result.data.products[0].subCatgory) {
+                                if (val1._id === result.data.products[0].subCatgory) {
                                     setSubSubCat(val1.subSubcategories);
                                 }
                             });
@@ -107,7 +108,8 @@ const ShopDraftProductEdit = () => {
         setFormData({ ...formData, category: e.target.value });
         // eslint-disable-next-line array-callback-return
         categories.map((val) => {
-            if (val.name === e.target.value) {
+            if (val._id === e.target.value) {
+
                 setSubCat(val.subcategories);
             }
         });
@@ -121,7 +123,8 @@ const ShopDraftProductEdit = () => {
         setFormData({ ...formData, subCatgory: e.target.value });
         // eslint-disable-next-line array-callback-return
         subCat.map((val) => {
-            if (val.name === e.target.value) {
+            if (val._id === e.target.value) {
+                console.log(val)
                 setSubSubCat(val.subSubcategories);
             }
         });
@@ -207,6 +210,7 @@ const ShopDraftProductEdit = () => {
                     setProductDetails={setProductDetails}
                 /> */}
             </div>
+            <DronesFooter/>
         </div>
     );
 };

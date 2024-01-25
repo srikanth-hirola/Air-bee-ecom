@@ -87,7 +87,6 @@ export const ProductTapContent = ({ data }) => {
                                                     <h6>Unishop Global Export:</h6>
                                                     <p>  3 - 4 days, $39.00</p>
                                                 </div>
-
                                             </div>
                                         </div>
                                     </div>
@@ -111,28 +110,28 @@ export const ProductTapContent = ({ data }) => {
                                         } */}
 
                                         <table class="table">
-                                            
+
                                             <tbody>
                                                 {data?.assemblyInstruction &&
-                                                     <tr className="flex h-fit border-1 border-gray-300 mb-0">
+                                                    <tr className="flex h-fit border-1 border-gray-300 mb-0">
                                                         <td className='px-2 py-2 w-[400px] bg-secondary-subtle'>Assembly Instruction</td>
                                                         <td className='bg-white py-2 px-2 h-full w-full'>{data?.assemblyInstruction}</td>
                                                     </tr>
                                                 }
                                                 {data?.constructionType &&
-                                                     <tr className="flex h-fit border-1 border-gray-300 mb-0">
+                                                    <tr className="flex h-fit border-1 border-gray-300 mb-0">
                                                         <td className='px-2 py-2 w-[400px] bg-secondary-subtle'>Construction Type</td>
                                                         <td className='bg-white py-2 px-2 h-full w-full'>{data?.constructionType}</td>
                                                     </tr>
                                                 }
                                                 {data?.hsnCode &&
-                                                     <tr className="flex h-fit border-1 border-gray-300 mb-0">
+                                                    <tr className="flex h-fit border-1 border-gray-300 mb-0">
                                                         <td className='px-2 py-2 w-[400px] bg-secondary-subtle'>HSN Code</td>
                                                         <td className='bg-white py-2 px-2 h-full w-full'>{data?.hsnCode}</td>
                                                     </tr>
                                                 }
                                                 {data?.itemCondition &&
-                                                     <tr className="flex h-fit border-1 border-gray-300 mb-0">
+                                                    <tr className="flex h-fit border-1 border-gray-300 mb-0">
                                                         <td className='px-2 py-2 w-[400px] bg-secondary-subtle'>Item Condition</td>
                                                         <td className='bg-white py-2 px-2 h-full w-full'>{data?.itemCondition}</td>
                                                     </tr>
@@ -140,144 +139,144 @@ export const ProductTapContent = ({ data }) => {
                                                 {data?.itemWeight>=0 &&
                                                      <tr className="flex h-fit border-1 border-gray-300 mb-0">
                                                         <td className='px-2 py-2 w-[400px] bg-secondary-subtle'>Item Weight</td>
-                                                        
+
                                                         <td className='bg-white py-2 px-2 h-full w-full'>{data?.itemWeight + data?.itemWeightUnit}</td>
                                                     </tr>
                                                 }
                                                 {data?.itemHeight &&
-                                                     <tr className="flex h-fit border-1 border-gray-300 mb-0">
+                                                    <tr className="flex h-fit border-1 border-gray-300 mb-0">
                                                         <td className='px-2 py-2 w-[400px] bg-secondary-subtle'>Item Height</td>
                                                         <td className='bg-white py-2 px-2 h-full w-full'>{data?.itemHeight + data?.itemHeightUnit}</td>
                                                     </tr>
                                                 }
                                                 {data?.itemLength &&
-                                                     <tr className="flex h-fit border-1 border-gray-300 mb-0">
+                                                    <tr className="flex h-fit border-1 border-gray-300 mb-0">
                                                         <td className='px-2 py-2 w-[400px] bg-secondary-subtle'>Item Length</td>
                                                         <td className='bg-white py-2 px-2 h-full w-full'>{data?.itemLength + data?.itemLengthUnit}</td>
                                                     </tr>
                                                 }
                                                 {data?.itemWidth &&
-                                                     <tr className="flex h-fit border-1 border-gray-300 mb-0">
+                                                    <tr className="flex h-fit border-1 border-gray-300 mb-0">
                                                         <td className='px-2 py-2 w-[400px] bg-secondary-subtle'>Item Width</td>
                                                         <td className='bg-white py-2 px-2 h-full w-full'>{data?.itemWidth + data?.itemWidthUnit}</td>
                                                     </tr>
                                                 }
                                                 {data?.packageHeight &&
-                                                     <tr className="flex h-fit border-1 border-gray-300 mb-0">
+                                                    <tr className="flex h-fit border-1 border-gray-300 mb-0">
                                                         <td className='px-2 py-2 w-[400px] bg-secondary-subtle'>Package Height</td>
                                                         <td className='bg-white py-2 px-2 h-full w-full'>{data?.packageHeight + data?.packageHeightUnit}</td>
                                                     </tr>
                                                 }
                                                 {data?.packageLength &&
-                                                     <tr className="flex h-fit border-1 border-gray-300 mb-0">
+                                                    <tr className="flex h-fit border-1 border-gray-300 mb-0">
                                                         <td className='px-2 py-2 w-[400px] bg-secondary-subtle'>Package Length</td>
                                                         <td className='bg-white py-2 px-2 h-full w-full'>{data?.packageLength + data?.packageLengthhUnit}</td>
                                                     </tr>
                                                 }
                                                 {data?.packageWeight &&
-                                                     <tr className="flex h-fit border-1 border-gray-300 mb-0">
+                                                    <tr className="flex h-fit border-1 border-gray-300 mb-0">
                                                         <td className='px-2 py-2 w-[400px] bg-secondary-subtle'>Package Weight</td>
                                                         <td className='bg-white py-2 px-2 h-full w-full'>{data?.packageWeight + data?.packageWeightUnit}</td>
                                                     </tr>
                                                 }
                                                 {data?.packageWidth &&
-                                                     <tr className="flex h-fit border-1 border-gray-300 mb-0">
+                                                    <tr className="flex h-fit border-1 border-gray-300 mb-0">
                                                         <td className='px-2 py-2 w-[400px] bg-secondary-subtle'>Package Width</td>
                                                         <td className='bg-white py-2 px-2 h-full w-full'>{data?.packageWidth + data?.packageWidthUnit}</td>
                                                     </tr>
                                                 }
                                                 {data?.manufacturer &&
-                                                     <tr className="flex h-fit border-1 border-gray-300 mb-0">
+                                                    <tr className="flex h-fit border-1 border-gray-300 mb-0">
                                                         <td className='px-2 py-2 w-[400px] bg-secondary-subtle'>manufacturer</td>
                                                         <td className='bg-white py-2 px-2 h-full w-full'>{data?.manufacturer}</td>
                                                     </tr>
                                                 }
                                                 {data?.materialType &&
-                                                     <tr className="flex h-fit border-1 border-gray-300 mb-0">
+                                                    <tr className="flex h-fit border-1 border-gray-300 mb-0">
                                                         <td className='px-2 py-2 w-[400px] bg-secondary-subtle'>Material Type</td>
                                                         <td className='bg-white py-2 px-2 h-full w-full'>{data?.materialType}</td>
                                                     </tr>
                                                 }
                                                 {data?.maxOrderQuantity &&
-                                                     <tr className="flex h-fit border-1 border-gray-300 mb-0">
+                                                    <tr className="flex h-fit border-1 border-gray-300 mb-0">
                                                         <td className='px-2 py-2 w-[400px] bg-secondary-subtle'>Max Order Quantity</td>
                                                         <td className='bg-white py-2 px-2 h-full w-full'>{data?.maxOrderQuantity}</td>
                                                     </tr>
                                                 }
                                                 {data?.model &&
-                                                     <tr className="flex h-fit border-1 border-gray-300 mb-0">
+                                                    <tr className="flex h-fit border-1 border-gray-300 mb-0">
                                                         <td className='px-2 py-2 w-[400px] bg-secondary-subtle'>Model</td>
                                                         <td className='bg-white py-2 px-2 h-full w-full'>{data?.model}</td>
                                                     </tr>
                                                 }
                                                 {data?.noItem &&
-                                                     <tr className="flex h-fit border-1 border-gray-300 mb-0">
+                                                    <tr className="flex h-fit border-1 border-gray-300 mb-0">
                                                         <td className='px-2 py-2 w-[400px] bg-secondary-subtle'>No Item</td>
                                                         <td className='bg-white py-2 px-2 h-full w-full'>{data?.noItem}</td>
                                                     </tr>
                                                 }
                                                 {data?.noOfPieces &&
-                                                     <tr className="flex h-fit border-1 border-gray-300 mb-0">
+                                                    <tr className="flex h-fit border-1 border-gray-300 mb-0">
                                                         <td className='px-2 py-2 w-[400px] bg-secondary-subtle'>No Of Pieces</td>
                                                         <td className='bg-white py-2 px-2 h-full w-full'>{data?.noOfPieces}</td>
                                                     </tr>
                                                 }
                                                 {data?.productCareInstruction &&
-                                                     <tr className="flex h-fit border-1 border-gray-300 mb-0">
+                                                    <tr className="flex h-fit border-1 border-gray-300 mb-0">
                                                         <td className='px-2 py-2 w-[400px] bg-secondary-subtle'>Product Care Instruction</td>
                                                         <td className='bg-white py-2 px-2 h-full w-full'>{data?.productCareInstruction}</td>
                                                     </tr>
                                                 }
                                                 {data?.productId &&
-                                                     <tr className="flex h-fit border-1 border-gray-300 mb-0">
+                                                    <tr className="flex h-fit border-1 border-gray-300 mb-0">
                                                         <td className='px-2 py-2 w-[400px] bg-secondary-subtle'>Product Id</td>
                                                         <td className='bg-white py-2 px-2 h-full w-full'>{data?.productId}</td>
                                                     </tr>
                                                 }
                                                 {data?.productTaxCode &&
-                                                     <tr className="flex h-fit border-1 border-gray-300 mb-0">
+                                                    <tr className="flex h-fit border-1 border-gray-300 mb-0">
                                                         <td className='px-2 py-2 w-[400px] bg-secondary-subtle'>Product TaxCode</td>
                                                         <td className='bg-white py-2 px-2 h-full w-full'>{data?.productTaxCode}</td>
                                                     </tr>
                                                 }
                                                 {data?.safetyWarning &&
-                                                     <tr className="flex h-fit border-1 border-gray-300 mb-0">
+                                                    <tr className="flex h-fit border-1 border-gray-300 mb-0">
                                                         <td className='px-2 py-2 w-[400px] bg-secondary-subtle'>Safety Warning</td>
                                                         <td className='bg-white py-2 px-2 h-full w-full'>{data?.safetyWarning}</td>
                                                     </tr>
                                                 }
                                                 {data?.shape &&
-                                                     <tr className="flex h-fit border-1 border-gray-300 mb-0">
+                                                    <tr className="flex h-fit border-1 border-gray-300 mb-0">
                                                         <td className='px-2 py-2 w-[400px] bg-secondary-subtle'>Shape</td>
                                                         <td className='bg-white py-2 px-2 h-full w-full'>{data?.shape}</td>
                                                     </tr>
                                                 }
                                                 {data?.size &&
-                                                     <tr className="flex h-fit border-1 border-gray-300 mb-0">
+                                                    <tr className="flex h-fit border-1 border-gray-300 mb-0">
                                                         <td className='px-2 py-2 w-[400px] bg-secondary-subtle'>Size</td>
                                                         <td className='bg-white py-2 px-2 h-full w-full'>{data?.size}</td>
                                                     </tr>
                                                 }
-                                                {data?.sold_out>=0 &&
-                                                     <tr className="flex h-fit border-1 border-gray-300 mb-0">
+                                                {data?.sold_out >= 0 &&
+                                                    <tr className="flex h-fit border-1 border-gray-300 mb-0">
                                                         <td className='px-2 py-2 w-[400px] bg-secondary-subtle'>Sold Out</td>
                                                         <td className='bg-white py-2 px-2 h-full w-full'>{data?.sold_out}</td>
                                                     </tr>
                                                 }
                                                 {data?.stock &&
-                                                     <tr className="flex h-fit border-1 border-gray-300 mb-0">
+                                                    <tr className="flex h-fit border-1 border-gray-300 mb-0">
                                                         <td className='px-2 py-2 w-[400px] bg-secondary-subtle'>Stock</td>
                                                         <td className='bg-white py-2 px-2 h-full w-full'>{data?.stock}</td>
                                                     </tr>
                                                 }
                                                 {data?.taxPercent &&
-                                                     <tr className="flex h-fit border-1 border-gray-300 mb-0">
+                                                    <tr className="flex h-fit border-1 border-gray-300 mb-0">
                                                         <td className='px-2 py-2 w-[400px] bg-secondary-subtle'>Tax Percent</td>
                                                         <td className='bg-white py-2 px-2 h-full w-full'>{data?.taxPercent}</td>
                                                     </tr>
                                                 }
                                                 {data?.warrentyDescription &&
-                                                     <tr className="flex h-fit border-1 border-gray-300 mb-0">
+                                                    <tr className="flex h-fit border-1 border-gray-300 mb-0">
                                                         <td className='px-2 py-2 w-[400px] bg-secondary-subtle'>Warrenty Description</td>
                                                         <td className='bg-white py-2 px-2 h-full w-full'>{data?.warrentyDescription}</td>
                                                     </tr>

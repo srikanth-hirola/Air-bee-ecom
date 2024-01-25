@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import { DataGrid } from '@mui/x-data-grid';
 import { getAllOrdersOfShop } from '../../../redux/actions/order'
 import { getAllProductsShop } from "../../../redux/actions/product";
+import useGetCurrencyConversion from "../../../hooks/Site-config/useGetCurrencyConversion";
 
 
 const DashboardHero = () => {
@@ -15,6 +16,7 @@ const DashboardHero = () => {
     const { orders } = useSelector((state) => state.order);
     const { seller } = useSelector((state) => state.seller);
     const { products } = useSelector((state) => state.products);
+    const { ConvertCurrency } = useGetCurrencyConversion();
 
     const styles = StyleConfig();
 
@@ -78,7 +80,7 @@ const DashboardHero = () => {
         row.push({
             id: item?._id,
             itemsQty: item.cart.reduce((acc, item) => acc + item?.qty, 0),
-            total: `${styles?.currency?.Symbol}` + item?.totalPrice,
+            total: `${styles?.currency?.Symbol}` + ConvertCurrency(item?.totalPrice),
             status: item?.status,
         });
     });
@@ -97,11 +99,10 @@ const DashboardHero = () => {
                         <h3
                             className={`${styles.productTitle} !text-[18px] leading-5 !font-[400] text-[#00000085]`}
                         >
-                            Account Balance{" "}
-                            <span className="text-[16px]">(with 10% service charge)</span>
+                            Total Orders Amount
                         </h3>
                     </div>
-                    <h5 className="pt-2 pl-[36px] text-[22px] font-[500]">{styles?.currency?.Symbol}&nbsp;{availableBalance}</h5>
+                    <h5 className="pt-2 pl-[36px] text-[22px] font-[500]">{styles?.currency?.Symbol}&nbsp;{ConvertCurrency(availableBalance)}</h5>
                     {/* <Link to="/dashboard-withdraw-money">
                         <h5 className="pt-4 pl-2 " style={{ color: styles?.mainColor }}>Withdraw Money</h5>
                     </Link> */}
