@@ -104,7 +104,7 @@ const WithdrawMoney = () => {
     const availableBalance = seller?.availableBalance.toFixed(2);
 
     return (
-        <div className="w-full h-[90vh] p-8">
+        <div className="w-full h-[90vh] p-8 ">
             <div className="w-full bg-white h-full rounded flex items-center justify-center flex-col outer1-div">
                 <h5 className="text-[20px] pb-4">
                     Available Balance: {styles?.currency?.Symbol}&nbsp;{availableBalance}

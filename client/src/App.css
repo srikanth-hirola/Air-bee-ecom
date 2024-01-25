@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 .App {
   text-align: center;
 }
@@ -35,10 +36,12 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -84,6 +87,7 @@ body {
   100% {
     transform: translateX(100%);
   }
+
   0% {
     transform: translateX(0);
   }
@@ -97,6 +101,7 @@ body {
   from {
     transform: translateX(100%);
   }
+
   to {
     transform: translateX(0);
   }
@@ -110,6 +115,7 @@ body {
   100% {
     transform: translateX(0);
   }
+
   0% {
     transform: translateX(100%);
   }
@@ -125,6 +131,7 @@ body {
   100% {
     transform: translateX(0);
   }
+
   0% {
     transform: translateX(100%);
   }
@@ -138,6 +145,7 @@ body {
   from {
     transform: translateX(-100%);
   }
+
   to {
     transform: translateX(0%);
   }
@@ -151,6 +159,7 @@ body {
   from {
     transform: translateY(-100%);
   }
+
   to {
     transform: translateY(0%);
   }
@@ -164,6 +173,7 @@ body {
   from {
     transform: translateY(200%);
   }
+
   to {
     transform: translateY(0%);
   }
@@ -177,6 +187,7 @@ body {
   from {
     transform: translateX(-100%);
   }
+
   to {
     transform: translateX(0%);
   }
@@ -190,6 +201,7 @@ body {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-100%);
   }
@@ -203,6 +215,7 @@ body {
   0% {
     transform: translateX(100%);
   }
+
   100% {
     transform: translateX(0%);
   }
@@ -224,8 +237,7 @@ body {
   font-size: 14px;
 }
 
-:where(.css-dev-only-do-not-override-2q8sxy).ant-input-number
-  .ant-input-number-input {
+:where(.css-dev-only-do-not-override-2q8sxy).ant-input-number .ant-input-number-input {
   color: white;
 }
 
@@ -311,7 +323,7 @@ h4 {
   color: #f30;
 }
 
-.ps-product .ps-product__content > p {
+.ps-product .ps-product__content>p {
   color: #000;
 }
 
@@ -381,7 +393,7 @@ h4 {
   margin-right: 70px;
 }
 
-.ps-deal-of-day .ps-section__header > a {
+.ps-deal-of-day .ps-section__header>a {
   display: inline-block;
   padding-bottom: 2px;
   color: #000;
@@ -912,6 +924,7 @@ button.search-sug:hover {
   height: 100vh;
   overflow-y: scroll;
 }
+
 .cat-filter-div {
   width: 100% !important;
   /* margin-inline: auto; */
@@ -1094,6 +1107,7 @@ button.filter-btn {
 .footer-border1 {
   border-bottom: 1px solid gray;
 }
+
 .footer-border2 {
   border-left: 1px solid gray;
 }
@@ -1101,6 +1115,11 @@ button.filter-btn {
 .draft-create-btn {
   display: flex;
   justify-content: space-between;
+}
+
+.draft-create-btn button {
+  background-color: #06c;
+  color: white;
 }
 
 .cat-btn1,
@@ -1831,6 +1850,7 @@ button.attribute-btn {
 .track-status {
   display: flex;
   justify-content: space-between;
+  overflow-x: auto;
 }
 
 .track-status p {
@@ -2070,13 +2090,13 @@ input.searchTest {
   transition: transform 0.3s ease;
 }
 
-.toggle-switch input[type="checkbox"]:checked + .switch::before {
+.toggle-switch input[type="checkbox"]:checked+.switch::before {
   transform: translateX(25px);
   /* background-color: #6699cc; */
   background-color: #fff;
 }
 
-.toggle-switch input[type="checkbox"]:checked + .switch {
+.toggle-switch input[type="checkbox"]:checked+.switch {
   /* background-color: #336699; */
   background-color: #1adb47;
 }
@@ -2095,18 +2115,22 @@ input.searchTest {
   margin: 25px 0px 0px 25px;
   gap: 20px;
 }
+
 .forgetOtp {
   display: flex;
   justify-content: center;
 }
+
 .cat-shadow {
   /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
+
 .product-card-shadow {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
+
 /* ----------------------------------------------------------------------------media queries */
 /* bannerLayout */
 @media screen and (min-width: 720px) {
@@ -2374,6 +2398,7 @@ input.searchTest {
 }
 
 @media screen and (max-width: 1199px) {
+
   .ps-section__right,
   .ps-section__left {
     display: block;
@@ -2382,6 +2407,7 @@ input.searchTest {
 
 /* homepage=categories */
 @media screen and (min-width: 800px) and (max-width: 1680px) {
+
   .ps-block--site-features {
     padding: 30px;
   }
@@ -2554,6 +2580,15 @@ input.searchTest {
 }
 
 @media screen and (max-width: 520px) {
+  .dashboard-side-bar-res {
+    width: 135px !important;
+  }
+
+  .dashboard-side-bar-data-view .outer1-div {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
   .filter-div {
     width: 45%;
   }
@@ -2585,101 +2620,235 @@ input.searchTest {
   }
 }
 
+@media screen and (min-width: 1100px) {
+  .dashboard-side-bar-data-view {
+    overflow-x: hidden;
+  }
+}
+
 @media screen and (max-width: 800px) {
+  .photo-galary-section-user .photos-page{
+    padding:  8px 10px !important;
+   }
+  .catagorie-page-main-text label,
+  .catagorie-page-display label {
+    font-size: 14px;
+  }
+
+  .catagorie-page-display .label-image {
+    margin: 0 !important;
+
+  }
+
+  .side-div ::-webkit-scrollbar {
+    display: none;
+  }
+
+  .shop-stock-page-details .accordion-item:last-of-type .accordion-button.collapsed {
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  .shop-stock-page-details h2 {
+    font-size: 16px;
+  }
+
+  .addCat .justify-between button {
+    font-size: 12px;
+  }
+
+  .dashboard-message-box-user h5 {
+    font-size: 14px;
+  }
+
+  .create-coupon-code-button {
+    font-size: 14px;
+  }
+
+  .dashborad-main-page-responsive .justify-between .leading-5 {
+    font-size: 14px;
+  }
+
+  .dashborad-main-page-responsive .justify-between .leading-5 span {
+    font-size: 13px;
+  }
+
+  .dashborad-main-page-responsive .justify-between h5 {
+    font-size: 18px;
+    padding: 0;
+  }
+
+  .dashboard-side-bar-res {
+    width: 185px;
+  }
+
+  .dashboard-side-bar-res .side-div .accordion .collapsed,.dashboard-side-bar-res .side-div .accordion button.accordion-button {
+    padding: 8px 5px;
+    font-size: 15px;
+  }
+.dashboard-main-control-image{
+  padding: 8px !important;
+}
+.dashboard-main-control-image1{
+  padding: 5px 0 !important;
+}
+.side-div .dashboard-main-control-image1 h5{
+  font-size: 14px !important;
+} 
+  .dashboard-side-bar-data-view .outer1-div {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .side-div .accordion-body{
+    padding: 0 5px !important;
+  }
+  .side-div .accordion-body .accordian-child a{
+    font-size: 12px;
+  }
+  .w-full.flex.items-center.accordian{
+    padding-inline: 3px;
+  }
+  .accordion .accordian-child{
+    height: 35px !important;
+  }
+  .accordion-button {
+    font-size: 12px;
+  }
+
+  .dashboard-side-bar-data-view {
+    overflow-x: hidden;
+  }
+
+  .dashboard-side-bar-data-view ::-webkit-scrollbar {
+    display: none;
+  }
+
   .hero-layout7-mq {
     margin-top: 50px;
   }
 }
 
-
 /* New */
-.side-div .accordian-child:hover{
- 
-
-}
-.side-div .accordion-collapse.collapse.show .accordian-child h5{
-  /* padding: 10px 0px 10px 35px; */
+.side-div .accordion-collapse.collapse.show .accordian-child h5 {
   width: 100%;
   height: 45px;
-  /* display: flex;
-  align-items: center; */
 }
+
 .accordian-child {
   height: 45px;
-  /* background-color: #06c; */
-  color: white;
-  /* padding: 5px 25px; */
-}
-.side-div .accordion-collapse.collapse.show .accordian-child a{
-  color: #282c34;
-}
-.side-div .accordion-collapse.collapse.show .accordian-child a:hover{
-  background-color: #06c;
- color: white;
-/* line-height: 45px; */
- /* align-items: center; */
-}
-.side-div .accordion-body{
- padding: 0 25px;
- gap: 0;
-}
-.css-pdct74-MuiTablePagination-selectLabel{
-  margin: 0;
-}
-.css-levciy-MuiTablePagination-displayedRows{
-  margin: 0;
-}
-.outer1-div .hover-catagoriesbuttons button:hover{
- background-color: darkblue;
-}
-.categoryInput button{
-  background-color: #06c;
   color: white;
 }
-.side-div .accordion-item{
- border: none;
+
+.side-div .accordion-collapse.collapse.show .accordian-child a:hover {
+  background-color: #06c;
+  color: white !important;
+  /* line-height: 45px; */
+  /* align-items: center; */
 }
-.login-shipment-page{
+
+.side-div .accordion-body {
+  padding: 0 25px;
+  gap: 0;
+}
+
+.css-pdct74-MuiTablePagination-selectLabel {
+  margin: 0;
+}
+
+.css-levciy-MuiTablePagination-displayedRows {
+  margin: 0;
+}
+
+.outer1-div .hover-catagoriesbuttons button:hover {
+  background-color: darkblue;
+}
+
+.categoryInput button {
+  background-color: #06c;
+  color: white;
+}
+
+.side-div .accordion-item {
+  border: none;
+}
+
+.login-shipment-page {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-.dashboard-coupons-overflow{
+
+.dashboard-coupons-overflow {
   height: 95%;
   overflow-y: auto;
 }
-.addCat .justify-between button{
+
+.addCat .justify-between button {
   background-color: #06c;
   color: white;
 }
-.track-status p:hover{
+
+.track-status p:hover {
   background-color: #06c;
   padding: 10px 30px;
   color: white !important;
 }
-.css-ptkaw2-MuiDataGrid-root .MuiDataGrid-columnHeader--moving{
-  background-color: white !important;
-}
-.css-ptkaw2-MuiDataGrid-root .MuiDataGrid-withBorderColo{
+
+.css-ptkaw2-MuiDataGrid-root .MuiDataGrid-columnHeader--moving {
   background-color: white !important;
 }
 
-/* .MuiDataGrid-cell.MuiDataGrid-cell--textLeft.MuiDataGrid-withBorderColor{
-  min-height: 80px !important;
-  max-height: 80px !important;
+.css-ptkaw2-MuiDataGrid-root .MuiDataGrid-withBorderColo {
+  background-color: white !important;
 }
-.MuiDataGrid-cell--withRenderer.MuiDataGrid-cell.MuiDataGrid-cell--textRight.MuiDataGrid-withBorderColor{
-  min-height: 80px !important;
-  max-height: 80px !important;
+
+
+.side-div .dashboard-main-control-image{
+  padding: 15px;
 }
-.MuiDataGrid-cell--withRenderer.MuiDataGrid-cell.MuiDataGrid-cell--textRight.MuiDataGrid-withBorderColor div{
+.side-div .dashboard-main-control-image1{
+  padding: 15px;
+}
+.side-div .dashboard-main-control-image1 h5{
+  font-size: 16px;
+} 
+.dashboard-header-page .dashboard-header-logo .logo {
+  width: 150px;
+  height: 80px;
+}
+
+.dashboard-header-page .dashboard-header-logo .logo img {
   width: 100%;
   height: 100%;
+  mix-blend-mode: darken;
 }
-.MuiDataGrid-cell--withRenderer.MuiDataGrid-cell.MuiDataGrid-cell--textRight.MuiDataGrid-withBorderColor div img{
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+
+@media screen and (min-width: 800px) and (max-width: 1100px) {
+  .dashboard-side-bar-res {
+    width: 250px !important;
+  }
+
+  .dashboard-side-bar-data-view .outer1-div {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .accordion-button {
+    font-size: 15px;
+  }
+
+  .dashboard-side-bar-data-view {
+    overflow-x: hidden;
+  }
 }
-.MuiDataGrid-cell.MuiDataGrid-cell--textRight.MuiDataGrid-withBorderColor{
-  min-height: 80px !important;
-  max-height: 80px !important;
-} */
+
+.catagorie-page-display label {
+  margin: 0 !important;
+}
+
+@media screen and (min-width: 0px) and (max-width: 350px) {
+  .dashboard-side-bar-res{
+    width: 125px !important;
+  }
+}
+.photo-galary-section-user .photos-page{
+ padding:  16px 32px ;
+}

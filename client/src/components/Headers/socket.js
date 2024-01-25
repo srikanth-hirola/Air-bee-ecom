@@ -1,5 +1,5 @@
 import socketIO from "socket.io-client";
-const ENDPOINT = 'http://localhost:4000/';
+const ENDPOINT = 'https://chat.airbee.co.in/';
 
 
 export const socketId = socketIO(ENDPOINT, { transports: ["websocket"] });

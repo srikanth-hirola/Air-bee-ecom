@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
-import { StyleConfig } from '../../../utils/StyleConfig';
+// import { StyleConfig } from '../../../utils/StyleConfig';
 import { server } from '../../../server';
 import toast from 'react-hot-toast';
 import Loader from '../../../utils/Loader';
@@ -14,7 +14,7 @@ const Couriers = () => {
     const [couriers, setCouriers] = useState([]);
     const [btnLoading, setBtnLoading] = useState(false);
 
-    const styles = StyleConfig();
+    // const styles = StyleConfig();
 
     useEffect(() => {
 
@@ -96,7 +96,7 @@ const Couriers = () => {
                                         </div>
                                     ))}
                                 </div>
-                                {!btnLoading ? <button style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor }} className=' py-2 px-4 font-semibold text-white rounded' onClick={handleSubmitCouriers}>Submit</button>
+                                {!btnLoading ? <button className='bg-[#fcb800] py-2 px-4 font-semibold text-white rounded' onClick={handleSubmitCouriers}>Submit</button>
                                     : <button className='bg-[#fcb800] py-2 px-4 font-semibold text-white rounded'>Loading...</button>
                                 }
                             </div>

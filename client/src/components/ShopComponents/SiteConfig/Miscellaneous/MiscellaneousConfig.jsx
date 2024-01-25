@@ -11,8 +11,6 @@ import CurrencyValues from './CurrencyValues';
 export const MiscellaneousConfig = () => {
     const [logoLoading, setLogoLoading] = useState(false);
     const { success, error, siteConfigData } = useSelector((state) => state.siteConfig)
-
-
     const [logo, setLogo] = useState();
     const [currency, setCurrency] = useState({});
     const [CurrencyArr, setCurrencyArr] = useState([])

@@ -5,7 +5,9 @@ import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 
-import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
+import { FreeMode, Thumbs } from 'swiper/modules';
+import {Pagination, Navigation } from 'swiper/modules';
+
 
 export default function SliderProduct({ mainImg }) {
 
@@ -29,25 +31,32 @@ export default function SliderProduct({ mainImg }) {
         ))}
       </Swiper>
       <Swiper
-        onSwiper={setThumbsSwiper}
+      onSwiper={setThumbsSwiper}
+      slidesPerView={4}
+        spaceBetween={30}
+        centeredSlides={true}
+        pagination={{
+          clickable: true,
+        }}
         style={{
           '--swiper-navigation-color': '#fff',
           '--swiper-pagination-color': '#fff',
         }}
-        spaceBetween={10}
-        slidesPerView={4}
-        freeMode={true}
         navigation={true}
         loop={true}
         watchSlidesProgress={true}
-        modules={[FreeMode, Navigation, Thumbs]}
+        FreeMode={true}
+        modules={[ Pagination, Navigation,FreeMode,Thumbs]}
         className="mySwiper"
       >
         {mainImg?.map((item, i) => (
           <SwiperSlide key={i}>
             <div className='mainImg1'>
               <img src={item?.url} alt='product' />
+              
             </div>
+            
+
           </SwiperSlide>
         ))}
       </Swiper>

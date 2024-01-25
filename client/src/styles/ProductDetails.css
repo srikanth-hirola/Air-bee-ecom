@@ -327,7 +327,7 @@
   display: flex;
 
   /* padding: 0px 16px; */
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   border-radius: 3px;
   border: 2px solid var(--Gray-100, #e4e7e9);
@@ -340,7 +340,7 @@
   color: var(--Gray-700, #475156);
   text-align: center;
   font-family: Public Sans;
-  font-size: 16px;
+  font-size: 22px;
   font-weight: 400;
   padding: 7px;
   cursor: pointer;

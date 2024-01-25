@@ -10,10 +10,10 @@ const ShopWithDrawMoneyPage = () => {
         <div>
             <DashboardHeader />
             <div className="flex items-start justify-between w-full">
-                <div className="w-[80px] 800px:w-[330px]">
-                    <DashboardSideBar active={7} />
+                <div className="w-[80px] 800px:w-[330px] dashboard-side-bar-res">
+                    <DashboardSideBar active={17} />
                 </div>
-                <WithdrawMoney />
+                <WithdrawMoney active={17}/>
             </div>
             <DronesFooter/>
         </div>

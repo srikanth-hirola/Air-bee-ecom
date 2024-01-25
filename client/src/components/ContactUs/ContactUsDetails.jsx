@@ -1,7 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { StyleConfig } from '../../utils/StyleConfig';
 
 export const ContactUsDetails = () => {
+    const styles = StyleConfig();
+
+
     return (
         <>
             <div className="breadcrump-contactUs">
@@ -53,7 +57,7 @@ export const ContactUsDetails = () => {
                                     </div>
                                     <div className='col-md-10 col-lg-10 col-sm-10 col-10'>
                                         <h6>Address:</h6>
-                                        <p>NO 7, 4th floor, 1st Cross Rd, Balaji Layout, AMCO Colony, Koti Hosahalli, Bengaluru, Karnataka 560092</p>
+                                        <p>{styles?.contactUsDetails?.address}</p>
                                     </div>
                                 </div>
                                 <div className='contact1-address row'>
@@ -62,7 +66,7 @@ export const ContactUsDetails = () => {
                                     </div>
                                     <div className='col-md-10 col-lg-10 col-sm-10 col-10'>
                                         <h6>Phone:</h6>
-                                        <p>+91 9959521721</p>
+                                        <p>{styles?.contactUsDetails?.phone}</p>
                                     </div>
                                 </div>
                                 <div className='contact1-address row'>
@@ -71,8 +75,7 @@ export const ContactUsDetails = () => {
                                     </div>
                                     <div className='col-md-10 col-lg-10 col-sm-10 col-10'>
                                         <h6>We Are Open:</h6>
-                                        <p>Monday - Saturday: 9:00 AM - 7:00 PM
-                                            Sunday: 10:00 AM - 2:00 PM</p>
+                                        <p>{styles?.contactUsDetails?.timings}</p>
                                     </div>
                                 </div>
                                 <div className='contact1-address row'>
@@ -81,7 +84,7 @@ export const ContactUsDetails = () => {
                                     </div>
                                     <div className='col-md-10 col-lg-10 col-sm-10 col-10'>
                                         <h6>Email:</h6>
-                                        <Link to="">support@airbee.co.in</Link>
+                                        <Link to={`mailto:${styles?.contactUsDetails?.email}`}>{styles?.contactUsDetails?.email}</Link>
                                     </div>
                                 </div>
                             </div>

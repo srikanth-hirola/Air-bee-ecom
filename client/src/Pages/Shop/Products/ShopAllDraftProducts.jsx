@@ -10,11 +10,11 @@ const ShopAllDraftProducts = () => {
         <div>
             <DashboardHeader />
             <div className="flex justify-between w-full">
-                <div className="w-[80px] 800px:w-[330px]">
-                    <DashboardSideBar active={2} />
+                <div className="w-[80px] 800px:w-[330px] dashboard-side-bar-res">
+                    <DashboardSideBar active={7} />
                 </div>
-                <div className="w-full justify-center flex">
-                    <AllDraftProducts />
+                <div className="w-full justify-center flex dashboard-side-bar-data-view">
+                    <AllDraftProducts active={7}/>
                 </div>
             </div>
             <DronesFooter/>

@@ -144,7 +144,8 @@ export const StyleConfig = () => {
         // fontFamilyLink: "https://fonts.googleapis.com/css2?family=ABeeZee&display=swap",
         // fontFamily: 'ABeeZee, sans-serif'
 
-        productImagesGallery: siteConfigData?.productImagesGallery
+        productImagesGallery: siteConfigData?.productImagesGallery,
+        contactUsDetails: siteConfigData?.contactUsDetails,
     };
 
     return styles;

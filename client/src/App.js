@@ -40,6 +40,7 @@ import Loader from './utils/Loader.jsx';
 import { CategoriesConfigPage } from './Pages/Site-Config/CategoriesConfigPage.jsx';
 import { socketId } from './components/Headers/socket.js';
 import { useSelector } from 'react-redux';
+import ContactConfigPage from './Pages/Site-Config/ContactConfigPage.jsx';
 
 
 const DronesHomepage = lazy(() => import('./components/DronesHomepage/DronesHomepage.jsx'));
@@ -71,7 +72,7 @@ const PickupAddressPage = lazy(() => import('./Pages/Shop/Couriers/PickupAddress
 const ShopNewOrders = lazy(() => import('./Pages/Shop/Orders/ShopNewOrders.jsx'));
 const ShopPendingOrders = lazy(() => import('./Pages/Shop/Orders/ShopPendingOrders.jsx'));
 const ShopDeliveredOrders = lazy(() => import('./Pages/Shop/Orders/ShopDeliveredOrders.jsx'));
-const ShopCanceledOrders = lazy(() => import('./Pages/Shop/Orders/ShopDeliveredOrders.jsx'));
+const ShopCanceledOrders = lazy(() => import('./Pages/Shop/Orders/ShopCanceledOrders.jsx'));
 const ShopAllRefunds = lazy(() => import('./Pages/Shop/Refunds/ShopAllRefunds.jsx'));
 const ShopApprovedRefunds = lazy(() => import('./Pages/Shop/Refunds/ShopApprovedRefunds.jsx'));
 const ShopPendingRefunds = lazy(() => import('./Pages/Shop/Refunds/ShopPendingRefunds.jsx'));
@@ -79,6 +80,7 @@ const ShopRejectedRefunds = lazy(() => import('./Pages/Shop/Refunds/ShopRejected
 const ShopOrderDetails = lazy(() => import('./Pages/Shop/Orders/ShopOrderDetails.jsx'));
 const ShopOrderRefundPage = lazy(() => import('./Pages/Shop/Refunds/ShopOrderRefundPage.jsx'));
 const ShopAllProducts = lazy(() => import('./Pages/Shop/Products/ShopAllProducts.jsx'));
+// const ShopAllProducts2 = lazy(() => import('./Pages/Shop/Products/ShopAllProducts2.jsx'));
 const ShopAllProducts2 = lazy(() => import('./Pages/Shop/Products/ShopAllProducts2.jsx'));
 const ShopAllDraftProducts = lazy(() => import('./Pages/Shop/Products/ShopAllDraftProducts.jsx'));
 const ShopApprovedProducts = lazy(() => import('./Pages/Shop/Products/ShopApprovedProducts.jsx'));
@@ -619,6 +621,14 @@ const App = () => {
             element={
               <SellerProtectedRoute>
                 <CategoriesConfigPage />
+              </SellerProtectedRoute>
+            }
+          />
+          <Route
+            path="/site-config/contact-config"
+            element={
+              <SellerProtectedRoute>
+                <ContactConfigPage />
               </SellerProtectedRoute>
             }
           />

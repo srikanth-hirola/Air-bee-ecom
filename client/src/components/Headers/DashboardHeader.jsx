@@ -9,7 +9,7 @@ import { StyleConfig } from "../../utils/StyleConfig";
 
 // import socketIO from "socket.io-client";
 // const ENDPOINT = 'https://socket-ecommerce-tu68.onrender.com/';
-// const ENDPOINT = "http://localhost:4000/";
+// const ENDPOINT = "https://chat.airbee.co.in/";
 // const socketId = socketIO(ENDPOINT, { transports: ["websocket"] });
 
 const DashboardHeader = ({ active }) => {
@@ -34,11 +34,11 @@ const DashboardHeader = ({ active }) => {
       //     ? styles?.headerColors?.bg?.bgPicker
       //     : styles?.headerColors?.bg?.bgcolor,
       // }}
-      className="w-full h-[80px] shadow sticky top-0 left-0 z-30 flex items-center justify-between px-4 bg-white"
+      className="w-full h-[80px] shadow sticky top-0 left-0 z-30 flex items-center justify-between px-4 bg-white dashboard-header-page"
     >
-      <div>
+      <div className="dashboard-header-logo">
         <Link to="/dashboard">
-          <div className="logo h-[46px]">
+          <div className="logo ">
             <img
               // src="https://shopo.quomodothemes.website/assets/images/logo.svg"
               // src="/images/logo.svg"

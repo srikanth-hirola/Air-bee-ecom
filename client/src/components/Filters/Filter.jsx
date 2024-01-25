@@ -4,12 +4,14 @@ import { Link } from 'react-router-dom';
 import Ratings from '../Shop/Ratings';
 import useFilterHandler from '../../hooks/useFilterHandler';
 import useFetchCategoryHandler from '../../hooks/categories/useFetchCategoryHandler';
+// import useGetCurrencyConversion from '../../hooks/Site-config/useGetCurrencyConversion';
 
 
 const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, selectedBrands, selectedPriceRange, setSelectedBrands, setSelectedPriceRange, filteredAttr, setFilteredAttr, isVisibleData, toggleDataVisible }) => {
 
     const { handleCheckboxChange, handleBrandCheckBox, handleFilterCheckswithValues } = useFilterHandler()
     const { fetchCategory, fetchSubCategory } = useFetchCategoryHandler();
+    // const { ConvertCurrency } = useGetCurrencyConversion()
 
     const [filterBrand, setFilterBrand] = useState([]);
     const [category, setCategory] = useState([
@@ -362,7 +364,7 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                                     <div className='star-mq star1-mq pr-2'>
                                         <Ratings rating={4} />
                                     </div>
-                                    <span className='and-up-mq and-up1-mq'> & down</span>
+                                    <span className='and-up-mq and-up1-mq'> & up</span>
                                     <input
                                         className="star-i"
                                         type="radio"
@@ -377,7 +379,7 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                                     <div className='star-mq star1-mq pr-2'>
                                         <Ratings rating={3} />
                                     </div>
-                                    <span className='and-up-mq and-up1-mq'> & down</span>
+                                    <span className='and-up-mq and-up1-mq'> & up</span>
                                     <input
                                         className="star-i"
                                         type="radio"
@@ -392,7 +394,7 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                                     <div className='star-mq star1-mq pr-2'>
                                         <Ratings rating={2} />
                                     </div>
-                                    <span className='and-up-mq and-up1-mq'> & down</span>
+                                    <span className='and-up-mq and-up1-mq'> & up</span>
                                     <input
                                         className="star-i"
                                         type="radio"
@@ -407,7 +409,7 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                                     <div className='star-mq star1-mq pr-2'>
                                         <Ratings rating={1} />
                                     </div>
-                                    <span className='and-up-mq and-up1-mq'> & down</span>
+                                    <span className='and-up-mq and-up1-mq'> & up</span>
                                     <input
                                         className="star-i"
                                         type="radio"
