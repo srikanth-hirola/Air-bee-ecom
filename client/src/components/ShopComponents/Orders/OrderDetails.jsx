@@ -8,8 +8,10 @@ import { getAllOrdersOfShop } from '../../../redux/actions/order';
 import { server } from '../../../server';
 import toast from 'react-hot-toast';
 import { StyleConfig } from '../../../utils/StyleConfig';
+import useGetCurrencyConversion from '../../../hooks/Site-config/useGetCurrencyConversion';
 
 const OrderDetails = () => {
+    const { ConvertCurrency } = useGetCurrencyConversion()
     const { orders } = useSelector((state) => state.order);
     const { seller } = useSelector((state) => state.seller);
     const dispatch = useDispatch();
@@ -110,8 +112,6 @@ const OrderDetails = () => {
         ) {
             toast.error('All Fields of Package Dimenison is Required!');
         } else {
-            console.log(shippingDataSeller)
-            console.log(data)
             await axios
                 .post(`${server}/shipping/creat-shipment-order`, {
                     data,
@@ -177,12 +177,13 @@ const OrderDetails = () => {
                                 SKU : {item.selectedColor.SKU}
                             </h5>
                             <h5 className="pl-3 text-[18px] text-[#00000091] fw-normal">
-                                US${item.finalPrice} x {item.qty}
+                                {styles?.currency?.Symbol}&nbsp;{ConvertCurrency(item.finalPrice)} x {item.qty}
                             </h5>
-                            <p className="pl-3 text-[18px] text-[#00000091]">
-                                {item.colorAttribute?.name} :{' '}
-                                {item.colorAttribute?.value.valName}
-                            </p>
+                            {item?.selectedColor?.haveAttributes
+                                && <p className="pl-3 text-[18px] text-[#00000091]">
+                                    {item.colorAttribute?.name} :{' '}
+                                    {item.colorAttribute?.value.valName}
+                                </p>}
                             {item.status === 'Processing refund' ||
                                 item.status === 'Refund Success' ||
                                 item.status === 'Rejected refund' ? (
@@ -224,10 +225,10 @@ const OrderDetails = () => {
 
             <div className="border-t w-full text-right flex justify-between">
                 <h5 className="pt-3 text-[18px]">
-                <strong className='fw-medium'>Shipping: </strong><span className='fw-light'>₹{shippingDataSeller?.response?.orders?.rate}</span>
+                    <strong className='fw-medium'>Shipping: </strong><span className='fw-light'>{styles?.currency?.Symbol}&nbsp;{ConvertCurrency(shippingDataSeller?.response?.orders?.rate)}</span>
                 </h5>
                 <h5 className="pt-3 text-[18px]">
-                <strong className='fw-medium'>Total Price: </strong><span className='fw-light'>₹{shippingDataSeller?.subTotalPrice + shippingDataSeller?.response?.orders?.rate}</span>
+                    <strong className='fw-medium'>Total Price: </strong><span className='fw-light'>{styles?.currency?.Symbol}&nbsp;{ConvertCurrency(shippingDataSeller?.subTotalPrice + shippingDataSeller?.response?.orders?.rate)}</span>
                 </h5>
                 <h5 className="pt-3 text-[18px]">
                     <strong className='fw-medium'>{data?.paymentInfo?.type}</strong>

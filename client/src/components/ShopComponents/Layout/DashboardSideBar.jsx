@@ -35,14 +35,14 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full  accordian-child flex items-center p-0">
                                 <Link
                                     to="/shop/dashboard-orders"
-                                    className="w-full h-full flex items-center pl-2  " 
+                                    className="w-full h-full flex items-center pl-2  "
                                 >
 
                                     {/* <h5
                                         className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 2 ? 'text-[#f395a8]' : 'text-[#555]'
                                             }`}
                                     > */}
-                                        All Orders
+                                    All Orders
                                     {/* </h5> */}
                                 </Link>
                             </div>
@@ -50,14 +50,14 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full  accordian-child">
                                 <Link
                                     to="/shop/new-orders"
-                                    className="w-full h-full flex items-center pl-2 " 
+                                    className="w-full h-full flex items-center pl-2 "
                                 >
 
                                     {/* <h5
                                         className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 2 ? 'text-[crimson]' : 'text-[#555]'
                                             }`}
                                     > */}
-                                        New Orders
+                                    New Orders
                                     {/* </h5> */}
                                 </Link>
                             </div>
@@ -65,14 +65,14 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/shop/pending-orders"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white" 
+                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
                                 >
 
                                     {/* <h5
                                         className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 2 ? 'text-[crimson]' : 'text-[#555]'
                                             }`}
                                     > */}
-                                        Pending Orders
+                                    Pending Orders
                                     {/* </h5> */}
                                 </Link>
                             </div>
@@ -80,28 +80,28 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/shop/delivered-orders"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white" 
+                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
                                 >
 
                                     {/* <h5
                                         className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 2 ? 'text-[crimson]' : 'text-[#555]'
                                             }`}
                                     > */}
-                                        Delivered Orders
+                                    Delivered Orders
                                     {/* </h5> */}
                                 </Link>
                             </div>
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/shop/canceled-orders"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white" 
+                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
                                 >
 
                                     {/* <h5
                                         className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 2 ? 'text-[crimson]' : 'text-[#555]'
                                             }`}
                                     > */}
-                                        Canceled Orders
+                                    Canceled Orders
                                     {/* </h5> */}
                                 </Link>
                             </div>
@@ -151,40 +151,40 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/dashboard-create-product"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white" 
+                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
                                 >
 
                                     {/* <h5
                                         className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 4 ? 'text-[crimson]' : 'text-[#555]'
                                             }`}
                                     > */}
-                                        Create Product
+                                    Create Product
                                     {/* </h5> */}
                                 </Link>
                             </div>
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/shop/draft-products"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white" 
+                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
                                 >
                                     {/* <h5
                                         className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 3 ? 'text-[crimson]' : 'text-[#555]'
                                             }`}
                                     > */}
-                                        Drafts
+                                    Drafts
                                     {/* </h5> */}
                                 </Link>
                             </div>
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/shop/all-products"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white" 
+                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
                                 >
                                     {/* <h5
                                         className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 3 ? 'text-[crimson]' : 'text-[#555]'
                                             }`}
                                     > */}
-                                        All Products
+                                    All Products
                                     {/* </h5> */}
                                 </Link>
                             </div>
@@ -231,20 +231,20 @@ const DashboardSideBar = ({ active }) => {
                                 </Link>
                             </div> */}
                             <div className="w-full flex items-center accordian-child">
-                               
-                            <div className="w-full accordian-child">
-                                 <Link
-                                    to="/shop/products-gallery"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white" 
-                                >
 
-                                    {/* <h5
+                                <div className="w-full accordian-child">
+                                    <Link
+                                        to="/shop/products-gallery"
+                                        className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
+                                    >
+
+                                        {/* <h5
                                         className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 4 ? 'text-[crimson]' : 'text-[#555]'
                                             }`}
                                     > */}
                                         Products Gallery
-                                    {/* </h5> */}
-                                </Link>
+                                        {/* </h5> */}
+                                    </Link>
                                 </div>
                             </div>
                         </Accordion.Body>
@@ -263,14 +263,14 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/dashboard-events"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white" 
+                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
                                 >
 
                                     {/* <h5
                                         className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 2 ? 'text-[crimson]' : 'text-[#555]'
                                             }`}
                                     > */}
-                                        All Events
+                                    All Events
                                     {/* </h5> */}
                                 </Link>
                             </div>
@@ -278,28 +278,28 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/dashboard-create-event"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white" 
+                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
                                 >
 
                                     {/* <h5
                                         className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 2 ? 'text-[crimson]' : 'text-[#555]'
                                             }`}
                                     > */}
-                                        Create Events
+                                    Create Events
                                     {/* </h5> */}
                                 </Link>
                             </div>
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/dashboard-draft-events"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white" 
+                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
                                 >
 
                                     {/* <h5
                                         className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 2 ? 'text-[crimson]' : 'text-[#555]'
                                             }`}
                                     > */}
-                                        Draft Events
+                                    Draft Events
                                     {/* </h5> */}
                                 </Link>
                             </div>
@@ -319,14 +319,14 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/shop/dashboard-refunds"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white" 
+                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
                                 >
 
                                     {/* <h5
                                         className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 2 ? 'text-[crimson]' : 'text-[#555]'
                                             }`}
                                     > */}
-                                        All Refunds
+                                    All Refunds
                                     {/* </h5> */}
                                 </Link>
                             </div>
@@ -334,42 +334,42 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/shop/approved-refunds"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white" 
+                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
                                 >
 
                                     {/* <h5
                                         className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 2 ? 'text-[crimson]' : 'text-[#555]'
                                             }`}
                                     > */}
-                                        Approved Refunds
+                                    Approved Refunds
                                     {/* </h5> */}
                                 </Link>
                             </div>
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/shop/pending-refunds"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white" 
+                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
                                 >
 
                                     {/* <h5
                                         className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 2 ? 'text-[crimson]' : 'text-[#555]'
                                             }`}
                                     > */}
-                                        Pending Refunds
+                                    Pending Refunds
                                     {/* </h5> */}
                                 </Link>
                             </div>
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/shop/rejected-refunds"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white" 
+                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
                                 >
 
                                     {/* <h5
                                         className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 2 ? 'text-[crimson]' : 'text-[#555]'
                                             }`}
                                     > */}
-                                        Rejected Refunds
+                                    Rejected Refunds
                                     {/* </h5> */}
                                 </Link>
                             </div>
@@ -440,42 +440,42 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/dashboard-withdraw-money"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white" 
+                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
                                 >
 
                                     {/* <h5
                                         className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 7 ? 'text-[crimson]' : 'text-[#555]'
                                             }`}
                                     > */}
-                                        Withdraw Money
+                                    Withdraw Money
                                     {/* </h5> */}
                                 </Link>
                             </div>
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/withdraw-payment-history"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white" 
+                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
                                 >
 
                                     {/* <h5
                                         className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 7 ? 'text-[crimson]' : 'text-[#555]'
                                             }`}
                                     > */}
-                                        Payment History
+                                    Payment History
                                     {/* </h5> */}
                                 </Link>
                             </div>
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/withdraw-payment-requests"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white" 
+                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
                                 >
 
                                     {/* <h5
                                         className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 7 ? 'text-[crimson]' : 'text-[#555]'
                                             }`}
                                     > */}
-                                        Payment Requests
+                                    Payment Requests
                                     {/* </h5> */}
                                 </Link>
                             </div>
@@ -522,13 +522,13 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/shop/shipment/login"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white" 
+                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
                                 >
                                     {/* <h5
                                         className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 2 ? 'text-[crimson]' : 'text-[#555]'
                                             }`}
                                     > */}
-                                        ShipRocket Login
+                                    ShipRocket Login
                                     {/* </h5> */}
                                 </Link>
                             </div>
@@ -536,13 +536,13 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/shop/shipment/orders"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white" 
+                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
                                 >
                                     {/* <h5
                                         className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 2 ? 'text-[crimson]' : 'text-[#555]'
                                             }`}
                                     > */}
-                                        Orders
+                                    Orders
                                     {/* </h5> */}
                                 </Link>
                             </div>
@@ -556,7 +556,7 @@ const DashboardSideBar = ({ active }) => {
                                         className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 2 ? 'text-[crimson]' : 'text-[#555]'
                                             }`}
                                     > */}
-                                        Return Orders
+                                    Return Orders
                                     {/* </h5> */}
                                 </Link>
                             </div>
@@ -564,26 +564,26 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/shop/shipment/couriers"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white" 
+                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
                                 >
                                     {/* <h5
                                         className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 2 ? 'text-[crimson]' : 'text-[#555]'
                                             }`}
                                     > */}
-                                        Couriers
+                                    Couriers
                                     {/* </h5> */}
                                 </Link>
                             </div>
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/shop/shipment/pickup-locations"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white" 
+                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
                                 >
                                     {/* <h5
                                         className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 2 ? 'text-[crimson]' : 'text-[#555]'
                                             }`}
                                     > */}
-                                        PickUp Address
+                                    PickUp Address
                                     {/* </h5> */}
                                 </Link>
                             </div>
@@ -608,7 +608,7 @@ const DashboardSideBar = ({ active }) => {
                                         className={`hidden 800px:block pl-2 text-[18px] font-[400] ${active === 3 ? 'text-[crimson]' : 'text-[#555]'
                                             }`}
                                     > */}
-                                        Categories Config
+                                    Categories Config
                                     {/* </h5> */}
                                 </Link>
                             </div>
@@ -621,7 +621,20 @@ const DashboardSideBar = ({ active }) => {
                                         className={`hidden 800px:block pl-2 text-[18px] font-[400] ${active === 3 ? 'text-[crimson]' : 'text-[#555]'
                                             }`}
                                     > */}
-                                        Events Config
+                                    Events Config
+                                    {/* </h5> */}
+                                </Link>
+                            </div>
+                            <div className="w-full flex items-center accordian-child">
+                                <Link
+                                    to="/site-config/contact-config"
+                                    className="w-full flex items-center"
+                                >
+                                    {/* <h5
+                                        className={`hidden 800px:block pl-2 text-[18px] font-[400] ${active === 3 ? 'text-[crimson]' : 'text-[#555]'
+                                            }`}
+                                    > */}
+                                    Contact Details Config
                                     {/* </h5> */}
                                 </Link>
                             </div>
@@ -634,7 +647,7 @@ const DashboardSideBar = ({ active }) => {
                                         className={`hidden 800px:block pl-2 text-[18px] font-[400] ${active === 3 ? 'text-[crimson]' : 'text-[#555]'
                                             }`}
                                     > */}
-                                        Miscellaneous Config
+                                    Miscellaneous Config
                                     {/* </h5> */}
                                 </Link>
                             </div>

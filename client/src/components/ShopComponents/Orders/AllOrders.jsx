@@ -42,7 +42,6 @@ const AllOrders = ({ active }) => {
             type: 'number',
             sortable: false,
             renderCell: (params) => {
-                console.log(params)
                 return (
                     <div>
                         <img src={params?.row?.image} alt='product' width={'100px'} height={'100px'} />
@@ -144,6 +143,8 @@ const AllOrders = ({ active }) => {
                 });
             }
         });
+
+
 
     orders &&
         orders.forEach((item) => {

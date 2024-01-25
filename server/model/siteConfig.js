@@ -357,6 +357,8 @@ const siteConfigSchema = new mongoose.Schema({
     footerImages: Array,
     footerLayout3Content: Array,
     footerLayout4Content: Object,
+
+    contactUsDetails: Object
 })
 
 module.exports = mongoose.model('SiteConfig', siteConfigSchema);

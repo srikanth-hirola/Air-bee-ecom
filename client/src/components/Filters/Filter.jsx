@@ -4,12 +4,14 @@ import { Link } from 'react-router-dom';
 import Ratings from '../Shop/Ratings';
 import useFilterHandler from '../../hooks/useFilterHandler';
 import useFetchCategoryHandler from '../../hooks/categories/useFetchCategoryHandler';
+// import useGetCurrencyConversion from '../../hooks/Site-config/useGetCurrencyConversion';
 
 
 const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, selectedBrands, selectedPriceRange, setSelectedBrands, setSelectedPriceRange, filteredAttr, setFilteredAttr, isVisibleData, toggleDataVisible }) => {
 
     const { handleCheckboxChange, handleBrandCheckBox, handleFilterCheckswithValues } = useFilterHandler()
     const { fetchCategory, fetchSubCategory } = useFetchCategoryHandler();
+    // const { ConvertCurrency } = useGetCurrencyConversion()
 
     const [filterBrand, setFilterBrand] = useState([]);
     const [category, setCategory] = useState([

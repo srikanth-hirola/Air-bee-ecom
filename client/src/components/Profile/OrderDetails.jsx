@@ -10,8 +10,10 @@ import toast from 'react-hot-toast';
 import { StyleConfig } from '../../utils/StyleConfig';
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { RxCross1 } from 'react-icons/rx';
+import useGetCurrencyConversion from '../../hooks/Site-config/useGetCurrencyConversion';
 
 const OrderDetails = () => {
+    const { ConvertCurrency } = useGetCurrencyConversion()
 
     const { orders } = useSelector((state) => state.order);
     const { user } = useSelector((state) => state.user);
@@ -73,7 +75,6 @@ const OrderDetails = () => {
     const styles = StyleConfig();
 
 
-
     return (
         <>
             <div className='OrderDetails-parent'>
@@ -116,7 +117,7 @@ const OrderDetails = () => {
                                                     ? item?.selectedColor?.varientSKU
                                                     : item?.selectedColor?.SKU}</span></p>
                                                 <p>Qty : <span>{item?.qty}</span></p>
-                                                <p>Total : <span>{styles?.currency?.Symbol}&nbsp;{item?.finalPrice * item?.qty}</span></p>
+                                                <p>Total : <span>{styles?.currency?.Symbol}&nbsp;{ConvertCurrency(item?.finalPrice) * item?.qty}</span></p>
                                                 {item?.selectedColor?.haveAttributes
                                                     && <p className="pl-3 text-[18px] text-[#00000091]">
                                                         {item.colorAttribute?.name} :{' '}
@@ -179,7 +180,7 @@ const OrderDetails = () => {
                                     <div>
                                         <div className="pl-3 text-[20px]">{selectedItem?.name}</div>
                                         <h4 className="pl-3 text-[20px]">
-                                            US${selectedItem?.discountPrice} x {selectedItem?.qty}
+                                            {styles?.currency?.Symbol}&nbsp;{ConvertCurrency(selectedItem?.discountPrice)} x {selectedItem?.qty}
                                         </h4>
                                     </div>
                                 </div>
