@@ -36,7 +36,9 @@ const siteConfigSchema = new mongoose.Schema({
     paymentMethods: {
         INR: Array,
         USD: Array,
+        EUR: Array,
     },
+    CurrencyArr: Array,
     fontFamily: Object,
     selectedBannerLayout: Number,
     selectedHeaderLayout: Number,

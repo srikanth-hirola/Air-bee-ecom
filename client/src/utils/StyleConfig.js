@@ -48,6 +48,7 @@ export const StyleConfig = () => {
 
         currency: siteConfigData?.currency,
         paymentMethods: siteConfigData?.paymentMethods,
+        CurrencyArr: siteConfigData?.CurrencyArr,
         mainBanner: siteConfigData?.mainBanner,
         sideBanner1: siteConfigData?.sideBanner1,
         sideBanner2: siteConfigData?.sideBanner2,

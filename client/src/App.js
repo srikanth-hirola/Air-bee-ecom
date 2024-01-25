@@ -42,8 +42,6 @@ import { socketId } from './components/Headers/socket.js';
 import { useSelector } from 'react-redux';
 
 
-
-
 const DronesHomepage = lazy(() => import('./components/DronesHomepage/DronesHomepage.jsx'));
 const AllProductsPage = lazy(() => import('./Pages/AllProductsPage.jsx'));
 const ProductDetailsPage = lazy(() => import('./Pages/ProductDetailsPage.jsx'));
@@ -108,7 +106,6 @@ const RefundPage = lazy(() => import('./Pages/Profile/RefundPage.jsx'));
 const UserSignUpPage = lazy(() => import('./Pages/Auth/UserSignUpPage.jsx'));
 const ActivationPage = lazy(() => import('./Pages/ActivationPage.jsx'));
 const MiscellaneousConfigPage = lazy(() => import('./Pages/Site-Config/MiscellaneousConfigPage.jsx'));
-
 
 
 // register Swiper custom elements

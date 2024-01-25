@@ -10,6 +10,7 @@ import UpdateModel from './Modals/UpdateModel';
 import { StyleConfig } from '../../../utils/StyleConfig';
 import { getAllOrdersOfShop } from '../../../redux/actions/order';
 import { getAllReturnShipmentOrders, getAllShipmentOrders } from '../../../redux/actions/shipping';
+import useGetCurrencyConversion from '../../../hooks/Site-config/useGetCurrencyConversion';
 
 
 const ReturnOrders = () => {
@@ -17,6 +18,7 @@ const ReturnOrders = () => {
     const { returnShippingOrders } = useSelector((state) => state.shipping);
     const { isLoadingShipping } = useSelector((state) => state.shipping);
     const { orders, isLoading } = useSelector((state) => state.order);
+    const { ConvertCurrency } = useGetCurrencyConversion();
 
     const styles = StyleConfig();
 
@@ -219,7 +221,7 @@ const ReturnOrders = () => {
                                             </p>
                                         </div>
                                         <div className="payment ">
-                                            <p className="text-xs">{styles?.currency?.Symbol}&nbsp;{order?.shipDetails?.total}</p>
+                                            <p className="text-xs">{styles?.currency?.Symbol}&nbsp;{ConvertCurrency(order?.shipDetails?.total)}</p>
                                             <p
                                                 className={`text-xs font-semibold rounded-sm ${order?.shipDetails?.payment_method === 'cod'
                                                     ? 'text-red-600 bg-red-200'
@@ -274,7 +276,7 @@ const ReturnOrders = () => {
                                                 </p>
                                                 <p className="text-xs mb-1">
                                                     <strong>Shipping : </strong>
-                                                    {order?.orderDetails?.returnOrderResponse?.rate}
+                                                    {styles?.currency?.Symbol}&nbsp;{ConvertCurrency(order?.orderDetails?.returnOrderResponse?.rate)}
                                                 </p> </> :
                                                 <button
                                                     className="text-white bg-blue-600 p-1 rounded-sm text-xs"

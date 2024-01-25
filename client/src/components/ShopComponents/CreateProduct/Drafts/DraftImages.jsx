@@ -4,6 +4,8 @@ import { AiOutlinePlusCircle } from 'react-icons/ai';
 import { useParams } from 'react-router-dom';
 import { server } from '../../../../server';
 import toast from 'react-hot-toast';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 
 const DraftImages = ({
@@ -67,7 +69,7 @@ const DraftImages = ({
                         }}
                         className="images-delete-btn"
                     >
-                        <i class="fa-solid fa-trash"></i>
+                        <FontAwesomeIcon icon={faTrash} style={{ color: 'red' }} />
                     </button>
                 </div>
             ) : (
@@ -99,7 +101,7 @@ const DraftImages = ({
                                     }}
                                     className="images-delete-btn"
                                 >
-                                    <i class="fa-solid fa-trash"></i>
+                                    <FontAwesomeIcon icon={faTrash} style={{ color: 'red' }} />
                                 </button>
                             </div>
                         )}
@@ -135,7 +137,7 @@ const DraftImages = ({
                                     }}
                                     className="images-delete-btn"
                                 >
-                                    <i class="fa-solid fa-trash"></i>
+                                    <FontAwesomeIcon icon={faTrash} style={{ color: 'red' }} />
                                 </button>
                             </div>
                         ))}
@@ -157,7 +159,7 @@ const DraftImages = ({
                                     }}
                                     className="images-delete-btn"
                                 >
-                                    <i class="fa-solid fa-trash"></i>
+                                    <FontAwesomeIcon icon={faTrash} style={{ color: 'red' }} />
                                 </button>
                             </div>
                         ))}

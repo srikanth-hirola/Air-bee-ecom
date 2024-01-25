@@ -15,6 +15,7 @@ const Products = () => {
     }, [dispatch])
     const { allPublishedProducts } = useSelector((state) => state.products);
 
+
     return (
         <>
             <div className="DronesCategories-parent">

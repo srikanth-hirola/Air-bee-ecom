@@ -9,10 +9,12 @@ import { getAllOrdersOfShop } from '../../../redux/actions/order';
 import Loader from '../../../utils/Loader';
 import { Button } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
+import useGetCurrencyConversion from '../../../hooks/Site-config/useGetCurrencyConversion';
 
 const AllOrders = ({ active }) => {
     const { orders, isLoading } = useSelector((state) => state.order);
     const { seller } = useSelector((state) => state.seller);
+    const { ConvertCurrency } = useGetCurrencyConversion();
 
     const styles = StyleConfig()
 
@@ -35,7 +37,7 @@ const AllOrders = ({ active }) => {
         {
             field: 'image',
             flex: 1,
-            minWidth: 150,
+            minWidth: 130,
             headerName: 'Image',
             type: 'number',
             sortable: false,
@@ -104,7 +106,7 @@ const AllOrders = ({ active }) => {
                 id: item._id,
                 image: found[0]?.products[0]?.selectedColor?.mainImage?.url,
                 itemsQty: item.cart.length,
-                total: `${styles?.currency?.Symbol}` + item.totalPrice,
+                total: `${styles?.currency?.Symbol}` + ConvertCurrency(item.totalPrice),
                 status: item?.status,
             });
         });
@@ -118,7 +120,7 @@ const AllOrders = ({ active }) => {
                     id: item._id,
                     image: found[0]?.products[0]?.selectedColor?.mainImage?.url,
                     itemsQty: item.cart.length,
-                    total: `${styles?.currency?.Symbol}` + item.totalPrice,
+                    total: `${styles?.currency?.Symbol}` + ConvertCurrency(item.totalPrice),
                     status: item?.status,
                 });
             }
@@ -137,7 +139,7 @@ const AllOrders = ({ active }) => {
                     id: item._id,
                     image: found[0]?.products[0]?.selectedColor?.mainImage?.url,
                     itemsQty: item.cart.length,
-                    total: `${styles?.currency?.Symbol}` + item.totalPrice,
+                    total: `${styles?.currency?.Symbol}` + ConvertCurrency(item.totalPrice),
                     status: item?.status,
                 });
             }
@@ -151,7 +153,7 @@ const AllOrders = ({ active }) => {
                     id: item._id,
                     image: found[0]?.products[0]?.selectedColor?.mainImage?.url,
                     itemsQty: item.cart.length,
-                    total: `${styles?.currency?.Symbol}` + item.totalPrice,
+                    total: `${styles?.currency?.Symbol}` + ConvertCurrency(item.totalPrice),
                     status: item?.status,
                 });
             }
@@ -162,12 +164,13 @@ const AllOrders = ({ active }) => {
             // eslint-disable-next-line array-callback-return
             item?.sellerCart?.map((val) => {
                 if (val.status === 'Canceled') {
+
                     const found = item?.sellerCart.filter((val) => { if (val?.sellerID === seller._id) { return val } });
                     row5.push({
                         id: item._id,
                         image: found[0]?.products[0]?.selectedColor?.mainImage?.url,
                         itemsQty: item.cart.length,
-                        total: `${styles?.currency?.Symbol}` + item.totalPrice,
+                        total: `${styles?.currency?.Symbol}` + ConvertCurrency(item.totalPrice),
                         status: item?.status,
                     });
                 }
@@ -197,6 +200,8 @@ const AllOrders = ({ active }) => {
                             pageSize={10}
                             disableSelectionOnClick
                             autoHeight
+                        // width={30}
+                        // height={30}
                         />
                     )}
 

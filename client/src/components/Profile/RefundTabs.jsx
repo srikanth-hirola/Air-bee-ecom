@@ -4,7 +4,7 @@ import Tabs from 'react-bootstrap/Tabs';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getAllOrdersOfUser } from '../../redux/actions/order';
-import OrderCards from './Cards/OrderCards';
+import RefundOrderCards from './Cards/RefundOrderCards';
 
 const RefundTabs = () => {
     const [key, setKey] = useState('Active');
@@ -19,6 +19,11 @@ const RefundTabs = () => {
 
     const eligibleOrders =
         orders && orders.filter((item) => item.status === "Processing refund");
+
+    console.log(eligibleOrders)
+
+    // const rejectedRefunds = orders && orders.filter((item) => item.status === "Rejected refund");
+    // const approvedRefunds = orders && orders.filter((item) => item.status === "Refund Success");
 
 
     return (
@@ -35,7 +40,7 @@ const RefundTabs = () => {
                         {eligibleOrders?.length > 0 ?
                             eligibleOrders?.map((order, i) => (
                                 <React.Fragment key={i}>
-                                    <OrderCards order={order} />
+                                    <RefundOrderCards order={order} />
                                     <hr />
                                 </React.Fragment>
                             ))

@@ -1,10 +1,12 @@
 import React from 'react'
 import { StyleConfig } from '../../utils/StyleConfig'
+import useGetCurrencyConversion from '../../hooks/Site-config/useGetCurrencyConversion';
 
 const PaymentBill = ({ orderData }) => {
 
     const styles = StyleConfig()
     const shipping = orderData?.shipping?.toFixed(2);
+    const { ConvertCurrency } = useGetCurrencyConversion();
 
     return (
         <div className="col-lg-12">
@@ -23,7 +25,7 @@ const PaymentBill = ({ orderData }) => {
                         <div className="col-md-12">
                             <div className='Drones-Product-subtotal'>
                                 <strong>Subtotal</strong>
-                                <p>{styles?.currency?.Symbol}&nbsp;{orderData?.subTotalPrice}</p>
+                                <p>{styles?.currency?.Symbol}&nbsp;{ConvertCurrency(orderData?.subTotalPrice)}</p>
                             </div>
                         </div>
                         <div className="col-md-12">
@@ -32,14 +34,14 @@ const PaymentBill = ({ orderData }) => {
                                     <strong>Shipping</strong><br />
                                     <span>(Standard Rate - Price may vary depending on the item/destination. TECS Staff will contact you.)</span>
                                 </div>
-                                <p>{styles?.currency?.Symbol}&nbsp;{shipping}</p>
+                                <p>{styles?.currency?.Symbol}&nbsp;{ConvertCurrency(shipping)}</p>
 
                             </div>
                         </div>
                         <div className="col-md-12">
                             <div className='Drones-Product-tax'>
                                 <strong>Discount</strong>
-                                <p>{orderData?.discountPrice ? `${styles?.currency?.Symbol}` + orderData.discountPrice : '-'}</p>
+                                <p>{ConvertCurrency(orderData?.discountPrice) ? `${styles?.currency?.Symbol}` + ConvertCurrency(orderData.discountPrice) : '-'}</p>
                             </div>
                         </div>
                         {/* <div className="col-md-12">
@@ -51,7 +53,7 @@ const PaymentBill = ({ orderData }) => {
                         <div className="col-md-12">
                             <div className='Drones-Product-order-total'>
                                 <strong>Order Total</strong>
-                                <p>{styles?.currency?.Symbol}&nbsp;{orderData?.totalPrice}</p>
+                                <p>{styles?.currency?.Symbol}&nbsp;{ConvertCurrency(orderData?.totalPrice)}</p>
                             </div>
                         </div>
                         <br />

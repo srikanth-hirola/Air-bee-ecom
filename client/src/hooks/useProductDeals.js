@@ -26,6 +26,7 @@ const useProductDeals = () => {
             return soldOutB - soldOutA;
         });
         const firstTwenty = sortedProducts && sortedProducts.slice(0, 20);
+
         setData(firstTwenty);
     }
 

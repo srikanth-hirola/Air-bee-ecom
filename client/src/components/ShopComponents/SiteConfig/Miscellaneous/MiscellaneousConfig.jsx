@@ -5,6 +5,7 @@ import axios from 'axios';
 import { getAllSiteConfig } from '../../../../redux/actions/siteConfig';
 import { getAllCategories } from '../../../../redux/actions/category';
 import { server } from '../../../../server';
+import CurrencyValues from './CurrencyValues';
 
 
 export const MiscellaneousConfig = () => {
@@ -14,9 +15,11 @@ export const MiscellaneousConfig = () => {
 
     const [logo, setLogo] = useState();
     const [currency, setCurrency] = useState({});
+    const [CurrencyArr, setCurrencyArr] = useState([])
     const [paymentMethods, setPaymentMethods] = useState({
         INR: [],
-        USD: []
+        USD: [],
+        EUR: []
     });
 
 
@@ -40,11 +43,11 @@ export const MiscellaneousConfig = () => {
 
     useEffect(() => {
         setLogo(siteConfigData?.logo)
-
         setCurrency(siteConfigData?.currency)
         setPaymentMethods(siteConfigData?.paymentMethods)
-        // setDisplayEventProducts(siteConfigData?.displayEventProducts)
+        setCurrencyArr(siteConfigData?.CurrencyArr)
 
+        // setDisplayEventProducts(siteConfigData?.displayEventProducts)
     }, [siteConfigData])
 
     const handleLogoChange = (e, name) => {
@@ -93,9 +96,12 @@ export const MiscellaneousConfig = () => {
         if (CurrencyArr[index].code === "INR") {
             let paymentMethod = InrPayments.filter((val) => paymentMethods?.INR.includes(val))
             setPaymentMethods({ ...paymentMethods, INR: paymentMethod })
-        } else {
+        } else if (CurrencyArr[index].code === "USD") {
             let paymentMethod = UsdPayments.filter((val) => paymentMethods?.USD.includes(val))
             setPaymentMethods({ ...paymentMethods, USD: paymentMethod })
+        } else {
+            let paymentMethod = EURPayments?.filter((val) => paymentMethods?.EUR.includes(val))
+            setPaymentMethods({ ...paymentMethods, EUR: paymentMethod })
         }
     }
 
@@ -106,8 +112,13 @@ export const MiscellaneousConfig = () => {
                 toast.error("At least One Payment Method should be given")
                 return;
             }
-        } else {
+        } else if (currency.code === "USD") {
             if (paymentMethods.USD.length === 0) {
+                toast.error("At least One Payment Method should be given")
+                return;
+            }
+        } else {
+            if (paymentMethods.EUR.length === 0) {
                 toast.error("At least One Payment Method should be given")
                 return;
             }
@@ -124,19 +135,13 @@ export const MiscellaneousConfig = () => {
         }
     }
 
-    const CurrencyArr = [{
-        code: "INR",
-        Symbol: '₹'
-    }, {
-        code: "USD",
-        Symbol: '$'
-    }]
 
     const InrPayments = ["RazorPay", "Stripe", "COD"];
     const UsdPayments = ["PayPal", "Stripe", "COD"];
+    const EURPayments = ["PayPal", "Stripe", "COD"];
 
     const handlePaymentMethodINRChange = (e, name) => {
-        let updatedMethods = { ...paymentMethods }
+        let updatedMethods = JSON.parse(JSON.stringify(paymentMethods))
         if (e.target.checked) {
             updatedMethods.INR.push(name)
         } else {
@@ -146,11 +151,21 @@ export const MiscellaneousConfig = () => {
     }
 
     const handlePaymentMethodUSDChange = (e, name) => {
-        let updatedMethods = { ...paymentMethods }
+        let updatedMethods = JSON.parse(JSON.stringify(paymentMethods))
         if (e.target.checked) {
             updatedMethods.USD.push(name)
         } else {
             updatedMethods.USD = updatedMethods.USD.filter((val) => val !== name)
+        }
+        setPaymentMethods(updatedMethods)
+    }
+
+    const handlePaymentMethodEURChange = (e, name) => {
+        let updatedMethods = JSON.parse(JSON.stringify(paymentMethods))
+        if (e.target.checked) {
+            updatedMethods?.EUR.push(name)
+        } else {
+            updatedMethods.EUR = updatedMethods?.EUR.filter((val) => val !== name)
         }
         setPaymentMethods(updatedMethods)
     }
@@ -207,6 +222,11 @@ export const MiscellaneousConfig = () => {
                                         <input type='checkbox' className='w-[15px] h-[15px]' onChange={(e) => handlePaymentMethodUSDChange(e, methods)} checked={paymentMethods?.USD.includes(methods) ? true : false} /><label className='mx-2'>{methods}</label>
                                     </div>
                                 ))}
+                                {currency.code === "EUR" && EURPayments?.map((methods, index) => (
+                                    <div key={index} className='flex items-center' >
+                                        <input type='checkbox' className='w-[15px] h-[15px]' onChange={(e) => handlePaymentMethodEURChange(e, methods)} checked={paymentMethods?.EUR?.includes(methods) ? true : false} /><label className='mx-2'>{methods}</label>
+                                    </div>
+                                ))}
                             </div>
                             {logoLoading ? <button
                                 className='w-[400px] h-[40px] rounded bg-green-500 text-white'  >Loading...</button> : <button
@@ -215,6 +235,12 @@ export const MiscellaneousConfig = () => {
                         {/* Accepted Payment Methods config ends here */}
                     </div>
                     {/* Currency type config ends here */}
+
+                    {/* currency value */}
+                    <div className='border-1 rounded py-3 px-4 my-3'>
+                        <CurrencyValues CurrencyArr={CurrencyArr} logoLoading={logoLoading} setCurrencyArr={setCurrencyArr} setLogoLoading={setLogoLoading} />
+                    </div>
+                    {/* currency value */}
 
                     {/* Event Offer Enable Disable starts here*/}
                     {/* <div className='my-8 border-1 rounded py-6 px-3 '>

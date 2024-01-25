@@ -25,9 +25,11 @@ const DronesHeader = () => {
   const [arrivalMessage, setArrivalMessage] = useState(null);
 
   useEffect(() => {
-    let found = newMessageDate.find((item) => item?.userId === user?._id)
-    if (found) {
-      setMsgLength(found?.messageLength)
+    if (newMessageDate) {
+      let found = newMessageDate?.find((item) => item?.userId === user?._id)
+      if (found) {
+        setMsgLength(found?.messageLength)
+      }
     }
   }, [newMessageDate, user?._id])
 

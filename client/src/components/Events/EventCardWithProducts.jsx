@@ -26,6 +26,8 @@ const EventCardWithProducts = ({ data1 }) => {
         }
     }, [data1]);
 
+
+
     return (
         <>
             <div className='DronesProductsRow1-parent'>

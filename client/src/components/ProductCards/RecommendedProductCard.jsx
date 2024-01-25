@@ -1,36 +1,55 @@
-import React from 'react'
+/* eslint-disable no-unused-vars */
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import MainCardHover from './Hovers/MainCardHover'
+import { StyleConfig } from '../../utils/StyleConfig'
+import useProductDetails from '../../hooks/useProductDetails'
 
-const RecommendedProductCard = ({ data1 }) => {
+const RecommendedProductCard = ({ data, active }) => {
+
+
+    const styles = StyleConfig();
+
+    const [count, setCount] = useState(1);
+    // eslint-disable-next-line no-unused-vars
+    const [warning, setWarning] = useState();
+    const [limited, setLimited] = useState();
+    const [click, setClick] = useState(false);
+    const [selectedAttr, setSelectedAttr] = useState([]);
+    const [selectedColor, setSelectedColor] = useState(data?.showInputs ? data?.colorInputs[0] : data);
+    const [soldOut, setSoldOut] = useState(false);
+    const [mainImg, setMainImg] = useState([]);
+
+    const { addToCartHandler, getOriginalPrice, getDiscountPrice } = useProductDetails({ data, active, click, count, selectedAttr, selectedColor, setClick, setCount, setLimited, setMainImg, setSelectedAttr, setSoldOut, setWarning })
+
     return (
         <div className="col-sm-6 col-md-2 recommended-product-card">
-           
-                <div className='DronesRecommendedItems-content'>
-                    <div className='DronesRecommendedItems-image group relative'>
-                        <img src={`${data1?.mainImage?.url}`} alt="product" />
-                        <MainCardHover data={data1}/>
-                    </div>
-                    <Link to={`${`/product/${data1?._id}`}`}>
-                    <>
-                    <div className='DronesRecommendedItems-text'>
-                        <strong >{data1?.name?.length > 25
-                            ? data1?.name.slice(0, 25) + '...'
-                            : data1?.name}</strong>
-                    </div>
-                    <div className='DronesRecommendedItems-text-price'>
-                    <p> ₹ 456</p>
-                    <p><del>₹8,495</del></p>
-                    </div>
-                    <div className='DronesRecommendedItems-subtext'>
-                        <p>{data1?.description?.length > 25
-                            ? data1?.description.slice(0, 25) + '...'
-                            : data1?.description}</p>
-                    </div>
-                    </>
-                    </Link>
+
+            <div className='DronesRecommendedItems-content'>
+                <div className='DronesRecommendedItems-image group relative'>
+                    <img src={`${data?.mainImage?.url}`} alt="product" />
+                    <MainCardHover data={data} addToCart={addToCartHandler} id={data?._id} />
                 </div>
-            
+                <Link to={`${`/product/${data?._id}`}`}>
+                    <>
+                        <div className='DronesRecommendedItems-text'>
+                            <strong >{data?.name?.length > 25
+                                ? data?.name.slice(0, 25) + '...'
+                                : data?.name}</strong>
+                        </div>
+                        <div className='DronesRecommendedItems-text-price'>
+                            <p>{styles?.currency?.Symbol}&nbsp;{getDiscountPrice({ data, active })}</p>
+                            <p><del>{styles?.currency?.Symbol}&nbsp;{getOriginalPrice({ data })}</del></p>
+                        </div>
+                        <div className='DronesRecommendedItems-subtext'>
+                            <p>{data?.description?.length > 25
+                                ? data?.description.slice(0, 25) + '...'
+                                : data?.description}</p>
+                        </div>
+                    </>
+                </Link>
+            </div>
+
         </div>
     )
 }

@@ -1,9 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { StyleConfig } from '../../../utils/StyleConfig'
+import useGetCurrencyConversion from '../../../hooks/Site-config/useGetCurrencyConversion';
 
-const OrderCards = ({ order }) => {
+const RefundOrderCards = ({ order }) => {
     const styles = StyleConfig();
+    const { ConvertCurrency } = useGetCurrencyConversion();
+
 
 
     return (
@@ -42,7 +45,7 @@ const OrderCards = ({ order }) => {
                                 ? item?.selectedColor?.varientSKU
                                 : item.selectedColor.SKU}</span></p>
                             <p>Qty : <span>{item?.qty}</span></p>
-                            <p>Total : <span>{styles?.currency?.Symbol}&nbsp;{item?.finalPrice * item?.qty}</span></p>
+                            <p>Total : <span>{styles?.currency?.Symbol}&nbsp;{ConvertCurrency(item?.finalPrice) * item?.qty}</span></p>
                         </div>
                     </div>
 
@@ -55,4 +58,4 @@ const OrderCards = ({ order }) => {
     )
 }
 
-export default OrderCards
+export default RefundOrderCards

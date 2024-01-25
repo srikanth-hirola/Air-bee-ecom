@@ -126,7 +126,7 @@ const CreateProduct = () => {
 
     const handleFormDataChange = (e) => {
         const { name, value } = e.target;
-        // console.log(name, value)
+        console.log(name, value)
         if (
             name === 'productId' ||
             name === 'productTaxCode' ||
@@ -260,7 +260,7 @@ const CreateProduct = () => {
         setFormData({ ...formData, category: e.target.value });
         // eslint-disable-next-line array-callback-return
         categories.map((val) => {
-            if (val.name === e.target.value) {
+            if (val._id === e.target.value) {
                 setSubCat(val.subcategories);
             }
         });
@@ -272,7 +272,7 @@ const CreateProduct = () => {
         setFormData({ ...formData, subCatgory: e.target.value });
         // eslint-disable-next-line array-callback-return
         subCat.map((val) => {
-            if (val.name === e.target.value) {
+            if (val._id === e.target.value) {
                 setSubSubCat(val.subSubcategories);
             }
         });

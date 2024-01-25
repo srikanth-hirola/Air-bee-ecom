@@ -244,13 +244,13 @@ const OrderDetails = () => {
                     <div className="col-md-12">
                         <div className='OrderDetails-Shipping-details'>
                             <div className='OrderDetails-Shipping-details-sub1'>
-                                <p>Shipping : <span>{styles?.currency?.Symbol}&nbsp;{data?.shipping}</span></p>
+                                <h6>Shipping : <span>{styles?.currency?.Symbol}&nbsp;{data?.shipping}</span></h6>
                             </div>
                             <div className=' OrderDetails-Shipping-details-sub1'>
-                                <p>Total Price : <span>{styles?.currency?.Symbol}&nbsp;{data?.totalPrice}</span></p>
+                                <h6>Total Price : <span>{styles?.currency?.Symbol}&nbsp;{data?.totalPrice}</span></h6>
                             </div>
                             <div className='OrderDetails-Shipping-details-sub1'>
-                                <p>{data?.paymentInfo?.type}</p>
+                                <h6>{data?.paymentInfo?.type}</h6>
                             </div>
                         </div>
                     </div>

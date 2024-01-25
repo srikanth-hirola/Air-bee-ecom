@@ -64,7 +64,7 @@ const Images = ({
                   }}
                   className="images-delete-btn"
                 >
-                  <i class="fa-solid fa-trash"></i>
+                  <FontAwesomeIcon icon={faTrash} style={{ color: 'red' }} />
                 </button>
               </div>
             ))} */}
