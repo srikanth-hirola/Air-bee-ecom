@@ -73,7 +73,6 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
         });
 
         setFilterBrand(updatedBrandState);
-        console.log(updatedCategoryState)
         setCategory(updatedCategoryState);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [data]);
@@ -259,7 +258,7 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                                     (cat, i) =>
                                         cat.name && (
                                             <React.Fragment key={i}>
-                                                <Link to={`/products-by-category/search?category=${fetchCategory(cat.name)}`}
+                                                <Link to={`/products-by-category/search?category=${fetchCategory(cat.name)?.name}`}
                                                     className="cat-link text-black font-semibold"
                                                 >
                                                     {fetchCategory(cat.name)?.name}
@@ -445,8 +444,9 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                     </Accordion.Item>
                 </Accordion>
             </div>
-            <div className="mobile-filters">
 
+
+            <div className="mobile-filters">
                 <div>
                     {isVisibleData && <button onClick={toggleDataVisible} className='mobile-close-flter'>
                         Close Filters
@@ -462,10 +462,10 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                                                 (cat, i) =>
                                                     cat.name && (
                                                         <React.Fragment key={i}>
-                                                            <Link to={`/products-by-category/search?category=${cat.name}`}
+                                                            <Link to={`/products-by-category/search?category=${fetchCategory(cat.name)?.name}`}
                                                                 className="cat-link text-black"
                                                             >
-                                                                {cat.name}
+                                                                {fetchCategory(cat.name)?.name}
                                                             </Link>
                                                             <ul>
                                                                 {cat.subCategory.length > 0 &&
@@ -473,9 +473,9 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                                                                         <li key={index}
                                                                             className="cat-link"
                                                                         >
-                                                                            <Link to={`/products-by-category/search?category=${cat.name}&subcategory=${sub}`}
+                                                                            <Link to={`/products-by-category/search?category=${fetchCategory(cat.name)?.name}&subcategory=${fetchSubCategory(cat.name, sub)?.name}`}
                                                                                 className="cat-link text-black"
-                                                                            >{sub}</Link>
+                                                                            >{fetchSubCategory(cat.name, sub)?.name}</Link>
                                                                         </li>
                                                                     ))}
                                                             </ul>
@@ -489,8 +489,8 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                                     <Accordion.Header>Brands</Accordion.Header>
                                     <Accordion.Body>
                                         {filterBrand.map((brand, index) => (
-                                            <li key={index}>
-                                                <input
+                                            <li key={index} className="filter-label">
+                                                <input className='mr-2'
                                                     type="checkbox"
                                                     value={brand}
                                                     checked={selectedBrands.includes(brand)}
@@ -529,7 +529,7 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                                         {priceRange?.length > 0 &&
                                             <ul>
                                                 {priceRange.map((val, index) => (
-                                                    <li key={index} className="d-flex justify-content-between h-[30px] price-range-mq">
+                                                    <li key={index} className="d-flex space-x-2 h-[30px] price-range-mq">
                                                         <input
                                                             className='price-range-i-mq'
                                                             type="radio"

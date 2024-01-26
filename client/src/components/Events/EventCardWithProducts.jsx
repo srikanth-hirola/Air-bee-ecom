@@ -3,8 +3,8 @@ import CountDown from './CountDown';
 import axios from 'axios';
 import { server } from '../../server';
 import toast from 'react-hot-toast';
-import EventCardHome from '../ProductCards/EventCardHome';
 import { Link } from 'react-router-dom';
+import ProductCardMiddleware from '../ProductCards/ProductCardMiddleware';
 const EventCardWithProducts = ({ data1 }) => {
 
 
@@ -56,7 +56,7 @@ const EventCardWithProducts = ({ data1 }) => {
                                 {data?.length > 0 ?
                                     data?.slice(0, 4)?.map((item, i) => (
                                         <div className=" col-sm-6 col-md-3 col-lg-3 " key={i}>
-                                            <EventCardHome data1={item} />
+                                            <ProductCardMiddleware data1={item} />
                                         </div>
                                     ))
                                     : <p>No Event Products Available</p>}
