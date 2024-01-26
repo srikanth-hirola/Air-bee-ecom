@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import CategoryProductCard from '../ProductCards/CategoryProductCard';
+import useFetchCategoryHandler from '../../hooks/categories/useFetchCategoryHandler';
 
 const CategoriesWithProducts = ({ CatName, key }) => {
     const { category } = useSelector((state) => state.category)
     const { allProducts } = useSelector((state) => state.products);
     const [products, setProducts] = useState([]);
+    const { fetchCategory } = useFetchCategoryHandler()
 
 
 
@@ -18,7 +20,7 @@ const CategoriesWithProducts = ({ CatName, key }) => {
     }, [allProducts, CatName])
 
     function getCategoryImg() {
-        let categoryFound = category?.find((cat) => cat?.name === CatName)
+        let categoryFound = category?.find((cat) => cat?._id === CatName)
         return categoryFound?.CatImg?.url
     }
 
@@ -30,11 +32,11 @@ const CategoriesWithProducts = ({ CatName, key }) => {
                     <div className="col-md-3 p-0">
                         <div className='DronesProductsRow2-image1'>
                             <div className='DronesProductsRow2-image1-title'>
-                                <h5>{CatName}</h5>
+                                <h5>{fetchCategory(CatName)?.name}</h5>
                             </div>
                             {/* <img src="./DronesHomepage/row-2-1.png" alt="" /> */}
                             <div className='DronesProductsRow2-image1-image'>
-                            <img src={getCategoryImg()} alt="category" />
+                                <img src={getCategoryImg()} alt="category" />
                             </div>
                         </div>
                     </div>

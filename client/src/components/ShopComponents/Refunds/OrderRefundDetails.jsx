@@ -7,9 +7,10 @@ import { StyleConfig } from '../../../utils/StyleConfig';
 import { getAllOrdersOfShop } from '../../../redux/actions/order';
 import toast from 'react-hot-toast';
 import { server } from '../../../server';
+import useGetCurrencyConversion from '../../../hooks/Site-config/useGetCurrencyConversion';
 
 const OrderRefundDetails = () => {
-
+    const { ConvertCurrency } = useGetCurrencyConversion()
     const { orders } = useSelector((state) => state.order);
     const { seller } = useSelector((state) => state.seller);
     const dispatch = useDispatch();
@@ -131,12 +132,13 @@ const OrderRefundDetails = () => {
                                 SKU : {item.selectedColor.SKU}
                             </h5>
                             <h5 className="pl-3 text-[18px] text-[#00000091] fw-light">
-                                US${item.finalPrice} x {item.qty}
+                                {styles?.currency?.Symbol}&nbsp;{ConvertCurrency(item.finalPrice)} x {item.qty}
                             </h5>
-                            <p className="pl-3 text-[18px] text-[#00000091] fw-light">
-                                {item.colorAttribute?.name} :{' '}
-                                {item.colorAttribute?.value.valName}
-                            </p>
+                            {item?.selectedColor?.haveAttributes
+                                && <p className="pl-3 text-[18px] text-[#00000091]">
+                                    {item.colorAttribute?.name} :{' '}
+                                    {item.colorAttribute?.value.valName}
+                                </p>}
                             {item.status === 'Processing refund' ||
                                 item.status === 'Refund Success' ||
                                 item.status === 'Rejected refund' ? (
@@ -179,10 +181,10 @@ const OrderRefundDetails = () => {
 
             <div className="border-t w-full text-right flex justify-between">
                 <h5 className="pt-3 text-[18px]">
-                    Shipping: <strong>₹{shippingDataSeller?.response?.orders?.rate}</strong>
+                    Shipping: <strong>{styles?.currency?.Symbol}&nbsp;{ConvertCurrency(shippingDataSeller?.response?.orders?.rate)}</strong>
                 </h5>
                 <h5 className="pt-3 text-[18px]">
-                    Total Price: <strong>₹{shippingDataSeller?.subTotalPrice + shippingDataSeller?.response?.orders?.rate}</strong>
+                    Total Price: <strong>{styles?.currency?.Symbol}&nbsp;{ConvertCurrency(shippingDataSeller?.subTotalPrice + shippingDataSeller?.response?.orders?.rate)}</strong>
                 </h5>
                 <h5 className="pt-3 text-[18px]">
                     <strong>{data?.paymentInfo?.type}</strong>

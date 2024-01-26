@@ -4,8 +4,8 @@ import { useParams } from "react-router-dom";
 import { getAllProductsShop } from "../../redux/actions/product";
 import { getAllEventsShop } from "../../redux/actions/event";
 import Ratings from "../Shop/Ratings";
-import MainProductCard from "../ProductCards/MainProductCard";
 import EventProductCard from "./Events/EventProductCard";
+import MainCardMiddleWare from "../ProductCards/MainCardMiddleWare";
 
 const ShopProfileData = ({ isOwner }) => {
     const { products } = useSelector((state) => state.products);
@@ -73,7 +73,7 @@ const ShopProfileData = ({ isOwner }) => {
                 <div className="flex flex-wrap gap-[20px]">
                     {products &&
                         products.map((i, index) => (
-                            <MainProductCard data1={i} key={index} />
+                            <MainCardMiddleWare data1={i} key={index} />
                         ))}
                 </div>
             )}

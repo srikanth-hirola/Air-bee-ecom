@@ -44,7 +44,7 @@ export const CategoriesOne = ({ styles, logoLoading, setLogoLoading, category })
                     {category?.map((cat, index) => (
                         <div key={index} className='border-1 flex justify-between py-2 px-4 my-2 rounded'>
                             <p className='mb-0'>{cat?.name}</p>
-                            <input type='checkbox' className='w-[18px] h-[18px]' style={{ accentColor: styles?.mainColor }} onChange={(e) => handleSelectedCategoryObject(e, cat?.name, setCategoriesOne)} checked={CategoriesOne?.selectedCategories.includes(cat?.name) ? true : false} />
+                            <input type='checkbox' className='w-[18px] h-[18px]' style={{ accentColor: styles?.mainColor }} onChange={(e) => handleSelectedCategoryObject(e, cat?._id, setCategoriesOne)} checked={CategoriesOne?.selectedCategories.includes(cat?._id) ? true : false} />
                         </div>
                     ))}
                 </div>}

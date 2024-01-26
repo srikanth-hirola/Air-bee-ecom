@@ -7,7 +7,7 @@ const DronesServices = () => {
     return (
         <>
             <div className='DronesServices-parent'>
-                <h4>Our Extra Services</h4>
+                <h4>Industries We Serve</h4>
                 {data?.ServicesContent?.servicesimages?.content?.items?.items?.length > 0 &&
                     <div className="row">
 

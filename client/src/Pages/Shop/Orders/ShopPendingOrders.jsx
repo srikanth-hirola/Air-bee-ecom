@@ -16,7 +16,7 @@ const ShopPendingOrders = () => {
                     <AllOrders active={3} />
                 </div>
             </div>
-            <DronesFooter/>
+            <DronesFooter />
         </div>
     );
 };

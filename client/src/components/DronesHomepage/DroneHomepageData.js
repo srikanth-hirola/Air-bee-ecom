@@ -698,29 +698,31 @@ export const Footer = {
                     drop: true,
                     items: [
                         {
-                            Title: 'About',
+                            Title: 'Quick Links',
                             url: '',
                             drop: [
                                 {
-                                    SubTitle: 'About Shop',
+                                    SubTitle: 'Home',
                                     url: 'http://localhost:3000'
                                 },
                                 {
-                                    SubTitle: 'News',
+                                    SubTitle: 'About Us',
                                     url: 'http://localhost:3000'
                                 },
                                 {
-                                    SubTitle: 'Contact',
+                                    SubTitle: 'Shop',
                                     url: 'http://localhost:3000'
                                 },
                                 {
-                                    SubTitle: 'SiteMap',
+                                    SubTitle: 'Blogs',
                                     url: 'http://localhost:3000'
                                 },
                                 {
-                                    SubTitle: 'Demo Design System',
+                                    SubTitle: 'Contact Us',
                                     url: 'http://localhost:3000'
                                 },
+                               
+                               
                             ]
                         },
                         {
@@ -749,34 +751,9 @@ export const Footer = {
                                 }
                             ]
                         },
+                       
                         {
-                            Title: 'Customer Info',
-                            url: '',
-                            drop: [
-                                {
-                                    SubTitle: 'Payment',
-                                    url: 'http://localhost:3000'
-                                },
-                                {
-                                    SubTitle: 'Delivery',
-                                    url: 'http://localhost:3000'
-                                },
-                                {
-                                    SubTitle: 'Order Tracking',
-                                    url: 'http://localhost:3000'
-                                },
-                                {
-                                    SubTitle: 'Exchange & Returns',
-                                    url: 'http://localhost:3000'
-                                },
-                                {
-                                    SubTitle: 'T & C',
-                                    url: 'http://localhost:3000'
-                                }
-                            ]
-                        },
-                        {
-                            Title: 'Catalouge',
+                            Title: 'Collections',
                             url: '',
                             drop: [
                                 {
@@ -799,10 +776,36 @@ export const Footer = {
                                     SubTitle: 'Sitemap',
                                     url: 'http://localhost:3000'
                                 },
+                                // {
+                                //     SubTitle: 'Q & A',
+                                //     url: 'http://localhost:3000'
+                                // },
+                            ]
+                        },
+                        {
+                            Title: 'Customer Support',
+                            url: '',
+                            drop: [
                                 {
-                                    SubTitle: 'Q & A',
+                                    SubTitle: 'Address: Air Bee, NO 7, 4th floor, 1st Cross Rd, Balaji Layout, AMCO Colony, Koti Hosahalli, Bengaluru, Karnataka 560092',
                                     url: 'http://localhost:3000'
                                 },
+                                // {
+                                //     SubTitle: 'Delivery',
+                                //     url: 'http://localhost:3000'
+                                // },
+                                // {
+                                //     SubTitle: 'Order Tracking',
+                                //     url: 'http://localhost:3000'
+                                // },
+                                // {
+                                //     SubTitle: 'Exchange & Returns',
+                                //     url: 'http://localhost:3000'
+                                // },
+                                // {
+                                //     SubTitle: 'T & C',
+                                //     url: 'http://localhost:3000'
+                                // }
                             ]
                         },
                         
@@ -972,7 +975,7 @@ export const Services = {
                                 url:"/DronesHomepage/services1.png"
                             },
                             SubText:{
-                                text:"Source from Industry Hubs"
+                                text:"Automotive Industry"
                             }
 
                         },
@@ -982,7 +985,7 @@ export const Services = {
                                 url:"/DronesHomepage/services2.png"
                             },
                             SubText:{
-                                text:"Source from Industry Hubs"
+                                text:"Healthcare Sector"
                             }
 
                         },
@@ -992,7 +995,7 @@ export const Services = {
                                 url:"/DronesHomepage/services3.png"
                             },
                             SubText:{
-                                text:"Source from Industry Hubs"
+                                text:"Smart Home Technology"
                             }
 
                         },
@@ -1002,7 +1005,7 @@ export const Services = {
                                 url:"/DronesHomepage/services4.png"
                             },
                             SubText:{
-                                text:"Source from Industry Hubs"
+                                text:"Industrial Automation"
                             }
 
                         },

@@ -9,7 +9,7 @@ import { StyleConfig } from "../../utils/StyleConfig";
 
 // import socketIO from "socket.io-client";
 // const ENDPOINT = 'https://socket-ecommerce-tu68.onrender.com/';
-// const ENDPOINT = "http://localhost:4000/";
+// const ENDPOINT = "https://chat.airbee.co.in/";
 // const socketId = socketIO(ENDPOINT, { transports: ["websocket"] });
 
 const DashboardHeader = ({ active }) => {

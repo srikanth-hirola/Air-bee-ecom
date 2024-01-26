@@ -50,7 +50,6 @@ const ReturnOrders = () => {
                 const foundSeller = val?.sellerCart?.find(
                     (val) => val?.sellerID === seller?._id
                 );
-                console.log(returnShippingOrders)
                 // 416469095
                 if (foundSeller) {
                     const found = returnShippingOrders?.find(

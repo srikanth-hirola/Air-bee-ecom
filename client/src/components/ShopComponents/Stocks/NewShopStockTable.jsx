@@ -54,7 +54,7 @@ const NewShopStockTable = () => {
                                 <Accordion defaultActiveKey="0" key={index}>
                                     <Accordion.Item eventKey={index}>
                                         <Accordion.Header>
-                                            {value.name}({value.productId})
+                                            {value?.name}
                                         </Accordion.Header>
                                         <Accordion.Body>
                                             {value.showInputs ? (
