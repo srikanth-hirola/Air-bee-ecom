@@ -339,7 +339,6 @@ router.delete(
     try {
       const event = await Event.findById(req.params.id);
 
-
       for (let i = 0; i < event.images.length; i++) {
         const result = await cloudinary.v2.uploader.destroy(
           event.images[i].public_id

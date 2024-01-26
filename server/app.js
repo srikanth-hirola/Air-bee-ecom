@@ -81,6 +81,7 @@ const category = require('./controller/category');
 const shipping = require('./controller/shipping');
 const siteConfig = require('./controller/siteConfig');
 const newsletter = require('./controller/newsletter');
+const form = require('./controller/Form');
 
 app.use('/api/v2/user', user);
 app.use('/api/v2/conversation', conversation);
@@ -96,6 +97,7 @@ app.use('/api/v2/category', category);
 app.use('/api/v2/shipping', shipping);
 app.use('/api/v2/site', siteConfig);
 app.use('/api/v2/newsletter', newsletter);
+app.use('/api/v2/form', form);
 
 cron.schedule('* * * * *', () => {
   const date = new Date().toISOString().substring(0, 10);

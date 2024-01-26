@@ -40,7 +40,9 @@ import Loader from './utils/Loader.jsx';
 import { CategoriesConfigPage } from './Pages/Site-Config/CategoriesConfigPage.jsx';
 import { socketId } from './components/Headers/socket.js';
 import { useSelector } from 'react-redux';
-import ContactConfigPage from './Pages/Site-Config/ContactConfigPage.jsx';
+import CreateNewsletterPage from './Pages/Site-Config/CaresteNewsLetterPage.jsx';
+import Blog from './Pages/Blog.jsx';
+
 
 
 const DronesHomepage = lazy(() => import('./components/DronesHomepage/DronesHomepage.jsx'));
@@ -108,6 +110,9 @@ const RefundPage = lazy(() => import('./Pages/Profile/RefundPage.jsx'));
 const UserSignUpPage = lazy(() => import('./Pages/Auth/UserSignUpPage.jsx'));
 const ActivationPage = lazy(() => import('./Pages/ActivationPage.jsx'));
 const MiscellaneousConfigPage = lazy(() => import('./Pages/Site-Config/MiscellaneousConfigPage.jsx'));
+const ContactConfigPage = lazy(() => import('./Pages/Site-Config/ContactConfigPage.jsx'));
+const InquiriesPage = lazy(() => import('./Pages/Forms/InquiriesPage.jsx'));
+const ContactsPage = lazy(() => import('./Pages/Forms/ContactsPage.jsx'));
 
 
 // register Swiper custom elements
@@ -206,6 +211,7 @@ const App = () => {
           <Route path="/contact-us" element={<ContactUsPage />} />
           <Route path="/event/:id" element={<EventProductsPage />} />
           <Route path="/about-us" element={<About />} />
+          <Route path="/blog" element={<Blog />} />
           <Route
             path="/activation/:activation_token"
             element={<ActivationPage />}
@@ -271,6 +277,22 @@ const App = () => {
             element={
               <SellerProtectedRoute>
                 <ShopSettingsPage />
+              </SellerProtectedRoute>
+            }
+          />
+          <Route
+            path="/inquiries"
+            element={
+              <SellerProtectedRoute>
+                <InquiriesPage />
+              </SellerProtectedRoute>
+            }
+          />
+          <Route
+            path="/contacts"
+            element={
+              <SellerProtectedRoute>
+                <ContactsPage />
               </SellerProtectedRoute>
             }
           />
@@ -407,6 +429,14 @@ const App = () => {
             element={
               <SellerProtectedRoute>
                 <ShopRejectedRefunds />
+              </SellerProtectedRoute>
+            }
+          />
+          <Route
+            path="/shop/create-newsletter"
+            element={
+              <SellerProtectedRoute>
+                <CreateNewsletterPage />
               </SellerProtectedRoute>
             }
           />

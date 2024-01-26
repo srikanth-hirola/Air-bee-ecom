@@ -74,7 +74,7 @@ const CreateEvent = () => {
                 navigate('/dashboard-events');
             }, 2000);
 
-            // window.location.reload();
+            window.location.reload();
         }
         // axios
         //     .get(`${server}/event/get-all-cat-product/${seller._id}`)

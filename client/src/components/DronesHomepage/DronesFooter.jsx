@@ -16,7 +16,7 @@ const DronesFooter = () => {
                                 <div className='Drones-footer-logo-image'>
                                     <img src={styles?.logo?.url} alt="logo" className='mix-blend-multiply object-cover' />
                                 </div>
-                                <p>Best information about the company gies here but now lorem ipsum is</p>
+                                <p>Our mission is to simplify the world of electronics for enthusiasts, hobbyists, and professionals alike.</p>
                                 {data?.SocialMedia?.Links?.content?.img?.length > 0 &&
                                     <div className='col-md-12'>
                                         <div className="Drones-footer-social-icons">
@@ -73,6 +73,11 @@ const DronesFooter = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <hr />
+            <div className='DronesFooter-copyrights'>
+                <p>airbee.co.in © All Rights Reserved - 2024 - designed and developed by <Link to="https://www.hirolainfotech.com/"> Hirola Infotech Solutions Pvt Ltd.</Link> </p>
             </div>
         </>
     )

@@ -42,7 +42,7 @@ const AllProductsPage = () => {
             const decodedSearchParam = decodeURIComponent(searchParam);
             setBredCrumd((prev) => {
                 const newBreadcrumbs = [];
-                newBreadcrumbs.push("Products");
+                // newBreadcrumbs.push("Products");
                 let contextStandard = decodedSearchParam.charAt(0).toUpperCase() + decodedSearchParam.slice(1)
                 if (!newBreadcrumbs.includes(contextStandard)) {
                     newBreadcrumbs.push(contextStandard);
@@ -88,7 +88,7 @@ const AllProductsPage = () => {
                     </div>
                 </>
             }
-            <DronesFooter/>
+            <DronesFooter />
         </>
     )
 }

@@ -11,8 +11,8 @@ export const ContactProduct1 = () => {
                                 <img src="/DronesHomepage/checkout3.png" alt="pic" />
                             </div>
                             <div className='text1-contact'>
-                                <h6>Product Support</h6>
-                                <p>Up to 3 years on-site warranty available for your peace of mind.</p>
+                                <h6>Exceptional Customer Support</h6>
+                                <p>Count on Air Bee for friendly customer support, guiding you through any questions.</p>
                             </div>
                         </div>
                         <div className='col-md-4 text-center'>
@@ -21,7 +21,7 @@ export const ContactProduct1 = () => {
                             </div>
                             <div className='text1-contact'>
                                 <h6>Amazing Savings</h6>
-                                <p>Up to 70% off new Products, you can be sure of the best price.</p>
+                                <p>amazing savings at Air Bee, where quality meets affordability for all your electronic needs.</p>
                             </div>
                         </div>
                         <div className='col-md-4 text-center'>
@@ -29,8 +29,8 @@ export const ContactProduct1 = () => {
                                 <img src="/DronesHomepage/checkout2.png" alt="pic" />
                             </div>
                             <div className='text1-contact'>
-                                <h6>Personal Account</h6>
-                                <p>With big discounts, free delivery and a dedicated support specialist.</p>
+                                <h6>24x7 Accessibility</h6>
+                                <p>Shop anytime, anywhere with Air Bee's user-friendly platform, available 24x7.</p>
                             </div>
                         </div>
                     </div>

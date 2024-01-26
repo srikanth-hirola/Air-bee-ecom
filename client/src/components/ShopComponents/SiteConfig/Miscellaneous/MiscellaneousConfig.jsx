@@ -171,8 +171,8 @@ export const MiscellaneousConfig = () => {
 
     return (
         <div className="w-full min-h-[45vh] pt-5 rounded flex justify-center outer1-div" >
-            <div className="w-[97%] flex justify-center border-1 rounded h-fit" >
-                <div className='w-full px-8 py-4 '>
+            <div className="w-[97%] flex justify-center border-1 rounded h-fit dashboard-miscellanenous-page-data" >
+                <div className='w-full px-8 py-4 dashboard-logo-config-start-here'>
                     {/* logo config starts here */}
                     <div className='mb-3 flex space-x-3 mt-12'>
                         <div className='border-1 rounded w-6/12 py-3 px-4'>
@@ -207,9 +207,9 @@ export const MiscellaneousConfig = () => {
                         {/* Currency type config ends here */}
 
                         {/* Accepted Payment Methods config starts here */}
-                        <div className='my-12 '>
+                        <div className='my-12  dashboard-accepting-page'>
                             <label>Accepted Payment Methods<span className="text-red-500">*</span></label><br />
-                            <div className='flex space-x-24 my-10'>
+                            <div className='flex my-10 dashboard-payment-inr'>
                                 {currency.code === "INR" && InrPayments?.map((methods, index) => (
                                     <div key={index} className='flex items-center' >
                                         <input type='checkbox' className='w-[15px] h-[15px]' onChange={(e) => handlePaymentMethodINRChange(e, methods)} checked={paymentMethods?.INR.includes(methods) ? true : false} /><label className='mx-2'>{methods}</label>
@@ -226,16 +226,16 @@ export const MiscellaneousConfig = () => {
                                     </div>
                                 ))}
                             </div>
-                            {logoLoading ? <button
+                            {logoLoading ? <button 
                                 className='w-[400px] h-[40px] rounded bg-green-500 text-white'  >Loading...</button> : <button
-                                    className='w-[400px] h-[40px] rounded bg-green-500 text-white' onClick={handleCurrencySubmit}>Update Currency & Payment Config</button>}
+                                    className='w-[400px] h-[40px] rounded bg-green-500 text-white payment-update-button' onClick={handleCurrencySubmit}>Update Currency & Payment Config</button>}
                         </div>
                         {/* Accepted Payment Methods config ends here */}
                     </div>
                     {/* Currency type config ends here */}
 
                     {/* currency value */}
-                    <div className='border-1 rounded py-3 px-4 my-3'>
+                    <div className='border-1 rounded py-3 px-4 my-3 dashboard-currency-design'>
                         <CurrencyValues CurrencyArr={CurrencyArr} logoLoading={logoLoading} setCurrencyArr={setCurrencyArr} setLogoLoading={setLogoLoading} />
                     </div>
                     {/* currency value */}

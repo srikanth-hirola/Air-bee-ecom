@@ -100,7 +100,6 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                 })
             } else {
                 if (product?.haveAttributes) {
-                    console.log(product)
                     const { name, values } = product?.attributes[0];
                     const existingIndex = result.findIndex((obj) => obj.name === name);
                     if (existingIndex === -1) {

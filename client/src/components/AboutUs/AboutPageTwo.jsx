@@ -19,10 +19,12 @@ export const AboutPageTwo = () => {
                                             <div className='logo-rel'>
                                                 <img src="/DronesHomepage/aboutlogo.png" alt="" />
                                             </div>
-                                            <h5>Shop.com</h5>
+                                            <h5>E-commerce Platform</h5>
                                         </div>
 
-                                        <p>Shop.com is a proudly Australian owned, Melbourne based supplier of I.T. goods and services, operating since 1991. Our client base encompasses individuals, small business, corporate and government organisations. We provide complete business IT solutions, centred on high quality hardware and exceptional customer service.</p>
+                                        <p>Our E-commerce Platform at Air Bee is designed with your convenience in mind. Feel a seamless and user-friendly shopping experience as you navigate through a vast selection of over 1 lakh in-stock parts. Explore our comprehensive offering across 10 categories and delve deeper into specific areas with 100 sub-categories, ensuring that you find precisely what you're looking for. <br /><br />
+
+Whether you're searching for essential electronic components, advanced modules, or engaging projects, Air Bee's platform is your ultimate destination. What sets us apart is the commitment to providing a continuous and accessible service. Our platform operates 24x7, allowing you to explore the latest trends and innovations in electronics at any time. Your inspiration is never restricted by time;.</p>
                                     </div>
                                 </div>
                             </div>
