@@ -400,7 +400,7 @@ const DashboardSideBar = ({ active }) => {
                             </h5>
                         </Link>
                     </div>
-                    <Accordion.Item eventKey="4">
+                    {/* <Accordion.Item eventKey="4">
                         <Accordion.Header>
 
                             Payments
@@ -414,12 +414,9 @@ const DashboardSideBar = ({ active }) => {
                                     onClick={() => sideBarActive(17)}
                                 >
 
-                                    {/* <h5
-                                        className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 7 ? 'text-[crimson]' : 'text-[#555]'
-                                            }`}
-                                    > */}
+                            
                                     Withdraw Money
-                                    {/* </h5> */}
+                                    
                                 </Link>
                             </div>
                             <div className="w-full accordian-child">
@@ -430,12 +427,9 @@ const DashboardSideBar = ({ active }) => {
                                     onClick={() => sideBarActive(18)}
                                 >
 
-                                    {/* <h5
-                                        className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 7 ? 'text-[crimson]' : 'text-[#555]'
-                                            }`}
-                                    > */}
+                                    
                                     Payment History
-                                    {/* </h5> */}
+                                    
                                 </Link>
                             </div>
                             <div className="w-full accordian-child">
@@ -446,18 +440,15 @@ const DashboardSideBar = ({ active }) => {
                                     onClick={() => sideBarActive(19)}
                                 >
 
-                                    {/* <h5
-                                        className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 7 ? 'text-[crimson]' : 'text-[#555]'
-                                            }`}
-                                    > */}
+                                    
                                     Payment Requests
-                                    {/* </h5> */}
+                                   
                                 </Link>
                             </div>
 
 
                         </Accordion.Body>
-                    </Accordion.Item>
+                    </Accordion.Item> */}
                     <div className="w-full flex items-center dashboard-main-control-image1">
                         <Link to="/dashboard-messages" className="w-full flex items-center">
                             <BiMessageSquareDetail
@@ -487,7 +478,7 @@ const DashboardSideBar = ({ active }) => {
                             </h5>
                         </Link>
                     </div>
-                    <Accordion.Item eventKey="5">
+                    <Accordion.Item eventKey="4">
                         <Accordion.Header>Shipment</Accordion.Header>
                         <Accordion.Body>
                             <div className="w-full accordian-child">
@@ -570,7 +561,7 @@ const DashboardSideBar = ({ active }) => {
                             </div>
                         </Accordion.Body>
                     </Accordion.Item>
-                    <Accordion.Item eventKey="6">
+                    <Accordion.Item eventKey="5">
                         <Accordion.Header>
                             Site Configuration
                         </Accordion.Header>

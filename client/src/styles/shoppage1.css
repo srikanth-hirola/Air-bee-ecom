@@ -268,7 +268,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .card.main-card {
@@ -407,7 +407,7 @@ font-weight: 600;
 width: 150px;
 height: 150px;
 display: flex;
-align-items: start;
+align-items: flex-start;
 }
 .infomation-reviews img{
   height: 80%;

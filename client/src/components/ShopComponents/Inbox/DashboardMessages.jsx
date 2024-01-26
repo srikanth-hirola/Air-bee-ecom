@@ -290,7 +290,7 @@ const MessageList = ({
     }, [me, data]);
     return (
         <div
-            className={`w-full flex p-3 px-3 ${active === index ? 'bg-[#00000010]' : 'bg-transparent'
+            className={`w-[75%] mx-auto flex p-3 px-3 ${active === index ? 'bg-[#00000010]' : 'bg-transparent'
                 }  cursor-pointer`}
             onClick={(e) =>
                 setActive(index) ||
