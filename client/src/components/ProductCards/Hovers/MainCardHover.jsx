@@ -13,7 +13,7 @@ const MainCardHover = ({ addToCart, id, data }) => {
           <FontAwesomeIcon icon={faCartShopping} />
         </div>
         <div className='DronesRecommendedItems-content-hover-images-1'>
-          <Link to="/products?search=all products">
+          <Link to={`${`/product/${data?._id}`}`}>
           <FontAwesomeIcon icon={faEye} />
           </Link>
         </div>

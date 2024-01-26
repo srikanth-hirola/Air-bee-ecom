@@ -1,5 +1,77 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
 
+/* banner component */
+
+.AboutUsBanner-parent {
+  display: flex;
+  align-items: center;
+  height: 550px;
+}
+.AboutUsBanner-parent .row{
+  height:fit-content;
+  align-items: center;
+}
+.AboutUsBanner-sub-content {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: -30px;
+}
+.AboutUsBanner-sub-content p{
+  margin: 0;
+}
+.AboutUsBanner-sub-content-image{
+  height: 30px;
+  width: 30px;
+}
+.AboutUsBanner-sub-content-image img{
+  height:100%;
+  width:100%;
+  object-fit: contain;
+}
+.AboutUsBanner-sub h1{
+  padding: 25px 0px;
+  font-weight: 600;
+}
+.AboutUsBanner-sub button{
+  background:#5151f1 !important;
+  padding: 8px 20px;
+  border-radius: 8px;
+  color: white;
+}
+.AboutUsBanner-image{
+  width:80%;
+  height: 430px;
+  margin: auto;
+}
+.AboutUsBanner-sub-content-text {
+  padding-bottom: 15px;
+}
+.AboutUsBanner-image img{
+  width: 100%;
+  height:100%;
+  object-fit: contain;
+  margin-top: 40px;
+}
+@media only screen and (max-width:767px){
+  .AboutUsBanner-parent{
+    height: fit-content;
+  }
+  .AboutUsBanner-sub-content {
+    margin-top: 30px;
+  }
+  .AboutUsBanner-image {
+    width: 85%;
+    height: 100%;
+}
+}
+
+@media only screen and (min-width:768px) and (max-width:991px){
+  .AboutUsBanner-image{
+    width: 95%;
+  }
+}
+
 * {
   font-family: "Poppins", sans-serif;
 }
@@ -13,9 +85,12 @@
 
 .About-Us-one-sub .About-Us-one-data {
   background: var(--Color---7, #000);
-  height: 400px;
+  /* height: 400px; */
 }
-
+.row.align-items-center.About-Us-one-content {
+  height: fit-content;
+  padding: 30px 0px;
+}
 .About-Us-one-image img {
   object-fit: contain;
   width: 100%;
@@ -25,12 +100,13 @@
   padding: 0px 0px 50px 0px;
 }
 .About-Us-one-sub .About-Us-one-data .About-Us-one-image {
-  width: 80%;
-  height: 300px;
+  width: 100%;
+  height: 450px;
+  /* margin: auto; */
 }
 
 .About-Us-one-sub .About-Us-one-data .About-Us-one-content {
-  height: 400px;
+  /* height: 400px; */
   align-items: center;
   display: flex;
 }
@@ -56,9 +132,12 @@
 
 .About-Us-two-sub .About-Us-two-data {
   background: var(--Dominant, #fff);
-  height: 380px;
+  /* height: 380px; */
 }
-
+.row.align-items-center.About-Us-two-content {
+  height: fit-content;
+  padding: 30px 0px;
+}
 .About-Us-two-image img {
   object-fit: contain;
   width: 100%;
@@ -71,7 +150,7 @@
 }
 
 .About-Us-two-sub .About-Us-two-data .About-Us-two-content {
-  height: 380px;
+  /* height: 380px; */
   align-items: center;
   display: flex;
 }
@@ -127,7 +206,7 @@
 
 .About-Us-three-sub .About-Us-three-data {
   background: var(--Color---7, #000);
-  height: 400px;
+  /* height: 400px; */
 }
 
 .About-Us-three-image img {
@@ -142,8 +221,9 @@
 }
 
 .About-Us-three-sub .About-Us-three-data .About-Us-three-content {
-  height: 400px;
+  /* height: 400px; */
   align-items: center;
+  padding: 40px 0px;
   display: flex;
 }
 
@@ -216,7 +296,7 @@
 
 .About-Us-four-sub .About-Us-four-data {
   background: var(--Dominant, #fff);
-  height: 380px;
+  /* height: 380px; */
 }
 
 .About-Us-four-image img {
@@ -231,7 +311,8 @@
 }
 
 .About-Us-four-sub .About-Us-four-data .About-Us-four-content {
-  height: 380px;
+  /* height: 380px; */
+  padding: 40px 0px;
   align-items: center;
   display: flex;
 }
@@ -432,9 +513,10 @@
 .about-faq-instant-question .accordion-button:focus {
   border-color: white !important;
 }
-.about-faq-instant {
-  padding: 60px 0px;
+  .about-faq-instant {
+    padding: 0px 0px 30px 0px;
 }
+
 .About-Us-two-text .d-flex {
   align-items: center;
 }
@@ -737,7 +819,7 @@
   }
 
   .About-Us-three-sub .About-Us-three-data .About-Us-three-text p {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .About-Us-three-sub .About-Us-three-data .About-Us-three-text {
