@@ -1,9 +1,47 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { StyleConfig } from '../../utils/StyleConfig';
+import toast from 'react-hot-toast';
+import axios from 'axios';
+import { server } from '../../server';
 
 export const ContactUsDetails = () => {
     const styles = StyleConfig();
+
+    const [form, setForm] = useState({
+        name: '',
+        phone: '',
+        email: '',
+        message: ''
+    })
+    const [btnLoading, setBtnLoading] = useState(false);
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        let updatedState = {
+            ...form
+        };
+        updatedState[name] = value;
+        setForm(updatedState)
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (!form.name || !form.phone || !form.email) {
+            toast.error('Required Fields need to be filled!')
+        } else {
+            try {
+                setBtnLoading(true)
+                await axios.post(`${server}/form/contact`, { form });
+                toast.success("Sent Contact Details Successfully")
+            } catch (error) {
+                toast.error(error?.message)
+            } finally {
+                setBtnLoading(false)
+            }
+        }
+    }
+
 
 
     return (
@@ -25,25 +63,25 @@ export const ContactUsDetails = () => {
                                     Please contact us and we will make sure to get back to you as soon as we possibly can.</p>
 
                                 <div className='contactus1-name'>
-                                    <form className='row'>
+                                    <form className='row' onSubmit={!btnLoading ? handleSubmit : null}>
                                         <div className='col-md-6 contact-name'>
                                             <label htmlFor="">Your Name<span>*</span></label>
-                                            <input type="text" placeholder='Your Name' />
+                                            <input type="text" placeholder='Your Name' name='name' value={form.name} onChange={handleChange} required />
                                         </div>
                                         <div className='col-md-6 contact-name'>
                                             <label htmlFor="">Your Email<span>*</span></label>
-                                            <input type="text" placeholder='Your Email' />
+                                            <input type="email" placeholder='Your Email' name='email' value={form.email} onChange={handleChange} required />
                                         </div>
                                         <div className='col-md-6 contact-name'>
                                             <label htmlFor="">Your Phone Number<span>*</span></label>
-                                            <input type="text" placeholder='Your Phone' />
+                                            <input type="text" placeholder='Your Phone' name='phone' value={form.phone} onChange={handleChange} required />
                                         </div>
                                         <div className='col-md-12 contact-mindset'>
-                                            <label htmlFor="">What’s on your mind?<span>*</span></label>
-                                            <textarea placeholder='Jot us a note and we’ll get back to you as quickly as possible' />
+                                            <label htmlFor="">What’s on your mind?</label>
+                                            <textarea placeholder='Jot us a note and we’ll get back to you as quickly as possible' name='message' value={form.message} onChange={handleChange} />
                                         </div>
                                         <div className='contact-submit'>
-                                            <input type="submit" title='submit' />
+                                            <button type="submit">{btnLoading ? "Loading..." : "Submit"}</button>
                                         </div>
                                     </form>
                                 </div>

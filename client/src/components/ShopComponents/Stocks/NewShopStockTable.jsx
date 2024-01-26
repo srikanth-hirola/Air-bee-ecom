@@ -54,7 +54,7 @@ const NewShopStockTable = () => {
                                 <Accordion defaultActiveKey="0" key={index}>
                                     <Accordion.Item eventKey={index}>
                                         <Accordion.Header>
-                                            {value.name}({value.productId})
+                                            {value?.name}
                                         </Accordion.Header>
                                         <Accordion.Body>
                                             {value.showInputs ? (
@@ -158,7 +158,7 @@ const NewShopStockTable = () => {
 
                     {/* Pagination */}
                     <Pagination className="mt-4 w-fit mx-auto">
-                        {Array.from({ length: Math.ceil(productData.length / productsPerPage) }).map((_, index) => (
+                        {Array.from({ length: Math.ceil(productData?.length / productsPerPage) }).map((_, index) => (
                             <Pagination.Item key={index + 1} active={index + 1 === currentPage} onClick={() => paginate(index + 1)}>
                                 {index + 1}
                             </Pagination.Item>

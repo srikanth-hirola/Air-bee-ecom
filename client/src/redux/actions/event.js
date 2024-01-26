@@ -15,6 +15,7 @@ export const createevent = (data) => async (dispatch) => {
       payload: result.data.event,
     });
     toast.success('Event created successfully!');
+    window.location.reload()
     dispatch({ type: 'resetSuccessEvent' });
   } catch (error) {
     toast.error(error.response.data.message);

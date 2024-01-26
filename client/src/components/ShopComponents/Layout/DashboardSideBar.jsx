@@ -585,6 +585,33 @@ const DashboardSideBar = ({ active }) => {
                             </div>
                         </Accordion.Body>
                     </Accordion.Item>
+                    <Accordion.Item eventKey="7">
+                        <Accordion.Header>
+                            Forms Details
+                        </Accordion.Header>
+                        <Accordion.Body>
+                            <div className="w-full flex items-center accordian-child">
+                                <Link
+                                    to="/inquiries"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 28 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(28)}
+                                >
+                                    Inqueries
+                                </Link>
+                            </div>
+                            <div className="w-full flex items-center accordian-child">
+                                <Link
+                                    to="/contacts"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 29 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(29)}
+                                >
+                                    Contacts
+                                </Link>
+                            </div>
+                        </Accordion.Body>
+                    </Accordion.Item>
                     <div className="w-full flex items-center dashboard-main-control-image1">
                         <Link to="/settings" className="w-full flex items-center">
                             <CiSettings

@@ -40,7 +40,7 @@ import Loader from './utils/Loader.jsx';
 import { CategoriesConfigPage } from './Pages/Site-Config/CategoriesConfigPage.jsx';
 import { socketId } from './components/Headers/socket.js';
 import { useSelector } from 'react-redux';
-import ContactConfigPage from './Pages/Site-Config/ContactConfigPage.jsx';
+
 
 
 const DronesHomepage = lazy(() => import('./components/DronesHomepage/DronesHomepage.jsx'));
@@ -108,6 +108,9 @@ const RefundPage = lazy(() => import('./Pages/Profile/RefundPage.jsx'));
 const UserSignUpPage = lazy(() => import('./Pages/Auth/UserSignUpPage.jsx'));
 const ActivationPage = lazy(() => import('./Pages/ActivationPage.jsx'));
 const MiscellaneousConfigPage = lazy(() => import('./Pages/Site-Config/MiscellaneousConfigPage.jsx'));
+const ContactConfigPage = lazy(() => import('./Pages/Site-Config/ContactConfigPage.jsx'));
+const InquiriesPage = lazy(() => import('./Pages/Forms/InquiriesPage.jsx'));
+const ContactsPage = lazy(() => import('./Pages/Forms/ContactsPage.jsx'));
 
 
 // register Swiper custom elements
@@ -271,6 +274,22 @@ const App = () => {
             element={
               <SellerProtectedRoute>
                 <ShopSettingsPage />
+              </SellerProtectedRoute>
+            }
+          />
+          <Route
+            path="/inquiries"
+            element={
+              <SellerProtectedRoute>
+                <InquiriesPage />
+              </SellerProtectedRoute>
+            }
+          />
+          <Route
+            path="/contacts"
+            element={
+              <SellerProtectedRoute>
+                <ContactsPage />
               </SellerProtectedRoute>
             }
           />

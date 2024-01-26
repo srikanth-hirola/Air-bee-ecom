@@ -401,7 +401,7 @@ const OrderDetails = () => {
 
 
             <div
-                className={`${styles.button} mt-5 !bg-[#FCE1E6] !rounded-[4px] text-[#fff] font-[600] !h-[45px] text-[16px] font-[500]`}
+                className={`${styles.button} mt-5 !bg-[#FCE1E6] !rounded-[4px] text-[#fff] font-[600] !h-[45px] text-[16px] `}
                 onClick={
                     data?.status !== 'Processing refund'
                         ? orderUpdateHandler

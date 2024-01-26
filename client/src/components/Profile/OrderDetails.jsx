@@ -270,7 +270,7 @@ const OrderDetails = () => {
                                             <p>{data?.BillingAddress?.billinguserphonenumber}</p>
                                             <p>{data?.BillingAddress?.billinguserEmail}</p>
                                             <div className='OrderDetails-delivery-address-buttons'>
-                                                <Link to="/">
+                                                <Link to="/inbox">
                                                     <div className={`bg-black p-3 rounded text-white`}>Send Message</div>
                                                 </Link>
                                             </div>
