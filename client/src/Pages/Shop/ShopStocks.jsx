@@ -10,14 +10,14 @@ const ShopStocks = () => {
             <DashboardHeader />
             <div className="flex justify-between w-full">
                 <div className="w-[80px] 800px:w-[330px] dashboard-side-bar-res">
-                    <DashboardSideBar active={2} />
+                    <DashboardSideBar active={39} />
                 </div>
                 <div className="w-full justify-center flex dashboard-side-bar-data-view">
                     {/* <ShopStockTable /> */}
                     <NewShopStockTable />
                 </div>
             </div>
-            <DronesFooter/>
+            <DronesFooter />
         </div>
     );
 };

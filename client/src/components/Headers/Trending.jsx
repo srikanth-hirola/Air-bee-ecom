@@ -21,7 +21,7 @@ const Trending = () => {
         let updatedState = [...categories];
         // eslint-disable-next-line array-callback-return
         data?.map((product) => {
-            let found = category?.find((cat) => cat?.name === product?.category)
+            let found = category?.find((cat) => cat?._id === product?.category)
             if (found) {
                 let foundInState = categories?.find((cat) => cat?.name === found?.category)
                 if (!foundInState) {
