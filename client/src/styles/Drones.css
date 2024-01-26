@@ -1393,6 +1393,8 @@ transform: scale(1.08);
   font-size: 14px;
 }
 .DronesFooter-copyrights{
+  width: 95%;
+  margin: auto;
   padding: 10px 0px;
   text-align: center;
 }
@@ -1631,11 +1633,20 @@ transform: scale(1.08);
 }
 
 @media only screen and (max-width: 767px) {
+  .testimonal-home .swiper-slide{
+    width: 90% !important;
+    margin: auto;
+  }
   .DronesFlags-parent{
     padding: 0;
   }
-  .DronesNewsletter-email-parent input {
+  .testimonal-home-bg {
+    height: 100%;
+    padding: 20px 0px;
+  }
+.DronesNewsletter-email-parent input {
     padding: 7px 35px 7px 10px;
+    margin-top: 10px;
 }
   .DronesNewsletter-parent .DronesNewsletter-email-image{
     display: none;
@@ -1710,6 +1721,7 @@ transform: scale(1.08);
   }
 
   /* banner */
+
   .DronesBanner-sub1 {
     max-height: 200px;
     overflow-y: scroll;
@@ -1749,6 +1761,7 @@ transform: scale(1.08);
   }
 
   /* flags */
+
   .DronesFlags-parent h4 {
     padding: 10px 0px 25px 0px;
     text-align: center;
@@ -1814,6 +1827,7 @@ transform: scale(1.08);
   }
 
   /* testimonial */
+
   .Drones-testimonial-quote-parent {
     display: none;
   }
@@ -1824,6 +1838,7 @@ transform: scale(1.08);
   }
 
   /* footer component */
+
   .Drones-header-poarent .col-md-11 {
     width: 100%;
   }
@@ -2125,6 +2140,7 @@ flex-direction: row;
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
 
   /* banner component */
+
   .DronesBanner-parent,
   .DronesProductsRow2-parent,
   .DronesProductsRow3-parent {
@@ -2532,6 +2548,7 @@ flex-direction: row;
 
 
 /* newly addded css */
+
 .DronesRecommendedItems-content-hover-images-1{
   cursor: pointer;
 }
@@ -2583,10 +2600,39 @@ flex-direction: row;
   padding: 25px 0px;
 }
 
-
+.DronesEyePlayground-sub-content1 button{
+  margin-top: 5px;
+}
 
 
 /* Drnes Direction sensing component styles starts here */
+/* animations for text */
+
+.DronesEyePlayground-sub h1,.DronesDirectionSEnsingsub1-text-heading h1{
+  background: linear-gradient(45deg, #f85353, #5a5af7, #2af32a);
+  background-size: 200% 200%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: gradientAnimation 5s ease infinite;
+  font-weight: 600;
+
+}
+.DronesDirectionSEnsingsub1-text-heading h1{
+  font-size: 34px;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 .DronesDirectionSensing-parent {
   width: 90%;
   margin: auto;
@@ -2644,7 +2690,7 @@ flex-direction: row;
 }
 
 .DronesDirectionSEnsingsub1-text p {
-  width: 70%;
+  width: 90%;
 }
 
 .DronesDirectionSEnsingsub2-parent {
@@ -2678,7 +2724,9 @@ flex-direction: row;
   color: white;
   /* margin-top: 20px; */
 }
-
+.DronesEyePlayground-parent > .row{
+  align-items: center;
+}
 .DronesEyePlayground-image {
   width: 100%;
   height: 500px;
@@ -2691,6 +2739,9 @@ flex-direction: row;
 }
 
 @media only screen and (max-width:767px) {
+  .DronesEyePlayground-sub h1, .DronesDirectionSEnsingsub1-text-heading h1{
+    font-size: 26px !important;
+  }
   .DronesFlags-parent{
     padding: 0 !important;
   }
@@ -2751,6 +2802,19 @@ flex-direction: row;
 }
 
 @media only screen and (min-width:768px) and (max-width:991px) {
+  .DronesEyePlayground-sub-content1 p{
+    padding: 5px 0px;
+    font-size: 15px;
+  }
+  .DronesEyePlayground-sub-content1{
+    width: 100%;
+  }
+  .DronesEyePlayground-sub h1, .DronesDirectionSEnsingsub1-text-heading h1{
+    font-size: 30px;
+  }
+  .DronesEyePlayground-sub-content1 button{
+    margin-top: 10px;
+  }
   .DronesDirectionSEnsingsub1-text{
     display: block;
   }
@@ -2862,6 +2926,7 @@ flex-direction: row;
   }
   .DronesNewsletter-email-parent button{
     padding: 4px 10px;
+    margin-top: 10px;
   }
 
 }
@@ -2926,31 +2991,3 @@ strong {
   font-weight: 600;
 }
 
-
-
-
-
-/* animations for text */
-
-.DronesEyePlayground-sub h1,.DronesDirectionSEnsingsub1-text-heading h1{
-  background: linear-gradient(45deg, #f85353, #5a5af7, #2af32a);
-  background-size: 200% 200%;
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  animation: gradientAnimation 5s ease infinite;
-  font-weight: 600;
-  font-size: 37px;
-}
-
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}

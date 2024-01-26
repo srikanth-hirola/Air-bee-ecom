@@ -6,9 +6,9 @@ export const AboutPageOne = () => {
             <div className="About-Us-one">
                 <div className="About-Us-one-sub">
 
-                    <div className='About-Us-one-heading py-10'>
+                    <div className='About-Us-one-heading'>
                         <div className="container">
-                            <h4>About Us</h4>
+                            {/* <h4>About Us</h4> */}
                         </div>
                     </div>
                     <div className="About-Us-one-data">
