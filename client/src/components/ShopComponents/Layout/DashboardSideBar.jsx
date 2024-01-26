@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { AiOutlineGift } from 'react-icons/ai';
 import { RxDashboard } from 'react-icons/rx';
 import { CiSettings } from 'react-icons/ci';
 import { Link } from 'react-router-dom';
 import { BiMessageSquareDetail } from 'react-icons/bi';
 import Accordion from 'react-bootstrap/Accordion';
+import { FaRegNewspaper } from "react-icons/fa";
 
 const DashboardSideBar = ({ active }) => {
 
@@ -12,9 +13,7 @@ const DashboardSideBar = ({ active }) => {
         // setActive(color);
     };
 
-    useEffect(() => {
-        console.log(active)
-    }, [active])
+
     return (
         <div className="w-full bg-white shadow-sm sticky top-0 left-0 z-10 side-div">
             {/* single item */}
@@ -442,6 +441,20 @@ const DashboardSideBar = ({ active }) => {
                                     `}
                             >
                                 Discount Codes
+                            </h5>
+                        </Link>
+                    </div>
+                    <div className="w-full flex items-center dashboard-main-control-image1">
+                        <Link to="/shop/create-newsletter" className="w-full flex items-center">
+                            <FaRegNewspaper
+                                size={30}
+                                className='text-[#555] pl-1'
+                            />
+                            <h5
+                                className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 text-[#555]
+                                    `}
+                            >
+                                NewsLetter
                             </h5>
                         </Link>
                     </div>

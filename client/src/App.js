@@ -40,6 +40,7 @@ import Loader from './utils/Loader.jsx';
 import { CategoriesConfigPage } from './Pages/Site-Config/CategoriesConfigPage.jsx';
 import { socketId } from './components/Headers/socket.js';
 import { useSelector } from 'react-redux';
+import CreateNewsletterPage from './Pages/Site-Config/CaresteNewsLetterPage.jsx';
 
 
 
@@ -426,6 +427,14 @@ const App = () => {
             element={
               <SellerProtectedRoute>
                 <ShopRejectedRefunds />
+              </SellerProtectedRoute>
+            }
+          />
+          <Route
+            path="/shop/create-newsletter"
+            element={
+              <SellerProtectedRoute>
+                <CreateNewsletterPage />
               </SellerProtectedRoute>
             }
           />
