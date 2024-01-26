@@ -17,7 +17,7 @@ const DronesFlags = () => {
                             </div>
                             <div>
                                 <h6>{item?.title?.text} </h6>
-                                <p>{item?.SubText?.text} </p>
+                                {/* <p>{item?.SubText?.text} </p> */}
                             </div>
                         </div>
                     </div>

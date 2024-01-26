@@ -55,8 +55,8 @@ const AboutUsTeam = () => {
             <div className='AboutUsTeam-parent'>
                 <div className="container">
                     <div className='AboutUsTeam-main-text'>
-                        <h3>Our Team</h3>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered in some form, by injected humour</p>
+                        <h3>Meet the minds behind Air Bee</h3>
+                        <p>At Air Bee, our team is the heartbeat of our success. Comprising dedicated professionals with a passion for electronics, we work cohesively to bring you top-notch products and exceptional service. Meet the minds behind Air Bee, where innovation and expertise converge to shape the future of embedded electronics.</p>
                     </div>
                     <div className='AboutUsTeam-sub'>
                         <div className="row">
