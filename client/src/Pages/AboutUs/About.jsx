@@ -12,12 +12,14 @@ import DronesFooter from '../../components/DronesHomepage/DronesFooter'
 // import { DronesTestimonialSwiper } from '../../components/DronesHomepage/DronesTestimonialSwiper'
 import { ContactProduct1 } from '../../components/Checkout/ContactProduct1'
 import AboutUsBanner from '../../components/AboutUs/AboutUsBanner'
+import DronesHeader2 from '../../components/Headers/DronesHeader2'
 // import AboutUsTeam from '../../components/AboutUs/AboutUsTeam'
 
 export const About = () => {
     return (
         <div>
             <DronesHeader />
+            <DronesHeader2/>
             <AboutUsBanner/>
             <AboutPageOne />
             <AboutPageTwo />

@@ -173,13 +173,15 @@
   border-radius: 50px 50px 0px 50px;
   width: 50px;
   height: 45px;
-  margin: 5px;
+  margin: 5px 19px 6px 0px;
 }
-
+.About-Us-three-text .d-flex {
+  margin: 13px 0px;
+}
 .About-Us-three-text .logo-rel {
   width: 55px;
   height: 45px;
-  margin: 8px;
+  margin: 5px 19px 6px 0px;
 }
 
 .About-Us-two-sub .About-Us-two-data .About-Us-two-text h5 {
@@ -237,6 +239,7 @@
   font-family: Poppins;
   font-size: 36px;
   font-weight: 400;
+  margin: 0;
 }
 
 .About-Us-three-sub .About-Us-three-data .About-Us-three-text p {
@@ -326,11 +329,14 @@
   height: 45px;
   margin: 5px;
 }
+.About-Us-four-text .d-flex {
+  margin: 13px 0px;
+}
 
 .About-Us-three-text .logo-rel {
   width: 55px;
   height: 45px;
-  margin: 8px;
+  margin: 5px 19px 6px 0px;
 }
 
 .About-Us-four-sub .About-Us-four-data .About-Us-four-text h5 {
@@ -359,12 +365,12 @@
 }
 
 .about-couting-instant-heading h6 {
-  color: var(--Primary-500, #22c55e);
+  color: var(--Primary-500, #fff);
   font-family: Poppins;
   font-size: 12px;
   font-weight: 500;
   border-radius: 36px;
-  background: var(--Primary-100, #dcfce7);
+  background: #fa8232;
   box-shadow: 0px 1px 2px 0px rgba(105, 81, 255, 0.05);
   padding: 10px 5px;
   width: 100px;
@@ -416,12 +422,12 @@
   margin-bottom: 30px;
 } */
 .about-top-comapany-instant-heading h6 {
-  color: var(--Primary-500, #22c55e);
+  color: var(--Primary-500, #fff);
   font-family: Poppins;
   font-size: 12px;
   font-weight: 500;
   border-radius: 36px;
-  background: var(--Primary-100, #dcfce7);
+  background: #fa8232;
   box-shadow: 0px 1px 2px 0px rgba(105, 81, 255, 0.05);
   padding: 10px 5px;
   width: 100px;
@@ -471,13 +477,13 @@
 }
 
 .about-faq-instant-text h6 {
-  color: var(--Primary-500, #22c55e);
+  color: var(--Primary-500, #fff);
   font-family: Poppins;
   text-align: center;
   font-size: 12px;
   font-weight: 500;
   border-radius: 36px;
-  background: var(--Primary-100, #dcfce7);
+  background: #fa8232;
   box-shadow: 0px 1px 2px 0px rgba(105, 81, 255, 0.05);
   padding: 10px 5px;
   width: 70px;
@@ -519,6 +525,7 @@
 
 .About-Us-two-text .d-flex {
   align-items: center;
+  margin: 13px 0px;
 }
 
 /* our team component */

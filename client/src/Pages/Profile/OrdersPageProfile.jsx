@@ -3,11 +3,13 @@ import OrderspageTabs from '../../components/Profile/OrderspageTabs'
 import SideBar from '../../components/Profile/SideBar';
 import DronesHeader from '../../components/Headers/DronesHeader';
 import DronesFooter from '../../components/DronesHomepage/DronesFooter';
+import DronesHeader2 from '../../components/Headers/DronesHeader2';
 
 const OrdersPageProfile = () => {
     return (
         <>
             <DronesHeader />
+            <DronesHeader2/>
             <div className='Orderspage-parent'>
                 {/* <div className='Orderspage-sub1'>
                     <p>Home</p>

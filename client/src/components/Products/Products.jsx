@@ -3,7 +3,7 @@ import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination';  // Import pagination styles
+import 'swiper/css/pagination';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPublishedProducts } from '../../redux/actions/product';
 import ProductCardMiddleware from '../ProductCards/ProductCardMiddleware';
@@ -17,7 +17,13 @@ const Products = () => {
 
     const { allPublishedProducts } = useSelector((state) => state.products);
 
-
+    // Ensure allPublishedProducts is defined before attempting to calculate additional slides
+    const duplicatedProducts = allPublishedProducts
+        ? allPublishedProducts.concat(
+            Array.from({ length: 20 }, (_, index) => allPublishedProducts[index % allPublishedProducts.length])
+        )
+        : [];
+    console.log("products", allPublishedProducts)
     return (
         <div className="DronesCategories-parent">
             <div>
@@ -59,7 +65,7 @@ const Products = () => {
                         }
                     }}
                 >
-                    {allPublishedProducts.map((item, index) => (
+                    {duplicatedProducts.slice(0, 30).map((item, index) => (
                         <SwiperSlide key={index}>
                             <ProductCardMiddleware data1={item} key={index} />
                         </SwiperSlide>
@@ -73,3 +79,6 @@ const Products = () => {
 };
 
 export default Products;
+
+
+

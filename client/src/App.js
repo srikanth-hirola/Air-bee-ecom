@@ -41,6 +41,7 @@ import { CategoriesConfigPage } from './Pages/Site-Config/CategoriesConfigPage.j
 import { socketId } from './components/Headers/socket.js';
 import { useSelector } from 'react-redux';
 import CreateNewsletterPage from './Pages/Site-Config/CaresteNewsLetterPage.jsx';
+import Blog from './Pages/Blog.jsx';
 
 
 
@@ -210,6 +211,7 @@ const App = () => {
           <Route path="/contact-us" element={<ContactUsPage />} />
           <Route path="/event/:id" element={<EventProductsPage />} />
           <Route path="/about-us" element={<About />} />
+          <Route path="/blog" element={<Blog />} />
           <Route
             path="/activation/:activation_token"
             element={<ActivationPage />}

@@ -61,7 +61,7 @@ const DronesHeader2 = () => {
     <div className="home-twelve-header">
       <div className="home-twelve-header-sub">
         <header className="header">
-          <div className="container">
+          <div className="container-fluid">
             <div className="row v-center">
               {/* <div className="header-item item-left">
             <div className="logo">
@@ -122,14 +122,14 @@ const DronesHeader2 = () => {
                     <Trending />
                     <CategoriesMenu />
                     <li className="menu-item-has-children">
-                      <Link to="#">Blogs <i className="fas fa-angle-down"></i></Link>
-                      <div className="sub-menu single-column-menu">
+                      <Link to="/blog">Blogs <i className="fas fa-angle-down"></i></Link>
+                      {/* <div className="sub-menu single-column-menu">
                         <ul>
                           <li><Link to="#">Standard Layout</Link></li>
                           <li><Link to="#">Grid Layout</Link></li>
                           <li><Link to="#">single Post Layout</Link></li>
                         </ul>
-                      </div>
+                      </div> */}
                     </li>
                     <li>
                       <Link to="/contact-us">Contact</Link>

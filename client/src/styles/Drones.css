@@ -94,7 +94,7 @@ a {
   width: 100%;
   border-radius: 8px;
   border: none;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 0px 13px;
   display: flex;
   overflow: hidden;
   justify-content: center;
@@ -324,7 +324,7 @@ button.search-sug {
   width: 100%;
   position: relative;
   z-index: 99;
-  padding: 15px;
+  padding:22px 55px;
 }
 
 .home-twelve-header-sub .header .item-left {
@@ -592,6 +592,7 @@ button.search-sug {
   border-radius: 6px;
   background: #e3f0ff;
   padding: 10px;
+  height: 154px;
 }
 
 .Droner-banner-sub-user-button1,
@@ -604,7 +605,7 @@ button.search-sug {
 }
 
 .Droner-banner-sub-user-button1 {
-  background-color: rgb(129, 129, 247);
+  background-color: rgb(88 88 240);
   color: white;
 }
 
@@ -670,7 +671,7 @@ button.search-sug {
 }
 
 .Drone-bannerswiper-content-sub1 h3 {
-  font-size: 34px;
+  font-size: 28px;
   font-weight: 700;
 }
 
@@ -741,7 +742,7 @@ li {
 .DronesProductsRow1-parent {
   height: fit-content;
   width: 90%;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 3px 15px 0px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 0px 13px;
   margin: auto;
   border-radius: 5px;
   margin-top: 40px;
@@ -796,7 +797,8 @@ li {
   color: red;
   border-radius: 29px;
   background: #ffe3e3;
-  padding: 3px 7px;
+  font-size: 14px !important;
+  padding: 3px 15px;
 }
 
 .DronesProductsRow1-sub1-timer-sub {
@@ -848,7 +850,7 @@ li {
   height: 285px;
   width: 100%;
   position: relative;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 5px 0px;
+  box-shadow: rgb(17 12 46 / 9%) 0px 1px 11px 0px;
   border-radius: 3px;
   padding: 25px;
 }
@@ -868,7 +870,7 @@ li {
   justify-content: space-around;
   align-items: center;
   padding: 15px 8px;
-  box-shadow: rgba(99, 99, 99, 0.2) 1px 2px 9px 0px;
+  box-shadow: rgb(17 12 46 / 9%) 0px 1px 11px 0px;
   margin: 6px;
   border-radius: 3px;
 }
@@ -881,7 +883,16 @@ li {
 .DronesCategories-parent .swiper-slide {
   margin-right: 25px !important;
 }
-
+.DronesCategories-parent .swiper{
+  position: relative;
+  height: 320px;
+}
+.DronesCategories-parent .swiper .swiper-wrapper{
+  position: absolute;
+    transform: translate3d(0px, 0, 0);
+    right: -55%;
+    height: 350px;
+}
 .DronesProductsRow2-subimage-content-text {
   padding-inline: 8px;
   color: #000;
@@ -931,7 +942,7 @@ li {
   height: 285px;
   width: 100%;
   position: relative;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 5px 0px;
+  box-shadow: rgb(17 12 46 / 9%) 0px 1px 11px 0px;
 }
 
 .DronesProductsRow3-image1 img {
@@ -944,7 +955,7 @@ li {
   justify-content: space-around;
   align-items: center;
   padding: 15px 0px;
-  box-shadow: rgba(99, 99, 99, 0.2) 1px 2px 9px 0px;
+  box-shadow: rgb(17 12 46 / 9%) 0px 1px 11px 0px;
   margin: 6px;
 }
 
@@ -991,17 +1002,29 @@ li {
 
 .Dronecategory-content {
   padding: 15px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 0px 13px;
   height: 280px;
 }
 
 .Dronecategory-image {
   width: 100%;
-  height: 200px;
+  height: 175px;
   padding: 15px;
   object-fit: cover;
 }
-
+.Dronecategory-content p {
+  color: #000;
+  font-size: 17px;
+}.Dronecategory-content p span {
+  color: #fff;
+  font-size: 12px;
+  margin: 0;
+  background: #fa8232;
+  padding: 0px 13px;
+  border-radius: 65px;
+  position: relative;
+  top: -1px;
+}
 .Dronecategory-image img {
   width: 100%;
   height: 100%;
@@ -1033,7 +1056,7 @@ li {
 
 .DronesRecommendedItems-content {
   padding: 15px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 5px 0px;
+  box-shadow: rgb(17 12 46 / 9%) 0px 1px 11px 0px;
   height: 340px;
 }
 
@@ -1175,7 +1198,7 @@ li {
 }
 
 .Drone-services-sub {
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 5px 0px;
+  box-shadow: rgb(17 12 46 / 9%) 0px 1px 11px 0px;
   border-radius: 5px;
   /* height: 280px; */
 }
@@ -1249,7 +1272,7 @@ li {
   padding: 7px 35px;
   border-radius: 5px;
   border: none;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 5px 0px;
+  box-shadow: rgb(17 12 46 / 9%) 0px 1px 11px 0px;
 }
 
 .DronesNewsletter-email-parent button {
@@ -1639,6 +1662,11 @@ li {
 .Droner-banner-sub-user-button1 a {
   color: #fff;
 }
+
+.Drone-banner-sub-user-image{
+  height: 71px;
+  width: 80px;
+  }
 .Drone-banner-sub-user-image {
   height: 40px;
   width: 45px;
@@ -1673,6 +1701,11 @@ li {
     width: 100%;
     display: flex;
   }
+  .DronesCategories-parent .swiper .swiper-wrapper {
+    position: absolute;
+    right: 0%;
+    height: 346px;
+}
 }
 @media only screen and (min-width: 645px) and (max-width: 767) {
   /* header component */
@@ -2787,7 +2820,7 @@ li {
   width: 180px;
   font-weight: 500;
   align-items: center;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 0px 13px;
 }
 
 .DronesDirectionSEnsingsub1-text p {
@@ -2950,7 +2983,7 @@ li {
     width: 140px;
     font-weight: 500;
     align-items: center;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 0px 13px;
   }
 }
 
@@ -3088,3 +3121,115 @@ strong {
   font-weight: 600;
 }
 
+
+
+
+.blog-page {
+  padding: 0px 0px 80px;
+}
+
+.card-container {
+  width: 100%;
+  height: 470px;
+  background-color: #fff;
+  border-radius: 8px;
+  margin: 20px auto;
+  box-shadow: 0 2px 20px rgba(0,0,0, 0.1);
+  overflow: hidden;
+  padding: 15px;
+}
+
+.card-image img {
+  height: 220px;
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+  background-size: cover;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 16px;
+  min-height: 200px;
+}
+
+.card-badge {
+  text-transform: uppercase;
+  background-color: #fff;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 70px;
+  margin: 0;
+  font-size: 12px;
+}
+
+.card-badge-blue {
+  background-color: #92d4e4;
+  padding: 10px;
+  margin: 10px 0px;
+
+}
+
+.card-badge-purple {
+  background-color: #3d1d94;
+}
+
+.card-badge-pink {
+  background-color: #c62bcb;
+}
+
+.blog-page .card-body h1 {
+  font-size: 23px;
+  margin: 10px 0px 26px;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  display: -webkit-box;
+  max-width: 100%;
+  height: 56px;
+}
+
+ .blog-page .card-body p {
+  display: block;
+  display: -webkit-box;
+  max-width: 100%;
+  height: 52px;
+  margin: 0 auto;
+  /* font-size: 14px; */
+  font-weight: 400;
+  line-height: 25px;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-author {
+  display: flex;
+  align-items: center;
+}
+
+.card-author p {
+  margin: 0 16px;
+  font-size: 12px;
+}
+
+.card-author p:last-child {
+  color: #888;
+}
+
+.card-author img {
+  border-radius: 50%;
+  height: 48px;
+  width: 48px;
+  margin-top: auto;
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
