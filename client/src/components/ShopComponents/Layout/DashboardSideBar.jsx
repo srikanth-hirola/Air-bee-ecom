@@ -47,6 +47,8 @@ const DashboardSideBar = ({ active }) => {
                                 <Link
                                     to="/shop/dashboard-orders"
                                     className="w-full h-full flex items-center pl-2  "
+                                    style={{ color: active === 1 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(1)}
                                 >
 
                                     {/* <h5
@@ -62,6 +64,8 @@ const DashboardSideBar = ({ active }) => {
                                 <Link
                                     to="/shop/new-orders"
                                     className="w-full h-full flex items-center pl-2 "
+                                    style={{ color: active === 2 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(2)}
                                 >
 
                                     {/* <h5
@@ -76,7 +80,9 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/shop/pending-orders"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 3 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(3)}
                                 >
 
                                     {/* <h5
@@ -91,7 +97,9 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/shop/delivered-orders"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 4 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(4)}
                                 >
 
                                     {/* <h5
@@ -105,7 +113,9 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/shop/canceled-orders"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 5 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(5)}
                                 >
 
                                     {/* <h5
@@ -127,7 +137,9 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/dashboard-create-product"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 6 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(6)}
                                 >
 
                                     {/* <h5
@@ -141,7 +153,9 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/shop/draft-products"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 7 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(7)}
                                 >
                                     {/* <h5
                                         className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 3 ? 'text-[crimson]' : 'text-[#555]'
@@ -154,7 +168,9 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/shop/all-products"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 8 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(8)}
                                 >
                                     {/* <h5
                                         className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 3 ? 'text-[crimson]' : 'text-[#555]'
@@ -167,7 +183,9 @@ const DashboardSideBar = ({ active }) => {
                             {/* <div className="w-full flex items-center accordian-child">
                                 <Link
                                     to="/shop/approved-products"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white" 
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 26 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(26)} 
                                 >
 
                                     <h5
@@ -211,7 +229,9 @@ const DashboardSideBar = ({ active }) => {
                                 <div className="w-full accordian-child">
                                     <Link
                                         to="/shop/products-gallery"
-                                        className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
+                                        className="w-full h-full flex items-center pl-2"
+                                        style={{ color: active === 9 ? 'orange' : 'black' }}
+                                        onClick={() => sideBarActive(9)}
                                     >
 
                                         {/* <h5
@@ -234,7 +254,9 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/dashboard-events"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 10 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(10)}
                                 >
 
                                     {/* <h5
@@ -249,7 +271,9 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/dashboard-create-event"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 11 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(11)}
                                 >
 
                                     {/* <h5
@@ -263,7 +287,9 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/dashboard-draft-events"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 12 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(12)}
                                 >
 
                                     {/* <h5
@@ -285,7 +311,9 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/shop/dashboard-refunds"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 13 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(13)}
                                 >
 
                                     {/* <h5
@@ -300,7 +328,9 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/shop/approved-refunds"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 14 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(14)}
                                 >
 
                                     {/* <h5
@@ -314,7 +344,9 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/shop/pending-refunds"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 15 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(15)}
                                 >
 
                                     {/* <h5
@@ -328,7 +360,9 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/shop/rejected-refunds"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 16 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(16)}
                                 >
 
                                     {/* <h5
@@ -372,7 +406,9 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/dashboard-withdraw-money"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 26 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(26)}
                                 >
 
                             
@@ -383,7 +419,9 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/withdraw-payment-history"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 26 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(26)}
                                 >
 
                                     
@@ -394,7 +432,9 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/withdraw-payment-requests"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 26 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(26)}
                                 >
 
                                     
@@ -440,6 +480,8 @@ const DashboardSideBar = ({ active }) => {
                             <FaRegNewspaper
                                 size={30}
                                 className='text-[#555] pl-1'
+                                style={{ color: active === 32 ? 'orange' : 'black' }}
+                                onClick={() => sideBarActive(32)}
                             />
                             <h5
                                 className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 text-[#555]
@@ -455,7 +497,9 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/shop/shipment/login"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 17 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(17)}
                                 >
                                     {/* <h5
                                         className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 2 ? 'text-[crimson]' : 'text-[#555]'
@@ -469,7 +513,9 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/shop/shipment/orders"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 18 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(18)}
                                 >
                                     {/* <h5
                                         className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 2 ? 'text-[crimson]' : 'text-[#555]'
@@ -484,8 +530,8 @@ const DashboardSideBar = ({ active }) => {
                                 <Link
                                     to="/shop/shipment/return-orders"
                                     className="w-full h-full flex items-center pl-2 "
-                                    style={{ color: active === 22 ? 'orange' : 'black' }}
-                                    onClick={() => sideBarActive(22)}
+                                    style={{ color: active === 19 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(19)}
                                 >
                                     {/* <h5
                                         className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 2 ? 'text-[crimson]' : 'text-[#555]'
@@ -499,7 +545,9 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/shop/shipment/couriers"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 19 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(19)}
                                 >
                                     {/* <h5
                                         className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 2 ? 'text-[crimson]' : 'text-[#555]'
@@ -512,7 +560,9 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/shop/shipment/pickup-locations"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 20 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(20)}
                                 >
                                     {/* <h5
                                         className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 2 ? 'text-[crimson]' : 'text-[#555]'
@@ -524,7 +574,7 @@ const DashboardSideBar = ({ active }) => {
                             </div>
                         </Accordion.Body>
                     </Accordion.Item>
-                    <Accordion.Item eventKey="5">
+                    <Accordion.Item eventKey="6">
                         <Accordion.Header>
                             Site Configuration
                         </Accordion.Header>
@@ -562,7 +612,9 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full flex items-center accordian-child">
                                 <Link
                                     to="/site-config/contact-config"
-                                    className="w-full flex items-center"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 31 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(31)}
                                 >
                                     {/* <h5
                                         className={`hidden 800px:block pl-2 text-[18px] font-[400] ${active === 3 ? 'text-[crimson]' : 'text-[#555]'
