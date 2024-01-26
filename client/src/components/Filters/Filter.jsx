@@ -51,7 +51,7 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
             if (!updatedBrandState.includes(product.brandName)) {
                 updatedBrandState.push(product.brandName);
             }
-
+            console.log(product.category, ", " + product?.name)
             const categoryIndex = updatedCategoryState.findIndex(
                 (cat) => cat.name === product.category
             );
@@ -73,6 +73,7 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
         });
 
         setFilterBrand(updatedBrandState);
+        console.log(updatedCategoryState)
         setCategory(updatedCategoryState);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [data]);

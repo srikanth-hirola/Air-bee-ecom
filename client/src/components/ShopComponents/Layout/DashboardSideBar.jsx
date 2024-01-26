@@ -381,6 +381,8 @@ const DashboardSideBar = ({ active }) => {
                             <h5
                                 className={` 800px:block pl-1 text-[16px] font-[400] m-0 text-[#555]
                                     `}
+                                style={{ color: active === 38 ? 'orange' : 'black' }}
+                                onClick={() => sideBarActive(38)}
                             >
                                 Categories
                             </h5>
@@ -392,6 +394,8 @@ const DashboardSideBar = ({ active }) => {
                             <h5
                                 className={` 800px:block pl-1 text-[16px] font-[400] m-0 text-[#555]
                                     `}
+                                style={{ color: active === 39 ? 'orange' : 'black' }}
+                                onClick={() => sideBarActive(39)}
                             >
                                 Stocks
                             </h5>
@@ -451,11 +455,15 @@ const DashboardSideBar = ({ active }) => {
                             <BiMessageSquareDetail
                                 size={30}
                                 className='text-[#555] pl-1'
+                                style={{ color: active === 37 ? 'orange' : 'black' }}
+                                onClick={() => sideBarActive(37)}
 
                             />
                             <h5
                                 className={`hidden 800px:block pl-1 text-[16px] font-[400] m-0 text-[#555]
                                     `}
+                                style={{ color: active === 37 ? 'orange' : 'black' }}
+                                onClick={() => sideBarActive(37)}
                             >
                                 Shop Inbox
                             </h5>
@@ -466,10 +474,14 @@ const DashboardSideBar = ({ active }) => {
                             <AiOutlineGift
                                 size={30}
                                 className='text-[#555] pl-1'
+                                style={{ color: active === 36 ? 'orange' : 'black' }}
+                                onClick={() => sideBarActive(36)}
                             />
                             <h5
                                 className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 text-[#555]
                                     `}
+                                style={{ color: active === 36 ? 'orange' : 'black' }}
+                                onClick={() => sideBarActive(36)}
                             >
                                 Discount Codes
                             </h5>
@@ -480,12 +492,14 @@ const DashboardSideBar = ({ active }) => {
                             <FaRegNewspaper
                                 size={30}
                                 className='text-[#555] pl-1'
-                                style={{ color: active === 32 ? 'orange' : 'black' }}
-                                onClick={() => sideBarActive(32)}
+                                style={{ color: active === 35 ? 'orange' : 'black' }}
+                                onClick={() => sideBarActive(35)}
                             />
                             <h5
                                 className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 text-[#555]
                                     `}
+                                style={{ color: active === 35 ? 'orange' : 'black' }}
+                                onClick={() => sideBarActive(35)}
                             >
                                 NewsLetter
                             </h5>
@@ -673,10 +687,14 @@ const DashboardSideBar = ({ active }) => {
                             <CiSettings
                                 size={30}
                                 className='text-[#555] pl-1'
+                                style={{ color: active === 33 ? 'orange' : 'black' }}
+                                onClick={() => sideBarActive(33)}
                             />
                             <h5
                                 className={`hidden 800px:block pl-1 text-[16px] font-[400] m-0 text-[#555]
                                     `}
+                                style={{ color: active === 33 ? 'orange' : 'black' }}
+                                onClick={() => sideBarActive(33)}
                             >
                                 Settings
                             </h5>
