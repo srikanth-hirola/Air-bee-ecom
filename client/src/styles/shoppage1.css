@@ -249,8 +249,10 @@
 .card-body p {
   /* color: var(--base-color-gray-800, #606060); */
   font-family: Inter;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 500;
+  color: #000;
+  line-height: 25px;
 }
 .allproducts-parent {
   width: 98%;

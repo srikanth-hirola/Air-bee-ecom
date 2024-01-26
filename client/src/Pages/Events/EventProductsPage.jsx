@@ -11,6 +11,7 @@ import AllProducts from '../../components/Products/AllProducts';
 import { getAllProducts } from '../../redux/actions/product';
 import { useDispatch, useSelector } from 'react-redux';
 import DronesFooter from '../../components/DronesHomepage/DronesFooter';
+import DronesHeader2 from '../../components/Headers/DronesHeader2';
 
 
 const EventProductsPage = () => {
@@ -80,6 +81,7 @@ const EventProductsPage = () => {
     return (
         <>
             <DronesHeader />
+            <DronesHeader2/>
             {isLoading ? <Loader /> :
                 <>
                     <div className='allproducts-parent'>

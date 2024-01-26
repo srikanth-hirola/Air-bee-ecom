@@ -4,6 +4,7 @@ import CheckoutSteps from '../components/Checkout/CheckoutSteps';
 import CheckoutAddress from '../components/Checkout/CheckoutAddress';
 import DronesHeader from '../components/Headers/DronesHeader';
 import DronesFooter from '../components/DronesHomepage/DronesFooter';
+import DronesHeader2 from '../components/Headers/DronesHeader2';
 
 
 const CheckoutPage = () => {
@@ -13,6 +14,7 @@ const CheckoutPage = () => {
     return (
         <>
             <DronesHeader />
+            <DronesHeader2/>
             <div className='Checkoutpage-parent'>
                 <div CheckoutStepsclassName="Checkoutpage-sub1">
                     <div className="container">

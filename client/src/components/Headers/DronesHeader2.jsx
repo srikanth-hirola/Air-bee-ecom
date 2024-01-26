@@ -61,7 +61,7 @@ const DronesHeader2 = () => {
     <div className="home-twelve-header">
       <div className="home-twelve-header-sub">
         <header className="header">
-          <div className="container">
+          <div className="container-fluid">
             <div className="row v-center">
               {/* <div className="header-item item-left">
             <div className="logo">

@@ -14,6 +14,7 @@ import DronesFooter from "../../components/DronesHomepage/DronesFooter";
 import toast from "react-hot-toast";
 import { socketId } from "../../components/Headers/socket";
 import { removeViewedMessage } from "../../redux/actions/socket";
+import DronesHeader2 from "../../components/Headers/DronesHeader2";
 
 TimeAgo.addLocale(en)
 
@@ -271,7 +272,7 @@ const UserInbox = () => {
     return (
         <>
             <DronesHeader />
-
+<DronesHeader2/>
             <div className="w-[80%] mx-auto">
                 {!open && (
                     <>

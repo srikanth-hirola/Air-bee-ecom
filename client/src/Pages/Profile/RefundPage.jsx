@@ -3,11 +3,14 @@ import RefundTabs from '../../components/Profile/RefundTabs'
 import SideBar from '../../components/Profile/SideBar'
 import DronesHeader from '../../components/Headers/DronesHeader'
 import DronesFooter from '../../components/DronesHomepage/DronesFooter'
+import DronesHeader2 from '../../components/Headers/DronesHeader2'
 
 const RefundPage = () => {
     return (
         <>
+
             <DronesHeader />
+            <DronesHeader2/>
             <div className='RefundPage-parent'>
 
                 <div className='RefundPage-main-content'>

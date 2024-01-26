@@ -14,13 +14,14 @@
 //         dispatch(getPublishedProducts())
 //     }, [dispatch])
 //     const { allPublishedProducts } = useSelector((state) => state.products);
-
-
+    
+    
 //     return (
 //         <>
 //             <div className="DronesCategories-parent">
 //                 <div>
 //                     <h2>Explore Our Featured Products</h2>
+//         <br /><br />
 //                 </div>
 //                 {allPublishedProducts?.length > 0 ?
 //                     <Swiper className='paginationDisabledClass'
@@ -59,7 +60,6 @@
 
 //                         }}
 //                     >
-//                         <br /><br />
 //                         {
 //                             allPublishedProducts?.map((item, index) => (
 //                                 <SwiperSlide key={index}>
@@ -79,12 +79,13 @@
 
 
 
+
 import React, { useEffect } from 'react';
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination';  // Import pagination styles
+import 'swiper/css/pagination';
 import { useDispatch, useSelector } from 'react-redux';
 import FeaturedProductCard from '../ProductCards/FeaturedProductCard';
 import { getPublishedProducts } from '../../redux/actions/product';
@@ -98,7 +99,13 @@ const Products = () => {
 
     const { allPublishedProducts } = useSelector((state) => state.products);
 
-
+    // Ensure allPublishedProducts is defined before attempting to calculate additional slides
+    const duplicatedProducts = allPublishedProducts
+        ? allPublishedProducts.concat(
+              Array.from({ length: 20 }, (_, index) => allPublishedProducts[index % allPublishedProducts.length])
+          )
+        : [];
+console.log("products",allPublishedProducts)
     return (
         <div className="DronesCategories-parent">
             <div>
@@ -140,7 +147,7 @@ const Products = () => {
                         }
                     }}
                 >
-                    {allPublishedProducts.map((item, index) => (
+                    {duplicatedProducts.slice(0,30).map((item, index) => (
                         <SwiperSlide key={index}>
                             <FeaturedProductCard data1={item} />
                         </SwiperSlide>
@@ -154,3 +161,6 @@ const Products = () => {
 };
 
 export default Products;
+
+
+

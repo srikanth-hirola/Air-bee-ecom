@@ -10,7 +10,7 @@ export const AboutPageTwo = () => {
                             <div className="row align-items-center About-Us-two-content">
                                 <div className="col-md-6 ">
                                     <div className='About-Us-two-image'>
-                                        <img src="/DronesHomepage/about2.png" alt="" />
+                                        <img src="/DronesHomepage/aboutlogo.avif" alt="" />
                                     </div>
                                 </div>
                                 <div className="col-md-6 ">
