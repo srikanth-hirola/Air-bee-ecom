@@ -64,6 +64,8 @@ const OrderDetails = () => {
         }
     }, [shippingDataSeller])
 
+
+
     const orderUpdateHandler = async (e) => {
         const products = shippingDataSeller?.products;
         await axios
