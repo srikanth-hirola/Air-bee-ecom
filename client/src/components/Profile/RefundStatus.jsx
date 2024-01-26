@@ -69,7 +69,7 @@ const RefundStatus = () => {
                                         <p>894651329</p>
                                         <p>gtgkjasl@gmail.com</p>
                                         <div className='RefundStatus-delivery-address-buttons'>
-                                            <button>Send Message</button>
+                                            <button><Link to={'/inbox'}>Send Message</Link></button>
                                             <button>Cancel Refund</button>
                                         </div>
                                     </div>

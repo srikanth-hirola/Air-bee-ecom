@@ -95,7 +95,7 @@ const RequestedProductsShop = ({ active }) => {
             renderCell: (params) => {
                 return (
                     <>
-                        <Link to={`/product/previewProductPageUI/${params.id}`}>
+                        <Link to={`/product/${params.id}`}>
                             <Button>
                                 <AiOutlineEye size={20} />
                             </Button>

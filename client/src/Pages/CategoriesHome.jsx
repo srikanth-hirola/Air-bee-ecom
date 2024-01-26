@@ -17,6 +17,7 @@ const CategoriesHome = () => {
     let name = "CategoriesOne";
     let selectedCategories = styles[name]?.selectedCategories
 
+
     return (
         <div>
             {styles && styles[name]?.displayAllCategories ?
@@ -31,7 +32,7 @@ const CategoriesHome = () => {
                 <>
                     {category?.map((data, i) => (
                         <React.Fragment key={i}>
-                            {selectedCategories?.includes(data?.name) && <CategoriesWithProducts CatName={data?.name} key={i} />}
+                            {selectedCategories?.includes(data?._id) && <CategoriesWithProducts CatName={data?._id} key={i} />}
                         </React.Fragment>
                     ))}
                 </>

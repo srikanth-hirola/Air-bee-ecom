@@ -44,7 +44,7 @@ const EventCardWithProducts = ({ data1 }) => {
                                         <CountDown data={data1} />
                                     </div>
                                     <div className='DronesProductRow1Timer-button'>
-                                        <Link to="/products?search=all products">Show More</Link>
+                                        <Link to={`/event/${data1?._id}`}>Show More</Link>
                                     </div>
                                 </div>
 

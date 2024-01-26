@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { BsFillBagFill } from 'react-icons/bs';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import {  useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import axios from 'axios';
@@ -63,6 +63,8 @@ const OrderDetails = () => {
             setShipmentID(shippingDataSeller?.shippingOrderDetails.shipment_id);
         }
     }, [shippingDataSeller])
+
+
 
     const orderUpdateHandler = async (e) => {
         const products = shippingDataSeller?.products;
@@ -132,6 +134,10 @@ const OrderDetails = () => {
         }
     };
 
+    const handleGoBack = () =>{
+        navigate(-1)
+    }
+
     return (
         <div className={`py-4 min-h-screen ${styles.section}`}>
             <div className="w-full flex items-center justify-between">
@@ -139,13 +145,13 @@ const OrderDetails = () => {
                     <BsFillBagFill size={30} color="#0156FF" />
                     <h1 className="pl-2 text-[24px] mt-3">Order Details</h1>
                 </div>
-                <Link to="/dashboard-orders">
+                {/* <Link to={"/shop/dashboard-orders"}> */}
                     <div
-                        className={`${styles.button} !bg-[#fce1e6] !rounded-[4px] text-[#fff] font-[600] !h-[45px] text-[18px]`}
+                        className={`${styles.button} !bg-[#fce1e6] !rounded-[4px] text-[#fff] font-[600] !h-[45px] text-[18px]`} onClick={handleGoBack}
                     >
                         Order List
                     </div>
-                </Link>
+                {/* </Link> */}
             </div>
 
             <div className="w-full flex items-center justify-between pt-6">
@@ -401,7 +407,7 @@ const OrderDetails = () => {
 
 
             <div
-                className={`${styles.button} mt-5 !bg-[#FCE1E6] !rounded-[4px] text-[#fff] font-[600] !h-[45px] text-[16px] font-[500]`}
+                className={`${styles.button} mt-5 !bg-[#FCE1E6] !rounded-[4px] text-[#fff] font-[600] !h-[45px] text-[16px] `}
                 onClick={
                     data?.status !== 'Processing refund'
                         ? orderUpdateHandler

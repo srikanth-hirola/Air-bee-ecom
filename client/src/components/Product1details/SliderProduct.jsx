@@ -35,19 +35,12 @@ export default function SliderProduct({ mainImg }) {
       slidesPerView={4}
         spaceBetween={30}
         centeredSlides={true}
-        pagination={{
-          clickable: true,
-        }}
-        style={{
-          '--swiper-navigation-color': '#fff',
-          '--swiper-pagination-color': '#fff',
-        }}
-        navigation={true}
         loop={true}
         watchSlidesProgress={true}
         FreeMode={true}
         modules={[ Pagination, Navigation,FreeMode,Thumbs]}
-        className="mySwiper"
+        navigation={true} 
+         className="mySwiper"
       >
         {mainImg?.map((item, i) => (
           <SwiperSlide key={i}>

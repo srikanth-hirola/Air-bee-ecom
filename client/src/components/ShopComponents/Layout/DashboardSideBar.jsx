@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { AiOutlineGift } from 'react-icons/ai';
 import { RxDashboard } from 'react-icons/rx';
 import { CiSettings } from 'react-icons/ci';
 import { Link } from 'react-router-dom';
 import { BiMessageSquareDetail } from 'react-icons/bi';
 import Accordion from 'react-bootstrap/Accordion';
+import { FaRegNewspaper } from "react-icons/fa";
 
 const DashboardSideBar = ({ active }) => {
 
@@ -12,9 +13,7 @@ const DashboardSideBar = ({ active }) => {
         // setActive(color);
     };
 
-    useEffect(() => {
-        console.log(active)
-    }, [active])
+
     return (
         <div className="w-full bg-white shadow-sm sticky top-0 left-0 z-10 side-div">
             {/* single item */}
@@ -364,7 +363,7 @@ const DashboardSideBar = ({ active }) => {
                             </h5>
                         </Link>
                     </div>
-                    <Accordion.Item eventKey="4">
+                    {/* <Accordion.Item eventKey="4">
                         <Accordion.Header>
 
                             Payments
@@ -376,12 +375,9 @@ const DashboardSideBar = ({ active }) => {
                                     className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
                                 >
 
-                                    {/* <h5
-                                        className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 7 ? 'text-[crimson]' : 'text-[#555]'
-                                            }`}
-                                    > */}
+                            
                                     Withdraw Money
-                                    {/* </h5> */}
+                                    
                                 </Link>
                             </div>
                             <div className="w-full accordian-child">
@@ -390,12 +386,9 @@ const DashboardSideBar = ({ active }) => {
                                     className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
                                 >
 
-                                    {/* <h5
-                                        className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 7 ? 'text-[crimson]' : 'text-[#555]'
-                                            }`}
-                                    > */}
+                                    
                                     Payment History
-                                    {/* </h5> */}
+                                    
                                 </Link>
                             </div>
                             <div className="w-full accordian-child">
@@ -404,18 +397,15 @@ const DashboardSideBar = ({ active }) => {
                                     className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
                                 >
 
-                                    {/* <h5
-                                        className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 7 ? 'text-[crimson]' : 'text-[#555]'
-                                            }`}
-                                    > */}
+                                    
                                     Payment Requests
-                                    {/* </h5> */}
+                                   
                                 </Link>
                             </div>
 
 
                         </Accordion.Body>
-                    </Accordion.Item>
+                    </Accordion.Item> */}
                     <div className="w-full flex items-center dashboard-main-control-image1">
                         <Link to="/dashboard-messages" className="w-full flex items-center">
                             <BiMessageSquareDetail
@@ -442,6 +432,20 @@ const DashboardSideBar = ({ active }) => {
                                     `}
                             >
                                 Discount Codes
+                            </h5>
+                        </Link>
+                    </div>
+                    <div className="w-full flex items-center dashboard-main-control-image1">
+                        <Link to="/shop/create-newsletter" className="w-full flex items-center">
+                            <FaRegNewspaper
+                                size={30}
+                                className='text-[#555] pl-1'
+                            />
+                            <h5
+                                className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 text-[#555]
+                                    `}
+                            >
+                                NewsLetter
                             </h5>
                         </Link>
                     </div>
@@ -520,7 +524,7 @@ const DashboardSideBar = ({ active }) => {
                             </div>
                         </Accordion.Body>
                     </Accordion.Item>
-                    <Accordion.Item eventKey="6">
+                    <Accordion.Item eventKey="5">
                         <Accordion.Header>
                             Site Configuration
                         </Accordion.Header>
@@ -581,6 +585,33 @@ const DashboardSideBar = ({ active }) => {
                                     > */}
                                     Miscellaneous Config
                                     {/* </h5> */}
+                                </Link>
+                            </div>
+                        </Accordion.Body>
+                    </Accordion.Item>
+                    <Accordion.Item eventKey="7">
+                        <Accordion.Header>
+                            Forms Details
+                        </Accordion.Header>
+                        <Accordion.Body>
+                            <div className="w-full flex items-center accordian-child">
+                                <Link
+                                    to="/inquiries"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 28 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(28)}
+                                >
+                                    Inqueries
+                                </Link>
+                            </div>
+                            <div className="w-full flex items-center accordian-child">
+                                <Link
+                                    to="/contacts"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 29 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(29)}
+                                >
+                                    Contacts
                                 </Link>
                             </div>
                         </Accordion.Body>

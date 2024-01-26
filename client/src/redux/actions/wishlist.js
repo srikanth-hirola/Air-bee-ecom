@@ -1,9 +1,12 @@
+import toast from "react-hot-toast";
+
 // add to wishlist
 export const addToWishlist = (data) => async (dispatch, getState) => {
   dispatch({
     type: "addToWishlist",
     payload: data,
   });
+  toast.success("Added Product to wishlist")
 
   localStorage.setItem("wishlistItems", JSON.stringify(getState().wishlist.wishlist));
   return data;
