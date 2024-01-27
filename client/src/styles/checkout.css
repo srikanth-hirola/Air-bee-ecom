@@ -5,7 +5,7 @@
   width: 60px;
   padding: 15px;
   margin: auto;
-  background: #0156ff;
+  background: #fa8232;
   display: flex;
   border-radius: 50%;
   margin-bottom: 15px;
@@ -152,6 +152,27 @@ select {
   .col-md-4.UpdateShoppingCart-button {
     width: 100%;
   }
+  .Checkoutpage-content .flex.justify-between.flex-wrap div{
+    width: 100%;
+  }
+  .Drones-product-summery-end {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+.w-full.flex.flex-col.items-center.py-8 .w-\[90\%\].\31 000px\:w-\[70\%\].flex.gap-6.\38 00px\:flex {
+  flex-direction: column-reverse;
+}
+
+.w-\[90\%\].\31 000px\:w-\[70\%\].flex.gap-6.\38 00px\:flex {}
+
+.w-full.flex.flex-col.items-center.py-8 .w-\[90\%\].\31 000px\:w-\[70\%\].flex.gap-6.\38 00px\:flex .w-\[60\%\].\38 00px\:w-\[65\%\] {
+  width: 100%;
+}
+
+.w-full.flex.flex-col.items-center.py-8 .w-\[90\%\].\31 000px\:w-\[70\%\].flex.gap-6.\38 00px\:flex .w-\[38\%\].\38 00px\:w-\[35\%\].\38 00px\:mt-0.mt-8 {
+  width: 100%;
+}
   /* checkout page content */
   .Checkoutpage-content-sub1 {
     width: 100%;

@@ -42,6 +42,9 @@ import { socketId } from './components/Headers/socket.js';
 import { useSelector } from 'react-redux';
 import CreateNewsletterPage from './Pages/Site-Config/CaresteNewsLetterPage.jsx';
 import Blog from './Pages/Blog.jsx';
+import TermsAndConditions from './Pages/TermsAndConditions.jsx';
+import PrivacyPolicy from './Pages/PrivacyPolicy.jsx';
+import RefundsPolicy from './Pages/RefundPolicy.jsx';
 
 
 
@@ -212,6 +215,9 @@ const App = () => {
           <Route path="/event/:id" element={<EventProductsPage />} />
           <Route path="/about-us" element={<About />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/refund-policy" element={<RefundsPolicy />} />
           <Route
             path="/activation/:activation_token"
             element={<ActivationPage />}

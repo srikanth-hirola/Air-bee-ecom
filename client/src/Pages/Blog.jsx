@@ -16,7 +16,7 @@ const Blog = () => {
         <div className="blog-sec">
         <section class="container">
 <div className="row">
-    <div className="col-md-4">
+    <div className="col-md-12 col-sm-12 col-lg-4 col-xl-4 col-xxl-4">
         <div class="card-container">
   <div class="card-image">
     <img src="/DronesHomepage/blog-1.png" alt="a brand new sports car" />
@@ -34,7 +34,7 @@ const Blog = () => {
   </div>
 </div>
     </div>
-    <div className="col-md-4">
+    <div className="col-md-12 col-sm-12 col-lg-4 col-xl-4 col-xxl-4">
         <div class="card-container">
   <div class="card-image">
     <img src="/DronesHomepage/blog-2.png" alt="a brand new sports car" />
@@ -51,7 +51,7 @@ const Blog = () => {
   </div>
 </div>
     </div>
-    <div className="col-md-4">
+    <div className="col-md-12 col-sm-12 col-lg-4 col-xl-4 col-xxl-4">
         <div class="card-container">
   <div class="card-image">
     <img src="/DronesHomepage/blog-3.png" alt="a brand new sports car" />

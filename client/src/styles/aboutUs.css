@@ -85,7 +85,8 @@
 
 .About-Us-one-sub .About-Us-one-data {
   background: var(--Color---7, #000);
-  /* height: 400px; */
+  height: fit-content;
+  padding: 60px;
 }
 .row.align-items-center.About-Us-one-content {
   height: fit-content;
@@ -132,7 +133,8 @@
 
 .About-Us-two-sub .About-Us-two-data {
   background: var(--Dominant, #fff);
-  /* height: 380px; */
+  height: fit-content;
+  padding: 60px;
 }
 .row.align-items-center.About-Us-two-content {
   height: fit-content;
@@ -208,7 +210,8 @@
 
 .About-Us-three-sub .About-Us-three-data {
   background: var(--Color---7, #000);
-  /* height: 400px; */
+  height: fit-content;
+  padding: 60px;
 }
 
 .About-Us-three-image img {
@@ -299,7 +302,8 @@
 
 .About-Us-four-sub .About-Us-four-data {
   background: var(--Dominant, #fff);
-  /* height: 380px; */
+  height: fit-content;
+  padding: 60px;
 }
 
 .About-Us-four-image img {
@@ -355,7 +359,7 @@
 }
 
 .about-couting-instant {
-  padding: 30px 0px;
+  padding:70px 0px 30px;
 }
 
 .about-couting-instant-heading {
@@ -386,9 +390,11 @@
 }
 
 .about-couting-instant-heading p {
-  color: var(--Gray-500, #556987);
+  color: #454f5e;
   font-family: Poppins;
   font-size: 16px;
+  font-weight: 400;
+  padding: 8px 0px;
 }
 
 .about-couting-instant-subject {
@@ -407,12 +413,14 @@
 }
 
 .about-couting-instant-text p {
-  color: var(--Gray-500, #556987);
-  font-family: Poppins;
-  font-size: 16px;
+  color: #2f3338;
+  font-size: 18px;
   font-weight: 500;
+  padding: 8px 0px;
 }
-
+.AboutUsBanner-sub button {
+  background: #fa8232 !important;
+}
 .about-top-comapany-instant-heading {
   text-align: center;
   width: 90%;
@@ -437,18 +445,18 @@
   padding: 25px 0px;
 }
 .about-top-comapany-instant-heading h2 {
-  color: var(--Gray-900, #2a3342);
+  color: #454f5e;
   font-family: Poppins;
-  font-size: 35px;
-  font-weight: 600;
-  padding: 15px 0px;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 8px 0px;
 }
 
 .about-top-comapany-instant-heading p {
-  color: var(--Gray-500, #556987);
+  color: #000000;
   font-family: Poppins;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   padding: 8px 0px;
 }
 .about-top-comapany-instant-text {
@@ -565,6 +573,19 @@
   .AboutUsTeam-main-text{
     width: 100%;
   }
+  .row.about-top-comapany-instant-subject .col-md-3.col-sm-6.col-12 {
+    width: 47%;
+}
+.about-top-comapany-instant-text {
+  margin: 10px auto;
+  width: 100% !important;
+}
+.ContactProduct1-sub .text1-contact p{
+  text-align: justify;
+}
+.about-top-comapany-instant-text{
+  padding: 30px;
+}
   .About-Us-one-sub .About-Us-one-heading h4 {
     font-size: 25px;
   }
@@ -608,6 +629,7 @@
   .about-couting-instant-text p,
   .about-couting-instant-heading p {
     font-size: 14px;
+    text-align: center;
   }
 
   .about-couting-instant-text h2,
@@ -616,6 +638,7 @@
   }
   .About-Us-one-sub .About-Us-one-data {
     height: fit-content;
+    padding: 0;
   }
 
   .About-Us-one-sub .About-Us-one-data .About-Us-one-content {
@@ -638,7 +661,7 @@
   }
 
   .About-Us-one-sub .About-Us-one-data .About-Us-one-text p {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .About-Us-one-sub .About-Us-one-data .About-Us-one-text {
@@ -648,6 +671,7 @@
 
   .About-Us-two-sub .About-Us-two-data {
     height: fit-content;
+    padding: 0;
   }
 
   .About-Us-two-sub .About-Us-two-data .About-Us-two-content {
@@ -671,7 +695,7 @@
   }
 
   .About-Us-two-sub .About-Us-two-data .About-Us-two-text p {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .About-Us-two-sub .About-Us-two-data .About-Us-two-text {
@@ -681,6 +705,7 @@
 
   .About-Us-three-sub .About-Us-three-data {
     height: fit-content;
+    padding: 0;
   }
 
   .About-Us-three-sub .About-Us-three-data .About-Us-three-content {
@@ -713,6 +738,7 @@
 
   .About-Us-four-sub .About-Us-four-data {
     height: fit-content;
+    padding: 0;
   }
 
   .About-Us-four-sub .About-Us-four-data .About-Us-four-content {
@@ -778,6 +804,12 @@
   .about-top-comapany-instant-heading h2 {
     font-size: 25px;
   }
+  .row.about-couting-instant-subject .col-md-3.col-sm-6.col-12 {
+    width: 48%;
+}
+p{
+  text-align: justify;
+}
 }
 
 @media only screen and (max-width: 576px) {
@@ -800,7 +832,7 @@
   }
 
   .About-Us-one-sub .About-Us-one-data .About-Us-one-text p {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .About-Us-one-sub .About-Us-one-data .About-Us-one-text {
@@ -813,7 +845,7 @@
   }
 
   .About-Us-two-sub .About-Us-two-data .About-Us-two-text p {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .About-Us-two-sub .About-Us-two-data .About-Us-two-text {
@@ -900,7 +932,7 @@
   }
 
   .About-Us-one-sub .About-Us-one-data .About-Us-one-text p {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .About-Us-two-sub .About-Us-two-data .About-Us-two-text h5 {

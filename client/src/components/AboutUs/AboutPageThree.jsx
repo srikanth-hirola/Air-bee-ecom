@@ -21,7 +21,7 @@ export const AboutPageThree = () => {
                                 </div>
                                 <div className="col-md-6 ">
                                     <div className='About-Us-three-image'>
-                                        <img src="/DronesHomepage/about3.png" alt="" />
+                                        <img src="https://img.freepik.com/free-photo/technological-background-close-up_23-2148882600.jpg?size=626&ext=jpg&ga=GA1.1.1104190829.1706326261&semt=ais" alt="" />
                                     </div>
                                 </div>
                             </div>

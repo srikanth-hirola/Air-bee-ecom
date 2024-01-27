@@ -23,7 +23,7 @@ const CategoryProductCard = ({ data1, key }) => {
                     <div className='DronesProductsRow2-subimage-content'>
                         <div className='DronesProductsRow2-subimage-content-text'>
                             <h5>{data?.name?.length > 25
-                                ? data?.name.slice(0, 18) + '...'
+                                ? data?.name.slice(0, 25) + '...'
                                 : data?.name}</h5>
                             <p>{styles?.currency?.Symbol}&nbsp;{getDiscountPrice({ data })}
                             </p>

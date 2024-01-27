@@ -273,7 +273,8 @@ const UserInbox = () => {
         <>
             <DronesHeader />
 <DronesHeader2/>
-            <div className="w-[80%] mx-auto">
+            <div className="user-inbox">
+            <div className="container">
                 {!open && (
                     <>
 
@@ -314,6 +315,7 @@ const UserInbox = () => {
                         handleImageUpload={handleImageUpload}
                     />
                 )}
+            </div>
             </div>
             <DronesFooter />
         </>
@@ -405,7 +407,7 @@ const SellerInbox = ({
     const styles = StyleConfig();
 
     return (
-        <div className="w-full h-[85vh] flex flex-col justify-between p-5 overflow-scroll">
+        <div className="w-full  user-inbox-open">
             {/* message header */}
             <div className="w-full flex p-3 items-center justify-between bg-slate-200">
                 <div className="flex">
@@ -427,7 +429,7 @@ const SellerInbox = ({
             </div>
 
             {/* messages */}
-            <div className="px-3 h-[75vh] py-3 overflow-y-scroll">
+            <div className="px-3 py-3 overflow-y-scroll user-open-inbox">
                 {messages &&
                     messages.map((item, index) => (
                         <div

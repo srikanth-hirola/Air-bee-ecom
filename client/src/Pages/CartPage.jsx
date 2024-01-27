@@ -61,6 +61,7 @@ const CartPage = () => {
                     <div className="col-md-12 col-lg-12">
                         <CartHeadings />
                     </div>
+                    
                     {cartData?.length > 0 ?
                         <div className='DronesCart-subparent'>
                             <div className="row">
