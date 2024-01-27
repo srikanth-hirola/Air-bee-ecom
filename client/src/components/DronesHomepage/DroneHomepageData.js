@@ -747,7 +747,7 @@ export const Footer = {
                                 },
                                 {
                                     SubTitle: 'T & C',
-                                    url: '/terms-and-conditions'
+                                    url: ''
                                 }
                             ]
                         },
@@ -770,11 +770,11 @@ export const Footer = {
                                 },
                                 {
                                     SubTitle: 'Refunds',
-                                    url: '/refund-policy'
+                                    url: '/'
                                 },
                                 {
                                     SubTitle: 'Privacy POlicy',
-                                    url: '/privacy-policy'
+                                    url: '/'
                                 },
                                 // {
                                 //     SubTitle: 'Q & A',

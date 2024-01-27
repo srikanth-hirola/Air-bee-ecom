@@ -393,8 +393,7 @@
   color: #454f5e;
   font-family: Poppins;
   font-size: 16px;
-  font-weight: 400;
-  padding: 8px 0px;
+  text-align: start;
 }
 
 .about-couting-instant-subject {
@@ -458,6 +457,7 @@
   font-size: 16px;
   font-weight: 400;
   padding: 8px 0px;
+  text-align: start;
 }
 .about-top-comapany-instant-text {
   border-radius: 6px;
@@ -573,6 +573,10 @@
   .AboutUsTeam-main-text{
     width: 100%;
   }
+  .About-Us-one-sub .About-Us-one-data .About-Us-one-text h5 {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
   .row.about-top-comapany-instant-subject .col-md-3.col-sm-6.col-12 {
     width: 47%;
 }
@@ -608,7 +612,10 @@
     margin: 10px auto;
   }
   .about-faq-instant-question .accordion-button {
-    font-size: 14px;
+    font-size: 14px !important;
+  }
+  .accordion-body{
+    font-size: 12px;
   }
   .about-faq-instant-text h2 {
     font-size: 25px;
@@ -647,7 +654,7 @@
 
   .About-Us-one-sub .About-Us-one-data .About-Us-one-image {
     height: 250px;
-    width: 90%;
+    width: 100%;
     padding: 15px 0px;
     margin: auto;
   }
@@ -657,7 +664,7 @@
   }
 
   .About-Us-one-sub .About-Us-one-data .About-Us-one-text h5 {
-    font-size: 20px;
+    /* font-size: 20px; */
   }
 
   .About-Us-one-sub .About-Us-one-data .About-Us-one-text p {
@@ -680,14 +687,13 @@
   }
 
   .About-Us-two-sub .About-Us-two-data .About-Us-two-image {
-    height: 250px;
-    width: 90%;
+    height: 450px;
     padding: 15px 0px;
     margin: auto;
   }
 
   .About-Us-two-sub .About-Us-two-data .About-Us-two-image img {
-    object-fit: cover;
+    object-fit: contain;
   }
 
   .About-Us-two-sub .About-Us-two-data .About-Us-two-text h5 {
@@ -747,14 +753,14 @@
   }
 
   .About-Us-four-sub .About-Us-four-data .About-Us-four-image {
-    height: 250px;
-    width: 90%;
+    height: 451px;
+    width: 100%;
     padding: 15px 0px;
     margin: auto;
   }
 
   .About-Us-four-sub .About-Us-four-data .About-Us-four-image img {
-    object-fit: cover;
+    object-fit: contain;
   }
 
   .About-Us-four-sub .About-Us-four-data .About-Us-four-text h5 {
@@ -762,7 +768,7 @@
   }
 
   .About-Us-four-sub .About-Us-four-data .About-Us-four-text p {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .About-Us-four-sub .About-Us-four-data .About-Us-four-text {
@@ -828,7 +834,7 @@ p{
   }
 
   .About-Us-one-sub .About-Us-one-data .About-Us-one-text h5 {
-    font-size: 20px;
+    /* font-size: 20px; */
   }
 
   .About-Us-one-sub .About-Us-one-data .About-Us-one-text p {
@@ -872,7 +878,7 @@ p{
   }
 
   .About-Us-four-sub .About-Us-four-data .About-Us-four-text p {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .About-Us-four-sub .About-Us-four-data .About-Us-four-text {
@@ -940,7 +946,7 @@ p{
   }
 
   .About-Us-two-sub .About-Us-two-data .About-Us-two-text p {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .About-Us-three-sub .About-Us-three-data .About-Us-three-text h5 {
@@ -956,7 +962,7 @@ p{
   }
 
   .About-Us-four-sub .About-Us-four-data .About-Us-four-text p {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .About-Us-five-sub .About-Us-five-data .About-Us-five-text h5 {
