@@ -237,7 +237,8 @@ const CartProductCards = ({
                                         <p>{styles?.currency?.Symbol}&nbsp;{dataFound.active
                                             ? ConvertCurrency(dataFound.selectedColor.eventPrice)
                                             : ConvertCurrency(dataFound.selectedColor.discountPrice)}{' '}
-                                            * {value}</p>
+                                            {/* * {value} */}
+                                            </p>
                                     </div>
                                 </div>
                                 <div className="col-3 col-sm-3 col-md-3">

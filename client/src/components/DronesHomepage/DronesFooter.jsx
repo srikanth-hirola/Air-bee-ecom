@@ -75,7 +75,7 @@ const DronesFooter = () => {
                 </div>
             </div>
 
-            <hr />
+            {/* <hr /> */}
             <div className='DronesFooter-copyrights'>
                 <p>airbee.co.in © All Rights Reserved - 2024 - designed and developed by <Link to="https://www.hirolainfotech.com/"> Hirola Infotech Solutions Pvt Ltd.</Link> </p>
             </div>

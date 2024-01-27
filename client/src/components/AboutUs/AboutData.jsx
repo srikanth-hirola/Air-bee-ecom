@@ -59,25 +59,25 @@ export const AboutData = () => {
                             <p>Experience success through Airbee! Our Airbee Flex platform effortlessly handles digital channels. Explore 100k+ products, 70k+ visitors, and 20k+ deliveries, ensuring 100% customer satisfaction. Elevate your business with Airbee – where innovation meets actionable insights.</p>
                         </div>
                         <div className="row about-couting-instant-subject">
-                            <div className="col-md-3 col-sm-6 col-12">
+                            <div className="col-md-3 col-sm-6 col-6">
                                 <div className="about-couting-instant-text">
                                     <h2>{formatCount(productCount)}</h2>
                                     <p>No. of Products</p>
                                 </div>
                             </div>
-                            <div className="col-md-3 col-sm-6 col-12">
+                            <div className="col-md-3 col-sm-6 col-6">
                                 <div className="about-couting-instant-text">
                                     <h2>{formatCount(visitorCount)}</h2>
                                     <p>No. of Visitors</p>
                                 </div>
                             </div>
-                            <div className="col-md-3 col-sm-6 col-12">
+                            <div className="col-md-3 col-sm-6 col-6">
                                 <div className="about-couting-instant-text">
                                     <h2>{formatCount(productsDeliveredCount)}</h2>
                                     <p>Products Delivered</p>
                                 </div>
                             </div>
-                            <div className="col-md-3 col-sm-6 col-12">
+                            <div className="col-md-3 col-sm-6 col-6">
                                 <div className="about-couting-instant-text">
                                     <h2>{happyCustomersCount}%</h2>
                                     <p>Happy Customers</p>

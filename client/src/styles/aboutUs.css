@@ -389,6 +389,7 @@
   color: var(--Gray-500, #556987);
   font-family: Poppins;
   font-size: 16px;
+  text-align: start;
 }
 
 .about-couting-instant-subject {
@@ -450,6 +451,7 @@
   font-size: 16px;
   font-weight: 500;
   padding: 8px 0px;
+  text-align: start;
 }
 .about-top-comapany-instant-text {
   border-radius: 6px;
@@ -587,7 +589,10 @@
     margin: 10px auto;
   }
   .about-faq-instant-question .accordion-button {
-    font-size: 14px;
+    font-size: 14px !important;
+  }
+  .accordion-body{
+    font-size: 12px;
   }
   .about-faq-instant-text h2 {
     font-size: 25px;
@@ -638,7 +643,7 @@
   }
 
   .About-Us-one-sub .About-Us-one-data .About-Us-one-text p {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .About-Us-one-sub .About-Us-one-data .About-Us-one-text {
@@ -671,7 +676,7 @@
   }
 
   .About-Us-two-sub .About-Us-two-data .About-Us-two-text p {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .About-Us-two-sub .About-Us-two-data .About-Us-two-text {
@@ -736,7 +741,7 @@
   }
 
   .About-Us-four-sub .About-Us-four-data .About-Us-four-text p {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .About-Us-four-sub .About-Us-four-data .About-Us-four-text {
@@ -800,7 +805,7 @@
   }
 
   .About-Us-one-sub .About-Us-one-data .About-Us-one-text p {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .About-Us-one-sub .About-Us-one-data .About-Us-one-text {
@@ -813,7 +818,7 @@
   }
 
   .About-Us-two-sub .About-Us-two-data .About-Us-two-text p {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .About-Us-two-sub .About-Us-two-data .About-Us-two-text {
@@ -840,7 +845,7 @@
   }
 
   .About-Us-four-sub .About-Us-four-data .About-Us-four-text p {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .About-Us-four-sub .About-Us-four-data .About-Us-four-text {
@@ -900,7 +905,7 @@
   }
 
   .About-Us-one-sub .About-Us-one-data .About-Us-one-text p {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .About-Us-two-sub .About-Us-two-data .About-Us-two-text h5 {
@@ -908,7 +913,7 @@
   }
 
   .About-Us-two-sub .About-Us-two-data .About-Us-two-text p {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .About-Us-three-sub .About-Us-three-data .About-Us-three-text h5 {
@@ -924,7 +929,7 @@
   }
 
   .About-Us-four-sub .About-Us-four-data .About-Us-four-text p {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .About-Us-five-sub .About-Us-five-data .About-Us-five-text h5 {

@@ -1098,9 +1098,14 @@ li {
 
 /* footer component */
 .Drones-footer-parent {
-  width: 90%;
+  /* width: 90%;
   margin: auto;
-  padding: 40px 0px 30px 0px;
+  padding: 40px 0px 30px 0px; */
+  width: 100%;
+  margin: auto;
+  padding: 40px 30px 30px 40px;
+  border: 1px solid beige;
+
 }
 
 .Drones-footer-logo-image {
@@ -1476,7 +1481,7 @@ li {
 .DronesFooter-copyrights{
   width: 95%;
   margin: auto;
-  padding: 10px 0px;
+  padding: 15px 0px 0px 0px;
   text-align: center;
 }
 .DronesFlagsimage {
@@ -1740,9 +1745,12 @@ li {
   .DronesNewsletter-parent .DronesNewsletter-email-image{
     display: none;
   }
-  .Drones-footer-parent {
+  /* .Drones-footer-parent {
     padding: 20px 0px 30px 0px;
-  }
+  } */
+  .Drones-footer-parent {
+    padding: 20px 15px 30px 20px;
+}
   .Drones-header-logo {
     height: 80px;
     width: 100px;

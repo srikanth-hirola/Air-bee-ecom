@@ -33,7 +33,7 @@ export default function SliderProduct({ mainImg }) {
       <Swiper
       onSwiper={setThumbsSwiper}
       slidesPerView={4}
-        spaceBetween={30}
+        spaceBetween={10}
         centeredSlides={true}
         loop={true}
         watchSlidesProgress={true}

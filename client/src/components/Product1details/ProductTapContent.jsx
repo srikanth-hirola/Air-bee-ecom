@@ -18,7 +18,7 @@ export const ProductTapContent = ({ data }) => {
                             onSelect={(k) => setKey(k)}
                             className="mb-3"
                         >
-                            <Tab eventKey="Bestseller" title="Bestseller">
+                            <Tab eventKey="Bestseller" title="Description">
 
                                 <div className="row">
 
