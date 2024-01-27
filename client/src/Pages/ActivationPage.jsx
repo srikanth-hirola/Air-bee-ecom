@@ -35,6 +35,7 @@ const ActivationPage = () => {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
+                flexWrap: "wrap"
             }}
         >
             {error ? (
