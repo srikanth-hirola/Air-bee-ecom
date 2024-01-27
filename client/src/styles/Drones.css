@@ -339,7 +339,7 @@ button.search-sug {
 }
 
 .home-twelve-header-sub .header .item-center {
-  flex: 0 0 66%;
+  flex: 0 0 80%;
 }
 
 .home-twelve-header-sub .header .item-right {
@@ -3686,3 +3686,8 @@ text-align: center;
 }
 /* activation page  */
 
+@media only screen and (min-width: 645px) and (max-width: 767px) {
+  .home-twelve-header-sub .header .item-right{
+    top: -74px;
+  }
+}
