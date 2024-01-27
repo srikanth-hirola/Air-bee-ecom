@@ -43,7 +43,7 @@ const DronesFooter = () => {
                                             <div className="DronesFooter-links">
                                                 <h6 key={index}>{item?.Title}</h6>
                                                 {item?.drop?.length > 0 && item?.drop?.map((dropitem, index1) => (
-                                                    <Link to=""> <li key={index1}>{dropitem?.SubTitle}</li></Link>
+                                                    <Link to={dropitem.url}> <li key={index1}>{dropitem?.SubTitle}</li></Link>
                                                 ))}
                                             </div>
                                         </div>

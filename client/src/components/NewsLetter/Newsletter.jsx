@@ -1,5 +1,5 @@
 import React from 'react';
-import './Models2.css';
+// import './Models2.css';
 const Newsletter = () => {
 
   return (

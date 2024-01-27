@@ -594,8 +594,35 @@ a {
     padding-bottom: 20px;
   }
   .RefundTabs-parent li.nav-item {
-    width: 100%;
+    width: 31%;
+    overflow: hidden;
   }
+  .RefundTabs-parent li.nav-item .nav-link {
+    display: block;
+    padding: 5px;
+    font-size: 13px;
+    font-weight: var(--bs-nav-link-font-weight);
+    color: var(--bs-nav-link-color);
+    text-decoration: none;
+    background: none;
+    border: 0;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+.OrderDetails-Shipping-details {
+  display: flex;
+  justify-content: start;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  align-items: start;
+  padding: 15px 0px;
+}
+.Orderspage-product-image-parent {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: start;
+}
   .RefundTabs-parent {
     padding-top: 25px;
   }
@@ -604,6 +631,7 @@ a {
   .RefundTabs-sub2 {
     padding-bottom: 25px;
   }
+
 }
 
 /* order-details component single Product details */

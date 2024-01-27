@@ -24,19 +24,19 @@ const DronesDirectionSensing = () => {
                        <div className="DronesDirectionSEnsingsub2-parent">
                             <div className='DronesDirectionSEnsingsub2-sub1'>
                                 <div className='DronesDirectionSEnsingsub2-sub1-image'>
-                                    <img src="./DronesHomepage/Avatar.png" alt="" />
+                                    <img src="https://cdn-icons-png.freepik.com/256/1534/1534216.png?ga=GA1.1.1442251636.1706281640&semt=ais" alt="" />
                                 </div>
                                 <p>Quality Assurance</p>
                             </div>
                             <div className='DronesDirectionSEnsingsub2-sub1'>
                                 <div className='DronesDirectionSEnsingsub2-sub1-image'>
-                                    <img src="./DronesHomepage/Avatar.png" alt="" />
+                                    <img src="https://cdn-icons-png.freepik.com/256/2601/2601800.png?ga=GA1.1.1442251636.1706281640&semt=ais" alt="" />
                                 </div>
                                 <p>Innovation Hub</p>
                             </div>
                             <div className='DronesDirectionSEnsingsub2-sub1'>
                                 <div className='DronesDirectionSEnsingsub2-sub1-image'>
-                                    <img src="./DronesHomepage/Avatar.png" alt="" />
+                                    <img src="https://cdn-icons-png.freepik.com/256/10436/10436073.png?ga=GA1.1.1442251636.1706281640&semt=ais" alt="" />
                                 </div>
                                 <p>Customer-Centric</p>
                             </div>

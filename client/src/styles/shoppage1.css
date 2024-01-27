@@ -353,7 +353,7 @@ ul.pagination-div.pagination {
 
 .desktop-filter,
 .allproducts-main {
-  height: 90vh;
+  height: fit-content;
   overflow-y: scroll;
 }
 
@@ -447,6 +447,12 @@ td {
 }
 /* new */
 @media only screen and (max-width: 767px) {
+  .shoppage1-price span {
+    font-size: 10px;
+  }
+  .shoppage1-price h5{
+    font-size: 12px;
+  }
   .shoppage1-row2 {
     width: 75%;
   }
@@ -516,6 +522,7 @@ td {
     font-weight: 500;
     color: #000;
     line-height: 16px;
+    text-align: left;
 }
 
   .shoppage1-productCard-sub .card1 .card {

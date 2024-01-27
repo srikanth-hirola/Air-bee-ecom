@@ -29,6 +29,8 @@ const allowedOrigins = [
   'https://ecom-client.onrender.com',
   'http://localhost:3000',
   'http://localhost:3001',
+  'https://airbee.co.in',
+  'https://www.airbee.co.in',
 ];
 
 app.use(

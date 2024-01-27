@@ -25,7 +25,7 @@ Our mission goes beyond just providing products; it is a dedication to making th
                                 </div>
                                 <div className="col-md-6 ">
                                     <div className='About-Us-one-image'>
-                                        <img src="DronesHomepage/about1.png" alt="" />
+                                        <img src="https://img.freepik.com/free-photo/man-s-hand-holding-drone-outdoors_23-2149392706.jpg?size=626&ext=jpg&ga=GA1.1.1104190829.1706326261&semt=ais" alt="" />
                                     </div>
                                 </div>
 

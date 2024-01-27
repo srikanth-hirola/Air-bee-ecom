@@ -187,12 +187,27 @@ const CartProductCards = ({
         }
     };
 
+    // const decrement = (e, data) => {
+    //     setValue(value === 1 ? 1 : value - 1);
+    //     const updateCartData = { ...data, qty: value === 1 ? 1 : value - 1 };
+    //     quantityChangeHandler(updateCartData);
+    //     setDataFound(updateCartData);
+    // };
     const decrement = (e, data) => {
-        setValue(value === 1 ? 1 : value - 1);
-        const updateCartData = { ...data, qty: value === 1 ? 1 : value - 1 };
-        quantityChangeHandler(updateCartData);
-        setDataFound(updateCartData);
+        const updatedValue = value - 1;
+        setValue(updatedValue);
+    
+        if (updatedValue === 0) {
+            // If the updated value is zero, remove the product from the cart
+            removeFromCartHandler(data);
+        } else {
+            // Otherwise, update the cart with the new quantity
+            const updateCartData = { ...data, qty: updatedValue };
+            quantityChangeHandler(updateCartData);
+            setDataFound(updateCartData);
+        }
     };
+    
 
 
 
@@ -245,9 +260,9 @@ const CartProductCards = ({
                                     <div className='Drones-Product-quantity'>
 
                                         <div className='Drones-addtocart-buttons'>
-                                            <button className='increment-button' onClick={(e) => increment(e, dataFound)}>+</button>
-                                            <p className='m-0'>{dataFound.qty}</p>
                                             <button className='increment-button' onClick={(e) => decrement(e, dataFound)}>-</button>
+                                            <p className='m-0'>{dataFound.qty}</p>
+                                            <button className='increment-button' onClick={(e) => increment(e, dataFound)}>+</button>
                                         </div>
                                     </div>
                                 </div>

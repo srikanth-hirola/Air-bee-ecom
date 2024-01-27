@@ -13,6 +13,7 @@ const Price = ({ originalPrice, discountPrice }) => {
             <del>{styles?.currency?.Symbol}&nbsp;{ConvertCurrency(originalPrice)}</del>
             <h6>{parseInt(((originalPrice - discountPrice) / originalPrice) * 100)
             }% OFF</h6>
+             
         </div>
     )
 }

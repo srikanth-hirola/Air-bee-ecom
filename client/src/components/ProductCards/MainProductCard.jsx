@@ -58,7 +58,7 @@ const MainProductCard = ({ data, active }) => {
                                 </Link>
                             </div>
 
-                            <div className='col-md-3 col-3 shoppage1-likeicon'>
+                            <div className='col-md-3 col-3 shoppage1-likeicon p-0'>
                                 {/* <img src={i?.icon?.url} alt="" /> */}
                                 <FillHeart data={data} click={click} setClick={setClick} />
                             </div>

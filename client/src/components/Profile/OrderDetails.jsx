@@ -11,6 +11,9 @@ import { StyleConfig } from '../../utils/StyleConfig';
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { RxCross1 } from 'react-icons/rx';
 import useGetCurrencyConversion from '../../hooks/Site-config/useGetCurrencyConversion';
+import DronesHeader from '../Headers/DronesHeader';
+import DronesHeader2 from '../Headers/DronesHeader2';
+import DronesFooter from '../DronesHomepage/DronesFooter';
 
 const OrderDetails = () => {
     const { ConvertCurrency } = useGetCurrencyConversion()
@@ -77,6 +80,8 @@ const OrderDetails = () => {
 
     return (
         <>
+        <DronesHeader/>
+        <DronesHeader2/>
             <div className='OrderDetails-parent'>
                 <div className="row">
                     <div className=" col-md-12">
@@ -307,6 +312,7 @@ const OrderDetails = () => {
                     </div>
                 </div>
             </div>
+            <DronesFooter/>
         </>
     )
 }
