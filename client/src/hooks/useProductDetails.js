@@ -19,7 +19,7 @@ const useProductDetails = ({ data, selectedColor, selectedAttr, count, click, ac
         imgarr.push(main)
 
         // eslint-disable-next-line array-callback-return
-        multi.map((vel) => {
+        multi?.map((vel) => {
             imgarr.push(vel)
         });
         if (data?.showInputs) {
