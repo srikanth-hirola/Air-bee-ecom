@@ -11,8 +11,8 @@ export const Shoppage1Breadcrump = ({ bredCrumb }) => {
                         <li className="breadcrumb-item active "><Link to="/" className='text-black'>Home &nbsp;</Link></li>
                         {/* <li className="breadcrumb-item active font-semibold"><Link to="/" className='breadcrumb-item active font-semibold'>Home</Link></li> */}
                         {bredCrumb?.map((item, i) => (
-                            <Link to='/products-by-category/search'>
-                            <li className="breadcrumb-item active font-semibold" key={i} aria-current="page">/  {item}</li>
+                            <Link to='/products?search=all products'>
+                                <li className="breadcrumb-item active font-semibold" key={i} aria-current="page">/  {item}</li>
                             </Link>
                         ))}
                         {/* <li className="breadcrumb-item active" aria-current="page">Men’s wear</li>

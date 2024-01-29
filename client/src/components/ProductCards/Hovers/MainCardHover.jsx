@@ -1,4 +1,4 @@
-import { faCartPlus, faCartShopping, faEye } from '@fortawesome/free-solid-svg-icons'
+import { faCartPlus, faEye } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
 import FillHeart from '../../wishlist/FillHeart'
@@ -13,8 +13,8 @@ const MainCardHover = ({ addToCart, id, data }) => {
           <FontAwesomeIcon icon={faCartPlus} />
         </div>
         <div className='DronesRecommendedItems-content-hover-images-1'>
-          <Link to={`${`/product/${data?._id}`}`}>
-          <FontAwesomeIcon icon={faEye} />
+          <Link to={`${`/product/${data?.slug}`}`}>
+            <FontAwesomeIcon icon={faEye} />
           </Link>
         </div>
         <div className='DronesRecommendedItems-content-hover-images-1 cursor-pointer'>

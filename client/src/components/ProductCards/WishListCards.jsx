@@ -16,7 +16,7 @@ const WishListCards = ({
                 <div className="row">
                     <hr />
                     <div className="col-md-10">
-                        <Link to={`${`/product/${data1._id}`}`}>
+                        <Link to={`${`/product/${data1?.slug}`}`}>
                             <div className="Dronescrat-product">
                                 <div className='Dronescrat-product-sub'>
                                     <div className="row">

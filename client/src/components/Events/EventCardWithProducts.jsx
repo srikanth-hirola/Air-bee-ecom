@@ -12,9 +12,9 @@ const EventCardWithProducts = ({ data1 }) => {
 
 
     useEffect(() => {
-        if (data1?._id !== null) {
+        if (data1?.slug !== null) {
             axios
-                .get(`${server}/event/get-all-event-products/${data1?._id}`)
+                .get(`${server}/event/get-all-event-products/${data1?.slug}`)
                 .then((result) => {
                     if (result.data.Status === 'Success') {
                         setData(result.data.events[0].productArray);
@@ -44,7 +44,7 @@ const EventCardWithProducts = ({ data1 }) => {
                                         <CountDown data={data1} />
                                     </div>
                                     <div className='DronesProductRow1Timer-button'>
-                                        <Link to={`/event/${data1?._id}`}>Show More</Link>
+                                        <Link to={`/event/${data1?.slug}`}>Show More</Link>
                                     </div>
                                 </div>
 

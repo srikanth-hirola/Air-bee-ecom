@@ -196,7 +196,7 @@ const CartProductCards = ({
     const decrement = (e, data) => {
         const updatedValue = value - 1;
         setValue(updatedValue);
-    
+
         if (updatedValue === 0) {
             // If the updated value is zero, remove the product from the cart
             removeFromCartHandler(data);
@@ -207,7 +207,7 @@ const CartProductCards = ({
             setDataFound(updateCartData);
         }
     };
-    
+
 
 
 
@@ -219,7 +219,7 @@ const CartProductCards = ({
                 <div className="row align-items-center">
                     <hr />
                     <div className="col-md-7">
-                        <Link to={`${`/product/${data1._id}`}`}>
+                        <Link to={`${`/product/${data1?.slug}`}`}>
                             <div className="Dronescrat-product">
                                 <div className='Dronescrat-product-sub'>
                                     <div className="row align-items-center">
@@ -253,7 +253,7 @@ const CartProductCards = ({
                                             ? ConvertCurrency(dataFound.selectedColor.eventPrice)
                                             : ConvertCurrency(dataFound.selectedColor.discountPrice)}{' '}
                                             {/* * {value} */}
-                                            </p>
+                                        </p>
                                     </div>
                                 </div>
                                 <div className="col-3 col-sm-3 col-md-3">

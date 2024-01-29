@@ -8,6 +8,7 @@ const router = express.Router();
 const cloudinary = require('cloudinary');
 const Category = require('../model/category');
 const product = require('../model/product');
+const slugify = require('slugify');
 
 // create event
 router.post(
@@ -45,6 +46,9 @@ router.post(
         const productData = req.body;
         productData.images = imagesLinks;
         productData.shop = shop;
+        if (productData?.name) {
+          productData.slug = slugify(productData?.name)
+        }
 
         const eventStart = productData?.start_Date.substring(0, 10)
         const today = new Date().toISOString().substring(0, 10);
@@ -107,6 +111,9 @@ router.post(
         const productData = req.body;
         productData.images = imagesLinks;
         productData.shop = shop;
+        if (productData?.name) {
+          productData.slug = slugify(productData?.name)
+        }
 
         if (productData?.start_Date) {
           const eventStart = productData?.start_Date.substring(0, 10)
@@ -187,6 +194,9 @@ router.post(
         const productData = data;
         productData.images = imagesLinks;
         productData.shop = shop;
+        if (productData?.name) {
+          productData.slug = slugify(productData?.name)
+        }
 
         if (productData?.start_Date) {
           const eventStart = productData?.start_Date.substring(0, 10)
@@ -300,6 +310,24 @@ router.get('/get-all-events', async (req, res, next) => {
 // get all events products
 router.get(
   '/get-all-event-products/:id',
+  catchAsyncErrors(async (req, res, next) => {
+    try {
+      const events = await Event.find({ slug: req.params.id });
+
+      res.status(201).json({
+        success: true,
+        Status: 'Success',
+        events,
+      });
+    } catch (error) {
+      return next(new ErrorHandler(error, 400));
+    }
+  })
+);
+
+// get all events products store
+router.get(
+  '/get-all-event-products-store/:id',
   catchAsyncErrors(async (req, res, next) => {
     try {
       const events = await Event.find({ _id: req.params.id });

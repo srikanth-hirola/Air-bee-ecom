@@ -15,7 +15,7 @@ const EventCardHome = ({ data1 }) => {
 
     return (
         <div className='DronesProductsRow1-card-parent'>
-            <Link to={`${`/product/${data?._id}`}`}>
+            <Link to={`${`/product/${data1?.slug}`}`}>
                 <div className="card">
                     <div className='DronesProductsRow1-card-image'>
                         <img src={`${data1?.mainImage?.url}`} alt="product" />

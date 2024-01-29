@@ -51,7 +51,7 @@ const EventProductCard = ({ data1, isEvent, active }) => {
 
                 <div className="w-full h-[200px] bg-white rounded-lg shadow-sm p-3 relative cursor-pointer product-card-border">
                     <Link
-                        to={`/event/${data._id}`}
+                        to={`/event/${data?.slug}`}
                     >
                         <>
                             <div className='w-full pb-2 h-[90px]'>

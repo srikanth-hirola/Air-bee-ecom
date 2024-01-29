@@ -30,7 +30,7 @@ const MainProductCard = ({ data, active }) => {
             {data &&
 
                 <div className='card main-card'>
-                    <Link to={`${`/product/${data?._id}`}`}>
+                    <Link to={`${`/product/${data?.slug}`}`}>
                         <div className='shoppage1-card-image'>
                             <img src={data?.mainImage?.url} alt="productImage" />
                         </div>
@@ -40,7 +40,7 @@ const MainProductCard = ({ data, active }) => {
                         <div className="row">
 
                             <div className='col-md-9 col-9'>
-                                <Link to={`${`/product/${data?._id}`}`}>
+                                <Link to={`${`/product/${data?.slug}`}`}>
                                     <div className='shoppage1-price'>
                                         <h5>{styles?.currency?.Symbol}&nbsp;{ConvertCurrency(getDiscountPrice({ data }))}
                                             <span>{styles?.currency?.Symbol}&nbsp;{ConvertCurrency(getOriginalPrice({ data }))}</span></h5>
@@ -49,9 +49,9 @@ const MainProductCard = ({ data, active }) => {
                                     <div className='product-star product-brand-span d-flex'>
                                         <Ratings rating={data?.ratings} />
                                         {data?.ratings &&
-                                        <h6>({data?.ratings})</h6> 
+                                            <h6>({data?.ratings})</h6>
                                         }
-                                        
+
                                     </div>
 
 
@@ -63,7 +63,7 @@ const MainProductCard = ({ data, active }) => {
                                 <FillHeart data={data} click={click} setClick={setClick} />
                             </div>
                             <div className='col-12 col-sm-12 col-md-12 pt-2'>
-                                <Link to={`${`/product/${data?._id}`}`}>
+                                <Link to={`${`/product/${data?.slug}`}`}>
                                     <p>{data?.name?.length > 38
                                         ? data?.name?.slice(0, 48) + '...'
                                         : data?.name}
