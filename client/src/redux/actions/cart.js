@@ -33,6 +33,17 @@ export const addTocart = (data) => async (dispatch, getState) => {
   return data;
 };
 
+//buy now
+export const buyNow = (data) => async (dispatch, getState) => {
+  dispatch({
+    type: 'buyNow',
+    payload: data,
+  });
+
+  localStorage.setItem('buyNow', JSON.stringify(getState().cart.buyNow));
+  return data;
+};
+
 // update cart
 export const updateCart = (data) => async (dispatch, getState) => {
   dispatch({

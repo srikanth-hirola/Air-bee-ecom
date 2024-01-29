@@ -19,7 +19,7 @@ const FilteredContext = ({ checkedItems, setCheckedItems, data, setFilteredData,
                         </span>
                     </div>
                 ))}
-                <button onClick={(e) => handleClearFilter({ e, data, setFilteredData, setSelectedBrands, setSelectedPriceRange, setFilteredAttr, setCheckedItems })} class=" bg-blue-500 text-light p-2 rounded-lg">clear all filters</button>
+                {checkedItems?.length > 0 ? <button onClick={(e) => handleClearFilter({ e, data, setFilteredData, setSelectedBrands, setSelectedPriceRange, setFilteredAttr, setCheckedItems })} class=" bg-blue-500 text-light p-2 rounded-lg">clear all filters</button> : null}
 
 
             </div>
@@ -27,7 +27,7 @@ const FilteredContext = ({ checkedItems, setCheckedItems, data, setFilteredData,
                 {/* {!isVisibleData && <button onClick={toggleDataVisible} className='mobile-close-flter'>
                     Open Filter
                 </button>} */}
-                
+
             </div>
 
         </div>

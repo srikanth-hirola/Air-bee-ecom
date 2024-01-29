@@ -17,6 +17,7 @@ import GetPopularity from '../ProductDetails/GetPopularity';
 import useProductDetails from '../../hooks/useProductDetails';
 import VarientSelect from '../ProductDetails/VarientSelect';
 import ShippingDetails from './ShippingDetails';
+import BuyNow from '../ProductDetails/BuyNow';
 
 export const LapProductdet = ({ data, active, seller, styles }) => {
 
@@ -35,7 +36,7 @@ export const LapProductdet = ({ data, active, seller, styles }) => {
   // const [select, setSelect] = useState(0);
 
 
-  const { handleSelectCourierPartner, handleHighlight, handleAttrSelect, incrementCount, decrementCount, addToCartHandler, getOriginalPrice, getDiscountPrice } = useProductDetails({ data, active, click, count, selectedAttr, selectedColor, setClick, setCount, setLimited, setMainImg, setSelectedAttr, setSoldOut, setWarning })
+  const { handleSelectCourierPartner, handleHighlight, handleAttrSelect, incrementCount, decrementCount, addToCartHandler, getOriginalPrice, getDiscountPrice, buyNowProduct } = useProductDetails({ data, active, click, count, selectedAttr, selectedColor, setClick, setCount, setLimited, setMainImg, setSelectedAttr, setSoldOut, setWarning })
 
 
 
@@ -75,9 +76,7 @@ export const LapProductdet = ({ data, active, seller, styles }) => {
               <div className='row laptop-productdetails-countdetails'>
                 <Counter count={count} incrementCount={incrementCount} decrementCount={decrementCount} />
                 <AddToCart addToCart={addToCartHandler} id={data?._id} />
-                <div className=" col-lg-3 col-md-4 col-sm-4 col-6">
-                  <button className='laptop-productdetails-buy'>BUY NOW</button>
-                </div>
+                <BuyNow buyNowProduct={buyNowProduct} id={data?._id} />
               </div>
               <div className='row laptop-productdetails-wish'>
                 <WishList data={data} click={click} setClick={setClick} />

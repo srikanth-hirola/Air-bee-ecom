@@ -4,6 +4,9 @@ const initialState = {
   cart: localStorage.getItem('cartItems')
     ? JSON.parse(localStorage.getItem('cartItems'))
     : [],
+  buyNow: localStorage.getItem('buyNow')
+    ? JSON.parse(localStorage.getItem('buyNow'))
+    : [],
 };
 
 export const cartReducer = createReducer(initialState, {
@@ -45,6 +48,13 @@ export const cartReducer = createReducer(initialState, {
     return {
       ...state,
       cart: arr,
+    };
+  },
+  buyNow: (state, action) => {
+    const item = action.payload;
+    return {
+      ...state,
+      buyNow: [item],
     };
   },
 
