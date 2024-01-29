@@ -74,9 +74,6 @@ const AllProductsByCategories = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [loaction]);
 
-    useEffect(() => {
-        console.log(checkedItems)
-    }, [checkedItems])
 
 
     return (
