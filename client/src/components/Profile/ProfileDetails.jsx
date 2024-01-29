@@ -8,6 +8,7 @@ import { AiOutlineCamera } from 'react-icons/ai';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import Loader from '../../utils/Loader';
+import UserProfileModal from '../../Pages/UserProfileModal';
 
 const ProfileDetails = () => {
 
@@ -77,9 +78,15 @@ const ProfileDetails = () => {
             {loading ? <Loader /> :
                 <div className='Profilepage-sub3'>
                     <div className='Profilepage-sub3-headings'>
-                        <h3>My Info</h3>
+                     <div>
+                     <h3>My Info</h3>
                         <h5>Contact Details</h5>
+                     </div>
+                        <div className='Userprofilemodal'>
+                    <UserProfileModal/>
                     </div>
+                    </div>
+                    
                     <div className="flex justify-center w-full">
                         <div className="relative">
                             <img
