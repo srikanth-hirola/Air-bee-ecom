@@ -972,7 +972,7 @@ export const Services = {
                         {
                             img:{
                                 public_id:"",
-                                url:"https://img.freepik.com/free-photo/modern-automobile-production-line-automated-production-equipment-shop-assembly-new-modern-cars-way-assembly-car-assembly-line-plant_645730-596.jpg?size=626&ext=jpg&ga=GA1.1.889736089.1692158429&semt=ais"
+                                url:"/DronesHomepage/industry-1.avif"
                             },
                             SubText:{
                                 text:"Automotive Industry"
@@ -982,7 +982,7 @@ export const Services = {
                         {
                             img:{
                                 public_id:"",
-                                url:"https://img.freepik.com/free-photo/medical-banner-with-doctor-working-laptop_23-2149611211.jpg?size=626&ext=jpg&ga=GA1.1.889736089.1692158429&semt=ais"
+                                url:"/DronesHomepage/industry-2.avif"
                             },
                             SubText:{
                                 text:"Healthcare Sector"
@@ -992,7 +992,7 @@ export const Services = {
                         {
                             img:{
                                 public_id:"",
-                                url:"https://img.freepik.com/free-photo/full-shot-woman-looking-floating-screen_23-2150219183.jpg?size=626&ext=jpg&ga=GA1.1.889736089.1692158429&semt=ais"
+                                url:"/DronesHomepage/industry-3.avif"
                             },
                             SubText:{
                                 text:"Smart Home Technology"
@@ -1002,7 +1002,7 @@ export const Services = {
                         {
                             img:{
                                 public_id:"",
-                                url:"https://img.freepik.com/free-photo/person-using-ai-tool-job_23-2150711469.jpg?size=626&ext=jpg&ga=GA1.1.889736089.1692158429&semt=ais"
+                                url:"/DronesHomepage/industry-4.avif"
                             },
                             SubText:{
                                 text:"Industrial Automation"

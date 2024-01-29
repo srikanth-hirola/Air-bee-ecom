@@ -905,11 +905,21 @@ li {
   height: 410px;
 }
 .DronesCategories-parent .swiper .swiper-wrapper {
-  position: absolute;
+  /* position: absolute;
   transform: translate3d(0px, 0, 0);
   right: -55%;
   height: 350px;
-  top: 10%;
+  top: 10%; */
+  position: absolute;
+  transform: translate3d(0px, 0, 0);
+  /* left: 0%;
+    height: 350px;
+    top: 10%;
+    width: 200%; */
+    right: -20%;
+    height: 350px;
+    top: 10%;
+    width: 62%;
 }
 .DronesProductsRow2-subimage-content-text {
   padding-inline: 8px;

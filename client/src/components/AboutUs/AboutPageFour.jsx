@@ -10,7 +10,7 @@ export const AboutPageFour = () => {
                             <div className="row align-items-center About-Us-four-content">
                                 <div className="col-md-6 ">
                                     <div className='About-Us-four-image'>
-                                        <img src="https://img.freepik.com/free-psd/drone-mockup_1310-708.jpg?size=626&ext=jpg&ga=GA1.1.889736089.1692158429&semt=ais" alt="" />
+                                        <img src="/DronesHomepage/about-drone-3.avif" alt="" />
                                     </div>
                                 </div>
                                 <div className="col-md-6 ">

@@ -33,7 +33,7 @@ const Products = () => {
                 <Swiper
                     className='paginationDisabledClass'
                     autoplay={{
-                        delay: 1500,
+                        delay: 100500,
                         disableOnInteraction: false,
                     }}
                     modules={[Autoplay]}
