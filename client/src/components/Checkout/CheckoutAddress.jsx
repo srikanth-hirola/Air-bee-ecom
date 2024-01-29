@@ -12,9 +12,29 @@ import CartBill from '../cart/CartBill';
 import CheckoutpageCart from './CheckoutpageCart';
 
 const CheckoutAddress = ({ showNext, setShowNext }) => {
-
     const { user } = useSelector((state) => state.user);
     const { cart } = useSelector((state) => state.cart);
+    const { buyNow } = useSelector((state) => state.cart);
+    const [cartData, setCartData] = useState(cart);
+
+
+    useEffect(() => {
+        const search = new URLSearchParams(window.location.search);
+        let finalData = cart;
+        const params = {};
+        for (const [key, value] of search.entries()) {
+            params[key] = value;
+            if (key === "type" && params[key] === "buynow") {
+                finalData = buyNow
+            }
+        }
+        setCartData(finalData)
+        updatedCart(finalData)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [cart, buyNow])
+
+
+
 
     const styles = StyleConfig();
 
@@ -144,7 +164,7 @@ const CheckoutAddress = ({ showNext, setShowNext }) => {
         const val = validationFun(BillingAddress, ShippingAddress, showadress);
         if (val) {
             const orderData = {
-                cart,
+                cart: cartData,
                 sellerCart,
                 totalPriceFinal,
                 subTotalPrice,
@@ -163,7 +183,7 @@ const CheckoutAddress = ({ showNext, setShowNext }) => {
 
 
 
-    const subTotalPrice = cart.reduce((acc, item) => {
+    const subTotalPrice = cartData?.reduce((acc, item) => {
         if (item.active) {
             return acc + item.qty * item.selectedColor.eventPrice;
         } else {
@@ -176,9 +196,9 @@ const CheckoutAddress = ({ showNext, setShowNext }) => {
 
     const [sellerCart, setSellerCart] = useState();
 
-    useEffect(() => {
+    const updatedCart = (finalData) => {
         let sellers = [];
-        cart.forEach((product) => {
+        finalData?.forEach((product) => {
             let sellerID = product.shopId;
 
             const found = sellers.find((val) => val.sellerID === sellerID);
@@ -234,7 +254,68 @@ const CheckoutAddress = ({ showNext, setShowNext }) => {
             navigate("/products?search=allproducts")
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [cart]);
+    }
+
+    // useEffect(() => {
+    //     let sellers = [];
+    //     cartData.forEach((product) => {
+    //         let sellerID = product.shopId;
+
+    //         const found = sellers.find((val) => val.sellerID === sellerID);
+    //         if (!found) {
+    //             sellers.push({
+    //                 sellerID: sellerID,
+    //                 products: [product],
+    //                 subTotalPrice: Number(product.finalPrice),
+    //                 totalPrice: null,
+    //                 shipping: null,
+    //                 weight: Number(product.packageWeight),
+    //                 length: Number(product.packageLength),
+    //                 height: Number(product.packageHeight),
+    //                 breadth: Number(product.packageWidth),
+    //             });
+    //         } else {
+    //             const sellerIndex = sellers.findIndex(
+    //                 (seller) => seller.sellerID === sellerID
+    //             );
+
+    //             const totalweight =
+    //                 Number(sellers[sellerIndex].weight) + Number(product.packageWeight);
+    //             const totalLength =
+    //                 Number(sellers[sellerIndex].length) + Number(product.packageLength);
+    //             const totalHeight =
+    //                 Number(sellers[sellerIndex].height) + Number(product.packageHeight);
+    //             const totalBreadth =
+    //                 Number(sellers[sellerIndex].breadth) + Number(product.packageWidth);
+
+    //             const totalSubTotal =
+    //                 Number(sellers[sellerIndex].subTotalPrice) +
+    //                 Number(product.finalPrice);
+
+    //             sellers[sellerIndex].products.push(product);
+    //             sellers[sellerIndex].weight = totalweight;
+    //             sellers[sellerIndex].length = totalLength;
+    //             sellers[sellerIndex].height = totalHeight;
+    //             sellers[sellerIndex].breadth = totalBreadth;
+
+    //             sellers[sellerIndex].subTotalPrice = totalSubTotal;
+    //         }
+    //     });
+
+    //     if (sellers.length > 1) {
+    //         setCoupan(false)
+    //     } else {
+    //         setCoupan(true)
+    //     }
+
+    //     if (sellers.length > 0) {
+    //         setSellerCart(sellers);
+    //     } else {
+    //         console.log("navigate")
+    //         // navigate("/products?search=allproducts")
+    //     }
+    //     // eslint-disable-next-line react-hooks/exhaustive-deps
+    // }, [cartData]);
 
     const handleSubmit = async (e, totalPrice) => {
         e.preventDefault();
@@ -245,7 +326,7 @@ const CheckoutAddress = ({ showNext, setShowNext }) => {
             const couponCodeValue = res.data.couponCode?.value;
             if (res.data.couponCode !== null) {
                 const isCouponValid =
-                    cart && cart.filter((item) => item.shopId === shopId);
+                    cartData && cartData.filter((item) => item.shopId === shopId);
 
                 if (isCouponValid.length === 0) {
                     toast.error('Coupon code is not valid for this shop');
@@ -834,7 +915,7 @@ const CartDetailswithShipping = ({
         })
 
         await dispatch(updateCart(products))
-        updatedData.cart = products;
+        updatedData.cartData = products;
         setResponseData(updatedData);
         const found = updatedData.sellerCart.find((val) => "error" in val);
         if (found) {

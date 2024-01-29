@@ -23,7 +23,6 @@ const Products = () => {
             Array.from({ length: 20 }, (_, index) => allPublishedProducts[index % allPublishedProducts.length])
         )
         : [];
-    console.log("products", allPublishedProducts)
     return (
         <div className="DronesCategories-parent">
             <div>

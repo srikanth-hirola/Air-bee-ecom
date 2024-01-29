@@ -24,9 +24,9 @@ const DronesFooter = () => {
                                                 {data?.SocialMedia?.Links?.content?.img?.map((item, index) => (
                                                     <div key={index} className="col-2">
                                                         <Link to={item.link}>
-                                                        <div className='Drones-social-icons-image'>
-                                                            <img src={item?.url} alt="" />
-                                                        </div>
+                                                            <div className='Drones-social-icons-image'>
+                                                                <img src={item?.url} alt="" />
+                                                            </div>
                                                         </Link>
                                                     </div>
                                                 ))} </div>
@@ -43,7 +43,7 @@ const DronesFooter = () => {
                                             <div className="DronesFooter-links">
                                                 <h6 key={index}>{item?.Title}</h6>
                                                 {item?.drop?.length > 0 && item?.drop?.map((dropitem, index1) => (
-                                                    <Link to={dropitem.url}> <li key={index1}>{dropitem?.SubTitle}</li></Link>
+                                                    <Link key={index} to={dropitem.url}> <li>{dropitem?.SubTitle}</li></Link>
                                                 ))}
                                             </div>
                                         </div>
@@ -56,17 +56,17 @@ const DronesFooter = () => {
                                 <h6>Get app</h6>
                                 <div className='col-md-12'>
                                     <Link to="https://www.apple.com/in/app-store/">
-                                    <div className='DronesFooter-apps-image'>
-                                        <img src="/DronesHomepage/app1.png" alt="" />
-                                    </div>
+                                        <div className='DronesFooter-apps-image'>
+                                            <img src="/DronesHomepage/app1.png" alt="" />
+                                        </div>
                                     </Link>
-                                   
+
                                 </div>
                                 <div className='col-md-12'>
                                     <Link to="https://play.google.com/">
-                                    <div className='DronesFooter-apps-image'>
-                                        <img src="/DronesHomepage/playstore.png" alt="" />
-                                    </div>
+                                        <div className='DronesFooter-apps-image'>
+                                            <img src="/DronesHomepage/playstore.png" alt="" />
+                                        </div>
                                     </Link>
                                 </div>
                             </div>
