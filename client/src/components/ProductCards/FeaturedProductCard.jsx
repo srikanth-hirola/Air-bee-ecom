@@ -26,7 +26,7 @@ const FeaturedProductCard = ({ data, active }) => {
 
     return (
         <div className='featured-product-card'>
-            <Link to={`${`/product/${data?._id}`}`}>
+            <Link to={`${`/product/${data?.slug}`}`}>
                 <div className='Dronecategory-content'>
                     <div className='Dronecategory-image'>
                         <img src={`${data?.mainImage?.url}`} alt="product" />

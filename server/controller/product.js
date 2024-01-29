@@ -11,6 +11,7 @@ const Category = require('../model/category');
 const user = require('../model/user');
 const sendMail = require('../utils/sendMail');
 const TwoSideMails = require('../utils/TwoSideMails');
+const slugify = require('slugify')
 
 // create product
 router.post(
@@ -302,6 +303,9 @@ router.post(
           }
         );
         req.body.colorInputs = await Promise.all(colorImagePromises);
+      }
+      if (req.body?.name) {
+        req.body.slug = slugify(req.body?.name)
       }
 
       const productData = {
@@ -1220,6 +1224,10 @@ router.put(
         return next(new ErrorHandler('Product Not Found!', 400));
       }
 
+      if (formData?.name) {
+        formData.slug = slugify(formData?.name)
+      }
+
       // Handle main image upload
       if (mainImage && mainImage !== '') {
         const mainImageResult = await cloudinary.v2.uploader.upload(mainImage, {
@@ -1275,6 +1283,7 @@ router.put(
         );
         formData.colorInputs = await Promise.all(colorImagePromises);
       }
+
 
       // Update the product with the new data
       const updatedProduct = await Product.findOneAndUpdate(

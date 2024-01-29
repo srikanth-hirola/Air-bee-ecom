@@ -51,7 +51,7 @@ const EventCard = ({ active, data }) => {
                 </div>
                 {/* <br /> */}
                 <div className="flex items-center">
-                    <Link to={`/event/${data._id}`}>
+                    <Link to={`/event/${data?.slug}`}>
                         <div className="cat-btn my-2" style={{ backgroundColor: styles?.mainColor, color: styles?.fontColor }} >See Products</div>
                     </Link>
                     {/* <Link to={`/product/${data._id}?isEvent=true`}>

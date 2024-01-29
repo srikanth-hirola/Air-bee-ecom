@@ -93,9 +93,11 @@ const RequestedProductsShop = ({ active }) => {
             type: 'number',
             sortable: false,
             renderCell: (params) => {
+                console.log(params)
+
                 return (
                     <>
-                        <Link to={`/product/${params.id}`}>
+                        <Link to={`/product/${params?.row?.slug}`}>
                             <Button>
                                 <AiOutlineEye size={20} />
                             </Button>
@@ -201,9 +203,10 @@ const RequestedProductsShop = ({ active }) => {
             type: 'number',
             sortable: false,
             renderCell: (params) => {
+                console.log(params)
                 return (
                     <>
-                        <Link to={`/product/${params.id}`}>
+                        <Link to={`/product/${params?.slug}`}>
                             <Button>
                                 <AiOutlineEye size={20} />
                             </Button>
@@ -298,6 +301,7 @@ const RequestedProductsShop = ({ active }) => {
                 row1.push({
                     id: item._id,
                     name: item.name,
+                    slug: item?.slug,
                     price: `${styles?.currency?.Symbol}` + `${item.showInputs ? item.colorInputs[0].discountPrice : item.discountPrice}`,
                     Stock: item.stock,
                     sold: item?.sold_out,
@@ -317,6 +321,7 @@ const RequestedProductsShop = ({ active }) => {
                 row2.push({
                     id: item._id,
                     name: item.name,
+                    slug: item?.slug,
                     price: `${styles?.currency?.Symbol} ` + `${item.showInputs ? item.colorInputs[0].discountPrice : item.discountPrice}`,
                     Stock: item.stock,
                     sold: item?.sold_out,

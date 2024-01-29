@@ -126,7 +126,6 @@ const CreateProduct = () => {
 
     const handleFormDataChange = (e) => {
         const { name, value } = e.target;
-        console.log(name, value)
         if (
             name === 'productId' ||
             name === 'productTaxCode' ||
@@ -172,7 +171,6 @@ const CreateProduct = () => {
             toast.error(error);
         }
         if (success) {
-            console.log("first")
             toast.success('Product created successfully!');
             navigate('/dashboard'); // Navigate to another page using navigate
         }
