@@ -15,7 +15,9 @@ const Profilepage = () => {
                 <div className='Profilepage-main-content'>
                     <div className="row">
                         <div className="col-md-12 col-lg-3">
-                            <SideBar />
+                            
+                            <SideBar /> 
+                      
                         </div>
                         <div className='col-md-12 col-lg-9'>
                             <ProfileDetails />
