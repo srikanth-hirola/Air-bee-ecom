@@ -4,7 +4,7 @@ const FilteredContext = ({ checkedItems, setCheckedItems, data, setFilteredData,
 
     const { handleClearFilter, removeTag } = useFilterHandler()
 
-
+   
     return (
         <div className='d-flex align-items-center'>
             <div className="shoppage1-row2">
@@ -23,8 +23,9 @@ const FilteredContext = ({ checkedItems, setCheckedItems, data, setFilteredData,
 
 
             </div>
-            <div className="mobile-filters" >
-                {!isVisibleData && <button onClick={toggleDataVisible} className='mobile-close-flter'>
+            <div className="mobile-filters " >
+            
+                {!isVisibleData && <button onClick={toggleDataVisible} className='mobile-close-flter' defaultActiveKey="0">
                     Open Filter
                 </button>}
             </div>

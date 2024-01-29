@@ -34,7 +34,7 @@ const DashboardSideBar = ({ active }) => {
                     </h5>
                 </Link>
             </div>
-            <div className="w-full flex items-center accordian">
+            <div className="w-full flex items-center accordian ">
                 <Accordion>
 
                     <Accordion.Item eventKey="0">
@@ -263,7 +263,7 @@ const DashboardSideBar = ({ active }) => {
                             <div className="w-full accordian-child">
                                 <Link
                                     to="/dashboard-draft-events"
-                                    className="w-full h-full flex items-center pl-2 hover:bg-blue-500 hover:text-white"
+                                    className="w-full h-full flex items-center pl-2 "
                                 >
 
                                     {/* <h5
