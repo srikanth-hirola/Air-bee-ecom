@@ -1,4 +1,4 @@
-/* profile page stylings starts here */
+/* profile page stylings flex-starts here */
 a {
   color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
   text-decoration: none;
@@ -116,7 +116,7 @@ a {
   }
 }
 
-/* Orders page stylings starts here */
+/* Orders page stylings flex-starts here */
 a {
   color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
   text-decoration: none !important;
@@ -175,7 +175,7 @@ a {
   color: #9c9b9c;
 }
 
-/* orders page -tabs stylings starts here */
+/* orders page -tabs stylings flex-starts here */
 
 .Orderspage-tabs-active-parent {
   display: flex;
@@ -340,7 +340,7 @@ a {
   }
 }
 
-/* profile page stylings starts here */
+/* profile page stylings flex-starts here */
 a {
   color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
   text-decoration: none !important;
@@ -452,7 +452,7 @@ a {
   }
 }
 
-/* RefundPage stylings starts here */
+/* RefundPage stylings flex-starts here */
 a {
   color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
   text-decoration: none !important;
@@ -511,7 +511,7 @@ a {
   color: #9c9b9c;
 }
 
-/* RefundTabs  stylings starts here */
+/* RefundTabs  stylings flex-starts here */
 
 .RefundTabs-active-parent {
   display: flex;
