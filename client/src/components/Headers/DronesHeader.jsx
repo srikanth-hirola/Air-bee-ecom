@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import SearchBar from '../Search/SearchBar'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCartShopping, faHeart, faMessage, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faCartPlus, faCartShopping, faHeart, faMessage, faUser } from '@fortawesome/free-solid-svg-icons'
 import { useDispatch, useSelector } from 'react-redux'
 import { StyleConfig } from '../../utils/StyleConfig'
 import { socketId } from './socket'
@@ -72,7 +72,7 @@ const DronesHeader = () => {
           <div className="container-fluid">
             <Link className="navbar-brand" to="/">
               <div className='Drones-header-logo'>
-                <img src={styles?.logo?.url} alt="logo" className='!object-cover mix-blend-multiply' />
+                <img src={styles?.logo?.url} alt="logo" className=' mix-blend-multiply' />
               </div>
             </Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -86,7 +86,8 @@ const DronesHeader = () => {
                 <div className='Drones-header-icons'>
                   <Link to="/cart">
                     <div className='Drones-header-icon drones-header-cart'>
-                      <FontAwesomeIcon icon={faCartShopping} style={{ color: '#8b96a5', fontSize: '20px' }} />
+                      {/* <FontAwesomeIcon icon={faCartShopping} style={{ color: '#8b96a5', fontSize: '20px' }} /> */}
+                      <FontAwesomeIcon icon={faCartPlus} style={{ color: '#8b96a5', fontSize: '20px' }} />
 
                       <span className="absolute right-0 top-0 rounded-full bg-[#fa8232] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
                         {cart && cart.length}
@@ -95,7 +96,8 @@ const DronesHeader = () => {
                   </Link>
                   <Link to="/wishlist">
                     <div className='Drones-header-icon drones-header-cart drones-header-wishlist'>
-                      <FontAwesomeIcon icon={faHeart} style={{ color: '#8b96a5', fontSize: '20px' }} />
+                      {/* <FontAwesomeIcon icon={faHeart} style={{ color: '#8b96a5', fontSize: '20px' }} /> */}
+                      <FontAwesomeIcon icon={faHeart} style={{ color: '#8b96a5', fontSize: '20px' }}/>
                       <span className="absolute right-0 top-0 rounded-full bg-[#fa8232] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
                         {wishlist && wishlist.length}
                       </span>

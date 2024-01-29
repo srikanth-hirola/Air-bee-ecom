@@ -20,14 +20,14 @@ const Filter = ({ constantData, data, setFilteredData, styles, checkedItems, set
             subCategory: [],
         },
     ]);
-
+    const [isFilterVisible, setIsFilterVisible] = useState(false);
     const [price, setPrice] = useState([]);
     const [priceRange, setPriceRanges] = useState();
 
     const [selectedRating, setSelectedRating] = useState();
 
     const [attributes, setAttributes] = useState([]);
-
+ 
     useEffect(() => {
         const updatedBrandState = [...filterBrand];
         const updatedCategoryState = [...category];
@@ -237,15 +237,15 @@ const Filter = ({ constantData, data, setFilteredData, styles, checkedItems, set
         }
         setPriceRanges(priceRanges);
     };
+    const [isVisible, setIsVisible] = useState(false);
 
-    // const [isVisibleData,setIsVisibleData] = useState([]);
-    //   const toggleDataVisible = () => {
-    //     setIsVisibleData(!isVisibleData);
-    //   };
+    const toggleVisibility = () => {
+      setIsVisible(!isVisible);
+    };
 
     return (
 
-        <div className="col-md-3 column3 col-12 col-sm-12">
+        <div className="col-md-4 col-lg-3 col-xl-3 col-xxl-3 column3 col-12 col-sm-12">
             <div className="desktop-filter">
 
                 <Accordion defaultActiveKey="0">
@@ -444,13 +444,27 @@ const Filter = ({ constantData, data, setFilteredData, styles, checkedItems, set
                 </Accordion>
             </div>
 
+            {/* <div>
+      <button onClick={toggleVisibility}>
+        {isVisible ? 'Hide Content' : 'Show Content'}
+      </button>
+      {isVisible && (
+        <div>
+          <p>This is the content you want to toggle.</p>
+          
+        </div>
+      )}
+    </div> */}
 
+    <button className='filter-button' onClick={() => setIsFilterVisible(!isFilterVisible)}>
+        {isFilterVisible ? 'Hide Filters' : 'Show Filters'}
+      </button>
             <div className="mobile-filters">
                 <div>
-                    {isVisibleData && <button onClick={toggleDataVisible} className='mobile-close-flter'>
-                        Close Filters
-                    </button>}
-                    {isVisibleData && (
+                   
+       
+        
+                    {isFilterVisible && (
                         <div>
                             <Accordion>
                                 <Accordion.Item eventKey="0">
@@ -648,6 +662,8 @@ const Filter = ({ constantData, data, setFilteredData, styles, checkedItems, set
                             </Accordion>
                         </div>
                     )}
+          
+      
                 </div>
             </div>
 

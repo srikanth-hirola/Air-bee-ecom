@@ -25,7 +25,7 @@ const UserLoginPage = () => {
                     <div className="row shadow-lg">
                         <div className="col-md-6">
                             <div className="SignUppage-image">
-                                <img src="DronesHomePage/signup.jpg" alt="pic" />
+                                <img src="https://airbee.co.in/images/signup.jpg" alt="pic" />
                             </div>
                         </div>
                         <div className='col-md-6'>

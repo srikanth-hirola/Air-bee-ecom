@@ -5,7 +5,7 @@
   width: 60px;
   padding: 15px;
   margin: auto;
-  background: #0156ff;
+  background: #fa8232;
   display: flex;
   border-radius: 50%;
   margin-bottom: 15px;
@@ -142,9 +142,13 @@ select {
 
 @media only screen and (min-width: 320px) and (max-width: 766px) {
   form.d-flex {
-    width: 100%;
-    justify-content: center;
+    width: fit-content;
+    justify-content: end;
     padding: 20px 0px 10px 0px;
+    position: absolute;
+    top: 10px;
+    right: 14%;
+    z-index: 9999 !important;
   }
 }
 
@@ -152,6 +156,45 @@ select {
   .col-md-4.UpdateShoppingCart-button {
     width: 100%;
   }
+  .Checkoutpage-content .flex.justify-between.flex-wrap div{
+    width: 100%;
+  }
+  .Drones-product-summery-end {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+.w-full.flex.flex-col.items-center.py-8 .w-\[90\%\].\31 000px\:w-\[70\%\].flex.gap-6.\38 00px\:flex {
+  flex-direction: column-reverse;
+}.w-\[90\%\].\38 00px\:w-\[50\%\].flex.items-center.flex-wrap.justify-center {
+  width: 100%;
+}
+
+.w-\[90\%\].\38 00px\:w-\[50\%\].flex.items-center.flex-wrap.justify-center .cursor-pointer {
+  padding-left: 14px;
+  padding-right: 20px;
+  width: 77px;
+}
+
+.w-\[90\%\].\38 00px\:w-\[50\%\].flex.items-center.flex-wrap.justify-center span {
+  font-size: 10px;
+}
+.w-\[90\%\].\38 00px\:w-\[50\%\].flex.items-center.flex-wrap.justify-center {
+  justify-content: center;
+}
+.Checkoutpage-parent {
+  padding: 60px 0px;
+}
+
+.w-\[90\%\].\31 000px\:w-\[70\%\].flex.gap-6.\38 00px\:flex {}
+
+.w-full.flex.flex-col.items-center.py-8 .w-\[90\%\].\31 000px\:w-\[70\%\].flex.gap-6.\38 00px\:flex .w-\[60\%\].\38 00px\:w-\[65\%\] {
+  width: 100%;
+}
+
+.w-full.flex.flex-col.items-center.py-8 .w-\[90\%\].\31 000px\:w-\[70\%\].flex.gap-6.\38 00px\:flex .w-\[38\%\].\38 00px\:w-\[35\%\].\38 00px\:mt-0.mt-8 {
+  width: 100%;
+}
   /* checkout page content */
   .Checkoutpage-content-sub1 {
     width: 100%;

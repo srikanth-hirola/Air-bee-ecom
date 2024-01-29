@@ -13,7 +13,7 @@ import './styles/profile.css';
 import './styles/modals.css';
 import './styles/modals2.css';
 import { server } from './server.js';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Store from './redux/store';
 import { loadSeller, loadUser } from './redux/actions/user';
 import { getAllProducts } from './redux/actions/product';
@@ -42,7 +42,9 @@ import { socketId } from './components/Headers/socket.js';
 import { useSelector } from 'react-redux';
 import CreateNewsletterPage from './Pages/Site-Config/CaresteNewsLetterPage.jsx';
 import Blog from './Pages/Blog.jsx';
-
+import TermsAndConditions from './Pages/TermsAndConditions.jsx';
+import PrivacyPolicy from './Pages/PrivacyPolicy.jsx';
+import RefundsPolicy from './Pages/RefundPolicy.jsx';
 
 
 const DronesHomepage = lazy(() => import('./components/DronesHomepage/DronesHomepage.jsx'));
@@ -175,8 +177,17 @@ const App = () => {
   //   arrivalMessage && toast.success("got")
   // }, [arrivalMessage, user]);
 
-
+  function ScrollToTop() {
+    const { pathname } = useLocation();
+  
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+  
+    return null;
+  }
   return (
+    
     <BrowserRouter >
 
       {stripeApikey && (
@@ -195,7 +206,7 @@ const App = () => {
           </Suspense>
         </Elements>
       )}
-
+      <ScrollToTop/>
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" exact element={<DronesHomepage />} />
@@ -212,6 +223,9 @@ const App = () => {
           <Route path="/event/:id" element={<EventProductsPage />} />
           <Route path="/about-us" element={<About />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/refund-policy" element={<RefundsPolicy />} />
           <Route
             path="/activation/:activation_token"
             element={<ActivationPage />}

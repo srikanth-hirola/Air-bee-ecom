@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Modals.css'
+// import './Modals.css'
 import { Button, Modal } from 'antd';
 const Popup2 = () => {
   const [open, setOpen] = useState(false);

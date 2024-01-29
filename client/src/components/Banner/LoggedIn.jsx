@@ -20,7 +20,7 @@ const LoggedIn = () => {
                 </>
                 :
                 <>
-                    <button className='Droner-banner-sub-user-button1'>Join now</button>
+                    <button className='Droner-banner-sub-user-button1'><Link to='/sign-up'>Join now</Link></button>
                     <button className='Droner-banner-sub-user-button2'><Link to={"/login"}>Log in</Link></button>
                 </>
             }

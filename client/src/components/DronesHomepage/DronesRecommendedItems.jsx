@@ -30,7 +30,7 @@ const DronesRecommendedItems = () => {
                     </div>
                     {products?.length > 0 &&
                         <div className="row">
-                            {products?.slice(0, 16)?.map((item, index) => (
+                            {products?.slice(0, 18)?.map((item, index) => (
                                 <ProductCardMiddleware data1={item} key={index} />
                             ))}
                         </div>}

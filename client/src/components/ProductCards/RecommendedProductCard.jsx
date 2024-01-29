@@ -6,7 +6,7 @@ import { StyleConfig } from '../../utils/StyleConfig'
 import useProductDetails from '../../hooks/useProductDetails'
 
 const RecommendedProductCard = ({ data, active }) => {
-
+// console.log("data",data)
 
     const styles = StyleConfig();
 
@@ -33,19 +33,21 @@ const RecommendedProductCard = ({ data, active }) => {
                 <Link to={`${`/product/${data?._id}`}`}>
                     <>
                         <div className='DronesRecommendedItems-text'>
+                    <span>{parseInt(((data.originalPrice - data.discountPrice) / data.originalPrice) * 100)
+            }% OFF</span>
                             <strong >{data?.name?.length > 25
-                                ? data?.name.slice(0, 25) + '...'
+                                ? data?.name.slice(0, 60) + '...'
                                 : data?.name}</strong>
                         </div>
                         <div className='DronesRecommendedItems-text-price'>
                             <p>{styles?.currency?.Symbol}&nbsp;{getDiscountPrice({ data, active })}</p>
                             <p><del>{styles?.currency?.Symbol}&nbsp;{getOriginalPrice({ data })}</del></p>
                         </div>
-                        <div className='DronesRecommendedItems-subtext'>
+                        {/* <div className='DronesRecommendedItems-subtext'>
                             <p>{data?.description?.length > 25
-                                ? data?.description.slice(0, 25) + '...'
+                                ? data?.description.slice(0, 42) + '...'
                                 : data?.description}</p>
-                        </div>
+                        </div> */}
                     </>
                 </Link>
             </div>

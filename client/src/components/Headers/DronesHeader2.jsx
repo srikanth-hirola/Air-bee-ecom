@@ -1,4 +1,4 @@
-import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
+import { faAngleLeft, faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -80,7 +80,7 @@ const DronesHeader2 = () => {
                     <div className='Drones-header-icons'>
                   <Link to="/cart">
                     <div className='Drones-header-icon drones-header-cart'>
-                      <FontAwesomeIcon icon={faCartShopping} style={{ color: '#8b96a5', fontSize: '20px' }} />
+                      <FontAwesomeIcon icon={faCartPlus} style={{ color: '#8b96a5', fontSize: '20px' }} />
 
                       <span className="absolute right-0 top-0 rounded-full bg-[#fa8232] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
                         {cart && cart.length}

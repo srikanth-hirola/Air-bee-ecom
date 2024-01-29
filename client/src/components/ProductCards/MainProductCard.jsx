@@ -48,21 +48,24 @@ const MainProductCard = ({ data, active }) => {
                                     </div>
                                     <div className='product-star product-brand-span d-flex'>
                                         <Ratings rating={data?.ratings} />
-                                        <h6>{data?.ratings}</h6>
+                                        {data?.ratings &&
+                                        <h6>({data?.ratings})</h6> 
+                                        }
+                                        
                                     </div>
 
 
                                 </Link>
                             </div>
 
-                            <div className='col-md-3 col-3 shoppage1-likeicon'>
+                            <div className='col-md-3 col-3 shoppage1-likeicon p-0'>
                                 {/* <img src={i?.icon?.url} alt="" /> */}
                                 <FillHeart data={data} click={click} setClick={setClick} />
                             </div>
                             <div className='col-12 col-sm-12 col-md-12 pt-2'>
                                 <Link to={`${`/product/${data?._id}`}`}>
                                     <p>{data?.name?.length > 38
-                                        ? data?.name?.slice(0, 38) + '...'
+                                        ? data?.name?.slice(0, 48) + '...'
                                         : data?.name}
                                     </p>
                                 </Link>
