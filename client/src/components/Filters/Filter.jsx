@@ -7,11 +7,11 @@ import useFetchCategoryHandler from '../../hooks/categories/useFetchCategoryHand
 // import useGetCurrencyConversion from '../../hooks/Site-config/useGetCurrencyConversion';
 
 
-const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, selectedBrands, selectedPriceRange, setSelectedBrands, setSelectedPriceRange, filteredAttr, setFilteredAttr, isVisibleData, toggleDataVisible }) => {
-
+const Filter = ({ constantData, data, setFilteredData, styles, checkedItems, setCheckedItems, selectedBrands, selectedPriceRange, setSelectedBrands, setSelectedPriceRange, filteredAttr, setFilteredAttr, isVisibleData, toggleDataVisible }) => {
     const { handleCheckboxChange, handleBrandCheckBox, handleFilterCheckswithValues } = useFilterHandler()
     const { fetchCategory, fetchSubCategory } = useFetchCategoryHandler();
     // const { ConvertCurrency } = useGetCurrencyConversion()
+
 
     const [filterBrand, setFilterBrand] = useState([]);
     const [category, setCategory] = useState([
@@ -51,7 +51,6 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
             if (!updatedBrandState.includes(product.brandName)) {
                 updatedBrandState.push(product.brandName);
             }
-            console.log(product.category, ", " + product?.name)
             const categoryIndex = updatedCategoryState.findIndex(
                 (cat) => cat.name === product.category
             );
@@ -129,7 +128,7 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
         let filteredBrandData;
 
         if (selectedBrands.length > 0) {
-            filteredBrandData = data.filter((product) =>
+            filteredBrandData = constantData.filter((product) =>
                 selectedBrands.includes(product.brandName)
             );
         } else {
@@ -144,7 +143,7 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
         let filteredBrandData;
 
         if (selectedBrands.length > 0) {
-            filteredBrandData = data.filter((product) =>
+            filteredBrandData = constantData.filter((product) =>
                 selectedBrands.includes(product.brandName)
             );
         }
@@ -157,7 +156,7 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
 
             const chooseData = !filteredBrandData ? data : filteredBrandData;
 
-            const filteredPriceRange = chooseData.reduce((acc, product) => {
+            const filteredPriceRange = chooseData?.length > 0 && chooseData.reduce((acc, product) => {
                 if (!addedProductIds.includes(product._id)) {
                     if (product.showInputs) {
                         const hasValidColorInput = product.colorInputs.some(

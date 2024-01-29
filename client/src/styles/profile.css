@@ -1,4 +1,4 @@
-/* profile page stylings starts here */
+/* profile page stylings flex-starts here */
 a {
   color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
   text-decoration: none;
@@ -116,7 +116,7 @@ a {
   }
 }
 
-/* Orders page stylings starts here */
+/* Orders page stylings flex-starts here */
 a {
   color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
   text-decoration: none !important;
@@ -175,7 +175,7 @@ a {
   color: #9c9b9c;
 }
 
-/* orders page -tabs stylings starts here */
+/* orders page -tabs stylings flex-starts here */
 
 .Orderspage-tabs-active-parent {
   display: flex;
@@ -298,7 +298,7 @@ a {
   padding-bottom: 20px;
   font-weight: 600;
 }
-.OrderDetails-delivery-address p{
+.OrderDetails-delivery-address p {
   margin-bottom: 8px;
 }
 .OrderDetails-delivery-address-buttons {
@@ -314,13 +314,15 @@ a {
   padding: 7px 18px;
   border-radius: 8px;
 }
-.OrderDetails-Shipping-details-sub1 h6 span{
+.OrderDetails-Shipping-details-sub1 h6 span {
   font-weight: 400;
 }
-.Orderspage-tabs-active-text2 p,.Orderspage-tabs-active-text1 p{
+.Orderspage-tabs-active-text2 p,
+.Orderspage-tabs-active-text1 p {
   font-weight: 500;
 }
-.Orderspage-tabs-active-text2 p span,.Orderspage-tabs-active-text1 p span{
+.Orderspage-tabs-active-text2 p span,
+.Orderspage-tabs-active-text1 p span {
   font-weight: 400;
 }
 /* media queries for Order-details page */
@@ -338,7 +340,7 @@ a {
   }
 }
 
-/* profile page stylings starts here */
+/* profile page stylings flex-starts here */
 a {
   color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
   text-decoration: none !important;
@@ -450,7 +452,7 @@ a {
   }
 }
 
-/* RefundPage stylings starts here */
+/* RefundPage stylings flex-starts here */
 a {
   color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
   text-decoration: none !important;
@@ -509,7 +511,7 @@ a {
   color: #9c9b9c;
 }
 
-/* RefundTabs  stylings starts here */
+/* RefundTabs  stylings flex-starts here */
 
 .RefundTabs-active-parent {
   display: flex;
@@ -606,23 +608,24 @@ a {
     text-decoration: none;
     background: none;
     border: 0;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
-}
-.OrderDetails-Shipping-details {
-  display: flex;
-  justify-content: start;
-  border-top: 1px solid;
-  border-bottom: 1px solid;
-  align-items: start;
-  padding: 15px 0px;
-}
-.Orderspage-product-image-parent {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: start;
-  align-items: start;
-}
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out;
+  }
+  .OrderDetails-Shipping-details {
+    display: flex;
+    justify-content: flex-start;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    align-items: flex-start;
+    padding: 15px 0px;
+  }
+  .Orderspage-product-image-parent {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
   .RefundTabs-parent {
     padding-top: 25px;
   }
@@ -631,7 +634,6 @@ a {
   .RefundTabs-sub2 {
     padding-bottom: 25px;
   }
-
 }
 
 /* order-details component single Product details */
