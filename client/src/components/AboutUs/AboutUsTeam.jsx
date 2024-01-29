@@ -62,8 +62,8 @@ const AboutUsTeam = () => {
                         <div className="row">
 
                             {mappingdata.map((item, index) => (
-                                <div className="col-sm-6 col-md-4 col-lg-3">
-                                    <div key={index} className='card'>
+                                <div className="col-sm-6 col-md-4 col-lg-3" key={index}>
+                                    <div className='card'>
                                         <div className='AboutUsTeam-sub-card-image'>
                                             <img src={item?.img} alt="" />
                                         </div>

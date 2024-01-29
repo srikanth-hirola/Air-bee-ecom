@@ -1,4 +1,8 @@
 /* profile page stylings flex-starts here */
+.Profilepage-sub3-headings {
+  display: flex;
+  justify-content: space-between;
+}
 a {
   color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
   text-decoration: none;
@@ -101,6 +105,25 @@ a {
 .Profile-Address-details-sub span {
   color: #807d7e;
 }
+.Userprofilemodal {
+  display: none;
+}
+.Usermodaltoggle-image {
+  height: 25px;
+  width: 30px;
+}
+.Usermodaltoggle-image img{
+  height:100%;
+  width:100%;
+  object-fit: contain;
+}
+.UserProfileModal-parent .offcanvas{
+  z-index: 9999;
+}
+.UserProfileModal-parent .offcanvas-header{
+  display: flex;
+  justify-content: flex-end !important;
+}
 /* media queries for profile page */
 @media only screen and (max-width: 767px) {
   .ContactDetails-sub1 {
@@ -109,6 +132,18 @@ a {
   .ContactDetails-sub3 {
     padding: 20px 0px;
   }
+  .Userprofilemodal {
+    display: block;
+    position: relative;
+    top: -50px;
+    right: -5px;
+}
+.ContactDetails-sub2-main-parent{
+display: none;
+}
+.UserProfileModal-parent .Profilepage-sub3-headings h3 {
+  padding-top: 15px;
+}
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .ContactDetails-sub3 {

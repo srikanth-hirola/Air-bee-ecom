@@ -155,6 +155,7 @@ const productSchema = new mongoose.Schema({
     type: String,
     // required: [true, 'Please enter your product name!'],
   },
+  slug: String,
   brandName: {
     type: String,
   },

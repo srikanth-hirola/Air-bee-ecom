@@ -67,7 +67,7 @@ export const DraftEvents = ({ allEvents }) => {
     allEvents &&
         allEvents.forEach((item) => {
             row.push({
-                id: item._id,
+                id: item?._id,
                 name: item.name,
                 // price: "US$ " + item.discountPrice,
                 // Stock: item.stock,

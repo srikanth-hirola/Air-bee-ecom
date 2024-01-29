@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import SearchBar from '../Search/SearchBar'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCartPlus, faCartShopping, faHeart, faMessage, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faCartPlus, faHeart, faMessage, faUser } from '@fortawesome/free-solid-svg-icons'
 import { useDispatch, useSelector } from 'react-redux'
 import { StyleConfig } from '../../utils/StyleConfig'
 import { socketId } from './socket'
@@ -60,9 +60,6 @@ const DronesHeader = () => {
   }, [arrivalMessage]);
 
 
-  useEffect(() => {
-    console.log("hello")
-  }, [])
 
 
   return (
@@ -97,7 +94,7 @@ const DronesHeader = () => {
                   <Link to="/wishlist">
                     <div className='Drones-header-icon drones-header-cart drones-header-wishlist'>
                       {/* <FontAwesomeIcon icon={faHeart} style={{ color: '#8b96a5', fontSize: '20px' }} /> */}
-                      <FontAwesomeIcon icon={faHeart} style={{ color: '#8b96a5', fontSize: '20px' }}/>
+                      <FontAwesomeIcon icon={faHeart} style={{ color: '#8b96a5', fontSize: '20px' }} />
                       <span className="absolute right-0 top-0 rounded-full bg-[#fa8232] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
                         {wishlist && wishlist.length}
                       </span>

@@ -298,7 +298,6 @@ router.put(
 
         })
         .catch((e) => {
-          console.log(e, "hello")
           return next(new ErrorHandler(error, 400));
         });
     } catch (error) {

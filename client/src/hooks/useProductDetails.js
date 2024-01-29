@@ -1,15 +1,17 @@
 import { useEffect } from "react";
 import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
-import { addTocart } from "../redux/actions/cart";
+import { addTocart, buyNow } from "../redux/actions/cart";
 import axios from "axios";
 import { server } from "../server";
 import { addToWishlist, removeFromWishlist } from "../redux/actions/wishlist";
+import { useNavigate } from "react-router-dom";
 
 const useProductDetails = ({ data, selectedColor, selectedAttr, count, click, active, setMainImg, setSelectedAttr, setLimited, setSoldOut, setCount, setWarning, setClick }) => {
     const { products } = useSelector((state) => state.products);
     const { cart } = useSelector((state) => state.cart);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     useEffect(() => {
         const main = data?.mainImage;
@@ -219,6 +221,29 @@ const useProductDetails = ({ data, selectedColor, selectedAttr, count, click, ac
         }
     };
 
+    const buyNowProduct = async (e) => {
+        e.preventDefault();
+
+        if (count > 0) {
+            const cartData = {
+                ...data,
+                qty: count,
+                colorAttribute: selectedAttr[0],
+                attrId: selectedAttr[0].value._id,
+                selectedColor: selectedColor,
+                active: active,
+                status: '',
+                finalPrice: active ? selectedColor.eventPrice : selectedColor.discountPrice,
+                // newStock: selectedColor?.stock,
+            };
+            await dispatch(buyNow(cartData));
+            navigate('/checkout?type=buynow')
+        } else {
+            alert('Select number of items');
+        }
+        // }
+    };
+
     const handleSelectCourierPartner = async ({ e, postCode, setBtnLoading, setDeliveryDate }) => {
         e.preventDefault();
         if (postCode === null) {
@@ -289,7 +314,7 @@ const useProductDetails = ({ data, selectedColor, selectedAttr, count, click, ac
         return convertedPrice
     }
 
-    return { handleSelectCourierPartner, getDiscountPrice, getOriginalPrice, handleHighlight, handleAttrSelect, incrementCount, decrementCount, removeFromWishlistHandler, addToWishlistHandler, averageRating, addToCartHandler }
+    return { handleSelectCourierPartner, getDiscountPrice, getOriginalPrice, handleHighlight, handleAttrSelect, incrementCount, decrementCount, removeFromWishlistHandler, addToWishlistHandler, averageRating, addToCartHandler, buyNowProduct }
 }
 
 export default useProductDetails

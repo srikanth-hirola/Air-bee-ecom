@@ -7,8 +7,8 @@ const CreateNewsletterPage = () => {
     return (
         <div>
             <DashboardHeader />
-            <div className="flex items-start justify-between w-full">
-                <div className="w-[80px] 800px:w-[330px]">
+            <div className="flex items-start justify-between w-full dasboard-user-width-mobile">
+                <div className="800px:w-[330px]">
                     <DashboardSideBar active={35} />
                 </div>
                 <NewsLetter />

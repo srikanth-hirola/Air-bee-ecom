@@ -12,7 +12,7 @@ const useDetailsPageHandler = ({ data, setData, setActive, setSeller, setLoading
     useEffect(() => {
         const findProductInEvents = (events) => {
             return events?.find((event) =>
-                event.productArray.some((item) => item._id === id)
+                event.productArray.some((item) => item?.slug === id)
             );
         };
 
@@ -20,7 +20,7 @@ const useDetailsPageHandler = ({ data, setData, setActive, setSeller, setLoading
 
         if (productInEvents) {
             const productData = productInEvents.productArray.find(
-                (item) => item._id === id
+                (item) => item?.slug === id
             );
 
             const updatedProductData = { ...productData };
@@ -29,7 +29,7 @@ const useDetailsPageHandler = ({ data, setData, setActive, setSeller, setLoading
             setData(updatedProductData);
 
         } else {
-            const productData = allProducts?.find((item) => item._id === id);
+            const productData = allProducts?.find((item) => item?.slug === id);
             setData(productData);
         }
 
