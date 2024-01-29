@@ -27,36 +27,7 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
     const [selectedRating, setSelectedRating] = useState();
 
     const [attributes, setAttributes] = useState([]);
-    // useEffect(() => {
-    //     setIsFilterVisible(isVisibleData);
-    //   }, [isVisibleData]);
-    
-    //   const toggleFilterVisibility = () => {
-    //     setIsFilterVisible(!isFilterVisible);
-    //     toggleDataVisible(); // Assuming you want to toggle the overall visibility as well
-    //   };
-
-    // useEffect(() => {
-    //     setIsFilterVisible(isVisibleData);
-    //   }, [isVisibleData]);
-    
-    //   const toggleFilterVisibility = () => {
-    //     setIsFilterVisible(!isFilterVisible);
-    //     toggleDataVisible(); // Assuming you want to toggle the overall visibility as well
-    //   };
-
-    useEffect(() => {
-        setIsFilterVisible(false); // Set filter menu to hidden on page load
-    }, []);
-
-    useEffect(() => {
-        setIsFilterVisible(isVisibleData);
-      }, [isVisibleData]);
-    
-      const toggleFilterVisibility = () => {
-        setIsFilterVisible(!isFilterVisible);
-        toggleDataVisible(); // Assuming you want to toggle the overall visibility as well
-      };
+ 
     useEffect(() => {
         const updatedBrandState = [...filterBrand];
         const updatedCategoryState = [...category];
@@ -267,15 +238,15 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
         }
         setPriceRanges(priceRanges);
     };
+    const [isVisible, setIsVisible] = useState(false);
 
-    // const [isVisibleData,setIsVisibleData] = useState([]);
-    //   const toggleDataVisible = () => {
-    //     setIsVisibleData(!isVisibleData);
-    //   };
+    const toggleVisibility = () => {
+      setIsVisible(!isVisible);
+    };
 
     return (
 
-        <div className="col-md-3 column3 col-12 col-sm-12">
+        <div className="col-md-4 col-lg-3 col-xl-3 col-xxl-3 column3 col-12 col-sm-12">
             <div className="desktop-filter">
 
                 <Accordion defaultActiveKey="0">
@@ -474,16 +445,26 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                 </Accordion>
             </div>
 
+            {/* <div>
+      <button onClick={toggleVisibility}>
+        {isVisible ? 'Hide Content' : 'Show Content'}
+      </button>
+      {isVisible && (
+        <div>
+          <p>This is the content you want to toggle.</p>
+          
+        </div>
+      )}
+    </div> */}
 
+    <button className='filter-button' onClick={() => setIsFilterVisible(!isFilterVisible)}>
+        {isFilterVisible ? 'Hide Filters' : 'Show Filters'}
+      </button>
             <div className="mobile-filters">
                 <div>
                    
-          {/* <button onClick={toggleFilterVisibility} className='mobile-close-flter'>
-            {isFilterVisible ? 'Close Filters' : 'Open Filters'}
-          </button> */}
-          <button onClick={toggleFilterVisibility} className='mobile-close-flter'>
-            {isFilterVisible ? 'Close Filters' : 'Open Filters'}
-          </button>
+       
+        
                     {isFilterVisible && (
                         <div>
                             <Accordion>

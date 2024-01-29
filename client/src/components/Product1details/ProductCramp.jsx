@@ -10,9 +10,11 @@ export const Product1Cramp = ({ name }) => {
             <div className='container'>
                 <nav aria-label="breadcrumb">
                     <ol className="breadcrumb contactpage-breadcramp1">
-                        <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+                        <li className="breadcrumb-item active"><Link to="/" className='text-decoration-none text-black' >Home /&nbsp;</Link></li> 
                         {bredCurms?.map((item) => (
-                            <li className="breadcrumb-item active" aria-current="page">{item}</li>
+                            <Link to='/products-by-category/search'>
+                            <li className="breadcrumb-item active" aria-current="page"> {item} /&nbsp; </li>
+                            </Link>
                         ))}
                     </ol>
                 </nav>

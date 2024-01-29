@@ -757,7 +757,19 @@ ol.breadcrumb.contactpage-breadcramp1 {
 }
 .ProductTapContent1-feature .table .bg-white{
   text-align: left;
+  font-size: 13px;
+  line-height: 29px;
+  letter-spacing: 0.6px;
 
+}
+p.mb-0.font-semibold {
+  font-size: 13px;
+  line-height: 29px;
+}
+
+span.bg-white.py-2.pl-2.h-full.w-full {
+  font-size: 13px;
+  line-height: 29px;
 }
 /* .ProductTapContent1-feature .table{
   width: 75%;
@@ -769,4 +781,6 @@ ol.breadcrumb.contactpage-breadcramp1 {
   width: 250px !important;
   text-align: left;
   font-weight: 600;
+  font-size: 13px;
+  line-height: 29px;
 }

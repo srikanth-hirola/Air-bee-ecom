@@ -60,11 +60,7 @@ const ProductDetailsMain = () => {
 
     useDetailsPageHandler({ data, setActive, setData, setLoading, setSeller });
 
-    useEffect(() => {
-        // Scroll to a height of 500px in the viewport
-        window.scrollTo(0, 5000);
-    }, []); // Empty dependency array ensures this effect runs only once after the initial render
-
+  
     return (
         <>
             {loading ? (

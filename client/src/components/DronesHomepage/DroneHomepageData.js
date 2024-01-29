@@ -773,7 +773,7 @@ export const Footer = {
                                     url: '/'
                                 },
                                 {
-                                    SubTitle: 'Privacy POlicy',
+                                    SubTitle: 'Privacy Policy',
                                     url: '/'
                                 },
                                 // {
@@ -787,7 +787,7 @@ export const Footer = {
                             url: '',
                             drop: [
                                 {
-                                    SubTitle: 'Address: Air Bee, NO 7, 4th floor, 1st Cross Rd, Balaji Layout, AMCO Colony, Koti Hosahalli, Bengaluru, Karnataka 560092',
+                                    SubTitle: 'Air Bee, NO 7, 4th floor, 1st Cross Rd, Balaji Layout, AMCO Colony, Koti Hosahalli, Bengaluru, Karnataka 560092',
                                     url: 'http://localhost:3000'
                                 },
                                 // {
