@@ -5,6 +5,7 @@ import DronesHeader from '../../components/Headers/DronesHeader';
 import { useSelector } from 'react-redux';
 import AddressCards from '../../components/Profile/Cards/AddressCards';
 import DronesFooter from '../../components/DronesHomepage/DronesFooter';
+import DronesHeader2 from '../../components/Headers/DronesHeader2';
 
 const ContactDetailsPage = () => {
     const { user } = useSelector((state) => state.user);
@@ -24,6 +25,7 @@ const ContactDetailsPage = () => {
     return (
         <>
             <DronesHeader />
+            <DronesHeader2/>
             <AddNewAddress key={2} open={open} setOpen={setOpen} showModal={showModal} />
             <div className='ContactDetails-parent'>
                 {/* <div className='ContactDetails-sub1'>

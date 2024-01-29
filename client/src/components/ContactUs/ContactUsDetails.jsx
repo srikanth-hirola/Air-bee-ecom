@@ -94,7 +94,7 @@ export const ContactUsDetails = () => {
                                         <img src="/DronesHomepage/mapicon.png" alt="pic" />
                                     </div>
                                     <div className='col-md-10 col-lg-10 col-sm-10 col-10'>
-                                        <h6>Address:</h6>
+                                        <h6 classNam >Address:</h6>
                                         <p>{styles?.contactUsDetails?.address}</p>
                                     </div>
                                 </div>

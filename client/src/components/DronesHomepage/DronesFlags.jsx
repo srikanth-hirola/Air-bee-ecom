@@ -8,7 +8,7 @@ const DronesFlags = () => {
             <div className='DronesFlags-parent'>
                 <h4>Suppliers by region</h4>
                 {data?.countryflags?.flagimages?.content?.items?.length > 0 &&
-                <div className="row">
+                <div className="row justify-content-between">
                     {data?.countryflags?.flagimages?.content?.items?.map((item,index)=> (
                         <div key={index} className=" col-sm-6 col-md-2">
                         <div className="DronesFlags-sub">

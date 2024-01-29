@@ -7,6 +7,7 @@ import WishListCards from '../components/ProductCards/WishListCards';
 import WishListHeading from '../components/wishlist/WishListHeading';
 import DronesHeader from '../components/Headers/DronesHeader';
 import DronesFooter from '../components/DronesHomepage/DronesFooter';
+import DronesHeader2 from '../components/Headers/DronesHeader2';
 
 
 const WishListPage = () => {
@@ -28,6 +29,7 @@ const WishListPage = () => {
     return (
         <>
             <DronesHeader />
+            <DronesHeader2/>
             <div className='DronesCart-parent'>
                 <div className="container">
                     <CartBredCumbs />

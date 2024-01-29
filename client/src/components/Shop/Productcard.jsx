@@ -23,7 +23,7 @@ export const Productcard = () => {
                                     <div className='product-star product-brand-span flex'> <Ratings rating={i?.ratings} /><h6>{i?.ratings}</h6></div>
                                     <p>{i?.title}</p>
                                 </div>
-                                <div className='col-md-3 col-3 shoppage1-likeicon'>
+                                <div className='col-md-3 col-3 shoppage1-likeicon p-0'>
                                     <img src={i?.icon?.url} alt="" />
                                 </div>
                             </div>

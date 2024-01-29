@@ -79,7 +79,7 @@
   font-family: Poppins;
   font-size: 14px;
   font-weight: 600;
-  background-color: rgb(40, 40, 242);
+  background-color: rgb(250 130 50);
   width: 125px;
   border-radius: 20px;
   padding: 12px 10px;
@@ -129,7 +129,7 @@
 }
 .ContactProduct1 {
   background: var(--Color---1, #f5f7ff);
-  padding: 35px 0px 25px 0px;
+  padding: 35px 0px 45px 0px;
   margin: 30px 0px;
 }
 .ContactProduct1-sub .text1-contact h6 {
@@ -140,6 +140,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: 132.5%; /* 23.85px */
+  padding: 10px 0px;
 }
 .ContactProduct1-sub .text1-contact p {
   color: #000;

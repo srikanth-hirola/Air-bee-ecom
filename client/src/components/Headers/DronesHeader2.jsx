@@ -1,4 +1,4 @@
-import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
+import { faAngleLeft, faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -61,7 +61,7 @@ const DronesHeader2 = () => {
     <div className="home-twelve-header">
       <div className="home-twelve-header-sub">
         <header className="header">
-          <div className="container">
+          <div className="container-fluid">
             <div className="row v-center">
               {/* <div className="header-item item-left">
             <div className="logo">
@@ -80,7 +80,7 @@ const DronesHeader2 = () => {
                     <div className='Drones-header-icons'>
                   <Link to="/cart">
                     <div className='Drones-header-icon drones-header-cart'>
-                      <FontAwesomeIcon icon={faCartShopping} style={{ color: '#8b96a5', fontSize: '20px' }} />
+                      <FontAwesomeIcon icon={faCartPlus} style={{ color: '#8b96a5', fontSize: '20px' }} />
 
                       <span className="absolute right-0 top-0 rounded-full bg-[#fa8232] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
                         {cart && cart.length}
@@ -122,14 +122,14 @@ const DronesHeader2 = () => {
                     <Trending />
                     <CategoriesMenu />
                     <li className="menu-item-has-children">
-                      <Link to="#">Blogs <i className="fas fa-angle-down"></i></Link>
-                      <div className="sub-menu single-column-menu">
+                      <Link to="/blog">Blogs <i className="fas fa-angle-down"></i></Link>
+                      {/* <div className="sub-menu single-column-menu">
                         <ul>
                           <li><Link to="#">Standard Layout</Link></li>
                           <li><Link to="#">Grid Layout</Link></li>
                           <li><Link to="#">single Post Layout</Link></li>
                         </ul>
-                      </div>
+                      </div> */}
                     </li>
                     <li>
                       <Link to="/contact-us">Contact</Link>

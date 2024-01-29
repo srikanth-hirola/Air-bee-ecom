@@ -10,7 +10,7 @@ export const AboutPageFour = () => {
                             <div className="row align-items-center About-Us-four-content">
                                 <div className="col-md-6 ">
                                     <div className='About-Us-four-image'>
-                                        <img src="/DronesHomepage/about4.png" alt="" />
+                                        <img src="https://img.freepik.com/free-psd/drone-mockup_1310-708.jpg?size=626&ext=jpg&ga=GA1.1.889736089.1692158429&semt=ais" alt="" />
                                     </div>
                                 </div>
                                 <div className="col-md-6 ">
@@ -22,8 +22,7 @@ export const AboutPageFour = () => {
                                             <h5>The Highest Quality of Products</h5>
                                         </div>
 
-                                        <p>At Air Bee, we are committed to delivering the highest quality products to our customers. With decades of successful operation and a track record of satisfied customers, we take pride in our assurance of excellence. Our rigorous quality control measures guarantee that every item we sell undergoes thorough scrutiny, ensuring no characteristics mismatch escapes the watchful eye of our professionals.
-
+                                        <p>At Air Bee, we are committed to delivering the highest quality products to our customers. With decades of successful operation and a track record of satisfied customers, we take pride in our assurance of excellence.<br /><br /> Our rigorous quality control measures guarantee that every item we sell undergoes thorough scrutiny, ensuring no characteristics mismatch escapes the watchful eye of our professionals.
 This commitment reflects not only our dedication to providing top-notch products but also our unwavering focus on customer satisfaction. </p>
                                     </div>
                                 </div>

@@ -16,12 +16,12 @@ export const AboutPageThree = () => {
                                             </div>
                                             <h5>Now You're In Safe Hands</h5>
                                         </div>
-                                        <p>At Air Bee, your satisfaction and peace of mind are our top priorities. With a commitment to delivering high-quality products, seamless online experiences, and reliable customer support, you can trust that you're in safe hands. Whether you're exploring our extensive range of electronic components or placing an order for delivery, our dedicated team ensures a secure and trustworthy journey. Count on Air Bee to provide not only top-notch products but also a reassuring experience, guiding you through the world of embedded electronics with confidence and reliability.</p>
+                                        <p>At Air Bee, your satisfaction and peace of mind are our top priorities. With a commitment to delivering high-quality products, seamless online experiences, and reliable customer support, you can trust that you're in safe hands. <br /> <br /> Whether you're exploring our extensive range of electronic components or placing an order for delivery, our dedicated team ensures a secure and trustworthy journey. Count on Air Bee to provide not only top-notch products but also a reassuring experience, guiding you through the world of embedded electronics with confidence and reliability.</p>
                                     </div>
                                 </div>
                                 <div className="col-md-6 ">
                                     <div className='About-Us-three-image'>
-                                        <img src="/DronesHomepage/about3.png" alt="" />
+                                        <img src="https://img.freepik.com/free-photo/technological-background-close-up_23-2148882600.jpg?size=626&ext=jpg&ga=GA1.1.1104190829.1706326261&semt=ais" alt="" />
                                     </div>
                                 </div>
                             </div>

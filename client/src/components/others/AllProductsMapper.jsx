@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Pagination } from 'react-bootstrap';
 import MainCardMiddleWare from '../ProductCards/MainCardMiddleWare';
 
-const ITEMS_PER_PAGE = 20;
+const ITEMS_PER_PAGE = 25;
 
 const AllProductsMapper = ({ data }) => {
     const [currentPage, setCurrentPage] = useState(1);

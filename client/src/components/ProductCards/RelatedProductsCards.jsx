@@ -28,7 +28,7 @@ const RelatedProductsCards = ({ data1 }) => {
                         </div>
                         <div className='col-md-9 col-sm-9 col-9 ratedproduct-textData'>
                             <h6>{data.name.length > 25
-                                ? data.name.slice(0, 25) + '...'
+                                ? data.name
                                 : data.name}</h6>
                             <p>{styles?.currency?.Symbol}&nbsp;{getDiscountPrice({ data })}</p>
                         </div>

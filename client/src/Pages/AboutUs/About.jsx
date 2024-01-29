@@ -9,23 +9,27 @@ import { AboutTop } from '../../components/AboutUs/AboutTop'
 import { AboutFaq } from '../../components/AboutUs/AboutFaq'
 import DronesHeader from '../../components/Headers/DronesHeader'
 import DronesFooter from '../../components/DronesHomepage/DronesFooter'
-import { DronesTestimonialSwiper } from '../../components/DronesHomepage/DronesTestimonialSwiper'
+// import { DronesTestimonialSwiper } from '../../components/DronesHomepage/DronesTestimonialSwiper'
 import { ContactProduct1 } from '../../components/Checkout/ContactProduct1'
-import AboutUsTeam from '../../components/AboutUs/AboutUsTeam'
+import AboutUsBanner from '../../components/AboutUs/AboutUsBanner'
+import DronesHeader2 from '../../components/Headers/DronesHeader2'
+// import AboutUsTeam from '../../components/AboutUs/AboutUsTeam'
 
 export const About = () => {
     return (
         <div>
             <DronesHeader />
+            <DronesHeader2/>
+            <AboutUsBanner/>
             <AboutPageOne />
             <AboutPageTwo />
             <AboutPageThree />
             <AboutPageFour />
             <AboutPageFive />
             <AboutData />
-            <AboutUsTeam/>
+            {/* <AboutUsTeam/> */}
             <AboutTop />
-            <DronesTestimonialSwiper/>
+            {/* <DronesTestimonialSwiper/> */}
             <AboutFaq />
             <ContactProduct1/>
             <DronesFooter/>

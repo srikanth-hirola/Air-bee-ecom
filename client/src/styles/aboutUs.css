@@ -1,5 +1,77 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
 
+/* banner component */
+
+.AboutUsBanner-parent {
+  display: flex;
+  align-items: center;
+  height: 550px;
+}
+.AboutUsBanner-parent .row{
+  height:fit-content;
+  align-items: center;
+}
+.AboutUsBanner-sub-content {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: -30px;
+}
+.AboutUsBanner-sub-content p{
+  margin: 0;
+}
+.AboutUsBanner-sub-content-image{
+  height: 30px;
+  width: 30px;
+}
+.AboutUsBanner-sub-content-image img{
+  height:100%;
+  width:100%;
+  object-fit: contain;
+}
+.AboutUsBanner-sub h1{
+  padding: 25px 0px;
+  font-weight: 600;
+}
+.AboutUsBanner-sub button{
+  background:#5151f1 !important;
+  padding: 8px 20px;
+  border-radius: 8px;
+  color: white;
+}
+.AboutUsBanner-image{
+  width:80%;
+  height: 430px;
+  margin: auto;
+}
+.AboutUsBanner-sub-content-text {
+  padding-bottom: 15px;
+}
+.AboutUsBanner-image img{
+  width: 100%;
+  height:100%;
+  object-fit: contain;
+  margin-top: 40px;
+}
+@media only screen and (max-width:767px){
+  .AboutUsBanner-parent{
+    height: fit-content;
+  }
+  .AboutUsBanner-sub-content {
+    margin-top: 30px;
+  }
+  .AboutUsBanner-image {
+    width: 85%;
+    height: 100%;
+}
+}
+
+@media only screen and (min-width:768px) and (max-width:991px){
+  .AboutUsBanner-image{
+    width: 95%;
+  }
+}
+
 * {
   font-family: "Poppins", sans-serif;
 }
@@ -13,9 +85,13 @@
 
 .About-Us-one-sub .About-Us-one-data {
   background: var(--Color---7, #000);
-  height: 400px;
+  height: fit-content;
+  padding: 60px;
 }
-
+.row.align-items-center.About-Us-one-content {
+  height: fit-content;
+  padding: 30px 0px;
+}
 .About-Us-one-image img {
   object-fit: contain;
   width: 100%;
@@ -25,12 +101,13 @@
   padding: 0px 0px 50px 0px;
 }
 .About-Us-one-sub .About-Us-one-data .About-Us-one-image {
-  width: 80%;
-  height: 300px;
+  width: 100%;
+  height: 450px;
+  /* margin: auto; */
 }
 
 .About-Us-one-sub .About-Us-one-data .About-Us-one-content {
-  height: 400px;
+  /* height: 400px; */
   align-items: center;
   display: flex;
 }
@@ -56,9 +133,13 @@
 
 .About-Us-two-sub .About-Us-two-data {
   background: var(--Dominant, #fff);
-  height: 380px;
+  height: fit-content;
+  padding: 60px;
 }
-
+.row.align-items-center.About-Us-two-content {
+  height: fit-content;
+  padding: 30px 0px;
+}
 .About-Us-two-image img {
   object-fit: contain;
   width: 100%;
@@ -71,7 +152,7 @@
 }
 
 .About-Us-two-sub .About-Us-two-data .About-Us-two-content {
-  height: 380px;
+  /* height: 380px; */
   align-items: center;
   display: flex;
 }
@@ -94,13 +175,15 @@
   border-radius: 50px 50px 0px 50px;
   width: 50px;
   height: 45px;
-  margin: 5px;
+  margin: 5px 19px 6px 0px;
 }
-
+.About-Us-three-text .d-flex {
+  margin: 13px 0px;
+}
 .About-Us-three-text .logo-rel {
   width: 55px;
   height: 45px;
-  margin: 8px;
+  margin: 5px 19px 6px 0px;
 }
 
 .About-Us-two-sub .About-Us-two-data .About-Us-two-text h5 {
@@ -127,7 +210,8 @@
 
 .About-Us-three-sub .About-Us-three-data {
   background: var(--Color---7, #000);
-  height: 400px;
+  height: fit-content;
+  padding: 60px;
 }
 
 .About-Us-three-image img {
@@ -142,8 +226,9 @@
 }
 
 .About-Us-three-sub .About-Us-three-data .About-Us-three-content {
-  height: 400px;
+  /* height: 400px; */
   align-items: center;
+  padding: 40px 0px;
   display: flex;
 }
 
@@ -157,6 +242,7 @@
   font-family: Poppins;
   font-size: 36px;
   font-weight: 400;
+  margin: 0;
 }
 
 .About-Us-three-sub .About-Us-three-data .About-Us-three-text p {
@@ -216,7 +302,8 @@
 
 .About-Us-four-sub .About-Us-four-data {
   background: var(--Dominant, #fff);
-  height: 380px;
+  height: fit-content;
+  padding: 60px;
 }
 
 .About-Us-four-image img {
@@ -231,7 +318,8 @@
 }
 
 .About-Us-four-sub .About-Us-four-data .About-Us-four-content {
-  height: 380px;
+  /* height: 380px; */
+  padding: 40px 0px;
   align-items: center;
   display: flex;
 }
@@ -245,11 +333,14 @@
   height: 45px;
   margin: 5px;
 }
+.About-Us-four-text .d-flex {
+  margin: 13px 0px;
+}
 
 .About-Us-three-text .logo-rel {
   width: 55px;
   height: 45px;
-  margin: 8px;
+  margin: 5px 19px 6px 0px;
 }
 
 .About-Us-four-sub .About-Us-four-data .About-Us-four-text h5 {
@@ -268,7 +359,7 @@
 }
 
 .about-couting-instant {
-  padding: 30px 0px;
+  padding:70px 0px 30px;
 }
 
 .about-couting-instant-heading {
@@ -278,12 +369,12 @@
 }
 
 .about-couting-instant-heading h6 {
-  color: var(--Primary-500, #22c55e);
+  color: var(--Primary-500, #fff);
   font-family: Poppins;
   font-size: 12px;
   font-weight: 500;
   border-radius: 36px;
-  background: var(--Primary-100, #dcfce7);
+  background: #fa8232;
   box-shadow: 0px 1px 2px 0px rgba(105, 81, 255, 0.05);
   padding: 10px 5px;
   width: 100px;
@@ -299,9 +390,10 @@
 }
 
 .about-couting-instant-heading p {
-  color: var(--Gray-500, #556987);
+  color: #454f5e;
   font-family: Poppins;
   font-size: 16px;
+  text-align: start;
 }
 
 .about-couting-instant-subject {
@@ -320,12 +412,14 @@
 }
 
 .about-couting-instant-text p {
-  color: var(--Gray-500, #556987);
-  font-family: Poppins;
-  font-size: 16px;
+  color: #2f3338;
+  font-size: 18px;
   font-weight: 500;
+  padding: 8px 0px;
 }
-
+.AboutUsBanner-sub button {
+  background: #fa8232 !important;
+}
 .about-top-comapany-instant-heading {
   text-align: center;
   width: 90%;
@@ -335,12 +429,12 @@
   margin-bottom: 30px;
 } */
 .about-top-comapany-instant-heading h6 {
-  color: var(--Primary-500, #22c55e);
+  color: var(--Primary-500, #fff);
   font-family: Poppins;
   font-size: 12px;
   font-weight: 500;
   border-radius: 36px;
-  background: var(--Primary-100, #dcfce7);
+  background: #fa8232;
   box-shadow: 0px 1px 2px 0px rgba(105, 81, 255, 0.05);
   padding: 10px 5px;
   width: 100px;
@@ -350,19 +444,20 @@
   padding: 25px 0px;
 }
 .about-top-comapany-instant-heading h2 {
-  color: var(--Gray-900, #2a3342);
+  color: #454f5e;
   font-family: Poppins;
-  font-size: 35px;
-  font-weight: 600;
-  padding: 15px 0px;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 8px 0px;
 }
 
 .about-top-comapany-instant-heading p {
-  color: var(--Gray-500, #556987);
+  color: #000000;
   font-family: Poppins;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   padding: 8px 0px;
+  text-align: start;
 }
 .about-top-comapany-instant-text {
   border-radius: 6px;
@@ -390,13 +485,13 @@
 }
 
 .about-faq-instant-text h6 {
-  color: var(--Primary-500, #22c55e);
+  color: var(--Primary-500, #fff);
   font-family: Poppins;
   text-align: center;
   font-size: 12px;
   font-weight: 500;
   border-radius: 36px;
-  background: var(--Primary-100, #dcfce7);
+  background: #fa8232;
   box-shadow: 0px 1px 2px 0px rgba(105, 81, 255, 0.05);
   padding: 10px 5px;
   width: 70px;
@@ -432,11 +527,13 @@
 .about-faq-instant-question .accordion-button:focus {
   border-color: white !important;
 }
-.about-faq-instant {
-  padding: 60px 0px;
+  .about-faq-instant {
+    padding: 0px 0px 30px 0px;
 }
+
 .About-Us-two-text .d-flex {
   align-items: center;
+  margin: 13px 0px;
 }
 
 /* our team component */
@@ -476,6 +573,23 @@
   .AboutUsTeam-main-text{
     width: 100%;
   }
+  .About-Us-one-sub .About-Us-one-data .About-Us-one-text h5 {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+  .row.about-top-comapany-instant-subject .col-md-3.col-sm-6.col-12 {
+    width: 47%;
+}
+.about-top-comapany-instant-text {
+  margin: 10px auto;
+  width: 100% !important;
+}
+.ContactProduct1-sub .text1-contact p{
+  text-align: justify;
+}
+.about-top-comapany-instant-text{
+  padding: 30px;
+}
   .About-Us-one-sub .About-Us-one-heading h4 {
     font-size: 25px;
   }
@@ -498,7 +612,10 @@
     margin: 10px auto;
   }
   .about-faq-instant-question .accordion-button {
-    font-size: 14px;
+    font-size: 14px !important;
+  }
+  .accordion-body{
+    font-size: 12px;
   }
   .about-faq-instant-text h2 {
     font-size: 25px;
@@ -519,6 +636,7 @@
   .about-couting-instant-text p,
   .about-couting-instant-heading p {
     font-size: 14px;
+    text-align: center;
   }
 
   .about-couting-instant-text h2,
@@ -527,6 +645,7 @@
   }
   .About-Us-one-sub .About-Us-one-data {
     height: fit-content;
+    padding: 0;
   }
 
   .About-Us-one-sub .About-Us-one-data .About-Us-one-content {
@@ -535,7 +654,7 @@
 
   .About-Us-one-sub .About-Us-one-data .About-Us-one-image {
     height: 250px;
-    width: 90%;
+    width: 100%;
     padding: 15px 0px;
     margin: auto;
   }
@@ -545,11 +664,11 @@
   }
 
   .About-Us-one-sub .About-Us-one-data .About-Us-one-text h5 {
-    font-size: 20px;
+    /* font-size: 20px; */
   }
 
   .About-Us-one-sub .About-Us-one-data .About-Us-one-text p {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .About-Us-one-sub .About-Us-one-data .About-Us-one-text {
@@ -559,6 +678,7 @@
 
   .About-Us-two-sub .About-Us-two-data {
     height: fit-content;
+    padding: 0;
   }
 
   .About-Us-two-sub .About-Us-two-data .About-Us-two-content {
@@ -567,14 +687,13 @@
   }
 
   .About-Us-two-sub .About-Us-two-data .About-Us-two-image {
-    height: 250px;
-    width: 90%;
+    height: 450px;
     padding: 15px 0px;
     margin: auto;
   }
 
   .About-Us-two-sub .About-Us-two-data .About-Us-two-image img {
-    object-fit: cover;
+    object-fit: contain;
   }
 
   .About-Us-two-sub .About-Us-two-data .About-Us-two-text h5 {
@@ -582,7 +701,7 @@
   }
 
   .About-Us-two-sub .About-Us-two-data .About-Us-two-text p {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .About-Us-two-sub .About-Us-two-data .About-Us-two-text {
@@ -592,6 +711,7 @@
 
   .About-Us-three-sub .About-Us-three-data {
     height: fit-content;
+    padding: 0;
   }
 
   .About-Us-three-sub .About-Us-three-data .About-Us-three-content {
@@ -624,6 +744,7 @@
 
   .About-Us-four-sub .About-Us-four-data {
     height: fit-content;
+    padding: 0;
   }
 
   .About-Us-four-sub .About-Us-four-data .About-Us-four-content {
@@ -632,14 +753,14 @@
   }
 
   .About-Us-four-sub .About-Us-four-data .About-Us-four-image {
-    height: 250px;
-    width: 90%;
+    height: 451px;
+    width: 100%;
     padding: 15px 0px;
     margin: auto;
   }
 
   .About-Us-four-sub .About-Us-four-data .About-Us-four-image img {
-    object-fit: cover;
+    object-fit: contain;
   }
 
   .About-Us-four-sub .About-Us-four-data .About-Us-four-text h5 {
@@ -647,7 +768,7 @@
   }
 
   .About-Us-four-sub .About-Us-four-data .About-Us-four-text p {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .About-Us-four-sub .About-Us-four-data .About-Us-four-text {
@@ -689,6 +810,12 @@
   .about-top-comapany-instant-heading h2 {
     font-size: 25px;
   }
+  .row.about-couting-instant-subject .col-md-3.col-sm-6.col-12 {
+    width: 48%;
+}
+p{
+  text-align: justify;
+}
 }
 
 @media only screen and (max-width: 576px) {
@@ -707,11 +834,11 @@
   }
 
   .About-Us-one-sub .About-Us-one-data .About-Us-one-text h5 {
-    font-size: 20px;
+    /* font-size: 20px; */
   }
 
   .About-Us-one-sub .About-Us-one-data .About-Us-one-text p {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .About-Us-one-sub .About-Us-one-data .About-Us-one-text {
@@ -724,7 +851,7 @@
   }
 
   .About-Us-two-sub .About-Us-two-data .About-Us-two-text p {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .About-Us-two-sub .About-Us-two-data .About-Us-two-text {
@@ -737,7 +864,7 @@
   }
 
   .About-Us-three-sub .About-Us-three-data .About-Us-three-text p {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .About-Us-three-sub .About-Us-three-data .About-Us-three-text {
@@ -751,7 +878,7 @@
   }
 
   .About-Us-four-sub .About-Us-four-data .About-Us-four-text p {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .About-Us-four-sub .About-Us-four-data .About-Us-four-text {
@@ -811,7 +938,7 @@
   }
 
   .About-Us-one-sub .About-Us-one-data .About-Us-one-text p {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .About-Us-two-sub .About-Us-two-data .About-Us-two-text h5 {
@@ -819,7 +946,7 @@
   }
 
   .About-Us-two-sub .About-Us-two-data .About-Us-two-text p {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .About-Us-three-sub .About-Us-three-data .About-Us-three-text h5 {
@@ -835,7 +962,7 @@
   }
 
   .About-Us-four-sub .About-Us-four-data .About-Us-four-text p {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .About-Us-five-sub .About-Us-five-data .About-Us-five-text h5 {

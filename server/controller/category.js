@@ -38,21 +38,28 @@ router.get(
       const { category, subcategory, subsubcategory } = req.query;
       const filter = { approved: true };
 
-
       if (category) {
         var catFound = await Category.findOne({ name: category });
         filter.category = new RegExp(catFound?._id, 'i');
       }
       if (subcategory) {
         if (catFound) {
-          var subFound = catFound?.subcategories?.find((sub) => sub?.name === subcategory)
-          filter.subCatgory = new RegExp(subFound?._id, 'i');
+          // var subFound = catFound?.subcategories?.find((sub) => sub?.name === subcategory)
+          catFound?.subcategories?.map((sub) => {
+            if (sub?.name.toLocaleLowerCase().trim() === subcategory.toLocaleLowerCase().trim()) {
+              filter.subCatgory = new RegExp(sub?._id, 'i');
+            }
+          })
         }
       }
       if (subsubcategory) {
         if (subFound) {
-          var subSubFound = subFound?.subSubcategories?.find((subSub) => subSub?.name === subsubcategory)
-          filter.subSubCategory = new RegExp(subSubFound?._id, 'i');
+          // var subSubFound = subFound?.subSubcategories?.find((subSub) => subSub?.name === subsubcategory)
+          subFound?.subSubcategories?.map((subSub) => {
+            if (subSub?.name.toLocaleLowerCase().trim() === subsubcategory.toLocaleLowerCase().trim()) {
+              filter.subSubCategory = new RegExp(subSub?._id, 'i');
+            }
+          })
         }
       }
 

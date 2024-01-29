@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom'
 import DronesHeader from '../components/Headers/DronesHeader'
 import DronesFooter from '../components/DronesHomepage/DronesFooter'
 import useGetCurrencyConversion from '../hooks/Site-config/useGetCurrencyConversion'
+import DronesHeader2 from '../components/Headers/DronesHeader2'
 
 const CartPage = () => {
     const { cart } = useSelector((state) => state.cart);
@@ -52,6 +53,7 @@ const CartPage = () => {
     return (
         <>
             <DronesHeader />
+            <DronesHeader2/>
             <div className='DronesCart-parent'>
                 <div className="container">
                     <CartBredCumbs />
@@ -59,6 +61,7 @@ const CartPage = () => {
                     <div className="col-md-12 col-lg-12">
                         <CartHeadings />
                     </div>
+                    
                     {cartData?.length > 0 ?
                         <div className='DronesCart-subparent'>
                             <div className="row">

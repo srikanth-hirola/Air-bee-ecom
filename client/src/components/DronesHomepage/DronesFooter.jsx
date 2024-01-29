@@ -43,7 +43,7 @@ const DronesFooter = () => {
                                             <div className="DronesFooter-links">
                                                 <h6 key={index}>{item?.Title}</h6>
                                                 {item?.drop?.length > 0 && item?.drop?.map((dropitem, index1) => (
-                                                    <Link to=""> <li key={index1}>{dropitem?.SubTitle}</li></Link>
+                                                    <Link to={dropitem.url}> <li key={index1}>{dropitem?.SubTitle}</li></Link>
                                                 ))}
                                             </div>
                                         </div>
@@ -75,7 +75,7 @@ const DronesFooter = () => {
                 </div>
             </div>
 
-            <hr />
+            {/* <hr /> */}
             <div className='DronesFooter-copyrights'>
                 <p>airbee.co.in © All Rights Reserved - 2024 - designed and developed by <Link to="https://www.hirolainfotech.com/"> Hirola Infotech Solutions Pvt Ltd.</Link> </p>
             </div>

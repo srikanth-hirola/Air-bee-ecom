@@ -703,23 +703,23 @@ export const Footer = {
                             drop: [
                                 {
                                     SubTitle: 'Home',
-                                    url: 'http://localhost:3000'
+                                    url: '/'
                                 },
                                 {
                                     SubTitle: 'About Us',
-                                    url: 'http://localhost:3000'
+                                    url: '/about-us'
                                 },
                                 {
                                     SubTitle: 'Shop',
-                                    url: 'http://localhost:3000'
+                                    url: '/products-by-category/search'
                                 },
                                 {
                                     SubTitle: 'Blogs',
-                                    url: 'http://localhost:3000'
+                                    url: '/blog'
                                 },
                                 {
                                     SubTitle: 'Contact Us',
-                                    url: 'http://localhost:3000'
+                                    url: '/contact-us'
                                 },
                                
                                
@@ -731,23 +731,23 @@ export const Footer = {
                             drop: [
                                 {
                                     SubTitle: 'Payment',
-                                    url: 'http://localhost:3000'
+                                    url: '/'
                                 },
                                 {
                                     SubTitle: 'Delivery',
-                                    url: 'http://localhost:3000'
+                                    url: '/'
                                 },
                                 {
                                     SubTitle: 'Order Tracking',
-                                    url: 'http://localhost:3000'
+                                    url: '/'
                                 },
                                 {
                                     SubTitle: 'Exchange & Returns',
-                                    url: 'http://localhost:3000'
+                                    url: '/'
                                 },
                                 {
                                     SubTitle: 'T & C',
-                                    url: 'http://localhost:3000'
+                                    url: ''
                                 }
                             ]
                         },
@@ -757,24 +757,24 @@ export const Footer = {
                             url: '',
                             drop: [
                                 {
-                                    SubTitle: 'New Incomes',
-                                    url: 'http://localhost:3000'
+                                    SubTitle: 'Message Us',
+                                    url: '/inbox'
                                 },
                                 {
-                                    SubTitle: 'Bestsellers',
-                                    url: 'http://localhost:3000'
+                                    SubTitle: 'Cart',
+                                    url: '/cart'
                                 },
                                 {
-                                    SubTitle: 'Sale',
-                                    url: 'http://localhost:3000'
+                                    SubTitle: 'Wishlist',
+                                    url: '/wishlist'
                                 },
                                 {
-                                    SubTitle: 'Testimonials',
-                                    url: 'http://localhost:3000'
+                                    SubTitle: 'Refunds',
+                                    url: '/'
                                 },
                                 {
-                                    SubTitle: 'Sitemap',
-                                    url: 'http://localhost:3000'
+                                    SubTitle: 'Privacy Policy',
+                                    url: '/'
                                 },
                                 // {
                                 //     SubTitle: 'Q & A',
@@ -787,7 +787,7 @@ export const Footer = {
                             url: '',
                             drop: [
                                 {
-                                    SubTitle: 'Address: Air Bee, NO 7, 4th floor, 1st Cross Rd, Balaji Layout, AMCO Colony, Koti Hosahalli, Bengaluru, Karnataka 560092',
+                                    SubTitle: 'Air Bee, NO 7, 4th floor, 1st Cross Rd, Balaji Layout, AMCO Colony, Koti Hosahalli, Bengaluru, Karnataka 560092',
                                     url: 'http://localhost:3000'
                                 },
                                 // {
@@ -972,7 +972,7 @@ export const Services = {
                         {
                             img:{
                                 public_id:"",
-                                url:"/DronesHomepage/services1.png"
+                                url:"https://img.freepik.com/free-photo/modern-automobile-production-line-automated-production-equipment-shop-assembly-new-modern-cars-way-assembly-car-assembly-line-plant_645730-596.jpg?size=626&ext=jpg&ga=GA1.1.889736089.1692158429&semt=ais"
                             },
                             SubText:{
                                 text:"Automotive Industry"
@@ -982,7 +982,7 @@ export const Services = {
                         {
                             img:{
                                 public_id:"",
-                                url:"/DronesHomepage/services2.png"
+                                url:"https://img.freepik.com/free-photo/medical-banner-with-doctor-working-laptop_23-2149611211.jpg?size=626&ext=jpg&ga=GA1.1.889736089.1692158429&semt=ais"
                             },
                             SubText:{
                                 text:"Healthcare Sector"
@@ -992,7 +992,7 @@ export const Services = {
                         {
                             img:{
                                 public_id:"",
-                                url:"/DronesHomepage/services3.png"
+                                url:"https://img.freepik.com/free-photo/full-shot-woman-looking-floating-screen_23-2150219183.jpg?size=626&ext=jpg&ga=GA1.1.889736089.1692158429&semt=ais"
                             },
                             SubText:{
                                 text:"Smart Home Technology"
@@ -1002,7 +1002,7 @@ export const Services = {
                         {
                             img:{
                                 public_id:"",
-                                url:"/DronesHomepage/services4.png"
+                                url:"https://img.freepik.com/free-photo/person-using-ai-tool-job_23-2150711469.jpg?size=626&ext=jpg&ga=GA1.1.889736089.1692158429&semt=ais"
                             },
                             SubText:{
                                 text:"Industrial Automation"

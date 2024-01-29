@@ -7,11 +7,11 @@ import useFetchCategoryHandler from '../../hooks/categories/useFetchCategoryHand
 // import useGetCurrencyConversion from '../../hooks/Site-config/useGetCurrencyConversion';
 
 
-const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, selectedBrands, selectedPriceRange, setSelectedBrands, setSelectedPriceRange, filteredAttr, setFilteredAttr, isVisibleData, toggleDataVisible }) => {
-
+const Filter = ({ constantData, data, setFilteredData, styles, checkedItems, setCheckedItems, selectedBrands, selectedPriceRange, setSelectedBrands, setSelectedPriceRange, filteredAttr, setFilteredAttr, isVisibleData, toggleDataVisible }) => {
     const { handleCheckboxChange, handleBrandCheckBox, handleFilterCheckswithValues } = useFilterHandler()
     const { fetchCategory, fetchSubCategory } = useFetchCategoryHandler();
     // const { ConvertCurrency } = useGetCurrencyConversion()
+
 
     const [filterBrand, setFilterBrand] = useState([]);
     const [category, setCategory] = useState([
@@ -20,14 +20,14 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
             subCategory: [],
         },
     ]);
-
+    const [isFilterVisible, setIsFilterVisible] = useState(false);
     const [price, setPrice] = useState([]);
     const [priceRange, setPriceRanges] = useState();
 
     const [selectedRating, setSelectedRating] = useState();
 
     const [attributes, setAttributes] = useState([]);
-
+ 
     useEffect(() => {
         const updatedBrandState = [...filterBrand];
         const updatedCategoryState = [...category];
@@ -51,7 +51,6 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
             if (!updatedBrandState.includes(product.brandName)) {
                 updatedBrandState.push(product.brandName);
             }
-
             const categoryIndex = updatedCategoryState.findIndex(
                 (cat) => cat.name === product.category
             );
@@ -129,7 +128,7 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
         let filteredBrandData;
 
         if (selectedBrands.length > 0) {
-            filteredBrandData = data.filter((product) =>
+            filteredBrandData = constantData.filter((product) =>
                 selectedBrands.includes(product.brandName)
             );
         } else {
@@ -144,7 +143,7 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
         let filteredBrandData;
 
         if (selectedBrands.length > 0) {
-            filteredBrandData = data.filter((product) =>
+            filteredBrandData = constantData.filter((product) =>
                 selectedBrands.includes(product.brandName)
             );
         }
@@ -157,7 +156,7 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
 
             const chooseData = !filteredBrandData ? data : filteredBrandData;
 
-            const filteredPriceRange = chooseData.reduce((acc, product) => {
+            const filteredPriceRange = chooseData?.length > 0 && chooseData.reduce((acc, product) => {
                 if (!addedProductIds.includes(product._id)) {
                     if (product.showInputs) {
                         const hasValidColorInput = product.colorInputs.some(
@@ -238,15 +237,15 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
         }
         setPriceRanges(priceRanges);
     };
+    const [isVisible, setIsVisible] = useState(false);
 
-    // const [isVisibleData,setIsVisibleData] = useState([]);
-    //   const toggleDataVisible = () => {
-    //     setIsVisibleData(!isVisibleData);
-    //   };
+    const toggleVisibility = () => {
+      setIsVisible(!isVisible);
+    };
 
     return (
 
-        <div className="col-md-3 column3 col-12 col-sm-12">
+        <div className="col-md-4 col-lg-3 col-xl-3 col-xxl-3 column3 col-12 col-sm-12">
             <div className="desktop-filter">
 
                 <Accordion defaultActiveKey="0">
@@ -258,7 +257,7 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                                     (cat, i) =>
                                         cat.name && (
                                             <React.Fragment key={i}>
-                                                <Link to={`/products-by-category/search?category=${fetchCategory(cat.name)}`}
+                                                <Link to={`/products-by-category/search?category=${fetchCategory(cat.name)?.name}`}
                                                     className="cat-link text-black font-semibold"
                                                 >
                                                     {fetchCategory(cat.name)?.name}
@@ -444,13 +443,28 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                     </Accordion.Item>
                 </Accordion>
             </div>
-            <div className="mobile-filters">
 
+            {/* <div>
+      <button onClick={toggleVisibility}>
+        {isVisible ? 'Hide Content' : 'Show Content'}
+      </button>
+      {isVisible && (
+        <div>
+          <p>This is the content you want to toggle.</p>
+          
+        </div>
+      )}
+    </div> */}
+
+    <button className='filter-button' onClick={() => setIsFilterVisible(!isFilterVisible)}>
+        {isFilterVisible ? 'Hide Filters' : 'Show Filters'}
+      </button>
+            <div className="mobile-filters">
                 <div>
-                    {isVisibleData && <button onClick={toggleDataVisible} className='mobile-close-flter'>
-                        Close Filters
-                    </button>}
-                    {isVisibleData && (
+                   
+       
+        
+                    {isFilterVisible && (
                         <div>
                             <Accordion>
                                 <Accordion.Item eventKey="0">
@@ -461,10 +475,10 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                                                 (cat, i) =>
                                                     cat.name && (
                                                         <React.Fragment key={i}>
-                                                            <Link to={`/products-by-category/search?category=${cat.name}`}
+                                                            <Link to={`/products-by-category/search?category=${fetchCategory(cat.name)?.name}`}
                                                                 className="cat-link text-black"
                                                             >
-                                                                {cat.name}
+                                                                {fetchCategory(cat.name)?.name}
                                                             </Link>
                                                             <ul>
                                                                 {cat.subCategory.length > 0 &&
@@ -472,9 +486,9 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                                                                         <li key={index}
                                                                             className="cat-link"
                                                                         >
-                                                                            <Link to={`/products-by-category/search?category=${cat.name}&subcategory=${sub}`}
+                                                                            <Link to={`/products-by-category/search?category=${fetchCategory(cat.name)?.name}&subcategory=${fetchSubCategory(cat.name, sub)?.name}`}
                                                                                 className="cat-link text-black"
-                                                                            >{sub}</Link>
+                                                                            >{fetchSubCategory(cat.name, sub)?.name}</Link>
                                                                         </li>
                                                                     ))}
                                                             </ul>
@@ -488,8 +502,8 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                                     <Accordion.Header>Brands</Accordion.Header>
                                     <Accordion.Body>
                                         {filterBrand.map((brand, index) => (
-                                            <li key={index}>
-                                                <input
+                                            <li key={index} className="filter-label">
+                                                <input className='mr-2'
                                                     type="checkbox"
                                                     value={brand}
                                                     checked={selectedBrands.includes(brand)}
@@ -528,7 +542,7 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                                         {priceRange?.length > 0 &&
                                             <ul>
                                                 {priceRange.map((val, index) => (
-                                                    <li key={index} className="d-flex justify-content-between h-[30px] price-range-mq">
+                                                    <li key={index} className="d-flex space-x-2 h-[30px] price-range-mq">
                                                         <input
                                                             className='price-range-i-mq'
                                                             type="radio"
@@ -648,6 +662,8 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                             </Accordion>
                         </div>
                     )}
+          
+      
                 </div>
             </div>
 

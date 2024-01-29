@@ -15,17 +15,18 @@ export const DronesTestimonialSwiper = () => {
     return (
         <>
          <div className="testimonal-home">
-            <div className="row">
+            <div className="row align-items-center">
                 <div className="col-md-5">
                    <div className='Drones-testimonial-quote-parent'>
+                   <div className='Drones-testimonial-quote-text'>
+                   <p>Clients Testimonials</p>
+                   </div>
                    <div className='Drones-testimonial-quote'>
                         <img src="/DronesHomepage/Qotes.png" alt="" />
                     </div>
                     
                    </div>
-                   <div className='Drones-testimonial-quote-text'>
-                   <p>Clients Testimonials</p>
-                   </div>
+                  
                   
                 </div>
                 <div className="col-md-7">

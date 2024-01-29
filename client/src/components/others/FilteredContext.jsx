@@ -23,11 +23,11 @@ const FilteredContext = ({ checkedItems, setCheckedItems, data, setFilteredData,
 
 
             </div>
-            <div className="mobile-filters " >
-            
-                {!isVisibleData && <button onClick={toggleDataVisible} className='mobile-close-flter' defaultActiveKey="0">
+            <div className="mobile-filters" >
+                {/* {!isVisibleData && <button onClick={toggleDataVisible} className='mobile-close-flter'>
                     Open Filter
-                </button>}
+                </button>} */}
+                
             </div>
 
         </div>

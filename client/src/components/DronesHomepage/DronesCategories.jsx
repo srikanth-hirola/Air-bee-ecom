@@ -1,13 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import FeaturedProductCard from '../ProductCards/FeaturedProductCard';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import FeaturedCardMiddleware from '../ProductCards/FeaturedCardMiddleware';
+import { getPublishedProducts } from '../../redux/actions/product';
 
 const DronesCategories = () => {
-  const { allProducts } = useSelector((state) => state.products);
+  const { allPublishedProducts } = useSelector((state) => state.products);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getPublishedProducts())
+  }, [dispatch])
+
+
 
   return (
     <>
@@ -15,7 +24,7 @@ const DronesCategories = () => {
         <div>
           <h2>Explore Our Featured Products</h2>
         </div>
-        {allProducts?.length > 0 ?
+        {allPublishedProducts?.length > 0 ?
           <Swiper className='paginationDisabledClass'
             autoplay={{
               delay: 1500,
@@ -53,12 +62,11 @@ const DronesCategories = () => {
             }}
           >
             <br /><br />
-            {
-              allProducts?.map((item, index) => (
-                <SwiperSlide>
-                  <FeaturedProductCard data1={item} key={index} />
-                </SwiperSlide>
-              ))
+            {allPublishedProducts?.map((item, index) => (
+              <SwiperSlide>
+                <FeaturedCardMiddleware data1={item} key={index} />
+              </SwiperSlide>
+            ))
             }
           </Swiper>
           : <p>No Products Available</p>}

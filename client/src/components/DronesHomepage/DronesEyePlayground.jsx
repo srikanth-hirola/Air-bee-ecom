@@ -1,11 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 // import './Drones.css'
 const DronesEyePlayground = () => {
   return (
     <>
     <div className='DronesEyePlayground-parent'>
         <div className="row">
-            <div className="col-md-6">
+            <div className="col-md-7">
                 <div className='DronesEyePlayground-sub'>
                     <h1>Air Bee – Your Premier Destination for Embedded Electronics Solutions!</h1>
                     <div className="col-md-12">
@@ -18,14 +19,14 @@ const DronesEyePlayground = () => {
                         <div className='DronesEyePlayground-sub-content1'>
                             <h4>Shop Anytime, Anywhere</h4>
                             <p>Our user-friendly e-commerce platform is designed for your convenience. Browse, select, and purchase with ease, 24x7. With Air Bee, you have the flexibility to shop at your pace, from the comfort of your home or on the go.</p>
-                            <button>Read More</button>
+                            <Link to='/about-us'>Know More </Link>
                         </div>
                     </div>
 
                 </div>
 
             </div>
-            <div className="col-md-6">
+            <div className="col-md-5">
                 <div className='DronesEyePlayground-image'>
                     <img src="./DronesHomepage/image 130.png" alt="" />
                 </div>
