@@ -21,6 +21,8 @@ const AllProductsPage = () => {
     const [checkedItems, setCheckedItems] = useState([]);
     const [selectedPriceRange, setSelectedPriceRange] = useState();
     const [selectedBrands, setSelectedBrands] = useState([]);
+    const [constantData, setConstantData] = useState([]);
+    const loaction = useLocation();
 
 
     useEffect(() => {
@@ -52,12 +54,13 @@ const AllProductsPage = () => {
             if (decodedSearchParam.trim() === 'all products') {
                 const d = allPublishedProducts;
                 setData(d);
+                setConstantData(d)
             } else {
                 const searchTerm = decodedSearchParam.toLowerCase();
                 apiCall(searchTerm);
             }
         }
-    }, [allPublishedProducts, searchParam]);
+    }, [allPublishedProducts, searchParam, loaction]);
 
     const apiCall = async (searchTerm) => {
 
@@ -68,6 +71,7 @@ const AllProductsPage = () => {
         await data.products.map((val) => {
             arrayData.push(val.product);
         });
+        setConstantData(data?.products)
         setData(arrayData);
     };
 
@@ -79,11 +83,11 @@ const AllProductsPage = () => {
     return (
         <>
             <DronesHeader />
-            <DronesHeader2/>
+            <DronesHeader2 />
             {isLoading ? <Loader /> :
                 <>
                     <div className='allproducts-parent'>
-                        <Filter data={filteredData?.length > 0 ? filteredData : data} setFilteredData={setFilteredData} styles={styles} checkedItems={checkedItems} setCheckedItems={setCheckedItems} selectedBrands={selectedBrands} selectedPriceRange={selectedPriceRange} setSelectedBrands={setSelectedBrands} setSelectedPriceRange={setSelectedPriceRange} filteredAttr={filteredAttr} setFilteredAttr={setFilteredAttr} isVisibleData={isVisibleData} toggleDataVisible={toggleDataVisible} />
+                        <Filter constantData={constantData} data={filteredData?.length > 0 ? filteredData : data} setFilteredData={setFilteredData} styles={styles} checkedItems={checkedItems} setCheckedItems={setCheckedItems} selectedBrands={selectedBrands} selectedPriceRange={selectedPriceRange} setSelectedBrands={setSelectedBrands} setSelectedPriceRange={setSelectedPriceRange} filteredAttr={filteredAttr} setFilteredAttr={setFilteredAttr} isVisibleData={isVisibleData} toggleDataVisible={toggleDataVisible} />
                         <AllProducts filteredProducts={filteredData?.length > 0 ? filteredData : data} bredCrumb={bredCrumb} checkedItems={checkedItems} setCheckedItems={setCheckedItems} data={data} setFilteredData={setFilteredData} setSelectedBrands={setSelectedBrands} selectedBrands={selectedBrands} setSelectedPriceRange={setSelectedPriceRange} setFilteredAttr={setFilteredAttr} isVisibleData={isVisibleData} toggleDataVisible={toggleDataVisible} />
                     </div>
                 </>

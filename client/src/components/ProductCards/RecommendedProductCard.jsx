@@ -6,7 +6,7 @@ import { StyleConfig } from '../../utils/StyleConfig'
 import useProductDetails from '../../hooks/useProductDetails'
 
 const RecommendedProductCard = ({ data, active }) => {
-// console.log("data",data)
+    // console.log("data",data)
 
     const styles = StyleConfig();
 
@@ -30,11 +30,11 @@ const RecommendedProductCard = ({ data, active }) => {
                     <img src={`${data?.mainImage?.url}`} alt="product" />
                     <MainCardHover data={data} addToCart={addToCartHandler} id={data?._id} />
                 </div>
-                <Link to={`${`/product/${data?._id}`}`}>
+                <Link to={`${`/product/${data?.slug}`}`}>
                     <>
                         <div className='DronesRecommendedItems-text'>
-                    <span>{parseInt(((data.originalPrice - data.discountPrice) / data.originalPrice) * 100)
-            }% OFF</span>
+                            <span>{parseInt(((data.originalPrice - data.discountPrice) / data.originalPrice) * 100)
+                            }% OFF</span>
                             <strong >{data?.name?.length > 25
                                 ? data?.name.slice(0, 60) + '...'
                                 : data?.name}</strong>

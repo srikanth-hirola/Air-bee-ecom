@@ -19,7 +19,7 @@ const CategoryProductCard = ({ data1, key }) => {
     return (
         <div className="col-sm-6 col-md-3 p-0" key={key}>
             {data &&
-                <Link to={`${`/product/${data?._id}`}`}>
+                <Link to={`${`/product/${data1?.slug}`}`}>
                     <div className='DronesProductsRow2-subimage-content'>
                         <div className='DronesProductsRow2-subimage-content-text'>
                             <h5>{data?.name?.length > 25

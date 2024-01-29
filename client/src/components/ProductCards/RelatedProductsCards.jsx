@@ -21,7 +21,7 @@ const RelatedProductsCards = ({ data1 }) => {
     return (
         <>
             {data &&
-                <Link to={`${`/product/${data._id}`}`}>
+                <Link to={`${`/product/${data?.slug}`}`}>
                     <div className='row ratedproduct-cards' >
                         <div className='col-md-3 col-sm-3 col-3 ratedproduct-images'>
                             <img src={data?.mainImage?.url} alt="pic" />

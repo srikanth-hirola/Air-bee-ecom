@@ -11,7 +11,7 @@ const EventCardBottom = ({ data1 }) => {
                     <div className="col-md-12 col-lg-5">
                         <div className='DronesDealsoftheDay-sub1'>
                             <div className='DronesDeals-image'>
-                                <img src="/DronesHomepage/image 128.png" alt="" />
+                                <img src="/DronesHomepage/image 128.png" alt="event" />
                             </div>
                             <h3>Deals of the Day</h3>
                         </div>
@@ -23,7 +23,7 @@ const EventCardBottom = ({ data1 }) => {
                                     <CountDownBottom data={data1} />
                                 </div>
                                 <div className="col-md-3 event-btn-bottom">
-                                    <Link to={`/event/${data1._id}`}>
+                                    <Link to={`/event/${data1?.slug}`}>
                                         Shop Now
                                     </Link>
                                 </div>

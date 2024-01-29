@@ -41,7 +41,7 @@
 // }
 
 // export default ProductDetailsMain
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { LapProductdet } from '../Product1details/LapProductdet';
 import { ProductTapContent } from '../Product1details/ProductTapContent';
 import useDetailsPageHandler from '../../hooks/useDetailsPageHandler';
@@ -60,7 +60,7 @@ const ProductDetailsMain = () => {
 
     useDetailsPageHandler({ data, setActive, setData, setLoading, setSeller });
 
-  
+
     return (
         <>
             {loading ? (

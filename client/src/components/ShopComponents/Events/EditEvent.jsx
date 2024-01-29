@@ -47,7 +47,7 @@ export const EditEvent = () => {
             .then(async (result) => {
                 setProductData(result.data.product);
                 try {
-                    const { data } = await axios.get(`${server}/event/get-all-event-products/${id}`)
+                    const { data } = await axios.get(`${server}/event/get-all-event-products-store/${id}`)
                     const finalData = data?.events[0];
                     setImages(finalData?.images);
                     setName(finalData?.name)
