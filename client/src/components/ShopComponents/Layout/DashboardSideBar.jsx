@@ -775,18 +775,18 @@ const DashboardSideBar = ({ active }) => {
 
             </div>
             <a className="btn desktop-filter-page1-button" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-                <div className='Usermodaltoggle-image bg-orange-500 px-3 py-1 rounded-2xl text-light text-[14px]'>
+                <div className='Usermodaltoggle-image bg-orange-500 px-3 py-2 rounded-2xl text-light text-[14px]'>
                     Show Filter
                 </div>
             </a>
 
             <div className='mobile-filter-page1'>
                 <div className="offcanvas offcanvas-start" tabIndex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-                    <div className="offcanvas-header">
-                        <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <div className="offcanvas-header ">
+                        <button type="button" className="btn-close " data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div className="offcanvas-body">
-                        <div className="w-full bg-white shadow-sm sticky top-0 left-0 z-10 side-div" >
+                        <div className="side-div" >
                             {/* single item */}
                             <div className="w-full flex items-center ">
                                 <Link to="/dashboard" className="w-full flex items-center px-2 py-2">
@@ -803,6 +803,7 @@ const DashboardSideBar = ({ active }) => {
                                     >
                                         Dashboard
                                     </h5>
+                                    
                                 </Link>
 
                             </div>

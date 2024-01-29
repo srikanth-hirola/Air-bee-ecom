@@ -453,11 +453,18 @@ td {
 .desktop-filter-page1-button{
   display: none;
 }
+.mobile-filter-page1 .offcanvas {
+  width: 300px !important;
+
+}
 /* .dachboard-offcanvasRight{
   display: none;
 } */
 /* new */
 @media only screen and (max-width: 767px) {
+.mobile-filter-page1 .side-div{
+  height: auto !important;
+}
   .dashboard-side-bar-data-view .outer1-div{
     margin: 15px !important;
   }
