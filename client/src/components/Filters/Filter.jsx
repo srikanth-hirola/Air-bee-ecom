@@ -423,7 +423,7 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                         </Accordion.Body>
                     </Accordion.Item>
                     {/* <hr /> */}
-                    <Accordion.Item eventKey="4" className="filter-acc-item">
+                    <Accordion.Item eventKey="4" className="filter-acc-item d-none">
                         <Accordion.Header>Attributes</Accordion.Header>
                         <Accordion.Body>
                             <div className="cat-filter-div">
@@ -641,7 +641,7 @@ const Filter = ({ data, setFilteredData, styles, checkedItems, setCheckedItems, 
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <hr />
-                                <Accordion.Item eventKey="4" >
+                                <Accordion.Item eventKey="4" className='d-none' >
                                     <Accordion.Header>Attributes</Accordion.Header>
                                     <Accordion.Body>
                                         <div className="cat-filter-div">
