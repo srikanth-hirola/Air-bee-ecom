@@ -3,11 +3,7 @@ import { Autoplay} from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
-// Import Swiper styles
 import 'swiper/css';
-// import 'swiper/css/navigation';
-// import 'swiper/css/pagination';
-// import 'swiper/css/scrollbar';
 
 export const DronesBannerSwiper = () => {
   return (
@@ -27,22 +23,22 @@ export const DronesBannerSwiper = () => {
     >
       <SwiperSlide>
         <div className='DronesBannerSwiper-image'>
-            <img src="./DronesHomepage/bannerswiper1.png" alt="" />
+            <img src="./DronesHomepage/bannerswiper1.png" alt="Banner " />
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className='DronesBannerSwiper-image'>
-            <img src="./DronesHomepage/bannerswiper1.png" alt="" />
+            <img src="./DronesHomepage/bannerswiper1.png" alt="Banner " />
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className='DronesBannerSwiper-image'>
-            <img src="./DronesHomepage/bannerswiper1.png" alt="" />
+            <img src="./DronesHomepage/bannerswiper1.png" alt="Banner " />
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className='DronesBannerSwiper-image'>
-            <img src="./DronesHomepage/bannerswiper1.png" alt="" />
+            <img src="./DronesHomepage/bannerswiper1.png" alt="Banner " />
         </div>
       </SwiperSlide>
     </Swiper>
