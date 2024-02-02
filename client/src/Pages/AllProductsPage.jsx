@@ -22,6 +22,7 @@ const AllProductsPage = () => {
     const [selectedPriceRange, setSelectedPriceRange] = useState();
     const [selectedBrands, setSelectedBrands] = useState([]);
     const [constantData, setConstantData] = useState([]);
+    const [isLoading, setLoading] = useState(true);
     const loaction = useLocation();
 
     useEffect(() => {
@@ -30,12 +31,16 @@ const AllProductsPage = () => {
 
 
     // const categoryData = searchParams.get("category");
-    const { allPublishedProducts, isLoading } = useSelector((state) => state.products);
+    const { allPublishedProducts } = useSelector((state) => state.products);
 
     const [data, setData] = useState([]);
     // const [active, setActive] = useState(false);
     const [filteredData, setFilteredData] = useState([]);
     const [filteredAttr, setFilteredAttr] = useState();
+    const [currentPage, setCurrentPage] = useState(1);
+    const [productsLength, setProductsLength] = useState(0);
+    const [filters, setFilters] = useState([]);
+
 
 
     useEffect(() => {
@@ -52,17 +57,24 @@ const AllProductsPage = () => {
             });
             if (decodedSearchParam.trim() === 'all products') {
                 const d = allPublishedProducts;
-                setData(d);
+                setFilters(d)
+                if (filteredData?.length > 0) {
+                    setData(filteredData)
+                } else {
+                    apiCallForPaginationProducts(currentPage)
+                    apiGetTotalProductsLength()
+                }
                 setConstantData(d)
             } else {
-                const searchTerm = decodedSearchParam.toLowerCase();
-                apiCall(searchTerm);
+                if (filteredData?.length === 0) {
+                    const searchTerm = decodedSearchParam.toLowerCase();
+                    apiCall(searchTerm);
+                }
             }
         }
-    }, [allPublishedProducts, searchParam, loaction]);
+    }, [allPublishedProducts, searchParam, loaction, currentPage, filteredData]);
 
     const apiCall = async (searchTerm) => {
-
         var encodedSearchTerm = encodeURIComponent(searchTerm);
         const { data } = await axios.get(`${server}/product/search/${encodedSearchTerm}`);
         let arrayData = [];
@@ -70,14 +82,44 @@ const AllProductsPage = () => {
         await data.products.map((val) => {
             arrayData.push(val.product);
         });
-        setConstantData(data?.products)
+        console.log("first")
+        setProductsLength(arrayData?.length)
+        setConstantData(arrayData)
+        setFilters(arrayData)
         setData(arrayData);
+        setLoading(false);
     };
+
+    const apiCallForPaginationProducts = async (currentPage) => {
+        const { data } = await axios.get(`${server}/product/get-published-products/pagination?page=${currentPage}&limit=${25}`);
+        setData(data?.products);
+        setLoading(false);
+    }
+
+    const apiGetTotalProductsLength = async () => {
+        const { data } = await axios.get(`${server}/product/get-published-products/length`);
+        setProductsLength(data?.length)
+    }
 
     const [isVisibleData, setIsVisibleData] = useState([]);
     const toggleDataVisible = () => {
         setIsVisibleData(!isVisibleData);
     };
+
+    useEffect(() => {
+        if (searchParam) {
+            const decodedSearchParam = decodeURIComponent(searchParam);
+            if (filteredData?.length > 0) {
+                setProductsLength(filteredData?.length)
+            } else {
+                if (decodedSearchParam.trim() === 'all products') {
+
+                    apiGetTotalProductsLength()
+                }
+            }
+        }
+    }, [filteredData, searchParam])
+
 
     return (
         <>
@@ -86,8 +128,8 @@ const AllProductsPage = () => {
             {isLoading ? <Loader /> :
                 <>
                     <div className='allproducts-parent'>
-                        <Filter constantData={constantData} data={filteredData?.length > 0 ? filteredData : data} setFilteredData={setFilteredData} styles={styles} checkedItems={checkedItems} setCheckedItems={setCheckedItems} selectedBrands={selectedBrands} selectedPriceRange={selectedPriceRange} setSelectedBrands={setSelectedBrands} setSelectedPriceRange={setSelectedPriceRange} filteredAttr={filteredAttr} setFilteredAttr={setFilteredAttr} isVisibleData={isVisibleData} toggleDataVisible={toggleDataVisible} />
-                        <AllProducts filteredProducts={filteredData?.length > 0 ? filteredData : data} bredCrumb={bredCrumb} checkedItems={checkedItems} setCheckedItems={setCheckedItems} data={data} setFilteredData={setFilteredData} setSelectedBrands={setSelectedBrands} selectedBrands={selectedBrands} setSelectedPriceRange={setSelectedPriceRange} setFilteredAttr={setFilteredAttr} isVisibleData={isVisibleData} toggleDataVisible={toggleDataVisible} />
+                        <Filter constantData={constantData} data={filteredData?.length > 0 ? filteredData : filters} setFilteredData={setFilteredData} styles={styles} checkedItems={checkedItems} setCheckedItems={setCheckedItems} selectedBrands={selectedBrands} selectedPriceRange={selectedPriceRange} setSelectedBrands={setSelectedBrands} setSelectedPriceRange={setSelectedPriceRange} filteredAttr={filteredAttr} setFilteredAttr={setFilteredAttr} isVisibleData={isVisibleData} toggleDataVisible={toggleDataVisible} />
+                        <AllProducts productsLength={productsLength} currentPage={currentPage} setCurrentPage={setCurrentPage} filteredProducts={filteredData?.length > 0 ? filteredData : data} bredCrumb={bredCrumb} checkedItems={checkedItems} setCheckedItems={setCheckedItems} data={data} setFilteredData={setFilteredData} setSelectedBrands={setSelectedBrands} selectedBrands={selectedBrands} setSelectedPriceRange={setSelectedPriceRange} setFilteredAttr={setFilteredAttr} isVisibleData={isVisibleData} toggleDataVisible={toggleDataVisible} />
                     </div>
                 </>
             }

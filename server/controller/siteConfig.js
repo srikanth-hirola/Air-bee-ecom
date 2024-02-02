@@ -5,11 +5,13 @@ const router = express.Router();
 const ErrorHandler = require('../utils/ErrorHandler');
 const Site = require('../model/siteConfig');
 const cloudinary = require('cloudinary');
+const { flushSiteConfig, cacheMiddleware } = require('../middleware/cacheMiddleware');
+
 
 
 // update site config
 router.post(
-    '/site-config',
+    '/site-config', flushSiteConfig,
     catchAsyncErrors(async (req, res, next) => {
         try {
             const { formData } = req.body;
@@ -37,7 +39,7 @@ router.post(
 
 // update currency type
 router.put(
-    '/site-config-currency',
+    '/site-config-currency', flushSiteConfig,
     catchAsyncErrors(async (req, res, next) => {
         try {
             const { currency, paymentMethods } = req.body;
@@ -61,7 +63,7 @@ router.put(
 
 // update contact us
 router.put(
-    '/site-config-contactus',
+    '/site-config-contactus', flushSiteConfig,
     catchAsyncErrors(async (req, res, next) => {
         try {
             const { contactUs } = req.body;
@@ -84,7 +86,7 @@ router.put(
 
 // update displaying sections
 router.put(
-    '/site-config-display',
+    '/site-config-display', flushSiteConfig,
     catchAsyncErrors(async (req, res, next) => {
         try {
             const { name, value } = req.body;
@@ -106,7 +108,7 @@ router.put(
 
 // update layout content
 router.put(
-    '/site-config-layout-content',
+    '/site-config-layout-content', flushSiteConfig,
     catchAsyncErrors(async (req, res, next) => {
         try {
             const { layoutContent, layoutName } = req.body;
@@ -128,7 +130,7 @@ router.put(
 
 // update selected categories
 router.put(
-    '/site-config-update-categories',
+    '/site-config-update-categories', flushSiteConfig,
     catchAsyncErrors(async (req, res, next) => {
         try {
             const { CategoryLayoutName, CategoryContent } = req.body;
@@ -149,7 +151,7 @@ router.put(
 );
 
 router.post(
-    '/site-config-logo',
+    '/site-config-logo', flushSiteConfig,
     catchAsyncErrors(async (req, res, next) => {
         try {
             const { image, name } = req.body;
@@ -251,7 +253,7 @@ router.post(
 
 //delete image
 router.delete(
-    '/site-config-image-delete',
+    '/site-config-image-delete', flushSiteConfig,
     catchAsyncErrors(async (req, res, next) => {
         try {
             const { objName, public_id } = req.body;
@@ -274,7 +276,7 @@ router.delete(
 
 //uploading images
 router.put(
-    '/site-config-imgs-upload',
+    '/site-config-imgs-upload', flushSiteConfig,
     catchAsyncErrors(async (req, res, next) => {
         try {
             const { allImages, name } = req.body;
@@ -309,7 +311,7 @@ router.put(
 
 
 router.post(
-    '/site-config-banner',
+    '/site-config-banner', flushSiteConfig,
     catchAsyncErrors(async (req, res, next) => {
         try {
             const { bannerImages } = req.body;
@@ -352,7 +354,7 @@ router.post(
 
 
 router.get(
-    '/site-config',
+    '/site-config', cacheMiddleware,
     catchAsyncErrors(async (req, res, next) => {
         try {
 

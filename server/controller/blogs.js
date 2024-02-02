@@ -6,6 +6,7 @@ const BlogCategory = require('../model/BlogsCategoryModel');
 const cloudinary = require('cloudinary');
 const { isSeller } = require('../middleware/auth');
 const catchAsyncErrors = require('../middleware/catchAsyncErrors');
+const { cacheMiddleware, flushBlogs } = require('../middleware/cacheMiddleware');
 
 
 router.get('/blogs-list', catchAsyncErrors(async (req, res) => {
@@ -31,7 +32,7 @@ router.get('/categories', catchAsyncErrors(async (req, res) => {
         });
 }));
 
-router.get('/pagination', catchAsyncErrors(async (req, res) => {
+router.get('/pagination', cacheMiddleware, catchAsyncErrors(async (req, res) => {
     const page = req.query.page || 1;
     const ITEMS_PER_PAGE = req.query.limit || 10
     try {
@@ -48,7 +49,7 @@ router.get('/pagination', catchAsyncErrors(async (req, res) => {
     }
 }));
 
-router.post('/compose', isSeller, catchAsyncErrors(async (req, res) => {
+router.post('/compose', isSeller, flushBlogs, catchAsyncErrors(async (req, res) => {
     try {
         const { blogData } = req.body;
         let allImages = blogData?.large_thumb;
@@ -126,7 +127,7 @@ router.get('/blog/edit/:id', catchAsyncErrors(async (req, res) => {
         });
 }));
 
-router.put('/update/:id', isSeller, catchAsyncErrors(async (req, res) => {
+router.put('/update/:id', isSeller, flushBlogs, catchAsyncErrors(async (req, res) => {
     try {
         const { blogEdit } = req.body;
         const { id } = req.params;
@@ -209,7 +210,7 @@ router.get('/blog/:publish', catchAsyncErrors(async (req, res) => {
     }
 }));
 
-router.delete('/delete-Img/:public_id/:blogId', isSeller, catchAsyncErrors(async (req, res) => {
+router.delete('/delete-Img/:public_id/:blogId', isSeller, flushBlogs, catchAsyncErrors(async (req, res) => {
     try {
         const { public_id, blogId } = req.params;
         await cloudinary.v2.uploader.destroy(public_id);
@@ -225,7 +226,7 @@ router.delete('/delete-Img/:public_id/:blogId', isSeller, catchAsyncErrors(async
     }
 }));
 
-router.delete('/blog/delete/:id', isSeller, catchAsyncErrors(async (req, res) => {
+router.delete('/blog/delete/:id', isSeller, flushBlogs, catchAsyncErrors(async (req, res) => {
     const requestedId = req.params.id;
     try {
         Blog.findByIdAndDelete({ _id: requestedId })

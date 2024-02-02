@@ -292,7 +292,6 @@ const Filter = ({ constantData, data, setFilteredData, styles, checkedItems, set
                                         onChange={(e) => { handleBrandCheckBox({ e, selectedBrands, setSelectedBrands }); handleCheckboxChange({ e, checkedItems, setCheckedItems }); }}
                                     />
                                     <label className="mb-0">{brand}</label>
-
                                 </li>
                             ))}
                             {/* <ul>
