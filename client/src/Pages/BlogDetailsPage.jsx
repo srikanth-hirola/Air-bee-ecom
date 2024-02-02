@@ -10,7 +10,6 @@ const BlogDetailsPage = () => {
             <DronesHeader />
             <DronesHeader2 />
             <BlogDetails />
-
         </>
     )
 }

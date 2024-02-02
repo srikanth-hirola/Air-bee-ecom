@@ -4,7 +4,7 @@ const FilteredContext = ({ checkedItems, setCheckedItems, data, setFilteredData,
 
     const { handleClearFilter, removeTag } = useFilterHandler()
 
-
+   
     return (
         <div className='d-flex align-items-center'>
             <div className="shoppage1-row2">

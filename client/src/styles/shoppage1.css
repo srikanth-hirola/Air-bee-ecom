@@ -344,7 +344,11 @@ ul.pagination-div.pagination {
 .DronesHeader-search-icon {
   background-color: #fff;
 }
-
+.desktop-filter-page1{
+  padding-inline: 20px;
+  padding-block: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
 .desktop-filter {
   /* border-right: 1px solid; */
   padding-inline: 20px;
@@ -370,7 +374,7 @@ ul.pagination-div.pagination {
   display: none;
 }
 
-.mobile-filters-data {
+.mobile-filter-page1 {
   display: none;
 }
 
@@ -446,8 +450,41 @@ td {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   padding: 20px 10px;
 }
+.desktop-filter-page1-button{
+  display: none;
+}
+.mobile-filter-page1 .offcanvas {
+  width: 300px !important;
+
+}
+/* .dachboard-offcanvasRight{
+  display: none;
+} */
 /* new */
 @media only screen and (max-width: 767px) {
+.mobile-filter-page1 .side-div{
+  height: auto !important;
+}
+  .dashboard-side-bar-data-view .outer1-div{
+    margin: 15px !important;
+  }
+  .desktop-filter-page1-button{
+    display: block;
+  }
+  .side-div .accordion-body .accordian-child a{
+    font-size: 14px;
+  }
+  .dashboard-side-bar-res .side-div .accordion .collapsed,.dashboard-side-bar-res .side-div .accordion button.accordion-button {
+    padding: 8px 5px;
+    font-size: 15px !important;
+    font-weight: 400;
+  }
+  /* .dachboard-offcanvasRight{
+    width: auto;
+  } */
+  .dasboard-user-width-mobile{
+    flex-direction: column;
+  }
   .shoppage1-price span {
     font-size: 10px;
   }
@@ -460,7 +497,14 @@ td {
   .desktop-filter {
     display: none;
   }
+  .desktop-filter-page1 {
+    display: none;
+  }
   .mobile-filters {
+    display: flex;
+    flex-direction: column;
+  }
+  .mobile-filter-page1{
     display: flex;
     flex-direction: column;
   }
@@ -536,7 +580,9 @@ td {
   .mobile-filters {
     display: none;
   }
-
+  .mobile-filter-page1{
+    display: none;
+  }
   .card.main-card {
     width: 48%;
   }
@@ -556,7 +602,9 @@ td {
   .mobile-filters {
     display: none;
   }
-
+  .mobile-filter-page1{
+    display: none;
+  }
   .card.main-card {
     width: 31%;
   }
@@ -566,10 +614,16 @@ td {
   .mobile-filters {
     display: none;
   }
+  .mobile-filter-page1{
+    display: none;
+  }
 }
 
 @media only screen and (min-width: 1400px) {
   .mobile-filters {
+    display: none;
+  }
+  .mobile-filter-page1{
     display: none;
   }
 }

@@ -16,7 +16,7 @@ const LoggedIn = () => {
             </div>
             {user ?
                 <>
-                    <button className='Droner-banner-sub-user-button1'><Link to={"/products?search=all%20products"}>Shop now</Link></button>
+                    <button className='Droner-banner-sub-user-button1'><Link to={"/products?search=all products"}>Shop now</Link></button>
                 </>
                 :
                 <>

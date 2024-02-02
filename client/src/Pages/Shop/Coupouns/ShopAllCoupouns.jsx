@@ -9,8 +9,8 @@ const ShopAllCoupouns = () => {
     return (
         <div>
             <DashboardHeader active={0} />
-            <div className="flex justify-between w-full">
-                <div className="w-[80px] 800px:w-[330px] dashboard-side-bar-res">
+            <div className="flex justify-between w-full dasboard-user-width-mobile">
+                <div className="800px:w-[330px] dashboard-side-bar-res">
                     <DashboardSideBar active={36} />
                 </div>
                 <div className="w-full justify-center flex dashboard-side-bar-data-view">

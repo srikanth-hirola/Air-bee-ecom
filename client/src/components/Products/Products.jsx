@@ -23,6 +23,7 @@ const Products = ({ title }) => {
             Array.from({ length: 20 }, (_, index) => allPublishedProducts[index % allPublishedProducts.length])
         )
         : [];
+    console.log("products", allPublishedProducts)
     return (
         <div className="DronesCategories-parent">
             <div>
@@ -37,7 +38,7 @@ const Products = ({ title }) => {
                     }}
                     modules={[Autoplay]}
                     spaceBetween={50}
-                    slidesPerView={4}
+                    slidesPerView={6}
                     navigation
                     pagination={{ clickable: true }}
                     loop={true}
@@ -64,7 +65,7 @@ const Products = ({ title }) => {
                         }
                     }}
                 >
-                    {duplicatedProducts.slice(0, 30).map((item, index) => (
+                    {duplicatedProducts.slice(0, 12).map((item, index) => (
                         <SwiperSlide key={index}>
                             <ProductCardMiddleware data1={item} key={index} />
                         </SwiperSlide>

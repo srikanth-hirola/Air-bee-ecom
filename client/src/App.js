@@ -32,8 +32,6 @@ import { socketId } from './components/Headers/socket.js';
 import { useSelector } from 'react-redux';
 
 
-
-
 const DronesHomepage = lazy(() => import('./components/DronesHomepage/DronesHomepage.jsx'));
 const AllProductsPage = lazy(() => import('./Pages/AllProductsPage.jsx'));
 const ProductDetailsPage = lazy(() => import('./Pages/ProductDetailsPage.jsx'));

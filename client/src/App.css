@@ -2467,7 +2467,6 @@ input.searchTest {
 .product-card-swiper {
   padding: 5px 0px 5px 0px !important;
 }
-
 @media screen and (max-width: 800px) {
   .home-hero-img-mq {
     display: inline;
@@ -2649,7 +2648,16 @@ border: none !important;
 }
 
 @media screen and (max-width: 800px) {
-
+  /* .dasboard-user-width-mobile{
+    flex-direction: column;
+  }
+  .dasboard-user-width-mobile .mobile-filters {
+    display: flex;
+    
+  } */
+.mobile-accordian-data-visible{
+  display: none;
+}
   .w-\[90\%\].bg-white.m-5.h-\[85vh\].overflow-y-scroll.rounded.dashboard-message-box-user{
     margin: 0 !important;
     width: 100% !important;
@@ -2712,10 +2720,6 @@ border: none !important;
     width: 185px;
   }
 
-  .dashboard-side-bar-res .side-div .accordion .collapsed,.dashboard-side-bar-res .side-div .accordion button.accordion-button {
-    padding: 8px 5px;
-    font-size: 15px;
-  }
 .dashboard-main-control-image{
   padding: 8px !important;
 }
@@ -2725,16 +2729,14 @@ border: none !important;
 .side-div .dashboard-main-control-image1 h5{
   font-size: 14px !important;
 } 
-  .dashboard-side-bar-data-view .outer1-div {
+  /* .dashboard-side-bar-data-view .outer1-div {
     padding: 0 !important;
     margin: 0 !important;
-  }
+  } */
   .side-div .accordion-body{
     padding: 0 5px !important;
   }
-  .side-div .accordion-body .accordian-child a{
-    font-size: 12px;
-  }
+
   .w-full.flex.items-center.accordian{
     padding-inline: 3px;
   }
@@ -2882,3 +2884,6 @@ border: none !important;
 .photo-galary-section-user .photos-page{
  padding:  16px 32px ;
 }
+
+
+/*New*/
