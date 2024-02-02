@@ -5,7 +5,7 @@ import { WithDrawHistory } from '../../../components/ShopComponents/WithDraw/Wit
 import DronesFooter from '../../../components/DronesHomepage/DronesFooter';
 
 
-export const WithDrawRequestsPage = () => {
+const WithDrawRequestsPage = () => {
     return (
         <div>
             <DashboardHeader />
@@ -17,7 +17,9 @@ export const WithDrawRequestsPage = () => {
                     <WithDrawHistory active={19} />
                 </div>
             </div>
-            <DronesFooter/>
+            <DronesFooter />
         </div>
     );
 }
+
+export default WithDrawRequestsPage

@@ -27,7 +27,7 @@ const Filter = ({ constantData, data, setFilteredData, styles, checkedItems, set
     const [selectedRating, setSelectedRating] = useState();
 
     const [attributes, setAttributes] = useState([]);
- 
+
     useEffect(() => {
         const updatedBrandState = [...filterBrand];
         const updatedCategoryState = [...category];
@@ -237,11 +237,11 @@ const Filter = ({ constantData, data, setFilteredData, styles, checkedItems, set
         }
         setPriceRanges(priceRanges);
     };
-    const [isVisible, setIsVisible] = useState(false);
+    // const [isVisible, setIsVisible] = useState(false);
 
-    const toggleVisibility = () => {
-      setIsVisible(!isVisible);
-    };
+    // const toggleVisibility = () => {
+    //   setIsVisible(!isVisible);
+    // };
 
     return (
 
@@ -456,14 +456,14 @@ const Filter = ({ constantData, data, setFilteredData, styles, checkedItems, set
       )}
     </div> */}
 
-    <button className='filter-button' onClick={() => setIsFilterVisible(!isFilterVisible)}>
-        {isFilterVisible ? 'Hide Filters' : 'Show Filters'}
-      </button>
+            <button className='filter-button' onClick={() => setIsFilterVisible(!isFilterVisible)}>
+                {isFilterVisible ? 'Hide Filters' : 'Show Filters'}
+            </button>
             <div className="mobile-filters">
                 <div>
-                   
-       
-        
+
+
+
                     {isFilterVisible && (
                         <div>
                             <Accordion>
@@ -662,8 +662,8 @@ const Filter = ({ constantData, data, setFilteredData, styles, checkedItems, set
                             </Accordion>
                         </div>
                     )}
-          
-      
+
+
                 </div>
             </div>
 

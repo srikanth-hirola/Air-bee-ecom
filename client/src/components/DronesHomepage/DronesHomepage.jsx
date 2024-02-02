@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 // import './Drones.css'
 
 import DronesBanner from './DronesBanner';
@@ -23,30 +23,44 @@ import DronesHeader2 from '../Headers/DronesHeader2';
 import DronesHeader from '../Headers/DronesHeader';
 import EventsHomeMiddle from '../../Pages/Events/EventsHomeMiddle';
 import DronesDirectionSensing from './DronesDirectionSensing';
+import { StyleConfig } from '../../utils/StyleConfig';
+import Loader from '../../utils/Loader';
 
 const DronesHomepage = () => {
+
+  const [isLoading, setLoading] = useState(true);
+
+  const styles = StyleConfig();
+
+  useEffect(() => {
+    setLoading(false)
+  }, [styles])
+
+
   return (
     <>
-      <DronesHeader />
-      <DronesHeader2 />
-      <DronesBanner />
-      <EventsHomeTop />
-      <DronesDirectionSensing />
-      {/* <DronesEyePlayground/> */}
-      {/* <DronesProductsRow2 /> */}
-      <CategoriesHome />
-      {/* <DronesProductsRow3 /> */}
-      <Products />
-      <EventsHomeMiddle />
-      <DronesQuotes />
-      <DronesRecommendedItems />
-      <DronesBrandlogos />
-      <DronesTestimonialSwiper />
-      <DronesServices />
-      <DronesFlags />
-      <EventsHomeBottom />
-      <DronesNewsletter />
-      <DronesFooter />
+      {isLoading ? <Loader /> : <>
+        <DronesHeader />
+        <DronesHeader2 />
+        <DronesBanner content={styles?.MainBannerContent} />
+        <EventsHomeTop content={styles?.eventTop} />
+        <DronesDirectionSensing featureSecOne={styles?.featureSecOne} featureSecTwo={styles?.featureSecTwo} />
+        {/* <DronesEyePlayground/> */}
+        {/* <DronesProductsRow2 /> */}
+        <CategoriesHome />
+        {/* <DronesProductsRow3 /> */}
+        <Products title={styles?.headingsContent?.featuredProducts} />
+        <EventsHomeMiddle content={styles?.eventMiddle} />
+        <DronesQuotes content={styles?.quoteContent} />
+        <DronesRecommendedItems title={styles?.headingsContent?.recommendedItems} />
+        <DronesBrandlogos content={styles?.brands} title={styles?.headingsContent?.brandsTitle} />
+        <DronesTestimonialSwiper content={styles?.testimonialContent} />
+        <DronesServices content={styles?.industriesContent} title={styles?.headingsContent?.industires} />
+        <DronesFlags content={styles?.regionsContent} title={styles?.headingsContent?.regionsTitle} />
+        <EventsHomeBottom content={styles?.eventBottom} />
+        <DronesNewsletter content={styles?.newsLetter} />
+        <DronesFooter />
+      </>}
     </>
 
   )

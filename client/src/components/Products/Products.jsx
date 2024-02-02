@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getPublishedProducts } from '../../redux/actions/product';
 import ProductCardMiddleware from '../ProductCards/ProductCardMiddleware';
 
-const Products = () => {
+const Products = ({ title }) => {
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -26,7 +26,7 @@ const Products = () => {
     return (
         <div className="DronesCategories-parent">
             <div>
-                <h2>Explore Our Featured Products</h2>
+                <h2>{title}</h2>
             </div>
             {allPublishedProducts?.length > 0 ? (
                 <Swiper

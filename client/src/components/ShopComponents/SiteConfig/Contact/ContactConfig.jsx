@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { StyleConfig } from '../../../../utils/StyleConfig';
 import useSaveLayoutContent from '../../../../hooks/useSaveLayoutContent';
 import toast from 'react-hot-toast';
+import ContactContent from './ContactContent';
 
 const ContactConfig = () => {
     const styles = StyleConfig();
@@ -66,7 +67,7 @@ const ContactConfig = () => {
                                 className='w-[250px] h-[40px] rounded bg-green-500 text-white' onClick={handleSubmit}>Update Contact Info</button>}
                     </div>
                 </div>
-
+                <ContactContent />
             </div>
         </div>
     )

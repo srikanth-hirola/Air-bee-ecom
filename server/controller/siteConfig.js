@@ -262,10 +262,9 @@ router.delete(
 
             let allImages = await foundLogo[0][objName].filter((val) => val?.public_id !== public_id);
 
-            const updateObject = { [objName]: allImages }; // Construct the update object
+            const updateObject = { [objName]: allImages };
 
-            await Site.updateMany({}, updateObject); // Pass the update object directly
-
+            await Site.updateMany({}, updateObject);
             res.status(200).json({ success: true });
         } catch (error) {
             return next(new ErrorHandler(error.message, 500));

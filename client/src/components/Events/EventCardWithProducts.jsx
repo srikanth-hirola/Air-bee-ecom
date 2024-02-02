@@ -5,7 +5,7 @@ import { server } from '../../server';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import ProductCardMiddleware from '../ProductCards/ProductCardMiddleware';
-const EventCardWithProducts = ({ data1 }) => {
+const EventCardWithProducts = ({ data1, content }) => {
 
 
     const [data, setData] = useState([]);
@@ -27,7 +27,6 @@ const EventCardWithProducts = ({ data1 }) => {
     }, [data1]);
 
 
-
     return (
         <>
             <div className='DronesProductsRow1-parent'>
@@ -36,7 +35,7 @@ const EventCardWithProducts = ({ data1 }) => {
                         <div className="col-md-6 col-lg-3 p-0">
                             <div className='DronesProductsRow1-sub1-text-parent'>
                                 <div className='DronesProductsRow1-sub1-text'>
-                                    <h4>Deals and offers</h4>
+                                    <h4>{content?.title}</h4>
                                     <p>{data1?.name}</p>
                                 </div>
                                 <div className='DronesProductsRow1-sub1-timer'>
@@ -44,7 +43,7 @@ const EventCardWithProducts = ({ data1 }) => {
                                         <CountDown data={data1} />
                                     </div>
                                     <div className='DronesProductRow1Timer-button'>
-                                        <Link to={`/event/${data1?.slug}`}>Show More</Link>
+                                        <Link to={`/event/${data1?.slug}`}>{content?.btnTitle}</Link>
                                     </div>
                                 </div>
 

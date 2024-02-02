@@ -24,7 +24,6 @@ const AllProductsPage = () => {
     const [constantData, setConstantData] = useState([]);
     const loaction = useLocation();
 
-
     useEffect(() => {
         dispatch(getPublishedProducts())
     }, [dispatch])

@@ -5,7 +5,7 @@ import { ProductGallery } from '../../../components/ShopComponents/Gallery/Produ
 import DronesFooter from '../../../components/DronesHomepage/DronesFooter';
 
 
-export const ProductsGalleryPage = () => {
+const ProductsGalleryPage = () => {
     return (
         <div>
             <DashboardHeader />
@@ -13,11 +13,13 @@ export const ProductsGalleryPage = () => {
                 <div className="w-[80px] 800px:w-[330px] dashboard-side-bar-res">
                     <DashboardSideBar active={9} />
                 </div>
-                
-                    <ProductGallery active={9}/>
-                
+
+                <ProductGallery active={9} />
+
             </div>
-            <DronesFooter/>
+            <DronesFooter />
         </div>
     )
 }
+
+export default ProductsGalleryPage

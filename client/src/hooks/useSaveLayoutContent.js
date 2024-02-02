@@ -21,7 +21,12 @@ const useSaveLayoutContent = () => {
         }
     };
 
-    return { saveLayoutContent };
+    const hanldeSubmit = (e, layoutContent, layoutName, setLogoLoading) => {
+        e.preventDefault();
+        saveLayoutContent(layoutContent, layoutName, setLogoLoading)
+    }
+
+    return { saveLayoutContent, hanldeSubmit };
 };
 
 export default useSaveLayoutContent;

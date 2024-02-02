@@ -26,25 +26,12 @@ import { getAllCategories } from './redux/actions/category.js';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import axios from 'axios';
-
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { ForgetPassword } from './components/User/ForgetPassword.jsx';
-import { ProductsGalleryPage } from './Pages/Shop/Gallery/ProductsGalleryPage.jsx';
-import { AllDraftEvents } from './Pages/Shop/Events/AllDraftEvents.jsx';
-import { EventEditPage } from './Pages/Shop/Events/EventEditPage.jsx';
-import { WithDrawHistoryPage } from './Pages/Shop/WithDraw/WithDrawHistoryPage.jsx'
-import { WithDrawRequestsPage } from './Pages/Shop/WithDraw/WithDrawRequestPage.jsx';
-import { EventsConfigPage } from './Pages/Site-Config/EventsConfigPage.jsx';
-import { About } from './Pages/AboutUs/About.jsx';
 import Loader from './utils/Loader.jsx';
-import { CategoriesConfigPage } from './Pages/Site-Config/CategoriesConfigPage.jsx';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { socketId } from './components/Headers/socket.js';
 import { useSelector } from 'react-redux';
-import CreateNewsletterPage from './Pages/Site-Config/CaresteNewsLetterPage.jsx';
-import Blog from './Pages/Blog.jsx';
-import TermsAndConditions from './Pages/TermsAndConditions.jsx';
-import PrivacyPolicy from './Pages/PrivacyPolicy.jsx';
-import RefundsPolicy from './Pages/RefundPolicy.jsx';
+
+
 
 
 const DronesHomepage = lazy(() => import('./components/DronesHomepage/DronesHomepage.jsx'));
@@ -116,6 +103,39 @@ const ContactConfigPage = lazy(() => import('./Pages/Site-Config/ContactConfigPa
 const InquiriesPage = lazy(() => import('./Pages/Forms/InquiriesPage.jsx'));
 const ContactsPage = lazy(() => import('./Pages/Forms/ContactsPage.jsx'));
 
+const CreateNewsletterPage = lazy(() => import('./Pages/Site-Config/CaresteNewsLetterPage.jsx'));
+const Blog = lazy(() => import('./Pages/Blog.jsx'));
+const TermsAndConditions = lazy(() => import('./Pages/TermsAndConditions.jsx'));
+const PrivacyPolicy = lazy(() => import('./Pages/PrivacyPolicy.jsx'));
+const RefundsPolicy = lazy(() => import('./Pages/RefundPolicy.jsx'));
+const AboutUsConfigPage = lazy(() => import('./Pages/Site-Config/AboutUsConfigPage.jsx'));
+const BannerConfigPage = lazy(() => import('./Pages/Site-Config/BannerConfigPage.jsx'));
+const FeaturesConfigPage = lazy(() => import('./Pages/Site-Config/FeaturesConfigPage.jsx'));
+const QuoteConfigPage = lazy(() => import('./Pages/Site-Config/QuoteConfigPage.jsx'));
+const BrandsConfigPage = lazy(() => import('./Pages/Site-Config/BrandsConfigPage.jsx'));
+const TestimonialsConfigPages = lazy(() => import('./Pages/Site-Config/TestimonialsConfigPages.jsx'));
+const IndustriesConfigPage = lazy(() => import('./Pages/Site-Config/IndustriesConfigPage.jsx'));
+const RegionsConfigPage = lazy(() => import('./Pages/Site-Config/RegionsConfigPage.jsx'));
+const NewsLetterConfigPage = lazy(() => import('./Pages/Site-Config/NewsLetterConfigPage.jsx'));
+const BlogsListPage = lazy(() => import('./Pages/Shop/Blogs/BlogsListPage.jsx'));
+const EditBlogPage = lazy(() => import('./Pages/Shop/Blogs/EditBlogPage.jsx'));
+const AddBlogsPage = lazy(() => import('./Pages/Shop/Blogs/AddBlogsPage.jsx'));
+const BlogPreviewPage = lazy(() => import('./Pages/Shop/Blogs/BlogPreviewPage.jsx'));
+const BlogDetailsPage = lazy(() => import('./Pages/BlogDetailsPage.jsx'));
+const BlogsConfigPage = lazy(() => import('./Pages/Site-Config/BlogsConfigPage.jsx'));
+const FooterConfigPage = lazy(() => import('./Pages/Site-Config/FooterConfigPage.jsx'));
+const HeadingsConfigPage = lazy(() => import('./Pages/Site-Config/HeadingsConfigPage.jsx'));
+
+const ForgetPassword = lazy(() => import('./components/User/ForgetPassword.jsx'));
+const ProductsGalleryPage = lazy(() => import('./Pages/Shop/Gallery/ProductsGalleryPage.jsx'));
+const AllDraftEvents = lazy(() => import('./Pages/Shop/Events/AllDraftEvents.jsx'));
+const EventEditPage = lazy(() => import('./Pages/Shop/Events/EventEditPage.jsx'));
+const WithDrawHistoryPage = lazy(() => import('./Pages/Shop/WithDraw/WithDrawHistoryPage.jsx'));
+const WithDrawRequestsPage = lazy(() => import('./Pages/Shop/WithDraw/WithDrawRequestPage.jsx'));
+const EventsConfigPage = lazy(() => import('./Pages/Site-Config/EventsConfigPage.jsx'));
+const About = lazy(() => import('./Pages/AboutUs/About.jsx'));
+const CategoriesConfigPage = lazy(() => import('./Pages/Site-Config/CategoriesConfigPage.jsx'));
+
 
 // register Swiper custom elements
 register();
@@ -179,15 +199,15 @@ const App = () => {
 
   function ScrollToTop() {
     const { pathname } = useLocation();
-  
+
     useEffect(() => {
       window.scrollTo(0, 0);
     }, [pathname]);
-  
+
     return null;
   }
   return (
-    
+
     <BrowserRouter >
 
       {stripeApikey && (
@@ -206,7 +226,7 @@ const App = () => {
           </Suspense>
         </Elements>
       )}
-      <ScrollToTop/>
+      <ScrollToTop />
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" exact element={<DronesHomepage />} />
@@ -223,6 +243,7 @@ const App = () => {
           <Route path="/event/:id" element={<EventProductsPage />} />
           <Route path="/about-us" element={<About />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogDetailsPage />} />
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/refund-policy" element={<RefundsPolicy />} />
@@ -677,6 +698,102 @@ const App = () => {
             }
           />
           <Route
+            path="/site-config/footer-config"
+            element={
+              <SellerProtectedRoute>
+                <FooterConfigPage />
+              </SellerProtectedRoute>
+            }
+          />
+          <Route
+            path="/site-config/section-titles-config"
+            element={
+              <SellerProtectedRoute>
+                <HeadingsConfigPage />
+              </SellerProtectedRoute>
+            }
+          />
+          <Route
+            path="/site-config/about-us-config"
+            element={
+              <SellerProtectedRoute>
+                <AboutUsConfigPage />
+              </SellerProtectedRoute>
+            }
+          />
+          <Route
+            path="/site-config/banner-config"
+            element={
+              <SellerProtectedRoute>
+                <BannerConfigPage />
+              </SellerProtectedRoute>
+            }
+          />
+          <Route
+            path="/site-config/features-config"
+            element={
+              <SellerProtectedRoute>
+                <FeaturesConfigPage />
+              </SellerProtectedRoute>
+            }
+          />
+          <Route
+            path="/site-config/form-quote-config"
+            element={
+              <SellerProtectedRoute>
+                <QuoteConfigPage />
+              </SellerProtectedRoute>
+            }
+          />
+          <Route
+            path="/site-config/brands-config"
+            element={
+              <SellerProtectedRoute>
+                <BrandsConfigPage />
+              </SellerProtectedRoute>
+            }
+          />
+          <Route
+            path="/site-config/testimonials-config"
+            element={
+              <SellerProtectedRoute>
+                <TestimonialsConfigPages />
+              </SellerProtectedRoute>
+            }
+          />
+          <Route
+            path="/site-config/industries-config"
+            element={
+              <SellerProtectedRoute>
+                <IndustriesConfigPage />
+              </SellerProtectedRoute>
+            }
+          />
+          <Route
+            path="/site-config/regions-config"
+            element={
+              <SellerProtectedRoute>
+                <RegionsConfigPage />
+              </SellerProtectedRoute>
+            }
+          />
+          <Route
+            path="/site-config/newsletter-config"
+            element={
+              <SellerProtectedRoute>
+                <NewsLetterConfigPage />
+              </SellerProtectedRoute>
+            }
+          />
+          <Route
+            path="/site-config/blogs-config"
+            element={
+              <SellerProtectedRoute>
+                <BlogsConfigPage />
+              </SellerProtectedRoute>
+            }
+          />
+          <Route
             path="/site-config/miscellaneous-config"
             element={
               <SellerProtectedRoute>
@@ -685,6 +802,51 @@ const App = () => {
             }
           />
           {/* site-config */}
+
+
+          {/* blogs start here */}
+          <Route
+            path="/admin/blog/edit/:id"
+            exact
+            element={
+              <SellerProtectedRoute>
+                <EditBlogPage />
+              </SellerProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/blog/compose"
+            exact
+            element={
+              <SellerProtectedRoute>
+                <AddBlogsPage />
+              </SellerProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/blogs"
+            exact
+            element={
+              <SellerProtectedRoute>
+                <BlogsListPage />
+              </SellerProtectedRoute>
+
+            }
+          />
+          <Route
+            path="/admin/blog/:publish"
+            exact
+            element={
+              <SellerProtectedRoute>
+                <BlogPreviewPage />
+              </SellerProtectedRoute>
+            }
+          />
+          {/* blogs ends here */}
+
+
+
+
         </Routes>
       </Suspense>
 

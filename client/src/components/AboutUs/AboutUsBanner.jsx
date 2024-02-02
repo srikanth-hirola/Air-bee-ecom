@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-const AboutUsBanner = () => {
+const AboutUsBanner = ({ content }) => {
+
     return (
         <>
             <div className='AboutUsBanner-parent'>
@@ -9,24 +10,32 @@ const AboutUsBanner = () => {
                         <div className="col-md-6">
                             <div className='AboutUsBanner-sub'>
                                 <div className='AboutUsBanner-sub-content'>
-                                    <div className='AboutUsBanner-sub-content-image'>
-                                        <img src="/DronesHomepage/verify.png" alt="" />
+                                    {content?.tagImage?.image?.url &&
+                                        <div className='AboutUsBanner-sub-content-image'>
+                                            <img src={content?.tagImage?.image?.url} alt="tag" />
+                                        </div>
+                                    }
+                                    {content?.tagTitle && <p>{content?.tagTitle}</p>}
+                                </div>
+                                {content?.title && <h1>{content?.title}</h1>}
+                                {content?.summary &&
+                                    <div className='AboutUsBanner-sub-content-text'>
+                                        <p>{content?.summary}</p>
                                     </div>
-                                    <p>Air Bee - Best Electronics Platform </p>
-                                </div>
-                                <h1>Discover Our Inspiring Story of Innovation and Success.</h1>
-                                <div className='AboutUsBanner-sub-content-text'>
-                                    <p>Air Bee is a newbie in the field of Electronics components, projects ad solutions. Founded in 2024. but we are into this industry from 2015 onwards. We intend to provide a convenient and quick e-commerce platform for customers keeping keen interest in the field of electronics as well as the one who wants to explore the field of electronics.</p>
-                                </div>
-                                <Link to="">
-                                    <button>Shop Now</button>
-                                </Link>
+                                }
+                                {content?.button?.title &&
+                                    <Link to={content?.button?.link}>
+                                        <button>{content?.button?.title}</button>
+                                    </Link>
+                                }
                             </div>
                         </div>
                         <div className="col-md-6">
-                            <div className='AboutUsBanner-image'>
-                                <img src="/DronesHomepage/aboutusbanner.png" alt="" />
-                            </div>
+                            {content?.BannerImage?.image?.url &&
+                                <div className='AboutUsBanner-image'>
+                                    <img src={content?.BannerImage?.image?.url} alt="banner" />
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>

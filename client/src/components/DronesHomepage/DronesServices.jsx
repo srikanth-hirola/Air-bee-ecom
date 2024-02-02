@@ -1,29 +1,25 @@
 import React from 'react'
-import { Services } from './DroneHomepageData'
 
-const DronesServices = () => {
-    const data = Services
+const DronesServices = ({ content, title }) => {
 
     return (
         <>
             <div className='DronesServices-parent'>
-                <h4>Industries We Serve</h4>
-                {data?.ServicesContent?.servicesimages?.content?.items?.items?.length > 0 &&
+                <h4>{title}</h4>
+                {content?.industries?.length > 0 &&
                     <div className="row">
 
-                        {data?.ServicesContent?.servicesimages?.content?.items?.items?.map((item, index) => (
+                        {content?.industries?.map((item, index) => (
                             <div className="col-sm-6 col-md-6 col-lg-3" key={index}>
                                 <div className='Drone-services-sub'>
                                     <div className='Drone-services-sub-image'>
-                                        <img src={item?.img?.url} alt="" />
+                                        <img src={item?.image?.url} alt="" />
                                     </div>
                                     <div className='Drone-services-sub-2'>
-                                        <p>{item?.SubText?.text}</p>
-                                        {data?.servicesIcon?.icon?.content?.items[index] && (
-                                            <div className='Drone-services-icon'>
-                                                <img src={data?.servicesIcon?.icon?.content?.items[index]?.img?.url} alt="" />
-                                            </div>
-                                        )}
+                                        <p>{item?.title}</p>
+                                        <div className='Drone-services-icon'>
+                                            <img src={content?.icons[index]?.image?.url} alt="icons" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>

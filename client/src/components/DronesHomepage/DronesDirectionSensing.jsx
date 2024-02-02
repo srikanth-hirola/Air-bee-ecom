@@ -1,54 +1,51 @@
 import React from 'react'
 // import './Drones.css'
 import DronesEyePlayground from './DronesEyePlayground'
-const DronesDirectionSensing = () => {
+const DronesDirectionSensing = ({ featureSecOne, featureSecTwo }) => {
+
     return (
         <>
             <div className='DronesDirectionSensing-parent'>
                 <div className="row">
                     <div className="col-md-4">
                         <div className='DronesDirectionSEnsingsub1'>
-                            <div className="DronesDirectionSensing-image">
-                                <img src="./DronesHomepage/image 129.png" alt="" />
-                            </div>
+                            {featureSecOne?.BannerImage?.image?.url &&
+                                <div className="DronesDirectionSensing-image">
+                                    <img src={featureSecOne?.BannerImage?.image?.url} alt="Feature Main" />
+                                </div>
+                            }
                         </div>
                     </div>
                     <div className="col-md-8">
-                    <div className='DRonesDirectionSnsing-right'>
-                    <div className='DronesDirectionSEnsingsub1-text'>
-                                <div className='DronesDirectionSEnsingsub1-text-heading'>
-                                    <h1>Explore the World of Electronics with Air Bee</h1>
-                                </div>
-                                <p>Our user-friendly e-commerce platform is designed for your convenience. Browse, select, and purchase with ease, 24x7.</p>
+                        <div className='DRonesDirectionSnsing-right'>
+                            <div className='DronesDirectionSEnsingsub1-text'>
+                                {featureSecOne?.title &&
+                                    <div className='DronesDirectionSEnsingsub1-text-heading'>
+                                        <h1>{featureSecOne?.title}</h1>
+                                    </div>
+                                }
+                                {featureSecOne?.summary &&
+                                    <p>{featureSecOne?.summary}</p>
+                                }
                             </div>
-                       <div className="DronesDirectionSEnsingsub2-parent">
-                            <div className='DronesDirectionSEnsingsub2-sub1'>
-                                <div className='DronesDirectionSEnsingsub2-sub1-image'>
-                                    <img src="https://cdn-icons-png.freepik.com/256/1534/1534216.png?ga=GA1.1.1442251636.1706281640&semt=ais" alt="" />
+                            {featureSecOne?.features?.length > 0 &&
+                                <div className="DronesDirectionSEnsingsub2-parent">
+                                    {featureSecOne?.features?.map((item, i) => (
+                                        <div className='DronesDirectionSEnsingsub2-sub1' key={i}>
+                                            <div className='DronesDirectionSEnsingsub2-sub1-image'>
+                                                <img src={item?.image?.url} alt="feature" />
+                                            </div>
+                                            <p>{item?.title}</p>
+                                        </div>
+                                    ))}
                                 </div>
-                                <p>Quality Assurance</p>
-                            </div>
-                            <div className='DronesDirectionSEnsingsub2-sub1'>
-                                <div className='DronesDirectionSEnsingsub2-sub1-image'>
-                                    <img src="https://cdn-icons-png.freepik.com/256/2601/2601800.png?ga=GA1.1.1442251636.1706281640&semt=ais" alt="" />
-                                </div>
-                                <p>Innovation Hub</p>
-                            </div>
-                            <div className='DronesDirectionSEnsingsub2-sub1'>
-                                <div className='DronesDirectionSEnsingsub2-sub1-image'>
-                                    <img src="https://cdn-icons-png.freepik.com/256/10436/10436073.png?ga=GA1.1.1442251636.1706281640&semt=ais" alt="" />
-                                </div>
-                                <p>Customer-Centric</p>
-                            </div>
+                            }
                         </div>
-
-
-                    </div>
                     </div>
                 </div>
 
             </div>
-            <DronesEyePlayground/>
+            <DronesEyePlayground featureSecTwo={featureSecTwo} />
         </>
 
     )

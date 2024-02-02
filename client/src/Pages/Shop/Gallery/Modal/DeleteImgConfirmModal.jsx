@@ -14,9 +14,9 @@ export const DeleteImgConfirmModal = (props) => {
 
     const handleDeleteImage = async (e) => {
         e.preventDefault();
+
         try {
-            console.log(props?.objName)
-            await axios.delete(`${server}/site/site-config-image-delete/${props?.modalDeleteId}`, { data: { objName: props?.objName } });
+            await axios.delete(`${server}/site/site-config-image-delete`, { data: { objName: props?.objName, public_id: props?.modalDeleteId } });
             toast.success('Deleted Image successfully')
             props.setModalShow(false)
         } catch (error) {

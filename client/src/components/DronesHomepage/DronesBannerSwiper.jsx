@@ -1,5 +1,5 @@
 // import Swiper core and required modules
-import { Autoplay} from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
@@ -9,57 +9,47 @@ import 'swiper/css';
 // import 'swiper/css/pagination';
 // import 'swiper/css/scrollbar';
 
-export const DronesBannerSwiper = () => {
+export const DronesBannerSwiper = ({ content }) => {
   return (
     <>
-    <div className="DronesBannerSWiper-parent">
-       <div className="col-md-12">
-       <Swiper
-      // install Swiper modules
-      modules={[Autoplay]}
-      spaceBetween={50}
-      slidesPerView={1}
-      autoplay={{
-        delay: 1500,
-        disableOnInteraction: false,
-    }}
-    loop={true}
-    >
-      <SwiperSlide>
-        <div className='DronesBannerSwiper-image'>
-            <img src="./DronesHomepage/bannerswiper1.png" alt="" />
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className='DronesBannerSwiper-image'>
-            <img src="./DronesHomepage/bannerswiper1.png" alt="" />
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className='DronesBannerSwiper-image'>
-            <img src="./DronesHomepage/bannerswiper1.png" alt="" />
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className='DronesBannerSwiper-image'>
-            <img src="./DronesHomepage/bannerswiper1.png" alt="" />
-        </div>
-      </SwiperSlide>
-    </Swiper>
-       </div>
-    </div>
-    <div className='Drone-bannerswiper-content'>
+      <div className="DronesBannerSWiper-parent">
+        {content?.banners?.length > 0 &&
+          <div className="col-md-12">
+            <Swiper
+              // install Swiper modules
+              modules={[Autoplay]}
+              spaceBetween={50}
+              slidesPerView={1}
+              autoplay={{
+                delay: 1500,
+                disableOnInteraction: false,
+              }}
+              loop={true}
+            >
+              {content?.banners?.map((item, i) => (
+                <SwiperSlide key={i}>
+                  <div className='DronesBannerSwiper-image'>
+                    <img srcSet={item?.image?.url} src={item?.image?.url} alt="banner" />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        }
+      </div>
+      <div className='Drone-bannerswiper-content'>
         <div className='Drone-bannerswiper-content-sub'>
-        <div className='Drone-bannerswiper-content-sub1'>
-            <h3>Electronic items</h3>
-            <p>Latest Trending</p>
+          <div className='Drone-bannerswiper-content-sub1'>
+            {content?.content?.title && <h3>{content?.content?.title}</h3>}
+            {content?.content?.subTitle && <p>{content?.content?.subTitle}</p>}
+          </div>
+          {content?.button?.title &&
+            <div className='Drone-bannerswiper-content-sub2'>
+              <Link to={content?.button?.url}><button>{content?.button?.title}</button></Link>
+            </div>
+          }
         </div>
-        <div className='Drone-bannerswiper-content-sub2'>
-        <Link to="/products?search=all products"><button>Shop Now</button></Link>
-            
-        </div>
-        </div>
-    </div>
+      </div>
     </>
   );
 };

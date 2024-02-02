@@ -3,9 +3,8 @@ import { useSelector } from 'react-redux';
 import { StyleConfig } from '../../utils/StyleConfig';
 import EventCardBottom from '../../components/Events/EventCardBottom';
 
-const EventsHomeBottom = () => {
+const EventsHomeBottom = ({ content }) => {
     const { allEvents } = useSelector((state) => state.events);
-
     const [eventLayountOneSelectedEvents, setEventLayoutOneSelectedEvents] = useState([])
 
     const styles = StyleConfig();
@@ -21,7 +20,7 @@ const EventsHomeBottom = () => {
             allEvents?.map((val, index) => {
                 if (eventLayountOneSelectedEvents?.includes(val?._id)) {
                     return (
-                        <EventCardBottom data1={val} key={index} />
+                        <EventCardBottom data1={val} key={index} content={content} />
                     );
                 }
             })}

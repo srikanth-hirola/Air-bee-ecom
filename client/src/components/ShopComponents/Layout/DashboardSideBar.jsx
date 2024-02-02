@@ -225,7 +225,6 @@ const DashboardSideBar = ({ active }) => {
                                 </Link>
                             </div> */}
                             <div className="w-full flex items-center accordian-child">
-
                                 <div className="w-full accordian-child">
                                     <Link
                                         to="/shop/products-gallery"
@@ -304,7 +303,6 @@ const DashboardSideBar = ({ active }) => {
                     </Accordion.Item>
                     <Accordion.Item eventKey="3">
                         <Accordion.Header>
-
                             Refunds
                         </Accordion.Header>
                         <Accordion.Body>
@@ -348,7 +346,6 @@ const DashboardSideBar = ({ active }) => {
                                     style={{ color: active === 15 ? 'orange' : 'black' }}
                                     onClick={() => sideBarActive(15)}
                                 >
-
                                     {/* <h5
                                         className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 2 ? 'text-[crimson]' : 'text-[#555]'
                                             }`}
@@ -364,7 +361,6 @@ const DashboardSideBar = ({ active }) => {
                                     style={{ color: active === 16 ? 'orange' : 'black' }}
                                     onClick={() => sideBarActive(16)}
                                 >
-
                                     {/* <h5
                                         className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 2 ? 'text-[crimson]' : 'text-[#555]'
                                             }`}
@@ -377,7 +373,6 @@ const DashboardSideBar = ({ active }) => {
                     </Accordion.Item>
                     <div className="w-full flex items-center  dashboard-main-control-image1">
                         <Link to="/shop/categories" className="w-full flex items-center">
-
                             <h5
                                 className={` 800px:block pl-1 text-[16px] font-[400] m-0 text-[#555]
                                     `}
@@ -640,6 +635,126 @@ const DashboardSideBar = ({ active }) => {
                             </div>
                             <div className="w-full flex items-center accordian-child">
                                 <Link
+                                    to="/site-config/about-us-config"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 40 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(40)}
+                                >
+                                    About Us Details Config
+                                </Link>
+                            </div>
+                            <div className="w-full flex items-center accordian-child">
+                                <Link
+                                    to="/site-config/banner-config"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 41 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(41)}
+                                >
+                                    Banner Config
+                                </Link>
+                            </div>
+                            <div className="w-full flex items-center accordian-child">
+                                <Link
+                                    to="/site-config/features-config"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 42 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(42)}
+                                >
+                                    Features Config
+                                </Link>
+                            </div>
+                            <div className="w-full flex items-center accordian-child">
+                                <Link
+                                    to="/site-config/form-quote-config"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 43 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(43)}
+                                >
+                                    Form Quote Config
+                                </Link>
+                            </div>
+                            <div className="w-full flex items-center accordian-child">
+                                <Link
+                                    to="/site-config/brands-config"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 44 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(44)}
+                                >
+                                    Brands Config
+                                </Link>
+                            </div>
+                            <div className="w-full flex items-center accordian-child">
+                                <Link
+                                    to="/site-config/testimonials-config"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 45 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(45)}
+                                >
+                                    Testimonials Config
+                                </Link>
+                            </div>
+                            <div className="w-full flex items-center accordian-child">
+                                <Link
+                                    to="/site-config/industries-config"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 46 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(46)}
+                                >
+                                    Industries Config
+                                </Link>
+                            </div>
+                            <div className="w-full flex items-center accordian-child">
+                                <Link
+                                    to="/site-config/regions-config"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 47 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(47)}
+                                >
+                                    Regions Config
+                                </Link>
+                            </div>
+                            <div className="w-full flex items-center accordian-child">
+                                <Link
+                                    to="/site-config/newsletter-config"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 48 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(48)}
+                                >
+                                    NewsLetter Config
+                                </Link>
+                            </div>
+                            <div className="w-full flex items-center accordian-child">
+                                <Link
+                                    to="/site-config/blogs-config"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 51 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(51)}
+                                >
+                                    Blogs Config
+                                </Link>
+                            </div>
+                            <div className="w-full flex items-center accordian-child">
+                                <Link
+                                    to="/site-config/footer-config"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 52 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(52)}
+                                >
+                                    Footer Config
+                                </Link>
+                            </div>
+                            <div className="w-full flex items-center accordian-child">
+                                <Link
+                                    to="/site-config/section-titles-config"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 53 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(53)}
+                                >
+                                    Section Titles Config
+                                </Link>
+                            </div>
+                            <div className="w-full flex items-center accordian-child">
+                                <Link
                                     to="/site-config/miscellaneous-config"
                                     className="w-full h-full flex items-center pl-2"
                                     style={{ color: active === 27 ? 'orange' : 'black' }}
@@ -678,6 +793,33 @@ const DashboardSideBar = ({ active }) => {
                                     onClick={() => sideBarActive(29)}
                                 >
                                     Contacts
+                                </Link>
+                            </div>
+                        </Accordion.Body>
+                    </Accordion.Item>
+                    <Accordion.Item eventKey="8">
+                        <Accordion.Header>
+                            Blogs
+                        </Accordion.Header>
+                        <Accordion.Body>
+                            <div className="w-full flex items-center accordian-child">
+                                <Link
+                                    to="/admin/blog/compose"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 49 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(49)}
+                                >
+                                    Compose Blog
+                                </Link>
+                            </div>
+                            <div className="w-full flex items-center accordian-child">
+                                <Link
+                                    to="/admin/blogs"
+                                    className="w-full h-full flex items-center pl-2"
+                                    style={{ color: active === 50 ? 'orange' : 'black' }}
+                                    onClick={() => sideBarActive(50)}
+                                >
+                                    Blogs
                                 </Link>
                             </div>
                         </Accordion.Body>

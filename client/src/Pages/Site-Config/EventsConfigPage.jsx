@@ -5,7 +5,7 @@ import { EventsConfig } from '../../components/ShopComponents/SiteConfig/Events/
 import DronesFooter from '../../components/DronesHomepage/DronesFooter';
 
 
-export const EventsConfigPage = () => {
+const EventsConfigPage = () => {
     return (
         <div>
             <DashboardHeader />
@@ -13,9 +13,11 @@ export const EventsConfigPage = () => {
                 <div className="w-[80px] 800px:w-[330px] dashboard-side-bar-res">
                     <DashboardSideBar active={26} />
                 </div>
-                <EventsConfig active={26}/>
+                <EventsConfig active={26} />
             </div>
-            <DronesFooter/>
+            <DronesFooter />
         </div>
     );
 }
+
+export default EventsConfigPage

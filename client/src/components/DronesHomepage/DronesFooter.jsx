@@ -1,11 +1,12 @@
 import React from 'react'
-import { Footer } from './DroneHomepageData'
 import { StyleConfig } from '../../utils/StyleConfig'
 import { Link } from 'react-router-dom'
 
 const DronesFooter = () => {
-    const data = Footer
     const styles = StyleConfig();
+    const footerContent = styles?.footerContent;
+    const footerMapper = styles?.OtherFooterContent
+
     return (
         <>
             <div className="Drones-footer-parent">
@@ -13,19 +14,21 @@ const DronesFooter = () => {
                     <div className="row">
                         <div className="col-md-6 col-lg-3">
                             <div className="Drones-footer-logo-content">
-                                <div className='Drones-footer-logo-image'>
-                                    <img src={styles?.logo?.url} alt="logo" className='mix-blend-multiply object-cover' />
-                                </div>
-                                <p>Our mission is to simplify the world of electronics for enthusiasts, hobbyists, and professionals alike.</p>
-                                {data?.SocialMedia?.Links?.content?.img?.length > 0 &&
+                                {footerContent?.logo?.image?.url &&
+                                    <div className='Drones-footer-logo-image'>
+                                        <img src={footerContent?.logo?.image?.url} alt="logo" className='mix-blend-multiply object-cover' />
+                                    </div>
+                                }
+                                {footerContent?.summary && <p>{footerContent?.summary}</p>}
+                                {footerContent?.socialIcons?.length > 0 &&
                                     <div className='col-md-12'>
                                         <div className="Drones-footer-social-icons">
                                             <div className="row">
-                                                {data?.SocialMedia?.Links?.content?.img?.map((item, index) => (
+                                                {footerContent?.socialIcons?.map((item, index) => (
                                                     <div key={index} className="col-2">
-                                                        <Link to={item.link}>
+                                                        <Link to={item.url}>
                                                             <div className='Drones-social-icons-image'>
-                                                                <img src={item?.url} alt="" />
+                                                                <img src={item?.image?.url} alt="socialIcons" />
                                                             </div>
                                                         </Link>
                                                     </div>
@@ -36,14 +39,13 @@ const DronesFooter = () => {
                         </div>
                         <div className='col-md-10 col-lg-7'>
                             <div className="row">
-                                {data?.FooterItems?.navigate?.content?.items?.items?.length > 0 &&
-                                    data?.FooterItems?.navigate?.content?.items?.items?.map((item, index) => (
-
+                                {footerMapper?.length > 0 &&
+                                    footerMapper?.map((item, index) => (
                                         <div className="col-sm-6 col-md-3" key={index}>
                                             <div className="DronesFooter-links">
-                                                <h6 key={index}>{item?.Title}</h6>
-                                                {item?.drop?.length > 0 && item?.drop?.map((dropitem, index1) => (
-                                                    <Link key={index} to={dropitem.url}> <li>{dropitem?.SubTitle}</li></Link>
+                                                <h6 >{item?.heading}</h6>
+                                                {item?.items?.length > 0 && item?.items?.map((dropitem, index1) => (
+                                                    <Link key={index1} to={dropitem.url}> <li>{dropitem?.title}</li></Link>
                                                 ))}
                                             </div>
                                         </div>
@@ -53,22 +55,18 @@ const DronesFooter = () => {
                         </div>
                         <div className="col-sm-6 col-md-2 col-lg-2">
                             <div className="Drones-footer-apps-parent">
-                                <h6>Get app</h6>
-                                <div className='col-md-12'>
-                                    <Link to="https://www.apple.com/in/app-store/">
-                                        <div className='DronesFooter-apps-image'>
-                                            <img src="/DronesHomepage/app1.png" alt="" />
+                                {footerContent?.ImgSecTitle && <h6>{footerContent?.ImgSecTitle}</h6>}
+                                {footerContent?.apps?.length > 0 &&
+                                    footerContent?.apps?.map((item, i) => (
+                                        <div className='col-md-12' key={i}>
+                                            <Link to={item?.url}>
+                                                <div className='DronesFooter-apps-image'>
+                                                    <img src={item?.image?.url} alt="apps" />
+                                                </div>
+                                            </Link>
                                         </div>
-                                    </Link>
-
-                                </div>
-                                <div className='col-md-12'>
-                                    <Link to="https://play.google.com/">
-                                        <div className='DronesFooter-apps-image'>
-                                            <img src="/DronesHomepage/playstore.png" alt="" />
-                                        </div>
-                                    </Link>
-                                </div>
+                                    ))
+                                }
                             </div>
                         </div>
                     </div>
@@ -76,9 +74,9 @@ const DronesFooter = () => {
             </div>
 
             {/* <hr /> */}
-            <div className='DronesFooter-copyrights'>
-                <p>airbee.co.in © All Rights Reserved - 2024 - designed and developed by <Link to="https://www.hirolainfotech.com/"> Hirola Infotech Solutions Pvt Ltd.</Link> </p>
-            </div>
+            < div className='DronesFooter-copyrights' >
+                <p>{footerContent?.copyright}{footerContent?.credits?.title && < Link to={footerContent?.credits?.url}> {footerContent?.credits?.title}.</Link>} </p>
+            </div >
         </>
     )
 }
