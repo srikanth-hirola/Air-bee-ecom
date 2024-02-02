@@ -3,6 +3,7 @@ import DronesHeader from '../components/Headers/DronesHeader'
 import DronesHeader2 from '../components/Headers/DronesHeader2'
 import DronesFooter from '../components/DronesHomepage/DronesFooter'
 import BlogBanner from '../components/blog/BlogBanner'
+import { Link } from 'react-router-dom'
 
 const Blog = () => {
   return (
@@ -17,7 +18,8 @@ const Blog = () => {
         <section class="container">
 <div className="row">
     <div className="col-md-12 col-sm-12 col-lg-4 col-xl-4 col-xxl-4">
-        <div class="card-container">
+       <Link to='/blog/:slug'>
+       <div class="card-container">
   <div class="card-image">
     <img src="/DronesHomepage/blog-1.png" alt="a brand new sports car" />
   </div>
@@ -33,6 +35,7 @@ const Blog = () => {
  
   </div>
 </div>
+       </Link>
     </div>
     <div className="col-md-12 col-sm-12 col-lg-4 col-xl-4 col-xxl-4">
         <div class="card-container">

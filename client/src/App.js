@@ -45,6 +45,7 @@ import Blog from './Pages/Blog.jsx';
 import TermsAndConditions from './Pages/TermsAndConditions.jsx';
 import PrivacyPolicy from './Pages/PrivacyPolicy.jsx';
 import RefundsPolicy from './Pages/RefundPolicy.jsx';
+import BlogDetails from './Pages/BlogDetails.jsx';
 
 
 const DronesHomepage = lazy(() => import('./components/DronesHomepage/DronesHomepage.jsx'));
@@ -223,6 +224,7 @@ const App = () => {
           <Route path="/event/:id" element={<EventProductsPage />} />
           <Route path="/about-us" element={<About />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<BlogDetails />} />
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/refund-policy" element={<RefundsPolicy />} />
