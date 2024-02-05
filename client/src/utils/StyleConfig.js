@@ -45,6 +45,13 @@ export const StyleConfig = () => {
         saleImages: siteConfigData?.saleImages,
         categoryproductImages: siteConfigData?.categoryproductImages,
         brandImages: siteConfigData?.brandImages,
+        aboutUsImages: siteConfigData?.aboutUsImages,
+        formImages: siteConfigData?.formImages,
+        testimonialsImages: siteConfigData?.testimonialsImages,
+        industriesImages: siteConfigData?.industriesImages,
+        regionsImages: siteConfigData?.regionsImages,
+        eventsImages: siteConfigData?.eventsImages,
+        blogsImages: siteConfigData?.blogsImages,
 
         currency: siteConfigData?.currency,
         paymentMethods: siteConfigData?.paymentMethods,
@@ -146,6 +153,35 @@ export const StyleConfig = () => {
 
         productImagesGallery: siteConfigData?.productImagesGallery,
         contactUsDetails: siteConfigData?.contactUsDetails,
+
+
+        aboutUsSecOne: siteConfigData?.aboutUsSecOne,
+        aboutUsSecTwo: siteConfigData?.aboutUsSecTwo,
+        aboutUsSecThree: siteConfigData?.aboutUsSecThree,
+        aboutUsSecFour: siteConfigData?.aboutUsSecFour,
+        aboutUsSecFive: siteConfigData?.aboutUsSecFive,
+        aboutUsSecSix: siteConfigData?.aboutUsSecSix,
+        aboutUsSecSeven: siteConfigData?.aboutUsSecSeven,
+        aboutUsSecEight: siteConfigData?.aboutUsSecEight,
+        aboutUsSecNine: siteConfigData?.aboutUsSecNine,
+        aboutUsSecTen: siteConfigData?.aboutUsSecTen,
+
+        MainBannerContent: siteConfigData?.MainBannerContent,
+        featureSecOne: siteConfigData?.featureSecOne,
+        featureSecTwo: siteConfigData?.featureSecTwo,
+        quoteContent: siteConfigData?.quoteContent,
+        brands: siteConfigData?.brands,
+        testimonialContent: siteConfigData?.testimonialContent,
+        industriesContent: siteConfigData?.industriesContent,
+        regionsContent: siteConfigData?.regionsContent,
+        eventBottom: siteConfigData?.eventBottom,
+        eventTop: siteConfigData?.eventTop,
+        eventMiddle: siteConfigData?.eventMiddle,
+        newsLetter: siteConfigData?.newsLetter,
+        blogSecOne: siteConfigData?.blogSecOne,
+        contactSecOne: siteConfigData?.contactSecOne,
+        footerContent: siteConfigData?.footerContent,
+        headingsContent: siteConfigData?.headingsContent,
     };
 
     return styles;

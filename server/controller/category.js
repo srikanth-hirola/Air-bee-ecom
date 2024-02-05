@@ -10,12 +10,13 @@ const TwoSideMails = require('../utils/TwoSideMails');
 const sendMail = require('../utils/sendMail');
 const User = require('../model/user');
 const Shop = require('../model/shop');
+const { cacheMiddleware, flushCategories } = require('../middleware/cacheMiddleware');
 
 
 
 // get all categories of a shop
 router.get(
-  '/get-all-categories',
+  '/get-all-categories', cacheMiddleware,
   catchAsyncErrors(async (req, res, next) => {
     try {
       const categories = await Category.find({ approved: true });
@@ -30,9 +31,8 @@ router.get(
 );
 
 
-
 router.get(
-  '/search',
+  '/search', cacheMiddleware,
   catchAsyncErrors(async (req, res, next) => {
     try {
       const { category, subcategory, subsubcategory } = req.query;
@@ -110,7 +110,7 @@ router.get(
 
 // Add Category
 router.post(
-  '/add-category',
+  '/add-category', flushCategories,
   catchAsyncErrors(async (req, res, next) => {
     try {
       const category = req.body.categories[0];
@@ -181,7 +181,7 @@ router.post(
 
 // request Category
 router.post(
-  '/request-category',
+  '/request-category', flushCategories,
   catchAsyncErrors(async (req, res, next) => {
     try {
       const category = req.body.categories[0];
@@ -232,7 +232,7 @@ router.post(
 
 // Custom Category
 router.put(
-  '/custom-category',
+  '/custom-category', flushCategories,
   catchAsyncErrors(async (req, res, next) => {
     try {
       const { existingName, categoryName, subCat, CatImg } = req.body;
@@ -308,7 +308,7 @@ router.put(
 
 // Delete Category
 router.delete(
-  '/delete-category/:id',
+  '/delete-category/:id', flushCategories,
   catchAsyncErrors(async (req, res, next) => {
     try {
       const { id } = req.params;
@@ -347,7 +347,7 @@ router.delete(
 
 // approve Category
 router.put(
-  '/approve-category/:id',
+  '/approve-category/:id', flushCategories,
   catchAsyncErrors(async (req, res, next) => {
     try {
       await Category.findOneAndUpdate(
@@ -389,7 +389,7 @@ router.put(
 
 //delete Category
 router.delete(
-  '/delete-categories/:id',
+  '/delete-categories/:id', flushCategories,
   // isAdmin('Admin'),
   catchAsyncErrors(async (req, res, next) => {
     try {

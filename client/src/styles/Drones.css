@@ -572,8 +572,8 @@ button.search-sug {
 }
 
 .DronesBannerSwiper-image {
-  width: 100%;
-  height: 100%;
+  width: 742px;
+  height: 415px;
 }
 
 .DronesBannerSwiper-image img {
@@ -1806,6 +1806,10 @@ li {
 }
 
 @media only screen and (max-width: 767px) {
+  .DronesBannerSwiper-image {
+    width: 100%;
+    height: 415px;
+  }
   .testimonal-home .swiper-slide {
     width: 90% !important;
     margin: auto;

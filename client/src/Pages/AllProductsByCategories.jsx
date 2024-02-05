@@ -36,6 +36,8 @@ const AllProductsByCategories = () => {
     const [filteredAttr, setFilteredAttr] = useState();
     const [isLoading, setIsLoading] = useState(true);
     const [constantData, setConstantData] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [productsLength, setProductsLength] = useState(0);
     const urlParams = new URLSearchParams(window.location.search);
 
 
@@ -65,6 +67,7 @@ const AllProductsByCategories = () => {
                 setIsLoading(false)
                 setData(data.products)
                 setConstantData(data?.products)
+                setProductsLength(data?.products?.length)
             } catch (error) {
                 toast.error(error.response.data.message)
             }
@@ -83,7 +86,7 @@ const AllProductsByCategories = () => {
                 <>
                     <div className='allproducts-parent'>
                         <Filter constantData={constantData} data={checkedItems?.length > 0 ? filteredData : data} setFilteredData={setFilteredData} styles={styles} checkedItems={checkedItems} setCheckedItems={setCheckedItems} selectedBrands={selectedBrands} selectedPriceRange={selectedPriceRange} setSelectedBrands={setSelectedBrands} setSelectedPriceRange={setSelectedPriceRange} filteredAttr={filteredAttr} setFilteredAttr={setFilteredAttr} />
-                        <AllProducts filteredProducts={checkedItems?.length > 0 ? filteredData : data} bredCrumb={bredCrumb} checkedItems={checkedItems} setCheckedItems={setCheckedItems} data={data} setFilteredData={setFilteredData} setSelectedBrands={setSelectedBrands} selectedBrands={selectedBrands} setSelectedPriceRange={setSelectedPriceRange} setFilteredAttr={setFilteredAttr} />
+                        <AllProducts productsLength={productsLength} currentPage={currentPage} setCurrentPage={setCurrentPage} filteredProducts={checkedItems?.length > 0 ? filteredData : data} bredCrumb={bredCrumb} checkedItems={checkedItems} setCheckedItems={setCheckedItems} data={data} setFilteredData={setFilteredData} setSelectedBrands={setSelectedBrands} selectedBrands={selectedBrands} setSelectedPriceRange={setSelectedPriceRange} setFilteredAttr={setFilteredAttr} />
                     </div>
                 </>
             }

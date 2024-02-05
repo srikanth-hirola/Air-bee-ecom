@@ -30,46 +30,46 @@ const ActivationPage = () => {
     }, [activation_token]);
 
     return (
-       <>
-       <DronesHeader/>
-       <DronesHeader2/>
-         <div
-            style={{
-                width: "100%",
-                height: "100%",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                flexWrap: "wrap"
-            }}
-        >
-            {error ? (
-                <div class="success-card"
+        <>
+            <DronesHeader />
+            <DronesHeader2 />
+            <div
                 style={{
-                    width: "60%",
-                height: "100%",
-                margin:"40px 0px",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                margin:"20px"
+                    width: "100%",
+                    height: "100%",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    flexWrap: "wrap"
                 }}
-                >
-                <p>Your token is expired!</p>
-                </div>
-            ) : (
-                <div class="success-card">
-      <div style={{borderRradius:"200px",height:"200px", width:"200px", background: "#F8FAF5", margin:"0 auto"}}>
-        <i class="checkmark">✓</i>
-      </div>
-        <h1>Greetings from Air Bee: Your Key to a World of Electronic Wonders!</h1> 
-        <p>Welcome to Air Bee! 🚀 Your account has been successfully registered.
- </p>
-      </div>
-            )}
-        </div>
-            <DronesFooter/>
-       </>
+            >
+                {error ? (
+                    <div class="success-card"
+                        style={{
+                            width: "60%",
+                            height: "100%",
+                            margin: "40px 0px",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            // margin:"20px"
+                        }}
+                    >
+                        <p>Your token is expired!</p>
+                    </div>
+                ) : (
+                    <div class="success-card">
+                        <div style={{ borderRradius: "200px", height: "200px", width: "200px", background: "#F8FAF5", margin: "0 auto" }}>
+                            <i class="checkmark">✓</i>
+                        </div>
+                        <h1>Greetings from Air Bee: Your Key to a World of Electronic Wonders!</h1>
+                        <p>Welcome to Air Bee! 🚀 Your account has been successfully registered.
+                        </p>
+                    </div>
+                )}
+            </div>
+            <DronesFooter />
+        </>
     );
 };
 

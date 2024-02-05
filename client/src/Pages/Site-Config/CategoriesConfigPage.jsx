@@ -4,7 +4,7 @@ import DashboardSideBar from '../../components/ShopComponents/Layout/DashboardSi
 import { CategoriesConfig } from '../../components/ShopComponents/SiteConfig/Categories/CategoriesConfig';
 import DronesFooter from '../../components/DronesHomepage/DronesFooter';
 
-export const CategoriesConfigPage = () => {
+const CategoriesConfigPage = () => {
     return (
         <div>
             <DashboardHeader />
@@ -13,10 +13,12 @@ export const CategoriesConfigPage = () => {
                     <DashboardSideBar active={25} />
                 </div>
                 <div className='w-full justify-center flex dashboard-side-bar-data-view'>
-                <CategoriesConfig active={25}/>
+                    <CategoriesConfig active={25} />
                 </div>
             </div>
-            <DronesFooter/>
+            <DronesFooter />
         </div>
     );
 }
+
+export default CategoriesConfigPage

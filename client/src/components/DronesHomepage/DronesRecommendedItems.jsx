@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import ProductCardMiddleware from '../ProductCards/ProductCardMiddleware'
 import { getPublishedProducts } from '../../redux/actions/product'
 
-const DronesRecommendedItems = () => {
+const DronesRecommendedItems = ({ title }) => {
     const { getBestDeals } = useProductDeals();
     const { allPublishedProducts } = useSelector((state) => state.products);
 
@@ -26,7 +26,7 @@ const DronesRecommendedItems = () => {
             <div className="DronesRecommendedItems-parent">
                 <div className="">
                     <div>
-                        <h2>Recommended items</h2>
+                        <h2>{title}</h2>
                     </div>
                     {products?.length > 0 &&
                         <div className="row">

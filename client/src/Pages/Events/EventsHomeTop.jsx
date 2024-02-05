@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { StyleConfig } from '../../utils/StyleConfig';
 import EventCardWithProducts from '../../components/Events/EventCardWithProducts';
 
-const EventsHomeTop = () => {
+const EventsHomeTop = ({ content }) => {
     const { allEvents } = useSelector((state) => state.events);
 
     const [eventLayountOneSelectedEvents, setEventLayoutOneSelectedEvents] = useState([])
@@ -21,7 +21,7 @@ const EventsHomeTop = () => {
             allEvents?.map((val, index) => {
                 if (eventLayountOneSelectedEvents?.includes(val?._id)) {
                     return (
-                        <EventCardWithProducts data1={val} key={index} />
+                        <EventCardWithProducts data1={val} key={index} content={content} />
                     );
                 }
             })}

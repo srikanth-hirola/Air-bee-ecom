@@ -3,8 +3,7 @@ import React, { useState } from 'react'
 import toast from 'react-hot-toast';
 import { server } from '../../server';
 
-const DronesQuotes = () => {
-
+const DronesQuotes = ({ content }) => {
     const [form, setForm] = useState({
         name: '',
         phone: '',
@@ -47,18 +46,21 @@ const DronesQuotes = () => {
     return (
         <>
             <div className='DronesQuotes-parent'>
-                <div className='DronesQuotes-parent-bg-image' style={{ backgroundImage: `url('./DronesHomepage/image 102.png')` }}>
+                <div className='DronesQuotes-parent-bg-image' style={{
+                    backgroundImage: `url(${content?.BannerImage?.image?.url})`
+                }}>
                     <div className='row' >
                         <div className="col-md-6">
                             <div className='DronesQuotes-sub-left'>
-                                <h5>An easy way to send requests to all suppliers</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                                {content?.title && <h5>{content?.title}</h5>}
+                                {content?.subTitle
+                                    && <p>{content?.subTitle}</p>}
                             </div>
                         </div>
                         <div className="col-md-6">
                             <div className='DronesQuotes-sub-right'>
                                 <form onSubmit={!btnLoading ? handleSubmit : null}>
-                                    <h6>Send quote to suppliers</h6>
+                                    {content?.form?.heading && <h6>{content?.form?.heading}</h6>}
                                     <input className='Drones-Quotes-input1 mb-3' onChange={handleChange} name='name' type="text" value={form.name} placeholder='Name' required /><br />
                                     <div className='mb-3 flex justify-between w-[91%]'>
                                         <input className='Drones-Quotes-input1 !w-[48%]' onChange={handleChange} name='phone' value={form.phone} type="text" placeholder='Phone Number' required /><br />
@@ -69,7 +71,7 @@ const DronesQuotes = () => {
                                     <div className='DronesQuotes-sub-right-dropdown'>
                                         <input className='Drones-Quotes-input2' type="number" onChange={handleChange} name='qty' value={form.qty} placeholder='Quantity' required />
                                     </div>
-                                    <button type='submit'>{btnLoading ? "Loading..." : "Send Inquiry"}</button>
+                                    {content?.form?.buttonTitle && <button type='submit'>{btnLoading ? "Loading..." : `${content?.form?.buttonTitle}`}</button>}
                                 </form>
                             </div>
                         </div>
@@ -79,7 +81,7 @@ const DronesQuotes = () => {
                 </div>
 
 
-            </div>
+            </div >
         </>
 
     )

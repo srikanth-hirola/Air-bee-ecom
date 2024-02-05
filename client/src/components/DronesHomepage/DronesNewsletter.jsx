@@ -3,9 +3,8 @@ import React, { useState } from 'react'
 import toast from 'react-hot-toast';
 import { server } from '../../server';
 
-const DronesNewsletter = () => {
+const DronesNewsletter = ({ content }) => {
   const [email, setEmail] = useState('');
-
 
   const handleEmailSubscribe = async (e) => {
     if (!email) {
@@ -24,10 +23,10 @@ const DronesNewsletter = () => {
     <>
       <div className="DronesNewsletter-parent">
         <div className='DronesNewsletter-text'>
-          <h5>
-            Subscribe on our newsletter
-          </h5>
-          <p>Get daily news on upcoming offers from many suppliers all over the world</p>
+          {content?.title && <h5>
+            {content?.title}
+          </h5>}
+          {content?.subTitle && <p>{content?.subTitle}</p>}
         </div>
         <div className='DronesNewsletter-email-parent'>
           <input type="email" placeholder='Email' onChange={(e) => setEmail(e.target.value)} value={email}
@@ -35,7 +34,7 @@ const DronesNewsletter = () => {
           <div className='DronesNewsletter-email-image'>
             <img src="./DronesHomepage/email.png" alt="newsletter" />
           </div>
-          <button onClick={handleEmailSubscribe}>Subscribe</button>
+          {content?.btnTitle && <button onClick={handleEmailSubscribe}>{content?.btnTitle}</button>}
         </div>
       </div>
     </>

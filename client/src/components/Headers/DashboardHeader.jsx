@@ -34,7 +34,7 @@ const DashboardHeader = ({ active }) => {
       //     ? styles?.headerColors?.bg?.bgPicker
       //     : styles?.headerColors?.bg?.bgcolor,
       // }}
-      className="w-full h-[80px] shadow sticky top-0 left-0 z-30 flex items-center justify-between px-4 bg-white dashboard-header-page"
+      className="w-full h-[80px] shadow sticky top-0 left-0 z-[99] flex items-center justify-between px-4 bg-white dashboard-header-page"
     >
       <div className="dashboard-header-logo">
         <Link to="/dashboard">

@@ -5,7 +5,7 @@ import { EditEvent } from '../../../components/ShopComponents/Events/EditEvent'
 import DronesFooter from '../../../components/DronesHomepage/DronesFooter'
 
 
-export const EventEditPage = () => {
+const EventEditPage = () => {
     return (
         <div>
             <DashboardHeader />
@@ -17,7 +17,9 @@ export const EventEditPage = () => {
                     <EditEvent />
                 </div>
             </div>
-            <DronesFooter/>
+            <DronesFooter />
         </div>
     )
 }
+
+export default EventEditPage

@@ -9,7 +9,7 @@ import toast from 'react-hot-toast';
 import DronesHeader from '../Headers/DronesHeader';
 import DronesFooter from '../DronesHomepage/DronesFooter';
 
-export const ForgetPassword = () => {
+const ForgetPassword = () => {
     const [searchParams] = useSearchParams();
     const [otp, setOtp] = useState(null);
     const [timer, setTimer] = useState(120);
@@ -256,7 +256,10 @@ export const ForgetPassword = () => {
                         </div>}
                 </div>
             </div>
-            <DronesFooter/>
+            <DronesFooter />
         </>
     )
 }
+
+
+export default ForgetPassword

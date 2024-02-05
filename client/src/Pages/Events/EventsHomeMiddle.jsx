@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { StyleConfig } from '../../utils/StyleConfig';
 import EventCardWithProducts from '../../components/Events/EventCardWithProducts';
 
-const EventsHomeMiddle = () => {
+const EventsHomeMiddle = ({ content }) => {
     const { allEvents } = useSelector((state) => state.events);
 
     const [eventLayountTwoSelectedEvents, setEventLayoutTwoSelectedEvents] = useState([])
@@ -21,7 +21,7 @@ const EventsHomeMiddle = () => {
             allEvents?.map((val, index) => {
                 if (eventLayountTwoSelectedEvents?.includes(val?._id)) {
                     return (
-                        <EventCardWithProducts data1={val} key={index} />
+                        <EventCardWithProducts data1={val} key={index} content={content} />
                     );
                 }
             })}

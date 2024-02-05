@@ -10,7 +10,7 @@ import { DraftEvents } from '../../../components/ShopComponents/Events/DraftEven
 import DronesFooter from '../../../components/DronesHomepage/DronesFooter';
 
 
-export const AllDraftEvents = () => {
+const AllDraftEvents = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [allEvents, setAllEvents] = useState([]);
     const { seller } = useSelector((state) => state.seller)
@@ -41,12 +41,14 @@ export const AllDraftEvents = () => {
                             <DashboardSideBar active={12} />
                         </div>
                         <div className="w-full justify-center flex dashboard-side-bar-data-view">
-                            <DraftEvents allEvents={allEvents} active={12}/>
+                            <DraftEvents allEvents={allEvents} active={12} />
                         </div>
                     </div>
-                    <DronesFooter/>
+                    <DronesFooter />
                 </div>
             )}
         </>
     );
 }
+
+export default AllDraftEvents

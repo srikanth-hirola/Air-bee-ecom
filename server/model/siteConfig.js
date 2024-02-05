@@ -30,6 +30,13 @@ const siteConfigSchema = new mongoose.Schema({
     saleImages: Array,
     categoryproductImages: Array,
     brandImages: Array,
+    aboutUsImages: Array,
+    formImages: Array,
+    testimonialsImages: Array,
+    industriesImages: Array,
+    regionsImages: Array,
+    eventsImages: Array,
+    blogsImages: Array,
     //images ends
 
     currency: Object,
@@ -358,7 +365,34 @@ const siteConfigSchema = new mongoose.Schema({
     footerLayout3Content: Array,
     footerLayout4Content: Object,
 
-    contactUsDetails: Object
+    contactUsDetails: Object,
+    aboutUsSecOne: Object,
+    aboutUsSecTwo: Object,
+    aboutUsSecThree: Object,
+    aboutUsSecFour: Object,
+    aboutUsSecFive: Object,
+    aboutUsSecSix: Object,
+    aboutUsSecSeven: Object,
+    aboutUsSecEight: Object,
+    aboutUsSecNine: Object,
+    aboutUsSecTen: Object,
+
+    MainBannerContent: Object,
+    featureSecOne: Object,
+    featureSecTwo: Object,
+    quoteContent: Object,
+    brands: Object,
+    testimonialContent: Object,
+    industriesContent: Object,
+    regionsContent: Object,
+    eventBottom: Object,
+    eventTop: Object,
+    eventMiddle: Object,
+    newsLetter: Object,
+    blogSecOne: Object,
+    contactSecOne: Object,
+    footerContent: Object,
+    headingsContent: Object,
 })
 
 module.exports = mongoose.model('SiteConfig', siteConfigSchema);

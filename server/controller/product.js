@@ -11,11 +11,88 @@ const Category = require('../model/category');
 const user = require('../model/user');
 const sendMail = require('../utils/sendMail');
 const TwoSideMails = require('../utils/TwoSideMails');
-const slugify = require('slugify')
+const slugify = require('slugify');
+const { cacheMiddleware, flushProducts, flushCategories, flushProductsByCategory } = require('../middleware/cacheMiddleware');
+
+
+//get total length of products
+router.get('/get-published-products/length', cacheMiddleware, async (req, res) => {
+  try {
+    const length = await Product.countDocuments({
+      approved: true,
+      draft: false,
+    })
+
+    res.status(201).json({
+      success: true,
+      length,
+    });
+  } catch (err) {
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+//get all filters
+router.get('/get-published-products/filters', async (req, res) => {
+  try {
+    const page = req.query?.search;
+    let filters
+    if (page) {
+      filters = await Product.find({
+        approved: true,
+        draft: false,
+      }, { category: 1, subCatgory: 1, ratings: 1, brandName: 1, _id: 1 })
+    } else {
+      filters = await Product.find({
+        approved: true,
+        draft: false,
+      }, { category: 1, subCatgory: 1, ratings: 1, brandName: 1, _id: 1 })
+    }
+
+
+    res.status(201).json({
+      success: true,
+      filters,
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+
+//get products according to page
+router.get('/get-published-products/pagination', cacheMiddleware, async (req, res) => {
+  const page = req.query.page || 1;
+  const ITEMS_PER_PAGE = req.query.limit || 10
+  try {
+
+    const products = await Product.find({
+      approved: true,
+      draft: false,
+    }).sort({ _id: -1 })
+      .skip((page - 1) * ITEMS_PER_PAGE)
+      .limit(ITEMS_PER_PAGE)
+      .exec();
+    // const result = await Blog.find({}, { _id: 1, title: 1, createdAt: 1, post_date: 1, large_thumb: 1, excerpt: 1, read_time: 1, author: 1, category: 1, slug: 1, })
+    //   .sort({ _id: -1 })
+    //   .skip((page - 1) * ITEMS_PER_PAGE)
+    //   .limit(ITEMS_PER_PAGE)
+    //   .exec();
+
+    res.status(201).json({
+      success: true,
+      products,
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Internal Server Error');
+  }
+});
 
 // create product
 router.post(
-  '/create-product',
+  '/create-product', flushProducts, flushProductsByCategory,
   catchAsyncErrors(async (req, res, next) => {
     try {
       const shopId = req.body.shopId;
@@ -244,7 +321,7 @@ router.post(
 // );
 
 router.post(
-  '/requested-product',
+  '/requested-product', flushProducts, flushProductsByCategory,
   catchAsyncErrors(async (req, res, next) => {
     try {
       const shopId = req.body.shopId;
@@ -636,7 +713,7 @@ router.post(
 
 //publish Draft Product
 router.post(
-  '/draft-publish-product',
+  '/draft-publish-product', flushProducts,
   catchAsyncErrors(async (req, res, next) => {
     try {
       const {
@@ -1135,7 +1212,7 @@ router.post(
 
 // add product review
 router.post(
-  '/add-review',
+  '/add-review', flushProducts,
   catchAsyncErrors(async (req, res, next) => {
     try {
       await Product.findById(req.body.productId)
@@ -1183,7 +1260,7 @@ router.post(
 
 // Update product
 router.put(
-  '/update-product',
+  '/update-product', flushProducts, flushProductsByCategory,
   catchAsyncErrors(async (req, res, next) => {
     try {
       const {
@@ -1539,7 +1616,7 @@ router.put(
 // Update Approve product
 
 router.put(
-  '/approve-shop-product/:id',
+  '/approve-shop-product/:id', flushProducts, flushProductsByCategory,
   catchAsyncErrors(async (req, res, next) => {
     try {
       await Product.findByIdAndUpdate(
@@ -1579,7 +1656,7 @@ router.put(
 
 // Update Reject product
 router.put(
-  '/reject-product/:id',
+  '/reject-product/:id', flushProducts, flushProductsByCategory,
   catchAsyncErrors(async (req, res, next) => {
     try {
       await Product.findByIdAndUpdate(
@@ -1662,7 +1739,7 @@ router.get(
 
 // get published products of a shop
 router.get(
-  '/get-published-products',
+  '/get-published-products', cacheMiddleware,
   catchAsyncErrors(async (req, res, next) => {
     try {
       const products = await Product.find({
@@ -1701,7 +1778,7 @@ router.get(
 // delete product of a shop
 router.delete(
   '/delete-shop-product/:id',
-  isSeller,
+  isSeller, flushProducts, flushProductsByCategory,
   catchAsyncErrors(async (req, res, next) => {
     try {
       const product = await Product.findById(req.params.id);
@@ -1874,7 +1951,7 @@ router.put(
 // delete main image
 router.put(
   '/delete-main-image',
-  isSeller,
+  isSeller, flushProducts, flushProductsByCategory,
   catchAsyncErrors(async (req, res, next) => {
     try {
       const { id, _id } = req.body;
@@ -1913,7 +1990,7 @@ router.put(
 // delete showInput image
 router.put(
   '/delete-showInput-image',
-  isSeller,
+  isSeller, flushProducts, flushProductsByCategory,
   catchAsyncErrors(async (req, res, next) => {
     try {
       await cloudinary.v2.uploader
@@ -1954,7 +2031,7 @@ router.put(
 // delete product image
 router.put(
   '/delete-product-image',
-  isSeller,
+  isSeller, flushProducts, flushProductsByCategory,
   catchAsyncErrors(async (req, res, next) => {
     try {
       await cloudinary.v2.uploader
@@ -1999,7 +2076,7 @@ router.put(
 // review for a product
 router.put(
   '/create-new-review',
-  isAuthenticated,
+  isAuthenticated, flushProducts,
   catchAsyncErrors(async (req, res, next) => {
     try {
       const { user, rating, comment, productId, orderId } = req.body;
@@ -2119,7 +2196,6 @@ router.get(
         products: sorted,
       });
     } catch (error) {
-      console.log(error)
       return next(new ErrorHandler(error, 400));
     }
   })

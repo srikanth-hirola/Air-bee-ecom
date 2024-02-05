@@ -14,10 +14,6 @@ const useFetchCategoryHandler = () => {
         // console.log(_id)
         let found = category.find((cat) => cat?._id === _id);
         if (found) {
-            if (found?.name === "Iot and Wireless") {
-                console.log(found)
-            }
-
             return found
         }
     }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { AboutPageOne } from '../../components/AboutUs/AboutPageOne'
 import { AboutPageTwo } from '../../components/AboutUs/AboutPageTwo'
 import { AboutPageThree } from '../../components/AboutUs/AboutPageThree'
@@ -13,26 +13,44 @@ import DronesFooter from '../../components/DronesHomepage/DronesFooter'
 import { ContactProduct1 } from '../../components/Checkout/ContactProduct1'
 import AboutUsBanner from '../../components/AboutUs/AboutUsBanner'
 import DronesHeader2 from '../../components/Headers/DronesHeader2'
+import { StyleConfig } from '../../utils/StyleConfig'
+import Loader from '../../utils/Loader'
 // import AboutUsTeam from '../../components/AboutUs/AboutUsTeam'
 
-export const About = () => {
+const About = () => {
+
+    const styles = StyleConfig();
+    const [isLoading, setLoading] = useState(true);
+
+    useEffect(() => {
+        setLoading(false)
+    }, [styles])
+
+
     return (
-        <div>
-            <DronesHeader />
-            <DronesHeader2/>
-            <AboutUsBanner/>
-            <AboutPageOne />
-            <AboutPageTwo />
-            <AboutPageThree />
-            <AboutPageFour />
-            <AboutPageFive />
-            <AboutData />
-            {/* <AboutUsTeam/> */}
-            <AboutTop />
-            {/* <DronesTestimonialSwiper/> */}
-            <AboutFaq />
-            <ContactProduct1/>
-            <DronesFooter/>
-        </div>
+        <>{
+            isLoading ? <Loader />
+                :
+                <div>
+                    <DronesHeader />
+                    <DronesHeader2 />
+                    <AboutUsBanner content={styles?.aboutUsSecOne} />
+                    <AboutPageOne content={styles?.aboutUsSecTwo} />
+                    <AboutPageTwo content={styles?.aboutUsSecThree} />
+                    <AboutPageThree content={styles?.aboutUsSecFour} />
+                    <AboutPageFour content={styles?.aboutUsSecFive} />
+                    <AboutPageFive content={styles?.aboutUsSecSix} />
+                    <AboutData content={styles?.aboutUsSecSeven} />
+                    {/* <AboutUsTeam/> */}
+                    <AboutTop content={styles?.aboutUsSecEight} />
+                    {/* <DronesTestimonialSwiper/> */}
+                    <AboutFaq content={styles?.aboutUsSecNine} />
+                    <ContactProduct1 content={styles?.aboutUsSecTen} />
+                    <DronesFooter />
+                </div>
+        }
+        </>
     )
 }
+
+export default About

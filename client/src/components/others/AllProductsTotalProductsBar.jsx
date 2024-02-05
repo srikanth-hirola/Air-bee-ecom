@@ -1,11 +1,11 @@
 import React from 'react'
 
-const AllProductsTotalProductsBar = ({ length }) => {
+const AllProductsTotalProductsBar = ({ length, bredCrumb }) => {
 
     return (
         <div className='row shoppage-row1'>
             <div className='col-md-6 col-sm-10 col-10'>
-                <b class="fw-semibold">{length} items</b> in Mobile accessory
+                <b class="fw-semibold">{length || 0} items</b> {bredCrumb[bredCrumb?.length - 1]}
             </div>
             <div className="col-md-6 col-sm-2 col-2 icons1-shoppage1">
                 <div className=''>

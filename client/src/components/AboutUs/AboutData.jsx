@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 
-export const AboutData = () => {
+export const AboutData = ({ content }) => {
+
     const [productCount, setProductCount] = useState(0);
     const [visitorCount, setVisitorCount] = useState(0);
     const [productsDeliveredCount, setProductsDeliveredCount] = useState(0);
@@ -54,36 +56,22 @@ export const AboutData = () => {
                 <div className="about-couting-instant-sub">
                     <div className="container">
                         <div className="about-couting-instant-heading">
-                            <h6>NUMBERS</h6>
-                            <h2>Transforming Data into Success Stories</h2>
-                            <p>Experience success through Airbee! Our Airbee Flex platform effortlessly handles digital channels. Explore 100k+ products, 70k+ visitors, and 20k+ deliveries, ensuring 100% customer satisfaction. Elevate your business with Airbee – where innovation meets actionable insights.</p>
+                            {content?.tagTitle && <h6>{content?.tagTitle}</h6>}
+                            {content?.title && <h2>{content?.title}</h2>}
+                            {content?.summary && <p>{content?.summary}</p>}
                         </div>
-                        <div className="row about-couting-instant-subject">
-                            <div className="col-md-3 col-sm-6 col-6">
-                                <div className="about-couting-instant-text">
-                                    <h2>{formatCount(productCount)}</h2>
-                                    <p>No. of Products</p>
-                                </div>
+                        {content?.achivements?.length > 0 &&
+                            <div className="row about-couting-instant-subject">
+                                {content?.achivements?.map((item, i) => (
+                                    <div className="col-md-3 col-sm-6 col-6" key={i}>
+                                        <div className="about-couting-instant-text">
+                                            <h2>{formatCount(item?.title)}</h2>
+                                            <p>{item?.subTitle}</p>
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
-                            <div className="col-md-3 col-sm-6 col-6">
-                                <div className="about-couting-instant-text">
-                                    <h2>{formatCount(visitorCount)}</h2>
-                                    <p>No. of Visitors</p>
-                                </div>
-                            </div>
-                            <div className="col-md-3 col-sm-6 col-6">
-                                <div className="about-couting-instant-text">
-                                    <h2>{formatCount(productsDeliveredCount)}</h2>
-                                    <p>Products Delivered</p>
-                                </div>
-                            </div>
-                            <div className="col-md-3 col-sm-6 col-6">
-                                <div className="about-couting-instant-text">
-                                    <h2>{happyCustomersCount}%</h2>
-                                    <p>Happy Customers</p>
-                                </div>
-                            </div>
-                        </div>
+                        }
                     </div>
                 </div>
             </div>

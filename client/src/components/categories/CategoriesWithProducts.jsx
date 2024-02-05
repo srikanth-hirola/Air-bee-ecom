@@ -46,7 +46,7 @@ const CategoriesWithProducts = ({ CatName, key }) => {
                                 <div className="row">
                                     {products?.map((data, index) => (
                                         <React.Fragment key={index}>
-                                            <CategoryProductCard data1={data} key={index} />
+                                            <CategoryProductCard data1={data} />
                                         </React.Fragment>
                                     ))}
                                 </div>
