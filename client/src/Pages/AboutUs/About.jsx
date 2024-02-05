@@ -41,9 +41,7 @@ const About = () => {
                     <AboutPageFour content={styles?.aboutUsSecFive} />
                     <AboutPageFive content={styles?.aboutUsSecSix} />
                     <AboutData content={styles?.aboutUsSecSeven} />
-                    {/* <AboutUsTeam/> */}
                     <AboutTop content={styles?.aboutUsSecEight} />
-                    {/* <DronesTestimonialSwiper/> */}
                     <AboutFaq content={styles?.aboutUsSecNine} />
                     <ContactProduct1 content={styles?.aboutUsSecTen} />
                     <DronesFooter />

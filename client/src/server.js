@@ -1,5 +1,5 @@
-export const server = 'http://localhost:8000/api/v2';
-// export const server = 'https://admin.airbee.co.in/api/v2';
+// export const server = 'http://localhost:8000/api/v2';
+export const server = 'https://admin.airbee.co.in/api/v2';
 
 // export const server = "https://ecom-backend-fd06.onrender.com/api/v2";
 

@@ -6,21 +6,9 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const cron = require('node-cron');
 const Event = require('./model/event');
+const compression = require('compression')
 
-
-// app.use(
-//   cors({
-//     origin: ['http://localhost:3000','https://ecom-frontend-elay.onrender.com' ,'https://64c4f83342477c5ec56722ac--playful-begonia-9ec628.netlify.app/'],
-//     credentials: true,
-//   })
-// );
-
-// app.use(
-//   cors({
-//     origin: ['https://64c4f83342477c5ec56722ac--playful-begonia-9ec628.netlify.app/'],
-//     credentials: true,
-//   })
-// );
+app.use(compression())
 
 const allowedOrigins = [
   'https://ecom-hirola.netlify.app',
@@ -31,7 +19,9 @@ const allowedOrigins = [
   'http://localhost:3001',
   'https://airbee.co.in',
   'https://www.airbee.co.in',
+  'https://air-bee.netlify.app',
 ];
+
 
 app.use(
   cors({

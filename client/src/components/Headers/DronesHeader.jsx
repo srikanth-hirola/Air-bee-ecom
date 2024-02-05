@@ -69,7 +69,7 @@ const DronesHeader = () => {
           <div className="container-fluid">
             <Link className="navbar-brand" to="/">
               <div className='Drones-header-logo'>
-                <img src={styles?.logo?.url} alt="logo" className=' mix-blend-multiply' />
+                <img src={styles?.logo?.url} alt="logo" lazy />
               </div>
             </Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

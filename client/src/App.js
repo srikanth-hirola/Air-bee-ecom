@@ -30,7 +30,9 @@ import Loader from './utils/Loader.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { socketId } from './components/Headers/socket.js';
 import { useSelector } from 'react-redux';
-import CategoryBlogs from './components/blog/CategoryBlogs.jsx';
+import SEOPage from './Pages/Shop/SEO/SEOPage.jsx';
+import ProductSEOPage from './Pages/Shop/SEO/ProductSEOPage.jsx';
+import { HelmetProvider } from 'react-helmet-async';
 
 
 const DronesHomepage = lazy(() => import('./components/DronesHomepage/DronesHomepage.jsx'));
@@ -206,662 +208,678 @@ const App = () => {
     return null;
   }
   return (
+    <HelmetProvider>
+      <BrowserRouter >
 
-    <BrowserRouter >
-
-      {stripeApikey && (
-        <Elements stripe={loadStripe(stripeApikey)}>
-          <Suspense fallback={<Loader />}>
-            <Routes>
-              <Route
-                path="/payment"
-                element={
-                  <ProtectedRoute>
-                    <PaymentPage />
-                  </ProtectedRoute>
-                }
-              />
-            </Routes>
-          </Suspense>
-        </Elements>
-      )}
-      <ScrollToTop />
-      <Suspense fallback={<Loader />}>
-        <Routes>
-          <Route path="/" exact element={<DronesHomepage />} />
-          <Route path="/products" exact element={<AllProductsPage />} />
-          <Route path="/products-by-category/search" element={<AllProductsByCategories />} />
-          <Route path="/product/:id" exact element={<ProductDetailsPage />} />
-          <Route path="/cart" exact element={<CartPage />} />
-          <Route path="/wishlist" exact element={<WishListPage />} />
-          <Route path="/login" exact element={<UserLoginPage />} />
-          <Route path="/sign-up" exact element={<UserSignUpPage />} />
-          <Route path="/forget-password" element={<ForgetPassword />} />
-          <Route path="/order/success" element={<OrderSuccess />} />
-          <Route path="/contact-us" element={<ContactUsPage />} />
-          <Route path="/event/:id" element={<EventProductsPage />} />
-          <Route path="/about-us" element={<About />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:slug" element={<BlogDetailsPage />} />
-          <Route path="/blogs/:category" element={<CategoryBlogs />} />
-          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/refund-policy" element={<RefundsPolicy />} />
-          <Route
-            path="/activation/:activation_token"
-            element={<ActivationPage />}
-          />
-          <Route path="/checkout" element={
-            <ProtectedRoute>
-              <CheckoutPage />
-            </ProtectedRoute>
-          } />
-          <Route
-            path="/inbox"
-            element={
+        {stripeApikey && (
+          <Elements stripe={loadStripe(stripeApikey)}>
+            <Suspense fallback={<Loader />}>
+              <Routes>
+                <Route
+                  path="/payment"
+                  element={
+                    <ProtectedRoute>
+                      <PaymentPage />
+                    </ProtectedRoute>
+                  }
+                />
+              </Routes>
+            </Suspense>
+          </Elements>
+        )}
+        <ScrollToTop />
+        <Suspense fallback={<Loader />}>
+          <Routes>
+            <Route path="/" exact element={<DronesHomepage />} />
+            <Route path="/products" exact element={<AllProductsPage />} />
+            <Route path="/products-by-category/search" element={<AllProductsByCategories />} />
+            <Route path="/product/:id" exact element={<ProductDetailsPage />} />
+            <Route path="/cart" exact element={<CartPage />} />
+            <Route path="/wishlist" exact element={<WishListPage />} />
+            <Route path="/login" exact element={<UserLoginPage />} />
+            <Route path="/sign-up" exact element={<UserSignUpPage />} />
+            <Route path="/forget-password" element={<ForgetPassword />} />
+            <Route path="/order/success" element={<OrderSuccess />} />
+            <Route path="/contact-us" element={<ContactUsPage />} />
+            <Route path="/event/:id" element={<EventProductsPage />} />
+            <Route path="/about-us" element={<About />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogDetailsPage />} />
+            <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/refund-policy" element={<RefundsPolicy />} />
+            <Route
+              path="/activation/:activation_token"
+              element={<ActivationPage />}
+            />
+            <Route path="/checkout" element={
               <ProtectedRoute>
-                <UserInbox />
+                <CheckoutPage />
               </ProtectedRoute>
-            }
-          />
+            } />
+            <Route
+              path="/inbox"
+              element={
+                <ProtectedRoute>
+                  <UserInbox />
+                </ProtectedRoute>
+              }
+            />
 
-          <Route path='/orderspage' element={
-            <ProtectedRoute>
-              <OrdersPageProfile />
-            </ProtectedRoute>
-          } />
-          <Route path='/user/order/:id' element={
-            <ProtectedRoute>
-              <OrderDetails />
-            </ProtectedRoute>
-          } />
-          <Route path='/profilepage' element={
-            <ProtectedRoute>
-              <Profilepage />
-            </ProtectedRoute>
-          } />
-          <Route path='/contactDetailsPage' element={
-            <ProtectedRoute>
-              <ContactDetailsPage />
-            </ProtectedRoute>
-          } />
-          <Route path='/refundpage' element={
-            <ProtectedRoute>
-              <RefundPage />
-            </ProtectedRoute>
-          } />
-          {/* <Route path='/refundpage' element={<RefundPage />} />
+            <Route path='/orderspage' element={
+              <ProtectedRoute>
+                <OrdersPageProfile />
+              </ProtectedRoute>
+            } />
+            <Route path='/user/order/:id' element={
+              <ProtectedRoute>
+                <OrderDetails />
+              </ProtectedRoute>
+            } />
+            <Route path='/profilepage' element={
+              <ProtectedRoute>
+                <Profilepage />
+              </ProtectedRoute>
+            } />
+            <Route path='/contactDetailsPage' element={
+              <ProtectedRoute>
+                <ContactDetailsPage />
+              </ProtectedRoute>
+            } />
+            <Route path='/refundpage' element={
+              <ProtectedRoute>
+                <RefundPage />
+              </ProtectedRoute>
+            } />
+            {/* <Route path='/refundpage' element={<RefundPage />} />
           <Route path='/refundStatus' element={<RefundStatus />} /> */}
 
 
 
 
-          {/* seller */}
-          <Route path="/shop-login" element={<ShopLoginPage />} />
+            {/* seller */}
+            <Route path="/shop-login" element={<ShopLoginPage />} />
 
-          <Route
-            path="/shop/:id"
-            element={
-              <SellerProtectedRoute>
-                <ShopHomePage />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/settings"
-            element={
-              <SellerProtectedRoute>
-                <ShopSettingsPage />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/inquiries"
-            element={
-              <SellerProtectedRoute>
-                <InquiriesPage />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/contacts"
-            element={
-              <SellerProtectedRoute>
-                <ContactsPage />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/dashboard"
-            element={
-              <SellerProtectedRoute>
-                <ShopDashboardPage />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/dashboard-create-product"
-            element={
-              <SellerProtectedRoute>
-                <ShopCreateProduct />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/shop/dashboard-orders"
-            element={
-              <SellerProtectedRoute>
-                <ShopAllOrders />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/shop/stocks"
-            element={
-              <SellerProtectedRoute>
-                <ShopStocks />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/shop/shipment/login"
-            element={
-              <SellerProtectedRoute>
-                <ShipmentLogin />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/shop/shipment/orders"
-            element={
-              <SellerProtectedRoute>
-                <OrdersPage />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/shop/shipment/return-orders"
-            element={
-              <SellerProtectedRoute>
-                <ReturnOrdersPage />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/shop/shipment/couriers"
-            element={
-              <SellerProtectedRoute>
-                <CouriersPage />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/shop/shipment/pickup-locations"
-            element={
-              <SellerProtectedRoute>
-                <PickupAddressPage />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/shop/new-orders"
-            element={
-              <SellerProtectedRoute>
-                <ShopNewOrders />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/shop/pending-orders"
-            element={
-              <SellerProtectedRoute>
-                <ShopPendingOrders />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/shop/delivered-orders"
-            element={
-              <SellerProtectedRoute>
-                <ShopDeliveredOrders />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/shop/canceled-orders"
-            element={
-              <SellerProtectedRoute>
-                <ShopCanceledOrders />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/shop/dashboard-refunds"
-            element={
-              <SellerProtectedRoute>
-                <ShopAllRefunds />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/shop/approved-refunds"
-            element={
-              <SellerProtectedRoute>
-                <ShopApprovedRefunds />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/shop/pending-refunds"
-            element={
-              <SellerProtectedRoute>
-                <ShopPendingRefunds />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/shop/rejected-refunds"
-            element={
-              <SellerProtectedRoute>
-                <ShopRejectedRefunds />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/shop/create-newsletter"
-            element={
-              <SellerProtectedRoute>
-                <CreateNewsletterPage />
-              </SellerProtectedRoute>
-            }
-          />
+            <Route
+              path="/shop/:id"
+              element={
+                <SellerProtectedRoute>
+                  <ShopHomePage />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/settings"
+              element={
+                <SellerProtectedRoute>
+                  <ShopSettingsPage />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/inquiries"
+              element={
+                <SellerProtectedRoute>
+                  <InquiriesPage />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/contacts"
+              element={
+                <SellerProtectedRoute>
+                  <ContactsPage />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/dashboard"
+              element={
+                <SellerProtectedRoute>
+                  <ShopDashboardPage />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/dashboard-create-product"
+              element={
+                <SellerProtectedRoute>
+                  <ShopCreateProduct />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/shop/dashboard-orders"
+              element={
+                <SellerProtectedRoute>
+                  <ShopAllOrders />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/shop/stocks"
+              element={
+                <SellerProtectedRoute>
+                  <ShopStocks />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/shop/shipment/login"
+              element={
+                <SellerProtectedRoute>
+                  <ShipmentLogin />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/shop/shipment/orders"
+              element={
+                <SellerProtectedRoute>
+                  <OrdersPage />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/shop/shipment/return-orders"
+              element={
+                <SellerProtectedRoute>
+                  <ReturnOrdersPage />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/shop/shipment/couriers"
+              element={
+                <SellerProtectedRoute>
+                  <CouriersPage />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/shop/shipment/pickup-locations"
+              element={
+                <SellerProtectedRoute>
+                  <PickupAddressPage />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/shop/new-orders"
+              element={
+                <SellerProtectedRoute>
+                  <ShopNewOrders />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/shop/pending-orders"
+              element={
+                <SellerProtectedRoute>
+                  <ShopPendingOrders />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/shop/delivered-orders"
+              element={
+                <SellerProtectedRoute>
+                  <ShopDeliveredOrders />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/shop/canceled-orders"
+              element={
+                <SellerProtectedRoute>
+                  <ShopCanceledOrders />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/shop/dashboard-refunds"
+              element={
+                <SellerProtectedRoute>
+                  <ShopAllRefunds />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/shop/approved-refunds"
+              element={
+                <SellerProtectedRoute>
+                  <ShopApprovedRefunds />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/shop/pending-refunds"
+              element={
+                <SellerProtectedRoute>
+                  <ShopPendingRefunds />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/shop/rejected-refunds"
+              element={
+                <SellerProtectedRoute>
+                  <ShopRejectedRefunds />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/shop/create-newsletter"
+              element={
+                <SellerProtectedRoute>
+                  <CreateNewsletterPage />
+                </SellerProtectedRoute>
+              }
+            />
 
-          <Route
-            path="/order/:id"
-            element={
-              <SellerProtectedRoute>
-                <ShopOrderDetails />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/return-order/:id"
-            element={
-              <SellerProtectedRoute>
-                <ShopOrderRefundPage />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/dashboard-products"
-            element={
-              <SellerProtectedRoute>
-                <ShopAllProducts />
-              </SellerProtectedRoute>
-            }
-          />
+            <Route
+              path="/order/:id"
+              element={
+                <SellerProtectedRoute>
+                  <ShopOrderDetails />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/return-order/:id"
+              element={
+                <SellerProtectedRoute>
+                  <ShopOrderRefundPage />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/dashboard-products"
+              element={
+                <SellerProtectedRoute>
+                  <ShopAllProducts />
+                </SellerProtectedRoute>
+              }
+            />
 
-          <Route
-            path="/shop/all-products"
-            element={
-              <SellerProtectedRoute>
-                <ShopAllProducts2 />
-              </SellerProtectedRoute>
-            }
-          />
+            <Route
+              path="/shop/all-products"
+              element={
+                <SellerProtectedRoute>
+                  <ShopAllProducts2 />
+                </SellerProtectedRoute>
+              }
+            />
 
-          <Route
-            path="/shop/draft-products"
-            element={
-              <SellerProtectedRoute>
-                <ShopAllDraftProducts />
-              </SellerProtectedRoute>
-            }
-          />
+            <Route
+              path="/shop/draft-products"
+              element={
+                <SellerProtectedRoute>
+                  <ShopAllDraftProducts />
+                </SellerProtectedRoute>
+              }
+            />
 
-          <Route
-            path="/shop/approved-products"
-            element={
-              <SellerProtectedRoute>
-                <ShopApprovedProducts />
-              </SellerProtectedRoute>
-            }
-          />
+            <Route
+              path="/shop/approved-products"
+              element={
+                <SellerProtectedRoute>
+                  <ShopApprovedProducts />
+                </SellerProtectedRoute>
+              }
+            />
 
-          <Route
-            path="/shop/rejected-products"
-            element={
-              <SellerProtectedRoute>
-                <ShopRejectedProducts />
-              </SellerProtectedRoute>
-            }
-          />
+            <Route
+              path="/shop/rejected-products"
+              element={
+                <SellerProtectedRoute>
+                  <ShopRejectedProducts />
+                </SellerProtectedRoute>
+              }
+            />
 
-          <Route
-            path="/shop/products-gallery"
-            element={
-              <SellerProtectedRoute>
-                <ProductsGalleryPage />
-              </SellerProtectedRoute>
-            }
-          />
+            <Route
+              path="/shop/products-gallery"
+              element={
+                <SellerProtectedRoute>
+                  <ProductsGalleryPage />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/shop/products-seo"
+              element={
+                <SellerProtectedRoute>
+                  <SEOPage />
+                </SellerProtectedRoute>
+              }
+            />
 
-          <Route
-            path="/shop/pending-products"
-            element={
-              <SellerProtectedRoute>
-                <ShopPendingProducts />
-              </SellerProtectedRoute>
-            }
-          />
+            <Route
+              path="/shop/pending-products"
+              element={
+                <SellerProtectedRoute>
+                  <ShopPendingProducts />
+                </SellerProtectedRoute>
+              }
+            />
 
-          <Route
-            path="/product/edit/:id"
-            element={
-              <SellerProtectedRoute>
-                <ShopProductEdit />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/shop/product/draft-edit/:id"
-            element={
-              <SellerProtectedRoute>
-                <ShopDraftProductEdit />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/shop/categories"
-            element={
-              <SellerProtectedRoute>
-                <ShopCategories />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/dashboard-create-event"
-            element={
-              <SellerProtectedRoute>
-                <ShopCreateEvents />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/dashboard-events"
-            element={
-              <SellerProtectedRoute>
-                <ShopAllEvents />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/dashboard-draft-events"
-            element={
-              <SellerProtectedRoute>
-                <AllDraftEvents />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/dashboard-draft-events/edit/:id"
-            element={
-              <SellerProtectedRoute>
-                <EventEditPage />
-              </SellerProtectedRoute>
-            }
-          />
-
-
-          <Route
-            path="/specification"
-            element={
-              <SellerProtectedRoute>
-                <AddSpecifications />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/dashboard-coupouns"
-            element={
-              <SellerProtectedRoute>
-                <ShopAllCoupouns />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/dashboard-withdraw-money"
-            element={
-              <SellerProtectedRoute>
-                <ShopWithDrawMoneyPage />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/withdraw-payment-history"
-            element={
-              <SellerProtectedRoute>
-                <WithDrawHistoryPage />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/withdraw-payment-requests"
-            element={
-              <SellerProtectedRoute>
-                <WithDrawRequestsPage />
-              </SellerProtectedRoute>
-            }
-          />
-
-          <Route
-            path="/dashboard-messages"
-            element={
-              <SellerProtectedRoute>
-                <ShopInboxPage />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/requested-products"
-            element={
-              <SellerProtectedRoute>
-                <ShopRequestedProducts />
-              </SellerProtectedRoute>
-            }
-          />
-          {/* seller */}
-
-          {/* site-config */}
-          <Route
-            path="/site-config/events-config"
-            element={
-              <SellerProtectedRoute>
-                <EventsConfigPage />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/site-config/categories-config"
-            element={
-              <SellerProtectedRoute>
-                <CategoriesConfigPage />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/site-config/contact-config"
-            element={
-              <SellerProtectedRoute>
-                <ContactConfigPage />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/site-config/footer-config"
-            element={
-              <SellerProtectedRoute>
-                <FooterConfigPage />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/site-config/section-titles-config"
-            element={
-              <SellerProtectedRoute>
-                <HeadingsConfigPage />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/site-config/about-us-config"
-            element={
-              <SellerProtectedRoute>
-                <AboutUsConfigPage />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/site-config/banner-config"
-            element={
-              <SellerProtectedRoute>
-                <BannerConfigPage />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/site-config/features-config"
-            element={
-              <SellerProtectedRoute>
-                <FeaturesConfigPage />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/site-config/form-quote-config"
-            element={
-              <SellerProtectedRoute>
-                <QuoteConfigPage />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/site-config/brands-config"
-            element={
-              <SellerProtectedRoute>
-                <BrandsConfigPage />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/site-config/testimonials-config"
-            element={
-              <SellerProtectedRoute>
-                <TestimonialsConfigPages />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/site-config/industries-config"
-            element={
-              <SellerProtectedRoute>
-                <IndustriesConfigPage />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/site-config/regions-config"
-            element={
-              <SellerProtectedRoute>
-                <RegionsConfigPage />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/site-config/newsletter-config"
-            element={
-              <SellerProtectedRoute>
-                <NewsLetterConfigPage />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/site-config/blogs-config"
-            element={
-              <SellerProtectedRoute>
-                <BlogsConfigPage />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/site-config/miscellaneous-config"
-            element={
-              <SellerProtectedRoute>
-                <MiscellaneousConfigPage />
-              </SellerProtectedRoute>
-            }
-          />
-          {/* site-config */}
+            <Route
+              path="/product/edit/:id"
+              element={
+                <SellerProtectedRoute>
+                  <ShopProductEdit />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/product/edit-seo/:id"
+              element={
+                <SellerProtectedRoute>
+                  <ProductSEOPage />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/shop/product/draft-edit/:id"
+              element={
+                <SellerProtectedRoute>
+                  <ShopDraftProductEdit />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/shop/categories"
+              element={
+                <SellerProtectedRoute>
+                  <ShopCategories />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/dashboard-create-event"
+              element={
+                <SellerProtectedRoute>
+                  <ShopCreateEvents />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/dashboard-events"
+              element={
+                <SellerProtectedRoute>
+                  <ShopAllEvents />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/dashboard-draft-events"
+              element={
+                <SellerProtectedRoute>
+                  <AllDraftEvents />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/dashboard-draft-events/edit/:id"
+              element={
+                <SellerProtectedRoute>
+                  <EventEditPage />
+                </SellerProtectedRoute>
+              }
+            />
 
 
-          {/* blogs start here */}
-          <Route
-            path="/admin/blog/edit/:id"
-            exact
-            element={
-              <SellerProtectedRoute>
-                <EditBlogPage />
-              </SellerProtectedRoute>
+            <Route
+              path="/specification"
+              element={
+                <SellerProtectedRoute>
+                  <AddSpecifications />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/dashboard-coupouns"
+              element={
+                <SellerProtectedRoute>
+                  <ShopAllCoupouns />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/dashboard-withdraw-money"
+              element={
+                <SellerProtectedRoute>
+                  <ShopWithDrawMoneyPage />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/withdraw-payment-history"
+              element={
+                <SellerProtectedRoute>
+                  <WithDrawHistoryPage />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/withdraw-payment-requests"
+              element={
+                <SellerProtectedRoute>
+                  <WithDrawRequestsPage />
+                </SellerProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/dashboard-messages"
+              element={
+                <SellerProtectedRoute>
+                  <ShopInboxPage />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/requested-products"
+              element={
+                <SellerProtectedRoute>
+                  <ShopRequestedProducts />
+                </SellerProtectedRoute>
+              }
+            />
+            {/* seller */}
+
+            {/* site-config */}
+            <Route
+              path="/site-config/events-config"
+              element={
+                <SellerProtectedRoute>
+                  <EventsConfigPage />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/site-config/categories-config"
+              element={
+                <SellerProtectedRoute>
+                  <CategoriesConfigPage />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/site-config/contact-config"
+              element={
+                <SellerProtectedRoute>
+                  <ContactConfigPage />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/site-config/footer-config"
+              element={
+                <SellerProtectedRoute>
+                  <FooterConfigPage />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/site-config/section-titles-config"
+              element={
+                <SellerProtectedRoute>
+                  <HeadingsConfigPage />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/site-config/about-us-config"
+              element={
+                <SellerProtectedRoute>
+                  <AboutUsConfigPage />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/site-config/banner-config"
+              element={
+                <SellerProtectedRoute>
+                  <BannerConfigPage />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/site-config/features-config"
+              element={
+                <SellerProtectedRoute>
+                  <FeaturesConfigPage />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/site-config/form-quote-config"
+              element={
+                <SellerProtectedRoute>
+                  <QuoteConfigPage />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/site-config/brands-config"
+              element={
+                <SellerProtectedRoute>
+                  <BrandsConfigPage />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/site-config/testimonials-config"
+              element={
+                <SellerProtectedRoute>
+                  <TestimonialsConfigPages />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/site-config/industries-config"
+              element={
+                <SellerProtectedRoute>
+                  <IndustriesConfigPage />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/site-config/regions-config"
+              element={
+                <SellerProtectedRoute>
+                  <RegionsConfigPage />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/site-config/newsletter-config"
+              element={
+                <SellerProtectedRoute>
+                  <NewsLetterConfigPage />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/site-config/blogs-config"
+              element={
+                <SellerProtectedRoute>
+                  <BlogsConfigPage />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/site-config/miscellaneous-config"
+              element={
+                <SellerProtectedRoute>
+                  <MiscellaneousConfigPage />
+                </SellerProtectedRoute>
+              }
+            />
+            {/* site-config */}
+
+
+            {/* blogs start here */}
+            <Route
+              path="/admin/blog/edit/:id"
+              exact
+              element={
+                <SellerProtectedRoute>
+                  <EditBlogPage />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/blog/compose"
+              exact
+              element={
+                <SellerProtectedRoute>
+                  <AddBlogsPage />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/blogs"
+              exact
+              element={
+                <SellerProtectedRoute>
+                  <BlogsListPage />
+                </SellerProtectedRoute>
+
+              }
+            />
+            <Route
+              path="/admin/blog/:publish"
+              exact
+              element={
+                <SellerProtectedRoute>
+                  <BlogPreviewPage />
+                </SellerProtectedRoute>
+              }
+            />
+            {/* blogs ends here */}
+
+
+
+
+          </Routes>
+        </Suspense>
+
+        <Toaster
+          position="top-right"
+          reverseOrder={false}
+          toastOptions={{
+            duration: 3000,
+            style: {
+              position: 'relative',
+              top: '80px',
             }
-          />
-          <Route
-            path="/admin/blog/compose"
-            exact
-            element={
-              <SellerProtectedRoute>
-                <AddBlogsPage />
-              </SellerProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/blogs"
-            exact
-            element={
-              <SellerProtectedRoute>
-                <BlogsListPage />
-              </SellerProtectedRoute>
-
-            }
-          />
-          <Route
-            path="/admin/blog/:publish"
-            exact
-            element={
-              <SellerProtectedRoute>
-                <BlogPreviewPage />
-              </SellerProtectedRoute>
-            }
-          />
-          {/* blogs ends here */}
-
-
-
-
-        </Routes>
-      </Suspense>
-
-      <Toaster
-        position="top-right"
-        reverseOrder={false}
-        toastOptions={{
-          duration: 3000,
-          style: {
-            position: 'relative',
-            top: '80px',
-          }
-        }}
-      />
-    </BrowserRouter>
+          }}
+        />
+      </BrowserRouter>
+    </HelmetProvider>
   );
 };
 
