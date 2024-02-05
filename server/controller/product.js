@@ -382,7 +382,7 @@ router.post(
         req.body.colorInputs = await Promise.all(colorImagePromises);
       }
       if (req.body?.name) {
-        req.body.slug = slugify(req.body?.name)
+        req.body.slug = slugify(req.body?.name.toLowerCase());
       }
 
       const productData = {
@@ -1302,7 +1302,7 @@ router.put(
       }
 
       if (formData?.name) {
-        formData.slug = slugify(formData?.name)
+        formData.slug = slugify(formData?.name.toLowerCase())
       }
 
       // Handle main image upload
@@ -1366,6 +1366,60 @@ router.put(
       const updatedProduct = await Product.findOneAndUpdate(
         { _id: proId },
         formData,
+        { new: true } // Ensure you get the updated document
+      );
+
+      res.status(201).json({
+        success: true,
+        product: updatedProduct,
+      });
+    } catch (error) {
+      console.error(error);
+      return next(
+        new ErrorHandler(
+          'Something went wrong while processing the request.',
+          500
+        )
+      );
+    }
+  })
+);
+// Update SEO product
+router.put(
+  '/update-product-seo', isSeller, flushProducts, flushProductsByCategory,
+  catchAsyncErrors(async (req, res, next) => {
+    try {
+      const {
+        productData
+      } = req.body;
+      const shopId = req.seller._id;
+      const proId = productData?._id;
+
+      // Input Validation: Check if required fields are present and in the expected format
+
+      if (!shopId || !proId) {
+        return next(
+          new ErrorHandler('Invalid request. Missing shopId or proId.', 400)
+        );
+      }
+
+      // Find the shop by ID
+      const shop = await Shop.findById(shopId);
+      if (!shop) {
+        return next(new ErrorHandler('Shop Id is invalid!', 400));
+      }
+
+      // Find the existing product by ID
+      const productFind = await Product.findById(proId);
+      if (!productFind) {
+        return next(new ErrorHandler('Product Not Found!', 400));
+      }
+
+
+      // Update the product with the new data
+      const updatedProduct = await Product.findOneAndUpdate(
+        { _id: proId },
+        productData,
         { new: true } // Ensure you get the updated document
       );
 
@@ -1751,6 +1805,27 @@ router.get(
       res.status(201).json({
         success: true,
         products,
+      });
+    } catch (error) {
+      return next(new ErrorHandler(error, 400));
+    }
+  })
+);
+
+// get published products of a shop
+router.get(
+  '/get-published-products/:slug', cacheMiddleware,
+  catchAsyncErrors(async (req, res, next) => {
+    try {
+      const slug = req.params?.slug
+      const product = await Product.find({
+        approved: true,
+        draft: false,
+        slug: slug
+      });
+      res.status(200).json({
+        success: true,
+        product,
       });
     } catch (error) {
       return next(new ErrorHandler(error, 400));

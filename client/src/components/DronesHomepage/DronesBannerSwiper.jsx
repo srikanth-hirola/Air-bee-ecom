@@ -30,6 +30,15 @@ export const DronesBannerSwiper = ({ content }) => {
                 <SwiperSlide key={i}>
                   <div className='DronesBannerSwiper-image'>
                     <img srcSet={item?.image?.url} src={item?.image?.url} alt="banner" />
+                    {/* <img
+                      src="DronesHomepage/clockicon.png"
+                      srcset="
+                      DronesHomepage/clockicon.png 300w,
+                      DronesHomepage/clockicon.png 900w,
+    DronesHomepage/clockicon.png 1800w"
+                      alt="description" width={"25px"} height={"25px"}
+                    /> */}
+
                   </div>
                 </SwiperSlide>
               ))}

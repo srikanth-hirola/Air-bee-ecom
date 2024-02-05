@@ -159,6 +159,9 @@ const productSchema = new mongoose.Schema({
   brandName: {
     type: String,
   },
+  seoKeywords: [String],
+  metaTitle: String,
+  metaDescription: String,
   productIdState: Boolean,
   productId: String,
   description: {

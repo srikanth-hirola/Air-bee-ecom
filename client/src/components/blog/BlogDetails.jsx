@@ -15,7 +15,6 @@ const BlogDetails = () => {
             const result = await axios.get(url);
             setLoading(true);
             const data = result.data;
-            console.log(data)
             setBlog(data);
         } catch (e) {
             console.log(e);

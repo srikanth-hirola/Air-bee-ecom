@@ -25,7 +25,7 @@ const ContactDetailsPage = () => {
     return (
         <>
             <DronesHeader />
-            <DronesHeader2/>
+            <DronesHeader2 />
             <AddNewAddress key={2} open={open} setOpen={setOpen} showModal={showModal} />
             <div className='ContactDetails-parent'>
                 {/* <div className='ContactDetails-sub1'>
@@ -59,24 +59,6 @@ const ContactDetailsPage = () => {
                                             : <p>No Address Saved</p>
                                         }
 
-                                        {/* <div className="col-md-6">
-                                            <div className='ContactDetails-Address-details-sub'>
-                                                <h5>Jhanvi Shah</h5>
-                                                <span>654132054</span>
-                                                <p>1/4 Pragatinagar Flats, opp. jain derasar , near Jain
-                                                    derasar, Vijaynagar road
-                                                </p>
-                                                <div className='ContactDetails-Address-details-sub-buttons'>
-                                                    <button className='ContactDetails-Address-details-sub-buttons1'>Home</button>
-                                                    <button className='ContactDetails-Address-details-sub-buttons2'>Default billing address</button>
-                                                </div>
-                                                <div className='ContactDetails-Address-details-sub-footer'>
-                                                    <button className='ContactDetails-Address-details-sub-footer-button1'>Remove</button>
-                                                    <button className='ContactDetails-Address-details-sub-footer-button2'>Edit</button>
-                                                    <button className='ContactDetails-Address-details-sub-footer-button2'>Set as Default</button>
-                                                </div>
-                                            </div>
-                                        </div> */}
 
 
                                     </div>
@@ -86,7 +68,7 @@ const ContactDetailsPage = () => {
                     </div>
                 </div>
             </div>
-            <DronesFooter/>
+            <DronesFooter />
         </>
 
     )

@@ -19,7 +19,7 @@ import VarientSelect from '../ProductDetails/VarientSelect';
 import ShippingDetails from './ShippingDetails';
 import BuyNow from '../ProductDetails/BuyNow';
 
-export const LapProductdet = ({ data, active, seller, styles }) => {
+export const LapProductdet = ({ data, active, }) => {
 
   const [count, setCount] = useState(1);
   // eslint-disable-next-line no-unused-vars

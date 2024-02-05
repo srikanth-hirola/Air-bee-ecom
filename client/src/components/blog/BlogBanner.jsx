@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-const BlogBanner = () => {
+const BlogBanner = ({ content }) => {
+
     return (
         <>
             <div className='AboutUsBanner-parent'>
@@ -9,24 +10,28 @@ const BlogBanner = () => {
                         <div className="col-md-6">
                             <div className='AboutUsBanner-sub'>
                                 <div className='AboutUsBanner-sub-content'>
-                                    <div className='AboutUsBanner-sub-content-image'>
-                                        <img src="/DronesHomepage/verify.png" alt="" />
-                                    </div>
-                                    <p>Air Bee - Best Electronics Platform </p>
+                                    {content?.tagImage?.image?.url &&
+                                        <div className='AboutUsBanner-sub-content-image'>
+                                            <img src={content?.tagImage?.image?.url} alt="tag" />
+                                        </div>
+                                    }
+                                    {content?.tagTitle && <p>{content?.tagTitle}</p>}
                                 </div>
-                                <h1>Air Bee Insights: Navigating the World of Embedded Electronics</h1>
-                                <div className='AboutUsBanner-sub-content-text'>
-                                    <p>Dive into our blog for a journey through the exciting realms of embedded electronics. From insightful guides and DIY project inspiration to the latest tech trends, join us on a discovery of innovation and creativity at Air Bee.</p>
-                                </div>
-                                <Link to="/products-by-category/search">
-                                    <button>Shop Now</button>
-                                </Link>
+                                {content?.title && <h1>{content?.title}</h1>}
+                                {content?.summary && <div className='AboutUsBanner-sub-content-text'>
+                                    <p>{content?.summary}</p>
+                                </div>}
+                                {content?.button?.title && <Link to={content?.button?.url}>
+                                    <button>{content?.button?.title}</button>
+                                </Link>}
                             </div>
                         </div>
                         <div className="col-md-6">
-                            <div className='AboutUsBanner-image'>
-                                <img src="/DronesHomepage/aboutusbanner.png" alt="" />
-                            </div>
+                            {content?.BannerImage?.image?.url &&
+                                <div className='AboutUsBanner-image'>
+                                    <img src={content?.BannerImage?.image?.url} alt="banner" />
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>
