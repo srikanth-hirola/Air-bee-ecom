@@ -207,8 +207,10 @@ const App = () => {
 
     return null;
   }
+  const helmetContext = {}
+
   return (
-    <HelmetProvider>
+    <HelmetProvider context={helmetContext}>
       <BrowserRouter >
 
         {stripeApikey && (

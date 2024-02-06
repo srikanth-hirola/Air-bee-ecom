@@ -15,6 +15,7 @@ import AboutUsBanner from '../../components/AboutUs/AboutUsBanner'
 import DronesHeader2 from '../../components/Headers/DronesHeader2'
 import { StyleConfig } from '../../utils/StyleConfig'
 import Loader from '../../utils/Loader'
+import { Helmet } from 'react-helmet-async'
 // import AboutUsTeam from '../../components/AboutUs/AboutUsTeam'
 
 const About = () => {
@@ -28,7 +29,14 @@ const About = () => {
 
 
     return (
-        <>{
+        
+        <>
+        <Helmet>
+<title>About Us || Airbee Technologies</title>
+<meta name='description' content='Hirola Infotech Solutions provide your business with a variety of digital solutions to promote your product/service online for your growth.'data-rh="true" />
+
+</Helmet>
+        {
             isLoading ? <Loader />
                 :
                 <div>

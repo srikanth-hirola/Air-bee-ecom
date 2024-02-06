@@ -25,6 +25,7 @@ import EventsHomeMiddle from '../../Pages/Events/EventsHomeMiddle';
 import DronesDirectionSensing from './DronesDirectionSensing';
 import { StyleConfig } from '../../utils/StyleConfig';
 import Loader from '../../utils/Loader';
+import { Helmet } from 'react-helmet-async';
 
 const DronesHomepage = () => {
 
@@ -39,6 +40,12 @@ const DronesHomepage = () => {
 
   return (
     <>
+    
+    <Helmet>
+<title>Airbee Technologies</title>
+<meta name='description' content='Hirola Infotech Solutions provide your business with a variety of digital solutions to promote your product/service online for your growth.'data-rh="true" />
+
+</Helmet>
       {isLoading ? <Loader /> : <>
         <DronesHeader />
         <DronesHeader2 />
