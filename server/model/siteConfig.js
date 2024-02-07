@@ -393,6 +393,8 @@ const siteConfigSchema = new mongoose.Schema({
     contactSecOne: Object,
     footerContent: Object,
     headingsContent: Object,
+
+    allPagesSEODetails: Object
 })
 
 module.exports = mongoose.model('SiteConfig', siteConfigSchema);

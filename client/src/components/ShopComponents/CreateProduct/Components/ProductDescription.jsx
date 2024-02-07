@@ -4,9 +4,6 @@ import { SelectImgModal } from '../Modal/SelectImgModal';
 
 export const ProductDescription = ({ productDetails, setProductDetails }) => {
     const styles = StyleConfig();
-
-    console.log(productDetails)
-
     const [selectedModalShow, setSelectedModalShow] = useState(false)
     const [modalLayoutName, setModalLaayoutName] = useState('');
 
@@ -93,7 +90,7 @@ export const ProductDescription = ({ productDetails, setProductDetails }) => {
             <button onClick={handleAddDescription} className='py-2 px-3 rounded bg-blue-500 text-light' style={{ background: styles?.mainColor, color: styles?.fontColor }}>Add Description</button>
             <SelectImgModal onHide={() => setSelectedModalShow(false)} show={selectedModalShow} setModalShow={setSelectedModalShow} setlayout={setProductDetails} layout={productDetails} uploadedImages={styles?.productImagesGallery} name={modalLayoutName} multiple={false} contentIndex={contentIndex} />
         </div>}
-        
+
     </>
     )
 }

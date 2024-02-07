@@ -1,7 +1,6 @@
 import React from 'react'
 
 export const ContactProduct1 = ({ content }) => {
-    console.log(content)
 
     return (
         <>

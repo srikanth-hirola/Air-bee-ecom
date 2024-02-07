@@ -6,7 +6,6 @@ import { StyleConfig } from '../../utils/StyleConfig'
 import useProductDetails from '../../hooks/useProductDetails'
 
 const RecommendedProductCard = ({ data, active }) => {
-    // console.log("data",data)
 
     const styles = StyleConfig();
 

@@ -20,7 +20,6 @@ const RefundTabs = () => {
     const eligibleOrders =
         orders && orders.filter((item) => item.status === "Processing refund");
 
-    console.log(eligibleOrders)
 
     // const rejectedRefunds = orders && orders.filter((item) => item.status === "Rejected refund");
     // const approvedRefunds = orders && orders.filter((item) => item.status === "Refund Success");

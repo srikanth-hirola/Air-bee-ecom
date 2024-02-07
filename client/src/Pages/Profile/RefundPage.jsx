@@ -1,16 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import RefundTabs from '../../components/Profile/RefundTabs'
 import SideBar from '../../components/Profile/SideBar'
 import DronesHeader from '../../components/Headers/DronesHeader'
 import DronesFooter from '../../components/DronesHomepage/DronesFooter'
 import DronesHeader2 from '../../components/Headers/DronesHeader2'
+import usePageSEOHandle from '../../hooks/Site-config/usePageSEOHandle'
+import SEOHelmet from '../../components/SEOHelmet'
 
 const RefundPage = () => {
+    const [seoDetails, setSEODetails] = useState()
+    usePageSEOHandle({ pageName: "refundSEO", setState: setSEODetails })
+
     return (
         <>
-
+            <SEOHelmet seoDetails={seoDetails} />
             <DronesHeader />
-            <DronesHeader2/>
+            <DronesHeader2 />
             <div className='RefundPage-parent'>
 
                 <div className='RefundPage-main-content'>
@@ -24,7 +29,7 @@ const RefundPage = () => {
                     </div>
                 </div>
             </div>
-            <DronesFooter/>
+            <DronesFooter />
 
         </>
     )

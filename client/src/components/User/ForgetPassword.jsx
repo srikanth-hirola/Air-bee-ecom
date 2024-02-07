@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import axios from 'axios';
 import OtpInput from 'react-otp-input';
-// import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import { StyleConfig } from '../../utils/StyleConfig';
 import { server } from '../../server';
 import toast from 'react-hot-toast';
 import DronesHeader from '../Headers/DronesHeader';
 import DronesFooter from '../DronesHomepage/DronesFooter';
+import usePageSEOHandle from '../../hooks/Site-config/usePageSEOHandle';
+import SEOHelmet from '../SEOHelmet';
 
 const ForgetPassword = () => {
     const [searchParams] = useSearchParams();
@@ -23,8 +24,12 @@ const ForgetPassword = () => {
 
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState('')
-    // const [visible, setVisible] = useState(false);
     const visible = false;
+
+    const [seoDetails, setSEODetails] = useState()
+
+    usePageSEOHandle({ pageName: "forgot-passwordSEO", setState: setSEODetails })
+
 
     const navigate = useNavigate();
 
@@ -51,23 +56,6 @@ const ForgetPassword = () => {
             params[key] = value;
         }
         setEmail(params?.email)
-
-
-        // const url = `${server}/user/forget-password?${new URLSearchParams(params)}`;
-        // const searchApiCall = async () => {
-        //     try {
-        //         const { data } = await axios.get(url);
-        //         setIsLoading(false)
-        //         setData(data.products)
-        //     } catch (error) {
-        //         toast.error(error.response.data.message)
-        //     }
-        // }
-
-        // console.log(url)
-
-        // searchApiCall()
-
     }, [searchParams])
 
 
@@ -137,9 +125,9 @@ const ForgetPassword = () => {
         }
     }
 
-
     return (
         <>
+            <SEOHelmet seoDetails={seoDetails} />
             <DronesHeader />
             <div className="h-[89vh] bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
                 <div className="sm:mx-auto sm:w-full sm:max-w-md">

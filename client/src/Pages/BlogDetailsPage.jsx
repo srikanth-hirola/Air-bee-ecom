@@ -7,11 +7,10 @@ import DronesFooter from '../components/DronesHomepage/DronesFooter'
 const BlogDetailsPage = () => {
     return (
         <>
-
             <DronesHeader />
             <DronesHeader2 />
             <BlogDetails />
-            <DronesFooter/>
+            <DronesFooter />
         </>
     )
 }

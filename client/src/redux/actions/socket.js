@@ -11,7 +11,6 @@ export const createNewReceivedMessage = (data) => async (dispatch, getState) => 
         type: 'setNewMessage',
         payload: data
     });
-    console.log(data)
     localStorage.setItem('newMessageDate', JSON.stringify(getState().messages.newMessageDate));
 };
 

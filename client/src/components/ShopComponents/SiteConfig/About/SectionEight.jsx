@@ -17,7 +17,6 @@ const SectionEight = ({ uploadedImages, logoLoading, setLogoLoading }) => {
 
 
     useEffect(() => {
-        console.log(styles?.aboutUsSecEight)
         setAboutUsSecEight(styles?.aboutUsSecEight)
     }, [styles?.aboutUsSecEight])
 

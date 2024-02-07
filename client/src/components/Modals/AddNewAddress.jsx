@@ -85,11 +85,6 @@ const AddNewAddress = ({ open, showModal, setOpen }) => {
 
             setCountry(value);
         } else if (name === 'state') {
-            const found = State.getStatesOfCountry(country).find(
-                (val) => val.isoCode === value
-            );
-            console.log(found, "statebilling")
-
             setState(value);
         } else {
             City.getCitiesOfState(country, state).find(

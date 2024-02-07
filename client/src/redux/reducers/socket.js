@@ -14,7 +14,6 @@ export const messageReducer = createReducer(initialState, {
 
         let updatedState = state.newMessageDate.map((item) => {
             if (item?.userId === action.payload.userId) {
-                console.log("found")
                 return {
                     ...item,
                     messageLength: (item?.messageLength || 0) + 1

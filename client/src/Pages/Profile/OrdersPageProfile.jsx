@@ -1,15 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import OrderspageTabs from '../../components/Profile/OrderspageTabs'
 import SideBar from '../../components/Profile/SideBar';
 import DronesHeader from '../../components/Headers/DronesHeader';
 import DronesFooter from '../../components/DronesHomepage/DronesFooter';
 import DronesHeader2 from '../../components/Headers/DronesHeader2';
+import usePageSEOHandle from '../../hooks/Site-config/usePageSEOHandle';
+import SEOHelmet from '../../components/SEOHelmet';
 
 const OrdersPageProfile = () => {
+    const [seoDetails, setSEODetails] = useState()
+    usePageSEOHandle({ pageName: "ordersSEO", setState: setSEODetails })
+
     return (
         <>
+            <SEOHelmet seoDetails={seoDetails} />
             <DronesHeader />
-            <DronesHeader2/>
+            <DronesHeader2 />
             <div className='Orderspage-parent'>
                 {/* <div className='Orderspage-sub1'>
                     <p>Home</p>
@@ -27,7 +33,7 @@ const OrdersPageProfile = () => {
                     </div>
                 </div>
             </div>
-            <DronesFooter/>
+            <DronesFooter />
         </>
 
     )

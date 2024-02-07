@@ -2,8 +2,6 @@ import React from 'react'
 
 export const MobileCase1 = ({ data }) => {
 
-    console.log(data?.productDescription)
-
     return (
         <div className='Mobile-case-1'>
             {data?.productDescription?.length > 0 &&

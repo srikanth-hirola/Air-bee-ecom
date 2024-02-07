@@ -8,6 +8,8 @@ import WishListHeading from '../components/wishlist/WishListHeading';
 import DronesHeader from '../components/Headers/DronesHeader';
 import DronesFooter from '../components/DronesHomepage/DronesFooter';
 import DronesHeader2 from '../components/Headers/DronesHeader2';
+import usePageSEOHandle from '../hooks/Site-config/usePageSEOHandle';
+import SEOHelmet from '../components/SEOHelmet';
 
 
 const WishListPage = () => {
@@ -15,21 +17,20 @@ const WishListPage = () => {
     const { wishlist } = useSelector((state) => state.wishlist);
     const [cartData, setCartData] = useState(wishlist);
     const dispatch = useDispatch();
-
+    const [seoDetails, setSEODetails] = useState()
+    usePageSEOHandle({ pageName: "wishlistSEO", setState: setSEODetails })
     const removeFromWishlistHandler = (data) => {
         dispatch(removeFromWishlist(data));
     };
-
-
     useEffect(() => {
         setCartData(wishlist)
     }, [wishlist])
 
-
     return (
         <>
+            <SEOHelmet seoDetails={seoDetails} />
             <DronesHeader />
-            <DronesHeader2/>
+            <DronesHeader2 />
             <div className='DronesCart-parent'>
                 <div className="container">
                     <CartBredCumbs />
@@ -60,7 +61,7 @@ const WishListPage = () => {
 
                 </div>
             </div>
-            <DronesFooter/>
+            <DronesFooter />
         </>
     )
 }

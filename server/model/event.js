@@ -4,53 +4,31 @@ const eventSchema = new mongoose.Schema({
   draft: Boolean,
   name: {
     type: String,
-    // required: [true, 'Please enter your event product name!'],
   },
+  metaTitle: String,
+  metaDescription: String,
+  seoKeywords: Array,
   slug: String,
   description: {
     type: String,
-    // required: [true, 'Please enter your event product description!'],
   },
   productArray: Array,
-  // category:{
-  //     type: String,
-  //     required:[true,"Please enter your event product category!"],
-  // },
   start_Date: {
     type: Date,
-    // required: [true, 'Please Start Date of event !'],
   },
   Finish_Date: {
     type: Date,
-    // required: [true, 'Please End Date of event !'],
   },
   status: {
     type: String,
-    // default: 'Running',
   },
-  // tags:{
-  //     type: String,
-  // },
-  // originalPrice:{
-  //     type: Number,
-  // },
-  // discountPrice:{
-  //     type: Number,
-  //     required: [true,"Please enter your event product price!"],
-  // },
-  // stock:{
-  //     type: Number,
-  //     required: [true,"Please enter your event product stock!"],
-  // },
   images: [
     {
       public_id: {
         type: String,
-        // required: true,
       },
       url: {
         type: String,
-        // required: true,
       },
     },
   ],

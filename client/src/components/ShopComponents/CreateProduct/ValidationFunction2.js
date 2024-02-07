@@ -38,43 +38,27 @@ const ValidationFunction2 = async (formData, setActiveError, images) => {
         formData.itemCondition === '' ||
         formData.hsnCode === null
     ) {
-        // toast.error('All mandatory fields must be filled');
         valArray.push(2);
-        // setActiveError(2);
-        // return false;
     }
 
     if (formData.mainImage.url === '' || images.length === 0) {
-        // toast.error('All mandatory fields must be filled');
-        console.log(formData.images)
         if (formData.images.length === 0) {
             valArray.push(4);
         }
-        // setActiveError(4);
-        // return false;
     }
 
     if (formData.description === '') {
-        // toast.error('All mandatory fields must be filled');
         valArray.push(5);
-        // setActiveError(5);
-        // return false;
     }
 
     const spec = await loopError(formData.specs);
     if (spec) {
-        // toast.error('All mandatory fields must be filled');
         valArray.push(5);
-        // setActiveError(5);
-        // return false;
     }
 
     const spec2 = await loopError(formData.specs2);
     if (spec2) {
-        // toast.error('All mandatory fields must be filled');
         valArray.push(5);
-        // setActiveError(5);
-        // return false;
     }
 
     if (
@@ -83,11 +67,7 @@ const ValidationFunction2 = async (formData, setActiveError, images) => {
         formData.materialType === '' ||
         formData.manufacturer === ''
     ) {
-        console.log("error")
-        // toast.error('All mandatory fields must be filled');
         valArray.push(7);
-        // setActiveError(7);
-        // return false;
     }
 
     if (formData.ataWeight && (formData.itemWeight === '' ||
@@ -97,19 +77,12 @@ const ValidationFunction2 = async (formData, setActiveError, images) => {
 
     if (formData.assemblyReq) {
         if (formData.noOfPieces === '' || formData.components === '' || formData.assemblyInstruction === '') {
-            console.log("error")
-            // toast.error('All mandatory fields must be filled');
             valArray.push(7);
-            // setActiveError(7);
-            // return false;
         }
     }
 
     if (formData.searchTerms.length === 0) {
-        // toast.error('All mandatory fields must be filled');
         valArray.push(3);
-        // setActiveError(3);
-        // return false;
     }
 
     if (
@@ -127,48 +100,32 @@ const ValidationFunction2 = async (formData, setActiveError, images) => {
         formData.shape === '' ||
         formData.constructionType === ''
     ) {
-        // toast.error('All mandatory fields must be filled');
         valArray.push(9);
-        // setActiveError(9);
-        // return false;
     }
 
     if (formData.showInputs) {
         const variationVal = await VariationValidation(formData.colorInputs, formData);
         if (variationVal) {
-            // toast.error('All mandatory fields must be filled');
             valArray.push(8);
-            // setActiveError(8);
-            // return false;
         }
 
     } else {
         if (formData.sellerSKU === '' || formData.originalPrice === '' || formData.discountPrice === '') {
-            // toast.error('All mandatory fields must be filled');
             valArray.push(2);
-            // setActiveError(2);
-            // return false;
         }
 
         if (formData.haveAttributes) {
             const hasError = await attrValidate(formData.attributes, formData.attributeStock);
             if (hasError) {
-                // toast.error('All mandatory fields must be filled');
                 valArray.push(2);
-                // setActiveError(2);
             }
-            // return hasError;
         } else if (formData.stock === null || formData.stock === '') {
             valArray.push(7);
 
         }
 
         if (formData.size === '' || formData.color === '') {
-            // toast.error('All mandatory fields must be filled');
-            console.log("error", formData.size, formData.color, formData.stock)
             valArray.push(7);
-            // setActiveError(7);
-            // return false;
         }
 
 
@@ -180,7 +137,6 @@ const ValidationFunction2 = async (formData, setActiveError, images) => {
 
     if (finalArray.length > 0) {
         setActiveError(finalArray);
-        console.log(finalArray)
         toast.error('All mandatory fields must be filled');
         return false;
     } else {

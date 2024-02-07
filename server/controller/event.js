@@ -343,6 +343,60 @@ router.get(
   })
 );
 
+// update event
+router.put(
+  '/update-event-store', isSeller,
+  catchAsyncErrors(async (req, res, next) => {
+    try {
+      const {
+        productData
+      } = req.body;
+      const shopId = req.seller._id;
+      const proId = productData?._id;
+
+      if (!shopId || !proId) {
+        return next(
+          new ErrorHandler('Invalid request. Missing shopId or eventId.', 400)
+        );
+      }
+
+      // Find the shop by ID
+      const shop = await Shop.findById(shopId);
+      if (!shop) {
+        return next(new ErrorHandler('Shop Id is invalid!', 400));
+      }
+
+      // Find the existing product by ID
+      const productFind = await Event.findById(proId);
+      if (!productFind) {
+        return next(new ErrorHandler('Product Not Found!', 400));
+      }
+
+
+      // Update the product with the new data
+      const updatedProduct = await Event.findOneAndUpdate(
+        { _id: proId },
+        productData,
+        { new: true } // Ensure you get the updated document
+      );
+
+      res.status(201).json({
+        success: true,
+        event: updatedProduct,
+      });
+    } catch (error) {
+      console.error(error);
+      return next(
+        new ErrorHandler(
+          'Something went wrong while processing the request.',
+          500
+        )
+      );
+    }
+  })
+);
+
+
 // get all events of a shop
 router.get(
   '/get-all-events/:id',

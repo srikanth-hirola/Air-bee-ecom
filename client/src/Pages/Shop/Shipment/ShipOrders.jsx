@@ -72,10 +72,6 @@ const ShipOrders = () => {
         handleSearchOrders();
     }, [orders, seller?._id, shippingOrders]);
 
-    useEffect(() => {
-        console.log(foundOrders);
-    }, [foundOrders]);
-
     const handleShipNow = async (e, orderID, shipmentID) => {
         e.preventDefault();
         try {

@@ -175,7 +175,6 @@ const Validation = async (formData, setActiveError) => {
 
     if (finalArray.length > 0) {
         setActiveError(finalArray);
-        console.log(finalArray)
         toast.error('All mandatory fields must be filled');
         return false;
     } else {

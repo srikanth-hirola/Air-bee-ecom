@@ -53,7 +53,6 @@ const MainBanner = ({ uploadedImages, logoLoading, setLogoLoading }) => {
         let ver = false;
         for (let i = 0; i < images?.length; i++) {
             if (!images[i]?.image?.url) {
-                console.log(images[i])
                 toast.error(`No Image File uploaded for position ${i + 1}`)
                 ver = true;
             }

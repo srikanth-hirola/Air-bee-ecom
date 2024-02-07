@@ -256,9 +256,7 @@ const useProductDetails = ({ data, selectedColor, selectedAttr, count, click, ac
                     .then((response) => {
                         setBtnLoading(false);
                         if (response.data.status === 200 || response.data.status === 201) {
-                            console.log(response.data.orders);
                             setDeliveryDate(response.data.orders.etd)
-                            // setShippingCHarge(response.data.orders.rate)
                         } else {
                             setDeliveryDate()
                             toast.error("Delivery is not available for that Post Code")

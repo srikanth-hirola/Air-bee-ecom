@@ -182,6 +182,8 @@ export const StyleConfig = () => {
         contactSecOne: siteConfigData?.contactSecOne,
         footerContent: siteConfigData?.footerContent,
         headingsContent: siteConfigData?.headingsContent,
+
+        allPagesSEODetails: siteConfigData?.allPagesSEODetails
     };
 
     return styles;

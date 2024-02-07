@@ -4,8 +4,6 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import Ratings from '../Shop/Ratings';
 export const ProductTapContent = ({ data }) => {
-
-    console.log(data)
     const [key, setKey] = useState('Bestseller');
     return (
         <div className='ProductTapContent1-parent'>
@@ -136,8 +134,8 @@ export const ProductTapContent = ({ data }) => {
                                                         <td className='bg-white py-2 px-2 h-full w-full'>{data?.itemCondition}</td>
                                                     </tr>
                                                 }
-                                                {data?.itemWeight>=0 &&
-                                                     <tr className="flex h-fit border-1 border-gray-300 mb-0">
+                                                {data?.itemWeight >= 0 &&
+                                                    <tr className="flex h-fit border-1 border-gray-300 mb-0">
                                                         <td className='px-2 py-2 w-[400px] bg-secondary-subtle'>Item Weight</td>
 
                                                         <td className='bg-white py-2 px-2 h-full w-full'>{data?.itemWeight + data?.itemWeightUnit}</td>

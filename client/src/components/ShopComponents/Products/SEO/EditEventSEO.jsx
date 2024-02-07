@@ -1,11 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { server } from '../../../../server';
 import { useParams } from 'react-router-dom';
-import { Form } from 'react-bootstrap';
+import { server } from '../../../../server';
 import toast from 'react-hot-toast';
+import { Form } from 'react-bootstrap';
 
-const EditProductSEO = () => {
+const EditEventSEO = () => {
 
     const { id } = useParams();
     const [productData, setProductData] = useState();
@@ -27,8 +27,9 @@ const EditProductSEO = () => {
     useEffect(() => {
         const fetchProductData = async () => {
             try {
-                const { data } = await axios.get(`${server}/product/editProduct/${id}`);
-                setProductData(data?.products[0])
+                const { data } = await axios.get(`${server}/event/get-all-event-products-store/${id}`);
+                console.log(data?.events)
+                setProductData(data?.events[0])
             } catch (error) {
                 console.log(error);
             }
@@ -67,10 +68,10 @@ const EditProductSEO = () => {
             return
         }
         try {
-            await axios.put(`${server}/product/update-product-seo`, {
+            await axios.put(`${server}/event/update-event-store`, {
                 productData
             }, { withCredentials: true });
-            toast.success("Updated Product SEO successfully")
+            toast.success("Updated Event SEO successfully")
         } catch (error) {
             console.log(error)
         }
@@ -190,4 +191,4 @@ const EditProductSEO = () => {
     )
 }
 
-export default EditProductSEO
+export default EditEventSEO

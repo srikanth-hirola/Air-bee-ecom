@@ -210,7 +210,6 @@ const DraftKeywords = ({ searchTerms, setSearchTerms, formData, colorInputs }) =
             searchingTerms.push(manufacturer);
         }
 
-        console.log(searchingTerms);
         return searchingTerms;
     };
 

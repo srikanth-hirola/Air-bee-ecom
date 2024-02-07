@@ -12,6 +12,7 @@ import { getAllProducts } from '../../redux/actions/product';
 import { useDispatch, useSelector } from 'react-redux';
 import DronesFooter from '../../components/DronesHomepage/DronesFooter';
 import DronesHeader2 from '../../components/Headers/DronesHeader2';
+import SEOHelmet from '../../components/SEOHelmet';
 
 
 const EventProductsPage = () => {
@@ -23,20 +24,20 @@ const EventProductsPage = () => {
     const [checkedItems, setCheckedItems] = useState([]);
     const [selectedPriceRange, setSelectedPriceRange] = useState();
     const [selectedBrands, setSelectedBrands] = useState([]);
-
+    const [filters, setFilters] = useState([]);
 
     useEffect(() => {
         dispatch(getAllProducts())
     }, [dispatch])
 
-    // const categoryData = searchParams.get("category");
     const { allProducts, isLoading } = useSelector((state) => state.products);
 
     const [data, setData] = useState([]);
-    // const [active, setActive] = useState(false);
     const [filteredData, setFilteredData] = useState([]);
     const [filteredAttr, setFilteredAttr] = useState();
-
+    const [productsLength, setProductsLength] = useState(0);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [seoDetails, setSeoDetails] = useState();
 
     useEffect(() => {
         if (searchParam) {
@@ -64,7 +65,13 @@ const EventProductsPage = () => {
                 .get(`${server}/event/get-all-event-products/${id}`)
                 .then((result) => {
                     if (result.data.Status === 'Success') {
+                        setSeoDetails({
+                            metaTitle: result.data.events[0]?.metaTitle,
+                            metaDescription: result.data.events[0]?.metaDescription,
+                        })
                         setData(result.data.events[0].productArray);
+                        setFilters(result.data.events[0].productArray);
+                        setProductsLength(result.data.events[0].productArray?.length)
                     }
                 })
                 .catch((error) => {
@@ -77,20 +84,20 @@ const EventProductsPage = () => {
         setIsVisibleData(!isVisibleData);
     };
 
-
     return (
         <>
+            <SEOHelmet seoDetails={seoDetails} />
             <DronesHeader />
-            <DronesHeader2/>
+            <DronesHeader2 />
             {isLoading ? <Loader /> :
                 <>
                     <div className='allproducts-parent'>
-                        <Filter data={filteredData?.length > 0 ? filteredData : data} setFilteredData={setFilteredData} styles={styles} checkedItems={checkedItems} setCheckedItems={setCheckedItems} selectedBrands={selectedBrands} selectedPriceRange={selectedPriceRange} setSelectedBrands={setSelectedBrands} setSelectedPriceRange={setSelectedPriceRange} filteredAttr={filteredAttr} setFilteredAttr={setFilteredAttr} isVisibleData={isVisibleData} toggleDataVisible={toggleDataVisible} />
-                        <AllProducts filteredProducts={filteredData?.length > 0 ? filteredData : data} bredCrumb={bredCrumb} checkedItems={checkedItems} setCheckedItems={setCheckedItems} data={data} setFilteredData={setFilteredData} setSelectedBrands={setSelectedBrands} selectedBrands={selectedBrands} setSelectedPriceRange={setSelectedPriceRange} setFilteredAttr={setFilteredAttr} isVisibleData={isVisibleData} toggleDataVisible={toggleDataVisible} />
+                        <Filter data={filteredData?.length > 0 ? filteredData : filters} setFilteredData={setFilteredData} styles={styles} checkedItems={checkedItems} setCheckedItems={setCheckedItems} selectedBrands={selectedBrands} selectedPriceRange={selectedPriceRange} setSelectedBrands={setSelectedBrands} setSelectedPriceRange={setSelectedPriceRange} filteredAttr={filteredAttr} setFilteredAttr={setFilteredAttr} isVisibleData={isVisibleData} toggleDataVisible={toggleDataVisible} />
+                        <AllProducts productsLength={productsLength} currentPage={currentPage} setCurrentPage={setCurrentPage} filteredProducts={filteredData?.length > 0 ? filteredData : data} bredCrumb={bredCrumb} checkedItems={checkedItems} setCheckedItems={setCheckedItems} data={data} setFilteredData={setFilteredData} setSelectedBrands={setSelectedBrands} selectedBrands={selectedBrands} setSelectedPriceRange={setSelectedPriceRange} setFilteredAttr={setFilteredAttr} isVisibleData={isVisibleData} toggleDataVisible={toggleDataVisible} />
                     </div>
                 </>
             }
-            <DronesFooter/>
+            <DronesFooter />
         </>
     );
 };

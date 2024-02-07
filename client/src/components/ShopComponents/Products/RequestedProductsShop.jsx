@@ -93,8 +93,6 @@ const RequestedProductsShop = ({ active }) => {
             type: 'number',
             sortable: false,
             renderCell: (params) => {
-                console.log(params)
-
                 return (
                     <>
                         <Link to={`/product/${params?.row?.slug}`}>
@@ -203,7 +201,6 @@ const RequestedProductsShop = ({ active }) => {
             type: 'number',
             sortable: false,
             renderCell: (params) => {
-                console.log(params)
                 return (
                     <>
                         <Link to={`/product/${params?.slug}`}>

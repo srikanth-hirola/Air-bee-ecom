@@ -11,9 +11,10 @@ import toast from 'react-hot-toast'
 import DronesHeader from '../components/Headers/DronesHeader'
 import DronesFooter from '../components/DronesHomepage/DronesFooter'
 import { useLocation } from 'react-router-dom'
+import usePageSEOHandle from '../hooks/Site-config/usePageSEOHandle'
+import SEOHelmet from '../components/SEOHelmet'
 
 const AllProductsByCategories = () => {
-
     const dispatch = useDispatch();
     const styles = StyleConfig();
     const [bredCrumb, setBredCrumd] = useState([])
@@ -39,7 +40,6 @@ const AllProductsByCategories = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [productsLength, setProductsLength] = useState(0);
     const urlParams = new URLSearchParams(window.location.search);
-
 
     useEffect(() => {
         const params = {};
@@ -77,10 +77,12 @@ const AllProductsByCategories = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [loaction]);
 
-
+    const [seoDetails, setSEODetails] = useState()
+    usePageSEOHandle({ pageName: "product-categorySEO", setState: setSEODetails })
 
     return (
         <>
+            <SEOHelmet seoDetails={seoDetails} />
             <DronesHeader />
             {isLoading ? <Loader /> :
                 <>

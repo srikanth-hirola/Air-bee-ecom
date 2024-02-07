@@ -6,7 +6,6 @@ const AddAttribute = ({ attributes, setAttributes, formData }) => {
         if (field === 'name') {
             updatedSpecification[index].name = value;
         } else if (field === 'values') {
-            console.log(value);
             updatedSpecification[index].values[valueIndex].valName = value;
         } else if (field === 'stock') {
             updatedSpecification[index].values[valueIndex].stock = value;

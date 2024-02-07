@@ -76,35 +76,13 @@ const CreateEvent = () => {
 
             window.location.reload();
         }
-        // axios
-        //     .get(`${server}/event/get-all-cat-product/${seller._id}`)
-        //     .then((result) => {
-        //         let products = result.data.product;
-        //         let produArr = [];
-        //         products?.map((item) => {
-        //             allEvents?.map((even) => {
-        //                 let found = even?.productArray?.find((pro) => pro?._id === item?._id)
-        //                 if (!found) {
-        //                     produArr.push(item)
-        //                 }
-        //             })
 
-        //         })
-        //         setProductData(produArr);
-        //         setIsLoading(false);
-        //     })
-        //     .catch((e) => {
-        //         console.log(e);
-        //     });
         const fetchProducts = axios.get(`${server}/event/get-all-cat-product/${seller._id}`);
 
         Promise.all([fetchProducts])
             .then(([productsResult, allEventsResult]) => {
                 const products = productsResult.data.product;
-                // const allEvents = allEventsResult.data; // Adjust accordingly based on the structure of your data
-
                 const allEventsProductIds = new Set();
-
                 allEvents.forEach((event) => {
                     event.productArray.forEach((product) => {
                         allEventsProductIds.add(product._id);

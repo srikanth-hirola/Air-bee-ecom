@@ -15,6 +15,8 @@ import toast from "react-hot-toast";
 import { socketId } from "../../components/Headers/socket";
 import { removeViewedMessage } from "../../redux/actions/socket";
 import DronesHeader2 from "../../components/Headers/DronesHeader2";
+import usePageSEOHandle from "../../hooks/Site-config/usePageSEOHandle";
+import SEOHelmet from "../../components/SEOHelmet";
 
 TimeAgo.addLocale(en)
 
@@ -38,6 +40,8 @@ const UserInbox = () => {
     const [open, setOpen] = useState(false);
     const scrollRef = useRef(null);
     const dispatch = useDispatch();
+    const [seoDetails, setSEODetails] = useState()
+    usePageSEOHandle({ pageName: "inboxSEO", setState: setSEODetails })
 
     useEffect(() => {
         if (user) {
@@ -76,7 +80,7 @@ const UserInbox = () => {
                 );
                 setConversations(resonse.data.conversations);
             } catch (error) {
-                // console.log(error);
+                console.log(error);
             }
         };
         getConversation();
@@ -137,16 +141,14 @@ const UserInbox = () => {
             })
             .then(async (res) => {
                 try {
-                    const resonse = await axios.get(
+                    await axios.get(
                         `${server}/conversation/get-all-conversation-user/${user?._id}`,
                         {
                             withCredentials: true,
                         }
                     );
-
-                    console.log(resonse.data.conversations)();
                 } catch (error) {
-                    // console.log(error);
+                    console.log(error);
                 }
 
 
@@ -271,51 +273,52 @@ const UserInbox = () => {
 
     return (
         <>
+            <SEOHelmet seoDetails={seoDetails} />
             <DronesHeader />
-<DronesHeader2/>
+            <DronesHeader2 />
             <div className="user-inbox">
-            <div className="container">
-                {!open && (
-                    <>
+                <div className="container">
+                    {!open && (
+                        <>
 
-                        <h1 className="text-center text-[30px] py-3 font-Poppins">
-                            All Messages
-                        </h1>
-                        {/* All messages list */}
-                        {conversations &&
-                            conversations.map((item, index) => (
-                                <MessageList
-                                    data={item}
-                                    key={index}
-                                    index={index}
-                                    setOpen={setOpen}
-                                    setCurrentChat={setCurrentChat}
-                                    me={user?._id}
-                                    setUserData={setUserData}
-                                    userData={userData}
-                                    online={onlineCheck(item)}
-                                    setActiveStatus={setActiveStatus}
-                                    loading={loading}
-                                />
-                            ))}
-                    </>
-                )}
+                            <h1 className="text-center text-[30px] py-3 font-Poppins">
+                                All Messages
+                            </h1>
+                            {/* All messages list */}
+                            {conversations &&
+                                conversations.map((item, index) => (
+                                    <MessageList
+                                        data={item}
+                                        key={index}
+                                        index={index}
+                                        setOpen={setOpen}
+                                        setCurrentChat={setCurrentChat}
+                                        me={user?._id}
+                                        setUserData={setUserData}
+                                        userData={userData}
+                                        online={onlineCheck(item)}
+                                        setActiveStatus={setActiveStatus}
+                                        loading={loading}
+                                    />
+                                ))}
+                        </>
+                    )}
 
-                {open && (
-                    <SellerInbox
-                        setOpen={setOpen}
-                        newMessage={newMessage}
-                        setNewMessage={setNewMessage}
-                        sendMessageHandler={sendMessageHandler}
-                        messages={messages}
-                        sellerId={user._id}
-                        userData={userData}
-                        activeStatus={activeStatus}
-                        scrollRef={scrollRef}
-                        handleImageUpload={handleImageUpload}
-                    />
-                )}
-            </div>
+                    {open && (
+                        <SellerInbox
+                            setOpen={setOpen}
+                            newMessage={newMessage}
+                            setNewMessage={setNewMessage}
+                            sendMessageHandler={sendMessageHandler}
+                            messages={messages}
+                            sellerId={user._id}
+                            userData={userData}
+                            activeStatus={activeStatus}
+                            scrollRef={scrollRef}
+                            handleImageUpload={handleImageUpload}
+                        />
+                    )}
+                </div>
             </div>
             <DronesFooter />
         </>

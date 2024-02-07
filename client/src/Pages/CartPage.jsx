@@ -11,14 +11,16 @@ import DronesHeader from '../components/Headers/DronesHeader'
 import DronesFooter from '../components/DronesHomepage/DronesFooter'
 import useGetCurrencyConversion from '../hooks/Site-config/useGetCurrencyConversion'
 import DronesHeader2 from '../components/Headers/DronesHeader2'
+import usePageSEOHandle from '../hooks/Site-config/usePageSEOHandle'
+import SEOHelmet from '../components/SEOHelmet'
 
 const CartPage = () => {
     const { cart } = useSelector((state) => state.cart);
     const { ConvertCurrency } = useGetCurrencyConversion()
     const styles = StyleConfig();
-
     const [cartData, setCartData] = useState(cart);
-
+    const [seoDetails, setSEODetails] = useState()
+    usePageSEOHandle({ pageName: "cartSEO", setState: setSEODetails })
     const dispatch = useDispatch();
 
     const removeFromCartHandler = (data) => {
@@ -50,10 +52,12 @@ const CartPage = () => {
     }, [cartData, cart])
 
 
+
     return (
         <>
+            <SEOHelmet seoDetails={seoDetails} />
             <DronesHeader />
-            <DronesHeader2/>
+            <DronesHeader2 />
             <div className='DronesCart-parent'>
                 <div className="container">
                     <CartBredCumbs />
@@ -61,7 +65,7 @@ const CartPage = () => {
                     <div className="col-md-12 col-lg-12">
                         <CartHeadings />
                     </div>
-                    
+
                     {cartData?.length > 0 ?
                         <div className='DronesCart-subparent'>
                             <div className="row">
@@ -107,7 +111,7 @@ const CartPage = () => {
 
                 </div>
             </div>
-            <DronesFooter/>
+            <DronesFooter />
         </>
     )
 }

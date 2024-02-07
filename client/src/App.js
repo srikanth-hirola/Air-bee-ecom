@@ -33,7 +33,9 @@ import { useSelector } from 'react-redux';
 import SEOPage from './Pages/Shop/SEO/SEOPage.jsx';
 import ProductSEOPage from './Pages/Shop/SEO/ProductSEOPage.jsx';
 import { HelmetProvider } from 'react-helmet-async';
-
+import PageSEOConfigPage from './Pages/Site-Config/PageSEOConfigPage.jsx';
+import EventsSEOPage from './Pages/Shop/SEO/EventsSEOPage.jsx';
+import EventEditSEOPage from './Pages/Shop/SEO/EventEditSEOPage.jsx';
 
 const DronesHomepage = lazy(() => import('./components/DronesHomepage/DronesHomepage.jsx'));
 const AllProductsPage = lazy(() => import('./Pages/AllProductsPage.jsx'));
@@ -42,7 +44,6 @@ const CartPage = lazy(() => import('./Pages/CartPage.jsx'));
 const WishListPage = lazy(() => import('./Pages/WishListPage.jsx'));
 const UserLoginPage = lazy(() => import('./Pages/Auth/UserLoginPage.jsx'));
 const CheckoutPage = lazy(() => import('./Pages/CheckoutPage.jsx'));
-
 const ProtectedRoute = lazy(() => import('./Routes/ProtectedRoute.js'));
 const PaymentPage = lazy(() => import('./Pages/PaymentPage.jsx'));
 const OrderSuccess = lazy(() => import('./utils/OrderSuccess/OrderSuccess.jsx'));
@@ -72,7 +73,6 @@ const ShopRejectedRefunds = lazy(() => import('./Pages/Shop/Refunds/ShopRejected
 const ShopOrderDetails = lazy(() => import('./Pages/Shop/Orders/ShopOrderDetails.jsx'));
 const ShopOrderRefundPage = lazy(() => import('./Pages/Shop/Refunds/ShopOrderRefundPage.jsx'));
 const ShopAllProducts = lazy(() => import('./Pages/Shop/Products/ShopAllProducts.jsx'));
-// const ShopAllProducts2 = lazy(() => import('./Pages/Shop/Products/ShopAllProducts2.jsx'));
 const ShopAllProducts2 = lazy(() => import('./Pages/Shop/Products/ShopAllProducts2.jsx'));
 const ShopAllDraftProducts = lazy(() => import('./Pages/Shop/Products/ShopAllDraftProducts.jsx'));
 const ShopApprovedProducts = lazy(() => import('./Pages/Shop/Products/ShopApprovedProducts.jsx'));
@@ -83,11 +83,9 @@ const ShopDraftProductEdit = lazy(() => import('./Pages/Shop/Products/ShopProduc
 const ShopCategories = lazy(() => import('./Pages/Shop/Categories/ShopCategories.jsx'));
 const ShopCreateEvents = lazy(() => import('./Pages/Shop/Events/ShopCreateEvents.jsx'));
 const ShopAllEvents = lazy(() => import('./Pages/Shop/Events/ShopAllEvents.jsx'));
-
 const AddSpecifications = lazy(() => import('./components/ShopComponents/CreateProduct/Components/AddSpecifications.jsx'));
 const ShopAllCoupouns = lazy(() => import('./Pages/Shop/Coupouns/ShopAllCoupouns.jsx'));
 const ShopWithDrawMoneyPage = lazy(() => import('./Pages/Shop/WithDraw/ShopWithDrawMoneyPage.jsx'));
-
 const ShopInboxPage = lazy(() => import('./Pages/Shop/Inbox/ShopInboxPage.jsx'));
 const ShopRequestedProducts = lazy(() => import('./Pages/Shop/Products/ShopRequestedProducts.jsx'));
 const EventProductsPage = lazy(() => import('./Pages/Events/EventProductsPage.jsx'));
@@ -103,7 +101,6 @@ const MiscellaneousConfigPage = lazy(() => import('./Pages/Site-Config/Miscellan
 const ContactConfigPage = lazy(() => import('./Pages/Site-Config/ContactConfigPage.jsx'));
 const InquiriesPage = lazy(() => import('./Pages/Forms/InquiriesPage.jsx'));
 const ContactsPage = lazy(() => import('./Pages/Forms/ContactsPage.jsx'));
-
 const CreateNewsletterPage = lazy(() => import('./Pages/Site-Config/CaresteNewsLetterPage.jsx'));
 const Blog = lazy(() => import('./Pages/Blog.jsx'));
 const TermsAndConditions = lazy(() => import('./Pages/TermsAndConditions.jsx'));
@@ -126,7 +123,6 @@ const BlogDetailsPage = lazy(() => import('./Pages/BlogDetailsPage.jsx'));
 const BlogsConfigPage = lazy(() => import('./Pages/Site-Config/BlogsConfigPage.jsx'));
 const FooterConfigPage = lazy(() => import('./Pages/Site-Config/FooterConfigPage.jsx'));
 const HeadingsConfigPage = lazy(() => import('./Pages/Site-Config/HeadingsConfigPage.jsx'));
-
 const ForgetPassword = lazy(() => import('./components/User/ForgetPassword.jsx'));
 const ProductsGalleryPage = lazy(() => import('./Pages/Shop/Gallery/ProductsGalleryPage.jsx'));
 const AllDraftEvents = lazy(() => import('./Pages/Shop/Events/AllDraftEvents.jsx'));
@@ -148,6 +144,7 @@ const App = () => {
     const { data } = await axios.get(`${server}/payment/stripeapikey`);
     setStripeApiKey(data.stripeApikey);
   }
+
   useEffect(() => {
     Store.dispatch(loadUser());
     Store.dispatch(loadSeller());
@@ -176,7 +173,6 @@ const App = () => {
 
   useEffect(() => {
     socketId.on('messageSeen', (data) => {
-      console.log("first")
     })
   }, [])
 
@@ -189,14 +185,6 @@ const App = () => {
       });
     }
   }, [user]);
-
-  // useEffect(() => {
-  //   let data = {
-  //     userId: user?._id,
-  //     messageLength: 0
-  //   }
-  //   arrivalMessage && toast.success("got")
-  // }, [arrivalMessage, user]);
 
   function ScrollToTop() {
     const { pathname } = useLocation();
@@ -212,7 +200,6 @@ const App = () => {
   return (
     <HelmetProvider context={helmetContext}>
       <BrowserRouter >
-
         {stripeApikey && (
           <Elements stripe={loadStripe(stripeApikey)}>
             <Suspense fallback={<Loader />}>
@@ -556,6 +543,14 @@ const App = () => {
                 </SellerProtectedRoute>
               }
             />
+            <Route
+              path="/shop/events-seo"
+              element={
+                <SellerProtectedRoute>
+                  <EventsSEOPage />
+                </SellerProtectedRoute>
+              }
+            />
 
             <Route
               path="/shop/pending-products"
@@ -579,6 +574,14 @@ const App = () => {
               element={
                 <SellerProtectedRoute>
                   <ProductSEOPage />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/event/edit-event-seo/:id"
+              element={
+                <SellerProtectedRoute>
+                  <EventEditSEOPage />
                 </SellerProtectedRoute>
               }
             />
@@ -817,6 +820,14 @@ const App = () => {
               element={
                 <SellerProtectedRoute>
                   <MiscellaneousConfigPage />
+                </SellerProtectedRoute>
+              }
+            />
+            <Route
+              path="/site-config/pages-seo-config"
+              element={
+                <SellerProtectedRoute>
+                  <PageSEOConfigPage />
                 </SellerProtectedRoute>
               }
             />

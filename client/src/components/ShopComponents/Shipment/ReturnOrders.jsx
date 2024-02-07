@@ -70,13 +70,7 @@ const ReturnOrders = () => {
         };
 
         handleSearchOrders();
-        // setFoundOrders(returnShippingOrders)
-        // console.log(returnShippingOrders)
     }, [orders, returnShippingOrders, seller?._id]);
-
-    useEffect(() => {
-        console.log(foundOrders);
-    }, [foundOrders]);
 
     const handleShipNow = async (e, orderID, shipmentID) => {
         e.preventDefault();

@@ -25,13 +25,6 @@ const AllOrders = ({ active }) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [dispatch]);
 
-
-    // const result = reduce.reduce((sum, initial) => {
-    //   return sum + initial;
-    // });
-
-    // console.log(result)
-
     const columns = [
         { field: 'id', headerName: 'Order ID', minWidth: 150, flex: 0.7 },
         {

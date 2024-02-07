@@ -32,7 +32,6 @@ const BlogsList = () => {
     useEffect(() => {
         fetchBlog(API, 1);
     }, [API]);
-console.log("Data",blogs)
 
     // const [blogs] = useState(allBlogData);
     // const [pageNumber, setPageNumber] = useState(0);

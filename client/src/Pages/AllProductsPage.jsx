@@ -11,6 +11,8 @@ import { StyleConfig } from '../utils/StyleConfig'
 import DronesHeader from '../components/Headers/DronesHeader'
 import DronesFooter from '../components/DronesHomepage/DronesFooter'
 import DronesHeader2 from '../components/Headers/DronesHeader2'
+import usePageSEOHandle from '../hooks/Site-config/usePageSEOHandle'
+import SEOHelmet from '../components/SEOHelmet'
 
 const AllProductsPage = () => {
     const location = useLocation();
@@ -29,19 +31,15 @@ const AllProductsPage = () => {
         dispatch(getPublishedProducts())
     }, [dispatch])
 
-
-    // const categoryData = searchParams.get("category");
+    const [seoDetails, setSEODetails] = useState()
+    usePageSEOHandle({ pageName: 'productsSEO', setState: setSEODetails, setLoading })
     const { allPublishedProducts } = useSelector((state) => state.products);
-
     const [data, setData] = useState([]);
-    // const [active, setActive] = useState(false);
     const [filteredData, setFilteredData] = useState([]);
     const [filteredAttr, setFilteredAttr] = useState();
     const [currentPage, setCurrentPage] = useState(1);
     const [productsLength, setProductsLength] = useState(0);
     const [filters, setFilters] = useState([]);
-
-
 
     useEffect(() => {
         if (searchParam) {
@@ -82,7 +80,6 @@ const AllProductsPage = () => {
         await data.products.map((val) => {
             arrayData.push(val.product);
         });
-        console.log("first")
         setProductsLength(arrayData?.length)
         setConstantData(arrayData)
         setFilters(arrayData)
@@ -123,6 +120,7 @@ const AllProductsPage = () => {
 
     return (
         <>
+            <SEOHelmet seoDetails={seoDetails} />
             <DronesHeader />
             <DronesHeader2 />
             {isLoading ? <Loader /> :

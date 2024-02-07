@@ -169,14 +169,11 @@ const ProductEdit = ({
         formData.colorInputs = colorInputs;
         formData.productDescription = productDetails;
 
-        // formData.images = images;
-
         if (mainImage) {
             formData.mainImage = mainImage;
         }
 
         const verify = await ValidationFunction2(formData, setActiveError, images);
-        // console.log(verify)
         if (verify) {
             dispatch(
                 updateProduct(
@@ -189,40 +186,6 @@ const ProductEdit = ({
             );
         }
     };
-
-    // const Validation = () => {
-    //   if (
-    //     formData.name === '' ||
-    //     formData.brandName === '' ||
-    //     formData.originalPrice === '' ||
-    //     formData.discountPrice === '' ||
-    //     formData.stock === ''
-    //   ) {
-    //     toast.error('All mandotory fields must be filled');
-    //     return false;
-    //   } else {
-    //     if (!formData.mainImage.url && !mainImage) {
-    //       toast.error('Main Image is Required');
-    //       return false;
-    //     }
-    //     if (formData.productIdState && formData.productId !== '') {
-    //       if (formData.showInputs) {
-    //         formData.colorInputs.map((val) => {
-    //           if (val.image.public_id !== '') {
-    //             return true;
-    //           } else {
-    //             toast.error('Variations Image is Required');
-    //             return false;
-    //           }
-    //         });
-    //       }
-    //       return true;
-    //     } else {
-    //       toast.error('ProductID is Required');
-    //       return false;
-    //     }
-    //   }
-    // };
 
     return (
         <div className="w-[90%] 800px:w-[50%] bg-white  shadow h-[80vh] rounded-[4px] p-3 overflow-y-scroll create-width">

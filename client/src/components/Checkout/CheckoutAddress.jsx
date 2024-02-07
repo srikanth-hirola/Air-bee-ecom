@@ -256,67 +256,6 @@ const CheckoutAddress = ({ showNext, setShowNext }) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }
 
-    // useEffect(() => {
-    //     let sellers = [];
-    //     cartData.forEach((product) => {
-    //         let sellerID = product.shopId;
-
-    //         const found = sellers.find((val) => val.sellerID === sellerID);
-    //         if (!found) {
-    //             sellers.push({
-    //                 sellerID: sellerID,
-    //                 products: [product],
-    //                 subTotalPrice: Number(product.finalPrice),
-    //                 totalPrice: null,
-    //                 shipping: null,
-    //                 weight: Number(product.packageWeight),
-    //                 length: Number(product.packageLength),
-    //                 height: Number(product.packageHeight),
-    //                 breadth: Number(product.packageWidth),
-    //             });
-    //         } else {
-    //             const sellerIndex = sellers.findIndex(
-    //                 (seller) => seller.sellerID === sellerID
-    //             );
-
-    //             const totalweight =
-    //                 Number(sellers[sellerIndex].weight) + Number(product.packageWeight);
-    //             const totalLength =
-    //                 Number(sellers[sellerIndex].length) + Number(product.packageLength);
-    //             const totalHeight =
-    //                 Number(sellers[sellerIndex].height) + Number(product.packageHeight);
-    //             const totalBreadth =
-    //                 Number(sellers[sellerIndex].breadth) + Number(product.packageWidth);
-
-    //             const totalSubTotal =
-    //                 Number(sellers[sellerIndex].subTotalPrice) +
-    //                 Number(product.finalPrice);
-
-    //             sellers[sellerIndex].products.push(product);
-    //             sellers[sellerIndex].weight = totalweight;
-    //             sellers[sellerIndex].length = totalLength;
-    //             sellers[sellerIndex].height = totalHeight;
-    //             sellers[sellerIndex].breadth = totalBreadth;
-
-    //             sellers[sellerIndex].subTotalPrice = totalSubTotal;
-    //         }
-    //     });
-
-    //     if (sellers.length > 1) {
-    //         setCoupan(false)
-    //     } else {
-    //         setCoupan(true)
-    //     }
-
-    //     if (sellers.length > 0) {
-    //         setSellerCart(sellers);
-    //     } else {
-    //         console.log("navigate")
-    //         // navigate("/products?search=allproducts")
-    //     }
-    //     // eslint-disable-next-line react-hooks/exhaustive-deps
-    // }, [cartData]);
-
     const handleSubmit = async (e, totalPrice) => {
         e.preventDefault();
         const name = couponCode;
@@ -524,23 +463,18 @@ const ShippingInfo = ({
             const found = Country.getAllCountries().find(
                 (val) => val.isoCode === value
             );
-            // console.log(found, "countrybilling")
-
             setCountry(value);
             setNewCountry(found.name);
         } else if (name === 'state') {
             const found = State.getStatesOfCountry(country).find(
                 (val) => val.isoCode === value
             );
-            // console.log(found, "statebilling")
-
             setState(value);
             setNewState(found.name);
         } else {
             const found = City.getCitiesOfState(country, state).find(
                 (val) => val.name === value
             );
-            // console.log(found, "citybilling")
             setCity(value);
             setNewCity(found.name);
         }
@@ -552,23 +486,18 @@ const ShippingInfo = ({
             const found = Country.getAllCountries().find(
                 (val) => val.isoCode === value
             );
-            // console.log(found, "countryshipping")
-
             setCountryshipping(value);
             setNewCountryshipping(found.name);
         } else if (name === 'stateshipping') {
             const found = State.getStatesOfCountry(countryshipping).find(
                 (val) => val.isoCode === value
             );
-            // console.log(found, "stateshipping")
-
             setStateshipping(value);
             setNewStateshipping(found.name);
         } else {
             const found = City.getCitiesOfState(countryshipping, stateshipping).find(
                 (val) => val.name === value
             );
-            // console.log(found, "cityshipping")
             setCityshipping(value);
             setNewCityshipping(found.name);
         }
@@ -633,9 +562,6 @@ const ShippingInfo = ({
                         ))}
                 </div>
             )}
-
-
-
 
             <div className='Checkoutpage-content-sub1'>
                 <>

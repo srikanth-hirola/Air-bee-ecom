@@ -5,16 +5,20 @@ import CheckoutAddress from '../components/Checkout/CheckoutAddress';
 import DronesHeader from '../components/Headers/DronesHeader';
 import DronesFooter from '../components/DronesHomepage/DronesFooter';
 import DronesHeader2 from '../components/Headers/DronesHeader2';
+import usePageSEOHandle from '../hooks/Site-config/usePageSEOHandle';
+import SEOHelmet from '../components/SEOHelmet';
 
 
 const CheckoutPage = () => {
     const [showNext, setShowNext] = useState(false);
-
+    const [seoDetails, setSEODetails] = useState()
+    usePageSEOHandle({ pageName: "checkoutSEO", setState: setSEODetails })
 
     return (
         <>
+            <SEOHelmet seoDetails={seoDetails} />
             <DronesHeader />
-            <DronesHeader2/>
+            <DronesHeader2 />
             <div className='Checkoutpage-parent'>
                 <div CheckoutStepsclassName="Checkoutpage-sub1">
                     <div className="container">
@@ -39,7 +43,7 @@ const CheckoutPage = () => {
 
                 </div>
             </div>
-            <DronesFooter/>
+            <DronesFooter />
 
         </>
 

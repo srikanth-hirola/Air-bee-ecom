@@ -11,7 +11,6 @@ const useFetchCategoryHandler = () => {
 
 
     const fetchCategory = (_id) => {
-        // console.log(_id)
         let found = category.find((cat) => cat?._id === _id);
         if (found) {
             return found

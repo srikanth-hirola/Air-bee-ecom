@@ -215,13 +215,7 @@ const DashboardSideBar = ({ active }) => {
                                         style={{ color: active === 10 ? 'orange' : 'black' }}
                                         onClick={() => sideBarActive(10)}
                                     >
-
-                                        {/* <h5
-                                        className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 2 ? 'text-[crimson]' : 'text-[#555]'
-                                            }`}
-                                    > */}
                                         All Events
-                                        {/* </h5> */}
                                     </Link>
                                 </div>
 
@@ -232,13 +226,7 @@ const DashboardSideBar = ({ active }) => {
                                         style={{ color: active === 11 ? 'orange' : 'black' }}
                                         onClick={() => sideBarActive(11)}
                                     >
-
-                                        {/* <h5
-                                        className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 2 ? 'text-[crimson]' : 'text-[#555]'
-                                            }`}
-                                    > */}
                                         Create Events
-                                        {/* </h5> */}
                                     </Link>
                                 </div>
                                 <div className="w-full accordian-child">
@@ -248,13 +236,17 @@ const DashboardSideBar = ({ active }) => {
                                         style={{ color: active === 12 ? 'orange' : 'black' }}
                                         onClick={() => sideBarActive(12)}
                                     >
-
-                                        {/* <h5
-                                        className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 2 ? 'text-[crimson]' : 'text-[#555]'
-                                            }`}
-                                    > */}
                                         Draft Events
-                                        {/* </h5> */}
+                                    </Link>
+                                </div>
+                                <div className="w-full accordian-child">
+                                    <Link
+                                        to="/shop/events-seo"
+                                        className="w-full h-full flex items-center pl-2"
+                                        style={{ color: active === 55 ? 'orange' : 'black' }}
+                                        onClick={() => sideBarActive(55)}
+                                    >
+                                        SEO Events
                                     </Link>
                                 </div>
                             </Accordion.Body>
@@ -272,13 +264,7 @@ const DashboardSideBar = ({ active }) => {
                                         style={{ color: active === 13 ? 'orange' : 'black' }}
                                         onClick={() => sideBarActive(13)}
                                     >
-
-                                        {/* <h5
-                                        className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 2 ? 'text-[crimson]' : 'text-[#555]'
-                                            }`}
-                                    > */}
                                         Approved Refunds
-                                        {/* </h5> */}
                                     </Link>
                                 </div>
                                 <div className="w-full accordian-child">
@@ -288,13 +274,7 @@ const DashboardSideBar = ({ active }) => {
                                         style={{ color: active === 15 ? 'orange' : 'black' }}
                                         onClick={() => sideBarActive(15)}
                                     >
-
-                                        {/* <h5
-                                        className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 2 ? 'text-[crimson]' : 'text-[#555]'
-                                            }`}
-                                    > */}
                                         Approved Refunds
-                                        {/* </h5> */}
                                     </Link>
                                 </div>
                                 <div className="w-full accordian-child">
@@ -304,12 +284,7 @@ const DashboardSideBar = ({ active }) => {
                                         style={{ color: active === 15 ? 'orange' : 'black' }}
                                         onClick={() => sideBarActive(15)}
                                     >
-                                        {/* <h5
-                                        className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 2 ? 'text-[crimson]' : 'text-[#555]'
-                                            }`}
-                                    > */}
                                         Pending Refunds
-                                        {/* </h5> */}
                                     </Link>
                                 </div>
                                 <div className="w-full accordian-child">
@@ -319,12 +294,7 @@ const DashboardSideBar = ({ active }) => {
                                         style={{ color: active === 16 ? 'orange' : 'black' }}
                                         onClick={() => sideBarActive(16)}
                                     >
-                                        {/* <h5
-                                        className={`hidden 800px:block pl-2 text-[16px] font-[400] m-0 ${active === 2 ? 'text-[crimson]' : 'text-[#555]'
-                                            }`}
-                                    > */}
                                         Rejected Refunds
-                                        {/* </h5> */}
                                     </Link>
                                 </div>
                             </Accordion.Body>
@@ -354,55 +324,7 @@ const DashboardSideBar = ({ active }) => {
                                 </h5>
                             </Link>
                         </div>
-                        {/* <Accordion.Item eventKey="4">
-                        <Accordion.Header>
 
-                            Payments
-                        </Accordion.Header>
-                        <Accordion.Body>
-                            <div className="w-full accordian-child">
-                                <Link
-                                    to="/dashboard-withdraw-money"
-                                    className="w-full h-full flex items-center pl-2"
-                                    style={{ color: active === 26 ? 'orange' : 'black' }}
-                                    onClick={() => sideBarActive(26)}
-                                >
-
-                            
-                                    Withdraw Money
-                                    
-                                </Link>
-                            </div>
-                            <div className="w-full accordian-child">
-                                <Link
-                                    to="/withdraw-payment-history"
-                                    className="w-full h-full flex items-center pl-2"
-                                    style={{ color: active === 26 ? 'orange' : 'black' }}
-                                    onClick={() => sideBarActive(26)}
-                                >
-
-                                    
-                                    Payment History
-                                    
-                                </Link>
-                            </div>
-                            <div className="w-full accordian-child">
-                                <Link
-                                    to="/withdraw-payment-requests"
-                                    className="w-full h-full flex items-center pl-2"
-                                    style={{ color: active === 26 ? 'orange' : 'black' }}
-                                    onClick={() => sideBarActive(26)}
-                                >
-
-                                    
-                                    Payment Requests
-                                   
-                                </Link>
-                            </div>
-
-
-                        </Accordion.Body>
-                    </Accordion.Item> */}
                         <div className="w-full flex items-center dashboard-main-control-image1">
                             <Link to="/dashboard-messages" className="w-full flex items-center">
                                 <BiMessageSquareDetail
@@ -548,17 +470,22 @@ const DashboardSideBar = ({ active }) => {
                             <Accordion.Body>
                                 <div className="w-full flex items-center accordian-child">
                                     <Link
+                                        to="/site-config/pages-seo-config"
+                                        className="w-full h-full flex items-center pl-2"
+                                        style={{ color: active === 54 ? 'orange' : 'black' }}
+                                        onClick={() => sideBarActive(54)}
+                                    >
+                                        Pages SEO Config
+                                    </Link>
+                                </div>
+                                <div className="w-full flex items-center accordian-child">
+                                    <Link
                                         to="/site-config/categories-config"
                                         className="w-full h-full flex items-center pl-2"
                                         style={{ color: active === 25 ? 'orange' : 'black' }}
                                         onClick={() => sideBarActive(25)}
                                     >
-                                        {/* <h5
-                                        className={`hidden 800px:block pl-2 text-[18px] font-[400] ${active === 3 ? 'text-[crimson]' : 'text-[#555]'
-                                            }`}
-                                    > */}
                                         Categories Config
-                                        {/* </h5> */}
                                     </Link>
                                 </div>
                                 <div className="w-full flex items-center accordian-child">
@@ -568,12 +495,8 @@ const DashboardSideBar = ({ active }) => {
                                         style={{ color: active === 26 ? 'orange' : 'black' }}
                                         onClick={() => sideBarActive(26)}
                                     >
-                                        {/* <h5
-                                        className={`hidden 800px:block pl-2 text-[18px] font-[400] ${active === 3 ? 'text-[crimson]' : 'text-[#555]'
-                                            }`}
-                                    > */}
+
                                         Events Config
-                                        {/* </h5> */}
                                     </Link>
                                 </div>
                                 <div className="w-full flex items-center accordian-child">
@@ -583,12 +506,8 @@ const DashboardSideBar = ({ active }) => {
                                         style={{ color: active === 31 ? 'orange' : 'black' }}
                                         onClick={() => sideBarActive(31)}
                                     >
-                                        {/* <h5
-                                        className={`hidden 800px:block pl-2 text-[18px] font-[400] ${active === 3 ? 'text-[crimson]' : 'text-[#555]'
-                                            }`}
-                                    > */}
+
                                         Contact Details Config
-                                        {/* </h5> */}
                                     </Link>
                                 </div>
                                 <div className="w-full flex items-center accordian-child">

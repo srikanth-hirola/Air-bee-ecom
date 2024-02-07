@@ -13,7 +13,6 @@ const Description = ({
     productDetails, setProductDetails
 }) => {
 
-    console.log(productDetails)
     return (
         <>
             <div>

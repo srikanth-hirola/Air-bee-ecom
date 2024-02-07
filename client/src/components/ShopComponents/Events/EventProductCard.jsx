@@ -40,13 +40,8 @@ const EventProductCard = ({ data1, isEvent, active }) => {
         }
     }, [allEvents, data1]);
 
-    console.log(data?.images[0]?.url, "data?.images[0]?.url")
-
     return (
         <>
-            {/* <Link to={`/event/${data._id}`}> */}
-            {/* <div className={`${styles.button} text-[#fff]`}>See Products</div> */}
-
             {data && (
 
                 <div className="w-full h-[200px] bg-white rounded-lg shadow-sm p-3 relative cursor-pointer product-card-border">
@@ -57,7 +52,6 @@ const EventProductCard = ({ data1, isEvent, active }) => {
                             <div className='w-full pb-2 h-[90px]'>
                                 <img
                                     src={`${data?.images[0]?.url}`}
-                                    // src={`${data?.mainImage?.url}`}
                                     alt=""
                                     className="w-full h-full object-contain cardCus-img"
                                 />
@@ -79,7 +73,6 @@ const EventProductCard = ({ data1, isEvent, active }) => {
                     </Link>
                 </div>
             )}
-            {/* </Link> */}
         </>
     );
 };

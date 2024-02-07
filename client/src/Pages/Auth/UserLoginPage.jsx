@@ -1,12 +1,15 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Login from '../../components/User/Login'
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import DronesHeader from '../../components/Headers/DronesHeader';
 import DronesFooter from '../../components/DronesHomepage/DronesFooter';
+import usePageSEOHandle from '../../hooks/Site-config/usePageSEOHandle';
+import SEOHelmet from '../../components/SEOHelmet';
 
 const UserLoginPage = () => {
-
+    const [seoDetails, setSEODetails] = useState()
+    usePageSEOHandle({ pageName: "loginSEO", setState: setSEODetails })
     const navigate = useNavigate();
     const { isAuthenticated } = useSelector((state) => state.user);
 
@@ -16,9 +19,9 @@ const UserLoginPage = () => {
         }
     }, [isAuthenticated, navigate])
 
-
     return (
         <>
+            <SEOHelmet seoDetails={seoDetails} />
             <DronesHeader />
             <div className='SignUpPage-parent'>
                 <div className="container">
@@ -35,7 +38,7 @@ const UserLoginPage = () => {
                 </div>
 
             </div>
-            <DronesFooter/>
+            <DronesFooter />
         </>
 
     )

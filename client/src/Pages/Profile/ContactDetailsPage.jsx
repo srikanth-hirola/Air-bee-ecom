@@ -6,13 +6,16 @@ import { useSelector } from 'react-redux';
 import AddressCards from '../../components/Profile/Cards/AddressCards';
 import DronesFooter from '../../components/DronesHomepage/DronesFooter';
 import DronesHeader2 from '../../components/Headers/DronesHeader2';
+import usePageSEOHandle from '../../hooks/Site-config/usePageSEOHandle';
+import SEOHelmet from '../../components/SEOHelmet';
 
 const ContactDetailsPage = () => {
     const { user } = useSelector((state) => state.user);
-
+    const [seoDetails, setSEODetails] = useState()
+    usePageSEOHandle({ pageName: "addressSEO", setState: setSEODetails })
     const [addressData, setAddressData] = useState([]);
-
     const [open, setOpen] = useState(false);
+
     const showModal = () => {
         setOpen(true);
     };
@@ -21,9 +24,9 @@ const ContactDetailsPage = () => {
         setAddressData(user?.addresses)
     }, [user])
 
-
     return (
         <>
+            <SEOHelmet seoDetails={seoDetails} />
             <DronesHeader />
             <DronesHeader2 />
             <AddNewAddress key={2} open={open} setOpen={setOpen} showModal={showModal} />

@@ -197,7 +197,6 @@ export const requestedProduct =
           showInputs,
           colorInputs
         );
-        console.log(data, 'data');
         dispatch({
           type: 'productCreateSuccess',
           payload: data.product,
@@ -205,59 +204,12 @@ export const requestedProduct =
         toast.success("Created Product Successfully")
         dispatch({ type: 'resetSuccessDraft' });
       } catch (error) {
-        console.log(error, 'error');
         dispatch({
           type: 'productCreateFail',
           payload: error.response.data.message,
         });
       }
     };
-
-// Update product
-// export const updateProduct =
-//   (
-//     name,
-//     description,
-//     category,
-//     tags,
-//     originalPrice,
-//     discountPrice,
-//     stock,
-//     shopId,
-//     images,
-//     _id
-//   ) =>
-//   async (dispatch) => {
-//     try {
-//       dispatch({
-//         type: 'productUpdateRequest',
-//       });
-
-//       const { data } = await axios.put(
-//         `${server}/product/update-product`,
-//         name,
-//         description,
-//         category,
-//         tags,
-//         originalPrice,
-//         discountPrice,
-//         stock,
-//         shopId,
-//         images,
-//         _id
-//       );
-//       dispatch({
-//         type: 'productUpdateSuccess',
-//         payload: data.result2,
-//       });
-//     } catch (error) {
-//       console.log(error);
-//       dispatch({
-//         type: 'productUpdateFail',
-//         payload: error.response.data.message,
-//       });
-//     }
-//   };
 
 // get All Products of a shop
 export const getAllProductsShop = (id) => async (dispatch) => {

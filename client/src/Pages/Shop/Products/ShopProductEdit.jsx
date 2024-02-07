@@ -124,7 +124,6 @@ const ShopDraftProductEdit = () => {
         // eslint-disable-next-line array-callback-return
         subCat.map((val) => {
             if (val._id === e.target.value) {
-                console.log(val)
                 setSubSubCat(val.subSubcategories);
             }
         });
@@ -210,7 +209,7 @@ const ShopDraftProductEdit = () => {
                     setProductDetails={setProductDetails}
                 /> */}
             </div>
-            <DronesFooter/>
+            <DronesFooter />
         </div>
     );
 };

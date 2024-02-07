@@ -19,10 +19,7 @@ const useSearchHandler = ({ searchInput, setSearchInput, setSuggestions, setFocu
                     return prevHistory;
                 });
                 var encodedSearchTerm = encodeURIComponent(searchTerm);
-                // console.log(encodedSearchTerm)
                 navigate(`/products?search=${encodedSearchTerm}`);
-                // const response = await axios.get(`${server}/product/search/${searchTerm}`);
-                // console.log(response.data);
             }
         } catch (error) {
             console.error(error);

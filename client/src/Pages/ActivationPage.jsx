@@ -6,10 +6,14 @@ import { server } from "../server";
 import DronesFooter from "../components/DronesHomepage/DronesFooter";
 import DronesHeader from "../components/Headers/DronesHeader";
 import DronesHeader2 from "../components/Headers/DronesHeader2";
+import usePageSEOHandle from "../hooks/Site-config/usePageSEOHandle";
+import SEOHelmet from "../components/SEOHelmet";
 
 const ActivationPage = () => {
     const { activation_token } = useParams();
     const [error, setError] = useState(false);
+    const [seoDetails, setSEODetails] = useState()
+    usePageSEOHandle({ pageName: "account-activationSEO", setState: setSEODetails })
 
     useEffect(() => {
         if (activation_token) {
@@ -19,7 +23,6 @@ const ActivationPage = () => {
                         activation_token,
                     })
                     .then((res) => {
-                        console.log(res);
                     })
                     .catch((err) => {
                         setError(true);
@@ -31,6 +34,7 @@ const ActivationPage = () => {
 
     return (
         <>
+            <SEOHelmet seoDetails={seoDetails} />
             <DronesHeader />
             <DronesHeader2 />
             <div

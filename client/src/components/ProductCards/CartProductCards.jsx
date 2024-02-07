@@ -135,7 +135,6 @@ const CartProductCards = ({
                     removeFromCartHandler(passedProduct)
                 }
             } else {
-                console.log("No attr", currentDisPrice * passedProduct?.qty)
                 let temp = {
                     ...passedProduct,
                     selectedColor: foundVarient,

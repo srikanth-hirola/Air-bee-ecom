@@ -14,6 +14,8 @@ import useGetCurrencyConversion from '../../hooks/Site-config/useGetCurrencyConv
 import DronesHeader from '../Headers/DronesHeader';
 import DronesHeader2 from '../Headers/DronesHeader2';
 import DronesFooter from '../DronesHomepage/DronesFooter';
+import usePageSEOHandle from '../../hooks/Site-config/usePageSEOHandle';
+import SEOHelmet from '../SEOHelmet';
 
 const OrderDetails = () => {
     const { ConvertCurrency } = useGetCurrencyConversion()
@@ -25,8 +27,10 @@ const OrderDetails = () => {
     const [comment, setComment] = useState('');
     const [selectedItem, setSelectedItem] = useState(null);
     const [rating, setRating] = useState(1);
-
     const { id } = useParams();
+    const styles = StyleConfig();
+    const [seoDetails, setSEODetails] = useState()
+    usePageSEOHandle({ pageName: "ordersSEO", setState: setSEODetails })
 
     useEffect(() => {
         dispatch(getAllOrdersOfUser(user._id));
@@ -75,13 +79,13 @@ const OrderDetails = () => {
             });
     };
 
-    const styles = StyleConfig();
 
 
     return (
         <>
-        <DronesHeader/>
-        <DronesHeader2/>
+            <SEOHelmet seoDetails={seoDetails} />
+            <DronesHeader />
+            <DronesHeader2 />
             <div className='OrderDetails-parent'>
                 <div className="row">
                     <div className=" col-md-12">
@@ -312,7 +316,7 @@ const OrderDetails = () => {
                     </div>
                 </div>
             </div>
-            <DronesFooter/>
+            <DronesFooter />
         </>
     )
 }

@@ -9,21 +9,12 @@ const CategoryBlogs = () => {
     const { category } = useParams();
 
     useEffect(() => {
-        console.log("Fetching blogs for category:", category);
 
         const fetchCategoryBlogs = async () => {
             try {
                 setLoading(true);
                 const result = await axios.get(`${server}/blogs/category/${category}`);
-                
-                // Log the entire result object
-                console.log("API response:", result);
-
                 const data = result?.data?.blogs;
-
-                // Log the received data
-                console.log("Received data:", data);
-
                 setCategoryBlogs(data);
             } catch (error) {
                 console.error("Error fetching category blogs:", error);
@@ -34,8 +25,6 @@ const CategoryBlogs = () => {
 
         fetchCategoryBlogs();
     }, [category]);
-
-    console.log("categoryBlogs", categoryBlogs);
 
     return (
         <>
