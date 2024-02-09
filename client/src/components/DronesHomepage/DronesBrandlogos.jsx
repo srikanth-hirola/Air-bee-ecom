@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { memo } from 'react'
+import LazyLoadImageComponent from '../OptimizeComp/LazyLoadImageComponent'
 
-const DronesBrandlogos = ({ content, title }) => {
+const DronesBrandlogos = memo(({ content, title }) => {
 
     return (
         <>
@@ -11,7 +12,8 @@ const DronesBrandlogos = ({ content, title }) => {
                         {content?.banners?.map((item, index) => (
                             <div className="col-6 col-sm-4 col-md-3 col-lg-2" key={index}>
                                 <div className="DronesBrandlogos-sub">
-                                    <img src={item?.image?.url} alt="brands" />
+                                    {/* <img src={item?.image?.url} alt="brands" /> */}
+                                    <LazyLoadImageComponent alt={"brands"} height={"100%"} width={"100%"} img={item?.image?.url} />
                                 </div>
                             </div>
                         ))}
@@ -20,6 +22,6 @@ const DronesBrandlogos = ({ content, title }) => {
             </div>
         </>
     )
-}
+})
 
 export default DronesBrandlogos

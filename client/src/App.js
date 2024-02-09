@@ -12,20 +12,20 @@ import './styles/aboutUs.css';
 import './styles/profile.css';
 import './styles/modals.css';
 import './styles/modals2.css';
-import { server } from './server.js';
+// import { server } from './server.js';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Store from './redux/store';
 import { loadSeller, loadUser } from './redux/actions/user';
-import { getAllProducts } from './redux/actions/product';
+import { getAllProducts, myAction } from './redux/actions/product';
 import { getAllEvents } from './redux/actions/event';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { getAllSiteConfig } from './redux/actions/siteConfig';
 import { register } from 'swiper/element/bundle';
 import { Toaster } from 'react-hot-toast';
 import { getAllCategories } from './redux/actions/category.js';
-import { Elements } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
-import axios from 'axios';
+// import { Elements } from '@stripe/react-stripe-js';
+// import { loadStripe } from '@stripe/stripe-js';
+// import axios from 'axios';
 import Loader from './utils/Loader.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { socketId } from './components/Headers/socket.js';
@@ -36,6 +36,10 @@ import { HelmetProvider } from 'react-helmet-async';
 import PageSEOConfigPage from './Pages/Site-Config/PageSEOConfigPage.jsx';
 import EventsSEOPage from './Pages/Shop/SEO/EventsSEOPage.jsx';
 import EventEditSEOPage from './Pages/Shop/SEO/EventEditSEOPage.jsx';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+import { wrapStore } from 'redux-in-worker';
+import WorkerFactory from './WorkerFactory.jsx';
+import myWorker from './workers/myWorker.worker.js'
 
 const DronesHomepage = lazy(() => import('./components/DronesHomepage/DronesHomepage.jsx'));
 const AllProductsPage = lazy(() => import('./Pages/AllProductsPage.jsx'));
@@ -138,22 +142,32 @@ const CategoriesConfigPage = lazy(() => import('./Pages/Site-Config/CategoriesCo
 register();
 
 const App = () => {
-  const [stripeApikey, setStripeApiKey] = useState('');
+  // const [stripeApikey, setStripeApiKey] = useState('');
 
-  async function getStripeApikey() {
-    const { data } = await axios.get(`${server}/payment/stripeapikey`);
-    setStripeApiKey(data.stripeApikey);
-  }
+  // async function getStripeApikey() {
+  //   const { data } = await axios.get(`${server}/payment/stripeapikey`);
+  //   setStripeApiKey(data.stripeApikey);
+  // }
 
   useEffect(() => {
+    Store.dispatch(getAllSiteConfig());
     Store.dispatch(loadUser());
     Store.dispatch(loadSeller());
-    Store.dispatch(getAllProducts());
     Store.dispatch(getAllEvents());
-    Store.dispatch(getAllSiteConfig());
     Store.dispatch(getAllCategories());
-    getStripeApikey();
+    Store.dispatch(getAllProducts());
+    // myAction()
+    // setTimeout(() => {
+    //   Store.dispatch(getAllProducts());
+    // }, [500])
+    // getStripeApikey();
   }, []);
+
+
+
+
+
+
 
   // eslint-disable-next-line no-unused-vars
   const [arrivalMessage, setArrivalMessage] = useState(null);
@@ -200,22 +214,22 @@ const App = () => {
   return (
     <HelmetProvider context={helmetContext}>
       <BrowserRouter >
-        {stripeApikey && (
-          <Elements stripe={loadStripe(stripeApikey)}>
-            <Suspense fallback={<Loader />}>
-              <Routes>
-                <Route
-                  path="/payment"
-                  element={
-                    <ProtectedRoute>
-                      <PaymentPage />
-                    </ProtectedRoute>
-                  }
-                />
-              </Routes>
-            </Suspense>
-          </Elements>
-        )}
+        {/* {stripeApikey && (
+          <Elements stripe={loadStripe(stripeApikey)}> */}
+        <Suspense fallback={<Loader />}>
+          <Routes>
+            <Route
+              path="/payment"
+              element={
+                <ProtectedRoute>
+                  <PaymentPage />
+                </ProtectedRoute>
+              }
+            />
+          </Routes>
+        </Suspense>
+        {/* </Elements>
+        )} */}
         <ScrollToTop />
         <Suspense fallback={<Loader />}>
           <Routes>

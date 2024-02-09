@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { memo, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllCategories } from '../redux/actions/category';
 import { StyleConfig } from '../utils/StyleConfig';
 import CategoriesWithProducts from '../components/categories/CategoriesWithProducts';
 
-const CategoriesHome = () => {
+const CategoriesHome = memo(() => {
     const { category } = useSelector((state) => state.category)
 
     const dispatch = useDispatch();
@@ -39,6 +39,6 @@ const CategoriesHome = () => {
             }
         </div>
     )
-}
+})
 
 export default CategoriesHome

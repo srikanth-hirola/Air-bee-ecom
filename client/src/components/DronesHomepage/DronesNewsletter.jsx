@@ -1,9 +1,9 @@
 import axios from 'axios';
-import React, { useState } from 'react'
+import React, { memo, useState } from 'react'
 import toast from 'react-hot-toast';
 import { server } from '../../server';
 
-const DronesNewsletter = ({ content }) => {
+const DronesNewsletter = memo(({ content }) => {
   const [email, setEmail] = useState('');
 
   const handleEmailSubscribe = async (e) => {
@@ -40,6 +40,6 @@ const DronesNewsletter = ({ content }) => {
     </>
 
   )
-}
+})
 
 export default DronesNewsletter

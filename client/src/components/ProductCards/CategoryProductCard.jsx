@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { StyleConfig } from '../../utils/StyleConfig';
 import useProductCardHandler from '../../hooks/useProductCardHandler';
 import { Link } from 'react-router-dom';
+import LazyLoadImageComponent from '../OptimizeComp/LazyLoadImageComponent';
 
 const CategoryProductCard = ({ data1 }) => {
     const styles = StyleConfig();
@@ -29,7 +30,8 @@ const CategoryProductCard = ({ data1 }) => {
                             </p>
                         </div>
                         <div className='DronesProductsRow2-card-image'>
-                            <img src={`${data?.mainImage?.url}`} alt="product" />
+                            <LazyLoadImageComponent alt={"product"} height={"100%"} width={"100%"} img={data?.mainImage?.url} />
+                            {/* <img src={`${data?.mainImage?.url}`} alt="product" /> */}
                         </div>
                     </div>
                 </Link>

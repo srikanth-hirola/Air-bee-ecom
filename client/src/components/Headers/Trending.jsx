@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import useProductDeals from '../../hooks/useProductDeals'
 import { useSelector } from 'react-redux';
+import LazyLoadImageComponent from '../OptimizeComp/LazyLoadImageComponent';
 
 const Trending = () => {
     const { allProducts } = useSelector((state) => state.products);
@@ -42,10 +43,11 @@ const Trending = () => {
                 {categories?.slice(0, 4).map((product, i) => (
                     <div className="list-item text-center" key={i}>
                         <Link to={`/products-by-category/search?category=${product.name}`}>
-                            <img
+                            {/* <img
                                 src={product?.CatImg?.url}
                                 alt="Fashion"
-                            />
+                            /> */}
+                            <LazyLoadImageComponent alt={"Fashion"} height={200} width={"100%"} img={product?.CatImg?.url} />
                             <h4 className="title">{product?.name}</h4>
                         </Link>
                     </div>

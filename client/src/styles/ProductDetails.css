@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"); */
 
 * {
   font-family: "Inter", sans-serif;
@@ -394,8 +394,8 @@
   display: flex;
   align-items: center;
 }
-.laptop-productdetails .laptop-productdetails-wishlist a{
- padding: 0px 3px;
+.laptop-productdetails .laptop-productdetails-wishlist a {
+  padding: 0px 3px;
 }
 .laptop-productdetails-wishlist h6 {
   color: var(--Gray-700, #475156);
@@ -642,35 +642,35 @@ button.attribute-btn.attribute-strike-btn {
   }
   .breadcrump-product1 {
     padding: 8px;
-}
-.row.laptop-productdetails-colours {
-  display: none;
-}
-ol.breadcrumb.contactpage-breadcramp1 {
-  font-size: 14px;
-}
-.laptop-slider-product-page .mainImg img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  /* padding: 50px; */
-}
-.swiper.swiper-initialized.swiper-horizontal.mySwiper2.swiper-backface-hidden {
-  height: 250px;
-}
-.laptop-productdetails .laptop-productdetails-buy{
-  height: 50px;
-}
-.laptop-productdetails .laptop-productdetails-cart{
-  height: 50px;
-}
-.mainImg1 {
-  /* width: 100%; */
-  height: 100px;
-  padding: 15px;
-  /* border: 1px solid #e0dbdb; */
-  /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
-}
+  }
+  .row.laptop-productdetails-colours {
+    display: none;
+  }
+  ol.breadcrumb.contactpage-breadcramp1 {
+    font-size: 14px;
+  }
+  .laptop-slider-product-page .mainImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* padding: 50px; */
+  }
+  .swiper.swiper-initialized.swiper-horizontal.mySwiper2.swiper-backface-hidden {
+    height: 250px;
+  }
+  .laptop-productdetails .laptop-productdetails-buy {
+    height: 50px;
+  }
+  .laptop-productdetails .laptop-productdetails-cart {
+    height: 50px;
+  }
+  .mainImg1 {
+    /* width: 100%; */
+    height: 100px;
+    padding: 15px;
+    /* border: 1px solid #e0dbdb; */
+    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+  }
   .mobilespage-row2 {
     display: flex;
     flex-direction: column-reverse;
@@ -748,19 +748,17 @@ ol.breadcrumb.contactpage-breadcramp1 {
 }
 @media only screen and (min-width: 1400px) {
 }
-.ProductTapContent1-feature .table th{
+.ProductTapContent1-feature .table th {
   border: 0;
 }
-.ProductTapContent1-feature .table td{
+.ProductTapContent1-feature .table td {
   border: 0;
-
 }
-.ProductTapContent1-feature .table .bg-white{
+.ProductTapContent1-feature .table .bg-white {
   text-align: left;
   font-size: 13px;
   line-height: 29px;
   letter-spacing: 0.6px;
-
 }
 p.mb-0.font-semibold {
   font-size: 13px;
@@ -777,7 +775,7 @@ span.bg-white.py-2.pl-2.h-full.w-full {
 /* .table>:not(caption)>*>*{
   background-color: grey;
 } */
-.ProductTapContent1-feature .table .bg-secondary-subtle{
+.ProductTapContent1-feature .table .bg-secondary-subtle {
   width: 250px !important;
   text-align: left;
   font-weight: 600;

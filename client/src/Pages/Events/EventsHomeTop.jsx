@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { memo, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import { StyleConfig } from '../../utils/StyleConfig';
 import EventCardWithProducts from '../../components/Events/EventCardWithProducts';
 
-const EventsHomeTop = ({ content }) => {
+const EventsHomeTop = memo(({ content }) => {
     const { allEvents } = useSelector((state) => state.events);
 
     const [eventLayountOneSelectedEvents, setEventLayoutOneSelectedEvents] = useState([])
@@ -27,6 +27,6 @@ const EventsHomeTop = ({ content }) => {
             })}
         </>
     )
-}
+})
 
 export default EventsHomeTop

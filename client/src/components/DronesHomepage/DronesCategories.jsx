@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Autoplay } from 'swiper/modules';
+// import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -26,12 +26,12 @@ const DronesCategories = () => {
         </div>
         {allPublishedProducts?.length > 0 ?
           <Swiper className='paginationDisabledClass'
-            autoplay={{
-              delay: 1500,
-              disableOnInteraction: false,
-            }}
+            // autoplay={{
+            //   delay: 1500,
+            //   disableOnInteraction: false,
+            // }}
 
-            modules={[Autoplay]}
+            // modules={[Autoplay]}
             spaceBetween={50}
             slidesPerView={4}
             navigation

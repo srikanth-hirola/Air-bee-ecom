@@ -1,9 +1,11 @@
 // import Swiper core and required modules
-import { Autoplay } from 'swiper/modules';
-
+import React from 'react';
+// import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
 import 'swiper/css';
+import LazyLoadImageComponent from '../OptimizeComp/LazyLoadImageComponent';
+import { Helmet } from 'react-helmet-async';
 
 export const DronesBannerSwiper = ({ content }) => {
   return (
@@ -13,28 +15,27 @@ export const DronesBannerSwiper = ({ content }) => {
           <div className="col-md-12">
             <Swiper
               // install Swiper modules
-              modules={[Autoplay]}
+              // modules={[Autoplay]}
               spaceBetween={50}
               slidesPerView={1}
-              autoplay={{
-                delay: 1500,
-                disableOnInteraction: false,
-              }}
+              // autoplay={{
+              //   delay: 1500,
+              //   disableOnInteraction: false,
+              // }}
               loop={true}
             >
               {content?.banners?.map((item, i) => (
                 <SwiperSlide key={i}>
                   <div className='DronesBannerSwiper-image'>
-                    <img srcSet={item?.image?.url} src={item?.image?.url} alt="banner" />
-                    {/* <img
-                      src="DronesHomepage/clockicon.png"
-                      srcset="
-                      DronesHomepage/clockicon.png 300w,
-                      DronesHomepage/clockicon.png 900w,
-    DronesHomepage/clockicon.png 1800w"
-                      alt="description" width={"25px"} height={"25px"}
-                    /> */}
-
+                    <Helmet>
+                      <link
+                        rel="preload"
+                        as="image"
+                        href={item?.image?.url}
+                      />
+                    </Helmet>
+                    {/* <img srcSet={item?.image?.url} src={item?.image?.url} alt="banner" /> */}
+                    <LazyLoadImageComponent alt={"banner"} height={"100%"} width={"100%"} img={item?.image?.url} fetchpriority="high" />
                   </div>
                 </SwiperSlide>
               ))}

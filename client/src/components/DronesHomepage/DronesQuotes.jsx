@@ -1,9 +1,9 @@
 import axios from 'axios';
-import React, { useState } from 'react'
+import React, { memo, useState } from 'react'
 import toast from 'react-hot-toast';
 import { server } from '../../server';
 
-const DronesQuotes = ({ content }) => {
+const DronesQuotes = memo(({ content }) => {
     const [form, setForm] = useState({
         name: '',
         phone: '',
@@ -46,9 +46,14 @@ const DronesQuotes = ({ content }) => {
     return (
         <>
             <div className='DronesQuotes-parent'>
-                <div className='DronesQuotes-parent-bg-image' style={{
-                    backgroundImage: `url(${content?.BannerImage?.image?.url})`
-                }}>
+                <div className='relative'
+                // style={{
+                //     backgroundImage: `url(${content?.BannerImage?.image?.url})`
+                // }}
+                >
+                    {/* <div className='absolute '>
+                        <img src={content?.BannerImage?.image?.url} alt='bg' className='w-full h-full' />
+                    </div> */}
                     <div className='row' >
                         <div className="col-md-6">
                             <div className='DronesQuotes-sub-left'>
@@ -85,6 +90,6 @@ const DronesQuotes = ({ content }) => {
         </>
 
     )
-}
+})
 
 export default DronesQuotes;

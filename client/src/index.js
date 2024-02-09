@@ -7,8 +7,11 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import { Provider } from 'react-redux';
 import Store from './redux/store';
+import { wrapStore } from 'redux-in-worker';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+
 root.render(
   <Provider store={Store}>
     <App />

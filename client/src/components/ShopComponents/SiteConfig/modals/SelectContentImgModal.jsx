@@ -28,11 +28,14 @@ export const SelectContentImgModal = (props) => {
     const handleSelectImage = (e, index) => {
         e.preventDefault();
         let foundImage = props?.uploadedImages[index];
-        props.setlayout((prevState) => {
-            let updatedState = { ...prevState };
-            updatedState[props?.name][props?.curindex] = { ...updatedState[props?.name][props?.curindex], image: foundImage };
-            return updatedState;
-        })
+        let updatedState = JSON.parse(JSON.stringify(props.layout));
+        updatedState[props?.name][props?.curindex] = { ...updatedState[props?.name][props?.curindex], image: foundImage };
+        props.setlayout(updatedState)
+        // props.setlayout((prevState) => {
+        //     let updatedState = { ...prevState };
+        //     updatedState[props?.name][props?.curindex] = { ...updatedState[props?.name][props?.curindex], image: foundImage };
+        //     return updatedState;
+        // })
     }
 
     const handleSelectMultipleImage = (e, index) => {

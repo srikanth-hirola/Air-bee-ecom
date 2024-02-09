@@ -1,6 +1,10 @@
 import axios from 'axios';
 import { server } from '../../server';
 import toast from 'react-hot-toast';
+import WorkerFactory from '../../WorkerFactory';
+import myWorker from '../../workers/myWorker.worker'
+
+const workerInstance = new WorkerFactory(myWorker);
 
 // create product
 export const createProduct = (formData, images) => async (dispatch) => {
@@ -384,10 +388,29 @@ export const getAllProducts = () => async (dispatch) => {
       type: 'getAllProductsSuccess',
       payload: data.products,
     });
+    workerInstance.postMessage(data);
+
+    // Listen for messages from the worker
+    workerInstance.onmessage = (res) => {
+      dispatch({
+        type: 'getAllProductsSuccess',
+        payload: data.products,
+      });
+    };
+
+
   } catch (error) {
-    dispatch({
-      type: 'getAllProductsFailed',
-      payload: error.response.data.message,
-    });
+    // Handle errors from the worker
+    workerInstance.onerror = (err) => {
+      dispatch({
+        type: 'getAllProductsFailed',
+        payload: err.response.data.message,
+      });
+    };
+    // dispatch({
+    //   type: 'getAllProductsFailed',
+    //   payload: error.response.data.message,
+    // });
   }
 };
+

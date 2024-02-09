@@ -35,22 +35,22 @@ const useProductCard = ({ data1, data, setData, setActive, setSeller, setLoading
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [allProducts, allEvents, id]);
 
-    useEffect(() => {
-        async function getSellerDetails(sellerID) {
-            try {
-                const { data } = await axios.post(`${server}/shop/getSellerProduct`, { sellerID })
-                setSeller(data.seller)
-                setLoading(false)
-            } catch (error) {
-                console.log(error)
-            }
-        }
-        if (data !== null) {
-            getSellerDetails(data?.shopId)
+    // useEffect(() => {
+    //     async function getSellerDetails(sellerID) {
+    //         try {
+    //             const { data } = await axios.post(`${server}/shop/getSellerProduct`, { sellerID })
+    //             setSeller(data.seller)
+    //             setLoading(false)
+    //         } catch (error) {
+    //             console.log(error)
+    //         }
+    //     }
+    //     if (data !== null) {
+    //         getSellerDetails(data?.shopId)
 
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [data])
+    //     }
+    //     // eslint-disable-next-line react-hooks/exhaustive-deps
+    // }, [data])
 
 }
 

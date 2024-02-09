@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
-import {
-    CardNumberElement,
-    CardCvcElement,
-    CardExpiryElement,
-    useStripe,
-    useElements,
-} from '@stripe/react-stripe-js';
+// import {
+//     CardNumberElement,
+//     CardCvcElement,
+//     CardExpiryElement,
+//     useStripe,
+//     useElements,
+// } from '@stripe/react-stripe-js';
 import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
@@ -25,8 +25,8 @@ const Payment = () => {
     const [open, setOpen] = useState(false);
     const { user } = useSelector((state) => state.user);
     const navigate = useNavigate();
-    const stripe = useStripe();
-    const elements = useElements();
+    // const stripe = useStripe();
+    // const elements = useElements();
     const { ConvertCurrency } = useGetCurrencyConversion()
 
     const [select, setSelect] = useState(1);
@@ -154,50 +154,50 @@ const Payment = () => {
     const paymentHandler = async (e) => {
         e.preventDefault();
         try {
-            const config = {
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            };
-            setBtnLoading(true)
-            const { data } = await axios.post(
-                `${server}/payment/process`,
-                paymentData,
-                config
-            );
+            // const config = {
+            //     headers: {
+            //         'Content-Type': 'application/json',
+            //     },
+            // };
+            // setBtnLoading(true)
+            // const { data } = await axios.post(
+            //     `${server}/payment/process`,
+            //     paymentData,
+            //     config
+            // );
 
-            const client_secret = data.client_secret;
+            // const client_secret = data.client_secret;
 
-            if (!stripe || !elements) return;
-            const result = await stripe.confirmCardPayment(client_secret, {
-                payment_method: {
-                    card: elements.getElement(CardNumberElement),
-                },
-            });
+            // if (!stripe || !elements) return;
+            // const result = await stripe.confirmCardPayment(client_secret, {
+            //     payment_method: {
+            //         card: elements.getElement(CardNumberElement),
+            //     },
+            // });
 
-            if (result.error) {
-                toast.error(result.error.message);
-            } else {
-                if (result.paymentIntent.status === 'succeeded') {
-                    order.paymentInfo = {
-                        id: result.paymentIntent.id,
-                        status: result.paymentIntent.status,
-                        type: 'Credit/Debit Card',
-                    };
+            // if (result.error) {
+            //     toast.error(result.error.message);
+            // } else {
+            //     if (result.paymentIntent.status === 'succeeded') {
+            //         order.paymentInfo = {
+            //             id: result.paymentIntent.id,
+            //             status: result.paymentIntent.status,
+            //             type: 'Credit/Debit Card',
+            //         };
 
-                    await axios
-                        .post(`${server}/order/create-order`, order, config)
-                        .then((res) => {
-                            setOpen(false);
-                            navigate('/order/success');
-                            toast.success('Order successful!');
-                            localStorage.setItem('cartItems', JSON.stringify([]));
-                            localStorage.setItem('latestOrder', JSON.stringify([]));
-                            window.location.reload();
-                        });
-                }
-            }
-            setBtnLoading(false)
+            //         await axios
+            //             .post(`${server}/order/create-order`, order, config)
+            //             .then((res) => {
+            //                 setOpen(false);
+            //                 navigate('/order/success');
+            //                 toast.success('Order successful!');
+            //                 localStorage.setItem('cartItems', JSON.stringify([]));
+            //                 localStorage.setItem('latestOrder', JSON.stringify([]));
+            //                 window.location.reload();
+            //             });
+            //     }
+            // }
+            // setBtnLoading(false)
         } catch (error) {
             toast.error(error);
             setBtnLoading(false)
@@ -402,7 +402,7 @@ const PaymentInfo = ({
                     </div>
 
                     {/* pay with card */}
-                    {select === 1 ? (
+                    {/* {select === 1 ? (
                         <div className="w-full flex border-b">
                             <form className="w-full" onSubmit={paymentHandler}>
                                 <div className="w-full flex pb-3">
@@ -499,7 +499,7 @@ const PaymentInfo = ({
                                 }
                             </form>
                         </div>
-                    ) : null}
+                    ) : null} */}
                 </div>}
 
 

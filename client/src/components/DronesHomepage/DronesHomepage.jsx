@@ -20,6 +20,7 @@ import { StyleConfig } from '../../utils/StyleConfig';
 import Loader from '../../utils/Loader';
 import usePageSEOHandle from '../../hooks/Site-config/usePageSEOHandle';
 import SEOHelmet from '../SEOHelmet';
+import LazyHydrate from "react-lazy-hydration";
 
 const DronesHomepage = () => {
   const [isLoading, setLoading] = useState(true);
@@ -32,23 +33,25 @@ const DronesHomepage = () => {
 
       <SEOHelmet seoDetails={seoDetails} />
       {isLoading ? <Loader /> : <>
-        <DronesHeader />
-        <DronesHeader2 />
-        <DronesBanner content={styles?.MainBannerContent} />
-        <EventsHomeTop content={styles?.eventTop} />
-        <DronesDirectionSensing featureSecOne={styles?.featureSecOne} featureSecTwo={styles?.featureSecTwo} />
-        <CategoriesHome />
-        <Products title={styles?.headingsContent?.featuredProducts} />
-        <EventsHomeMiddle content={styles?.eventMiddle} />
-        <DronesQuotes content={styles?.quoteContent} />
-        <DronesRecommendedItems title={styles?.headingsContent?.recommendedItems} />
-        <DronesBrandlogos content={styles?.brands} title={styles?.headingsContent?.brandsTitle} />
-        <DronesTestimonialSwiper content={styles?.testimonialContent} />
-        <DronesServices content={styles?.industriesContent} title={styles?.headingsContent?.industires} />
-        <DronesFlags content={styles?.regionsContent} title={styles?.headingsContent?.regionsTitle} />
-        <EventsHomeBottom content={styles?.eventBottom} />
-        <DronesNewsletter content={styles?.newsLetter} />
-        <DronesFooter />
+        <LazyHydrate whenIdle>
+          <DronesHeader />
+          <DronesHeader2 />
+          <DronesBanner content={styles?.MainBannerContent} />
+          {styles?.eventTop ? <EventsHomeTop content={styles?.eventTop} /> : null}
+          {styles?.featureSecOne && styles?.featureSecTwo ? <DronesDirectionSensing featureSecOne={styles?.featureSecOne} featureSecTwo={styles?.featureSecTwo} /> : null}
+          <CategoriesHome />
+          {styles?.headingsContent?.featuredProducts ? <Products title={styles?.headingsContent?.featuredProducts} /> : null}
+          <EventsHomeMiddle content={styles?.eventMiddle} />
+          {styles?.quoteContent ? <DronesQuotes content={styles?.quoteContent} /> : null}
+          {styles?.headingsContent?.recommendedItems ? <DronesRecommendedItems title={styles?.headingsContent?.recommendedItems} /> : null}
+          {styles?.headingsContent?.brandsTitle ? <DronesBrandlogos content={styles?.brands} title={styles?.headingsContent?.brandsTitle} /> : null}
+          {styles?.testimonialContent ? <DronesTestimonialSwiper content={styles?.testimonialContent} /> : null}
+          {styles?.industriesContent ? <DronesServices content={styles?.industriesContent} title={styles?.headingsContent?.industires} /> : null}
+          {styles?.regionsContent ? <DronesFlags content={styles?.regionsContent} title={styles?.headingsContent?.regionsTitle} /> : null}
+          {styles?.eventBottom ? <EventsHomeBottom content={styles?.eventBottom} /> : null}
+          {styles?.newsLetter ? <DronesNewsletter content={styles?.newsLetter} /> : null}
+          <DronesFooter />
+        </LazyHydrate>
       </>}
     </>
 

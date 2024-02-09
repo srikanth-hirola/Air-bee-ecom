@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { memo, useEffect, useState } from 'react'
 import useProductDeals from '../../hooks/useProductDeals'
 import { useDispatch, useSelector } from 'react-redux'
 import ProductCardMiddleware from '../ProductCards/ProductCardMiddleware'
 import { getPublishedProducts } from '../../redux/actions/product'
 
-const DronesRecommendedItems = ({ title }) => {
+const DronesRecommendedItems = memo(({ title }) => {
     const { getBestDeals } = useProductDeals();
     const { allPublishedProducts } = useSelector((state) => state.products);
 
@@ -30,7 +30,7 @@ const DronesRecommendedItems = ({ title }) => {
                     </div>
                     {products?.length > 0 &&
                         <div className="row">
-                            {products?.slice(0, 18)?.map((item, index) => (
+                            {products?.slice(0, 6)?.map((item, index) => (
                                 <ProductCardMiddleware data1={item} key={index} />
                             ))}
                         </div>}
@@ -41,6 +41,6 @@ const DronesRecommendedItems = ({ title }) => {
         </>
 
     )
-}
+})
 
 export default DronesRecommendedItems

@@ -22,7 +22,7 @@ const CategoriesMenu = () => {
     return (
         <li className="menu-item-has-children">
             <Link to="#">Collections <i className="fa fa-angle-down"></i></Link>
-            <div className="sub-menu mega-menu mega-menu-column-4 flex">
+            <div className="sub-menu mega-menu mega-menu-column-4 ">
                 <div className='w-[100%] flex flex-wrap justify-start gap-3 cat-menu'>
                     {categories?.length > 0 && categories?.map((cat, i) => (
                         <div className="list-item w-[160px]" key={i}>

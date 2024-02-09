@@ -1,5 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 /* Contact Product1 component */
+
+/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"); */
+
 .ContactProduct1-image-1 {
   height: 60px;
   width: 60px;
@@ -156,45 +158,51 @@ select {
   .col-md-4.UpdateShoppingCart-button {
     width: 100%;
   }
-  .Checkoutpage-content .flex.justify-between.flex-wrap div{
+  .Checkoutpage-content .flex.justify-between.flex-wrap div {
     width: 100%;
   }
   .Drones-product-summery-end {
     display: flex;
     gap: 10px;
     flex-direction: column;
-}
-.w-full.flex.flex-col.items-center.py-8 .w-\[90\%\].\31 000px\:w-\[70\%\].flex.gap-6.\38 00px\:flex {
-  flex-direction: column-reverse;
-}.w-\[90\%\].\38 00px\:w-\[50\%\].flex.items-center.flex-wrap.justify-center {
-  width: 100%;
-}
+  }
+  .w-full.flex.flex-col.items-center.py-8
+    .w-\[90\%\].\31000px\:w-\[70\%\].flex.gap-6.\3800px\:flex {
+    flex-direction: column-reverse;
+  }
+  .w-\[90\%\].\38 00px\:w-\[50\%\].flex.items-center.flex-wrap.justify-center {
+    width: 100%;
+  }
 
-.w-\[90\%\].\38 00px\:w-\[50\%\].flex.items-center.flex-wrap.justify-center .cursor-pointer {
-  padding-left: 14px;
-  padding-right: 20px;
-  width: 77px;
-}
+  .w-\[90\%\].\3800px\:w-\[50\%\].flex.items-center.flex-wrap.justify-center
+    .cursor-pointer {
+    padding-left: 14px;
+    padding-right: 20px;
+    width: 77px;
+  }
 
-.w-\[90\%\].\38 00px\:w-\[50\%\].flex.items-center.flex-wrap.justify-center span {
-  font-size: 10px;
-}
-.w-\[90\%\].\38 00px\:w-\[50\%\].flex.items-center.flex-wrap.justify-center {
-  justify-content: center;
-}
-.Checkoutpage-parent {
-  padding: 60px 0px;
-}
+  .w-\[90\%\].\3800px\:w-\[50\%\].flex.items-center.flex-wrap.justify-center
+    span {
+    font-size: 10px;
+  }
+  .w-\[90\%\].\3800px\:w-\[50\%\].flex.items-center.flex-wrap.justify-center {
+    justify-content: center;
+  }
+  .Checkoutpage-parent {
+    padding: 60px 0px;
+  }
 
-.w-\[90\%\].\31 000px\:w-\[70\%\].flex.gap-6.\38 00px\:flex {}
+  .w-full.flex.flex-col.items-center.py-8
+    .w-\[90\%\].\31000px\:w-\[70\%\].flex.gap-6.\3800px\:flex
+    .w-\[60\%\].\3800px\:w-\[65\%\] {
+    width: 100%;
+  }
 
-.w-full.flex.flex-col.items-center.py-8 .w-\[90\%\].\31 000px\:w-\[70\%\].flex.gap-6.\38 00px\:flex .w-\[60\%\].\38 00px\:w-\[65\%\] {
-  width: 100%;
-}
-
-.w-full.flex.flex-col.items-center.py-8 .w-\[90\%\].\31 000px\:w-\[70\%\].flex.gap-6.\38 00px\:flex .w-\[38\%\].\38 00px\:w-\[35\%\].\38 00px\:mt-0.mt-8 {
-  width: 100%;
-}
+  .w-full.flex.flex-col.items-center.py-8
+    .w-\[90\%\].\31000px\:w-\[70\%\].flex.gap-6.\3800px\:flex
+    .w-\[38\%\].\3800px\:w-\[35\%\].\3800px\:mt-0.mt-8 {
+    width: 100%;
+  }
   /* checkout page content */
   .Checkoutpage-content-sub1 {
     width: 100%;
@@ -213,7 +221,7 @@ select {
     width: 60%;
     margin: auto;
   }
-  .Chcekout-Page-NextButton button{
+  .Chcekout-Page-NextButton button {
     margin-top: 20px;
   }
   .Checkoutpage-standardRate-text2 {

@@ -1,5 +1,9 @@
 import axios from 'axios';
 import { server } from '../../server';
+import WorkerFactory from '../../WorkerFactory';
+import myWorker from '../../workers/myWorker.worker'
+const workerInstance = new WorkerFactory(myWorker);
+
 
 export const getAllSiteConfig = () => async (dispatch) => {
     try {
@@ -12,18 +16,25 @@ export const getAllSiteConfig = () => async (dispatch) => {
                 withCredentials: true,
             }
         );
+        workerInstance.postMessage(data);
 
-        const site = data.siteConfig
+        workerInstance.onmessage = (res) => {
+            const site = data.siteConfig
+            dispatch({
+                type: 'getAllSiteConfigSuccess',
+                payload: site,
+            });
+        };
 
-        dispatch({
-            type: 'getAllSiteConfigSuccess',
-            payload: site,
-        });
+
     } catch (error) {
-        dispatch({
-            type: 'getAllSitConfigFailed',
-            payload: error.response.data.message,
-        });
+        workerInstance.onerror = (err) => {
+            dispatch({
+                type: 'getAllSitConfigFailed',
+                payload: error.response.data.message,
+            });
+        };
+
     }
 };
 

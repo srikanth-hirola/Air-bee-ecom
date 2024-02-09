@@ -2,22 +2,38 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import CategoryProductCard from '../ProductCards/CategoryProductCard';
 import useFetchCategoryHandler from '../../hooks/categories/useFetchCategoryHandler';
+import LazyLoadImageComponent from '../OptimizeComp/LazyLoadImageComponent';
+import WorkerFactory from '../../WorkerFactory';
+import myworker from "../../workers/filterProductsForCategory"
 
 const CategoriesWithProducts = ({ CatName, key }) => {
     const { category } = useSelector((state) => state.category)
     const { allProducts } = useSelector((state) => state.products);
     const [products, setProducts] = useState([]);
     const { fetchCategory } = useFetchCategoryHandler()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const workerInstance = new WorkerFactory(myworker);
+
 
 
 
     useEffect(() => {
         if (allProducts?.length > 0) {
-            setProducts(() => {
-                return allProducts?.filter((item) => item?.category === CatName).slice(0, 8)
-            })
+            let data = { allProducts, categoryName: CatName }
+            workerInstance.postMessage(data);
+
+            // Listen for messages from the worker
+            workerInstance.onmessage = async (res) => {
+                setProducts(res.data)
+            };
+            return () => {
+                workerInstance.terminate();
+            };
+
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [allProducts, CatName])
+
 
     function getCategoryImg() {
         let categoryFound = category?.find((cat) => cat?._id === CatName)
@@ -36,7 +52,8 @@ const CategoriesWithProducts = ({ CatName, key }) => {
                             </div>
                             {/* <img src="./DronesHomepage/row-2-1.png" alt="" /> */}
                             <div className='DronesProductsRow2-image1-image'>
-                                <img src={getCategoryImg()} alt="category" />
+                                {/* <img src={getCategoryImg()} alt="category" /> */}
+                                <LazyLoadImageComponent alt={"category"} height={"100%"} width={"100%"} img={getCategoryImg()} />
                             </div>
                         </div>
                     </div>

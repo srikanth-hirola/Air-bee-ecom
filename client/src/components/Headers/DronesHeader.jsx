@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { memo, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import SearchBar from '../Search/SearchBar'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -7,10 +7,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import { StyleConfig } from '../../utils/StyleConfig'
 import { socketId } from './socket'
 import { createNewReceivedMessage, updateReceivedMessage } from '../../redux/actions/socket'
+import LazyLoadImageComponent from '../OptimizeComp/LazyLoadImageComponent'
+import { Helmet } from 'react-helmet-async'
 
 
 
-const DronesHeader = () => {
+const DronesHeader = memo(() => {
 
   const { wishlist } = useSelector((state) => state.wishlist);
   const { cart } = useSelector((state) => state.cart);
@@ -64,12 +66,21 @@ const DronesHeader = () => {
 
   return (
     <>
+      <Helmet>
+        <link
+          rel="preload"
+          as="image"
+          href={styles?.logo?.url}
+        />
+      </Helmet>
       <div className='DronesHeader-parent bg-light '>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <div className="container-fluid">
             <Link className="navbar-brand" to="/">
               <div className='Drones-header-logo'>
-                <img src={styles?.logo?.url} alt="logo" lazy />
+                <LazyLoadImageComponent alt={"logo"} height={"100%"} width={"100%"} img={styles?.logo?.url} />
+
+                {/* <img src={styles?.logo?.url} alt="logo" lazy /> */}
               </div>
             </Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -123,6 +134,6 @@ const DronesHeader = () => {
 
     </>
   )
-}
+})
 
 export default DronesHeader

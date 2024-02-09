@@ -1,6 +1,9 @@
 import axios from "axios";
 import { server } from "../../server";
 import toast from "react-hot-toast";
+import WorkerFactory from '../../WorkerFactory';
+import myWorker from '../../workers/myWorker.worker'
+const workerInstance = new WorkerFactory(myWorker);
 
 // create event
 export const createevent = (data) => async (dispatch) => {
@@ -80,14 +83,22 @@ export const getAllEvents = () => async (dispatch) => {
     });
 
     const { data } = await axios.get(`${server}/event/get-all-events`);
-    dispatch({
-      type: "getAlleventsSuccess",
-      payload: data.events,
-    });
+    workerInstance.postMessage(data);
+
+    workerInstance.onmessage = (res) => {
+      dispatch({
+        type: "getAlleventsSuccess",
+        payload: data.events,
+      });
+    };
+
   } catch (error) {
-    dispatch({
-      type: "getAlleventsFailed",
-      payload: error.response.data.message,
-    });
+    workerInstance.onerror = (err) => {
+      dispatch({
+        type: "getAlleventsFailed",
+        payload: error.response.data.message,
+      });
+    };
+
   }
 };

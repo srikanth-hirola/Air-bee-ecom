@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { memo } from 'react'
 import DronesBannerSwiper from './DronesBannerSwiper'
 import Categories from '../categories/Categories'
 import LoggedIn from '../Banner/LoggedIn'
 
-const DronesBanner = ({ content }) => {
+const DronesBanner = memo(({ content }) => {
 
     return (
         <>
@@ -46,6 +46,6 @@ const DronesBanner = ({ content }) => {
             </div>
         </>
     )
-}
+})
 
 export default DronesBanner

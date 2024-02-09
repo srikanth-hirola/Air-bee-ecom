@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { memo } from 'react';
 // import './Drones.css'
-import DronesEyePlayground from './DronesEyePlayground'
-const DronesDirectionSensing = ({ featureSecOne, featureSecTwo }) => {
+import DronesEyePlayground from './DronesEyePlayground';
+import LazyLoadImageComponent from '../OptimizeComp/LazyLoadImageComponent';
+
+const DronesDirectionSensing = memo(({ featureSecOne, featureSecTwo }) => {
 
     return (
         <>
@@ -11,7 +13,8 @@ const DronesDirectionSensing = ({ featureSecOne, featureSecTwo }) => {
                         <div className='DronesDirectionSEnsingsub1'>
                             {featureSecOne?.BannerImage?.image?.url &&
                                 <div className="DronesDirectionSensing-image">
-                                    <img src={featureSecOne?.BannerImage?.image?.url} alt="Feature Main" />
+                                    {/* <img src={featureSecOne?.BannerImage?.image?.url} alt="Feature Main" /> */}
+                                    <LazyLoadImageComponent alt={"Feature Main"} height={500} width={"100%"} img={featureSecOne?.BannerImage?.image?.url} />
                                 </div>
                             }
                         </div>
@@ -33,7 +36,8 @@ const DronesDirectionSensing = ({ featureSecOne, featureSecTwo }) => {
                                     {featureSecOne?.features?.map((item, i) => (
                                         <div className='DronesDirectionSEnsingsub2-sub1' key={i}>
                                             <div className='DronesDirectionSEnsingsub2-sub1-image'>
-                                                <img src={item?.image?.url} alt="feature" />
+                                                {/* <img src={item?.image?.url} alt="feature" /> */}
+                                                <LazyLoadImageComponent alt={"feature"} height={"100%"} width={"100%"} img={item?.image?.url} />
                                             </div>
                                             <p>{item?.title}</p>
                                         </div>
@@ -49,6 +53,6 @@ const DronesDirectionSensing = ({ featureSecOne, featureSecTwo }) => {
         </>
 
     )
-}
+})
 
 export default DronesDirectionSensing

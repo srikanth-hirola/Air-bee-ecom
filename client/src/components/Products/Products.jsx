@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Autoplay } from 'swiper/modules';
+import React, { memo, useEffect } from 'react';
+// import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getPublishedProducts } from '../../redux/actions/product';
 import ProductCardMiddleware from '../ProductCards/ProductCardMiddleware';
 
-const Products = ({ title }) => {
+const Products = memo(({ title }) => {
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -31,11 +31,11 @@ const Products = ({ title }) => {
             {allPublishedProducts?.length > 0 ? (
                 <Swiper
                     className='paginationDisabledClass'
-                    autoplay={{
-                        delay: 1500,
-                        disableOnInteraction: false,
-                    }}
-                    modules={[Autoplay]}
+                    // autoplay={{
+                    //     delay: 1500,
+                    //     disableOnInteraction: false,
+                    // }}
+                    // modules={[Autoplay]}
                     spaceBetween={50}
                     slidesPerView={6}
                     navigation
@@ -75,7 +75,7 @@ const Products = ({ title }) => {
             )}
         </div>
     );
-};
+});
 
 export default Products;
 

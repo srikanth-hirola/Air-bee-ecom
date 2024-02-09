@@ -1,6 +1,9 @@
 import axios from 'axios';
 import { server } from '../../server';
 // import { ADD_SPECIFICATION } from './types';
+import WorkerFactory from '../../WorkerFactory';
+import myWorker from '../../workers/myWorker.worker'
+const workerInstance = new WorkerFactory(myWorker);
 
 // get all categories
 export const getAllCategories = () => async (dispatch) => {
@@ -10,18 +13,25 @@ export const getAllCategories = () => async (dispatch) => {
     });
 
     const { data } = await axios.get(`${server}/category/get-all-categories`);
+    workerInstance.postMessage(data);
+
+    workerInstance.onmessage = (res) => {
+      dispatch({
+        type: 'adminAllCategoriesSuccess',
+        payload: data.categories,
+      });
+    };
 
     // return data.categories;
 
-    dispatch({
-      type: 'adminAllCategoriesSuccess',
-      payload: data.categories,
-    });
+
   } catch (error) {
-    dispatch({
-      type: 'adminAllCategoriesFailed',
-      payload: error.response.data.message,
-    });
+    workerInstance.onerror = (err) => {
+      dispatch({
+        type: 'adminAllCategoriesFailed',
+        payload: error.response.data.message,
+      });
+    };
   }
 };
 

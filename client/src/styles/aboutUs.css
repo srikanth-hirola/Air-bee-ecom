@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"); */
 
 /* banner component */
 
@@ -7,8 +7,8 @@
   align-items: center;
   height: 550px;
 }
-.AboutUsBanner-parent .row{
-  height:fit-content;
+.AboutUsBanner-parent .row {
+  height: fit-content;
   align-items: center;
 }
 .AboutUsBanner-sub-content {
@@ -17,44 +17,44 @@
   align-items: center;
   margin-top: -30px;
 }
-.AboutUsBanner-sub-content p{
+.AboutUsBanner-sub-content p {
   margin: 0;
 }
-.AboutUsBanner-sub-content-image{
+.AboutUsBanner-sub-content-image {
   height: 30px;
   width: 30px;
 }
-.AboutUsBanner-sub-content-image img{
-  height:100%;
-  width:100%;
+.AboutUsBanner-sub-content-image img {
+  height: 100%;
+  width: 100%;
   object-fit: contain;
 }
-.AboutUsBanner-sub h1{
+.AboutUsBanner-sub h1 {
   padding: 25px 0px;
   font-weight: 600;
 }
-.AboutUsBanner-sub button{
-  background:#5151f1 !important;
+.AboutUsBanner-sub button {
+  background: #5151f1 !important;
   padding: 8px 20px;
   border-radius: 8px;
   color: white;
 }
-.AboutUsBanner-image{
-  width:80%;
+.AboutUsBanner-image {
+  width: 80%;
   height: 430px;
   margin: auto;
 }
 .AboutUsBanner-sub-content-text {
   padding-bottom: 15px;
 }
-.AboutUsBanner-image img{
+.AboutUsBanner-image img {
   width: 100%;
-  height:100%;
+  height: 100%;
   object-fit: contain;
   margin-top: 40px;
 }
-@media only screen and (max-width:767px){
-  .AboutUsBanner-parent{
+@media only screen and (max-width: 767px) {
+  .AboutUsBanner-parent {
     height: fit-content;
   }
   .AboutUsBanner-sub-content {
@@ -63,11 +63,11 @@
   .AboutUsBanner-image {
     width: 85%;
     height: 100%;
-}
+  }
 }
 
-@media only screen and (min-width:768px) and (max-width:991px){
-  .AboutUsBanner-image{
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .AboutUsBanner-image {
     width: 95%;
   }
 }
@@ -163,7 +163,8 @@
 .about-faq-instant-question .accordion-item {
   color: var(--bs-accordion-color);
   background-color: var(--bs-accordion-bg);
-  border: var(--bs-accordion-border-width) solid var(--bs-accordion-border-color);
+  border: var(--bs-accordion-border-width) solid
+    var(--bs-accordion-border-color);
   border: none !important;
   margin: 10px 0px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -359,7 +360,7 @@
 }
 
 .about-couting-instant {
-  padding:70px 0px 30px;
+  padding: 70px 0px 30px;
 }
 
 .about-couting-instant-heading {
@@ -527,8 +528,8 @@
 .about-faq-instant-question .accordion-button:focus {
   border-color: white !important;
 }
-  .about-faq-instant {
-    padding: 0px 0px 30px 0px;
+.about-faq-instant {
+  padding: 0px 0px 30px 0px;
 }
 
 .About-Us-two-text .d-flex {
@@ -538,22 +539,22 @@
 
 /* our team component */
 
-.AboutUsTeam-main-text{
+.AboutUsTeam-main-text {
   width: 90%;
   margin: auto;
   text-align: center;
   padding-bottom: 35px;
 }
-.AboutUsTeam-main-text h3{
+.AboutUsTeam-main-text h3 {
   padding-bottom: 10px;
 }
-.AboutUsTeam-sub .card{
+.AboutUsTeam-sub .card {
   border: none;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
   margin-bottom: 30px;
   transition: all 0.3s linear;
 }
-.AboutUsTeam-sub .card:hover{
+.AboutUsTeam-sub .card:hover {
   transform: scale(1.03);
 }
 .AboutUsTeam-sub-card-image {
@@ -562,7 +563,7 @@
 }
 .AboutUsTeam-sub-card-image img {
   width: 100%;
-  height:100%;
+  height: 100%;
   object-fit: cover;
   border-radius: 6px 6px 0px 0px;
 }
@@ -570,26 +571,26 @@
   padding-bottom: 30px;
 }
 @media only screen and (max-width: 767px) {
-  .AboutUsTeam-main-text{
+  .AboutUsTeam-main-text {
     width: 100%;
   }
   .About-Us-one-sub .About-Us-one-data .About-Us-one-text h5 {
     font-size: 24px;
     margin-bottom: 30px;
-}
+  }
   .row.about-top-comapany-instant-subject .col-md-3.col-sm-6.col-12 {
     width: 47%;
-}
-.about-top-comapany-instant-text {
-  margin: 10px auto;
-  width: 100% !important;
-}
-.ContactProduct1-sub .text1-contact p{
-  text-align: justify;
-}
-.about-top-comapany-instant-text{
-  padding: 30px;
-}
+  }
+  .about-top-comapany-instant-text {
+    margin: 10px auto;
+    width: 100% !important;
+  }
+  .ContactProduct1-sub .text1-contact p {
+    text-align: justify;
+  }
+  .about-top-comapany-instant-text {
+    padding: 30px;
+  }
   .About-Us-one-sub .About-Us-one-heading h4 {
     font-size: 25px;
   }
@@ -614,7 +615,7 @@
   .about-faq-instant-question .accordion-button {
     font-size: 14px !important;
   }
-  .accordion-body{
+  .accordion-body {
     font-size: 12px;
   }
   .about-faq-instant-text h2 {
@@ -812,10 +813,10 @@
   }
   .row.about-couting-instant-subject .col-md-3.col-sm-6.col-12 {
     width: 48%;
-}
-p{
-  text-align: justify;
-}
+  }
+  p {
+    text-align: justify;
+  }
 }
 
 @media only screen and (max-width: 576px) {

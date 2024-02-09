@@ -9,7 +9,8 @@ import 'swiper/css/pagination';
 // import './styles.css';
 
 // import required modules
-import { Autoplay, Pagination } from 'swiper/modules';
+import { Pagination } from 'swiper/modules';
+import LazyLoadImageComponent from '../OptimizeComp/LazyLoadImageComponent';
 
 export const DronesTestimonialSwiper = ({ content }) => {
 
@@ -26,7 +27,8 @@ export const DronesTestimonialSwiper = ({ content }) => {
                             }
                             {content?.MainImage?.image?.url &&
                                 <div className='Drones-testimonial-quote'>
-                                    <img src={content?.MainImage?.image?.url} alt="testimonial" />
+                                    {/* <img src={content?.MainImage?.image?.url} alt="testimonial" /> */}
+                                    <LazyLoadImageComponent alt={"testimonial"} height={"100%"} width={"100%"} img={content?.MainImage?.image?.url} />
                                 </div>}
 
                         </div>
@@ -34,7 +36,9 @@ export const DronesTestimonialSwiper = ({ content }) => {
 
                     </div>
                     <div className="col-md-7">
-                        <div className="testimonal-home-bg" style={{ backgroundImage: `url(${content?.bgImage?.image?.url})` }}>
+                        <div className="testimonal-home-bg bg-blue-500"
+                        // style={{ backgroundImage: `url(${content?.bgImage?.image?.url})` }}
+                        >
                             <div className="testimonal-home-slider-content">
                                 {content?.testimonials?.length > 0 &&
                                     <div className='DronesTestimonialSwiper-parent'>
@@ -45,12 +49,12 @@ export const DronesTestimonialSwiper = ({ content }) => {
                                             pagination={{
                                                 clickable: true,
                                             }}
-                                            autoplay={{
-                                                delay: 1500,
-                                                disableOnInteraction: false,
-                                            }}
+                                            // autoplay={{
+                                            //     delay: 1500,
+                                            //     disableOnInteraction: false,
+                                            // }}
                                             loop={true}
-                                            modules={[Pagination, Autoplay]}
+                                            modules={[Pagination]}
                                             className="mySwiper"
                                         >
                                             {content?.testimonials?.map((item, i) => (
@@ -59,7 +63,8 @@ export const DronesTestimonialSwiper = ({ content }) => {
                                                         <div className='DronesTestimonialSwiper-sub-image-parent'>
                                                             {item?.image?.url &&
                                                                 <div className='DronesTestimonialSwiper-image'>
-                                                                    <img src={item?.image?.url} alt="testimonial" />
+                                                                    {/* <img src={item?.image?.url} alt="testimonial" /> */}
+                                                                    <LazyLoadImageComponent alt={"testimonial"} height={"100%"} width={"100%"} img={item?.image?.url} />
                                                                 </div>
                                                             }
                                                             <div className='DronesTestimonialSwiper-main-text'>

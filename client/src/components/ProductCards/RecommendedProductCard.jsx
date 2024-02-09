@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import MainCardHover from './Hovers/MainCardHover'
 import { StyleConfig } from '../../utils/StyleConfig'
 import useProductDetails from '../../hooks/useProductDetails'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import LazyLoadImageComponent from '../OptimizeComp/LazyLoadImageComponent'
 
 const RecommendedProductCard = ({ data, active }) => {
 
@@ -26,7 +28,8 @@ const RecommendedProductCard = ({ data, active }) => {
 
             <div className='DronesRecommendedItems-content'>
                 <div className='DronesRecommendedItems-image group relative'>
-                    <img src={`${data?.mainImage?.url}`} alt="product" />
+                    {/* <img src={`${data?.mainImage?.url}`} alt="product" /> */}
+                    <LazyLoadImageComponent alt={"product"} height={132} width={"100%"} img={data?.mainImage?.url} />
                     <MainCardHover data={data} addToCart={addToCartHandler} id={data?._id} />
                 </div>
                 <Link to={`${`/product/${data?.slug}`}`}>
@@ -42,11 +45,7 @@ const RecommendedProductCard = ({ data, active }) => {
                             <p>{styles?.currency?.Symbol}&nbsp;{getDiscountPrice({ data, active })}</p>
                             <p><del>{styles?.currency?.Symbol}&nbsp;{getOriginalPrice({ data })}</del></p>
                         </div>
-                        {/* <div className='DronesRecommendedItems-subtext'>
-                            <p>{data?.description?.length > 25
-                                ? data?.description.slice(0, 42) + '...'
-                                : data?.description}</p>
-                        </div> */}
+
                     </>
                 </Link>
             </div>

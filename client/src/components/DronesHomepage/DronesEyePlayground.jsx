@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import LazyLoadImageComponent from '../OptimizeComp/LazyLoadImageComponent'
 // import './Drones.css'
 const DronesEyePlayground = ({ featureSecTwo }) => {
 
@@ -30,7 +31,8 @@ const DronesEyePlayground = ({ featureSecTwo }) => {
                     {featureSecTwo?.BannerImage?.image?.url &&
                         <div className="col-md-5">
                             <div className='DronesEyePlayground-image'>
-                                <img src={featureSecTwo?.BannerImage?.image?.url} alt="Feature" />
+                                {/* <img src={featureSecTwo?.BannerImage?.image?.url} alt="Feature" /> */}
+                                <LazyLoadImageComponent alt={"feature"} height={"100%"} width={"100%"} img={featureSecTwo?.BannerImage?.image?.url} />
                             </div>
                         </div>
                     }

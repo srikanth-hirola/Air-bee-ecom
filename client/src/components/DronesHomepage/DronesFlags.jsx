@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { memo } from 'react'
+import LazyLoadImageComponent from '../OptimizeComp/LazyLoadImageComponent'
 
-const DronesFlags = ({ content, title }) => {
+const DronesFlags = memo(({ content, title }) => {
 
     return (
         <>
@@ -12,7 +13,8 @@ const DronesFlags = ({ content, title }) => {
                             <div key={index} className=" col-sm-6 col-md-2">
                                 <div className="DronesFlags-sub">
                                     <div className='DronesFlagsimage'>
-                                        <img src={item?.image?.url} alt="regions" />
+                                        {/* <img src={item?.image?.url} alt="regions" /> */}
+                                        <LazyLoadImageComponent alt={"regions"} height={"100%"} width={"100%"} img={item?.image?.url} />
                                     </div>
                                     <div>
                                         <h6>{item?.title} </h6>
@@ -27,6 +29,6 @@ const DronesFlags = ({ content, title }) => {
         </>
 
     )
-}
+})
 
 export default DronesFlags

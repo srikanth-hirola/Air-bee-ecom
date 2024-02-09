@@ -17,6 +17,7 @@ const allowedOrigins = [
   'https://ecom-client.onrender.com',
   'http://localhost:3000',
   'http://localhost:3001',
+  'http://localhost:3002',
   'https://airbee.co.in',
   'https://www.airbee.co.in',
   'https://air-bee.netlify.app',
@@ -75,6 +76,7 @@ const siteConfig = require('./controller/siteConfig');
 const newsletter = require('./controller/newsletter');
 const form = require('./controller/Form');
 const blogs = require('./controller/blogs');
+const path = require('path');
 
 app.use('/api/v2/user', user);
 app.use('/api/v2/conversation', conversation);
@@ -92,6 +94,12 @@ app.use('/api/v2/site', siteConfig);
 app.use('/api/v2/newsletter', newsletter);
 app.use('/api/v2/form', form);
 app.use('/api/v2/blogs', blogs);
+
+app.use(express.static(path.join(__dirname, 'dist')));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+})
 
 cron.schedule('* * * * *', () => {
   const date = new Date().toISOString().substring(0, 10);
